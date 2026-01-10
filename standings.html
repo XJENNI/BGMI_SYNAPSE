@@ -50,11 +50,10 @@
                     <li role="none"><a role="menuitem" href="schedule.html" class="nav-link">Schedule</a></li>
                     <li role="none"><a role="menuitem" href="watch.html" class="nav-link">Watch</a></li>
                 </ul>
-                <!-- Social Links for Mobile Sidebar -->
-                <div class="nav-social-mobile">
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                <div class="nav-sponsor-mobile">
+                    <a href="https://www.krafton.com" target="_blank" rel="noopener" aria-label="Krafton" class="nav-krafton-link">
+                        <img src="data/img/KRAFTONL.jpg" alt="KRAFTON" width="140" height="48" loading="lazy" decoding="async">
+                    </a>
                 </div>
             </nav>
 
@@ -105,6 +104,17 @@
                 <button class="filter-btn btn-sm" data-match="5">M5</button>
             </div>
             
+            <!-- Overall Container (groups + MVP) -->
+            <div id="overallContainer" style="display:none;">
+                <div class="group-grid">
+                    <div class="group-block" id="groupA"></div>
+                    <div class="group-block" id="groupB"></div>
+                    <div class="group-block" id="groupC"></div>
+                    <div class="group-block" id="groupD"></div>
+                </div>
+                <div id="mvpArea" class="mvp-area"></div>
+            </div>
+
             <!-- Leaderboard Table -->
             <div class="table-container">
                 <table class="leaderboard-table" id="leaderboardTable">
@@ -114,9 +124,7 @@
                             <th>Team</th>
                             <th class="hide-mobile">Group</th>
                             <th class="hide-mobile">Matches</th>
-                            <th>Kills</th>
                             <th class="hide-mobile">Place Pts</th>
-                            <th class="hide-mobile">Kill Pts</th>
                             <th>Total</th>
                         </tr>
                     </thead>

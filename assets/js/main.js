@@ -164,21 +164,45 @@ document.addEventListener("DOMContentLoaded", () => {
     function setupRegistrationBanner() {
         const REG_KEY = 'synapse_reg_closed_v1';
         if (typeof window === 'undefined' || !document) return;
-        if (localStorage.getItem(REG_KEY) === '1') return;
 
         const banner = document.getElementById('registrationBanner');
         if (!banner) return;
 
+        // If the banner was previously closed, remove it immediately to avoid showing a non-interactive banner
+        if (localStorage.getItem(REG_KEY) === '1') {
+            banner.remove();
+            document.body.classList.remove('registration-visible');
+            document.documentElement.style.removeProperty('--reg-banner-height');
+            return;
+        }
+
         const closeBtn = banner.querySelector('.registration-close');
-        closeBtn && closeBtn.addEventListener('click', () => {
+        const closeHandler = (e) => {
+            if (e && e.preventDefault) e.preventDefault();
             banner.classList.add('closing');
             setTimeout(() => {
                 banner.remove();
                 document.body.classList.remove('registration-visible');
                 document.documentElement.style.removeProperty('--reg-banner-height');
             }, 220);
-            localStorage.setItem(REG_KEY, '1');
-        });
+            try { localStorage.setItem(REG_KEY, '1'); } catch (err) { /* ignore storage errors */ }
+        };
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeHandler);
+            // support pointer devices and touch for immediate response (prevent default to avoid focus delay)
+            closeBtn.addEventListener('pointerdown', (ev) => { ev.preventDefault && ev.preventDefault(); closeHandler(ev); });
+            closeBtn.addEventListener('touchstart', (ev) => { ev.preventDefault && ev.preventDefault(); closeHandler(ev); }, { passive: false });
+            // keyboard accessibility (Enter / Space)
+            closeBtn.addEventListener('keydown', (ev) => {
+                if (ev.key === 'Enter' || ev.key === ' ' || ev.key === 'Spacebar') {
+                    ev.preventDefault && ev.preventDefault();
+                    closeHandler(ev);
+                }
+            });
+            // ensure the element is treated as a button if markup changes
+            if (!closeBtn.getAttribute('type')) closeBtn.setAttribute('type', 'button');
+        }
 
         // Push page content down while banner is visible (avoid overlap)
         const applyBannerSpacing = () => {
