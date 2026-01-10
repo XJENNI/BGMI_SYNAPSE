@@ -86,23 +86,24 @@
             
             <!-- Stream Status -->
             <div class="stream-status">
-                <div class="status-badge offline" id="streamStatus">
+                <div class="status-badge coming" id="streamStatus" role="status" aria-live="polite">
                     <span class="status-dot"></span>
-                    <span>OFFLINE</span>
+                    <span>COMING SOON</span>
                 </div>
             </div>
             
-            <!-- Video Container -->
+            <!-- Video Container (Coming Soon) -->
             <div class="video-container fade-in">
                 <div class="video-wrapper">
-                    <!-- Replace VIDEO_ID with your actual YouTube video/stream ID -->
-                    <iframe 
-                        id="youtubePlayer"
-                        src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1"
-                        title="SYNAPSE MAMC BGMI 2026 Live Stream"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen>
-                    </iframe>
+                    <div class="stream-coming-soon" role="status" aria-live="polite">
+                        <div style="font-size: 3rem; color: var(--accent-cyan); margin-bottom: 0.6rem;">🎥</div>
+                        <h3 style="color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Stream Coming Soon</h3>
+                        <p style="color: var(--text-muted); max-width: 520px; margin: 0 auto;">Live stream will be available on match days. Subscribe to our YouTube channel or join our Discord for real-time updates.</p>
+                        <div style="margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: center;">
+                            <a href="#" class="btn btn-primary">Subscribe</a>
+                            <a href="schedule.html" class="btn btn-secondary">View Schedule</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             

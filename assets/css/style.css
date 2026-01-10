@@ -1518,6 +1518,21 @@ p {
   border: 1px solid var(--border-subtle);
 }
 
+.status-badge.coming {
+  background: linear-gradient(90deg, rgba(0,240,255,0.08), rgba(188,19,254,0.06));
+  color: var(--accent-cyan);
+  border: 1px solid rgba(0,240,255,0.12);
+  box-shadow: 0 0 10px rgba(0,240,255,0.05);
+}
+
+.stream-coming-soon {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-md);
+  background: rgba(10, 10, 10, 0.45);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+}
+
 @keyframes pulse {
   0%, 100% {
     opacity: 1;
