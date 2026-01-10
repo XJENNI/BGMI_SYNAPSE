@@ -160,6 +160,33 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     setActiveNavLink();
 
+    // ========== Registration Banner Insert & Controls ==========
+    function setupRegistrationBanner() {
+        const REG_KEY = 'synapse_reg_closed_v1';
+        if (typeof window === 'undefined' || !document) return;
+        if (localStorage.getItem(REG_KEY) === '1') return;
+
+        const banner = document.getElementById('registrationBanner');
+        if (!banner) return;
+
+        const closeBtn = banner.querySelector('.registration-close');
+        closeBtn && closeBtn.addEventListener('click', () => {
+            banner.classList.add('closing');
+            setTimeout(() => banner.remove(), 220);
+            localStorage.setItem(REG_KEY, '1');
+        });
+
+        // Observe body class changes to hide banner when nav opens
+        const obs = new MutationObserver(() => {
+            if (document.body.classList.contains('nav-open')) banner.style.display = 'none';
+            else banner.style.display = '';
+        });
+        obs.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    }
+
+    // call it after DOM is ready
+    setTimeout(setupRegistrationBanner, 60);
+
     // 7. Reveal Animations on Scroll
     const handleScrollAnimations = () => {
         const revealElements = document.querySelectorAll(".fade-in, .slide-up");
