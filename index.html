@@ -18,12 +18,20 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="data/img/mamclogo_nobg.png">
     
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Font Awesome (preload for non-blocking load) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+
+    <!-- Stylesheets (preload + onload to avoid render-blocking) -->
+    <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
+    <link rel="preload" href="assets/css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/responsive.css"></noscript> 
 </head>
 <body>
     <!-- Preloader -->
@@ -97,7 +105,10 @@
                 <a href="https://www.krafton.com" class="hero-sponsor-link" target="_blank" rel="noopener" aria-label="Krafton website">
                     <img src="data/img/krafton.webp" 
                          alt="KRAFTON" 
+                         width="140" height="48"
                          class="hero-sponsor-logo"
+                         decoding="async"
+                         loading="eager"
                          onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Krafton_Logo_2021.svg/512px-Krafton_Logo_2021.svg.png';">
                     <span class="hero-sponsor-text"><small>Sponsored by</small> <strong>KRAFTON</strong></span>
                 </a>
@@ -325,9 +336,9 @@
             <div class="footer-section">
                 <h4>Partner Institutions</h4>
                 <div class="footer-brand-logos" style="display: flex; gap: var(--space-md); margin-top: var(--space-md);">
-                    <img src="data/img/mamclogo_nobg.png" alt="MAMC" style="height: 40px;">
-                    <img src="data/img/synapse_nobg.png" alt="Synapse" style="height: 35px;">
-                    <img src="data/img/mavericksr.png" alt="Mavericks" style="height: 35px;">
+                    <img src="data/img/mamclogo_nobg.png" alt="MAMC" width="120" height="40" loading="lazy" decoding="async" style="height: 40px;">
+                    <img src="data/img/synapse_nobg.png" alt="Synapse" width="105" height="35" loading="lazy" decoding="async" style="height: 35px;">
+                    <img src="data/img/mavericksr.png" alt="Mavericks" width="105" height="35" loading="lazy" decoding="async" style="height: 35px;">
                 </div>
                 <p style="margin-top: var(--space-md); font-size: 0.9rem;">Organized by Mavericks Gaming Society of Maulana Azad Medical College. Krafton-backed initiative for medical students.</p>
             </div>
@@ -367,6 +378,6 @@
     </button>
 
     <!-- JavaScript -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html> 
