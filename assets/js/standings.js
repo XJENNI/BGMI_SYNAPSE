@@ -207,10 +207,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========== Handle Rendering Logic ==========
     function handleRendering() {
         if (currentFilter === 'all') {
-            // Hide group-specific container and show the central table with 'Coming Soon' to avoid showing fake names
-            if (overallContainer) overallContainer.style.display = 'none';
-            document.querySelector('.table-container').style.display = '';
-            showComingSoon();
+            // Show 4 separate group leaderboards (A-D) with 'Coming Soon' placeholders
+            if (overallContainer) overallContainer.style.display = '';
+            document.querySelector('.table-container').style.display = 'none';
+            renderGroupsComingSoon();
+            renderMVP();
         } else {
             // ensure overall view is hidden and the regular table is visible
             if (overallContainer) overallContainer.style.display = 'none';
@@ -275,6 +276,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Render MVP top 5
         renderMVP();
+    }
+
+    // Render the 'Coming Soon' placeholders for group view (used for Overall before matches begin)
+    function renderGroupsComingSoon() {
+        const groups = ['A','B','C','D'];
+        groups.forEach(g => {
+            const container = document.getElementById('group' + g);
+            if (!container) return;
+            container.innerHTML = `
+                <div class="group-card">
+                    <h3>Group ${g}</h3>
+                    <div class="coming-soon">Coming Soon</div>
+                </div>
+            `;
+        });
     }
 
     function renderMVP() {

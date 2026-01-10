@@ -2005,6 +2005,40 @@ body.registration-visible {
 .mvp-list { margin: 0; padding-left: 1.2rem; }
 .mvp-list li { margin-bottom: 0.5rem; }
 
+/* Group coming soon card */
+.group-card {
+  border-radius: 10px;
+  padding: 18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px dashed rgba(255,255,255,0.04);
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.coming-soon {
+  color: var(--accent-cyan);
+  font-weight: 800;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: rgba(0,240,255,0.04);
+  box-shadow: 0 8px 24px rgba(0,240,255,0.03);
+  animation: pulse-come 2.6s infinite ease-in-out;
+}
+
+@keyframes pulse-come {
+  0% { transform: scale(0.995); opacity: 0.95; }
+  50% { transform: scale(1.02); opacity: 1; }
+  100% { transform: scale(0.995); opacity: 0.95; }
+}
+
 /* Contact widget (Denvil) */
 .contact-widget {
   position: fixed;
