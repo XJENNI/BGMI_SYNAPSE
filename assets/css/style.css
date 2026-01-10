@@ -652,6 +652,41 @@ p {
   animation: hero-glitch 4s infinite alternate;
 }
 
+/* Hero sponsor badge */
+.hero-sponsor {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  background: linear-gradient(90deg, rgba(0,240,255,0.06), rgba(188,19,254,0.04));
+  border: 1px solid rgba(0,240,255,0.12);
+  padding: 8px 14px;
+  border-radius: 999px;
+  box-shadow: 0 12px 36px rgba(0,240,255,0.06);
+  transform-origin: center;
+}
+
+.hero-sponsor-link { display: inline-flex; gap: 10px; align-items: center; text-decoration: none; }
+.hero-sponsor-logo { width: 40px; height: auto; display: block; border-radius: 6px; background: rgba(0,0,0,0.28); padding: 6px; }
+.hero-sponsor-text { color: var(--text-primary); font-weight: 700; }
+.hero-sponsor-text small { display:block; color: var(--text-secondary); font-weight:600; font-size:0.7rem; }
+
+.hero-sponsor:hover, .hero-sponsor:focus-within { transform: translateY(-6px) scale(1.02); box-shadow: 0 24px 60px rgba(0,240,255,0.12); }
+
+@keyframes hero-sponsor-pulse {
+  0% { box-shadow: 0 10px 30px rgba(0,240,255,0.04); }
+  50% { box-shadow: 0 20px 48px rgba(0,240,255,0.08); }
+  100% { box-shadow: 0 10px 30px rgba(0,240,255,0.04); }
+}
+
+.hero-sponsor { animation: hero-sponsor-pulse 4s ease-in-out infinite; }
+
+@media (max-width: 576px) {
+  .hero-sponsor { padding: 6px 10px; gap: 8px; }
+  .hero-sponsor-logo { width: 34px; padding: 4px; }
+  .hero-sponsor-text small { display:none; }
+}
+
 @keyframes hero-glitch {
   0%, 95%, 100% { transform: skew(0deg); text-shadow: 0 0 15px rgba(0, 240, 255, 0.6); }
   96% { transform: skew(2deg); text-shadow: -3px 0 var(--accent-red), 3px 0 var(--accent-cyan); }
@@ -976,6 +1011,55 @@ p {
   color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.1em;
+}
+
+/* KRAFTON branded highlight */
+.highlight-krafton {
+  background: linear-gradient(90deg, rgba(0,240,255,0.04), rgba(188,19,254,0.03));
+  border-color: rgba(0,240,255,0.12);
+  box-shadow: 0 30px 60px rgba(0,240,255,0.04);
+  overflow: visible;
+}
+
+.highlight-krafton .krafton-logo {
+  width: 56px;
+  height: auto;
+  display: inline-block;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.25);
+  padding: 6px;
+  filter: drop-shadow(0 8px 18px rgba(0,240,255,0.12));
+}
+
+.krafton-ribbon {
+  position: absolute;
+  top: 16px;
+  right: -36px;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+  color: #000;
+  font-weight: 800;
+  padding: 8px 18px;
+  border-radius: 6px;
+  transform: rotate(22deg);
+  box-shadow: 0 8px 28px rgba(0,240,255,0.08);
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+
+/* Subtle pulsing glow */
+.highlight-krafton {
+  animation: krafton-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes krafton-glow {
+  from { box-shadow: 0 14px 40px rgba(0,240,255,0.04); }
+  to { box-shadow: 0 28px 80px rgba(0,240,255,0.12); }
+}
+
+/* Make ribbon friendlier on mobile */
+@media (max-width: 768px) {
+  .krafton-ribbon { right: -22px; font-size: 0.75rem; padding: 6px 12px; }
+  .highlight-krafton .krafton-logo { width: 48px; padding: 5px; }
 }
 
 /* ========== Sponsors Section ========== */
