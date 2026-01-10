@@ -41,27 +41,25 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!mainNav) return;
         mainNav.classList.add("active");
         mainNav.setAttribute("aria-hidden", "false");
-        
+
+        // show overlay and lock scroll
         if (navOverlay) navOverlay.classList.add("active");
         if (menuToggle) {
             menuToggle.classList.add("active");
             menuToggle.setAttribute("aria-expanded", "true");
         }
-        
+
         body.classList.add("nav-open");
+        // Lock page scrolling simply
+        document.body.style.overflow = "hidden";
     };
 
     const closeMobileNav = (options = {}) => {
         if (!mainNav) return;
-        // Remove all potential 'open'/'active' classes used across files
-        mainNav.classList.remove("active", "show", "open");
+        mainNav.classList.remove("active", "open", "show");
         mainNav.setAttribute("aria-hidden", "true");
 
-        if (navOverlay) {
-            navOverlay.classList.remove("active", "show", "visible", "open");
-            // reset inline styles if any were used to lock pointer events
-            navOverlay.style.pointerEvents = "";
-        }
+        if (navOverlay) navOverlay.classList.remove("active", "show", "visible");
 
         if (menuToggle) {
             menuToggle.classList.remove("active", "open");
@@ -71,9 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // Remove known body classes that can cause blur or no-scroll issues
         body.classList.remove("nav-open", "menu-open", "no-scroll", "blur-active", "no-scroll-lock");
 
-        // Re-enable page scrolling explicitly
-        document.documentElement.style.overflow = "";
+        // Restore page scrolling
         document.body.style.overflow = "";
+        document.documentElement.style.overflow = "";
     };
 
     const toggleMobileNav = () => {

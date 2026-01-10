@@ -143,39 +143,41 @@
 
 /* ========== Tablets (max-width: 768px) ========== */
 @media (max-width: 768px) {
-  /* Prevent scroll when mobile nav is open */
+  /* Prevent scroll when mobile nav is open - avoid setting position fixed on body */
   body.nav-open {
     overflow: hidden;
-    position: fixed;
+    position: static;
     width: 100%;
-    height: 100%;
+    height: auto;
   }
 
   /* Navigation Overlay Header Height Fix */
   body { padding-top: calc(72px + env(safe-area-inset-top, 0)); }
   
+  /* Mobile Nav Panel - solid background, high z-index, no backdrop-filter */
   .main-nav {
     position: fixed;
     top: 0;
     right: 0;
-    transform: translateX(105%); /* off-screen */
+    transform: translateX(105%); /* kept off-screen when closed */
     width: 85%;
-    max-width: 350px;
-    height: 100dvh;
-    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    max-width: 360px;
+    height: 100vh;
+    padding: calc(80px + env(safe-area-inset-top, 0)) 0 calc(40px + env(safe-area-inset-bottom, 0));
+    background: #03030a; /* solid dark background avoids iOS blur issues */
     display: flex;
     flex-direction: column;
-    padding: calc(100px + env(safe-area-inset-top, 0)) 0 calc(40px + env(safe-area-inset-bottom, 0));
     border-left: 3px solid var(--accent-cyan);
-    box-shadow: -15px 0 50px rgba(0, 0, 0, 0.8);
-    transition: transform 0.36s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: var(--z-mobile-nav);
+    box-shadow: -18px 0 50px rgba(0, 0, 0, 0.6);
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 100000; /* ensure above everything */
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     will-change: transform;
+    isolation: isolate; /* prevent parent filters/blur from affecting it */
   }
 
-  /* Decorative elements for the sidebar */
+  /* Decorative label inside nav */
   .main-nav::before {
     content: 'OPERATIONS MENU';
     position: absolute;
@@ -191,20 +193,25 @@
 
   .main-nav.active {
     transform: translateX(0);
-    /* Ensure mobile nav sits above any fixed UI (e.g., 'Coded by' card) */
-    z-index: 99999; /* very high to avoid overlap */
-    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-secondary) 100%); /* fully opaque */
+  }
+
+  /* Overlay sits beneath the panel but above content */
+  .nav-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.65);
+    opacity: 0; visibility: hidden;
+    z-index: 99990;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+  }
+  .nav-overlay.active {
+    opacity: 1; visibility: visible;
   }
 
   @keyframes nav-slide-in {
     from { transform: translateX(105%); }
     to { transform: translateX(0); }
-  }
-
-  /* When overlay is active, make sure it covers other fixed items */
-  .nav-overlay.active {
-    z-index: 99998;
-    background: rgba(0,0,0,0.6); /* slightly darker overlay to emphasize menu */
   }
 
   .nav-list {

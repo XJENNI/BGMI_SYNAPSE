@@ -336,9 +336,9 @@ p {
   background: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-subtle);
-  z-index: calc(var(--z-header) + 10);
+  z-index: 99980; /* kept below mobile nav */
   transition: all var(--transition-normal);
-}
+} 
 
 /* Mobile Nav Overlay */
 .nav-overlay {
