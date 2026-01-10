@@ -143,22 +143,42 @@
 
 /* ========== Tablets (max-width: 768px) ========== */
 @media (max-width: 768px) {
-  /* Navigation */
+  /* Navigation Overlay Header Height Fix */
   body { padding-top: calc(72px + env(safe-area-inset-top, 0)); }
+  
   .main-nav {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 80%;
-    max-width: 300px;
+    right: -105%;
+    width: 85%;
+    max-width: 350px;
     height: 100vh;
-    background: var(--bg-secondary);
+    height: 100dvh;
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    padding: 100px var(--space-lg) var(--space-lg);
-    border-left: 1px solid var(--border-subtle);
-    transition: right var(--transition-normal);
+    padding: calc(100px + env(safe-area-inset-top, 0)) 0 calc(40px + env(safe-area-inset-bottom, 0));
+    border-left: 3px solid var(--accent-cyan);
+    box-shadow: -15px 0 50px rgba(0, 0, 0, 0.8);
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: var(--z-mobile-nav);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    backdrop-filter: blur(10px);
+  }
+
+  /* Decorative elements for the sidebar */
+  .main-nav::before {
+    content: 'OPERATIONS MENU';
+    position: absolute;
+    top: 35px;
+    left: 40px;
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: var(--accent-cyan);
+    opacity: 0.8;
   }
 
   .main-nav.active {
@@ -169,17 +189,97 @@
     flex-direction: column;
     gap: 0;
     width: 100%;
+    margin-bottom: auto;
   }
 
   .nav-link {
-    display: block;
-    padding: var(--space-md);
-    border-bottom: 1px solid var(--border-subtle);
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 2.5rem;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.05);
+    text-align: left;
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    transition: all 0.3s ease;
+    color: var(--text-secondary);
   }
 
+  .nav-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 15%;
+    width: 4px;
+    height: 70%;
+    background: var(--accent-cyan);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px var(--accent-cyan);
+  }
+
+  .nav-link:hover, 
+  .nav-link.active {
+    background: rgba(0, 240, 255, 0.05);
+    color: var(--accent-cyan);
+    padding-left: 3rem;
+  }
+
+  .nav-link.active::before {
+    transform: scaleY(1);
+  }
+
+  /* Right arrow for nav links */
   .nav-link::after {
-    display: none;
+    content: '\f105';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 1rem;
+    opacity: 0.3;
+    display: block;
+    width: auto;
+    height: auto;
+    background: none;
+    position: static;
+    transform: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    opacity: 1;
+    transform: translateX(5px);
+  }
+
+  /* Social links container in sidebar */
+  .nav-social-mobile {
+    display: flex;
+    gap: var(--space-md);
+    padding: 0 2.5rem;
+    margin-top: var(--space-xl);
+  }
+
+  .nav-social-mobile a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .nav-social-mobile a:hover {
+    background: var(--accent-cyan);
+    color: var(--bg-primary);
+    border-color: var(--accent-cyan);
+    transform: translateY(-3px);
   }
 
   .menu-toggle {
@@ -187,25 +287,26 @@
     z-index: calc(var(--z-mobile-nav) + 1);
   }
 
-  /* Overlay for mobile nav */
+  /* Overlay for mobile nav - Darker and more blur */
   .nav-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(4px);
     opacity: 0;
     visibility: hidden;
-    transition: all var(--transition-normal);
+    transition: all 0.4s ease;
     z-index: calc(var(--z-mobile-nav) - 1);
-    pointer-events: none; /* don't intercept taps when hidden */
+    pointer-events: none;
   }
 
   .nav-overlay.active {
     opacity: 1;
     visibility: visible;
-    pointer-events: auto; /* allow taps to close the menu */
+    pointer-events: auto;
   }
 
   /* Hero */
