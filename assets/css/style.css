@@ -653,9 +653,8 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
-    linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.9) 100%),
-    url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+  /* Gradient-only hero background (images removed by request) */
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(6, 6, 12, 0.6) 100%);
   z-index: -2;
 }
 
