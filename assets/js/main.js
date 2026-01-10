@@ -26,13 +26,25 @@ document.addEventListener('DOMContentLoaded', function() {
     // Scroll lock state for mobile nav
     const scrollLockState = { scrollY: 0 };
 
+    // Accessibility hint: connect toggle to menu
+    if (menuToggle && mainNav) {
+        menuToggle.setAttribute('aria-controls', 'mainNav');
+        menuToggle.setAttribute('aria-expanded', 'false');
+    }
+
     function toggleMobileNav() {
         const isOpen = menuToggle.classList.toggle('active');
         mainNav.classList.toggle('active');
         navOverlay.classList.toggle('active');
         menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 
+        // Inline style fallback for environments where CSS transitions may behave unpredictably
         if (isOpen) {
+            mainNav.style.right = '0';
+            navOverlay.style.opacity = '1';
+            navOverlay.style.visibility = 'visible';
+            navOverlay.classList.add('active');
+
             // lock scroll on mobile/iOS
             scrollLockState.scrollY = window.scrollY || document.documentElement.scrollTop;
             document.documentElement.style.height = '100%';
@@ -42,7 +54,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const first = mainNav.querySelector('.nav-link');
             if (first) first.focus();
         } else {
-            // restore scroll
+            // restore scroll and remove inline fallbacks
+            mainNav.style.right = '';
+            navOverlay.style.opacity = '';
+            navOverlay.style.visibility = '';
+            navOverlay.classList.remove('active');
+
             document.body.style.position = '';
             document.body.style.top = '';
             document.documentElement.style.height = '';

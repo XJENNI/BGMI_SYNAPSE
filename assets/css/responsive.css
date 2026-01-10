@@ -199,11 +199,13 @@
     visibility: hidden;
     transition: all var(--transition-normal);
     z-index: calc(var(--z-mobile-nav) - 1);
+    pointer-events: none; /* don't intercept taps when hidden */
   }
 
   .nav-overlay.active {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto; /* allow taps to close the menu */
   }
 
   /* Hero */
