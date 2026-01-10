@@ -6,6 +6,7 @@
     "start": "http-server -c-1 -p 8080",
     "test:e2e": "playwright test",
     "test:compat": "playwright test tests/compat.spec.js",
+    "images:optimize": "node scripts/optimize-images.js",
     "test": "npm run test:e2e"
   },
   "devDependencies": {
