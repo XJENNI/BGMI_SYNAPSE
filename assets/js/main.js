@@ -1,6 +1,5 @@
 /**
- * Main JS for Synapse BGMI Website
- * Cleaned and Consolidated Version
+ * Main JS for Synapse BGMI Website - Optimized for Mobile
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -13,18 +12,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const navClose = document.getElementById("navClose");
     const header = document.querySelector(".site-header") || document.getElementById("header");
     
-    // 2. Preloader
-    if (preloader) {
-        window.addEventListener("load", () => {
+    // 2. Preloader - Robust Handling (hide after 3s max)
+    const hidePreloader = () => {
+        if (preloader) {
+            preloader.style.opacity = "0";
             setTimeout(() => {
-                preloader.style.opacity = "0";
-                setTimeout(() => {
-                    preloader.style.display = "none";
-                    // Trigger scroll animation check on load after preloader
-                    if (typeof handleScrollAnimations === "function") handleScrollAnimations();
-                }, 500);
-            }, 1000);
-        });
+                preloader.style.display = "none";
+                if (typeof handleScrollAnimations === "function") handleScrollAnimations();
+            }, 500);
+        }
+    };
+
+    if (preloader) {
+        // Hide when window loads or after 3 seconds max
+        window.addEventListener("load", hidePreloader);
+        setTimeout(hidePreloader, 3000); 
     }
 
     // 3. Navigation Controls
@@ -40,11 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         
         body.classList.add("nav-open");
-        
-        // Trap focus to close button
-        if (navClose) {
-            setTimeout(() => navClose.focus(), 100);
-        }
     };
 
     const closeMobileNav = () => {
@@ -62,15 +59,14 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const toggleMobileNav = () => {
-        if (!mainNav) return;
-        if (mainNav.classList.contains("active")) {
+        if (mainNav && mainNav.classList.contains("active")) {
             closeMobileNav();
         } else {
             openMobileNav();
         }
     };
 
-    // 4. Navigation Event Listeners
+    // 4. Navigation Event Listeners (Support both click and touch)
     if (menuToggle) {
         menuToggle.addEventListener("click", (e) => {
             e.preventDefault();
@@ -121,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     window.addEventListener("scroll", handleHeaderScroll);
-    handleHeaderScroll(); // Call once on load
+    handleHeaderScroll(); 
 
     // 6. Active Page Link Detection
     const setActiveNavLink = () => {

@@ -172,7 +172,6 @@
     z-index: var(--z-mobile-nav);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    backdrop-filter: blur(10px);
     will-change: transform;
   }
 
@@ -229,7 +228,8 @@
     letter-spacing: 2px;
     position: relative;
     transition: all 0.3s ease;
-    color: var(--text-secondary);
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
 
   .nav-link::before {
