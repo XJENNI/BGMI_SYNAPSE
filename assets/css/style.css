@@ -1700,6 +1700,14 @@ p {
   transform: translateY(0);
 }
 
+/* Fallbacks: make sure content isn't hidden if JS/IntersectionObserver isn't available */
+.no-intersection .fade-in,
+.no-js .fade-in {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
 /* ========== Preloader ========== */
 .preloader {
   position: fixed;
