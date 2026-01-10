@@ -195,7 +195,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========== Handle Rendering Logic ==========
     function handleRendering() {
         if (currentFilter === 'all') {
-            renderOverallView();
+            // Hide group-specific container and show the central table with 'Coming Soon' to avoid showing fake names
+            if (overallContainer) overallContainer.style.display = 'none';
+            document.querySelector('.table-container').style.display = '';
+            showComingSoon();
         } else {
             // ensure overall view is hidden and the regular table is visible
             if (overallContainer) overallContainer.style.display = 'none';
