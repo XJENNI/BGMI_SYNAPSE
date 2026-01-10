@@ -44,18 +44,29 @@ document.addEventListener("DOMContentLoaded", () => {
         body.classList.add("nav-open");
     };
 
-    const closeMobileNav = () => {
+    const closeMobileNav = (options = {}) => {
         if (!mainNav) return;
-        mainNav.classList.remove("active");
+        // Remove all potential 'open'/'active' classes used across files
+        mainNav.classList.remove("active", "show", "open");
         mainNav.setAttribute("aria-hidden", "true");
-        
-        if (navOverlay) navOverlay.classList.remove("active");
+
+        if (navOverlay) {
+            navOverlay.classList.remove("active", "show", "visible", "open");
+            // reset inline styles if any were used to lock pointer events
+            navOverlay.style.pointerEvents = "";
+        }
+
         if (menuToggle) {
-            menuToggle.classList.remove("active");
+            menuToggle.classList.remove("active", "open");
             menuToggle.setAttribute("aria-expanded", "false");
         }
-        
-        body.classList.remove("nav-open");
+
+        // Remove known body classes that can cause blur or no-scroll issues
+        body.classList.remove("nav-open", "menu-open", "no-scroll", "blur-active", "no-scroll-lock");
+
+        // Re-enable page scrolling explicitly
+        document.documentElement.style.overflow = "";
+        document.body.style.overflow = "";
     };
 
     const toggleMobileNav = () => {
@@ -97,12 +108,21 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Handle internal nav link clicks (close menu)
+    // Handle internal nav link clicks (close menu) — robust for anchor links
     const navLinks = document.querySelectorAll(".nav-link, .nav-item a, .nav-list a");
     navLinks.forEach(link => {
-        link.addEventListener("click", () => {
-            if (mainNav && mainNav.classList.contains("active")) {
-                closeMobileNav();
+        link.addEventListener("click", (e) => {
+            // Close menu immediately
+            closeMobileNav();
+
+            // If this is an in-page anchor (href starts with '#'), let the browser jump, but ensure focus/scroll is handled
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                // Small timeout to allow the menu to close before the page jumps
+                setTimeout(() => {
+                    // Use location.hash so anchor jump occurs on single-page
+                    window.location.hash = href;
+                }, 20);
             }
         });
     });
