@@ -1,0 +1,20 @@
+# Node, OS, editor
+node_modules/
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Build artifacts
+dist/
+
+# Secrets
+.env
+
+# Ignore large image source folders until optimized
+assets/images/*
+!assets/images/.gitkeep
+
+# Ignore system files
+*.log
+
+# Allow everything else
