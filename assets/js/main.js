@@ -12,7 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const navClose = document.getElementById("navClose");
     const header = document.querySelector(".site-header") || document.getElementById("header");
     
-    // 2. Preloader - Robust Handling (hide after 3s max)
+    // 1a. FORCE RESET ON LOAD - This ensures every page starts fresh, removing any stuck blur/overlay
+    body.classList.remove("nav-open", "menu-open", "no-scroll", "blur-active", "no-scroll-lock");
+    if (mainNav) mainNav.classList.remove("active", "show", "open");
+    if (navOverlay) navOverlay.classList.remove("active", "show", "visible");
+    document.documentElement.style.overflow = ""; // Restore scrolling
+    document.body.style.overflow = ""; // Restore body scrolling
+    
+    // 2. Preloader - Robust Handling (hide after 3s max, even if images fail)
     const hidePreloader = () => {
         if (preloader) {
             preloader.style.opacity = "0";
@@ -24,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     if (preloader) {
-        // Hide when window loads or after 3 seconds max
+        // Hide when window loads or after 3 seconds max (safety net)
         window.addEventListener("load", hidePreloader);
         setTimeout(hidePreloader, 3000); 
     }
