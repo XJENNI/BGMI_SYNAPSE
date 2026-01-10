@@ -184,11 +184,18 @@
 
   .main-nav.active {
     transform: translateX(0);
+    /* Ensure mobile nav sits above any fixed UI (e.g., 'Coded by' card) */
+    z-index: 11000;
   }
 
   @keyframes nav-slide-in {
     from { transform: translateX(105%); }
     to { transform: translateX(0); }
+  }
+
+  /* When overlay is active, make sure it covers other fixed items */
+  .nav-overlay.active {
+    z-index: 10999;
   }
 
   .nav-list {
