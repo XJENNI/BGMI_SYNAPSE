@@ -322,67 +322,7 @@ p {
   border: 0;
 }
 
-/* ========== Ticker Bar (removed) ========== */
-.ticker-bar { display: none !important; }
-
-/* ========== Cyber Navigation Hub (Floating Right) ========== */
-.cyber-nav-hub {
-  position: fixed;
-  right: 22px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 5000;
-  pointer-events: auto;
-}
-
-.cyber-nav-item {
-  background: rgba(6, 7, 12, 0.85);
-  border: 1px solid rgba(0,240,255,0.08);
-  padding: 10px 16px;
-  text-transform: uppercase;
-  font-family: var(--font-heading);
-  color: var(--accent-cyan);
-  text-decoration: none;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  transform: skewX(-14deg);
-  transition: all 0.28s cubic-bezier(0.22, 1, 0.36, 1);
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  min-width: 62px;
-  overflow: hidden;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
-}
-
-.cyber-nav-item i { transform: skewX(14deg); font-size: 1.1rem; margin-left: 6px; }
-
-.cyber-nav-item .nav-text {
-  max-width: 0; opacity: 0; white-space: nowrap; overflow: hidden; transform: skewX(14deg);
-  transition: max-width 0.28s ease, opacity 0.28s ease, margin 0.28s ease;
-}
-
-.cyber-nav-item:hover, .cyber-nav-item:focus {
-  background: linear-gradient(90deg, rgba(0,240,255,0.95), rgba(188,19,254,0.95));
-  color: #000;
-  min-width: 180px;
-  box-shadow: 0 8px 30px rgba(0,240,255,0.12);
-}
-
-.cyber-nav-item:hover .nav-text, .cyber-nav-item:focus .nav-text { max-width: 160px; opacity: 1; margin-right: 10px; }
-
-/* Keyboard focus visible */
-.cyber-nav-item:focus { outline: 3px solid rgba(0,240,255,0.12); outline-offset: 2px; }
-
-/* Mobile layout: bottom row */
-@media (max-width: 768px) {
-  .cyber-nav-hub { top: auto; bottom: 26px; right: 18px; transform: none; flex-direction: row; gap: 10px; }
-  .cyber-nav-item { transform: none; min-width: 48px; padding: 12px; }
-  .cyber-nav-item .nav-text { display: none; }
-}
+/* Cyber Navigation and ticker removed by request */
 
 /* ========== Header & Navigation ========== */
 
