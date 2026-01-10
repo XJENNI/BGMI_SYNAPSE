@@ -17,12 +17,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const matchFilters = document.getElementById('matchFilters');
     const lastUpdated = document.getElementById('lastUpdated');
     const filterButtons = document.querySelectorAll('.filter-btn');
+    const overallContainer = document.getElementById('overallContainer');
+    const mvpArea = document.getElementById('mvpArea');
 
     // ========== State ==========
     let allTeams = [];
+    let allPlayers = [];
     let currentFilter = 'all';
     let currentMatch = 'all';
-    let refreshTimer = null;
+    let refreshTimer = null; 
 
     // ========== Initialize ==========
     init();
@@ -36,21 +39,31 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========== Fetch Standings Data ==========
     async function fetchStandings() {
         try {
-            const response = await fetch(CONFIG.dataUrl);
-            
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+            const [teamsResp, playersResp] = await Promise.all([
+                fetch(CONFIG.dataUrl),
+                // players file is optional; failures won't block standings
+                fetch('data/players.json').catch(() => null)
+            ]);
+
+            if (!teamsResp.ok) {
+                throw new Error(`HTTP error! status: ${teamsResp.status}`);
             }
-            
-            allTeams = await response.json();
-            
+
+            allTeams = await teamsResp.json();
+
+            if (playersResp && playersResp.ok) {
+                allPlayers = await playersResp.json();
+            } else {
+                allPlayers = [];
+            }
+
             // Sort by rank
             allTeams.sort((a, b) => a.rank - b.rank);
-            
-            // Use unified renderer to avoid showing fake overall rows
+
+            // Render according to filter state
             handleRendering();
             updateTimestamp();
-            
+
         } catch (error) {
             console.error('Error fetching standings:', error);
             showError();
@@ -73,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (teams.length === 0) {
             leaderboardBody.innerHTML = `
                 <tr>
-                    <td colspan="8" style="text-align: center; padding: 2rem; color: var(--text-muted);">
+                    <td colspan="6" style="text-align: center; padding: 2rem; color: var(--text-muted);">
                         No teams found for this filter.
                     </td>
                 </tr>
@@ -118,9 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <td class="team-name">${displayName}</td>
             <td class="hide-mobile"><span class="group-badge">${team.group}</span></td>
             <td class="hide-mobile">${team.matchesPlayed}</td>
-            <td class="kills-cell">${team.totalKills}</td>
             <td class="hide-mobile">${team.placementPoints}</td>
-            <td class="hide-mobile">${team.killPoints}</td>
             <td class="total-score">${team.totalScore}</td>
         `;
 
@@ -184,9 +195,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========== Handle Rendering Logic ==========
     function handleRendering() {
         if (currentFilter === 'all') {
-            // For privacy/staging, do not show overall fake data
-            showComingSoon();
+            renderOverallView();
         } else {
+            // ensure overall view is hidden and the regular table is visible
+            if (overallContainer) overallContainer.style.display = 'none';
+            document.querySelector('.table-container').style.display = '';
+
             // Prepare match buttons (5 for qualifiers, 6 for finals)
             if (currentFilter === 'finals') {
                 populateMatchButtons(6);
@@ -217,11 +231,57 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // ========== Overall View (Groups + MVP) ==========
+    function renderOverallView() {
+        if (!overallContainer) return;
+
+        // Show overall container and hide the main table
+        overallContainer.style.display = '';
+        document.querySelector('.table-container').style.display = 'none';
+
+        const groups = ['A','B','C','D'];
+
+        groups.forEach(g => {
+            const container = document.getElementById('group' + g);
+            if (!container) return;
+            const teams = allTeams.filter(t => t.group === g).sort((a,b) => a.rank - b.rank);
+            let html = `<h3>Group ${g}</h3>`;
+            html += `<table class="leaderboard-table small" aria-label="Group ${g} standings"><thead><tr><th>Rank</th><th>Team</th><th class="hide-mobile">Matches</th><th class="hide-mobile">Place Pts</th><th>Total</th></tr></thead><tbody>`;
+            if (teams.length === 0) {
+                html += `<tr><td colspan="5" style="text-align:center; padding:1rem; color:var(--text-muted);">No teams in Group ${g}</td></tr>`;
+            } else {
+                teams.forEach(team => {
+                    html += `<tr><td>#${team.rank}</td><td>${escapeHtml(team.teamName)}</td><td class="hide-mobile">${team.matchesPlayed}</td><td class="hide-mobile">${team.placementPoints}</td><td>${team.totalScore}</td></tr>`;
+                });
+            }
+            html += '</tbody></table>';
+            container.innerHTML = html;
+        });
+
+        // Render MVP top 5
+        renderMVP();
+    }
+
+    function renderMVP() {
+        if (!mvpArea) return;
+        if (!allPlayers || allPlayers.length === 0) {
+            mvpArea.innerHTML = `<h3>Tournament MVP (Top 5)</h3><p class="text-muted">Player stats coming soon</p>`;
+            return;
+        }
+        const top5 = allPlayers.slice().sort((a,b) => b.mvpScore - a.mvpScore).slice(0,5);
+        let html = `<h3>Tournament MVP (Top 5)</h3><ol class="mvp-list">`;
+        top5.forEach(p => {
+            html += `<li><strong>${escapeHtml(p.playerName)}</strong> — ${escapeHtml(p.team)} <span class="muted">(${p.mvpScore} pts)</span></li>`;
+        });
+        html += '</ol>';
+        mvpArea.innerHTML = html;
+    }
+
     // ========== Show Coming Soon State ==========
     function showComingSoon() {
         leaderboardBody.innerHTML = `
             <tr>
-                <td colspan="8">
+                <td colspan="6">
                     <div style="text-align: center; padding: 4rem 2rem; background: rgba(0,0,0,0.3); border-radius: 8px;">
                         <div style="font-size: 3rem; color: var(--accent-cyan); margin-bottom: 1rem;">🕒</div>
                         <h3 style="color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 2px;">Data Coming Soon</h3>
@@ -301,7 +361,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (leaderboardBody) {
             leaderboardBody.innerHTML = `
                 <tr>
-                    <td colspan="8" style="text-align: center; padding: 4rem 2rem; color: var(--accent-cyan);">
+                    <td colspan="6" style="text-align: center; padding: 4rem 2rem; color: var(--accent-cyan);">
                         <i class="fas fa-clock" style="font-size: 3rem; margin-bottom: 1.5rem; display: block; filter: drop-shadow(0 0 10px var(--accent-cyan));"></i>
                         <span style="font-family: var(--font-heading); font-size: 2rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">Coming Soon</span>
                         <p style="color: var(--text-secondary); margin-top: 10px;">Standings will be updated live once the tournament begins on Feb 6th.</p>
