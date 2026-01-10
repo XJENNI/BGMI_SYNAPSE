@@ -6,17 +6,49 @@
 document.addEventListener('DOMContentLoaded', function() {
     // ========== Preloader ==========
     const preloader = document.getElementById('preloader');
-    
+    let preloaderHidden = false;
+
     window.addEventListener('load', function() {
         setTimeout(() => {
-            preloader.classList.add('hidden');
+            if (preloader) preloader.classList.add('hidden');
+            preloaderHidden = true;
         }, 800);
     });
 
-    // Fallback: Hide preloader after 3 seconds max
+    // Robust fallback: Hide preloader after 3s and show a compatibility banner after 5s if still present
     setTimeout(() => {
-        preloader.classList.add('hidden');
+        if (preloader && !preloader.classList.contains('hidden')) {
+            try { preloader.classList.add('hidden'); } catch (e) { preloader.style.display = 'none'; }
+            preloaderHidden = true;
+        }
     }, 3000);
+
+    setTimeout(() => {
+        if (preloader && !preloader.classList.contains('hidden')) {
+            try { preloader.classList.add('hidden'); } catch (e) { preloader.style.display = 'none'; }
+            preloaderHidden = true;
+            showCompatibilityBanner('Compatibility issue detected: some features may not be supported on this device — content has been revealed for access.');
+        }
+    }, 5000);
+
+    // Diagnostic banner for compatibility issues — unobtrusive and dismissible
+    function showCompatibilityBanner(message) {
+        if (document.getElementById('compatBanner')) return;
+        const banner = document.createElement('div');
+        banner.id = 'compatBanner';
+        banner.setAttribute('role', 'status');
+        banner.setAttribute('aria-live', 'polite');
+        banner.style = 'position: fixed; right: 16px; bottom: 16px; background: rgba(16,16,24,0.95); color: white; padding: 0.8rem 1rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); z-index: 99999; box-shadow: 0 10px 30px rgba(0,0,0,0.6); max-width: 320px; font-size: 0.9rem;';
+        banner.innerHTML = `
+            <div style="display:flex; gap:0.6rem; align-items:center;">
+                <div style="font-size:1.2rem; color:var(--accent-cyan);">⚠️</div>
+                <div style="flex:1">${message}</div>
+                <button id="compatClose" aria-label="Dismiss" style="background:transparent; border:0; color:var(--text-secondary); margin-left:0.6rem; cursor:pointer;">✕</button>
+            </div>
+        `;
+        document.body.appendChild(banner);
+        document.getElementById('compatClose').addEventListener('click', function() { banner.remove(); });
+    }
 
     // ========== Mobile Navigation ==========
     const menuToggle = document.getElementById('menuToggle');
