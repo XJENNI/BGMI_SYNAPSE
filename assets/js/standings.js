@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function renderMVP() {
         if (!mvpArea) return;
         if (!allPlayers || allPlayers.length === 0) {
-            mvpArea.innerHTML = `<h3>Tournament MVP (Top 5)</h3><p class="text-muted">Player stats coming soon</p>`;
+            mvpArea.innerHTML = `<h3>Tournament MVP (Top 5)</h3><p class="text-muted">Player stats coming soon</p><p class="mvp-prize" style="margin-top:8px;">Prize: <strong>₹500</strong></p>`;
             return;
         }
         const top5 = allPlayers.slice().sort((a,b) => b.mvpScore - a.mvpScore).slice(0,5);
@@ -288,7 +288,7 @@ document.addEventListener('DOMContentLoaded', function() {
         top5.forEach(p => {
             html += `<li><strong>${escapeHtml(p.playerName)}</strong> — ${escapeHtml(p.team)} <span class="muted">(${p.mvpScore} pts)</span></li>`;
         });
-        html += '</ol>';
+        html += `</ol><p class="mvp-prize" style="margin-top:8px;">Prize: <strong>₹500</strong></p>`;
         mvpArea.innerHTML = html;
     }
 

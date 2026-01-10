@@ -231,8 +231,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // call it after DOM is ready
-    setTimeout(setupRegistrationBanner, 60);        // setup contact tab
-        setTimeout(setupContactTab, 60);
+    setTimeout(setupRegistrationBanner, 60);
+    // setup contact tab
+    setTimeout(setupContactTab, 60);
+    // small registration toast popup (show once per user)
+    setTimeout(setupRegistrationToast, 900);
 
     // ========== Contact Tab ==========
     function setupContactTab() {
@@ -279,6 +282,45 @@ document.addEventListener("DOMContentLoaded", () => {
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && tab.classList.contains('open')) closePanel();
         });
+
+        // Registration Toast: show small popup with link to registration form
+        function setupRegistrationToast() {
+            const toast = document.getElementById('regToast');
+            const closeBtn = document.getElementById('regToastClose');
+            const SHOWN_KEY = 'synapse_reg_toast_shown_v1';
+            if (!toast) return;
+            // don't show repeatedly if user already closed it
+            if (localStorage.getItem(SHOWN_KEY)) return;
+
+            const show = () => {
+                toast.classList.add('visible');
+            };
+            const hide = () => {
+                toast.classList.remove('visible');
+                try { localStorage.setItem(SHOWN_KEY, '1'); } catch (err) { /* ignore */ }
+            };
+
+            // show after a short delay if not shown before
+            setTimeout(show, 800);
+            // auto hide after 9s
+            const timer = setTimeout(hide, 9000);
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    hide();
+                    clearTimeout(timer);
+                });
+            }
+
+            // if user clicks the register link, mark as shown and let link open
+            toast.addEventListener('click', (e) => {
+                if (e.target && e.target.tagName === 'A') {
+                    try { localStorage.setItem(SHOWN_KEY, '1'); } catch (err) { }
+                    hide();
+                }
+            });
+        }
     }
 
     // 7. Reveal Animations on Scroll
