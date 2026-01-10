@@ -1,0 +1,14 @@
+{
+  "name": "synapse-bgmi-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "http-server -c-1 -p 8080",
+    "test:e2e": "playwright test",
+    "test": "npm run test:e2e"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.36.0",
+    "http-server": "^14.1.1"
+  }
+}
