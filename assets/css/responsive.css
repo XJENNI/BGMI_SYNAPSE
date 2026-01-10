@@ -185,7 +185,8 @@
   .main-nav.active {
     transform: translateX(0);
     /* Ensure mobile nav sits above any fixed UI (e.g., 'Coded by' card) */
-    z-index: 11000;
+    z-index: 99999; /* very high to avoid overlap */
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-secondary) 100%); /* fully opaque */
   }
 
   @keyframes nav-slide-in {
@@ -195,7 +196,8 @@
 
   /* When overlay is active, make sure it covers other fixed items */
   .nav-overlay.active {
-    z-index: 10999;
+    z-index: 99998;
+    background: rgba(0,0,0,0.6); /* slightly darker overlay to emphasize menu */
   }
 
   .nav-list {
