@@ -172,14 +172,36 @@ document.addEventListener("DOMContentLoaded", () => {
         const closeBtn = banner.querySelector('.registration-close');
         closeBtn && closeBtn.addEventListener('click', () => {
             banner.classList.add('closing');
-            setTimeout(() => banner.remove(), 220);
+            setTimeout(() => {
+                banner.remove();
+                document.body.classList.remove('registration-visible');
+                document.documentElement.style.removeProperty('--reg-banner-height');
+            }, 220);
             localStorage.setItem(REG_KEY, '1');
         });
+
+        // Push page content down while banner is visible (avoid overlap)
+        const applyBannerSpacing = () => {
+            const rect = banner.getBoundingClientRect();
+            // if banner appears near the top, apply top spacing; if it is at bottom (mobile), remove spacing
+            if (rect.top < window.innerHeight / 2) {
+                document.documentElement.style.setProperty('--reg-banner-height', `${Math.ceil(rect.height)}px`);
+                document.body.classList.add('registration-visible');
+            } else {
+                document.body.classList.remove('registration-visible');
+                document.documentElement.style.removeProperty('--reg-banner-height');
+            }
+        };
+        applyBannerSpacing();
+        // recompute on resize and when layout may change
+        window.addEventListener('resize', applyBannerSpacing);
 
         // Observe body class changes to hide banner when nav opens
         const obs = new MutationObserver(() => {
             if (document.body.classList.contains('nav-open')) banner.style.display = 'none';
             else banner.style.display = '';
+            // also re-evaluate placement
+            applyBannerSpacing();
         });
         obs.observe(document.body, { attributes: true, attributeFilter: ['class'] });
     }

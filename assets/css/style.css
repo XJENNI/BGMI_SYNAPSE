@@ -1901,6 +1901,12 @@ p {
 /* Hide banner when nav open */
 body.nav-open .registration-banner { display: none !important; }
 
+/* When banner is visible at the top, push page content down to avoid overlap */
+body.registration-visible {
+  transition: padding-top 0.18s ease;
+  padding-top: calc(var(--reg-banner-height, 64px) + 12px);
+}
+
 @media (max-width: 768px) {
   .registration-banner {
     left: 12px;

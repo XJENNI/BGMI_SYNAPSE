@@ -1,0 +1,318 @@
+# SYNAPSE MAMC BGMI TOURNAMENT 2026
+
+## Official Tournament Document
+
+---
+
+## 1. Tournament Overview
+
+**Event Name:** Synapse MAMC BGMI Tournament  
+**Host Institution:** Maulana Azad Medical College (MAMC), New Delhi  
+**Event Type:** Official BGMI Esports Tournament  
+**Sponsorship:** Krafton-Backed Initiative  
+
+**Tournament Dates:**
+- Online Qualifiers: **6–8 February 2026**
+- Offline LAN Finals: **14 February 2026**
+
+**Game Details:**
+- Game: Battlegrounds Mobile India (BGMI)
+- Mode: Squad Battle Royale (4 Players/Team)
+- Platform: Mobile Only (No Emulators)
+- Expected Teams: 32–40 Squads
+
+---
+
+## 2. Tournament Structure
+
+### Phase 1: Online Qualifiers (6–8 February)
+
+**Format Overview**
+- Duration: 3 days
+- Matches per day: 5 matches
+- Total qualifier matches: 15 matches
+- Group structure: Teams divided into groups of 8 (Groups A, B, C, D)
+
+**Daily Match Schedule**
+- Match 1: Erangel
+- Match 2: Miramar
+- Match 3: Rondo
+- Match 4: Sanhok
+- Match 5: Erangel
+
+**Final Match Schedule**
+- Match 1: Erangel
+- Match 2: Miramar
+- Match 3: Rondo
+- Match 4: Sanhok
+- Match 5: Miramar
+- Match 6: Erangel
+
+**Lobby Pairing & Rotation**
+Two groups play together in a single lobby each day. Pairings rotate daily to ensure fair competition:
+- Day 1 (6 Feb): Groups A+B vs Groups C+D
+- Day 2 (7 Feb): Groups A+C vs Groups B+D
+- Day 3 (8 Feb): Groups A+D vs Groups B+C
+
+**Qualification Criteria**
+- Top 4 teams from each group (4 groups × 4 teams = 16 teams)
+- Final qualification: Top 16 teams advance to Offline LAN Finals
+
+### Phase 2: Offline LAN Finals (14 February)
+
+**Venue:** Maulana Azad Medical College Campus, New Delhi
+
+**Participating Teams:** Top 16 teams from online qualifiers
+
+**Format:**
+- Location: On-campus, offline competition
+- Maps: Erangel, Miramar, Sanhok, Rondo
+- Schedule: Full-day event on 14 February
+- Championship: Team with highest total points wins
+
+---
+
+## 3. Eligibility Criteria
+
+### Player Requirements
+1. **Team Composition:** Each team must have exactly 4 primary players and 1 optional substitute
+2. **College ID Requirement:** At least 2 players per squad must provide valid ID cards from any recognized college
+3. **Account Verification:** All players must play on their own registered BGMI accounts
+4. **Age & Consent:** Players under 18 must have parental consent as per BGMI and Google Play policies
+
+### Registration Requirements
+1. Complete team information via official registration form
+2. Provide all players' in-game names (IGNs) and BGMI UIDs
+3. Team captain's contact number and email address
+4. Proof of college affiliation (ID cards during finals)
+5. Submit valid information; incorrect details lead to disqualification
+
+---
+
+## 4. Scoring System
+
+### Placement Points (Per Match)
+
+| Position | Points |
+|----------|--------|
+| 1st Place | 10 |
+| 2nd Place | 6 |
+| 3rd Place | 5 |
+| 4th Place | 4 |
+| 5th Place | 3 |
+| 6th Place | 2 |
+| 7th Place | 1 |
+| 8th–16th Place | 0 |
+
+### Kill Points
+- **1 Elimination = 1 Point**
+- Kills are tracked and awarded immediately
+
+### Total Score Calculation
+**Team Total Score = Placement Points (All Matches) + Kill Points (All Matches)**
+
+### Tiebreaker Rules (in order of priority)
+1. Total accumulated points across all matches
+2. Total eliminations (kills) across all matches
+3. Best single-match performance (highest points in one match)
+4. Most first-place finishes (Chicken Dinners)
+5. If still tied: Organiser decision or coin toss
+
+---
+
+## 5. Tournament Rules & Regulations
+
+### 5.1 Technical Requirements
+
+**Device & Platform**
+- Smartphones and tablets only
+- Android or iOS devices
+- No emulators or cloud gaming services permitted
+- Device checks mandatory at LAN finals
+
+**Account & ID Rules**
+- Players must use registered BGMI accounts
+- Account sharing is strictly prohibited
+- Each player must maintain their own account throughout the tournament
+- UID and IGN must match registration data
+
+### 5.2 Match Conduct
+
+**Lobby Entry & Timing**
+- Team captains receive Room ID and Password via WhatsApp/Discord
+- Teams must join lobbies at least 5 minutes before scheduled start time
+- Matches begin on schedule; late arrivals play at captain's risk
+- If a team is not present by match start, the match proceeds without them
+
+**Player Substitutions**
+- Registered substitute players may replace primary players only if approved by admins
+- All substitute players must present ID cards at LAN finals
+- No mid-match substitutions allowed
+
+**Disconnections & Crashes**
+- Individual player disconnections: Player respawns if possible; no match restart
+- Match technical issues: Admins will decide case-by-case
+- Multiple team crashes: Entire match may be replayed at organizer discretion
+
+### 5.3 Fair Play & Anti-Cheating
+
+**Prohibited Activities**
+- Use of any cheat software (wallhack, aimbot, no-recoil, GFX tools, macros)
+- Account sharing or account borrowing
+- Teaming with other squads during matches
+- Stream sniping or ghosting (receiving live information from streams)
+- Abusive or threatening behavior toward opponents, staff, or audience
+
+**Penalties for Violations**
+- First offense: Warning + zero points for the match
+- Second offense: Disqualification from tournament
+- Severe violations: Permanent ban from all Synapse events + reporting to BGMI authorities
+- Investigation: Organizers may request screen recordings, POV footage, or account history
+
+**Evidence & Investigation**
+- Suspicious behavior can trigger admin investigation
+- Teams may be asked to provide POV recordings or screen captures
+- Failure to provide evidence when requested will be treated as admission of guilt
+
+### 5.4 Behavioral Standards
+
+**Player Conduct**
+- Respectful language at all times
+- No abusive, hateful, or harassing speech
+- No inappropriate usernames, clan tags, or profile pictures
+- Follow all instructions from admins and referees immediately
+- Violations result in warnings, penalty points, or disqualification
+
+**Spectator Conduct**
+- Audience members must not interfere with ongoing matches
+- No lobbying for specific teams
+- Respect casters and streaming team
+
+---
+
+## 6. Streaming & Media Rights
+
+### Official Broadcasting
+- All matches will be livestreamed on designated YouTube channel
+- Streaming partner will be announced soon
+- Professional commentary and match analysis provided
+
+### Player POV Streaming
+- Players may stream their personal POV if desired
+- Mandatory stream delay of minimum 3–5 minutes
+- Personal streams must not interfere with official lobby or cause lag
+- Muting audio during official streams is recommended
+
+### Content & Recording
+- Tournament organizers have rights to use match clips, screenshots, and recordings for highlights
+- Highlights will be shared on social media and YouTube
+- Players consent to media usage by participating in the tournament
+
+---
+
+## 7. Registration & Important Dates
+
+### Registration Deadline
+**Announcement date & deadline to be announced separately**
+
+### Registration Process
+1. Fill out official Google Form with team and player details
+2. Provide accurate IGNs, UIDs, and college information
+3. Ensure at least 2 players have valid college ID cards
+4. Confirmation email will be sent post-registration
+5. Teams must confirm participation within 24 hours of confirmation email
+
+### Key Dates
+- Registration Opens: [To be announced]
+- Registration Closes: [To be announced]
+- Final Team List Released: [5 Feb 2026]
+- Qualifier Match Begins: [6 Feb 2026]
+- Finals Venue & Timing Details: [Released before 14 Feb]
+
+---
+
+## 8. Prize Pool & Awards
+
+### Prize Categories
+- **Champion Trophy:** First Place Team
+- **Runner-Up:** Second Place Team
+- **Third Place:** Third Place Team
+- **MVP Award:** Best Individual Player (by kills & performance)
+- **Best Caster/Gameplay:** Audience choice award
+
+### Prize Distribution
+**Exact prize amounts, merchandise, and award details will be announced before tournament commencement.**
+
+---
+
+## 9. Administrator Roles & Responsibilities
+
+### Core Team Structure
+- **Tournament Director:** Overall event management
+- **Lobby Hosts (2–3):** Creating custom rooms, sharing IDs/passwords
+- **Referees (4–5):** Roster verification, device checks, rule enforcement
+- **Scorekeepers (2):** Recording match results and updating points table
+- **Caster/Streamer:** Live commentary and YouTube streaming
+- **Technical Team:** Server monitoring, backup internet, troubleshooting
+
+### Admin Decision Authority
+- All decisions made by the organizing committee are **final and binding**
+- No appeals will be entertained after admin ruling
+- Organizers reserve the right to modify rules if required for fairness
+
+---
+
+## 10. Code of Conduct & Disqualification
+
+### Automatic Disqualification
+Teams will be immediately disqualified for:
+- Using cheat software or exploits
+- Account sharing or fraud
+- Abusive or threatening behavior
+- No-show on finals day without prior notification
+- Providing false information during registration
+
+### Conduct Warnings
+Minor violations may result in:
+- Warning issued in writing
+- Loss of points for the affected match
+- Reduced prize pool share
+- Fine or penalty points
+
+---
+
+## 11. Contact & Support
+
+### For Registration Queries
+Email: [To be announced]
+WhatsApp: [To be announced]
+Discord Server: [Link to be announced]
+
+### For Technical Issues
+Contact tournament admins on Discord or WhatsApp
+Response time: Within 24 hours
+
+### For Disputes
+Email detailed complaint to: [To be announced]
+Include: Team name, match details, evidence, and specific rule reference
+
+---
+
+## 12. Final Notes
+
+This is an **official Synapse MAMC BGMI Tournament** endorsed by the college and backed by Krafton sponsorship. All participants agree to follow the rules, conduct themselves professionally, and respect the tournament's integrity.
+
+**By registering, teams automatically agree to all terms and conditions outlined in this document.**
+
+For any clarifications, contact the Synapse Organizing Committee.
+
+---
+
+**Document Created By:** Synapse Organizing Committee, MAMC Delhi  
+**Version:** 1.0  
+**Last Updated:** January 2026  
+**Next Review:** Upon tournament completion
+
+---
+
+*This document is confidential and property of Synapse MAMC. Unauthorized reproduction or distribution is prohibited.*
