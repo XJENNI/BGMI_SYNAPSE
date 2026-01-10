@@ -46,9 +46,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function openMobileNav() {
+        if (!menuToggle || !mainNav) return;
+
         menuToggle.classList.add('active');
         mainNav.classList.add('active');
         navOverlay.classList.add('active');
+        document.body.classList.add('nav-open');
         menuToggle.setAttribute('aria-expanded', 'true');
         mainNav.setAttribute('aria-hidden', 'false');
 
@@ -68,10 +71,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function closeMobileNav() {
-        if (!menuToggle.classList.contains('active')) return;
+        if (!menuToggle || !menuToggle.classList.contains('active')) return;
         menuToggle.classList.remove('active');
         mainNav.classList.remove('active');
         navOverlay.classList.remove('active');
+        document.body.classList.remove('nav-open');
         menuToggle.setAttribute('aria-expanded', 'false');
         mainNav.setAttribute('aria-hidden', 'true');
 
@@ -128,27 +132,46 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Close handlers
+    // Improved handlers for menu toggle and overlay
     if (menuToggle) {
-        menuToggle.addEventListener('click', toggleMobileNav);
+        // ensure it's a true button
         if (!menuToggle.hasAttribute('type')) menuToggle.setAttribute('type', 'button');
+
+        // Use pointerdown for faster response on touch devices
+        let isToggling = false;
+        menuToggle.addEventListener('pointerdown', (e) => {
+            if (isToggling) return;
+            isToggling = true;
+            e.preventDefault();
+            toggleMobileNav();
+            setTimeout(() => { isToggling = false; }, 300);
+        }, { passive: false });
+
+        // Fallback click
+        menuToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (!isToggling) toggleMobileNav();
+        });
     }
 
     if (navOverlay) {
         navOverlay.addEventListener('click', closeMobileNav);
-        navOverlay.addEventListener('touchstart', closeMobileNav);
+        navOverlay.addEventListener('touchstart', closeMobileNav, { passive: true });
     }
 
     // Close button inside nav
     const navCloseBtn = document.getElementById('navClose');
-    if (navCloseBtn) navCloseBtn.addEventListener('click', closeMobileNav);
+    if (navCloseBtn) navCloseBtn.addEventListener('click', (e) => { e.preventDefault(); closeMobileNav(); });
 
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            // set focused link for keyboard users
+            // close nav on mobile after navigation
             setTimeout(() => { if (matchMedia('(max-width: 768px)').matches) closeMobileNav(); }, 0);
         });
     });
+
+    // Ensure mainNav starts hidden for assistive tech
+    if (mainNav) mainNav.setAttribute('aria-hidden', 'true');
 
     // Set active link based on URL
     function setActiveLink() {
