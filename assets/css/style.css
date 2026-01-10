@@ -361,25 +361,45 @@ p {
 
 @keyframes ticker-scroll {
   0% {
-    transform: translateX(0);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
   }
   100% {
-    transform: translateX(-50%);
+    -webkit-transform: translate3d(-50%,0,0);
+    transform: translate3d(-50%,0,0);
   }
 }
 
 /* ========== Header & Navigation ========== */
 .site-header {
   position: fixed;
-  top: 40px;
+  top: 0;
   left: 0;
   width: 100%;
+  padding-top: env(safe-area-inset-top, 0);
   background: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-subtle);
-  z-index: var(--z-header);
+  z-index: calc(var(--z-header) + 10);
   transition: all var(--transition-normal);
 }
+
+/* Ensure mobile nav and overlays stack correctly */
+.main-nav { z-index: calc(var(--z-mobile-nav) + 20); }
+.nav-overlay { z-index: calc(var(--z-mobile-nav) + 5); }
+
+/* Force GPU and hint will-change for heavy animated elements */
+.hero-bg, .ticker-content, .hero-character {
+  will-change: transform, opacity;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0,0,0);
+}
+
+/* Tap / touch optimizations */
+.menu-toggle { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+
+/* Prevent parent transforms which break fixed children on some iOS versions */
+.header-inner, .site-header { transform: none !important; }
 
 .site-header.scrolled {
   background: rgba(0, 0, 0, 0.98);

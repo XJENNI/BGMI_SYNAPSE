@@ -23,19 +23,46 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainNav = document.getElementById('mainNav');
     const navOverlay = document.getElementById('navOverlay');
     const navLinks = document.querySelectorAll('.nav-link');
+    // Scroll lock state for mobile nav
+    const scrollLockState = { scrollY: 0 };
 
     function toggleMobileNav() {
-        menuToggle.classList.toggle('active');
+        const isOpen = menuToggle.classList.toggle('active');
         mainNav.classList.toggle('active');
         navOverlay.classList.toggle('active');
-        document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+        if (isOpen) {
+            // lock scroll on mobile/iOS
+            scrollLockState.scrollY = window.scrollY || document.documentElement.scrollTop;
+            document.documentElement.style.height = '100%';
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollLockState.scrollY}px`;
+            // focus first nav link for accessibility
+            const first = mainNav.querySelector('.nav-link');
+            if (first) first.focus();
+        } else {
+            // restore scroll
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.documentElement.style.height = '';
+            window.scrollTo(0, scrollLockState.scrollY || 0);
+            menuToggle.focus();
+        }
     }
 
     function closeMobileNav() {
-        menuToggle.classList.remove('active');
-        mainNav.classList.remove('active');
-        navOverlay.classList.remove('active');
-        document.body.style.overflow = '';
+        if (menuToggle.classList.contains('active')) {
+            menuToggle.classList.remove('active');
+            mainNav.classList.remove('active');
+            navOverlay.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.documentElement.style.height = '';
+            window.scrollTo(0, scrollLockState.scrollY || 0);
+            menuToggle.focus();
+        }
     }
 
     if (menuToggle) {
@@ -188,20 +215,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ========== Parallax Effect for Hero (Subtle) ==========
-    const hero = document.querySelector('.hero');
-    const heroBg = document.querySelector('.hero-bg');
-    
-    if (hero && heroBg) {
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * 0.3;
-            
-            if (scrolled < window.innerHeight) {
-                heroBg.style.transform = `translateY(${rate}px)`;
+    // ========== Optimized Hero Parallax (works on mobile/iOS) ==========
+    (function() {
+        const hero = document.querySelector('.hero');
+        const heroBg = document.querySelector('.hero-bg');
+        if (!hero || !heroBg) return;
+
+        let latestScroll = 0;
+        let ticking = false;
+
+        window.addEventListener('scroll', () => {
+            latestScroll = window.scrollY || window.pageYOffset;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const rate = Math.min(latestScroll * 0.25, window.innerHeight * 0.5);
+                    heroBg.style.transform = `translate3d(0, ${rate}px, 0)`;
+                    heroBg.style.willChange = 'transform';
+                    ticking = false;
+                });
+                ticking = true;
             }
-        });
-    }
+        }, { passive: true });
+    })();
 
     // ========== Console Easter Egg ==========
     console.log('%c⚡ SYNAPSE MAMC BGMI 2026 ⚡', 

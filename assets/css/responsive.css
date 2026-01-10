@@ -144,6 +144,7 @@
 /* ========== Tablets (max-width: 768px) ========== */
 @media (max-width: 768px) {
   /* Navigation */
+  body { padding-top: calc(72px + env(safe-area-inset-top, 0)); }
   .main-nav {
     position: fixed;
     top: 0;
