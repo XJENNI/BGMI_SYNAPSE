@@ -1,0 +1,52 @@
+name: Playwright Compatibility Tests
+
+on:
+  push:
+    branches: [ main, 'standings/revert-redesign' ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  compat-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Start static server
+        run: npx http-server -c-1 -p 8080 &
+
+      - name: Wait for server
+        run: |
+          for i in {1..10}; do
+            if curl -sSf http://127.0.0.1:8080/ > /dev/null; then
+              echo "Server ready" && break;
+            fi
+            echo "Waiting for server..."; sleep 1;
+          done
+
+      - name: Run Playwright compatibility tests
+        run: npx playwright test tests/compat.spec.js --reporter=list
+        env:
+          CI: true
+
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-results
+          path: playwright-report || .
