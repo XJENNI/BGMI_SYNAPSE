@@ -231,7 +231,45 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // call it after DOM is ready
-    setTimeout(setupRegistrationBanner, 60);
+    setTimeout(setupRegistrationBanner, 60);        // setup contact tab
+        setTimeout(setupContactTab, 60);
+
+    // ========== Contact Tab ==========
+    function setupContactTab() {
+        const tab = document.getElementById('contactTab');
+        if (!tab) return;
+        const toggle = document.getElementById('contactToggle');
+        const panel = document.getElementById('contactPanel');
+
+        const closePanel = () => {
+            tab.classList.remove('open');
+            if (toggle) toggle.setAttribute('aria-expanded', 'false');
+        };
+
+        const openPanel = () => {
+            tab.classList.add('open');
+            if (toggle) toggle.setAttribute('aria-expanded', 'true');
+        };
+
+        if (toggle) {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                if (tab.classList.contains('open')) closePanel(); else openPanel();
+            });
+            toggle.addEventListener('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') toggle.click(); });
+        }
+
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!tab.contains(e.target) && tab.classList.contains('open')) closePanel();
+        });
+
+        // Close on escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && tab.classList.contains('open')) closePanel();
+        });
+    }
 
     // 7. Reveal Animations on Scroll
     const handleScrollAnimations = () => {
