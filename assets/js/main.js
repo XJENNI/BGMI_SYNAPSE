@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
             preloader.style.opacity = "0";
             setTimeout(() => {
                 preloader.style.display = "none";
-                if (typeof handleScrollAnimations === "function") handleScrollAnimations();
             }, 300);
         }
     };
@@ -270,70 +269,90 @@ document.addEventListener("DOMContentLoaded", () => {
                 e.stopPropagation();
                 if (tab.classList.contains('open')) closePanel(); else openPanel();
             });
-            toggle.addEventListener('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') toggle.click(); });
+            // Ensure no duplicate events
+            toggle.addEventListener('keydown', (ev) => { 
+                if (ev.key === 'Enter' || ev.key === ' ') {
+                    ev.preventDefault();
+                    toggle.click();
+                }
+            });
         }
 
         // Close when clicking outside
         document.addEventListener('click', (e) => {
-            if (!tab.contains(e.target) && tab.classList.contains('open')) closePanel();
+            if (tab.classList.contains('open') && !tab.contains(e.target)) {
+                closePanel();
+            }
         });
 
         // Close on escape
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && tab.classList.contains('open')) closePanel();
         });
-
-        // Registration Toast: show small popup with link to registration form
-        function setupRegistrationToast() {
-            const toast = document.getElementById('regToast');
-            const closeBtn = document.getElementById('regToastClose');
-            const SHOWN_KEY = 'synapse_reg_toast_shown_v1';
-            if (!toast) return;
-            // don't show repeatedly if user already closed it
-            if (localStorage.getItem(SHOWN_KEY)) return;
-
-            const show = () => {
-                toast.classList.add('visible');
-            };
-            const hide = () => {
-                toast.classList.remove('visible');
-                try { localStorage.setItem(SHOWN_KEY, '1'); } catch (err) { /* ignore */ }
-            };
-
-            // show after a short delay if not shown before
-            setTimeout(show, 800);
-            // auto hide after 9s
-            const timer = setTimeout(hide, 9000);
-
-            if (closeBtn) {
-                closeBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    hide();
-                    clearTimeout(timer);
-                });
-            }
-
-            // if user clicks the register link, mark as shown and let link open
-            toast.addEventListener('click', (e) => {
-                if (e.target && e.target.tagName === 'A') {
-                    try { localStorage.setItem(SHOWN_KEY, '1'); } catch (err) { }
-                    hide();
-                }
-            });
-        }
     }
 
-    // 7. Reveal Animations on Scroll
-    const handleScrollAnimations = () => {
-        const revealElements = document.querySelectorAll(".fade-in, .slide-up");
-        revealElements.forEach(el => {
-            const elementTop = el.getBoundingClientRect().top;
-            const elementVisible = 150;
-            if (elementTop < window.innerHeight - elementVisible) {
-                el.classList.add("active");
+    // ========== Registration Toast ==========
+    function setupRegistrationToast() {
+        const toast = document.getElementById('regToast');
+        const closeBtn = document.getElementById('regToastClose');
+        const SHOWN_KEY = 'synapse_reg_toast_shown_v1';
+        if (!toast) return;
+        // don't show repeatedly if user already closed it
+        if (localStorage.getItem(SHOWN_KEY)) return;
+
+        const show = () => {
+            toast.classList.add('visible');
+        };
+        const hide = () => {
+            toast.classList.remove('visible');
+            try { localStorage.setItem(SHOWN_KEY, '1'); } catch (err) { /* ignore */ }
+        };
+
+        // show after a short delay if not shown before
+        setTimeout(show, 1500);
+        // auto hide after 9s
+        const timer = setTimeout(hide, 10500);
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                hide();
+                clearTimeout(timer);
+            });
+        }
+
+        // if user clicks the register link, mark as shown and let link open
+        toast.addEventListener('click', (e) => {
+            if (e.target && e.target.tagName === 'A') {
+                try { localStorage.setItem(SHOWN_KEY, '1'); } catch (err) { }
+                hide();
             }
         });
+    }
+
+    // 7. Reveal Animations on Scroll - Using IntersectionObserver for Performance
+    const setupScrollAnimations = () => {
+        const revealElements = document.querySelectorAll(".fade-in, .slide-up");
+        if (!revealElements.length) return;
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -40px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                    // Once animated, we don't need to observe it anymore
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        revealElements.forEach(el => observer.observe(el));
     };
 
-    window.addEventListener("scroll", handleScrollAnimations);
+    // Initial setup
+    setupScrollAnimations();
 });

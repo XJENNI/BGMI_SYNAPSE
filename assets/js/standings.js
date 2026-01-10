@@ -33,13 +33,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const overallContainer = document.getElementById('overallContainer');
     const mvpArea = document.getElementById('mvpArea');
+    const viewToggle = document.getElementById('viewToggle');
+    const overallFilters = document.getElementById('overallFilters');
 
     // ========== State ==========
     let allTeams = [];
     let allPlayers = [];
     let currentFilter = 'all';
     let currentMatch = 'all';
+    let currentGroup = 'all'; // all, A, B, C, D, mvp
     let refreshTimer = null; 
+    let countdownInterval = null;
+    let isLiveMode = false; // Toggle for live vs placeholder
 
     // ========== Initialize ==========
     init();
@@ -48,6 +53,46 @@ document.addEventListener('DOMContentLoaded', function() {
         fetchStandings();
         setupFilterListeners();
         startAutoRefresh();
+        startGlobalCountdown();
+        
+        if (viewToggle) {
+            viewToggle.addEventListener('click', () => {
+                isLiveMode = !isLiveMode;
+                document.body.classList.toggle('live-mode-active', isLiveMode);
+                handleRendering();
+            });
+        }
+    }
+
+    // ========== Global Countdown Timer ==========
+    function startGlobalCountdown() {
+        if (countdownInterval) clearInterval(countdownInterval);
+        
+        const targetDate = new Date("February 6, 2026 12:00:00").getTime();
+        
+        countdownInterval = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                updateAllCountdowns("LIVESTREAM STARTING");
+                return;
+            }
+            
+            const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            const timerStr = `${d}d ${h}h ${m}m ${s}s`;
+            updateAllCountdowns(timerStr);
+        }, 1000);
+    }
+
+    function updateAllCountdowns(text) {
+        const displays = document.querySelectorAll('.countdown-timer');
+        displays.forEach(el => el.textContent = text);
     }
 
     // ========== Fetch Standings Data ==========
@@ -62,6 +107,15 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             allTeams = await teamsResp.json();
+
+            // AUTO-SWITCH LOGIC: If we have teams, enable Live Mode
+            if (allTeams && allTeams.length > 0) {
+                isLiveMode = true;
+                document.body.classList.add('live-mode-active');
+            } else {
+                isLiveMode = false;
+                document.body.classList.remove('live-mode-active');
+            }
 
             if (playersResp && playersResp.ok) {
                 allPlayers = await playersResp.json();
@@ -135,15 +189,16 @@ document.addEventListener('DOMContentLoaded', function() {
         row.classList.add('fade-row');
         row.style.animationDelay = `${index * CONFIG.animationDelay}ms`;
 
-        // If viewing overall standings, mask team names as Coming Soon
-        const displayName = (currentFilter === 'all') ? 'Coming Soon' : escapeHtml(team.teamName);
+        // If not in live mode, mask team names as Coming Soon
+        const displayName = isLiveMode ? escapeHtml(team.teamName) : 'Coming Soon';
 
         row.innerHTML = `
             <td class="rank-cell">#${team.rank}</td>
             <td class="team-name">${displayName}</td>
             <td class="hide-mobile"><span class="group-badge">${team.group}</span></td>
             <td class="hide-mobile">${team.matchesPlayed}</td>
-            <td class="hide-mobile">${team.placementPoints}</td>
+            <td class="hide-mobile">${team.killPoints || team.kills || 0}</td>
+            <td class="hide-mobile">${team.placementPoints || 0}</td>
             <td class="total-score">${team.totalScore}</td>
         `;
 
@@ -167,6 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
             button.addEventListener('click', function() {
                 const filter = this.dataset.filter;
                 const match = this.dataset.match;
+                const group = this.dataset.group;
 
                 // Handle Day/Overall filters
                 if (filter) {
@@ -178,14 +234,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     currentFilter = filter;
                     currentMatch = 'all';
+                    currentGroup = 'all'; // reset group filter when changing day
 
-                    // Show/Hide match filters
+                    // Show/Hide sub-filters
                     if (filter !== 'all') {
                         matchFilters.style.display = 'flex';
+                        overallFilters.style.display = 'none';
                         // Reset match buttons visibility/active state
                         document.querySelectorAll('#matchFilters .filter-btn').forEach(btn => btn.classList.remove('active'));
                     } else {
                         matchFilters.style.display = 'none';
+                        overallFilters.style.display = 'flex';
+                        // Reset group buttons
+                        document.querySelectorAll('#overallFilters .filter-btn').forEach(btn => btn.classList.remove('active'));
+                        document.querySelector('#overallFilters [data-group="all"]').classList.add('active');
                     }
 
                     handleRendering();
@@ -199,6 +261,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     handleRendering();
                 }
 
+                // Handle Overall Group sub-filters
+                if (group) {
+                    document.querySelectorAll('#overallFilters .filter-btn').forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    currentGroup = group;
+                    handleRendering();
+                }
+
                 updatePageTitle();
             });
         });
@@ -207,15 +277,49 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========== Handle Rendering Logic ==========
     function handleRendering() {
         if (currentFilter === 'all') {
-            // Show 4 separate group leaderboards (A-D) with 'Coming Soon' placeholders
-            if (overallContainer) overallContainer.style.display = '';
+            if (overallContainer) overallContainer.style.display = 'block';
             document.querySelector('.table-container').style.display = 'none';
-            renderGroupsComingSoon();
-            renderMVP();
+            
+            // Sub-view elements
+            const groupView = document.getElementById('groupView');
+            if (groupView) groupView.style.display = 'none';
+            if (mvpArea) mvpArea.style.display = 'none';
+            
+            const groups = ['A','B','C','D'];
+            groups.forEach(g => {
+                const block = document.getElementById('group' + g);
+                if (block) block.style.display = 'none';
+            });
+
+            if (currentGroup === 'mvp') {
+                if (mvpArea) mvpArea.style.display = 'block';
+                renderMVP();
+            } else if (currentGroup === 'all') {
+                if (groupView) groupView.style.display = 'block';
+                groups.forEach(g => {
+                    const block = document.getElementById('group' + g);
+                    if (block) block.style.display = 'block';
+                    if (isLiveMode) renderSpecificGroup(g); else renderSpecificGroupComingSoon(g);
+                });
+            } else {
+                // Specific Group
+                if (groupView) groupView.style.display = 'block';
+                const block = document.getElementById('group' + currentGroup);
+                if (block) {
+                    block.style.display = 'block';
+                    if (isLiveMode) renderSpecificGroup(currentGroup); else renderSpecificGroupComingSoon(currentGroup);
+                }
+            }
         } else {
             // ensure overall view is hidden and the regular table is visible
             if (overallContainer) overallContainer.style.display = 'none';
             document.querySelector('.table-container').style.display = '';
+
+            // If not in live mode, show the "Coming Soon" splash in the table area
+            if (!isLiveMode) {
+                showComingSoon();
+                return;
+            }
 
             // Prepare match buttons (5 for qualifiers, 6 for finals)
             if (currentFilter === 'finals') {
@@ -237,6 +341,7 @@ document.addEventListener('DOMContentLoaded', function() {
             btn.className = 'filter-btn btn-sm';
             btn.dataset.match = String(i);
             btn.textContent = `M${i}`;
+            if (currentMatch === String(i)) btn.classList.add('active');
             btn.addEventListener('click', function() {
                 document.querySelectorAll('#matchFilters .filter-btn').forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
@@ -249,48 +354,47 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ========== Overall View (Groups + MVP) ==========
     function renderOverallView() {
-        if (!overallContainer) return;
-
-        // Show overall container and hide the main table
-        overallContainer.style.display = '';
-        document.querySelector('.table-container').style.display = 'none';
-
-        const groups = ['A','B','C','D'];
-
-        groups.forEach(g => {
-            const container = document.getElementById('group' + g);
-            if (!container) return;
-            const teams = allTeams.filter(t => t.group === g).sort((a,b) => a.rank - b.rank);
-            let html = `<h3>Group ${g}</h3>`;
-            html += `<table class="leaderboard-table small" aria-label="Group ${g} standings"><thead><tr><th>Rank</th><th>Team</th><th class="hide-mobile">Matches</th><th class="hide-mobile">Place Pts</th><th>Total</th></tr></thead><tbody>`;
-            if (teams.length === 0) {
-                html += `<tr><td colspan="5" style="text-align:center; padding:1rem; color:var(--text-muted);">No teams in Group ${g}</td></tr>`;
-            } else {
-                teams.forEach(team => {
-                    html += `<tr><td>#${team.rank}</td><td>${escapeHtml(team.teamName)}</td><td class="hide-mobile">${team.matchesPlayed}</td><td class="hide-mobile">${team.placementPoints}</td><td>${team.totalScore}</td></tr>`;
-                });
-            }
-            html += '</tbody></table>';
-            container.innerHTML = html;
-        });
-
-        // Render MVP top 5
-        renderMVP();
+        // Now handled by renderSpecificGroup in a loop
+        ['A','B','C','D'].forEach(g => renderSpecificGroup(g));
     }
 
-    // Render the 'Coming Soon' placeholders for group view (used for Overall before matches begin)
+    function renderSpecificGroup(g) {
+        const container = document.getElementById('group' + g);
+        if (!container) return;
+        const teams = allTeams.filter(t => t.group === g).sort((a,b) => a.rank - b.rank);
+        let html = `<h3>Group ${g}</h3>`;
+        html += `<table class="leaderboard-table small" aria-label="Group ${g} standings"><thead><tr><th>Rank</th><th>Team</th><th class="hide-mobile">Finish</th><th class="hide-mobile">Pos</th><th>Total</th></tr></thead><tbody>`;
+        if (teams.length === 0) {
+            html += `<tr><td colspan="5" style="text-align:center; padding:1.5rem; color:var(--text-muted); font-size:0.8rem;">No data for Group ${g}</td></tr>`;
+        } else {
+            teams.forEach(team => {
+                html += `<tr><td>#${team.rank}</td><td class="team-name">${escapeHtml(team.teamName)}</td><td class="hide-mobile">${team.killPoints || team.kills || 0}</td><td class="hide-mobile">${team.placementPoints || 0}</td><td class="total-score">${team.totalScore}</td></tr>`;
+            });
+        }
+        html += '</tbody></table>';
+        container.innerHTML = html;
+    }
+
     function renderGroupsComingSoon() {
-        const groups = ['A','B','C','D'];
-        groups.forEach(g => {
-            const container = document.getElementById('group' + g);
-            if (!container) return;
-            container.innerHTML = `
-                <div class="group-card">
-                    <h3>Group ${g}</h3>
-                    <div class="coming-soon">Coming Soon</div>
+        ['A','B','C','D'].forEach(g => renderSpecificGroupComingSoon(g));
+    }
+
+    function renderSpecificGroupComingSoon(g) {
+        const container = document.getElementById('group' + g);
+        if (!container) return;
+        container.innerHTML = `
+            <div class="group-card placeholder-card fade-in">
+                <div class="group-header">
+                    <span class="group-letter">${g}</span>
+                    <h3>Group ${g} Standings</h3>
                 </div>
-            `;
-        });
+                <div class="card-body">
+                    <div class="stat-placeholder"><i class="fas fa-ghost"></i><p>Calculating Strategy...</p></div>
+                    <div class="match-meta"><span>Feb 6 SHOWDOWN</span></div>
+                    <div class="countdown-display"><span class="countdown-timer">00d 00h 00m 00s</span><small>Until Battle Begins</small></div>
+                </div>
+            </div>
+        `;
     }
 
     function renderMVP() {
@@ -313,15 +417,34 @@ document.addEventListener('DOMContentLoaded', function() {
         leaderboardBody.innerHTML = `
             <tr>
                 <td colspan="6">
-                    <div style="text-align: center; padding: 4rem 2rem; background: rgba(0,0,0,0.3); border-radius: 8px;">
-                        <div style="font-size: 3rem; color: var(--accent-cyan); margin-bottom: 1rem;">🕒</div>
-                        <h3 style="color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 2px;">Data Coming Soon</h3>
-                        <p style="color: var(--text-muted); max-width: 400px; margin: 0 auto;">Statistics for this session will be available shortly after the matches begin on February 6th.</p>
-                        <div style="margin-top: 1.5rem; display: inline-block; padding: 0.5rem 1rem; border: 1px solid var(--accent-purple); color: var(--accent-purple); font-size: 0.8rem; text-transform: uppercase;">Syncing with Official Server...</div>
+                    <div class="coming-soon-splash">
+                        <div class="splash-icon">⏳</div>
+                        <h3 class="splash-title">Battle Data Encrypted</h3>
+                        <p class="splash-text">Real-time stats will synchronize once the first drop happens on Feb 6th.</p>
+                        <div class="countdown-timer" style="font-size:1.5rem; color:var(--accent-cyan); margin: 1.5rem 0;">00d 00h 00m 00s</div>
+                        <div class="splash-status">Waiting for Game Server...</div>
                     </div>
                 </td>
             </tr>
         `;
+    }
+
+    // ========== Show Error ==========
+    function showError() {
+        if (leaderboardBody) {
+            leaderboardBody.innerHTML = `
+                <tr>
+                    <td colspan="6">
+                        <div class="coming-soon-splash">
+                            <i class="fas fa-satellite-dish splash-icon" style="color:var(--accent-purple);"></i>
+                            <h3 class="splash-title">Connection Interrupted</h3>
+                            <p class="splash-text">Trying to reconnect with MAMC server. Please check back in a moment.</p>
+                            <button onclick="location.reload()" class="btn-sm" style="margin-top:20px; background:var(--accent-cyan); color:#000; border:none; padding:8px 16px; border-radius:4px; cursor:pointer;">Retry Now</button>
+                        </div>
+                    </td>
+                </tr>
+            `;
+        }
     }
 
     // ========== Filter Teams (Keep but currently only used for 'all') ==========
@@ -386,21 +509,6 @@ document.addEventListener('DOMContentLoaded', function() {
             startAutoRefresh();
         }
     });
-
-    // ========== Show Error ==========
-    function showError() {
-        if (leaderboardBody) {
-            leaderboardBody.innerHTML = `
-                <tr>
-                    <td colspan="6" style="text-align: center; padding: 4rem 2rem; color: var(--accent-cyan);">
-                        <i class="fas fa-clock" style="font-size: 3rem; margin-bottom: 1.5rem; display: block; filter: drop-shadow(0 0 10px var(--accent-cyan));"></i>
-                        <span style="font-family: var(--font-heading); font-size: 2rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">Coming Soon</span>
-                        <p style="color: var(--text-secondary); margin-top: 10px;">Standings will be updated live once the tournament begins on Feb 6th.</p>
-                    </td>
-                </tr>
-            `;
-        }
-    }
 
     // ========== Escape HTML ==========
     function escapeHtml(text) {

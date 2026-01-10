@@ -991,6 +991,8 @@ p {
 /* ========== Section Styling ========== */
 .section {
   padding: var(--space-2xl) var(--space-lg);
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 600px;
 }
 
 .section-dark {
@@ -2093,6 +2095,16 @@ body.registration-visible {
   align-items: center; /* centered above toggle */
   gap: 12px;
   pointer-events: none;
+  /* Entrance animation */
+  animation: contact-tab-entrance 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+  transform: translateY(30px) scale(0.8);
+}
+
+@keyframes contact-tab-entrance {
+  0% { opacity: 0; transform: translateY(30px) scale(0.8); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .contact-tab .contact-toggle {
@@ -2101,6 +2113,21 @@ body.registration-visible {
   color: #000;
   border: none;
   width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 32px rgba(0, 240, 255, 0.25);
+  cursor: pointer;
+  transition: transform 300ms cubic-bezier(0.2,0.9,0.2,1), box-shadow 300ms ease;
+  animation: contact-pulse 2s infinite, contact-float 3s infinite ease-in-out;
+}
+
+@keyframes contact-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
   height: 60px;
   border-radius: 50%;
   display: inline-flex;
@@ -2262,3 +2289,291 @@ body.registration-visible {
 
 /* MVP prize style */
 .mvp-prize { color: var(--accent-gold); font-weight: 700; margin-top: 6px; }  
+
+
+/* Standings Page - Placeholder Cards & Live Mode */
+.group-card.placeholder-card {
+    background: linear-gradient(145deg, rgba(8, 8, 12, 0.95), rgba(0, 240, 255, 0.03));
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 0;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.group-card.placeholder-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-cyan);
+}
+
+.group-header {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.group-letter {
+    background: var(--accent-cyan);
+    color: #000;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-weight: 800;
+    font-size: 0.8rem;
+}
+
+.group-header h3 {
+    font-size: 0.95rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-body {
+    padding: 24px;
+    text-align: center;
+}
+
+.stat-placeholder {
+    font-size: 2.2rem;
+    color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 12px;
+}
+
+.stat-placeholder p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.match-meta {
+    background: rgba(161, 68, 255, 0.1);
+    color: var(--accent-purple);
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.countdown-display {
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    padding-top: 15px;
+}
+
+.countdown-timer {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.countdown-display small {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+/* Live Mode Badge */
+.live-indicator {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    padding:  4px 12px;
+    border-radius: 20px;
+    color: #ff4757;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    animation: blink 1.5s infinite;
+}
+
+body.live-mode-active .live-indicator {
+    display: inline-flex;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background: #ff4757;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ff4757;
+}
+
+/* MVP List Styling Improvements */
+.mvp-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.mvp-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    font-size: 0.9rem;
+}
+
+
+
+
+/* Coming Soon Splash Styles */
+.coming-soon-splash {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    border: 1px dashed rgba(255, 255, 255, 0.05);
+}
+
+.splash-icon {
+    font-size: 3.5rem;
+    margin-bottom: 24px;
+    display: block;
+    filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.3));
+}
+
+.splash-title {
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: var(--font-heading);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.splash-text {
+    color: var(--text-secondary);
+    max-width: 450px;
+    margin: 0 auto 25px;
+    line-height: 1.6;
+}
+
+.splash-status {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(161, 68, 255, 0.1);
+    color: var(--accent-purple);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+
+/* Overall View Standings Sub-Filters */
+#overallFilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(13, 17, 23, 0.4);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  justify-content: center;
+}
+
+#overallFilters .filter-btn {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#overallFilters .filter-btn:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent-cyan);
+}
+
+#overallFilters .filter-btn.active {
+  color: var(--bg-main);
+  background: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  box-shadow: var(--glow-cyan);
+}
+
+/* MVP Styling */
+.mvp-area {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.05) 0%, rgba(0, 240, 255, 0.05) 100%);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.mvp-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.mvp-list li {
+  padding: 1.2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--accent-purple);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.mvp-list li:hover {
+  transform: translateX(10px);
+  border-color: var(--accent-purple);
+}
+
+.mvp-list li strong {
+  color: var(--accent-purple);
+  font-size: 1.1rem;
+}
+
+.mvp-prize {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  border: 1px dashed var(--accent-purple);
+  margin-top: 1.5rem;
+}
+
+.muted {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
