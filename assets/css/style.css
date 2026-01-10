@@ -2133,42 +2133,65 @@ body.registration-visible {
   left: 20px;
   bottom: 20px;
   z-index: 8500;
-  background: rgba(10, 10, 10, 0.8);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #fff;
-  padding: 8px 15px;
-  border-radius: 12px;
-  font-size: 0.75rem;
-  border: 1px solid rgba(0, 240, 255, 0.2);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  text-decoration: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  animation: denvil-float 4s infinite ease-in-out;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: 14px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.78rem;
+  background: linear-gradient(90deg, #2d2a72 0%, #ff6ad5 100%);
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 8px 30px rgba(45,42,114,0.35);
+  transition: transform 300ms cubic-bezier(0.2,0.9,0.2,1), box-shadow 300ms ease, filter 300ms ease;
+  transform-origin: left bottom;
+  will-change: transform;
 }
 
-.denvil-badge strong {
-  color: var(--accent-cyan);
-  margin-left: 6px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.denvil-badge::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  right: auto;
+  top: auto;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #ffd54f, #ff6ad5);
+  box-shadow: 0 6px 18px rgba(255,106,213,0.16);
+  opacity: 0.95;
 }
 
-.denvil-badge:hover {
-  transform: translateY(-5px) scale(1.05);
-  border-color: var(--accent-cyan);
-  box-shadow: 0 10px 30px rgba(0, 240, 255, 0.3);
-  background: rgba(0, 0, 0, 0.9);
+.denvil-badge .denvil-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 0.95rem;
+  box-shadow: inset 0 -2px 6px rgba(0,0,0,0.2);
+  transition: transform 320ms cubic-bezier(0.2,0.9,0.2,1);
 }
 
-@keyframes denvil-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
+.denvil-badge .denvil-text { display:inline-block; color: #fff; text-transform: none; letter-spacing: 0.2px; }
+.denvil-badge .denvil-text strong { margin-left: 6px; color: #fff; font-weight: 900; text-transform: uppercase; letter-spacing: 0.4px; }
+
+.denvil-badge:hover { transform: translateY(-6px) scale(1.04); box-shadow: 0 20px 48px rgba(45,42,114,0.45); filter: saturate(1.05); }
+.denvil-badge:focus { outline: 3px solid rgba(255,255,255,0.06); }
+
+@keyframes denvil-shimmer { 0%{ background-position: 0% 50%; } 100%{ background-position: 100% 50%; } }
+
+@keyframes denvil-float2 { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-5px);} }
+
+.denvil-badge { animation: denvil-float2 4.2s infinite ease-in-out; }
 
 @media (max-width: 768px) {
-  .denvil-badge { left: 10px; bottom: 10px; padding: 6px 12px; font-size: 0.7rem; }
+  .denvil-badge { left: 12px; bottom: 12px; padding: 6px 10px; font-size: 0.68rem; }
+  .denvil-badge .denvil-icon { width: 22px; height: 22px; }
 }  
