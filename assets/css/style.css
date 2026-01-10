@@ -1178,6 +1178,32 @@ p {
   transform: skewX(5deg);
 }
 
+/* Parameters Card */
+.parameters-card {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.parameters-card .param-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 140px;
+}
+
+.parameters-card .param-item strong {
+  display: block;
+  color: var(--accent-cyan);
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+} 
+
 .filter-btn:hover {
   border-color: var(--accent-cyan);
   color: var(--accent-cyan);

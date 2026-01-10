@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Use unified renderer to avoid showing fake overall rows
             handleRendering();
             updateTimestamp();
+            updateParameters();
             
         } catch (error) {
             console.error('Error fetching standings:', error);
@@ -304,11 +305,35 @@ document.addEventListener('DOMContentLoaded', function() {
                     <td colspan="8" style="text-align: center; padding: 4rem 2rem; color: var(--accent-cyan);">
                         <i class="fas fa-clock" style="font-size: 3rem; margin-bottom: 1.5rem; display: block; filter: drop-shadow(0 0 10px var(--accent-cyan));"></i>
                         <span style="font-family: var(--font-heading); font-size: 2rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">Coming Soon</span>
-                        <p style="color: var(--text-secondary); margin-top: 10px;">Standings will be updated live once the tournament begins on Feb 6th.</p>
+                        <p style="color: var(--text-secondary); margin-top: 10px;">Standings will be published once the tournament begins on Feb 6th.</p>
                     </td>
                 </tr>
             `;
         }
+    }
+
+    function updateParameters() {
+        const paramMatches = document.getElementById('paramMatches');
+        const paramKillPts = document.getElementById('paramKillPts');
+        const paramPlacementPts = document.getElementById('paramPlacementPts');
+        if (!paramMatches) return;
+        if (!allTeams || allTeams.length === 0) {
+            paramMatches.textContent = '—';
+            paramKillPts.textContent = '—';
+            paramPlacementPts.textContent = '—';
+            return;
+        }
+        const maxMatches = Math.max(...allTeams.map(t => t.matchesPlayed || 0));
+        const totalKills = allTeams.reduce((s,t) => s + (t.totalKills || 0), 0);
+        const totalKillPoints = allTeams.reduce((s,t) => s + (t.killPoints || 0), 0);
+        const killPointValue = totalKills ? (totalKillPoints / totalKills) : 0;
+        const totalPlacementPoints = allTeams.reduce((s,t) => s + (t.placementPoints || 0), 0);
+        const totalMatchesSum = allTeams.reduce((s,t) => s + (t.matchesPlayed || 0), 0);
+        const avgPlacementPerMatch = totalMatchesSum ? (totalPlacementPoints / totalMatchesSum) : 0;
+
+        paramMatches.textContent = String(maxMatches);
+        paramKillPts.textContent = `${killPointValue.toFixed(2)} per kill`;
+        paramPlacementPts.textContent = `${avgPlacementPerMatch.toFixed(2)} avg per match`;
     }
 
     // ========== Escape HTML ==========

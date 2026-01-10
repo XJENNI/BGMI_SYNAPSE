@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Live leaderboard and standings for SYNAPSE MAMC BGMI 2026 tournament. Track team rankings, kills, and scores in real-time.">
+    <meta name="description" content="Leaderboard and standings for SYNAPSE MAMC BGMI 2026 tournament. Track team rankings, kills, and scores.">
     <meta name="keywords" content="BGMI leaderboard, esports standings, Synapse MAMC, tournament rankings">
     
     <title>Standings | MAVERICKS x SYNAPSE BGMI 2026</title>
@@ -109,6 +109,13 @@
                 </button>
             </div>
 
+            <!-- Parameters -->
+            <div id="parameters" class="parameters-card" aria-hidden="false" style="display:flex; justify-content:center; gap:1rem; margin-bottom:1rem; flex-wrap:wrap;">
+                <div class="param-item"><strong>Matches</strong><div id="paramMatches">—</div></div>
+                <div class="param-item"><strong>Kill Pts</strong><div id="paramKillPts">—</div></div>
+                <div class="param-item"><strong>Placement Pts</strong><div id="paramPlacementPts">—</div></div>
+            </div>
+
             <!-- Sub-Filter for Matches (Day Specific) -->
             <div id="matchFilters" style="display: none; justify-content: center; gap: 10px; margin-bottom: var(--space-xl); flex-wrap: wrap;">
                 <button class="filter-btn btn-sm" data-match="1">M1</button>
@@ -164,7 +171,7 @@
                     <a href="index.html">Home</a>
                     <a href="standings.html">Standings</a>
                     <a href="schedule.html">Schedule</a>
-                    <a href="watch.html">Watch Live</a>
+                    <a href="watch.html">Watch</a>
                 </div>
             </div>
             <div class="footer-section">
