@@ -84,14 +84,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (menuToggle) {
         menuToggle.addEventListener('click', toggleMobileNav);
+        // Ensure it's a true button for accessibility
+        if (!menuToggle.hasAttribute('type')) menuToggle.setAttribute('type', 'button');
     }
 
     if (navOverlay) {
         navOverlay.addEventListener('click', closeMobileNav);
+        navOverlay.addEventListener('touchstart', closeMobileNav);
     }
 
     navLinks.forEach(link => {
         link.addEventListener('click', closeMobileNav);
+    });
+
+    // Close mobile nav on Escape for keyboard accessibility
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' || e.key === 'Esc') {
+            closeMobileNav();
+        }
     });
 
     // ========== Sticky Header with Scroll Effect ==========

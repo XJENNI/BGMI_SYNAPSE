@@ -80,7 +80,7 @@
 
             <div class="header-extra" style="display: flex; align-items: center; gap: var(--space-md);">
                 <img src="data/img/synapse_nobg.png" alt="Synapse Logo" class="brand-logo-img synapse" style="height: 40px;">
-                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                <button type="button" class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -94,12 +94,9 @@
 
     <section class="hero" id="hero">
         <div class="hero-bg" style="background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.9) 100%), url('https://images.unsplash.com/photo-1505740106531-4243f3831e4b?q=80&w=2070&auto=format&fit=crop'); background-position: center center; background-size: cover; background-repeat: no-repeat; background-attachment: scroll;"></div>
-        <div class="hero-character">
-            <!-- Chain of fallbacks for maximum resilience -->
-            <img src="https://www.freeiconspng.com/uploads/pubg-character-png-1.png" 
-                 alt="BGMI Character" 
-                 loading="lazy"
-                 onerror="this.src='https://w0.peakpx.com/wallpaper/705/177/HD-wallpaper-pubg-character.jpg'; this.style.borderRadius='20px'; this.style.opacity='0.5';">
+        <div class="hero-character" aria-hidden="true">
+            <!-- Local SVG for consistent rendering -->
+            <img src="data/img/bgmi-character.svg" alt="BGMI character illustration" class="hero-character-img" loading="lazy" width="420" height="720">
         </div>
         <div class="hero-content">
             <div class="hosted-badge fade-in">

@@ -47,7 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Sort by rank
             allTeams.sort((a, b) => a.rank - b.rank);
             
-            renderLeaderboard(filterTeams(currentFilter));
+            // Use unified renderer to avoid showing fake overall rows
+            handleRendering();
             updateTimestamp();
             
         } catch (error) {
@@ -183,10 +184,36 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========== Handle Rendering Logic ==========
     function handleRendering() {
         if (currentFilter === 'all') {
-            renderLeaderboard(allTeams);
-        } else {
-            // Show Coming Soon for any Day/Match specific view
+            // For privacy/staging, do not show overall fake data
             showComingSoon();
+        } else {
+            // Prepare match buttons (5 for qualifiers, 6 for finals)
+            if (currentFilter === 'finals') {
+                populateMatchButtons(6);
+            } else {
+                populateMatchButtons(5);
+            }
+
+            const filtered = filterTeams(currentFilter);
+            renderLeaderboard(filtered);
+        }
+    }
+
+    function populateMatchButtons(count) {
+        if (!matchFilters) return;
+        matchFilters.innerHTML = '';
+        for (let i = 1; i <= count; i++) {
+            const btn = document.createElement('button');
+            btn.className = 'filter-btn btn-sm';
+            btn.dataset.match = String(i);
+            btn.textContent = `M${i}`;
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('#matchFilters .filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentMatch = this.dataset.match;
+                handleRendering();
+            });
+            matchFilters.appendChild(btn);
         }
     }
 
