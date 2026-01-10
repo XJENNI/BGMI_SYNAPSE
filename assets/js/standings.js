@@ -11,6 +11,20 @@ document.addEventListener('DOMContentLoaded', function() {
         animationDelay: 50 // ms between row animations
     };
 
+    // Helper: fetch with timeout using AbortController
+    async function fetchWithTimeout(resource, timeout = 5000) {
+        const controller = new AbortController();
+        const id = setTimeout(() => controller.abort(), timeout);
+        try {
+            const resp = await fetch(resource, { signal: controller.signal });
+            clearTimeout(id);
+            return resp;
+        } catch (err) {
+            clearTimeout(id);
+            throw err;
+        }
+    }
+
     // ========== DOM Elements ==========
     const leaderboardBody = document.getElementById('leaderboardBody');
     const filterTabs = document.getElementById('filterTabs');
@@ -39,11 +53,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========== Fetch Standings Data ==========
     async function fetchStandings() {
         try {
-            const [teamsResp, playersResp] = await Promise.all([
-                fetch(CONFIG.dataUrl),
-                // players file is optional; failures won't block standings
-                fetch('data/players.json').catch(() => null)
-            ]);
+            // Use time-limited fetch to avoid hanging (teams = 5s, players = 3s)
+            const teamsResp = await fetchWithTimeout(CONFIG.dataUrl, 5000);
+            const playersResp = await fetchWithTimeout('data/players.json', 3000).catch(() => null);
 
             if (!teamsResp.ok) {
                 throw new Error(`HTTP error! status: ${teamsResp.status}`);

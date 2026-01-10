@@ -6,8 +6,8 @@
 ===========================================
 */
 
-/* ========== Google Fonts Import ========== */
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+/* ========== Google Fonts (moved to HTML for non-blocking load) ========== */
+/* Font stylesheet is preloaded in the document head to avoid a render-blocking @import */
 
 /* ========== CSS Custom Properties ========== */
 :root {

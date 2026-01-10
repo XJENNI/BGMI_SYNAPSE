@@ -19,21 +19,21 @@ document.addEventListener("DOMContentLoaded", () => {
     document.documentElement.style.overflow = ""; // Restore scrolling
     document.body.style.overflow = ""; // Restore body scrolling
     
-    // 2. Preloader - Robust Handling (hide after 3s max, even if images fail)
+    // 2. Preloader - Optimized for Speed (short safety net)
     const hidePreloader = () => {
         if (preloader) {
             preloader.style.opacity = "0";
             setTimeout(() => {
                 preloader.style.display = "none";
                 if (typeof handleScrollAnimations === "function") handleScrollAnimations();
-            }, 500);
+            }, 300);
         }
     };
 
     if (preloader) {
-        // Hide when window loads or after 3 seconds max (safety net)
+        // Hide when window loads; also ensure we don't block more than 1s
         window.addEventListener("load", hidePreloader);
-        setTimeout(hidePreloader, 3000); 
+        setTimeout(hidePreloader, 1000);
     }
 
     // 3. Navigation Controls
