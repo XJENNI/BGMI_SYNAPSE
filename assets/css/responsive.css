@@ -315,6 +315,23 @@
     pointer-events: auto;
   }
 
+  /* Close button inside mobile nav */
+  .nav-close {
+    position: absolute;
+    top: calc(12px + env(safe-area-inset-top, 0));
+    right: 12px;
+    background: transparent;
+    border: none;
+    color: var(--accent-cyan);
+    font-size: 28px;
+    line-height: 1;
+    padding: 8px 10px;
+    cursor: pointer;
+    z-index: calc(var(--z-mobile-nav) + 1);
+  }
+
+  .nav-close:focus { outline: 2px solid rgba(0,240,255,0.12); border-radius: 4px; }
+
   /* Hero */
   .hero-title {
     font-size: 2.5rem;

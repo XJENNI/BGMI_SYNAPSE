@@ -32,55 +32,140 @@ document.addEventListener('DOMContentLoaded', function() {
         menuToggle.setAttribute('aria-expanded', 'false');
     }
 
+    // Improved mobile nav behavior: open/close, focus trap, keyboard nav
+    let lastFocusedBeforeNav = null;
+    const focusableSelector = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+    let focusableEls = [];
+
     function toggleMobileNav() {
-        const isOpen = menuToggle.classList.toggle('active');
-        mainNav.classList.toggle('active');
-        navOverlay.classList.toggle('active');
-        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-
-        // Inline style fallback for environments where CSS transitions may behave unpredictably
-        if (isOpen) {
-            mainNav.style.right = '0';
-            navOverlay.style.opacity = '1';
-            navOverlay.style.visibility = 'visible';
-            navOverlay.classList.add('active');
-
-            // lock scroll on mobile/iOS
-            scrollLockState.scrollY = window.scrollY || document.documentElement.scrollTop;
-            document.documentElement.style.height = '100%';
-            document.body.style.position = 'fixed';
-            document.body.style.top = `-${scrollLockState.scrollY}px`;
-            // focus first nav link for accessibility
-            const first = mainNav.querySelector('.nav-link');
-            if (first) first.focus();
+        if (menuToggle.classList.contains('active')) {
+            closeMobileNav();
         } else {
-            // restore scroll and remove inline fallbacks
-            mainNav.style.right = '';
-            navOverlay.style.opacity = '';
-            navOverlay.style.visibility = '';
-            navOverlay.classList.remove('active');
-
-            document.body.style.position = '';
-            document.body.style.top = '';
-            document.documentElement.style.height = '';
-            window.scrollTo(0, scrollLockState.scrollY || 0);
-            menuToggle.focus();
+            openMobileNav();
         }
+    }
+
+    function openMobileNav() {
+        menuToggle.classList.add('active');
+        mainNav.classList.add('active');
+        navOverlay.classList.add('active');
+        menuToggle.setAttribute('aria-expanded', 'true');
+        mainNav.setAttribute('aria-hidden', 'false');
+
+        // scroll lock
+        scrollLockState.scrollY = window.scrollY || document.documentElement.scrollTop;
+        document.documentElement.style.height = '100%';
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollLockState.scrollY}px`;
+
+        // save focus
+        lastFocusedBeforeNav = document.activeElement;
+        trapFocus(mainNav);
+
+        // focus the close button when opened
+        const closeBtn = document.getElementById('navClose');
+        if (closeBtn) closeBtn.focus();
     }
 
     function closeMobileNav() {
-        if (menuToggle.classList.contains('active')) {
-            menuToggle.classList.remove('active');
-            mainNav.classList.remove('active');
-            navOverlay.classList.remove('active');
-            menuToggle.setAttribute('aria-expanded', 'false');
-            document.body.style.position = '';
-            document.body.style.top = '';
-            document.documentElement.style.height = '';
-            window.scrollTo(0, scrollLockState.scrollY || 0);
-            menuToggle.focus();
+        if (!menuToggle.classList.contains('active')) return;
+        menuToggle.classList.remove('active');
+        mainNav.classList.remove('active');
+        navOverlay.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        mainNav.setAttribute('aria-hidden', 'true');
+
+        // restore scroll
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.documentElement.style.height = '';
+        window.scrollTo(0, scrollLockState.scrollY || 0);
+
+        releaseFocus();
+        if (lastFocusedBeforeNav) lastFocusedBeforeNav.focus();
+    }
+
+    function trapFocus(container) {
+        focusableEls = Array.from(container.querySelectorAll(focusableSelector)).filter(el => el.offsetParent !== null);
+        document.addEventListener('keydown', focusTrapKeyHandler);
+    }
+
+    function releaseFocus() {
+        document.removeEventListener('keydown', focusTrapKeyHandler);
+        focusableEls = [];
+    }
+
+    function focusTrapKeyHandler(e) {
+        if (!menuToggle.classList.contains('active')) return;
+        if (e.key === 'Escape') {
+            e.preventDefault();
+            closeMobileNav();
+            return;
+        }
+
+        if (e.key === 'Tab') {
+            if (!focusableEls.length) return;
+            const first = focusableEls[0];
+            const last = focusableEls[focusableEls.length - 1];
+
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+            return;
+        }
+
+        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            const currentIndex = focusableEls.indexOf(document.activeElement);
+            let nextIndex = 0;
+            if (currentIndex === -1) nextIndex = 0;
+            else nextIndex = (currentIndex + (e.key === 'ArrowDown' ? 1 : -1) + focusableEls.length) % focusableEls.length;
+            focusableEls[nextIndex].focus();
         }
     }
+
+    // Close handlers
+    if (menuToggle) {
+        menuToggle.addEventListener('click', toggleMobileNav);
+        if (!menuToggle.hasAttribute('type')) menuToggle.setAttribute('type', 'button');
+    }
+
+    if (navOverlay) {
+        navOverlay.addEventListener('click', closeMobileNav);
+        navOverlay.addEventListener('touchstart', closeMobileNav);
+    }
+
+    // Close button inside nav
+    const navCloseBtn = document.getElementById('navClose');
+    if (navCloseBtn) navCloseBtn.addEventListener('click', closeMobileNav);
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // set focused link for keyboard users
+            setTimeout(() => { if (matchMedia('(max-width: 768px)').matches) closeMobileNav(); }, 0);
+        });
+    });
+
+    // Set active link based on URL
+    function setActiveLink() {
+        const current = window.location.pathname.split('/').pop() || 'index.html';
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === current || window.location.href.indexOf(href) !== -1) {
+                link.classList.add('active');
+                link.setAttribute('aria-current', 'page');
+            } else {
+                link.classList.remove('active');
+                link.removeAttribute('aria-current');
+            }
+        });
+    }
+
+    setActiveLink();
 
     if (menuToggle) {
         menuToggle.addEventListener('click', toggleMobileNav);
