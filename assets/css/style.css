@@ -2056,8 +2056,8 @@ body.registration-visible {
   z-index: calc(var(--z-top, 9000));
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 15px;
+  align-items: center; /* centered above toggle */
+  gap: 12px;
   pointer-events: none;
 }
 
@@ -2072,131 +2072,59 @@ body.registration-visible {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 32px rgba(0, 240, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 240, 255, 0.25);
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  animation: contact-pulse 2s infinite;
+  transition: transform 300ms cubic-bezier(0.2,0.9,0.2,1), box-shadow 300ms ease;
+  animation: contact-pulse 2.2s infinite;
 }
 
-.contact-tab .contact-toggle:hover {
-  transform: scale(1.1) rotate(15deg);
-  box-shadow: 0 12px 40px rgba(0, 240, 255, 0.5);
-}
-
-.contact-tab .contact-toggle i {
-  font-size: 1.6rem;
-}
+.contact-tab .contact-toggle:hover { transform: scale(1.06) rotate(8deg); box-shadow: 0 14px 46px rgba(0,240,255,0.38); }
+.contact-tab .contact-toggle i { font-size: 1.6rem; }
 
 .contact-panel {
   pointer-events: auto;
-  transform-origin: bottom right;
-  transform: translateY(20px) scale(0.9);
+  transform-origin: bottom center;
+  transform: translateY(16px) scale(0.98);
   opacity: 0;
-  background: rgba(15, 15, 15, 0.9);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 240, 255, 0.2);
-  border-radius: 20px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-  padding: 20px;
-  min-width: 300px;
+  background: rgba(8, 8, 12, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 18px;
+  min-width: 320px;
+  max-width: 420px;
   display: none;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 320ms cubic-bezier(0.165,0.84,0.44,1), opacity 260ms ease;
 }
 
-.contact-tab.open .contact-panel {
-  display: block;
-  transform: translateY(0) scale(1);
-  opacity: 1;
-}
+.contact-tab.open .contact-panel { display: block; transform: translateY(0) scale(1); opacity: 1; animation: contact-panel-open 320ms cubic-bezier(0.165,0.84,0.44,1); }
 
-.contact-panel-header {
-  text-align: center;
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
+.contact-panel-header { display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:12px; }
+.contact-panel-header::before, .contact-panel-header::after { content:''; height:1px; flex:1; background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(0,240,255,0.06)); border-radius:2px; }
+.contact-panel-header h4 { color:var(--accent-cyan); margin:0; font-size:1rem; text-transform:uppercase; letter-spacing:1px; }
 
-.contact-panel-header h4 {
-  color: var(--accent-cyan);
-  margin: 0;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
+.contact-row { display:flex; gap:12px; justify-content:center; align-items:stretch; }
+.contact-card { flex:1; padding:14px; border-radius:10px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.03); text-align:center; transition:transform 220ms ease, background 220ms ease, border-color 220ms ease; }
+.contact-card + .contact-card { border-left:1px solid rgba(255,255,255,0.03); padding-left:18px; }
+.contact-card:hover { transform: translateY(-4px); border-color: rgba(0,240,255,0.08); background: rgba(0,240,255,0.02); }
 
-.contact-row {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
+.contact-name { font-weight:800; margin-bottom:8px; color:#fff; font-size:1rem; }
+.contact-phone { display:block; color:var(--text-secondary); margin-bottom:10px; text-decoration:none; font-size:0.95rem; font-weight:700; }
 
-.contact-card {
-  padding: 15px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  text-align: center;
-  transition: all 0.3s ease;
-}
+.contact-whatsapp { display:inline-flex; align-items:center; justify-content:center; gap:8px; background: linear-gradient(180deg,#25D366,#1DA851); color:#fff; padding:8px 14px; border-radius:8px; text-decoration:none; font-weight:800; font-size:0.92rem; width:100%; transition: transform 180ms ease, box-shadow 180ms ease; }
+.contact-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.2); }
 
-.contact-card:hover {
-  background: rgba(0, 240, 255, 0.05);
-  border-color: rgba(0, 240, 255, 0.2);
-  transform: translateY(-2px);
-}
+@keyframes contact-panel-open { 0% { opacity:0; transform:translateY(12px) scale(0.98); } 100% { opacity:1; transform:translateY(0) scale(1); } }
 
-.contact-name {
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: #fff;
-  font-size: 1rem;
-}
-
-.contact-phone {
-  display: block;
-  color: var(--text-secondary);
-  margin-bottom: 10px;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.3s ease;
-}
-
-.contact-phone:hover {
-  color: var(--accent-cyan);
-}
-
-.contact-whatsapp {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: #25D366;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 0.85rem;
-  width: 100%;
-  transition: all 0.3s ease;
-}
-
-.contact-whatsapp:hover {
-  background: #128C7E;
-  transform: scale(1.02);
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-}
-
-@keyframes contact-pulse {
-  0% { box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.4); }
-  70% { box-shadow: 0 0 0 15px rgba(0, 240, 255, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(0, 240, 255, 0); }
-}
+@keyframes contact-pulse { 0% { box-shadow: 0 0 0 0 rgba(0,240,255,0.35); } 70% { box-shadow: 0 0 0 14px rgba(0,240,255,0); } 100% { box-shadow: 0 0 0 0 rgba(0,240,255,0); } }
 
 @media (max-width: 640px) {
   .contact-tab { right: 15px; bottom: 15px; }
-  .contact-panel { min-width: 260px; padding: 15px; }
+  .contact-panel { min-width: 260px; padding: 14px; }
+  .contact-row { flex-direction: column; }
+  .contact-card { text-align: left; }
+  .contact-card + .contact-card { border-left: none; border-top: 1px solid rgba(255,255,255,0.03); padding-left:14px; padding-top:12px; }
 }
 
 /* Denvil small tagmark (lower corner) */

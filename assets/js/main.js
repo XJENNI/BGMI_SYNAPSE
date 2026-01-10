@@ -244,11 +244,21 @@ document.addEventListener("DOMContentLoaded", () => {
         const closePanel = () => {
             tab.classList.remove('open');
             if (toggle) toggle.setAttribute('aria-expanded', 'false');
+            if (panel) panel.setAttribute('aria-hidden', 'true');
+            // return focus to toggle for keyboard users
+            if (toggle) toggle.focus();
         };
 
         const openPanel = () => {
             tab.classList.add('open');
             if (toggle) toggle.setAttribute('aria-expanded', 'true');
+            if (panel) panel.setAttribute('aria-hidden', 'false');
+            // Focus first actionable element inside panel for accessibility
+            setTimeout(() => {
+                if (!panel) return;
+                const firstAction = panel.querySelector('.contact-whatsapp, .contact-phone, .contact-card a');
+                if (firstAction) firstAction.focus();
+            }, 260);
         };
 
         if (toggle) {
