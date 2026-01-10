@@ -109,9 +109,12 @@ document.addEventListener('DOMContentLoaded', function() {
         row.classList.add('fade-row');
         row.style.animationDelay = `${index * CONFIG.animationDelay}ms`;
 
+        // If viewing overall standings, mask team names as Coming Soon
+        const displayName = (currentFilter === 'all') ? 'Coming Soon' : escapeHtml(team.teamName);
+
         row.innerHTML = `
             <td class="rank-cell">#${team.rank}</td>
-            <td class="team-name">${escapeHtml(team.teamName)}</td>
+            <td class="team-name">${displayName}</td>
             <td class="hide-mobile"><span class="group-badge">${team.group}</span></td>
             <td class="hide-mobile">${team.matchesPlayed}</td>
             <td class="kills-cell">${team.totalKills}</td>
