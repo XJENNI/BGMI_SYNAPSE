@@ -1718,6 +1718,21 @@ p {
   background: var(--bg-primary);
 }
 
+/* Reserve space for maps and hero images to prevent CLS */
+.hero-character-img, .map-image { 
+  aspect-ratio: 7 / 4; 
+  width: 100%;
+  height: auto;
+}
+
+/* Brand logos should have intrinsic sizes (prevent layout shifts) */
+.brand-logo-img { width: auto; height: 40px; }
+
+/* Small screens: scale logos down */
+@media (max-width: 576px) {
+  .brand-logo-img { height: 36px; }
+}
+
 /* Compatibility Diagnostic Banner */
 #compatBanner {
   font-family: var(--font-body);

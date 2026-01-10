@@ -190,40 +190,66 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Schedule non-critical work during idle periods to reduce main-thread blocking
+    function scheduleNonCritical(callback) {
+        if ('requestIdleCallback' in window) {
+            try { requestIdleCallback(callback, { timeout: 2000 }); return; } catch (e) {}
+        }
+        // fallback to setTimeout
+        setTimeout(callback, 1500);
+    }
+
     // ========== Scroll Animations (Fade In) ==========
-    const fadeElements = document.querySelectorAll('.fade-in');
+    function initFadeInObserver() {
+        const fadeElements = document.querySelectorAll('.fade-in');
 
-    // If IntersectionObserver is supported, use it; otherwise reveal elements immediately.
-    if ('IntersectionObserver' in window) {
-        try {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
+        // If IntersectionObserver is supported, use it; otherwise reveal elements immediately.
+        if ('IntersectionObserver' in window) {
+            try {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.1
+                };
 
-            const fadeInObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
+                const fadeInObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                fadeElements.forEach(element => {
+                    fadeInObserver.observe(element);
                 });
-            }, observerOptions);
-
-            fadeElements.forEach(element => {
-                fadeInObserver.observe(element);
-            });
-        } catch (err) {
-            console.warn('IntersectionObserver initialization failed — falling back to immediate reveal.', err);
+            } catch (err) {
+                console.warn('IntersectionObserver initialization failed — falling back to immediate reveal.', err);
+                fadeElements.forEach(el => el.classList.add('visible'));
+                document.documentElement.classList.add('no-intersection');
+            }
+        } else {
+            // Reveal immediately for environments without IntersectionObserver
             fadeElements.forEach(el => el.classList.add('visible'));
             document.documentElement.classList.add('no-intersection');
         }
-    } else {
-        // Reveal immediately for environments without IntersectionObserver
-        fadeElements.forEach(el => el.classList.add('visible'));
-        document.documentElement.classList.add('no-intersection');
     }
+
+    scheduleNonCritical(initFadeInObserver);
+
+    // Buttons hover subtle scale animation (non-critical)
+    scheduleNonCritical(() => {
+        const buttons = document.querySelectorAll('.btn, .filter-btn, .community-btn');
+        buttons.forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = this.style.transform.replace('scale(1)', '') + ' scale(1.02)';
+            });
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = this.style.transform.replace(' scale(1.02)', '');
+            });
+        });
+    });
 
     // ========== Smooth Scroll for Anchor Links ==========
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
