@@ -1933,7 +1933,7 @@ p {
   transform: translateY(0);
 }
 
-/* ========== Preloader ========== */
+/* ========== Preloader - Redesigned for Reliability ========== */
 .preloader {
   position: fixed;
   top: 0;
@@ -1948,16 +1948,23 @@ p {
   transition: opacity 0.4s ease, visibility 0.4s ease;
   opacity: 1;
   visibility: visible;
+  pointer-events: all;
 }
 
+/* Hidden state - ensures preloader can't block interaction */
 .preloader.hidden {
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
+  /* Force hardware acceleration for smoother transition */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 .preloader-content {
   text-align: center;
+  /* Prevent content shift during hide animation */
+  will-change: transform;
 }
 
 .preloader-logo {
@@ -1967,6 +1974,7 @@ p {
   text-shadow: var(--glow-cyan);
   animation: pulse-glow 1s ease-in-out infinite;
   margin-bottom: var(--space-md);
+  letter-spacing: 2px;
 }
 
 .preloader-bar {
@@ -1975,6 +1983,8 @@ p {
   background: var(--bg-card);
   position: relative;
   overflow: hidden;
+  border-radius: 2px;
+  margin: 0 auto;
 }
 
 .preloader-bar::after {
@@ -1989,11 +1999,28 @@ p {
 }
 
 @keyframes loading {
-  0% {
-    left: -100%;
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
   }
-  100% {
-    left: 100%;
+  50% {
+    text-shadow: 0 0 20px rgba(0, 240, 255, 0.8), 0 0 30px rgba(0, 240, 255, 0.4);
+  }
+}
+
+/* Prevent FOUC (Flash of Unstyled Content) */
+html.no-js .preloader {
+  display: none !important;
+}
+
+/* Force-hide fallback for browsers that don't support transitions */
+@media (prefers-reduced-motion: reduce) {
+  .preloader.hidden {
+    display: none !important;
   }
 }
 
