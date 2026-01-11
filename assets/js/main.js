@@ -63,7 +63,7 @@ document.documentElement.classList.remove('no-js');
                 // Emergency hide - bypasses all transitions
                 if (!preloader) return;
                 this.hidden = true;
-                preloader.style.cssText = "display: none !important; opacity: 0 !important; visibility: hidden !important;";
+                preloader.style.cssText = "display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important;";
                 if (preloader.parentNode) {
                     try {
                         preloader.remove();

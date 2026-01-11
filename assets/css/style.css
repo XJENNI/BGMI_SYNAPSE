@@ -378,6 +378,7 @@ p {
   -webkit-backdrop-filter: blur(8px);
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transition: all var(--transition-normal);
   z-index: calc(var(--z-mobile-nav) - 1);
 }
@@ -385,6 +386,7 @@ p {
 .nav-overlay.active {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 .cyber-nav-hub {
