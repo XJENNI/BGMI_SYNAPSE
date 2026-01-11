@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function toggleMobileNav() {
+        if (!menuToggle || !mainNav || !navOverlay) return;
         const isOpen = menuToggle.classList.toggle('active');
         mainNav.classList.toggle('active');
         navOverlay.classList.toggle('active');
@@ -101,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function closeMobileNav() {
+        if (!menuToggle || !mainNav || !navOverlay) return;
         if (menuToggle.classList.contains('active')) {
             menuToggle.classList.remove('active');
             mainNav.classList.remove('active');
@@ -293,7 +295,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ========== Keyboard Navigation ==========
     document.addEventListener('keydown', function(e) {
-        // Close mobile nav on Escape
+        // Close mobile nav on Escape && mainNav
         if (e.key === 'Escape' && mainNav.classList.contains('active')) {
             closeMobileNav();
         }
