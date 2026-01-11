@@ -23,6 +23,11 @@
   --accent-red: #ff0055;
   --accent-green: #00ff88;
   --accent-yellow: #ffd700;
+  --accent-free: #1ff0a8;
+  --accent-free-rgb: 31, 240, 168;
+  --accent-free-bg-alpha: 0.08;
+  --accent-free-border-alpha: 0.6;
+  --accent-free-badge-alpha: 0.12;
   
   --text-primary: #ffffff;
   --text-secondary: #b0b0b0;
@@ -846,6 +851,19 @@ p {
   margin-bottom: var(--space-xl);
 }
 
+.hero-registration-badge {
+  margin-top: var(--space-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  background: rgba(var(--accent-free-rgb), var(--accent-free-badge-alpha));
+  color: var(--accent-free);
+  border: 1px solid rgba(var(--accent-free-rgb), var(--accent-free-border-alpha));
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 999px;
+  font-weight: 700;
+}
+
 .hero-stats {
   display: flex;
   gap: var(--space-xl);
@@ -1001,11 +1019,28 @@ p {
 .reward-card.gold::before { background: #ffd700; box-shadow: 0 0 15px #ffd700; }
 .reward-card.silver::before { background: #c0c0c0; box-shadow: 0 0 15px #c0c0c0; }
 .reward-card.bronze::before { background: #cd7f32; box-shadow: 0 0 15px #cd7f32; }
-
 .reward-card:hover {
   transform: translateY(-10px) scale(1.02);
+}
+.reward-card:not(.free):hover {
   border-color: var(--accent-cyan);
   box-shadow: 0 10px 30px rgba(0, 240, 255, 0.2);
+}
+.reward-card.free {
+  background: rgba(var(--accent-free-rgb), var(--accent-free-bg-alpha));
+  border: 1px solid rgba(var(--accent-free-rgb), var(--accent-free-border-alpha));
+}
+.reward-card.free::before {
+  background: var(--accent-free);
+  box-shadow: 0 0 15px var(--accent-free);
+}
+.reward-card.free .reward-amount,
+.reward-card.free .reward-extra {
+  color: var(--accent-free);
+}
+.reward-card.free:hover {
+  border-color: var(--accent-free);
+  box-shadow: 0 10px 30px rgba(var(--accent-free-rgb), 0.2);
 }
 
 .reward-card.gold:hover { border-color: #ffd700; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2); }
