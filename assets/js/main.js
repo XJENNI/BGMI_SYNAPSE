@@ -2,15 +2,16 @@
  * Main JS for Synapse BGMI Website - Optimized for Mobile
  */
 
-document.addEventListener("DOMContentLoaded", () => {
-    // 1. Elements
-    const body = document.body;
-    const preloader = document.getElementById("preloader");
-    const menuToggle = document.getElementById("menuToggle");
-    const mainNav = document.getElementById("mainNav");
-    const navOverlay = document.getElementById("navOverlay");
-    const navClose = document.getElementById("navClose");
-    const header = document.querySelector(".site-header") || document.getElementById("header");
+(() => {
+    const init = () => {
+        // 1. Elements
+        const body = document.body;
+        const preloader = document.getElementById("preloader");
+        const menuToggle = document.getElementById("menuToggle");
+        const mainNav = document.getElementById("mainNav");
+        const navOverlay = document.getElementById("navOverlay");
+        const navClose = document.getElementById("navClose");
+        const header = document.querySelector(".site-header") || document.getElementById("header");
     
     // 1a. FORCE RESET ON LOAD - This ensures every page starts fresh, removing any stuck blur/overlay
     body.classList.remove("nav-open", "menu-open", "no-scroll", "blur-active", "no-scroll-lock");
@@ -30,9 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     if (preloader) {
-        // Hide when window loads; also ensure we don't block more than 1s
-        window.addEventListener("load", hidePreloader);
-        setTimeout(hidePreloader, 1000);
+        // Hide ASAP and also after load as a safety net
+        hidePreloader();
+        window.addEventListener("load", hidePreloader, { once: true });
+        setTimeout(hidePreloader, 200);
     }
 
     // 3. Navigation Controls
@@ -40,6 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!mainNav) return;
         mainNav.classList.add("active");
         mainNav.setAttribute("aria-hidden", "false");
+        if (navClose) {
+            try { navClose.focus({ preventScroll: true }); } catch (e) { /* ignore */ }
+        }
 
         // show overlay and lock scroll
         if (navOverlay) navOverlay.classList.add("active");
@@ -83,10 +88,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 4. Navigation Event Listeners (Support both click and touch)
     if (menuToggle) {
+        menuToggle.dataset.bound = "1";
         menuToggle.addEventListener("click", (e) => {
             e.preventDefault();
             e.stopPropagation();
             toggleMobileNav();
+            menuToggle.dataset.clicked = "1";
         });
     }
 
@@ -353,6 +360,13 @@ document.addEventListener("DOMContentLoaded", () => {
         revealElements.forEach(el => observer.observe(el));
     };
 
-    // Initial setup
-    setupScrollAnimations();
-});
+        // Initial setup
+        setupScrollAnimations();
+    };
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init, { once: true });
+    } else {
+        init();
+    }
+})();

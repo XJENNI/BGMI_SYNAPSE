@@ -361,6 +361,36 @@ p {
   visibility: visible;
 }
 
+.cyber-nav-hub {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--space-sm);
+  max-width: 700px;
+  margin: var(--space-lg) auto 0;
+  padding: var(--space-md);
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+}
+
+.cyber-nav-item {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.cyber-nav-item:hover {
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  box-shadow: var(--glow-cyan);
+}
+
 /* Force GPU and hint will-change for heavy animated elements */
 .hero-bg, .ticker-content, .hero-character {
   will-change: transform, opacity;
@@ -516,6 +546,13 @@ p {
   z-index: calc(var(--z-header) + 5);
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-toggle,
+  .menu-toggle span {
+    transition: none !important;
+  }
 }
 
 .menu-toggle:hover {
@@ -1873,6 +1910,7 @@ p {
   justify-content: center;
   z-index: 9999;
   transition: opacity 0.5s ease, visibility 0.5s ease;
+  pointer-events: none;
 }
 
 .preloader.hidden {
@@ -2576,4 +2614,3 @@ body.live-mode-active .live-indicator {
   color: var(--text-secondary);
   font-size: 0.9rem;
 }
-
