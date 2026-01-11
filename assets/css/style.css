@@ -366,7 +366,12 @@ p {
   border-bottom: 1px solid var(--border-subtle);
   z-index: 99980; /* kept below mobile nav */
   transition: all var(--transition-normal);
+  pointer-events: none;
 } 
+
+.site-header * {
+  pointer-events: auto;
+}
 
 /* Mobile Nav Overlay */
 .nav-overlay {
@@ -381,31 +386,42 @@ p {
   transition: all var(--transition-normal);
   z-index: calc(var(--z-mobile-nav) - 1);
   pointer-events: none;
+  display: none;
 }
 
 .nav-overlay.active {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  display: none;
 }
 
 .cyber-nav-hub {
+  position: relative;
+  z-index: 120000;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: var(--space-sm);
   max-width: 700px;
-  margin: 140px auto 0;
+  margin: 220px auto 0;
   padding: var(--space-md);
   background: rgba(0, 0, 0, 0.6);
   border: 1px solid var(--border-subtle);
   border-radius: 10px;
+  transition: none;
+  pointer-events: auto;
 }
 
 .registration-visible .cyber-nav-hub {
-  margin-top: var(--space-lg);
+  margin-top: 220px;
+}
+
+.cyber-nav-hub * {
+  pointer-events: auto;
 }
 
 .cyber-nav-item {
+  pointer-events: auto !important;
   text-align: center;
   text-transform: uppercase;
   font-family: var(--font-heading);
@@ -414,7 +430,7 @@ p {
   border: 1px solid var(--border-subtle);
   border-radius: 6px;
   text-decoration: none;
-  transition: all var(--transition-fast);
+  transition: none;
 }
 
 .cyber-nav-item:hover {
@@ -1994,21 +2010,21 @@ p {
 /* ========== Registration Banner ========== */
 .registration-banner {
   position: fixed;
-  top: calc(env(safe-area-inset-top, 0) + 60px);
-  left: 16px;
+  top: 16px;
   right: 16px;
-  z-index: 110000;
+  left: auto;
+  max-width: 360px;
+  z-index: 1200;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 12px 16px;
   background: linear-gradient(90deg, rgba(0,0,0,0.96), rgba(8,8,8,0.94));
-  border: 2px solid rgba(255,215,0,0.12);
-  box-shadow: 0 8px 36px rgba(0,240,255,0.06), 0 4px 16px rgba(0,0,0,0.6);
-  transform: skewX(-12deg);
-  transition: transform 0.18s ease, opacity 0.2s ease;
+  border: 1px solid rgba(255,215,0,0.18);
+  box-shadow: 0 8px 24px rgba(0,240,255,0.08), 0 4px 12px rgba(0,0,0,0.4);
+  transition: opacity 0.2s ease;
   gap: 12px;
-  border-radius: 0;
+  border-radius: 6px;
 }
 .registration-banner .registration-link {
   color: #ffd700;
@@ -2018,7 +2034,6 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  transform: skewX(12deg);
   font-family: var(--font-heading);
 }
 .registration-banner .registration-link:hover {
@@ -2032,9 +2047,8 @@ p {
   padding: 6px 8px;
   font-size: 1.1rem;
   cursor: pointer;
-  transform: skewX(12deg);
 }
-.registration-banner.closing { opacity: 0; transform: translateY(-10px) skewX(-12deg); }
+.registration-banner.closing { opacity: 0; transform: translateY(-6px); }
 
 /* Hide banner when nav open */
 body.nav-open .registration-banner { display: none !important; }
@@ -2050,7 +2064,7 @@ body.registration-visible {
     right: 12px;
     top: auto;
     bottom: calc(env(safe-area-inset-bottom, 0) + 80px);
-    transform: skewX(-8deg);
+    max-width: none;
     padding: 10px 12px;
     font-size: 0.95rem;
   }

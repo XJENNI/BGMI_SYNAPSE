@@ -203,6 +203,16 @@ document.documentElement.classList.remove('no-js');
     };
     setActiveNavLink();
 
+    // Ensure cyber nav hub buttons always navigate
+    const cyberNavItems = document.querySelectorAll('.cyber-nav-item');
+    cyberNavItems.forEach(item => {
+        const href = item.getAttribute('href');
+        if (!href) return;
+        item.addEventListener('click', () => {
+            window.location.href = href;
+        });
+    });
+
     // ========== Registration Banner Insert & Controls ==========
     function setupRegistrationBanner() {
         const REG_KEY = 'synapse_reg_closed_v1';
@@ -210,9 +220,6 @@ document.documentElement.classList.remove('no-js');
 
         const banner = document.getElementById('registrationBanner');
         if (!banner) return;
-        // Temporarily disable the banner to avoid intercepting navigation taps/Clicks
-        banner.style.display = 'none';
-        return;
 
         // If the banner was previously closed, remove it immediately to avoid showing a non-interactive banner
         if (localStorage.getItem(REG_KEY) === '1') {
@@ -277,7 +284,7 @@ document.documentElement.classList.remove('no-js');
     }
 
         // call it after DOM is ready
-        setupRegistrationBanner();
+        setTimeout(setupRegistrationBanner, 60);
         // setup contact tab
         setTimeout(setupContactTab, 60);
         // small registration toast popup (show once per user)
