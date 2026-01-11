@@ -34,10 +34,14 @@ document.documentElement.classList.remove('no-js');
     };
 
     if (preloader) {
-        // Hide ASAP and also after load as a safety net
-        hidePreloader();
+        // Hide preloader after DOM content is loaded
         window.addEventListener("load", hidePreloader, { once: true });
-        setTimeout(hidePreloader, 200);
+        // Fallback: hide after 1 second even if load event doesn't fire
+        setTimeout(hidePreloader, 1000);
+        // Quick hide for fast connections
+        if (document.readyState === 'complete') {
+            hidePreloader();
+        }
     }
 
     // 3. Navigation Controls
@@ -363,8 +367,47 @@ document.documentElement.classList.remove('no-js');
         revealElements.forEach(el => observer.observe(el));
     };
 
+    // 8. Registration Toast
+    const setupRegistrationToast = () => {
+        const toast = document.getElementById('regToast');
+        const closeBtn = document.getElementById('regToastClose');
+        if (!toast) return;
+        
+        const STORAGE_KEY = 'synapse_reg_toast_dismissed';
+        
+        // Don't show if user already dismissed it
+        if (localStorage.getItem(STORAGE_KEY)) return;
+        
+        // Show toast after 2 seconds
+        setTimeout(() => {
+            toast.classList.add('visible');
+        }, 2000);
+        
+        // Auto-hide after 10 seconds
+        const autoHideTimer = setTimeout(() => {
+            toast.classList.remove('visible');
+        }, 12000);
+        
+        // Close button handler
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                toast.classList.remove('visible');
+                localStorage.setItem(STORAGE_KEY, '1');
+                clearTimeout(autoHideTimer);
+            });
+        }
+        
+        // Mark as dismissed when user clicks the register link
+        toast.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                localStorage.setItem(STORAGE_KEY, '1');
+            }
+        });
+    };
+
         // Initial setup
         setupScrollAnimations();
+        setupRegistrationToast();
     };
 
     if (document.readyState === "loading") {

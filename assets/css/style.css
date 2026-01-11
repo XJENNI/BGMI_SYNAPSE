@@ -1422,6 +1422,11 @@ p {
   cursor: pointer;
   transition: all var(--transition-fast);
   transform: skewX(-5deg);
+  user-select: none;
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+  touch-action: manipulation;
 }
 
 .filter-btn span {
@@ -1440,6 +1445,39 @@ p {
   border-color: var(--accent-cyan);
   box-shadow: var(--glow-cyan);
   transform: skewX(-5deg) scale(1.05);
+  pointer-events: auto;
+}
+
+.filter-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Small Button Style */
+.btn-sm {
+  font-size: 0.75rem;
+  padding: 6px 12px;
+  min-width: auto;
+  min-height: 32px;
+  font-weight: 600;
+  cursor: pointer;
+  pointer-events: auto;
+  touch-action: manipulation;
+  border: 1px solid var(--border-subtle);
+  background: transparent;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.btn-sm:hover {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+}
+
+.btn-sm.active {
+  background: var(--accent-cyan);
+  color: var(--bg-primary);
+  border-color: var(--accent-cyan);
 }
 
 /* Table Container */
