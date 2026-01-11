@@ -210,6 +210,9 @@ document.documentElement.classList.remove('no-js');
 
         const banner = document.getElementById('registrationBanner');
         if (!banner) return;
+        // Temporarily disable the banner to avoid intercepting navigation taps/Clicks
+        banner.style.display = 'none';
+        return;
 
         // If the banner was previously closed, remove it immediately to avoid showing a non-interactive banner
         if (localStorage.getItem(REG_KEY) === '1') {
@@ -273,12 +276,12 @@ document.documentElement.classList.remove('no-js');
         obs.observe(document.body, { attributes: true, attributeFilter: ['class'] });
     }
 
-    // call it after DOM is ready
-    setTimeout(setupRegistrationBanner, 60);
-    // setup contact tab
-    setTimeout(setupContactTab, 60);
-    // small registration toast popup (show once per user)
-    setTimeout(setupRegistrationToast, 900);
+        // call it after DOM is ready
+        setupRegistrationBanner();
+        // setup contact tab
+        setTimeout(setupContactTab, 60);
+        // small registration toast popup (show once per user)
+        setTimeout(setupRegistrationToast, 900);
 
     // ========== Contact Tab ==========
     function setupContactTab() {

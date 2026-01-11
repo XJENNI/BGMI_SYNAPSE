@@ -204,9 +204,11 @@
     opacity: 0; visibility: hidden;
     z-index: 99990;
     transition: opacity 0.25s ease, visibility 0.25s ease;
+    pointer-events: none;
   }
   .nav-overlay.active {
     opacity: 1; visibility: visible;
+    pointer-events: auto;
   }
 
   @keyframes nav-slide-in {
