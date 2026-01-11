@@ -36,22 +36,17 @@ document.documentElement.classList.remove('no-js');
         }
     };
 
+    // Always schedule multiple hide attempts
     if (preloader) {
-        // Hide preloader after DOM content is loaded
+        // immediate requestAnimationFrame hide (fastest)
+        requestAnimationFrame(hidePreloader);
+        // DOM ready fallback
+        window.addEventListener("DOMContentLoaded", hidePreloader, { once: true });
+        // window load fallback
         window.addEventListener("load", hidePreloader, { once: true });
-        // Fallback: hide after 800ms even if load event doesn't fire
+        // timed fallbacks in case events don't fire
         setTimeout(hidePreloader, 800);
-        // Quick hide for fast connections
-        if (document.readyState === 'complete') {
-            hidePreloader();
-        }
-        // Emergency fallback - force hide after 2 seconds no matter what
-        setTimeout(() => {
-            if (preloader && preloader.parentNode) {
-                preloader.style.display = "none";
-                preloader.remove();
-            }
-        }, 2000);
+        setTimeout(hidePreloader, 2000);
     }
 
     // 3. Navigation Controls
