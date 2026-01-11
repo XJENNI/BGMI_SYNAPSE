@@ -18,26 +18,10 @@ document.documentElement.classList.remove('no-js');
     
     // 1a. FORCE RESET ON LOAD - This ensures every page starts fresh, removing any stuck blur/overlay
     body.classList.remove("nav-open", "menu-open", "no-scroll", "blur-active", "no-scroll-lock");
-    if (mainNav) {
-        mainNav.classList.remove("active", "show", "open");
-        mainNav.setAttribute("aria-hidden", "true");
-        mainNav.style.transform = ""; // Clear any inline transform
-    }
-    if (navOverlay) {
-        navOverlay.classList.remove("active", "show", "visible");
-        navOverlay.style.opacity = "0";
-        navOverlay.style.visibility = "hidden";
-        navOverlay.style.pointerEvents = "none";
-    }
-    if (menuToggle) {
-        menuToggle.classList.remove("active", "open");
-        menuToggle.setAttribute("aria-expanded", "false");
-    }
-    // Clear all overflow locks
-    document.documentElement.style.overflow = "";
-    document.body.style.overflow = "";
-    document.body.style.position = "";
-    document.body.style.width = "";
+    if (mainNav) mainNav.classList.remove("active", "show", "open");
+    if (navOverlay) navOverlay.classList.remove("active", "show", "visible");
+    document.documentElement.style.overflow = ""; // Restore scrolling
+    document.body.style.overflow = ""; // Restore body scrolling
     
     // 2. Preloader - Optimized for Speed (short safety net)
     const hidePreloader = () => {
@@ -56,89 +40,44 @@ document.documentElement.classList.remove('no-js');
         setTimeout(hidePreloader, 200);
     }
 
-    // 3. Navigation Controls with iOS scroll lock
+    // 3. Navigation Controls
     const openMobileNav = () => {
         if (!mainNav) return;
-        
-        // Store current scroll position
-        const scrollY = window.scrollY;
-        body.dataset.scrollY = scrollY;
-        
-        // Set attributes
         mainNav.classList.add("active");
         mainNav.setAttribute("aria-hidden", "false");
-        
-        if (navOverlay) {
-            navOverlay.classList.add("active");
-            navOverlay.setAttribute("aria-hidden", "false");
+        if (navClose) {
+            try { navClose.focus({ preventScroll: true }); } catch (e) { /* ignore */ }
         }
-        
+
+        // show overlay and lock scroll
+        if (navOverlay) navOverlay.classList.add("active");
         if (menuToggle) {
             menuToggle.classList.add("active");
             menuToggle.setAttribute("aria-expanded", "true");
         }
-        
-        body.classList.add("nav-open", "no-scroll");
-        
-        // iOS-specific scroll lock
-        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-            document.documentElement.style.overflow = "hidden";
-            document.documentElement.style.position = "fixed";
-            document.documentElement.style.width = "100%";
-            document.documentElement.style.height = "100%";
-        }
-        
-        // Lock body scroll and preserve position
-        body.style.position = "fixed";
-        body.style.top = `-${scrollY}px`;
-        body.style.width = "100%";
-        body.style.overflow = "hidden";
-        
-        if (navClose) {
-            try { navClose.focus({ preventScroll: true }); } catch (e) { /* ignore */ }
-        }
+
+        body.classList.add("nav-open");
+        // Lock page scrolling simply
+        document.body.style.overflow = "hidden";
     };
 
     const closeMobileNav = (options = {}) => {
         if (!mainNav) return;
-        
-        // Remove classes
         mainNav.classList.remove("active", "open", "show");
         mainNav.setAttribute("aria-hidden", "true");
-        
-        if (navOverlay) {
-            navOverlay.classList.remove("active", "show", "visible");
-            navOverlay.setAttribute("aria-hidden", "true");
-            navOverlay.style.opacity = "0";
-            navOverlay.style.visibility = "hidden";
-            navOverlay.style.pointerEvents = "none";
-        }
-        
+
+        if (navOverlay) navOverlay.classList.remove("active", "show", "visible");
+
         if (menuToggle) {
             menuToggle.classList.remove("active", "open");
             menuToggle.setAttribute("aria-expanded", "false");
         }
-        
-        // Remove body classes
+
+        // Remove known body classes that can cause blur or no-scroll issues
         body.classList.remove("nav-open", "menu-open", "no-scroll", "blur-active", "no-scroll-lock");
-        
-        // Restore scroll position
-        const scrollY = body.dataset.scrollY || "0";
-        body.style.position = "";
-        body.style.top = "";
-        body.style.width = "";
-        body.style.overflow = "";
-        window.scrollTo(0, parseInt(scrollY));
-        delete body.dataset.scrollY;
-        
-        // iOS cleanup
-        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-            document.documentElement.style.overflow = "";
-            document.documentElement.style.position = "";
-            document.documentElement.style.width = "";
-            document.documentElement.style.height = "";
-        }
-        
+
+        // Restore page scrolling
+        document.body.style.overflow = "";
         document.documentElement.style.overflow = "";
     };
 
@@ -150,20 +89,15 @@ document.documentElement.classList.remove('no-js');
         }
     };
 
-    // 4. Navigation Event Listeners with touch support
+    // 4. Navigation Event Listeners (Support both click and touch)
     if (menuToggle) {
         menuToggle.dataset.bound = "1";
         menuToggle.addEventListener("click", (e) => {
             e.preventDefault();
             e.stopPropagation();
             toggleMobileNav();
-        }, { passive: false });
-        
-        // Touch event for mobile
-        menuToggle.addEventListener("touchend", (e) => {
-            e.preventDefault();
-            toggleMobileNav();
-        }, { passive: false });
+            menuToggle.dataset.clicked = "1";
+        });
     }
 
     if (navClose) {
@@ -171,26 +105,14 @@ document.documentElement.classList.remove('no-js');
             e.preventDefault();
             e.stopPropagation();
             closeMobileNav();
-        }, { passive: false });
-        
-        // Touch event for mobile
-        navClose.addEventListener("touchend", (e) => {
-            e.preventDefault();
-            closeMobileNav();
-        }, { passive: false });
+        });
     }
 
     if (navOverlay) {
         navOverlay.addEventListener("click", (e) => {
             e.preventDefault();
             closeMobileNav();
-        }, { passive: false });
-        
-        // Touch event for mobile
-        navOverlay.addEventListener("touchend", (e) => {
-            e.preventDefault();
-            closeMobileNav();
-        }, { passive: false });
+        });
     }
 
     // Close on Escape key
@@ -200,34 +122,21 @@ document.documentElement.classList.remove('no-js');
         }
     });
 
-    // CRITICAL: Force cleanup on page unload
-    window.addEventListener("beforeunload", () => {
-        body.classList.remove("nav-open", "no-scroll");
-        body.style.position = "";
-        body.style.top = "";
-        body.style.width = "";
-        body.style.overflow = "";
-    });
-
-    // Force close on page hide (back/forward cache)
-    window.addEventListener("pagehide", () => {
-        closeMobileNav();
-    });
-    
-    // Force close on visibility change
-    document.addEventListener("visibilitychange", () => {
-        if (document.hidden && mainNav && mainNav.classList.contains("active")) {
-            closeMobileNav();
-        }
-    });
-
-    // Handle internal nav link clicks (close menu on mobile)
+    // Handle internal nav link clicks (close menu) — robust for anchor links
     const navLinks = document.querySelectorAll(".nav-link, .nav-item a, .nav-list a");
     navLinks.forEach(link => {
-        link.addEventListener("click", () => {
-            // Close menu on mobile only
-            if (window.innerWidth <= 768) {
-                closeMobileNav();
+        link.addEventListener("click", (e) => {
+            // Close menu immediately
+            closeMobileNav();
+
+            // If this is an in-page anchor (href starts with '#'), let the browser jump, but ensure focus/scroll is handled
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                // Small timeout to allow the menu to close before the page jumps
+                setTimeout(() => {
+                    // Use location.hash so anchor jump occurs on single-page
+                    window.location.hash = href;
+                }, 20);
             }
         });
     });

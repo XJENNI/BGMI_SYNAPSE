@@ -2035,22 +2035,6 @@ p {
 /* Hide banner when nav open */
 body.nav-open .registration-banner { display: none !important; }
 
-/* Force no-scroll state for iOS compatibility */
-body.no-scroll {
-  overflow: hidden !important;
-  position: fixed !important;
-  width: 100% !important;
-  height: 100vh !important;
-}
-
-/* iOS-specific scroll lock */
-@supports (-webkit-touch-callout: none) {
-  body.no-scroll {
-    position: fixed !important;
-    overflow: hidden !important;
-  }
-}
-
 /* When banner is visible at the top, push page content down to avoid overlap */
 body.registration-visible {
   transition: padding-top 0.18s ease;
