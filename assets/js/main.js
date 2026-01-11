@@ -15,34 +15,45 @@ document.documentElement.classList.remove('no-js');
         const navOverlay = document.getElementById("navOverlay");
         const navClose = document.getElementById("navClose");
         const header = document.querySelector(".site-header") || document.getElementById("header");
+        const REGISTER_URL = "https://forms.gle/1S6GPtYdGYCDVqbr6";
+        let navLock = false;
+        const NAV_LOCK_MS = 420;
+        const beginNavLock = () => {
+            if (navLock) return false;
+            navLock = true;
+            setTimeout(() => { navLock = false; }, NAV_LOCK_MS);
+            return true;
+        };
     
     // 1a. FORCE RESET ON LOAD - This ensures every page starts fresh, removing any stuck blur/overlay
     body.classList.remove("nav-open", "menu-open", "no-scroll", "blur-active", "no-scroll-lock");
+    body.classList.add("animations-softened");
     if (mainNav) mainNav.classList.remove("active", "show", "open");
     if (navOverlay) navOverlay.classList.remove("active", "show", "visible");
     document.documentElement.style.overflow = ""; // Restore scrolling
     document.body.style.overflow = ""; // Restore body scrolling
     
     // 2. Preloader - Optimized for Speed (short safety net)
+    let preloaderHidden = false;
     const hidePreloader = () => {
-        if (preloader) {
-            preloader.style.opacity = "0";
-            setTimeout(() => {
-                preloader.style.display = "none";
-            }, 300);
-        }
+        if (!preloader || preloaderHidden) return;
+        preloaderHidden = true;
+        preloader.classList.add("hidden");
+        preloader.style.opacity = "0";
+        setTimeout(() => {
+            preloader.style.display = "none";
+        }, 240);
     };
 
     if (preloader) {
-        // Hide ASAP and also after load as a safety net
-        hidePreloader();
         window.addEventListener("load", hidePreloader, { once: true });
-        setTimeout(hidePreloader, 200);
+        setTimeout(hidePreloader, 480);
     }
 
     // 3. Navigation Controls
     const openMobileNav = () => {
-        if (!mainNav) return;
+        if (!mainNav || mainNav.classList.contains("active")) return;
+        if (!beginNavLock()) return;
         mainNav.classList.add("active");
         mainNav.setAttribute("aria-hidden", "false");
         if (navClose) {
@@ -63,6 +74,8 @@ document.documentElement.classList.remove('no-js');
 
     const closeMobileNav = (options = {}) => {
         if (!mainNav) return;
+        if (!mainNav.classList.contains("active") && !body.classList.contains("nav-open")) return;
+        if (!options.skipLock && !beginNavLock()) return;
         mainNav.classList.remove("active", "open", "show");
         mainNav.setAttribute("aria-hidden", "true");
 
@@ -118,9 +131,10 @@ document.documentElement.classList.remove('no-js');
     // Close on Escape key
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && mainNav && mainNav.classList.contains("active")) {
-            closeMobileNav();
+            navLock = false;
+            closeMobileNav({ skipLock: true });
         }
-    });
+    }, true);
 
     // Handle internal nav link clicks (close menu) — robust for anchor links
     const navLinks = document.querySelectorAll(".nav-link, .nav-item a, .nav-list a");
@@ -140,6 +154,30 @@ document.documentElement.classList.remove('no-js');
             }
         });
     });
+
+    // Explicit navigation handlers for the cyber hub buttons
+    const cyberLinks = document.querySelectorAll(".cyber-nav-item");
+    cyberLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+            const href = link.getAttribute("href");
+            if (!href) return;
+            e.preventDefault();
+            closeMobileNav();
+            window.location.href = href;
+        });
+    });
+
+    // ensure nav state stays consistent even if toggled externally
+    if (mainNav) {
+        const navStateObserver = new MutationObserver(() => {
+            if (mainNav.classList.contains("active") && !body.classList.contains("nav-open")) {
+                body.classList.add("nav-open");
+                mainNav.setAttribute("aria-hidden", "false");
+                if (navOverlay) navOverlay.classList.add("active");
+            }
+        });
+        navStateObserver.observe(mainNav, { attributes: true, attributeFilter: ["class"] });
+    }
 
     // 5. Header Scroll Effect
     const handleHeaderScroll = () => {
@@ -245,6 +283,8 @@ document.documentElement.classList.remove('no-js');
     setTimeout(setupContactTab, 60);
     // small registration toast popup (show once per user)
     setTimeout(setupRegistrationToast, 900);
+    // floating badge for quick registrations
+    setTimeout(setupFloatingRegisterBadge, 120);
 
     // ========== Contact Tab ==========
     function setupContactTab() {
@@ -305,7 +345,7 @@ document.documentElement.classList.remove('no-js');
     function setupRegistrationToast() {
         const toast = document.getElementById('regToast');
         const closeBtn = document.getElementById('regToastClose');
-        const SHOWN_KEY = 'synapse_reg_toast_shown_v1';
+        const SHOWN_KEY = 'synapse_reg_toast_entries_v2';
         if (!toast) return;
         // don't show repeatedly if user already closed it
         if (localStorage.getItem(SHOWN_KEY)) return;
@@ -338,6 +378,30 @@ document.documentElement.classList.remove('no-js');
                 hide();
             }
         });
+    }
+
+    // ========== Floating Registration Badge ==========
+    function setupFloatingRegisterBadge() {
+        if (document.getElementById('floatingRegister')) return;
+        const badge = document.createElement('a');
+        badge.id = 'floatingRegister';
+        badge.className = 'floating-register';
+        badge.href = REGISTER_URL;
+        badge.target = '_blank';
+        badge.rel = 'noopener';
+        badge.setAttribute('aria-label', 'Register for Synapse BGMI 2026');
+        badge.innerHTML = `<span class="floating-register__label">Register</span><span class="floating-register__cta">→</span>`;
+        badge.addEventListener('click', () => {
+            closeMobileNav();
+        });
+        document.body.appendChild(badge);
+
+        const syncBadge = () => {
+            badge.classList.toggle('hidden', document.body.classList.contains('nav-open'));
+        };
+        syncBadge();
+        const badgeObserver = new MutationObserver(syncBadge);
+        badgeObserver.observe(document.body, { attributes: true, attributeFilter: ['class'] });
     }
 
     // 7. Reveal Animations on Scroll - Using IntersectionObserver for Performance
