@@ -2409,6 +2409,22 @@ body.registration-visible {
   .reg-toast .reg-toast-text { font-size: 0.92rem; }
 }
 
+/* Registration badge (Denvil style, upper-left) */
+.registration-corner-badge {
+  top: calc(env(safe-area-inset-top, 0) + 16px);
+  left: 20px;
+  bottom: auto;
+  right: auto;
+  z-index: 9000;
+  background: linear-gradient(90deg, #2d2a72 0%, #ff6ad5 100%);
+}
+.registration-corner-badge .denvil-icon { background: rgba(255,255,255,0.1); }
+.registration-corner-badge .denvil-text strong { color: #fff; }
+body.nav-open .registration-corner-badge { display: none !important; }
+@media (max-width: 768px) {
+  .registration-corner-badge { top: calc(env(safe-area-inset-top, 0) + 12px); left: 14px; }
+}
+
 /* Denvil small tagmark (lower corner) */
 .denvil-badge {
   position: fixed;
