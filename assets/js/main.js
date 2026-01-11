@@ -305,7 +305,7 @@ document.documentElement.classList.remove('no-js');
     function setupRegistrationToast() {
         const toast = document.getElementById('regToast');
         const closeBtn = document.getElementById('regToastClose');
-        const SHOWN_KEY = 'synapse_reg_toast_shown_v1';
+        const SHOWN_KEY = 'synapse_reg_toast_entries_v2';
         if (!toast) return;
         // don't show repeatedly if user already closed it
         if (localStorage.getItem(SHOWN_KEY)) return;

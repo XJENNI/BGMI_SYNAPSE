@@ -1085,7 +1085,7 @@ p {
 }
 .reward-card.mvp:hover {
     border-color: var(--accent-purple);
-    box-shadow: 0 10px 30px rgba(188, 19, 254, 0.2);
+  box-shadow: 0 10px 30px rgba(188, 19, 254, 0.2);
 }
 
 /* ========== Section Styling ========== */
@@ -1097,6 +1097,40 @@ p {
 
 .section-dark {
   background: var(--bg-secondary);
+}
+
+/* ========== Registration Tab ========== */
+.registration-tab {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.65), rgba(6, 6, 12, 0.9));
+  border: 1px solid var(--border-subtle);
+  padding: var(--space-xl);
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+.registration-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(var(--accent-free-rgb), var(--accent-free-badge-alpha));
+  color: var(--accent-free);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+}
+
+.registration-tab h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.registration-tab p {
+  color: var(--text-secondary);
+  margin: 0 auto var(--space-md);
+  max-width: 640px;
 }
 
 .section-title {
