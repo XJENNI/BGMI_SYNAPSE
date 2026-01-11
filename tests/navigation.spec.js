@@ -14,7 +14,7 @@ test.describe('Site navigation & pages', () => {
     await expect(page).toHaveURL(/.*teams.html$/);
   });
 
-  test('Mobile nav opens, traps focus, and closes on Escape', async ({ page, context }) => {
+  test('Mobile nav opens, traps focus, sits above content, and closes on Escape', async ({ page, context }) => {
     await context.setViewportSize({ width: 390, height: 844 }); // iPhone-ish
     await page.goto('/index.html');
 
@@ -23,10 +23,15 @@ test.describe('Site navigation & pages', () => {
 
     await menuToggle.click();
     await expect(mainNav).toHaveClass(/active/);
+    await expect(mainNav).toBeVisible();
 
-    // Ensure focus is inside the nav (close button gets focus)
+    // close button should be focused
     const navClose = page.locator('#navClose');
     await expect(navClose).toBeFocused();
+
+    // ensure nav has expected z-index (>= 100000)
+    const z = await mainNav.evaluate(el => window.getComputedStyle(el).zIndex);
+    expect(Number(z) >= 100000).toBeTruthy();
 
     // Press Escape to close
     await page.keyboard.press('Escape');

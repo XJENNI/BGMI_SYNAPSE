@@ -64,71 +64,90 @@ document.addEventListener('DOMContentLoaded', function() {
         menuToggle.setAttribute('aria-expanded', 'false');
     }
 
-    function toggleMobileNav() {
-        if (!menuToggle || !mainNav || !navOverlay) return;
-        const isOpen = menuToggle.classList.toggle('active');
-        mainNav.classList.toggle('active');
-        navOverlay.classList.toggle('active');
-        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    // Focus trap helpers
+    let _lastFocused = null;
+    function trapFocus(container) {
+        if (!container) return;
+        _lastFocused = document.activeElement;
+        const focusables = Array.from(container.querySelectorAll('a, button, input, [tabindex]:not([tabindex="-1"])')).filter(el => !el.hasAttribute('disabled'));
+        if (focusables.length) focusables[0].focus();
 
-        // Inline style fallback for environments where CSS transitions may behave unpredictably
-        if (isOpen) {
-            mainNav.style.right = '0';
-            navOverlay.style.opacity = '1';
-            navOverlay.style.visibility = 'visible';
-            navOverlay.classList.add('active');
-
-            // lock scroll on mobile/iOS
-            scrollLockState.scrollY = window.scrollY || document.documentElement.scrollTop;
-            document.documentElement.style.height = '100%';
-            document.body.style.position = 'fixed';
-            document.body.style.top = `-${scrollLockState.scrollY}px`;
-            // focus first nav link for accessibility
-            const first = mainNav.querySelector('.nav-link');
-            if (first) first.focus();
-        } else {
-            // restore scroll and remove inline fallbacks
-            mainNav.style.right = '';
-            navOverlay.style.opacity = '';
-            navOverlay.style.visibility = '';
-            navOverlay.classList.remove('active');
-
-            document.body.style.position = '';
-            document.body.style.top = '';
-            document.documentElement.style.height = '';
-            window.scrollTo(0, scrollLockState.scrollY || 0);
-            menuToggle.focus();
+        function focusTrapHandler(e) {
+            if (e.key !== 'Tab') return;
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault(); last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault(); first.focus();
+            }
         }
+        container._releaseTrap = () => container.removeEventListener('keydown', focusTrapHandler);
+        container.addEventListener('keydown', focusTrapHandler);
+    }
+    function releaseFocus(container) {
+        if (!container) return;
+        if (container._releaseTrap) container._releaseTrap();
+        if (_lastFocused && typeof _lastFocused.focus === 'function') _lastFocused.focus();
+        _lastFocused = null;
+    }
+
+    function openMobileNav() {
+        if (!menuToggle || !mainNav || !navOverlay) return;
+        menuToggle.classList.add('active');
+        mainNav.classList.add('active');
+        navOverlay.classList.add('active');
+        menuToggle.setAttribute('aria-expanded', 'true');
+
+        // store and lock scroll without position:fixed hack
+        scrollLockState.scrollY = window.scrollY || document.documentElement.scrollTop;
+        document.body.classList.add('nav-open');
+        document.body.style.overflow = 'hidden';
+        document.body.style.touchAction = 'none';
+
+        try { trapFocus(mainNav); } catch (e) { /* ignore */ }
+        const closeBtn = document.getElementById('navClose');
+        if (closeBtn) closeBtn.focus({ preventScroll: true });
     }
 
     function closeMobileNav() {
         if (!menuToggle || !mainNav || !navOverlay) return;
-        if (menuToggle.classList.contains('active')) {
-            menuToggle.classList.remove('active');
-            mainNav.classList.remove('active');
-            navOverlay.classList.remove('active');
-            menuToggle.setAttribute('aria-expanded', 'false');
-            document.body.style.position = '';
-            document.body.style.top = '';
-            document.documentElement.style.height = '';
-            window.scrollTo(0, scrollLockState.scrollY || 0);
-            menuToggle.focus();
-        }
+        menuToggle.classList.remove('active');
+        mainNav.classList.remove('active');
+        navOverlay.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+
+        document.body.classList.remove('nav-open');
+        document.body.style.overflow = '';
+        document.body.style.touchAction = '';
+
+        try { releaseFocus(mainNav); } catch (e) { /* ignore */ }
+
+        const s = parseInt(document.body.dataset.scrollY || String(scrollLockState.scrollY || 0), 10) || 0;
+        window.scrollTo(0, s);
+        delete document.body.dataset.scrollY;
+    }
+
+    // Toggle uses pointer to avoid duplicate touch/click handlers
+    function toggleMobileNav() {
+        if (!menuToggle) return;
+        if (menuToggle.classList.contains('active')) closeMobileNav(); else openMobileNav();
     }
 
     if (menuToggle) {
-        menuToggle.addEventListener('click', toggleMobileNav);
+        menuToggle.addEventListener('pointerup', (e) => { e.preventDefault(); toggleMobileNav(); });
         // Ensure it's a true button for accessibility
         if (!menuToggle.hasAttribute('type')) menuToggle.setAttribute('type', 'button');
     }
 
-    if (navOverlay) {
-        navOverlay.addEventListener('click', closeMobileNav);
-        navOverlay.addEventListener('touchstart', closeMobileNav);
-    }
+    // Overlay and close handlers use pointer events to avoid double triggers
+    if (navOverlay) navOverlay.addEventListener('pointerup', (e) => { e.preventDefault(); closeMobileNav(); });
+    const navClose = document.getElementById('navClose');
+    if (navClose) navClose.addEventListener('pointerup', (e) => { e.preventDefault(); closeMobileNav(); });
 
+    // Close nav on link click when in mobile width
     navLinks.forEach(link => {
-        link.addEventListener('click', closeMobileNav);
+        link.addEventListener('click', (e) => { if (window.innerWidth <= 768) closeMobileNav(); });
     });
 
     // Close mobile nav on Escape for keyboard accessibility
@@ -292,6 +311,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     setActiveNavLink();
+
+    // Defensive initialization: ensure nav is closed and inline styles cleared to avoid stuck state on some devices
+    try {
+        if (mainNav) {
+            mainNav.classList.remove('active','open','show');
+            mainNav.setAttribute('aria-hidden','true');
+            mainNav.style.transform = '';
+            mainNav.style.right = '';
+        }
+        if (navOverlay) {
+            navOverlay.classList.remove('active','show','visible');
+            navOverlay.style.opacity = '0';
+            navOverlay.style.visibility = 'hidden';
+            navOverlay.style.pointerEvents = 'none';
+        }
+        if (menuToggle) menuToggle.setAttribute('aria-expanded','false');
+    } catch (e) { console.warn('Nav defensive init failed', e); }
 
     // ========== Keyboard Navigation ==========
     document.addEventListener('keydown', function(e) {
