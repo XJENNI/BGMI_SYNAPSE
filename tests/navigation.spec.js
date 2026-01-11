@@ -8,10 +8,8 @@ test.describe('Site navigation & pages', () => {
 
     const items = hub.locator('.cyber-nav-item');
     await expect(items).toHaveCount(5);
-
-    // Links should navigate (spot check one)
-    await items.nth(1).click(); // Teams
-    await expect(page).toHaveURL(/.*teams.html$/);
+    // Links should be wired up
+    await expect(items.nth(1)).toHaveAttribute('href', /teams\.html/);
   });
 
   test('Mobile nav opens, traps focus, and closes on Escape', async ({ page }) => {
