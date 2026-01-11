@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Live leaderboard and standings for SYNAPSE MAMC BGMI 2026 tournament. Track team rankings, kills, and scores in real-time.">
     <meta name="keywords" content="BGMI leaderboard, esports standings, Synapse MAMC, tournament rankings">
     
-    <title>Standings | MAVERICKS x SYNAPSE BGMI 2026</title>
+    <title>Standings | KRAFTON x SYNAPSE BGMI 2026</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="data/img/mamclogo_nobg.png">
@@ -25,16 +25,14 @@
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     
     <!-- Stylesheets -->
-    <link rel="preload" href="assets/css/style.css" as="style" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
-    <link rel="preload" href="assets/css/responsive.css" as="style" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="assets/css/responsive.css"></noscript>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
     <!-- Preloader -->
-    <div class="preloader" id="preloader">
+    <div class="preloader" id="preloader" style="opacity: 1; visibility: visible;">
         <div class="preloader-content">
-            <div class="preloader-logo">MAVERICKS x SYNAPSE</div>
+            <div class="preloader-logo">KRAFTON x MAVERICKS x SYNAPSE</div>
             <div class="preloader-bar"></div>
         </div>
     </div>
@@ -164,7 +162,9 @@
                         </tr>
                     </thead>
                     <tbody id="leaderboardBody">
-                        <!-- Data will be populated by JavaScript -->
+                        <tr class="coming-soon-row" aria-hidden="true">
+                            <td colspan="7" style="text-align:center; color: var(--text-muted); font-style: italic;">Data Coming Soon</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

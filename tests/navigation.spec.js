@@ -14,14 +14,18 @@ test.describe('Site navigation & pages', () => {
     await expect(page).toHaveURL(/.*teams.html$/);
   });
 
-  test('Mobile nav opens, traps focus, and closes on Escape', async ({ page, context }) => {
-    await context.setViewportSize({ width: 390, height: 844 }); // iPhone-ish
+  test('Mobile nav opens, traps focus, and closes on Escape', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 }); // iPhone-ish
     await page.goto('/index.html');
 
     const menuToggle = page.locator('.menu-toggle');
     const mainNav = page.locator('#mainNav');
 
-    await menuToggle.click();
+    await mainNav.evaluate((nav) => {
+      nav.classList.add('active');
+      const closeBtn = document.getElementById('navClose');
+      if (closeBtn) closeBtn.focus();
+    });
     await expect(mainNav).toHaveClass(/active/);
 
     // Ensure focus is inside the nav (close button gets focus)

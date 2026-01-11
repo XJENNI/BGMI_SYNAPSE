@@ -146,13 +146,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ========== Render Leaderboard ==========
     function renderLeaderboard(teams) {
-        // Clear existing rows
+        if (!leaderboardBody) return;
+        
+        // Reset content
         leaderboardBody.innerHTML = '';
         
         if (teams.length === 0) {
             leaderboardBody.innerHTML = `
                 <tr>
-                    <td colspan="6" style="text-align: center; padding: 2rem; color: var(--text-muted);">
+                    <td colspan="7" style="text-align: center; padding: 2rem; color: var(--text-muted);">
                         No teams found for this filter.
                     </td>
                 </tr>
@@ -207,6 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ========== Animate Rows ==========
     function animateRows() {
+        if (!leaderboardBody) return;
         const rows = leaderboardBody.querySelectorAll('.fade-row');
         
         rows.forEach((row, index) => {
@@ -218,8 +221,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ========== Setup Filter Listeners ==========
     function setupFilterListeners() {
+        if (!filterButtons) return;
         filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
                 const filter = this.dataset.filter;
                 const match = this.dataset.match;
                 const group = this.dataset.group;
@@ -238,16 +245,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     // Show/Hide sub-filters
                     if (filter !== 'all') {
-                        matchFilters.style.display = 'flex';
-                        overallFilters.style.display = 'none';
+                        if (matchFilters) matchFilters.style.display = 'flex';
+                        if (overallFilters) overallFilters.style.display = 'none';
                         // Reset match buttons visibility/active state
                         document.querySelectorAll('#matchFilters .filter-btn').forEach(btn => btn.classList.remove('active'));
                     } else {
-                        matchFilters.style.display = 'none';
-                        overallFilters.style.display = 'flex';
+                        if (matchFilters) matchFilters.style.display = 'none';
+                        if (overallFilters) overallFilters.style.display = 'flex';
                         // Reset group buttons
                         document.querySelectorAll('#overallFilters .filter-btn').forEach(btn => btn.classList.remove('active'));
-                        document.querySelector('#overallFilters [data-group="all"]').classList.add('active');
+                        const allGroupBtn = document.querySelector('#overallFilters [data-group="all"]');
+                        if (allGroupBtn) allGroupBtn.classList.add('active');
                     }
 
                     handleRendering();
@@ -278,7 +286,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function handleRendering() {
         if (currentFilter === 'all') {
             if (overallContainer) overallContainer.style.display = 'block';
-            document.querySelector('.table-container').style.display = 'none';
+            const tableContainer = document.querySelector('.table-container');
+            if (tableContainer) tableContainer.style.display = 'none';
             
             // Sub-view elements
             const groupView = document.getElementById('groupView');
@@ -313,7 +322,8 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             // ensure overall view is hidden and the regular table is visible
             if (overallContainer) overallContainer.style.display = 'none';
-            document.querySelector('.table-container').style.display = '';
+            const tableContainer = document.querySelector('.table-container');
+            if (tableContainer) tableContainer.style.display = '';
 
             // If not in live mode, show the "Coming Soon" splash in the table area
             if (!isLiveMode) {
@@ -342,7 +352,9 @@ document.addEventListener('DOMContentLoaded', function() {
             btn.dataset.match = String(i);
             btn.textContent = `M${i}`;
             if (currentMatch === String(i)) btn.classList.add('active');
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
                 document.querySelectorAll('#matchFilters .filter-btn').forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
                 currentMatch = this.dataset.match;
@@ -414,6 +426,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ========== Show Coming Soon State ==========
     function showComingSoon() {
+        if (!leaderboardBody) return;
         leaderboardBody.innerHTML = `
             <tr>
                 <td colspan="6">
@@ -474,16 +487,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ========== Update Timestamp ==========
     function updateTimestamp() {
-        if (lastUpdated) {
-            const now = new Date();
-            const timeStr = now.toLocaleTimeString('en-IN', {
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit',
-                hour12: false
-            });
-            lastUpdated.textContent = `Last updated: ${timeStr}`;
-        }
+        if (!lastUpdated) return;
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString('en-IN', {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        });
+        lastUpdated.textContent = `Last updated: ${timeStr}`;
     }
 
     // ========== Auto Refresh ==========

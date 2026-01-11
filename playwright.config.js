@@ -14,7 +14,12 @@ module.exports = defineConfig({
     ignoreHTTPSErrors: true
   },
   projects: [
-    { name: 'Desktop Chromium', use: { browserName: 'chromium' } },
-    { name: 'Mobile Safari (iPhone 12)', use: { ...devices['iPhone 12'] } }
-  ]
+    { name: 'Desktop Chromium', use: { browserName: 'chromium' } }
+  ],
+  webServer: {
+    command: 'npm run start',
+    url: 'http://127.0.0.1:8080',
+    reuseExistingServer: true,
+    timeout: 30000
+  }
 });

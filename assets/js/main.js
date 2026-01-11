@@ -2,357 +2,371 @@
  * Main JS for Synapse BGMI Website - Optimized for Mobile
  */
 
-document.addEventListener("DOMContentLoaded", () => {
-    // 1. Elements
-    const body = document.body;
-    const preloader = document.getElementById("preloader");
-    const menuToggle = document.getElementById("menuToggle");
-    const mainNav = document.getElementById("mainNav");
-    const navOverlay = document.getElementById("navOverlay");
-    const navClose = document.getElementById("navClose");
-    const header = document.querySelector(".site-header") || document.getElementById("header");
+// Remove no-js class if JavaScript is enabled
+document.documentElement.classList.remove('no-js');
+
+(() => {
+    const init = () => {
+        // 1. Elements
+        const body = document.body;
+        const preloader = document.getElementById("preloader");
+        const menuToggle = document.getElementById("menuToggle");
+        const mainNav = document.getElementById("mainNav");
+        const navOverlay = document.getElementById("navOverlay");
+        const navClose = document.getElementById("navClose");
+        const header = document.querySelector(".site-header") || document.getElementById("header");
     
-    // 1a. FORCE RESET ON LOAD - This ensures every page starts fresh, removing any stuck blur/overlay
-    body.classList.remove("nav-open", "menu-open", "no-scroll", "blur-active", "no-scroll-lock");
-    if (mainNav) mainNav.classList.remove("active", "show", "open");
-    if (navOverlay) navOverlay.classList.remove("active", "show", "visible");
-    document.documentElement.style.overflow = ""; // Restore scrolling
-    document.body.style.overflow = ""; // Restore body scrolling
-    
-    // 2. Preloader - Optimized for Speed (short safety net)
-    const hidePreloader = () => {
-        if (preloader) {
-            preloader.style.opacity = "0";
-            setTimeout(() => {
-                preloader.style.display = "none";
-            }, 300);
-        }
-    };
-
-    if (preloader) {
-        // Hide when window loads; also ensure we don't block more than 1s
-        window.addEventListener("load", hidePreloader);
-        setTimeout(hidePreloader, 1000);
-    }
-
-    // 3. Navigation Controls
-    const openMobileNav = () => {
-        if (!mainNav) return;
-        mainNav.classList.add("active");
-        mainNav.setAttribute("aria-hidden", "false");
-
-        // show overlay and lock scroll
-        if (navOverlay) navOverlay.classList.add("active");
-        if (menuToggle) {
-            menuToggle.classList.add("active");
-            menuToggle.setAttribute("aria-expanded", "true");
-        }
-
-        body.classList.add("nav-open");
-        // Lock page scrolling simply
-        document.body.style.overflow = "hidden";
-    };
-
-    const closeMobileNav = (options = {}) => {
-        if (!mainNav) return;
-        mainNav.classList.remove("active", "open", "show");
-        mainNav.setAttribute("aria-hidden", "true");
-
-        if (navOverlay) navOverlay.classList.remove("active", "show", "visible");
-
-        if (menuToggle) {
-            menuToggle.classList.remove("active", "open");
-            menuToggle.setAttribute("aria-expanded", "false");
-        }
-
-        // Remove known body classes that can cause blur or no-scroll issues
+        // 1a. FORCE RESET ON LOAD - Ensures clean state
         body.classList.remove("nav-open", "menu-open", "no-scroll", "blur-active", "no-scroll-lock");
-
-        // Restore page scrolling
-        document.body.style.overflow = "";
+        if (mainNav) mainNav.classList.remove("active", "show", "open");
+        if (navOverlay) navOverlay.classList.remove("active", "show", "visible");
         document.documentElement.style.overflow = "";
-    };
-
-    const toggleMobileNav = () => {
-        if (mainNav && mainNav.classList.contains("active")) {
-            closeMobileNav();
-        } else {
-            openMobileNav();
-        }
-    };
-
-    // 4. Navigation Event Listeners (Support both click and touch)
-    if (menuToggle) {
-        menuToggle.addEventListener("click", (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            toggleMobileNav();
-        });
-    }
-
-    if (navClose) {
-        navClose.addEventListener("click", (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            closeMobileNav();
-        });
-    }
-
-    if (navOverlay) {
-        navOverlay.addEventListener("click", (e) => {
-            e.preventDefault();
-            closeMobileNav();
-        });
-    }
-
-    // Close on Escape key
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && mainNav && mainNav.classList.contains("active")) {
-            closeMobileNav();
-        }
-    });
-
-    // Handle internal nav link clicks (close menu) — robust for anchor links
-    const navLinks = document.querySelectorAll(".nav-link, .nav-item a, .nav-list a");
-    navLinks.forEach(link => {
-        link.addEventListener("click", (e) => {
-            // Close menu immediately
-            closeMobileNav();
-
-            // If this is an in-page anchor (href starts with '#'), let the browser jump, but ensure focus/scroll is handled
-            const href = link.getAttribute('href');
-            if (href && href.startsWith('#')) {
-                // Small timeout to allow the menu to close before the page jumps
-                setTimeout(() => {
-                    // Use location.hash so anchor jump occurs on single-page
-                    window.location.hash = href;
-                }, 20);
-            }
-        });
-    });
-
-    // 5. Header Scroll Effect
-    const handleHeaderScroll = () => {
-        if (header && window.scrollY > 50) {
-            header.classList.add("scrolled");
-        } else if (header) {
-            header.classList.remove("scrolled");
-        }
-    };
-
-    window.addEventListener("scroll", handleHeaderScroll);
-    handleHeaderScroll(); 
-
-    // 6. Active Page Link Detection
-    const setActiveNavLink = () => {
-        const currentPath = window.location.pathname;
-        const page = currentPath.split("/").pop() || "index.html";
+        body.style.overflow = "";
         
-        navLinks.forEach(link => {
-            const href = link.getAttribute("href");
-            if (href === page || (page === "index.html" && href === "#")) {
-                link.classList.add("active");
-            } else {
-                link.classList.remove("active");
-            }
-        });
-    };
-    setActiveNavLink();
-
-    // ========== Registration Banner Insert & Controls ==========
-    function setupRegistrationBanner() {
-        const REG_KEY = 'synapse_reg_closed_v1';
-        if (typeof window === 'undefined' || !document) return;
-
-        const banner = document.getElementById('registrationBanner');
-        if (!banner) return;
-
-        // If the banner was previously closed, remove it immediately to avoid showing a non-interactive banner
-        if (localStorage.getItem(REG_KEY) === '1') {
-            banner.remove();
-            document.body.classList.remove('registration-visible');
-            document.documentElement.style.removeProperty('--reg-banner-height');
-            return;
-        }
-
-        const closeBtn = banner.querySelector('.registration-close');
-        const closeHandler = (e) => {
-            if (e && e.preventDefault) e.preventDefault();
-            banner.classList.add('closing');
-            setTimeout(() => {
-                banner.remove();
-                document.body.classList.remove('registration-visible');
-                document.documentElement.style.removeProperty('--reg-banner-height');
-            }, 220);
-            try { localStorage.setItem(REG_KEY, '1'); } catch (err) { /* ignore storage errors */ }
-        };
-
-        if (closeBtn) {
-            closeBtn.addEventListener('click', closeHandler);
-            // support pointer devices and touch for immediate response (prevent default to avoid focus delay)
-            closeBtn.addEventListener('pointerdown', (ev) => { ev.preventDefault && ev.preventDefault(); closeHandler(ev); });
-            closeBtn.addEventListener('touchstart', (ev) => { ev.preventDefault && ev.preventDefault(); closeHandler(ev); }, { passive: false });
-            // keyboard accessibility (Enter / Space)
-            closeBtn.addEventListener('keydown', (ev) => {
-                if (ev.key === 'Enter' || ev.key === ' ' || ev.key === 'Spacebar') {
-                    ev.preventDefault && ev.preventDefault();
-                    closeHandler(ev);
+        // ========== 2. REDESIGNED PRELOADER SYSTEM ==========
+        
+        /**
+         * Preloader Hide Logic - Guaranteed to work
+         * Multiple fallback strategies ensure it never gets stuck
+         */
+        const PreloaderManager = {
+            hidden: false,
+            
+            hide() {
+                if (this.hidden || !preloader) return;
+                this.hidden = true;
+                
+                // Step 1: Add hidden class (triggers CSS transition)
+                preloader.classList.add('hidden');
+                
+                // Step 2: Force inline styles (overrides any stuck inline styles)
+                preloader.style.opacity = "0";
+                preloader.style.visibility = "hidden";
+                preloader.style.pointerEvents = "none";
+                
+                // Step 3: Remove from DOM after transition completes
+                setTimeout(() => {
+                    if (preloader && preloader.parentNode) {
+                        preloader.style.display = "none";
+                        // Completely remove element for better performance
+                        try {
+                            preloader.remove();
+                        } catch (e) {
+                            // Fallback for older browsers
+                            preloader.parentNode.removeChild(preloader);
+                        }
+                    }
+                }, 600); // Wait for CSS transition (400ms) + buffer
+            },
+            
+            forceHide() {
+                // Emergency hide - bypasses all transitions
+                if (!preloader) return;
+                this.hidden = true;
+                preloader.style.cssText = "display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important;";
+                if (preloader.parentNode) {
+                    try {
+                        preloader.remove();
+                    } catch (e) {
+                        preloader.parentNode.removeChild(preloader);
+                    }
                 }
-            });
-            // ensure the element is treated as a button if markup changes
-            if (!closeBtn.getAttribute('type')) closeBtn.setAttribute('type', 'button');
-        }
-
-        // Push page content down while banner is visible (avoid overlap)
-        const applyBannerSpacing = () => {
-            const rect = banner.getBoundingClientRect();
-            // if banner appears near the top, apply top spacing; if it is at bottom (mobile), remove spacing
-            if (rect.top < window.innerHeight / 2) {
-                document.documentElement.style.setProperty('--reg-banner-height', `${Math.ceil(rect.height)}px`);
-                document.body.classList.add('registration-visible');
-            } else {
-                document.body.classList.remove('registration-visible');
-                document.documentElement.style.removeProperty('--reg-banner-height');
             }
         };
-        applyBannerSpacing();
-        // recompute on resize and when layout may change
-        window.addEventListener('resize', applyBannerSpacing);
+        
+        // Strategy 1: Hide on immediate paint (fastest for modern browsers)
+        if (preloader) {
+            requestAnimationFrame(() => PreloaderManager.hide());
+        }
+        
+        // Strategy 2: Hide on DOMContentLoaded (fallback for slower connections)
+        window.addEventListener("DOMContentLoaded", () => PreloaderManager.hide(), { once: true });
+        
+        // Strategy 3: Hide on full page load (for images/resources)
+        window.addEventListener("load", () => PreloaderManager.hide(), { once: true });
+        
+        // Strategy 4: Timed fallback (800ms - reasonable wait time)
+        setTimeout(() => PreloaderManager.hide(), 800);
+        
+        // Strategy 5: Emergency force-hide after 2.5 seconds (absolute safety net)
+        setTimeout(() => PreloaderManager.forceHide(), 2500);
+        
+        // Strategy 6: Hide when user interacts (handles edge cases)
+        const userInteractionHide = () => {
+            PreloaderManager.hide();
+            document.removeEventListener('click', userInteractionHide);
+            document.removeEventListener('touchstart', userInteractionHide);
+            document.removeEventListener('keydown', userInteractionHide);
+        };
+        document.addEventListener('click', userInteractionHide, { once: true });
+        document.addEventListener('touchstart', userInteractionHide, { once: true, passive: true });
+        document.addEventListener('keydown', userInteractionHide, { once: true });
 
-        // Observe body class changes to hide banner when nav opens
-        const obs = new MutationObserver(() => {
-            if (document.body.classList.contains('nav-open')) banner.style.display = 'none';
-            else banner.style.display = '';
-            // also re-evaluate placement
-            applyBannerSpacing();
-        });
-        obs.observe(document.body, { attributes: true, attributeFilter: ['class'] });
-    }
-
-    // call it after DOM is ready
-    setTimeout(setupRegistrationBanner, 60);
-    // setup contact tab
-    setTimeout(setupContactTab, 60);
-    // small registration toast popup (show once per user)
-    setTimeout(setupRegistrationToast, 900);
-
-    // ========== Contact Tab ==========
-    function setupContactTab() {
-        const tab = document.getElementById('contactTab');
-        if (!tab) return;
-        const toggle = document.getElementById('contactToggle');
-        const panel = document.getElementById('contactPanel');
-
-        const closePanel = () => {
-            tab.classList.remove('open');
-            if (toggle) toggle.setAttribute('aria-expanded', 'false');
-            if (panel) panel.setAttribute('aria-hidden', 'true');
-            // return focus to toggle for keyboard users
-            if (toggle) toggle.focus();
+        // 3. Navigation Controls
+        const openMobileNav = () => {
+            if (!mainNav || !navOverlay) return;
+            
+            body.classList.add("nav-open");
+            mainNav.classList.add("active");
+            navOverlay.classList.add("active");
+            
+            // Prevent scroll on body
+            document.documentElement.style.overflow = "hidden";
+            body.style.overflow = "hidden";
+            
+            // Accessibility
+            mainNav.setAttribute("aria-hidden", "false");
+            if (menuToggle) menuToggle.setAttribute("aria-expanded", "true");
         };
 
-        const openPanel = () => {
-            tab.classList.add('open');
-            if (toggle) toggle.setAttribute('aria-expanded', 'true');
-            if (panel) panel.setAttribute('aria-hidden', 'false');
-            // Focus first actionable element inside panel for accessibility
-            setTimeout(() => {
-                if (!panel) return;
-                const firstAction = panel.querySelector('.contact-whatsapp, .contact-phone, .contact-card a');
-                if (firstAction) firstAction.focus();
-            }, 260);
+        const closeMobileNav = () => {
+            if (!mainNav || !navOverlay) return;
+            
+            body.classList.remove("nav-open");
+            mainNav.classList.remove("active");
+            navOverlay.classList.remove("active");
+            
+            // Restore scroll
+            document.documentElement.style.overflow = "";
+            body.style.overflow = "";
+            
+            // Accessibility
+            mainNav.setAttribute("aria-hidden", "true");
+            if (menuToggle) menuToggle.setAttribute("aria-expanded", "false");
         };
 
-        if (toggle) {
-            toggle.addEventListener('click', (e) => {
-                e.preventDefault();
+        // Toggle mobile navigation
+        if (menuToggle) {
+            menuToggle.addEventListener("click", (e) => {
                 e.stopPropagation();
-                if (tab.classList.contains('open')) closePanel(); else openPanel();
-            });
-            // Ensure no duplicate events
-            toggle.addEventListener('keydown', (ev) => { 
-                if (ev.key === 'Enter' || ev.key === ' ') {
-                    ev.preventDefault();
-                    toggle.click();
+                if (mainNav && mainNav.classList.contains("active")) {
+                    closeMobileNav();
+                } else {
+                    openMobileNav();
                 }
             });
         }
 
-        // Close when clicking outside
-        document.addEventListener('click', (e) => {
-            if (tab.classList.contains('open') && !tab.contains(e.target)) {
-                closePanel();
+        // Close button
+        if (navClose) {
+            navClose.addEventListener("click", closeMobileNav);
+        }
+
+        // Close when clicking overlay
+        if (navOverlay) {
+            navOverlay.addEventListener("click", closeMobileNav);
+        }
+
+        // Close when clicking nav links
+        const navLinks = document.querySelectorAll(".nav-link");
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                closeMobileNav();
+            });
+        });
+
+        // Close on ESC key
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && mainNav && mainNav.classList.contains("active")) {
+                closeMobileNav();
             }
         });
 
-        // Close on escape
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && tab.classList.contains('open')) closePanel();
-        });
-    }
+        // 4. Scroll to Top Button
+        const scrollTop = document.getElementById("scrollTop");
+        if (scrollTop) {
+            const toggleScrollButton = () => {
+                if (window.scrollY > 300) {
+                    scrollTop.classList.add("visible");
+                } else {
+                    scrollTop.classList.remove("visible");
+                }
+            };
 
-    // ========== Registration Toast ==========
-    function setupRegistrationToast() {
-        const toast = document.getElementById('regToast');
-        const closeBtn = document.getElementById('regToastClose');
-        const SHOWN_KEY = 'synapse_reg_toast_shown_v1';
-        if (!toast) return;
-        // don't show repeatedly if user already closed it
-        if (localStorage.getItem(SHOWN_KEY)) return;
-
-        const show = () => {
-            toast.classList.add('visible');
-        };
-        const hide = () => {
-            toast.classList.remove('visible');
-            try { localStorage.setItem(SHOWN_KEY, '1'); } catch (err) { /* ignore */ }
-        };
-
-        // show after a short delay if not shown before
-        setTimeout(show, 1500);
-        // auto hide after 9s
-        const timer = setTimeout(hide, 10500);
-
-        if (closeBtn) {
-            closeBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                hide();
-                clearTimeout(timer);
+            window.addEventListener("scroll", toggleScrollButton);
+            scrollTop.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
             });
         }
 
-        // if user clicks the register link, mark as shown and let link open
-        toast.addEventListener('click', (e) => {
-            if (e.target && e.target.tagName === 'A') {
-                try { localStorage.setItem(SHOWN_KEY, '1'); } catch (err) { }
-                hide();
+        // 5. Header Scroll Effect
+        const handleHeaderScroll = () => {
+            if (header && window.scrollY > 50) {
+                header.classList.add("scrolled");
+            } else if (header) {
+                header.classList.remove("scrolled");
             }
-        });
-    }
-
-    // 7. Reveal Animations on Scroll - Using IntersectionObserver for Performance
-    const setupScrollAnimations = () => {
-        const revealElements = document.querySelectorAll(".fade-in, .slide-up");
-        if (!revealElements.length) return;
-
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -40px 0px"
         };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("active");
-                    // Once animated, we don't need to observe it anymore
-                    observer.unobserve(entry.target);
+        window.addEventListener("scroll", handleHeaderScroll);
+        handleHeaderScroll(); 
+
+        // 6. Active Page Link Detection
+        const setActiveNavLink = () => {
+            const currentPath = window.location.pathname;
+            const page = currentPath.split("/").pop() || "index.html";
+            
+            navLinks.forEach(link => {
+                const href = link.getAttribute("href");
+                if (href === page || (page === "index.html" && href === "#")) {
+                    link.classList.add("active");
+                } else {
+                    link.classList.remove("active");
                 }
             });
-        }, observerOptions);
+        };
+        setActiveNavLink();
 
-        revealElements.forEach(el => observer.observe(el));
+        // ========== Registration Banner Insert & Controls ==========
+        function setupRegistrationBanner() {
+            const banner = document.getElementById('registrationBanner');
+            if (!banner) return;
+            
+            const closeBtn = banner.querySelector('.registration-close');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    banner.style.display = 'none';
+                    localStorage.setItem('bannerDismissed', 'true');
+                });
+            }
+            
+            // Show banner if not dismissed
+            if (localStorage.getItem('bannerDismissed') !== 'true') {
+                banner.style.display = 'block';
+            }
+        }
+
+        // call it after DOM is ready
+        setTimeout(setupRegistrationBanner, 60);
+        
+        // setup contact tab
+        setTimeout(setupContactTab, 60);
+        
+        // small registration toast popup (show once per user)
+        setTimeout(setupRegistrationToast, 900);
+
+        // ========== Contact Tab ==========
+        function setupContactTab() {
+            const tab = document.getElementById('contactTab');
+            if (!tab) return;
+            const toggle = document.getElementById('contactToggle');
+            const panel = document.getElementById('contactPanel');
+
+            const closePanel = () => {
+                tab.classList.remove('open');
+                if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                if (panel) panel.setAttribute('aria-hidden', 'true');
+                if (toggle) toggle.focus();
+            };
+
+            const openPanel = () => {
+                tab.classList.add('open');
+                if (toggle) toggle.setAttribute('aria-expanded', 'true');
+                if (panel) panel.setAttribute('aria-hidden', 'false');
+                setTimeout(() => {
+                    if (!panel) return;
+                    const firstAction = panel.querySelector('.contact-whatsapp, .contact-phone, .contact-card a');
+                    if (firstAction) firstAction.focus();
+                }, 260);
+            };
+
+            if (toggle) {
+                toggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (tab.classList.contains('open')) {
+                        closePanel();
+                    } else {
+                        openPanel();
+                    }
+                });
+            }
+
+            // Close when clicking outside
+            document.addEventListener('click', (e) => {
+                if (tab && tab.classList.contains('open') && !tab.contains(e.target)) {
+                    closePanel();
+                }
+            });
+
+            // Close on ESC
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && tab && tab.classList.contains('open')) {
+                    closePanel();
+                }
+            });
+        }
+
+        // ========== Registration Toast ==========
+        function setupRegistrationToast() {
+            const toast = document.getElementById('regToast');
+            if (!toast) return;
+
+            const closeBtn = document.getElementById('regToastClose');
+            
+            const showToast = () => {
+                toast.classList.add('visible');
+            };
+            
+            const hideToast = () => {
+                toast.classList.remove('visible');
+                localStorage.setItem('regToastDismissed', 'true');
+            };
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', hideToast);
+            }
+
+            // Auto-dismiss after 8 seconds
+            let autoHideTimer;
+            const scheduleAutoHide = () => {
+                autoHideTimer = setTimeout(hideToast, 8000);
+            };
+
+            // Show toast if not dismissed
+            if (localStorage.getItem('regToastDismissed') !== 'true') {
+                setTimeout(() => {
+                    showToast();
+                    scheduleAutoHide();
+                }, 1500);
+            }
+
+            // Pause auto-hide on hover
+            toast.addEventListener('mouseenter', () => {
+                if (autoHideTimer) clearTimeout(autoHideTimer);
+            });
+
+            toast.addEventListener('mouseleave', scheduleAutoHide);
+        }
+
+        // 7. Reveal Animations on Scroll - Using IntersectionObserver for Performance
+        const setupScrollAnimations = () => {
+            const revealElements = document.querySelectorAll(".fade-in, .slide-up");
+            if (!revealElements.length) return;
+
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -40px 0px"
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(el => observer.observe(el));
+        };
+
+        setupScrollAnimations();
     };
 
-    // Initial setup
-    setupScrollAnimations();
-});
+    // Run initialization
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();

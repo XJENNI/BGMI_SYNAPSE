@@ -1,6 +1,6 @@
-# SYNAPSE MAMC BGMI 2026 — MAVERICKS x SYNAPSE
+# SYNAPSE MAMC BGMI 2026 — KRAFTON x SYNAPSE
 
-A modern, cyberpunk-inspired static site for the MAVERICKS x SYNAPSE BGMI Tournament (MAMC 2026).
+A modern, cyberpunk-inspired static site for the KRAFTON x SYNAPSE BGMI Tournament (MAMC 2026).
 
 This repository contains a lightweight, fast, and accessible static site built with plain HTML, CSS, and JavaScript. The site features:
 

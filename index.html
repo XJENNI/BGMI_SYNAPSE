@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -11,7 +11,7 @@
     <meta property="og:title" content="SYNAPSE MAMC BGMI 2026">
     <meta property="og:description" content="Official BGMI Esports Tournament. Online Qualifiers: 6-8 Feb | Offline LAN Finals: 14 Feb. Register now!">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://w0.peakpx.com/wallpaper/324/514/HD-wallpaper-pubg-erangel-map.jpg">
+    <meta property="og:image" content="data/img/erangle.jpg">
     
     <title>KRAFTON x SYNAPSE BGMI 2026 | Home</title>
     
@@ -31,18 +31,16 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
-    <!-- Stylesheets (preload + onload to avoid render-blocking) -->
-    <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
-    <link rel="preload" href="assets/css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="assets/css/responsive.css"></noscript> 
+    <!-- Stylesheets (Standard non-blocking-ish load) -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css"> 
 
     <!-- Open Graph image: use local optimized image to avoid external network latency -->
     <meta property="og:image" content="data/img/erangle.jpg">
 </head>
 <body>
     <!-- Preloader -->
-    <div class="preloader" id="preloader">
+    <div class="preloader" id="preloader" style="opacity: 1; visibility: visible;">
         <div class="preloader-content">
             <div class="preloader-logo">KRAFTON x MAVERICKS x SYNAPSE</div>
             <div class="preloader-bar"></div>
@@ -56,7 +54,7 @@
         <div class="header-inner">
             <div class="brand-logos">
                 <img src="data/img/mamclogo_nobg.png" alt="MAMC Logo" class="brand-logo-img mamc">
-               
+                <img src="data/img/mavericksr.png" alt="Mavericks Logo" class="brand-logo-img mavericks">
             </div>
             
             <a href="index.html" class="site-logo">
@@ -90,6 +88,15 @@
             </div>
         </div>
     </header>
+
+    <!-- Cyber Navigation Hub -->
+    <div class="cyber-nav-hub">
+        <a class="cyber-nav-item" href="index.html">Home</a>
+        <a class="cyber-nav-item" href="teams.html">Teams</a>
+        <a class="cyber-nav-item" href="standings.html">Standings</a>
+        <a class="cyber-nav-item" href="schedule.html">Schedule</a>
+        <a class="cyber-nav-item" href="watch.html">Watch</a>
+    </div>
     
     <!-- Registration Banner -->
     <div class="registration-banner" id="registrationBanner" role="region" aria-label="Registrations open now" data-visible="1">
@@ -205,7 +212,7 @@
     <!-- About Section -->
     <section class="section" id="about" style="position: relative; overflow: hidden;">
         <div style="position: absolute; right: -50px; top: 10%; height: 400px; opacity: 0.15; pointer-events: none; filter: grayscale(1) brightness(0.5);">
-            <img src="https://www.freeiconspng.com/uploads/pubg-character-png-23.png" style="height: 100%; width: auto;" onerror="this.src='';">
+            <img src="data/img/bgmi-character.svg" style="height: 100%; width: auto;">
         </div>
         <div class="container">
             <h2 class="section-title">The Krafton x Synapse Legacy</h2>
@@ -240,6 +247,7 @@
             <div class="highlights-grid" style="margin-top: var(--space-2xl);">
                 <div class="highlight-card fade-in">
                     <div class="highlight-icon">👥</div>
+
                     <div class="highlight-value">32-40</div>
                     <div class="highlight-label">Competing Squads</div>
                 </div>
@@ -264,7 +272,7 @@
     </div>  
 
     <!-- Organizers Section -->
-    <section class="section section-dark" id="organizers" style="background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://w0.peakpx.com/wallpaper/324/514/HD-wallpaper-pubg-erangel-map.jpg') center/cover fixed no-repeat; border-top: 1px solid var(--accent-cyan); border-bottom: 1px solid var(--accent-purple);">
+    <section class="section section-dark" id="organizers" style="background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('data/img/erangle.jpg') center/cover fixed no-repeat; border-top: 1px solid var(--accent-cyan); border-bottom: 1px solid var(--accent-purple);">
         <div class="container">
             <h2 class="section-title">Meet the Organizers</h2>
             <div class="organizer-row order-mobile-reverse">
@@ -330,10 +338,6 @@
     </section>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
     <section class="section" id="cta">
         <div class="container text-center">
             <h2 class="section-title">Ready to Compete?</h2>
