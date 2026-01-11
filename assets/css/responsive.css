@@ -317,18 +317,18 @@
     z-index: calc(var(--z-mobile-nav) + 1);
   }
 
-  /* Overlay for mobile nav - Darker and more blur */
+  /* Overlay for mobile nav - NO BLUR to prevent stuck state */
   .nav-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.90);
+    /* backdrop-filter: blur(4px); REMOVED - causes stuck blur on iOS/Safari */
     opacity: 0;
     visibility: hidden;
-    transition: all 0.4s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
     z-index: calc(var(--z-mobile-nav) - 1);
     pointer-events: none;
   }

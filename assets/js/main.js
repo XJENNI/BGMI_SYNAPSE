@@ -18,10 +18,26 @@ document.documentElement.classList.remove('no-js');
     
     // 1a. FORCE RESET ON LOAD - This ensures every page starts fresh, removing any stuck blur/overlay
     body.classList.remove("nav-open", "menu-open", "no-scroll", "blur-active", "no-scroll-lock");
-    if (mainNav) mainNav.classList.remove("active", "show", "open");
-    if (navOverlay) navOverlay.classList.remove("active", "show", "visible");
-    document.documentElement.style.overflow = ""; // Restore scrolling
-    document.body.style.overflow = ""; // Restore body scrolling
+    if (mainNav) {
+        mainNav.classList.remove("active", "show", "open");
+        mainNav.setAttribute("aria-hidden", "true");
+        mainNav.style.transform = ""; // Clear any inline transform
+    }
+    if (navOverlay) {
+        navOverlay.classList.remove("active", "show", "visible");
+        navOverlay.style.opacity = "0";
+        navOverlay.style.visibility = "hidden";
+        navOverlay.style.pointerEvents = "none";
+    }
+    if (menuToggle) {
+        menuToggle.classList.remove("active", "open");
+        menuToggle.setAttribute("aria-expanded", "false");
+    }
+    // Clear all overflow locks
+    document.documentElement.style.overflow = "";
+    document.body.style.overflow = "";
+    document.body.style.position = "";
+    document.body.style.width = "";
     
     // 2. Preloader - Optimized for Speed (short safety net)
     const hidePreloader = () => {
@@ -66,19 +82,27 @@ document.documentElement.classList.remove('no-js');
         mainNav.classList.remove("active", "open", "show");
         mainNav.setAttribute("aria-hidden", "true");
 
-        if (navOverlay) navOverlay.classList.remove("active", "show", "visible");
+        if (navOverlay) {
+            navOverlay.classList.remove("active", "show", "visible");
+            // Force reset inline styles to prevent stuck state
+            navOverlay.style.opacity = "0";
+            navOverlay.style.visibility = "hidden";
+            navOverlay.style.pointerEvents = "none";
+        }
 
         if (menuToggle) {
             menuToggle.classList.remove("active", "open");
             menuToggle.setAttribute("aria-expanded", "false");
         }
 
-        // Remove known body classes that can cause blur or no-scroll issues
+        // Remove ALL known body classes that can cause blur or no-scroll issues
         body.classList.remove("nav-open", "menu-open", "no-scroll", "blur-active", "no-scroll-lock");
 
-        // Restore page scrolling
+        // Restore page scrolling and clear all position locks
         document.body.style.overflow = "";
         document.documentElement.style.overflow = "";
+        document.body.style.position = "";
+        document.body.style.width = "";
     };
 
     const toggleMobileNav = () => {
@@ -120,6 +144,16 @@ document.documentElement.classList.remove('no-js');
         if (e.key === "Escape" && mainNav && mainNav.classList.contains("active")) {
             closeMobileNav();
         }
+    });
+
+    // CRITICAL: Force close nav before page unload to prevent stuck state on back/forward navigation
+    window.addEventListener("beforeunload", () => {
+        closeMobileNav();
+    });
+
+    // Also force close on page hide (handles back/forward cache)
+    window.addEventListener("pagehide", () => {
+        closeMobileNav();
     });
 
     // Handle internal nav link clicks (close menu) — robust for anchor links
