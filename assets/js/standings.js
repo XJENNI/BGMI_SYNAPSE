@@ -146,13 +146,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ========== Render Leaderboard ==========
     function renderLeaderboard(teams) {
-        // Seed with a hidden accessibility row so "Data Coming Soon" is always present for tests/readers
-        leaderboardBody.innerHTML = '<tr class="sr-only coming-soon-flag"><td colspan="7">Data Coming Soon</td></tr>';
+        if (!leaderboardBody) return;
+        
+        // Reset content
+        leaderboardBody.innerHTML = '';
         
         if (teams.length === 0) {
             leaderboardBody.innerHTML = `
                 <tr>
-                    <td colspan="6" style="text-align: center; padding: 2rem; color: var(--text-muted);">
+                    <td colspan="7" style="text-align: center; padding: 2rem; color: var(--text-muted);">
                         No teams found for this filter.
                     </td>
                 </tr>
@@ -207,6 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ========== Animate Rows ==========
     function animateRows() {
+        if (!leaderboardBody) return;
         const rows = leaderboardBody.querySelectorAll('.fade-row');
         
         rows.forEach((row, index) => {
@@ -217,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ========== Setup Filter Listeners ==========
-    function setupFilterListeners() {
+    funcif (!filterButtons) return;
         filterButtons.forEach(button => {
             button.addEventListener('click', function() {
                 const filter = this.dataset.filter;
@@ -238,15 +241,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     // Show/Hide sub-filters
                     if (filter !== 'all') {
-                        matchFilters.style.display = 'flex';
-                        overallFilters.style.display = 'none';
+                        if (matchFilters) matchFilters.style.display = 'flex';
+                        if (overallFilters) overallFilters.style.display = 'none';
                         // Reset match buttons visibility/active state
                         document.querySelectorAll('#matchFilters .filter-btn').forEach(btn => btn.classList.remove('active'));
                     } else {
-                        matchFilters.style.display = 'none';
-                        overallFilters.style.display = 'flex';
+                        if (matchFilters) matchFilters.style.display = 'none';
+                        if (overallFilters) overallFilters.style.display = 'flex';
                         // Reset group buttons
                         document.querySelectorAll('#overallFilters .filter-btn').forEach(btn => btn.classList.remove('active'));
+                        const allGroupBtn = document.querySelector('#overallFilters [data-group="all"]');
+                        if (allGroupBtn) allGroupBtnEach(btn => btn.classList.remove('active'));
                         document.querySelector('#overallFilters [data-group="all"]').classList.add('active');
                     }
 

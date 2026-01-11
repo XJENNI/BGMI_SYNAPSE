@@ -108,6 +108,34 @@ a:hover {
   color: var(--text-primary);
 }
 
+/* ========== Fade-In Animation System ========== */
+.fade-in,
+.slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.active,
+.slide-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger animations for multiple items */
+.fade-in:nth-child(1) { transition-delay: 0.1s; }
+.fade-in:nth-child(2) { transition-delay: 0.2s; }
+.fade-in:nth-child(3) { transition-delay: 0.25s; }
+.fade-in:nth-child(4) { transition-delay: 0.3s; }
+.fade-in:nth-child(5) { transition-delay: 0.35s; }
+
+/* No-JS fallback: show everything immediately */
+.no-js .fade-in,
+.no-js .slide-up {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 /* ========== Map Pool Section ========== */
 .map-grid {
   display: grid;
