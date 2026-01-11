@@ -220,7 +220,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ========== Setup Filter Listeners ==========
-    funcif (!filterButtons) return;
+    function setupFilterListeners() {
+        if (!filterButtons) return;
         filterButtons.forEach(button => {
             button.addEventListener('click', function() {
                 const filter = this.dataset.filter;
@@ -251,8 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         // Reset group buttons
                         document.querySelectorAll('#overallFilters .filter-btn').forEach(btn => btn.classList.remove('active'));
                         const allGroupBtn = document.querySelector('#overallFilters [data-group="all"]');
-                        if (allGroupBtn) allGroupBtnEach(btn => btn.classList.remove('active'));
-                        document.querySelector('#overallFilters [data-group="all"]').classList.add('active');
+                        if (allGroupBtn) allGroupBtn.classList.add('active');
                     }
 
                     handleRendering();
