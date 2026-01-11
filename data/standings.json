@@ -1,0 +1,178 @@
+[
+  {
+    "id": "team-soul",
+    "rank": 1,
+    "teamName": "Team Soul",
+    "group": "A",
+    "matchesPlayed": 6,
+    "totalKills": 42,
+    "placementPoints": 38,
+    "killPoints": 42,
+    "totalScore": 80
+  },
+  {
+    "id": "godlike-esports",
+    "rank": 2,
+    "teamName": "GodLike Esports",
+    "group": "A",
+    "matchesPlayed": 6,
+    "totalKills": 38,
+    "placementPoints": 35,
+    "killPoints": 38,
+    "totalScore": 73
+  },
+  {
+    "id": "team-xspark",
+    "rank": 3,
+    "teamName": "Team XSpark",
+    "group": "B",
+    "matchesPlayed": 6,
+    "totalKills": 35,
+    "placementPoints": 32,
+    "killPoints": 35,
+    "totalScore": 67
+  },
+  {
+    "id": "orangutan-gaming",
+    "rank": 4,
+    "teamName": "Orangutan Gaming",
+    "group": "B",
+    "matchesPlayed": 6,
+    "totalKills": 33,
+    "placementPoints": 30,
+    "killPoints": 33,
+    "totalScore": 63
+  },
+  {
+    "id": "team-insane",
+    "rank": 5,
+    "teamName": "Team Insane",
+    "group": "C",
+    "matchesPlayed": 6,
+    "totalKills": 30,
+    "placementPoints": 28,
+    "killPoints": 30,
+    "totalScore": 58
+  },
+  {
+    "id": "blind-esports",
+    "rank": 6,
+    "teamName": "Blind Esports",
+    "group": "C",
+    "matchesPlayed": 6,
+    "totalKills": 28,
+    "placementPoints": 27,
+    "killPoints": 28,
+    "totalScore": 55
+  },
+  {
+    "id": "team-mayhem",
+    "rank": 7,
+    "teamName": "Team Mayhem",
+    "group": "D",
+    "matchesPlayed": 6,
+    "totalKills": 27,
+    "placementPoints": 25,
+    "killPoints": 27,
+    "totalScore": 52
+  },
+  {
+    "id": "skylightz-gaming",
+    "rank": 8,
+    "teamName": "Skylightz Gaming",
+    "group": "D",
+    "matchesPlayed": 6,
+    "totalKills": 25,
+    "placementPoints": 24,
+    "killPoints": 25,
+    "totalScore": 49
+  },
+  {
+    "id": "team-enigma",
+    "rank": 9,
+    "teamName": "Team Enigma",
+    "group": "A",
+    "matchesPlayed": 6,
+    "totalKills": 24,
+    "placementPoints": 22,
+    "killPoints": 24,
+    "totalScore": 46
+  },
+  {
+    "id": "velocity-gaming",
+    "rank": 10,
+    "teamName": "Velocity Gaming",
+    "group": "B",
+    "matchesPlayed": 6,
+    "totalKills": 22,
+    "placementPoints": 21,
+    "killPoints": 22,
+    "totalScore": 43
+  },
+  {
+    "id": "hydra-official",
+    "rank": 11,
+    "teamName": "Hydra Official",
+    "group": "C",
+    "matchesPlayed": 6,
+    "totalKills": 21,
+    "placementPoints": 20,
+    "killPoints": 21,
+    "totalScore": 41
+  },
+  {
+    "id": "team-tamilas",
+    "rank": 12,
+    "teamName": "Team TamilAS",
+    "group": "D",
+    "matchesPlayed": 6,
+    "totalKills": 20,
+    "placementPoints": 18,
+    "killPoints": 20,
+    "totalScore": 38
+  },
+  {
+    "id": "team-ind",
+    "rank": 13,
+    "teamName": "Team IND",
+    "group": "A",
+    "matchesPlayed": 6,
+    "totalKills": 18,
+    "placementPoints": 17,
+    "killPoints": 18,
+    "totalScore": 35
+  },
+  {
+    "id": "global-esports",
+    "rank": 14,
+    "teamName": "Global Esports",
+    "group": "B",
+    "matchesPlayed": 6,
+    "totalKills": 17,
+    "placementPoints": 15,
+    "killPoints": 17,
+    "totalScore": 32
+  },
+  {
+    "id": "revenant-esports",
+    "rank": 15,
+    "teamName": "Revenant Esports",
+    "group": "C",
+    "matchesPlayed": 6,
+    "totalKills": 15,
+    "placementPoints": 14,
+    "killPoints": 15,
+    "totalScore": 29
+  },
+  {
+    "id": "team-forever",
+    "rank": 16,
+    "teamName": "Team Forever",
+    "group": "D",
+    "matchesPlayed": 6,
+    "totalKills": 14,
+    "placementPoints": 12,
+    "killPoints": 14,
+    "totalScore": 26
+  }
+]

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="SYNAPSE MAMC BGMI 2026 - Official BGMI Esports Tournament by Maulana Azad Medical College (MAMC), New Delhi. Krafton-backed initiative.">
+    <meta name="keywords" content="BGMI, esports, tournament, Synapse, MAMC, Maulana Azad Medical College, gaming, Battlegrounds Mobile India">
+    <meta name="author" content="Synapse MAMC Organizing Committee">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="SYNAPSE MAMC BGMI 2026">
+    <meta property="og:description" content="Official BGMI Esports Tournament. Online Qualifiers: 6-8 Feb | Offline LAN Finals: 14 Feb. Register now!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="data/img/erangle.jpg">
+    
+    <title>KRAFTON x SYNAPSE BGMI 2026 | Home</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="data/img/mamclogo_nobg.png">
+    
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Fonts (preload to avoid blocking) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+
+    <!-- Font Awesome (preload for non-blocking load) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+
+    <!-- Stylesheets (Standard non-blocking-ish load) -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css"> 
+
+    <!-- Open Graph image: use local optimized image to avoid external network latency -->
+    <meta property="og:image" content="data/img/erangle.jpg">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">KRAFTON x MAVERICKS x SYNAPSE</div>
+            <div class="preloader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Ticker Bar removed — replaced by Cyber Navigation Hub -->
+
+    <!-- Header -->
+    <header class="site-header" id="header">
+        <div class="header-inner">
+            <div class="brand-logos">
+                <img src="data/img/mamclogo_nobg.png" alt="MAMC Logo" class="brand-logo-img mamc">
+               
+            </div>
+            
+            <a href="index.html" class="site-logo">
+                <span class="highlight">SYNAPSE</span> 2026
+            </a>
+            
+            <nav class="main-nav" id="mainNav" role="navigation" aria-label="Primary Site Navigation" aria-hidden="true">
+                <button type="button" class="nav-close" id="navClose" aria-label="Close menu" aria-controls="mainNav">×</button>
+                <ul class="nav-list" role="menu">
+                    <li role="none"><a role="menuitem" href="index.html" class="nav-link active">Home</a></li>
+                    <li role="none"><a role="menuitem" href="teams.html" class="nav-link">Teams</a></li>
+                    <li role="none"><a role="menuitem" href="standings.html" class="nav-link">Standings</a></li>
+                    <li role="none"><a role="menuitem" href="schedule.html" class="nav-link">Schedule</a></li>
+                    <li role="none"><a role="menuitem" href="watch.html" class="nav-link">Watch</a></li>
+                </ul>
+                <!-- Sponsor Logo for Mobile Sidebar -->
+                <div class="nav-sponsor-mobile">
+                    <a href="https://www.krafton.com" target="_blank" rel="noopener" aria-label="Krafton" class="nav-krafton-link">
+                        <img src="data/img/KRAFTONL.jpg" alt="KRAFTON" width="140" height="48" loading="lazy" decoding="async">
+                    </a>
+                </div>
+            </nav>
+
+            <div class="header-extra" style="display: flex; align-items: center; gap: var(--space-md);">
+                <img src="data/img/synapse_nobg.png" alt="Synapse Logo" class="brand-logo-img synapse" style="height: 48px;">
+                <button type="button" class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cyber Navigation Hub -->
+    <div class="cyber-nav-hub">
+        <a class="cyber-nav-item" href="index.html">Home</a>
+        <a class="cyber-nav-item" href="teams.html">Teams</a>
+        <a class="cyber-nav-item" href="standings.html">Standings</a>
+        <a class="cyber-nav-item" href="schedule.html">Schedule</a>
+        <a class="cyber-nav-item" href="watch.html">Watch</a>
+    </div>
+    
+    <!-- Registration Banner -->
+    <div class="registration-banner" id="registrationBanner" role="region" aria-label="Registrations open now" data-visible="1">
+        <a class="registration-link" href="https://docs.google.com/forms/d/e/1FAIpQLSesBbmikosWpYfuvS6OrUJkmcu1LTT2YrPjwnmpqlBB-ifH5Q/viewform?usp=sharing&ouid=107046539517080546296" target="_blank" rel="noopener noreferrer" aria-label="Register for Synapse BGMI 2026">
+            📢 REGISTRATIONS OPEN NOW — Click to Register <span class="banner-arrow">→</span>
+        </a>
+        <button type="button" class="registration-close" aria-label="Close registration banner">×</button>
+    </div>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-character" aria-hidden="true">
+            <!-- Local SVG for consistent rendering -->
+            <img src="data/img/bgmi-character.svg" alt="BGMI character illustration" class="hero-character-img" fetchpriority="high" width="420" height="720">
+        </div>
+        <div class="hero-content">
+            <div class="hosted-badge fade-in">
+                <span> Hosted by </span>
+                <img src="data/img/mavericksr.png" alt="Mavericks Logo">
+                <span class="text-cyan">Mavericks and Krafton</span> 
+            </div>
+
+            <!-- Hero Sponsor Badge -->
+            <div class="hero-sponsor fade-in" role="note" aria-label="Sponsored by KRAFTON">
+                <a href="https://www.krafton.com" class="hero-sponsor-link" target="_blank" rel="noopener" aria-label="Krafton website">
+                    <img src="data/img/krafton.webp" 
+                         alt="KRAFTON" 
+                         width="140" height="48"
+                         class="hero-sponsor-logo"
+                         decoding="async"
+                         loading="eager"
+                         onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Krafton_Logo_2021.svg/512px-Krafton_Logo_2021.svg.png';">
+                    <span class="hero-sponsor-text"><small>Sponsored by</small> <strong>KRAFTON</strong></span>
+                </a>
+            </div>
+
+            <h1 class="hero-title">KRAFTON x SYNAPSE<br>BGMI BATTLE 2026</h1>
+            <p class="hero-subtitle">Official Esports Tournament | Annual Fest Synapse MAMC</p>
+            <div class="hero-actions">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSesBbmikosWpYfuvS6OrUJkmcu1LTT2YrPjwnmpqlBB-ifH5Q/viewform?usp=sharing&ouid=107046539517080546296" class="btn btn-primary" id="registerBtn">
+                    <span>Register Now</span>
+                </a>
+            </div>
+            <div class="hero-stats fade-in">
+                <div class="stat-item">
+                    <span class="stat-value">6 FEB</span>
+                    <span class="stat-label">War Begins</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">16</span>
+                    <span class="stat-label">Elite Finals</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">LAN</span>
+                    <span class="stat-label">Showdown</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prize Pool Section -->
+    <section class="section section-dark" id="rewards">
+        <div class="container">
+            <h2 class="section-title">Prize Pool & Rewards</h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-top: -20px; margin-bottom: 40px;">Epic rewards for the champions of Synapse 2026</p>
+            
+            <div class="reward-grid">
+                <!-- 2nd Place -->
+                <div class="reward-card silver fade-in">
+                    <span class="reward-icon">🥈</span>
+                    <div class="reward-rank">Runner Up</div>
+                    <div class="reward-amount">₹3,000</div>
+                    <div class="reward-extra">+ Novelty Check & Certificate</div>
+                </div>
+
+                <!-- 1st Place -->
+                <div class="reward-card gold fade-in" style="transform: scale(1.1); z-index: 2; border-width: 2px;">
+                    <span class="reward-icon">🏆</span>
+                    <div class="reward-rank">Champions</div>
+                    <div class="reward-amount" style="color: #ffd700;">₹8,000</div>
+                    <div class="reward-extra" style="color: #ffd700;">+ Trophy, Grand Novelty Check & Certificates</div>
+                </div>
+
+                <!-- 3rd Place -->
+                <div class="reward-card bronze fade-in">
+                    <span class="reward-icon">🥉</span>
+                    <div class="reward-rank">2nd Runner Up</div>
+                    <div class="reward-amount">₹1,500</div>
+                    <div class="reward-extra">+ Novelty Check & Certificate</div>
+                </div>
+            </div>
+
+            <div class="reward-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin-top: var(--space-xl);">
+                <div class="reward-card mvp fade-in">
+                    <span class="reward-icon">🔥</span>
+                    <div class="reward-rank">Tournament MVP</div>
+                    <div class="reward-amount">₹500</div>
+                    <div class="reward-extra">Individual Performance Award</div>
+                </div>
+                <div class="reward-card fade-in">
+                    <span class="reward-icon">📜</span>
+                    <div class="reward-rank">All Finalists</div>
+                    <div class="reward-amount" style="font-size: 1.5rem;">CERTIFICATES</div>
+                    <div class="reward-extra">Official Recognition by KRAFTON & MAMC</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about" style="position: relative; overflow: hidden;">
+        <div style="position: absolute; right: -50px; top: 10%; height: 400px; opacity: 0.15; pointer-events: none; filter: grayscale(1) brightness(0.5);">
+            <img src="data/img/bgmi-character.svg" style="height: 100%; width: auto;">
+        </div>
+        <div class="container">
+            <h2 class="section-title">The Krafton x Synapse Legacy</h2>
+            <p style="color: var(--text-secondary); text-align: center; max-width: 800px; margin: 0 auto var(--space-xl);">
+                The official BGMI Tournament of <strong>Synapse 2026</strong>, organized by <strong>Mavericks</strong>, the premier gaming society of Maulana Azad Medical College. 
+                Bringing together the best medical college squads for an ultimate showdown in the heart of New Delhi.
+            </p>
+            
+            <!-- Map Pool Sub-section -->
+            <div style="margin-top: var(--space-2xl); text-align: center;">
+                <h3 style="font-family: var(--font-heading); color: var(--accent-cyan); text-transform: uppercase; margin-bottom: var(--space-lg); letter-spacing: 2px;">Official Map Pool</h3>
+                <div class="map-grid">
+                    <div class="map-card">
+                        <img src="data/img/erangle.jpg" alt="Erangel - Green Landscape">
+                        <span class="map-name">Erangel</span>
+                    </div>
+                    <div class="map-card">
+                        <img src="data/img/miramar.jpg" alt="Miramar - Desert">
+                        <span class="map-name">Miramar</span>
+                    </div>
+                    <div class="map-card">
+                        <img src="data/img/sanhok.jpg" alt="Sanhok - Jungle">
+                        <span class="map-name">Sanhok</span>
+                    </div>
+                    <div class="map-card">
+                        <img src="data/img/rondo.jpg" alt="Rondo - Urban Arena">
+                        <span class="map-name">Rondo</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlights-grid" style="margin-top: var(--space-2xl);">
+                <div class="highlight-card fade-in">
+                    <div class="highlight-icon">👥</div>
+                    <div class="highlight-value">32-40</div>
+                    <div class="highlight-label">Competing Squads</div>
+                </div>
+                <div class="highlight-card fade-in">
+                    <div class="highlight-icon">🗺️</div>
+                    <div class="highlight-value">4</div>
+                    <div class="highlight-label">Classic Maps</div>
+                </div>
+                <div class="highlight-card fade-in">
+                    <div class="highlight-icon">⚔️</div>
+                    <div class="highlight-value">LAN</div>
+                    <div class="highlight-label">Final Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container" style="text-align:center; padding: var(--space-2xl);">
+        <a href="schedule.html#rules" class="cyber-btn" style="text-decoration: none; padding: 12px 24px; display: inline-block;">
+            <span class="btn-text">View Full Tournament Rules on the Schedule page</span>
+        </a>
+    </div>  
+
+    <!-- Organizers Section -->
+    <section class="section section-dark" id="organizers" style="background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('data/img/erangle.jpg') center/cover fixed no-repeat; border-top: 1px solid var(--accent-cyan); border-bottom: 1px solid var(--accent-purple);">
+        <div class="container">
+            <h2 class="section-title">Meet the Organizers</h2>
+            <div class="organizer-row order-mobile-reverse">
+                <div class="organizer-info fade-in">
+                    <h3 class="text-cyan">MAVERICKS MAMC</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">
+                        The official gaming society of Maulana Azad Medical College. Mavericks is dedicated to fostering a competitive gaming culture among medics, hosting everything from tactical shooters to mobile battle royales.
+                    </p>
+                    <ul class="organizers-list">
+                        <li><i class="fas fa-check-circle"></i> Professional Tournament Management</li>
+                        <li><i class="fas fa-check-circle"></i> Fair Play Enforcement</li>
+                        <li><i class="fas fa-check-circle"></i>  Medical Gaming Community</li>
+                    </ul>
+                </div>
+                <div class="organizer-logo-large fade-in">
+                    <img src="data/img/mavericksr.png" alt="Mavericks Logo">
+                </div>
+            </div>
+            
+            <div class="organizer-row">
+                <div class="organizer-logo-large fade-in">
+                    <img src="data/img/synapse_nobg.png" alt="Synapse Logo">
+                </div>
+                <div class="organizer-info fade-in">
+                    <h3 class="text-purple">SYNAPSE FEST</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">
+                        Synapse is the legendary annual festival of MAMC, a melting pot of culture, talent, and competition. It has been the premier stage for medical students across India to showcase their skills beyond the curriculum.
+                    </p>
+                    <ul class="organizers-list">
+                        <li><i class="fas fa-check-circle" style="color: var(--accent-purple);"></i> Decades of Legacy</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent-purple);"></i> Pan-India Participation</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent-purple);"></i> Unforgettable Cultural Nights</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section class="section section-dark" id="sponsors" style="background: rgba(10, 10, 10, 0.5);">
+        <div class="container">
+            <h2 class="section-title">Official Sponsor</h2>
+            <div class="sponsors-grid">
+                <div class="sponsor-item fade-in">
+                    <img src="data/img/KRAFTONL.jpg" 
+                         alt="KRAFTON" 
+                         title="KRAFTON - Official Sponsor"
+                         loading="lazy"
+                         class="sponsor-logo-krafton"
+                         onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;512&quot; height=&quot;150&quot;><rect width=&quot;100%&quot; height=&quot;100%&quot; fill=%22%23000000%22 /><text x=&quot;50%&quot; y=&quot;50%25&quot; dominant-baseline=&quot;middle&quot; text-anchor=&quot;middle&quot; font-family=&quot;Rajdhani,Arial&quot; font-size=&quot;48&quot; fill=&quot;%23FFD700&quot;>KRAFTON</text></svg>';">
+                </div>                <div class="sponsor-info fade-in" style="max-width: 820px; margin-left: 16px;">
+                    <h3 class="text-cyan">KRAFTON</h3>
+                    <p style="color: var(--text-secondary); margin-top: 8px;">
+                        KRAFTON is the developer and publisher behind BGMI (Battlegrounds Mobile India). As a global games company, KRAFTON supports competitive scenes, fair-play initiatives, and community development — proudly sponsoring Synapse BGMI 2026.
+                    </p>
+                    <ul class="organizers-list" style="margin-top: 12px;">
+                        <li><i class="fas fa-check-circle"></i> Official developer & publisher of BGMI</li>
+                        <li><i class="fas fa-check-circle"></i> Supporting esports and community events</li>
+                        <li><i class="fas fa-check-circle"></i> Committed to fair play and player safety</li>
+                    </ul>
+                </div>            </div>
+        </div>
+    </section>
+                </div>
+            </div>
+    <section class="section" id="cta">
+        <div class="container text-center">
+            <h2 class="section-title">Ready to Compete?</h2>
+            <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto var(--space-xl);">
+                Join elite squads battling for glory at the Maulana Azad Medical College campus. 
+                Krafton-backed competition, professional rules, and an epic LAN final awaits!
+            </p>
+            <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSesBbmikosWpYfuvS6OrUJkmcu1LTT2YrPjwnmpqlBB-ifH5Q/viewform?usp=sharing&ouid=107046539517080546296" class="btn btn-primary">
+                    <span>Register Now</span>
+                </a>
+                <a href="schedule.html" class="btn btn-secondary">
+                    <span>View Schedule</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>Partner Institutions</h4>
+                <div class="footer-brand-logos" style="display: flex; gap: var(--space-md); margin-top: var(--space-md);">
+                    <img src="data/img/mamclogo_nobg.png" alt="MAMC" width="120" height="40" loading="lazy" decoding="async" style="height: 40px;">
+                    <img src="data/img/synapse_nobg.png" alt="Synapse" width="105" height="35" loading="lazy" decoding="async" style="height: 35px;">
+                    <img src="data/img/mavericksr.png" alt="Mavericks" width="105" height="35" loading="lazy" decoding="async" style="height: 35px;">
+                </div>
+                <p style="margin-top: var(--space-md); font-size: 0.9rem;">Organized by Mavericks Gaming Society of Maulana Azad Medical College. Krafton-backed initiative for medical students.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Tournament Links</h4>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="standings.html">Standings</a>
+                    <a href="schedule.html">Schedule</a>
+                    <a href="watch.html">Watch Live</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Social Identity</h4>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="https://instagram.com/mavericks_mamc" class="social-link" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+                <p style="margin-top: 15px; font-size: 0.8rem; color: var(--text-muted);">#Synapse2026 #MavericksMAMC</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Synapse MAMC. Building medical gaming legacy.  </p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js" defer></script>
+
+    <!-- Contact Tab -->
+    <div class="contact-tab" id="contactTab" aria-hidden="false">
+        <button type="button" class="contact-toggle" id="contactToggle" aria-expanded="false" aria-controls="contactPanel" aria-label="Contact organizers">
+            <i class="fab fa-whatsapp"></i>
+        </button>
+        <div class="contact-panel" id="contactPanel" role="dialog" aria-label="Contact organizers" aria-hidden="true">
+            <div class="contact-panel-header">
+                <h4>Contact Organizers</h4>
+            </div>
+            <div class="contact-row">
+                <div class="contact-card">
+                    <div class="contact-name">Harsh Patel</div>
+                    <a href="tel:+917209339920" class="contact-phone" aria-label="Call Harsh Patel">📞 7209339920</a>
+                    <a href="https://wa.me/917209339920?text=Hello%20Harsh,%20I%20have%20a%20query%20about%20Synapse%20BGMI%202026" target="_blank" rel="noopener" class="contact-whatsapp" aria-label="Message Harsh on WhatsApp"><i class="fab fa-whatsapp"></i> Message</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-name">Yash Garg</div>
+                    <a href="tel:+919910231663" class="contact-phone" aria-label="Call Yash Garg">📞 9910231663</a>
+                    <a href="https://wa.me/919910231663?text=Hello%20Yash,%20I%20have%20a%20query%20about%20Synapse%20BGMI%202026" target="_blank" rel="noopener" class="contact-whatsapp" aria-label="Message Yash on WhatsApp"><i class="fab fa-whatsapp"></i> Message</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Toast (small popup) -->
+    <div class="reg-toast" id="regToast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="reg-toast-icon">📢</div>
+      <div class="reg-toast-text">REGISTRATIONS OPEN NOW !!<a href="https://docs.google.com/forms/d/e/1FAIpQLSesBbmikosWpYfuvS6OrUJkmcu1LTT2YrPjwnmpqlBB-ifH5Q/viewform?usp=sharing&ouid=107046539517080546296" target="_blank" rel="noopener" aria-label="Register for Synapse BGMI 2026"> Register</a></div>
+      <button class="reg-toast-close" id="regToastClose" aria-label="Close registration toast">×</button>
+    </div>
+
+    <!-- Denvil tagmark -->
+    <a href="https://github.com/denxvil" target="_blank" rel="noopener noreferrer" class="denvil-badge" title="Coded by Denvil" aria-label="Coded by Denvil">
+        <span class="denvil-icon" aria-hidden="true">💠</span>
+        <span class="denvil-text">coded by <strong>Denvil</strong></span>
+    </a>
+</body>
+</html>  
