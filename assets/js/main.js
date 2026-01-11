@@ -26,22 +26,32 @@ document.documentElement.classList.remove('no-js');
     // 2. Preloader - Optimized for Speed (short safety net)
     const hidePreloader = () => {
         if (preloader) {
+            preloader.classList.add('hidden');
             preloader.style.opacity = "0";
+            preloader.style.visibility = "hidden";
             setTimeout(() => {
                 preloader.style.display = "none";
-            }, 300);
+                preloader.remove(); // Completely remove from DOM
+            }, 500);
         }
     };
 
     if (preloader) {
         // Hide preloader after DOM content is loaded
         window.addEventListener("load", hidePreloader, { once: true });
-        // Fallback: hide after 1 second even if load event doesn't fire
-        setTimeout(hidePreloader, 1000);
+        // Fallback: hide after 800ms even if load event doesn't fire
+        setTimeout(hidePreloader, 800);
         // Quick hide for fast connections
         if (document.readyState === 'complete') {
             hidePreloader();
         }
+        // Emergency fallback - force hide after 2 seconds no matter what
+        setTimeout(() => {
+            if (preloader && preloader.parentNode) {
+                preloader.style.display = "none";
+                preloader.remove();
+            }
+        }, 2000);
     }
 
     // 3. Navigation Controls
