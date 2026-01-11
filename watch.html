@@ -2,9 +2,11 @@
 <html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="SYNAPSE MAMC BGMI 2026 - Participating Teams. Meet the squads competing for glory.">
-    <title>Teams | MAVERICKS x SYNAPSE BGMI 2026</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Watch SYNAPSE MAMC BGMI 2026 tournament live! Join our community on Discord and Instagram.">
+    <meta name="keywords" content="BGMI live stream, esports stream, Synapse MAMC, watch BGMI">
+    
+    <title>Watch Live | MAVERICKS x SYNAPSE BGMI 2026</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="data/img/mamclogo_nobg.png">
@@ -25,193 +27,6 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
-    
-    <style>
-        .team-search-container {
-            margin-bottom: var(--space-2xl);
-            display: flex;
-            justify-content: center;
-        }
-
-        .disclaimer {
-            max-width: 700px;
-            margin: 0 auto var(--space-md);
-            padding: 10px 14px;
-            background: rgba(255,255,255,0.02);
-            border-left: 4px solid var(--accent-cyan);
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border-radius: 4px;
-            text-align: left;
-        }
-        
-        .search-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-        }
-        
-        .team-search-input {
-            width: 100%;
-            padding: 15px 50px 15px 25px;
-            background: rgba(20, 20, 20, 0.8);
-            border: 2px solid var(--border-subtle);
-            color: var(--text-primary);
-            font-family: var(--font-heading);
-            font-size: 1.1rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            outline: none;
-            backdrop-filter: blur(10px);
-        }
-        
-        .team-search-input:focus {
-            border-color: var(--accent-cyan);
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
-        }
-        
-        .search-icon {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--accent-cyan);
-            font-size: 1.2rem;
-        }
-        
-        .teams-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: var(--space-xl);
-        }
-        
-        .team-card {
-            background: rgba(15, 15, 15, 0.9);
-            border: 1px solid var(--border-subtle);
-            position: relative;
-            overflow: hidden;
-            transition: all var(--transition-normal);
-            display: flex;
-            flex-direction: column;
-            backdrop-filter: blur(5px);
-        }
-        
-        .team-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
-            opacity: 0.7;
-        }
-        
-        .team-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-cyan);
-            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.15);
-        }
-        
-        .team-header {
-            padding: var(--space-lg);
-            border-bottom: 1px solid var(--border-subtle);
-            display: flex;
-            align-items: center;
-            gap: var(--space-md);
-            background: rgba(255, 255, 255, 0.02);
-        }
-        
-        .team-logo-small {
-            width: 50px;
-            height: 50px;
-            background: var(--bg-card);
-            border: 1px solid var(--accent-cyan);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            color: var(--accent-cyan);
-            font-size: 1.2rem;
-            clip-path: polygon(20% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 20%);
-        }
-        
-        .team-name {
-            font-family: var(--font-heading);
-            font-size: 1.4rem;
-            color: var(--text-primary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .player-list {
-            padding: var(--space-lg);
-            flex-grow: 1;
-        }
-        
-        .player-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 8px 0;
-            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
-        }
-        
-        .player-row:last-child {
-            border-bottom: none;
-        }
-        
-        .player-name {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-        
-        .player-name i {
-            font-size: 0.8rem;
-            color: var(--accent-cyan);
-        }
-        
-        .player-id {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.85rem;
-            color: var(--accent-purple);
-            opacity: 0.8;
-        }
-        
-        .team-footer {
-            padding: var(--space-md) var(--space-lg);
-            background: rgba(0, 0, 0, 0.3);
-            font-size: 0.8rem;
-            display: flex;
-            justify-content: space-between;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .igl-badge {
-            background: var(--accent-cyan);
-            color: var(--bg-primary);
-            padding: 2px 6px;
-            font-size: 0.65rem;
-            font-weight: 800;
-            border-radius: 2px;
-            margin-left: 5px;
-        }
-
-        .no-results {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: var(--space-3xl);
-            display: none;
-        }
-    </style>
 </head>
 <body>
     <!-- Preloader -->
@@ -240,10 +55,10 @@
                 <button type="button" class="nav-close" id="navClose" aria-label="Close menu" aria-controls="mainNav">×</button>
                 <ul class="nav-list" role="menu">
                     <li role="none"><a role="menuitem" href="index.html" class="nav-link">Home</a></li>
-                    <li role="none"><a role="menuitem" href="teams.html" class="nav-link active">Teams</a></li>
+                    <li role="none"><a role="menuitem" href="teams.html" class="nav-link">Teams</a></li>
                     <li role="none"><a role="menuitem" href="standings.html" class="nav-link">Standings</a></li>
                     <li role="none"><a role="menuitem" href="schedule.html" class="nav-link">Schedule</a></li>
-                    <li role="none"><a role="menuitem" href="watch.html" class="nav-link">Watch</a></li>
+                    <li role="none"><a role="menuitem" href="watch.html" class="nav-link active">Watch</a></li>
                 </ul>
                 <div class="nav-sponsor-mobile">
                     <a href="https://www.krafton.com" target="_blank" rel="noopener" aria-label="Krafton" class="nav-krafton-link">
@@ -263,152 +78,83 @@
         </div>
     </header>
     
+    <!-- Mobile Nav Overlay -->
     <div class="nav-overlay" id="navOverlay"></div>
 
-    <!-- Page Title Section -->
-    <section class="section" style="padding-top: 150px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop') center/cover;">
+    <!-- Watch Section -->
+    <section class="watch-section">
         <div class="container">
-            <h1 class="section-title" style="margin-bottom: 20px;">Competing Teams</h1>
-            <p style="text-align: center; color: var(--text-secondary); max-width: 700px; margin: 0 auto var(--space-2xl);">Meet the elite squads from medical colleges across the nation battling for the ultimate title at Synapse 2026.</p>
-
-            <div class="disclaimer fade-in" role="note" aria-live="polite">
-                <i class="fas fa-info-circle" style="color:var(--accent-cyan); margin-right:8px;"></i>
-                <strong>Note:</strong> Team names, player names, and IDs shown on this page are fictional and provided for illustration/demo purposes only.
+            <h1 class="page-title">Watch Live</h1>
+            
+            <!-- Stream Status -->
+            <div class="stream-status">
+                <div class="status-badge coming" id="streamStatus" role="status" aria-live="polite">
+                    <span class="status-dot"></span>
+                    <span>COMING SOON</span>
+                </div>
             </div>
             
-            <!-- Search Bar -->
-            <div class="team-search-container fade-in">
-                <div class="search-wrapper">
-                    <input type="text" id="teamSearch" class="team-search-input" placeholder="Search by Team Name or Player...">
-                    <i class="fas fa-search search-icon"></i>
+            <!-- Video Container (Coming Soon) -->
+            <div class="video-container fade-in">
+                <div class="video-wrapper">
+                    <div class="stream-coming-soon" role="status" aria-live="polite">
+                        <div style="font-size: 3rem; color: var(--accent-cyan); margin-bottom: 0.6rem;">🎥</div>
+                        <h3 style="color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Stream Coming Soon</h3>
+                        <p style="color: var(--text-muted); max-width: 520px; margin: 0 auto;">Live stream will be available on match days. Subscribe to our YouTube channel or join our Discord for real-time updates.</p>
+                        <div style="margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: center;">
+                            <a href="#" class="btn btn-primary">Subscribe</a>
+                            <a href="schedule.html" class="btn btn-secondary">View Schedule</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <!-- Teams Grid -->
-            <div class="teams-grid" id="teamsGrid">
-                <!-- Team 1 -->
-                <div class="team-card fade-in">
-                    <div class="team-header">
-                        <div class="team-logo-small">MV</div>
-                        <h3 class="team-name">Team Mavericks</h3>
-                    </div>
-                    <div class="player-list">
-                        <div class="player-row">
-                            <span class="player-name"><i class="fas fa-crosshairs"></i> MAV | ZEUS <span class="igl-badge">IGL</span></span>
-                            <span class="player-id">5123445678</span>
-                        </div>
-                        <div class="player-row">
-                            <span class="player-name"><i class="fas fa-bolt"></i> MAV | FLASH</span>
-                            <span class="player-id">5987654321</span>
-                        </div>
-                        <div class="player-row">
-                            <span class="player-name"><i class="fas fa-skull"></i> MAV | REAPER</span>
-                            <span class="player-id">5334455667</span>
-                        </div>
-                        <div class="player-row">
-                            <span class="player-name"><i class="fas fa-shield-alt"></i> MAV | TITAN</span>
-                            <span class="player-id">5445566778</span>
-                        </div>
-                    </div>
-                    <div class="team-footer">
-                        <span>Group A</span>
-                        <span>MAMC, Delhi</span>
-                    </div>
+            
+            <!-- Stream Info -->
+            <div class="text-center" style="margin-bottom: var(--space-2xl);">
+                <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                    Watch all the intense BGMI action live! Our stream goes live during match days. 
+                    Don't miss a single elimination or chicken dinner!
+                </p>
+            </div>
+            
+            <!-- Community Section -->
+            <div class="community-section">
+                <h2 class="section-title">Join Our Community</h2>
+                <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto var(--space-lg);">
+                    Connect with fellow gamers, get updates, and be part of the action!
+                </p>
+                
+                <div class="community-grid">
+                    <a href="#" class="community-btn discord" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-discord community-icon"></i>
+                        <span>Join Discord</span>
+                    </a>
+                    <a href="#" class="community-btn instagram" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram community-icon"></i>
+                        <span>Follow on Instagram</span>
+                    </a>
+                    <a href="#" class="community-btn youtube" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-youtube community-icon"></i>
+                        <span>Subscribe on YouTube</span>
+                    </a>
                 </div>
-
-                <!-- Team 2 -->
-                <div class="team-card fade-in">
-                    <div class="team-header">
-                        <div class="team-logo-small">SL</div>
-                        <h3 class="team-name">Synapse Slayers</h3>
-                    </div>
-                    <div class="player-list">
-                        <div class="player-row">
-                            <span class="player-name"><i class="fas fa-crosshairs"></i> SL | HUNTER <span class="igl-badge">IGL</span></span>
-                            <span class="player-id">5100112233</span>
-                        </div>
-                        <div class="player-row">
-                            <span class="player-name"><i class="fas fa-bolt"></i> SL | STORM</span>
-                            <span class="player-id">5100112244</span>
-                        </div>
-                        <div class="player-row">
-                            <span class="player-name"><i class="fas fa-skull"></i> SL | PHANTOM</span>
-                            <span class="player-id">5100112255</span>
-                        </div>
-                        <div class="player-row">
-                            <span class="player-name"><i class="fas fa-shield-alt"></i> SL | BEAST</span>
-                            <span class="player-id">5100112266</span>
-                        </div>
-                    </div>
-                    <div class="team-footer">
-                        <span>Group B</span>
-                        <span>AIIMS, Delhi</span>
-                    </div>
-                </div>
-
-                <!-- Team 3 -->
-                <div class="team-card fade-in">
-                    <div class="team-header">
-                        <div class="team-logo-small">VX</div>
-                        <h3 class="team-name">Vortex Elite</h3>
-                    </div>
-                    <div class="player-list">
-                        <div class="player-row">
-                            <span class="player-name"><i class="fas fa-crosshairs"></i> VX | OMEGA <span class="igl-badge">IGL</span></span>
-                            <span class="player-id">5448899001</span>
-                        </div>
-                        <div class="player-row">
-                            <span class="player-name"><i class="fas fa-bolt"></i> VX | ALPHA</span>
-                            <span class="player-id">5448899002</span>
-                        </div>
-                        <div class="player-row">
-                            <span class="player-name"><i class="fas fa-skull"></i> VX | GHOST</span>
-                            <span class="player-id">5448899003</span>
-                        </div>
-                        <div class="player-row">
-                            <span class="player-name"><i class="fas fa-shield-alt"></i> VX | TANK</span>
-                            <span class="player-id">5448899004</span>
-                        </div>
-                    </div>
-                    <div class="team-footer">
-                        <span>Group C</span>
-                        <span>LHMC, Delhi</span>
-                    </div>
-                </div>
-
-                <!-- Team 4 -->
-                <div class="team-card fade-in">
-                    <div class="team-header">
-                        <div class="team-logo-small">CN</div>
-                        <h3 class="team-name">Cyber Ninjas</h3>
-                    </div>
-                    <div class="player-list">
-                        <div class="player-row">
-                            <span class="player-name"><i class="fas fa-crosshairs"></i> CN | SHADOW <span class="igl-badge">IGL</span></span>
-                            <span class="player-id">5556667771</span>
-                        </div>
-                        <div class="player-row">
-                            <span class="player-name"><i class="fas fa-bolt"></i> CN | KAI</span>
-                            <span class="player-id">5556667772</span>
-                        </div>
-                        <div class="player-row">
-                            <span class="player-name"><i class="fas fa-skull"></i> CN | KENJI</span>
-                            <span class="player-id">5556667773</span>
-                        </div>
-                        <div class="player-row">
-                            <span class="player-name"><i class="fas fa-shield-alt"></i> CN | AKIRA</span>
-                            <span class="player-id">5556667774</span>
-                        </div>
-                    </div>
-                    <div class="team-footer">
-                        <span>Group D</span>
-                        <span>VMMC, Delhi</span>
-                    </div>
-                </div>
-
-                <!-- Add more teams as needed following the same pattern -->
-                <div class="no-results" id="noResults">
-                    <h3 style="color: var(--accent-red);">No teams found matching your search.</h3>
+            </div>
+            
+            <!-- Chat Placeholder -->
+            <div class="section" style="margin-top: var(--space-2xl);">
+                <h2 class="section-title">Live Chat</h2>
+                <div style="
+                    background: var(--bg-card);
+                    border: 1px solid var(--border-subtle);
+                    padding: var(--space-2xl);
+                    text-align: center;
+                    max-width: 600px;
+                    margin: 0 auto;
+                ">
+                    <i class="fas fa-comments" style="font-size: 3rem; color: var(--text-muted); margin-bottom: var(--space-md);"></i>
+                    <p style="color: var(--text-muted); margin: 0;">
+                        Live chat will be available during stream. Join our Discord for 24/7 community chat!
+                    </p>
                 </div>
             </div>
         </div>
@@ -418,26 +164,25 @@
     <footer class="site-footer">
         <div class="footer-grid">
             <div class="footer-section">
-                <h4>Partner Institutions</h4>
+                <h4>Presented By</h4>
                 <div class="footer-brand-logos" style="display: flex; gap: var(--space-md); margin-top: var(--space-md);">
                     <img src="data/img/mamclogo_nobg.png" alt="MAMC" style="height: 40px;">
                     <img src="data/img/synapse_nobg.png" alt="Synapse" style="height: 35px;">
                     <img src="data/img/mavericksr.png" alt="Mavericks" style="height: 35px;">
                 </div>
-                <p style="margin-top: var(--space-md); font-size: 0.9rem;">Organized by Mavericks Gaming Society of Maulana Azad Medical College. Krafton-backed initiative for medical students.</p>
+                <p style="margin-top: var(--space-md);">Mavericks Gaming Society of Maulana Azad Medical College. Organizing the biggest medical esports events in India.</p>
             </div>
             <div class="footer-section">
-                <h4>Tournament Links</h4>
+                <h4>Quick Links</h4>
                 <div class="footer-links">
                     <a href="index.html">Home</a>
-                    <a href="teams.html">Teams</a>
                     <a href="standings.html">Standings</a>
                     <a href="schedule.html">Schedule</a>
                     <a href="watch.html">Watch Live</a>
                 </div>
             </div>
             <div class="footer-section">
-                <h4>Social Identity</h4>
+                <h4>Follow Us</h4>
                 <div class="social-links">
                     <a href="#" class="social-link" aria-label="Discord">
                         <i class="fab fa-discord"></i>
@@ -452,46 +197,12 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Synapse MAMC. Building medical gaming legacy.</p>
+            <p>&copy; 2026 Synapse MAMC. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Scroll to Top -->
-    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
-        <i class="fas fa-chevron-up"></i>
-    </button>
-
     <!-- JavaScript -->
     <script src="assets/js/main.js" defer></script>
-    <script>
-        // Simple search functionality
-        const searchInput = document.getElementById('teamSearch');
-        const teamsGrid = document.getElementById('teamsGrid');
-        const teamCards = document.querySelectorAll('.team-card');
-        const noResults = document.getElementById('noResults');
-
-        searchInput.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase();
-            let hasResults = false;
-
-            teamCards.forEach(card => {
-                const teamName = card.querySelector('.team-name').innerText.toLowerCase();
-                const players = card.querySelector('.player-list').innerText.toLowerCase();
-                
-                if (teamName.includes(searchTerm) || players.includes(searchTerm)) {
-                    card.style.display = 'flex';
-                    hasResults = true;
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-
-            noResults.style.display = hasResults ? 'none' : 'block';
-        });
-    </script>
-
-    <!-- Coded by Harsh (floating animated card) -->
-    <!-- Removed and moved to footer -->
 
     <!-- Contact Tab -->
     <div class="contact-tab" id="contactTab" aria-hidden="false">
