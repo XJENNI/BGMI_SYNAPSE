@@ -104,11 +104,11 @@ document.documentElement.classList.remove('no-js');
 
         // 3. Navigation Controls
         const openMobileNav = () => {
-            if (!mainNav || !navOverlay) return;
+            if (!mainNav) return;
             
             body.classList.add("nav-open");
             mainNav.classList.add("active");
-            navOverlay.classList.add("active");
+            if (navOverlay) navOverlay.classList.add("active");
             
             // Prevent scroll on body
             document.documentElement.style.overflow = "hidden";
@@ -116,28 +116,36 @@ document.documentElement.classList.remove('no-js');
             
             // Accessibility
             mainNav.setAttribute("aria-hidden", "false");
-            if (menuToggle) menuToggle.setAttribute("aria-expanded", "true");
+            if (menuToggle) {
+                menuToggle.classList.add("active");
+                menuToggle.setAttribute("aria-expanded", "true");
+            }
         };
 
         const closeMobileNav = () => {
-            if (!mainNav || !navOverlay) return;
+            if (!mainNav) return;
             
-            body.classList.remove("nav-open");
-            mainNav.classList.remove("active");
-            navOverlay.classList.remove("active");
+            // Remove all possible stuck classes
+            body.classList.remove("nav-open", "menu-open", "no-scroll", "blur-active", "no-scroll-lock");
+            mainNav.classList.remove("active", "show", "open");
+            if (navOverlay) navOverlay.classList.remove("active", "show", "visible");
             
-            // Restore scroll
+            // Restore scroll - force override any stuck styles
             document.documentElement.style.overflow = "";
             body.style.overflow = "";
             
             // Accessibility
             mainNav.setAttribute("aria-hidden", "true");
-            if (menuToggle) menuToggle.setAttribute("aria-expanded", "false");
+            if (menuToggle) {
+                menuToggle.classList.remove("active", "open");
+                menuToggle.setAttribute("aria-expanded", "false");
+            }
         };
 
         // Toggle mobile navigation
         if (menuToggle) {
             menuToggle.addEventListener("click", (e) => {
+                e.preventDefault();
                 e.stopPropagation();
                 if (mainNav && mainNav.classList.contains("active")) {
                     closeMobileNav();
@@ -149,12 +157,19 @@ document.documentElement.classList.remove('no-js');
 
         // Close button
         if (navClose) {
-            navClose.addEventListener("click", closeMobileNav);
+            navClose.addEventListener("click", (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                closeMobileNav();
+            });
         }
 
         // Close when clicking overlay
         if (navOverlay) {
-            navOverlay.addEventListener("click", closeMobileNav);
+            navOverlay.addEventListener("click", (e) => {
+                e.preventDefault();
+                closeMobileNav();
+            });
         }
 
         // Close when clicking nav links
