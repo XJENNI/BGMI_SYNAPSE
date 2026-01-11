@@ -233,6 +233,7 @@
   /* Hide floating elements when nav is open */
   body.nav-open .contact-tab,
   body.nav-open .denvil-badge,
+  body.nav-open .reg-badge,
   body.nav-open .reg-toast {
     opacity: 0 !important;
     pointer-events: none !important;

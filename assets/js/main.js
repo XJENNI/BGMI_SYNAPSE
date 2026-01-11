@@ -15,7 +15,17 @@ document.documentElement.classList.remove('no-js');
         const navOverlay = document.getElementById("navOverlay");
         const navClose = document.getElementById("navClose");
         const header = document.querySelector(".site-header") || document.getElementById("header");
-    
+        // guard to prevent rapid double toggles that can lock scroll
+        let navTransitioning = false;
+        const withNavLock = (fn) => {
+            if (navTransitioning) return;
+            navTransitioning = true;
+            requestAnimationFrame(() => {
+                fn();
+                setTimeout(() => { navTransitioning = false; }, 320);
+            });
+        };
+
     // 1a. FORCE RESET ON LOAD - This ensures every page starts fresh, removing any stuck blur/overlay
     body.classList.remove("nav-open", "menu-open", "no-scroll", "blur-active", "no-scroll-lock");
     if (mainNav) {
@@ -40,14 +50,13 @@ document.documentElement.classList.remove('no-js');
     document.body.style.width = "";
     
     // 2. Preloader - Optimized for Speed (short safety net)
-    const hidePreloader = () => {
-        if (preloader) {
-            preloader.style.opacity = "0";
-            setTimeout(() => {
+        const hidePreloader = () => {
+            if (preloader) {
+                preloader.style.opacity = "0";
                 preloader.style.display = "none";
-            }, 300);
-        }
-    };
+                preloader.style.pointerEvents = "none";
+            }
+        };
 
     if (preloader) {
         // Hide ASAP and also after load as a safety net
@@ -156,13 +165,13 @@ document.documentElement.classList.remove('no-js');
         menuToggle.addEventListener("click", (e) => {
             e.preventDefault();
             e.stopPropagation();
-            toggleMobileNav();
+            withNavLock(toggleMobileNav);
         }, { passive: false });
         
         // Touch event for mobile
         menuToggle.addEventListener("touchend", (e) => {
             e.preventDefault();
-            toggleMobileNav();
+            withNavLock(toggleMobileNav);
         }, { passive: false });
     }
 
@@ -170,33 +179,33 @@ document.documentElement.classList.remove('no-js');
         navClose.addEventListener("click", (e) => {
             e.preventDefault();
             e.stopPropagation();
-            closeMobileNav();
+            withNavLock(closeMobileNav);
         }, { passive: false });
         
         // Touch event for mobile
         navClose.addEventListener("touchend", (e) => {
             e.preventDefault();
-            closeMobileNav();
+            withNavLock(closeMobileNav);
         }, { passive: false });
     }
 
     if (navOverlay) {
         navOverlay.addEventListener("click", (e) => {
             e.preventDefault();
-            closeMobileNav();
+            withNavLock(closeMobileNav);
         }, { passive: false });
         
         // Touch event for mobile
         navOverlay.addEventListener("touchend", (e) => {
             e.preventDefault();
-            closeMobileNav();
+            withNavLock(closeMobileNav);
         }, { passive: false });
     }
 
     // Close on Escape key
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && mainNav && mainNav.classList.contains("active")) {
-            closeMobileNav();
+            withNavLock(closeMobileNav);
         }
     });
 
@@ -217,7 +226,7 @@ document.documentElement.classList.remove('no-js');
     // Force close on visibility change
     document.addEventListener("visibilitychange", () => {
         if (document.hidden && mainNav && mainNav.classList.contains("active")) {
-            closeMobileNav();
+            withNavLock(closeMobileNav);
         }
     });
 
@@ -227,7 +236,18 @@ document.documentElement.classList.remove('no-js');
         link.addEventListener("click", () => {
             // Close menu on mobile only
             if (window.innerWidth <= 768) {
-                closeMobileNav();
+                withNavLock(closeMobileNav);
+            }
+        });
+    });
+
+    const hubLinks = document.querySelectorAll(".cyber-nav-hub .cyber-nav-item");
+    hubLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const href = link.getAttribute("href");
+            if (href) {
+                window.location.href = href;
             }
         });
     });

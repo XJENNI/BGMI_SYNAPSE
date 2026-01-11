@@ -72,7 +72,7 @@
 
 html {
   font-size: 16px;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -394,11 +394,14 @@ p {
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: var(--space-sm);
   max-width: 700px;
-  margin: var(--space-lg) auto 0;
+  margin: calc(140px + var(--space-md)) auto 0;
   padding: var(--space-md);
   background: rgba(0, 0, 0, 0.6);
   border: 1px solid var(--border-subtle);
   border-radius: 10px;
+  position: sticky;
+  top: 160px;
+  z-index: 100001;
 }
 
 .cyber-nav-item {
@@ -410,7 +413,13 @@ p {
   border: 1px solid var(--border-subtle);
   border-radius: 6px;
   text-decoration: none;
-  transition: all var(--transition-fast);
+  transition: color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+  animation: none;
+}
+
+.cyber-nav-hub, .cyber-nav-hub * {
+  animation: none !important;
+  transition: none !important;
 }
 
 .cyber-nav-item:hover {
@@ -2363,6 +2372,16 @@ body.registration-visible {
 @keyframes denvil-float2 { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-5px);} }
 
 .denvil-badge { animation: denvil-float2 4.2s infinite ease-in-out; }
+
+.reg-badge {
+  top: 20px;
+  bottom: auto;
+  background: linear-gradient(90deg, #00f0ff 0%, #2d2a72 100%);
+}
+
+@media (max-width: 768px) {
+  .reg-badge { top: 12px; left: 12px; bottom: auto; }
+}
 
 @media (max-width: 768px) {
   .denvil-badge { left: 12px; bottom: 12px; padding: 6px 10px; font-size: 0.68rem; }
