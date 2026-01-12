@@ -418,7 +418,7 @@ p {
   position: fixed;
   right: 20px;
   bottom: 20px;
-  z-index: calc(var(--z-modal) + 15000);
+  z-index: 9999;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -473,15 +473,16 @@ p {
 
 @media (max-width: 768px) {
   .floating-registration-badge {
-    right: 50%;
-    transform: translateX(50%);
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
     bottom: 80px;
     padding: 12px 18px;
     font-size: 0.9rem;
   }
   
   .floating-registration-badge:hover {
-    transform: translateX(50%) translateY(-4px) scale(1.05);
+    transform: translateX(-50%) translateY(-4px) scale(1.05);
   }
   
   .floating-registration-badge .badge-text {
