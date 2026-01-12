@@ -59,4 +59,24 @@ test.describe('Site navigation & pages', () => {
     // backgroundImage should not include url(
     expect(bgImage.includes('url(')).toBeFalsy();
   });
+
+  test('Animations are disabled for stability', async ({ page }) => {
+    await page.goto('/index.html');
+    const hasReduceClass = await page.evaluate(() => document.documentElement.classList.contains('reduce-motion'));
+    expect(hasReduceClass).toBeTruthy();
+
+    const firstFade = page.locator('.fade-in').first();
+    await expect(firstFade).toBeVisible();
+
+    const motionStyles = await firstFade.evaluate((el) => {
+      const styles = getComputedStyle(el);
+      return {
+        animationName: styles.animationName,
+        transitionDuration: styles.transitionDuration
+      };
+    });
+
+    expect(motionStyles.animationName).toBe('none');
+    expect(motionStyles.transitionDuration.includes('0s')).toBeTruthy();
+  });
 });

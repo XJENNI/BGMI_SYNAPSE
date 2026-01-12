@@ -76,6 +76,24 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+/* Disable animations by default to keep page stable */
+html.reduce-motion {
+  scroll-behavior: auto !important;
+}
+
+html.reduce-motion *,
+html.reduce-motion *::before,
+html.reduce-motion *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+html.reduce-motion .fade-in,
+html.reduce-motion .slide-up {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--bg-primary);

@@ -4,6 +4,7 @@
 
 // Remove no-js class if JavaScript is enabled
 document.documentElement.classList.remove('no-js');
+document.documentElement.classList.add('reduce-motion');
 
 (() => {
     const init = () => {
