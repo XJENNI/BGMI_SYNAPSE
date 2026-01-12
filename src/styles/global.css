@@ -251,7 +251,7 @@ p { margin-bottom: var(--space-md); }
   left: 10 px;
   right: auto;
   bottom: auto;
-  z-index: 9998;
+  z-index: 990;
   
   /* Layout & Size */
   display: inline-flex;
