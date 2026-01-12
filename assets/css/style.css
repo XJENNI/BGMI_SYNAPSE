@@ -418,7 +418,7 @@ p {
   position: fixed;
   right: 20px;
   bottom: 20px;
-  z-index: 110000;
+  z-index: calc(var(--z-modal) + 15000);
   display: inline-flex;
   align-items: center;
   gap: 10px;
