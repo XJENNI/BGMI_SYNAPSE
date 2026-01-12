@@ -145,7 +145,7 @@ p { margin-bottom: var(--space-md); }
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.95);
+  background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-subtle);
   z-index: 1000;
@@ -153,7 +153,7 @@ p { margin-bottom: var(--space-md); }
 }
 
 .site-header.scrolled {
-  background: rgba(0, 0, 0, 0.98);
+  background: rgba(0, 0, 0, 0.3);
   box-shadow: 0 4px 30px rgba(0, 240, 255, 0.1);
 }
 
