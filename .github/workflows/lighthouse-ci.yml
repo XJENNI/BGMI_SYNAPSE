@@ -107,13 +107,13 @@ jobs:
       actions: read
     steps:
       - name: Download Desktop Results
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v4.1.3
         with:
           name: lighthouse-desktop-results
           path: ./desktop-results
 
       - name: Download Mobile Results
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v4.1.3
         with:
           name: lighthouse-mobile-results
           path: ./mobile-results
