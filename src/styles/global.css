@@ -243,88 +243,100 @@ p { margin-bottom: var(--space-md); }
 }
 
 
-/* ========== Floating Registration Badge ========== */
+/* ========== Fixed Floating Registration Badge (Top-Left) ========== */
 .floating-registration-badge {
   position: fixed;
-  top: 150px;
-  left: 20px ;
+  /* Position: Below the header (80px) + some space */
+  top: 100px;
+  left: 20px;
+  right: auto;
+  bottom: auto;
   z-index: 9999;
+  
+  /* Layout & Size */
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 8px 12px;
+  justify-content: flex-start;
+  width: max-content;       /* Prevents the "giant pill" stretching */
+  max-width: 90vw;
+  gap: 6px;
+  padding: 8px 12px;        /* Reduced padding */
+  
+  /* Style */
   background: linear-gradient(135deg, rgba(255, 215, 0, 0.95) 0%, rgba(255, 165, 0, 0.95) 100%);
   border: 2px solid rgba(255, 215, 0, 0.3);
-  border-radius: 999px;
+  border-radius: 50px;
   box-shadow: 0 6px 18px rgba(255, 215, 0, 0.4), 0 3px 10px rgba(0, 0, 0, 0.6);
+  
+  /* Text */
   color: #000;
   font-weight: 700;
   font-family: var(--font-heading);
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.5px;
+  text-align: left;
+  
+  /* Animation */
   transition: all 0.3s ease;
   animation: pulse-badge 2s ease-in-out infinite;
+  
+  /* Ensure no residual transforms mess up position */
+  transform: none; 
 }
 
 .floating-registration-badge:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 12px 40px rgba(255, 215, 0, 0.6), 0 6px 20px rgba(0, 0, 0, 0.7);
+  transform: translateY(-2px); /* Subtle lift only */
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
   background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
 }
 
 .floating-registration-badge .badge-icon {
-  font-size: 0.9rem;
-  animation: bounce-icon 1s ease-in-out infinite;
+  font-size: 0.9rem; /* Smaller icon */
+  display: block;
 }
 
 .floating-registration-badge .badge-text {
-  font-size: 0.8rem;
+  font-size: 0.75rem; /* Smaller text */
   white-space: nowrap;
 }
 
 @keyframes pulse-badge {
-  0%, 100% {
-    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.6);
-  }
-  50% {
-    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.7), 0 4px 16px rgba(0, 0, 0, 0.6);
-  }
+  0%, 100% { box-shadow: 0 6px 18px rgba(255, 215, 0, 0.4); }
+  50% { box-shadow: 0 6px 22px rgba(255, 215, 0, 0.7); }
 }
 
-@keyframes bounce-icon {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-3px);
-  }
-}
-
+/* ========== Mobile Overrides ========== */
 @media (max-width: 768px) {
   .floating-registration-badge {
-    top: 12px;
+    /* Mobile header is ~72px, place it just below */
+    top: 85px; 
     left: 12px;
-    gap: 3px;
-    padding: 6px 10px;
-    text-align: left;
-    justify-content: flex-start;
+    right: auto;
+    bottom: auto;
+    
+    /* Smaller mobile size */
+    padding: 6px 12px;
+    gap: 5px;
+    
+    /* CRITICAL: Remove any centering transforms */
+    transform: none !important; 
   }
-}
-
   
+  /* Disable hover lift on mobile to prevent sticky states */
   .floating-registration-badge:hover {
-    transform: translateX(-50%) translateY(-4px) scale(1.05);
+    transform: none;
   }
   
   .floating-registration-badge .badge-text {
-    font-size: 0.72rem;
+    font-size: 0.7rem; 
   }
   
   .floating-registration-badge .badge-icon {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 }
+
 /* Mobile Menu Toggle */
 .menu-toggle {
   display: none;
