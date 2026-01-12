@@ -247,8 +247,8 @@ p { margin-bottom: var(--space-md); }
 .floating-registration-badge {
   position: fixed;
   /* Position: Below the header (80px) + some space */
-  top: 100px;
-  left: 20px;
+  top: 150px;
+  left: 10 px;
   right: auto;
   bottom: auto;
   z-index: 9999;
@@ -310,8 +310,8 @@ p { margin-bottom: var(--space-md); }
 @media (max-width: 768px) {
   .floating-registration-badge {
     /* Mobile header is ~72px, place it just below */
-    top: 85px; 
-    left: 12px;
+    top: 150px; 
+    left: 1px;
     right: auto;
     bottom: auto;
     
