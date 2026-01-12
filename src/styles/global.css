@@ -41,6 +41,8 @@
   
   --transition-fast: 0.15s ease;
   --transition-normal: 0.3s ease;
+  
+  --header-height: 80px;
 }
 
 /* ========== Reset & Base ========== */
@@ -62,6 +64,10 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   min-height: 100vh;
+}
+
+body.nav-open {
+  overflow: hidden;
 }
 
 ::selection {
@@ -294,7 +300,7 @@ p { margin-bottom: var(--space-md); }
   border: 1px solid var(--border-subtle);
   border-radius: 10px;
   position: sticky;
-  top: 80px;
+  top: var(--header-height);
   z-index: 100;
 }
 

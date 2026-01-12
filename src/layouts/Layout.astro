@@ -166,14 +166,14 @@ const { title, description = "SYNAPSE MAMC BGMI 2026 - Official BGMI Esports Tou
       mainNav?.classList.add('active');
       navOverlay?.classList.add('active');
       menuToggle?.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      document.body.classList.add('nav-open');
     }
 
     function closeNav() {
       mainNav?.classList.remove('active');
       navOverlay?.classList.remove('active');
       menuToggle?.classList.remove('active');
-      document.body.style.overflow = '';
+      document.body.classList.remove('nav-open');
     }
 
     menuToggle?.addEventListener('click', () => {
