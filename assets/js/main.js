@@ -4,6 +4,7 @@
 
 // Remove no-js class if JavaScript is enabled
 document.documentElement.classList.remove('no-js');
+document.documentElement.classList.add('reduce-motion');
 
 (() => {
     const init = () => {
@@ -342,6 +343,7 @@ document.documentElement.classList.remove('no-js');
 
     // 7. Reveal Animations on Scroll - Using IntersectionObserver for Performance
     const setupScrollAnimations = () => {
+        if (document.documentElement.classList.contains('reduce-motion')) return;
         const revealElements = document.querySelectorAll(".fade-in, .slide-up");
         if (!revealElements.length) return;
 

@@ -76,6 +76,30 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+/* Disable animations by default to keep page stable */
+html.reduce-motion {
+  scroll-behavior: auto !important;
+}
+
+html.reduce-motion *,
+html.reduce-motion *::before,
+html.reduce-motion *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+html.reduce-motion *:focus-visible,
+html.reduce-motion *:focus-visible::before,
+html.reduce-motion *:focus-visible::after {
+  transition: all var(--transition-fast) !important;
+}
+
+html.reduce-motion .fade-in,
+html.reduce-motion .slide-up {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--bg-primary);
@@ -117,7 +141,9 @@ a:hover {
 }
 
 .fade-in.active,
-.slide-up.active {
+.slide-up.active,
+.fade-in.visible,
+.slide-up.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -1911,18 +1937,6 @@ p {
 
 .community-icon {
   font-size: 1.5rem;
-}
-
-/* ========== Scroll Animations ========== */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* ========== Preloader ========== */
