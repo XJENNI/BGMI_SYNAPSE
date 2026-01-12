@@ -263,7 +263,7 @@ p { margin-bottom: var(--space-md); }
   padding: 8px 12px;        /* Reduced padding */
   
   /* Style */
-  background: linear-gradient(135deg, rgba(255, 215, 0, 0.95) 0%, rgba(255, 165, 0, 0.95) 100%);
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.95) 0%, rgba(255, 165, 0, 0.95) 80%);
   border: 2px solid rgba(255, 215, 0, 0.3);
   border-radius: 50px;
   box-shadow: 0 6px 18px rgba(255, 215, 0, 0.4), 0 3px 10px rgba(0, 0, 0, 0.6);
@@ -306,20 +306,20 @@ p { margin-bottom: var(--space-md); }
   50% { box-shadow: 0 6px 22px rgba(255, 215, 0, 0.7); }
 }
 
-/* ========== Mobile Overrides (50% smaller) ========== */
+/* ========== Mobile Overrides (60% of desktop size) ========== */
 @media (max-width: 768px) {
   .floating-registration-badge {
     /* Position: just below mobile header */
-    top: 85px; 
-    left: 12px;
+    top: 110px; 
+    left: 1px;
     right: auto;
     bottom: auto;
     
-    /* 50% reduced size */
-    padding: 4px 8px;          /* was 8px 12px - now half */
-    gap: 3px;                  /* was 6px */
-    border-radius: 25px;       /* was 50px */
-    border-width: 1px;         /* thinner border */
+    /* 60% of desktop size (10% increase from previous) */
+    padding: 5px 10px;         /* increased from 4px 8px */
+    gap: 4px;                  /* increased from 3px */
+    border-radius: 30px;       /* increased from 25px */
+    border-width: 1.5px;       /* slightly thicker */
     
     /* Remove transforms */
     transform: none !important; 
@@ -330,12 +330,12 @@ p { margin-bottom: var(--space-md); }
   }
   
   .floating-registration-badge .badge-text {
-    font-size: 0.55rem;        /* was 0.75rem - now ~50% */
+    font-size: 0.6rem;         /* increased from 0.55rem */
     letter-spacing: 0.3px;
   }
   
   .floating-registration-badge .badge-icon {
-    font-size: 0.65rem;        /* was 0.9rem - now ~50% */
+    font-size: 0.72rem;        /* increased from 0.65rem */
     line-height: 1;
   }
 }
@@ -576,7 +576,7 @@ p { margin-bottom: var(--space-md); }
   display: inline-flex;
   align-items: center;
   gap: 14px;
-  margin-top: 23px;
+  margin-top: 19px;
   background: rgba(0, 0, 0, 0.8);
   border: 2px solid var(--accent-gold);
   padding: 12px 24px;
