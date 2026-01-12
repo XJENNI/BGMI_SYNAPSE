@@ -278,13 +278,13 @@ document.documentElement.classList.remove('no-js');
     }
 
     // call it after DOM is ready
-    setTimeout(setupRegistrationBanner, 60);
+    // setTimeout(setupRegistrationBanner, 60); // Removed - using static floating badge instead
     // setup contact tab
     setTimeout(setupContactTab, 60);
     // small registration toast popup (show once per user)
     setTimeout(setupRegistrationToast, 900);
     // floating badge for quick registrations
-    setTimeout(setupFloatingRegisterBadge, 120);
+    // setTimeout(setupFloatingRegisterBadge, 120); // Removed - using static floating badge in HTML
 
     // ========== Contact Tab ==========
     function setupContactTab() {
