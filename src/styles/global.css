@@ -246,7 +246,7 @@ p { margin-bottom: var(--space-md); }
 /* ========== Floating Registration Badge ========== */
 .floating-registration-badge {
   position: fixed;
-  top: 90px;
+  top: 150px;
   left: 20px;
   z-index: 9999;
   display: inline-flex;
