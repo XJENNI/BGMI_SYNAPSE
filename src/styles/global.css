@@ -576,7 +576,7 @@ p { margin-bottom: var(--space-md); }
   display: inline-flex;
   align-items: center;
   gap: 14px;
-  margin-top: 19px;
+  margin-top: 25px;
   background: rgba(0, 0, 0, 0.8);
   border: 2px solid var(--accent-gold);
   padding: 12px 24px;
