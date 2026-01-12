@@ -2,8 +2,9 @@
  * Main JS for Synapse BGMI Website - Optimized for Mobile
  */
 
-// Remove no-js class if JavaScript is enabled
+// Remove no-js class and add js class if JavaScript is enabled
 document.documentElement.classList.remove('no-js');
+document.documentElement.classList.add('js');
 
 (() => {
     const init = () => {

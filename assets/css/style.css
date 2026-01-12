@@ -114,27 +114,35 @@ a:hover {
 }
 
 /* ========== Fade-In Animation System ========== */
+/* Visible by default for fastest-first mobile experience */
 .fade-in,
 .slide-up {
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.fade-in.active,
-.slide-up.active {
+/* Only hide when JavaScript is available (html.js class added by JS) */
+html.js .fade-in,
+html.js .slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+html.js .fade-in.active,
+html.js .slide-up.active {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Stagger animations for multiple items */
-.fade-in:nth-child(1) { transition-delay: 0.1s; }
-.fade-in:nth-child(2) { transition-delay: 0.2s; }
-.fade-in:nth-child(3) { transition-delay: 0.25s; }
-.fade-in:nth-child(4) { transition-delay: 0.3s; }
-.fade-in:nth-child(5) { transition-delay: 0.35s; }
+/* Stagger animations for multiple items - only when JS is available */
+html.js .fade-in:nth-child(1) { transition-delay: 0.1s; }
+html.js .fade-in:nth-child(2) { transition-delay: 0.2s; }
+html.js .fade-in:nth-child(3) { transition-delay: 0.25s; }
+html.js .fade-in:nth-child(4) { transition-delay: 0.3s; }
+html.js .fade-in:nth-child(5) { transition-delay: 0.35s; }
 
-/* No-JS fallback: show everything immediately */
+/* No-JS fallback: show everything immediately (redundant now, but kept for clarity) */
 .no-js .fade-in,
 .no-js .slide-up {
   opacity: 1 !important;
@@ -586,9 +594,36 @@ p {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  /* Remove all infinite animations for users who prefer reduced motion */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.2s !important;
+  }
+
   .menu-toggle,
   .menu-toggle span {
     transition: none !important;
+  }
+
+  /* Disable infinite animations */
+  .brand-logo-img,
+  .hero-character,
+  .hero-title,
+  .organizer-logo-large img,
+  .nav-krafton-link img,
+  .hero-sponsor-logo,
+  .highlight-krafton,
+  .sponsor-logo-krafton,
+  .denvil-badge,
+  .contact-toggle,
+  .preloader-bar::after,
+  .hero-sponsor::after,
+  .status-badge.live,
+  .coming-soon {
+    animation: none !important;
   }
 }
 

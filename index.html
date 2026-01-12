@@ -23,6 +23,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
+    <!-- Preload LCP Assets -->
+    <link rel="preload" as="image" href="data/img/bgmi-character.svg" fetchpriority="high">
+    <link rel="preload" as="image" href="data/img/mamclogo_nobg.png" fetchpriority="high">
+
     <!-- Fonts (preload to avoid blocking) -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
@@ -236,19 +240,19 @@
                 <h3 style="font-family: var(--font-heading); color: var(--accent-cyan); text-transform: uppercase; margin-bottom: var(--space-lg); letter-spacing: 2px;">Official Map Pool</h3>
                 <div class="map-grid">
                     <div class="map-card">
-                        <img src="data/img/erangle.jpg" alt="Erangel - Green Landscape">
+                        <img src="data/img/erangle.jpg" alt="Erangel - Green Landscape" loading="lazy" decoding="async">
                         <span class="map-name">Erangel</span>
                     </div>
                     <div class="map-card">
-                        <img src="data/img/miramar.jpg" alt="Miramar - Desert">
+                        <img src="data/img/miramar.jpg" alt="Miramar - Desert" loading="lazy" decoding="async">
                         <span class="map-name">Miramar</span>
                     </div>
                     <div class="map-card">
-                        <img src="data/img/sanhok.jpg" alt="Sanhok - Jungle">
+                        <img src="data/img/sanhok.jpg" alt="Sanhok - Jungle" loading="lazy" decoding="async">
                         <span class="map-name">Sanhok</span>
                     </div>
                     <div class="map-card">
-                        <img src="data/img/rondo.jpg" alt="Rondo - Urban Arena">
+                        <img src="data/img/rondo.jpg" alt="Rondo - Urban Arena" loading="lazy" decoding="async">
                         <span class="map-name">Rondo</span>
                     </div>
                 </div>
@@ -309,13 +313,13 @@
                     </ul>
                 </div>
                 <div class="organizer-logo-large fade-in">
-                    <img src="data/img/mavericksr.png" alt="Mavericks Logo">
+                    <img src="data/img/mavericksr.png" alt="Mavericks Logo" loading="lazy" decoding="async">
                 </div>
             </div>
             
             <div class="organizer-row">
                 <div class="organizer-logo-large fade-in">
-                    <img src="data/img/synapse_nobg.png" alt="Synapse Logo">
+                    <img src="data/img/synapse_nobg.png" alt="Synapse Logo" loading="lazy" decoding="async">
                 </div>
                 <div class="organizer-info fade-in">
                     <h3 class="text-purple">SYNAPSE FEST</h3>

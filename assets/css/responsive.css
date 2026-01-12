@@ -141,8 +141,58 @@
   }
 }
 
-/* ========== Tablets (max-width: 768px) ========== */
+/* ========== Mobile Performance Optimizations ========== */
 @media (max-width: 768px) {
+  /* Disable backdrop-filter on mobile for performance */
+  .site-header,
+  .hosted-badge,
+  .stat-item,
+  .registration-tab,
+  .nav-overlay,
+  .contact-panel {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Remove heavy glows and shadows on mobile */
+  .btn-primary,
+  .scroll-top,
+  .highlight-card:hover,
+  .hero-sponsor,
+  .cyber-nav-item:hover,
+  .reward-card:hover,
+  .social-link:hover,
+  .video-container,
+  .sponsor-item:hover,
+  .timeline-content:hover,
+  .map-card:hover,
+  .community-btn:hover {
+    box-shadow: none !important;
+  }
+
+  .hero-title,
+  .section-title,
+  .site-logo .highlight,
+  .stat-value,
+  .highlight-value,
+  .total-score {
+    text-shadow: none !important;
+  }
+
+  /* Remove infinite animations on mobile */
+  .brand-logo-img,
+  .hero-character,
+  .hero-title,
+  .organizer-logo-large img,
+  .nav-krafton-link img,
+  .hero-sponsor-logo,
+  .highlight-krafton,
+  .sponsor-logo-krafton,
+  .denvil-badge,
+  .contact-toggle {
+    animation: none !important;
+  }
+
   /* Prevent scroll when mobile nav is open - avoid setting position fixed on body */
   body.nav-open {
     overflow: hidden;
@@ -168,7 +218,7 @@
     display: flex;
     flex-direction: column;
     border-left: 3px solid var(--accent-cyan);
-    box-shadow: -18px 0 50px rgba(0, 0, 0, 0.6);
+    box-shadow: none; /* Remove shadow for mobile performance */
     transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 100000; /* ensure above everything */
     overflow-y: auto;
