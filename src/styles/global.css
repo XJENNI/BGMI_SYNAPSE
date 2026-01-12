@@ -303,11 +303,12 @@ p { margin-bottom: var(--space-md); }
 
 @media (max-width: 768px) {
   .floating-registration-badge {
-    left: 50%;
+    top: 12px;
+    left: 12px;
     transform: translateX(-50%);
     right: auto;
-    bottom: 80px;
-    padding: 12px 18px;
+    bottom: auto;
+    padding: 6px 10px;
     font-size: 0.9rem;
   }
   
@@ -316,11 +317,11 @@ p { margin-bottom: var(--space-md); }
   }
   
   .floating-registration-badge .badge-text {
-    font-size: 0.85rem;
+    font-size: 0.72rem;
   }
   
   .floating-registration-badge .badge-icon {
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
 }
 /* Mobile Menu Toggle */
