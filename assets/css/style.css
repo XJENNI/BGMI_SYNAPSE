@@ -2132,34 +2132,6 @@ body.animations-softened .brand-logo-img {
   }
 }
 
-/* ========== Footer ========== */
-}
-.floating-register:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--glow-cyan);
-}
-.floating-register.hidden {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(6px);
-}
-.floating-register__cta {
-  background: var(--accent-cyan);
-  color: #000;
-  padding: 4px 8px;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 900;
-}
-@media (max-width: 768px) {
-  .floating-register {
-    right: 12px;
-    bottom: 88px;
-    padding: 10px 14px;
-    font-size: 0.9rem;
-  }
-}
-
 /* Group leaderboards and MVP */
 .group-grid {
   display: grid;
