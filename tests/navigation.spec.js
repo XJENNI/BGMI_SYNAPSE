@@ -77,6 +77,8 @@ test.describe('Site navigation & pages', () => {
     });
 
     expect(motionStyles.animationName).toBe('none');
-    expect(motionStyles.transitionDuration.includes('0s')).toBeTruthy();
+    const duration = motionStyles.transitionDuration.trim();
+    const parts = duration.split(',').map((d) => d.trim());
+    expect(parts.every((d) => d === '0s' || d === '0ms')).toBeTruthy();
   });
 });

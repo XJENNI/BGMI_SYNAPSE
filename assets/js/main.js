@@ -343,6 +343,7 @@ document.documentElement.classList.add('reduce-motion');
 
     // 7. Reveal Animations on Scroll - Using IntersectionObserver for Performance
     const setupScrollAnimations = () => {
+        if (document.documentElement.classList.contains('reduce-motion')) return;
         const revealElements = document.querySelectorAll(".fade-in, .slide-up");
         if (!revealElements.length) return;
 
