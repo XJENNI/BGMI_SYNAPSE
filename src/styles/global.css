@@ -146,15 +146,15 @@ p { margin-bottom: var(--space-md); }
   left: 0;
   width: 100%;
   background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(2px);
   border-bottom: 1px solid var(--border-subtle);
   z-index: 1000;
   transition: background var(--transition-normal);
 }
 
 .site-header.scrolled {
-  background: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 4px 30px rgba(0, 240, 255, 0.1);
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 240, 255, 0.03);
 }
 
 .header-inner {
