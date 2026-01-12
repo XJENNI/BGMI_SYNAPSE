@@ -1,0 +1,165 @@
+name: Lighthouse CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pull-requests: write
+  actions: read
+
+jobs:
+  lighthouse-desktop:
+    name: Lighthouse CI - Desktop
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site (if needed)
+        run: echo "Static site - no build step needed"
+
+      - name: Start static server
+        run: |
+          npx http-server -c-1 -p 8080 &
+          sleep 3
+
+      - name: Run Lighthouse CI - Desktop
+        run: |
+          npm install -g @lhci/cli@0.13.x
+          lhci autorun --config=lighthouserc.json
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+      - name: Upload Lighthouse results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-desktop-results
+          path: .lighthouseci/
+          retention-days: 30
+
+  lighthouse-mobile:
+    name: Lighthouse CI - Mobile
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site (if needed)
+        run: echo "Static site - no build step needed"
+
+      - name: Start static server
+        run: |
+          npx http-server -c-1 -p 8080 &
+          sleep 3
+
+      - name: Run Lighthouse CI - Mobile
+        run: |
+          npm install -g @lhci/cli@0.13.x
+          lhci autorun --config=lighthouserc-mobile.json
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+      - name: Upload Lighthouse results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-mobile-results
+          path: .lighthouseci/
+          retention-days: 30
+
+  lighthouse-comment:
+    name: Comment PR with Results
+    runs-on: ubuntu-latest
+    needs: [lighthouse-desktop, lighthouse-mobile]
+    if: github.event_name == 'pull_request'
+    permissions:
+      contents: read
+      pull-requests: write
+      actions: read
+    steps:
+      - name: Download Desktop Results
+        uses: actions/download-artifact@v4.1.3
+        with:
+          name: lighthouse-desktop-results
+          path: ./desktop-results
+
+      - name: Download Mobile Results
+        uses: actions/download-artifact@v4.1.3
+        with:
+          name: lighthouse-mobile-results
+          path: ./mobile-results
+
+      - name: Comment PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            
+            // Read manifests
+            let desktopManifest, mobileManifest;
+            try {
+              desktopManifest = JSON.parse(fs.readFileSync('./desktop-results/manifest.json', 'utf8'));
+              mobileManifest = JSON.parse(fs.readFileSync('./mobile-results/manifest.json', 'utf8'));
+            } catch (error) {
+              console.log('Could not read manifest files');
+              return;
+            }
+            
+            // Build comment
+            const comment = `## 🚦 Lighthouse CI Results
+            
+            ### Desktop Performance
+            ${desktopManifest.map(result => {
+              const url = result.url.replace('http://localhost:8080', '');
+              return `- **${url}**: Performance ${(result.summary.performance * 100).toFixed(0)}% | Accessibility ${(result.summary.accessibility * 100).toFixed(0)}% | SEO ${(result.summary.seo * 100).toFixed(0)}%`;
+            }).join('\n')}
+            
+            ### Mobile Performance
+            ${mobileManifest.map(result => {
+              const url = result.url.replace('http://localhost:8080', '');
+              return `- **${url}**: Performance ${(result.summary.performance * 100).toFixed(0)}% | Accessibility ${(result.summary.accessibility * 100).toFixed(0)}% | SEO ${(result.summary.seo * 100).toFixed(0)}%`;
+            }).join('\n')}
+            
+            ### Thresholds
+            - ✅ Performance ≥ 90%
+            - ✅ Accessibility ≥ 95%
+            - ✅ SEO ≥ 95%
+            - ✅ LCP ≤ 2.5s
+            - ✅ CLS ≤ 0.1
+            `;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
