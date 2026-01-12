@@ -247,7 +247,7 @@ p { margin-bottom: var(--space-md); }
 .floating-registration-badge {
   position: fixed;
   top: 150px;
-  left: 30px;
+  left: 20px ;
   z-index: 9999;
   display: inline-flex;
   align-items: center;
@@ -303,14 +303,15 @@ p { margin-bottom: var(--space-md); }
 
 @media (max-width: 768px) {
   .floating-registration-badge {
-    top: 40px;
-    left: 20px;
-    transform: translateX(-50%);
-    right: auto;
-    bottom: auto;
+    top: 12px;
+    left: 12px;
+    gap: 3px;
     padding: 6px 10px;
-    font-size: 0.9rem;
+    text-align: left;
+    justify-content: flex-start;
   }
+}
+
   
   .floating-registration-badge:hover {
     transform: translateX(-50%) translateY(-4px) scale(1.05);
