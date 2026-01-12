@@ -15,18 +15,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
     <!-- Fonts -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
 
     <!-- Font Awesome Icons -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" media="print">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- Critical CSS -->
+    <style>
+        :root{--bg-primary:#000;--bg-secondary:#0f0f1a;--accent-cyan:#00f0ff;--text-primary:#fff;--text-secondary:#b0b0b0;--font-heading:'Rajdhani',sans-serif;--font-body:'Inter',sans-serif}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{font-size:16px}body{font-family:var(--font-body);background-color:var(--bg-primary);color:var(--text-primary);line-height:1.6;overflow-x:hidden;min-height:100vh}.preloader{position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg-primary);display:flex;align-items:center;justify-content:center;z-index:99999}.site-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(15,15,26,.95)}
+    </style>
+    <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
+    </noscript>
 </head>
 <body>
     <!-- Preloader -->
@@ -43,8 +53,14 @@
     <header class="site-header" id="header">
         <div class="header-inner">
             <div class="brand-logos">
-                <img src="data/img/mamclogo_nobg.png" alt="MAMC Logo" class="brand-logo-img mamc">
-                <img src="data/img/mavericksr.png" alt="Mavericks Logo" class="brand-logo-img mavericks">
+                <picture>
+                    <source srcset="data/img/mamclogo_nobg.webp" type="image/webp">
+                    <img src="data/img/mamclogo_nobg.png" alt="MAMC Logo" class="brand-logo-img mamc" width="37" height="40" loading="eager" decoding="async">
+                </picture>
+                <picture>
+                    <source srcset="data/img/mavericksr.webp" type="image/webp">
+                    <img src="data/img/mavericksr.png" alt="Mavericks Logo" class="brand-logo-img mavericks" width="20" height="20" loading="eager" decoding="async">
+                </picture>
             </div>
             
             <a href="index.html" class="site-logo">
@@ -62,13 +78,19 @@
                 </ul>
                 <div class="nav-sponsor-mobile">
                     <a href="https://www.krafton.com" target="_blank" rel="noopener" aria-label="Krafton" class="nav-krafton-link">
-                        <img src="data/img/KRAFTONL.jpg" alt="KRAFTON" width="140" height="48" loading="lazy" decoding="async">
+                        <picture>
+                            <source srcset="data/img/KRAFTONL.webp" type="image/webp">
+                            <img src="data/img/KRAFTONL.jpg" alt="KRAFTON" width="140" height="48" loading="lazy" decoding="async">
+                        </picture>
                     </a>
                 </div>
             </nav>
 
             <div class="header-extra" style="display: flex; align-items: center; gap: var(--space-md);">
-                <img src="data/img/synapse_nobg.png" alt="Synapse Logo" class="brand-logo-img synapse" style="height: 48px;">
+                <picture>
+                    <source srcset="data/img/synapse_nobg.webp" type="image/webp">
+                    <img src="data/img/synapse_nobg.png" alt="Synapse Logo" class="brand-logo-img synapse" style="height: 48px;" width="60" height="35" loading="eager" decoding="async">
+                </picture>
                 <button type="button" class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
                     <span></span>
                     <span></span>
@@ -182,9 +204,18 @@
             <div class="footer-section">
                 <h4>Presented By</h4>
                 <div class="footer-brand-logos" style="display: flex; gap: var(--space-md); margin-top: var(--space-md);">
-                    <img src="data/img/mamclogo_nobg.png" alt="MAMC" style="height: 40px;">
-                    <img src="data/img/synapse_nobg.png" alt="Synapse" style="height: 35px;">
-                    <img src="data/img/mavericksr.png" alt="Mavericks" style="height: 35px;">
+                    <picture>
+                        <source srcset="data/img/mamclogo_nobg.webp" type="image/webp">
+                        <img src="data/img/mamclogo_nobg.png" alt="MAMC" width="120" height="40" style="height: 40px;" loading="lazy" decoding="async">
+                    </picture>
+                    <picture>
+                        <source srcset="data/img/synapse_nobg.webp" type="image/webp">
+                        <img src="data/img/synapse_nobg.png" alt="Synapse" width="105" height="35" style="height: 35px;" loading="lazy" decoding="async">
+                    </picture>
+                    <picture>
+                        <source srcset="data/img/mavericksr.webp" type="image/webp">
+                        <img src="data/img/mavericksr.png" alt="Mavericks" width="105" height="35" style="height: 35px;" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <p style="margin-top: var(--space-md);">Mavericks Gaming Society of Maulana Azad Medical College. Organizing the biggest medical esports events in India.</p>
             </div>
