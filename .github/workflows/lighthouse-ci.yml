@@ -6,10 +6,18 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: read
+  pull-requests: write
+  actions: read
+
 jobs:
   lighthouse-desktop:
     name: Lighthouse CI - Desktop
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -49,6 +57,9 @@ jobs:
   lighthouse-mobile:
     name: Lighthouse CI - Mobile
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -90,6 +101,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: [lighthouse-desktop, lighthouse-mobile]
     if: github.event_name == 'pull_request'
+    permissions:
+      contents: read
+      pull-requests: write
+      actions: read
     steps:
       - name: Download Desktop Results
         uses: actions/download-artifact@v4
