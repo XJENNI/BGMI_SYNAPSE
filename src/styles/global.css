@@ -242,6 +242,87 @@ p { margin-bottom: var(--space-md); }
   width: 100%;
 }
 
+
+/* ========== Floating Registration Badge ========== */
+.floating-registration-badge {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.95) 0%, rgba(255, 165, 0, 0.95) 100%);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  border-radius: 50px;
+  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.6);
+  color: #000;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  animation: pulse-badge 2s ease-in-out infinite;
+}
+
+.floating-registration-badge:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 40px rgba(255, 215, 0, 0.6), 0 6px 20px rgba(0, 0, 0, 0.7);
+  background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
+}
+
+.floating-registration-badge .badge-icon {
+  font-size: 1.2rem;
+  animation: bounce-icon 1s ease-in-out infinite;
+}
+
+.floating-registration-badge .badge-text {
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+@keyframes pulse-badge {
+  0%, 100% {
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.6);
+  }
+  50% {
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.7), 0 4px 16px rgba(0, 0, 0, 0.6);
+  }
+}
+
+@keyframes bounce-icon {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@media (max-width: 768px) {
+  .floating-registration-badge {
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+    bottom: 80px;
+    padding: 12px 18px;
+    font-size: 0.9rem;
+  }
+  
+  .floating-registration-badge:hover {
+    transform: translateX(-50%) translateY(-4px) scale(1.05);
+  }
+  
+  .floating-registration-badge .badge-text {
+    font-size: 0.85rem;
+  }
+  
+  .floating-registration-badge .badge-icon {
+    font-size: 1rem;
+  }
+}
 /* Mobile Menu Toggle */
 .menu-toggle {
   display: none;
