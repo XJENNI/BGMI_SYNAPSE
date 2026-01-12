@@ -248,7 +248,7 @@ p { margin-bottom: var(--space-md); }
   position: fixed;
   /* Position: Below the header (80px) + some space */
   top: 150px;
-  left: 10 px;
+  left: 10px;
   right: auto;
   bottom: auto;
   z-index: 990;
