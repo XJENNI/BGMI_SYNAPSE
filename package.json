@@ -17,6 +17,7 @@
     "@playwright/test": "^1.36.0",
     "astro": "^5.16.8",
     "http-server": "^14.1.1",
+    "sharp": "^0.34.5",
     "typescript": "^5.9.3"
   }
 }
