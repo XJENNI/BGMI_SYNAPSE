@@ -306,36 +306,40 @@ p { margin-bottom: var(--space-md); }
   50% { box-shadow: 0 6px 22px rgba(255, 215, 0, 0.7); }
 }
 
-/* ========== Mobile Overrides ========== */
+/* ========== Mobile Overrides (50% smaller) ========== */
 @media (max-width: 768px) {
   .floating-registration-badge {
-    /* Mobile header is ~72px, place it just below */
-    top: 150px; 
-    left: 1px;
+    /* Position: just below mobile header */
+    top: 85px; 
+    left: 12px;
     right: auto;
     bottom: auto;
     
-    /* Smaller mobile size */
-    padding: 6px 12px;
-    gap: 5px;
+    /* 50% reduced size */
+    padding: 4px 8px;          /* was 8px 12px - now half */
+    gap: 3px;                  /* was 6px */
+    border-radius: 25px;       /* was 50px */
+    border-width: 1px;         /* thinner border */
     
-    /* CRITICAL: Remove any centering transforms */
+    /* Remove transforms */
     transform: none !important; 
   }
   
-  /* Disable hover lift on mobile to prevent sticky states */
   .floating-registration-badge:hover {
     transform: none;
   }
   
   .floating-registration-badge .badge-text {
-    font-size: 0.7rem; 
+    font-size: 0.55rem;        /* was 0.75rem - now ~50% */
+    letter-spacing: 0.3px;
   }
   
   .floating-registration-badge .badge-icon {
-    font-size: 0.8rem;
+    font-size: 0.65rem;        /* was 0.9rem - now ~50% */
+    line-height: 1;
   }
 }
+
 
 /* Mobile Menu Toggle */
 .menu-toggle {
