@@ -73,11 +73,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  animation: none !important;
+  transition: none !important;
 }
 
 html {
   font-size: 16px;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -116,15 +118,14 @@ a:hover {
 /* ========== Fade-In Animation System ========== */
 .fade-in,
 .slide-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 .fade-in.active,
 .slide-up.active {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 /* Stagger animations for multiple items */
@@ -1990,18 +1991,6 @@ body.animations-softened .brand-logo-img {
 
 .community-icon {
   font-size: 1.5rem;
-}
-
-/* ========== Scroll Animations ========== */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* ========== Preloader ========== */
