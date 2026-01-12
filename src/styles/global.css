@@ -1662,7 +1662,7 @@ p { margin-bottom: var(--space-md); }
   position: fixed;
   right: 25px;
   bottom: 25px;
-  z-index: 990
+  z-index: 990;
   display: flex;
   flex-direction: column;
   align-items: center;
