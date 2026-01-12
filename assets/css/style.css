@@ -9,6 +9,23 @@
 /* ========== Google Fonts (moved to HTML for non-blocking load) ========== */
 /* Font stylesheet is preloaded in the document head to avoid a render-blocking @import */
 
+/* System font fallback with font-display: swap behavior */
+@font-face {
+  font-family: 'Rajdhani';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: local('Rajdhani'), local('Arial');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: local('Inter'), local('system-ui');
+}
+
 /* ========== CSS Custom Properties ========== */
 :root {
   /* Color Palette */
@@ -147,6 +164,8 @@ a:hover {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: var(--space-md);
   margin-top: var(--space-lg);
+  content-visibility: auto;
+  contain-intrinsic-size: 0 400px;
 }
 
 .map-card {
@@ -676,6 +695,7 @@ p {
   text-align: center;
   padding: calc(80px + var(--space-2xl)) var(--space-lg) var(--space-2xl);
   overflow: hidden;
+  contain: layout style paint;
 }
 
 .hero-bg {
