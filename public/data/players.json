@@ -1,0 +1,10 @@
+[
+  { "playerId": "p1", "playerName": "Raze", "team": "Team Soul", "kills": 28, "mvpScore": 86 },
+  { "playerId": "p2", "playerName": "Shadow", "team": "GodLike Esports", "kills": 26, "mvpScore": 82 },
+  { "playerId": "p3", "playerName": "Blitz", "team": "Team XSpark", "kills": 24, "mvpScore": 76 },
+  { "playerId": "p4", "playerName": "Kite", "team": "Orangutan Gaming", "kills": 22, "mvpScore": 74 },
+  { "playerId": "p5", "playerName": "Nova", "team": "Team Insane", "kills": 21, "mvpScore": 70 },
+  { "playerId": "p6", "playerName": "Viper", "team": "Blind Esports", "kills": 18, "mvpScore": 66 },
+  { "playerId": "p7", "playerName": "Ghost", "team": "Skylightz Gaming", "kills": 17, "mvpScore": 64 },
+  { "playerId": "p8", "playerName": "Spectre", "team": "Team Mayhem", "kills": 16, "mvpScore": 62 }
+]

@@ -1,0 +1,255 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="KRAFTON x SYNAPSE BGMI 2026 | Home" activePage="home">
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-character">
+      <img src="/data/img/bgmi-character.svg" alt="BGMI character" class="hero-character-img" width="420" height="720">
+    </div>
+    <div class="hero-content">
+      <div class="hosted-badge">
+        <span>Hosted by</span>
+        <img src="/data/img/mavericksr.png" alt="Mavericks Logo">
+        <span class="text-cyan">Mavericks and Krafton</span>
+      </div>
+
+      <div class="hero-sponsor">
+        <a href="https://www.krafton.com" class="hero-sponsor-link" target="_blank" rel="noopener">
+          <img src="/data/img/krafton.webp" alt="KRAFTON" width="140" height="48" class="hero-sponsor-logo">
+          <span class="hero-sponsor-text"><small>Sponsored by</small> <strong>KRAFTON</strong></span>
+        </a>
+      </div>
+
+      <h1 class="hero-title">KRAFTON x SYNAPSE<br>BGMI BATTLE 2026</h1>
+      <p class="hero-subtitle">Official Esports Tournament | Annual Fest Synapse MAMC</p>
+      <div class="hero-registration-badge">
+        🆓 Registration Free — Join the battle!
+      </div>
+      <div class="hero-actions" style="margin-top: 2rem;">
+        <a href="https://forms.gle/1S6GPtYdGYCDVqbr6" class="btn btn-primary" target="_blank" rel="noopener">
+          <span>Register Now</span>
+        </a>
+      </div>
+     
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-value">6 FEB</span>
+          <span class="stat-label">War Begins</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">16</span>
+          <span class="stat-label">Elite Finals</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">LAN</span>
+          <span class="stat-label">Showdown</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="rewards">
+    <div class="container">
+      <h2 class="section-title">Prize Pool & Rewards</h2>
+      <p style="text-align: center; color: var(--text-secondary); margin-top: -20px; margin-bottom: 40px;">Epic rewards for the champions of Synapse 2026</p>
+      
+      <div class="reward-grid">
+        <div class="reward-card silver">
+          <span class="reward-icon">🥈</span>
+          <div class="reward-rank">Runner Up</div>
+          <div class="reward-amount">₹3,000</div>
+          <div class="reward-extra">+ Novelty Check & Certificate</div>
+        </div>
+
+        <div class="reward-card gold" style="transform: scale(1.1); z-index: 2; border-width: 2px;">
+          <span class="reward-icon">🏆</span>
+          <div class="reward-rank">Champions</div>
+          <div class="reward-amount" style="color: #ffd700;">₹8,000</div>
+          <div class="reward-extra" style="color: #ffd700;">+ Trophy, Grand Novelty Check & Certificates</div>
+        </div>
+
+        <div class="reward-card bronze">
+          <span class="reward-icon">🥉</span>
+          <div class="reward-rank">2nd Runner Up</div>
+          <div class="reward-amount">₹1,500</div>
+          <div class="reward-extra">+ Novelty Check & Certificate</div>
+        </div>
+
+        <div class="reward-card free">
+          <span class="reward-icon">🆓</span>
+          <div class="reward-rank">Registration</div>
+          <div class="reward-amount" style="color: var(--accent-free);">FREE</div>
+          <div class="reward-extra" style="color: var(--accent-free);">No entry fee • Limited slots</div>
+        </div>
+      </div>
+
+      <div class="reward-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin-top: 3rem;">
+        <div class="reward-card mvp">
+          <span class="reward-icon">🔥</span>
+          <div class="reward-rank">Tournament MVP</div>
+          <div class="reward-amount">₹500</div>
+          <div class="reward-extra">Individual Performance Award</div>
+        </div>
+        <div class="reward-card">
+          <span class="reward-icon">📜</span>
+          <div class="reward-rank">All Finalists</div>
+          <div class="reward-amount" style="font-size: 1.5rem;">CERTIFICATES</div>
+          <div class="reward-extra">Official Recognition by KRAFTON & MAMC</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about" style="position: relative; overflow: hidden;">
+    <div style="position: absolute; right: -50px; top: 10%; height: 400px; opacity: 0.15; pointer-events: none; filter: grayscale(1) brightness(0.5);">
+      <img src="/data/img/bgmi-character.svg" style="height: 100%; width: auto;">
+    </div>
+    <div class="container">
+      <h2 class="section-title">The Krafton x Synapse Legacy</h2>
+      <p style="color: var(--text-secondary); text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+        The official BGMI Tournament of <strong>Synapse 2026</strong>, organized by <strong>Mavericks</strong>, the premier gaming society of Maulana Azad Medical College. 
+        Bringing together the best medical college squads for an ultimate showdown in the heart of New Delhi.
+      </p>
+      
+      <div style="margin-top: 3rem; text-align: center;">
+        <h3 style="font-family: var(--font-heading); color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 2rem; letter-spacing: 2px;">Official Map Pool</h3>
+        <div class="map-grid">
+          <div class="map-card">
+            <img src="/data/img/erangle.jpg" alt="Erangel">
+            <span class="map-name">Erangel</span>
+          </div>
+          <div class="map-card">
+            <img src="/data/img/miramar.jpg" alt="Miramar">
+            <span class="map-name">Miramar</span>
+          </div>
+          <div class="map-card">
+            <img src="/data/img/sanhok.jpg" alt="Sanhok">
+            <span class="map-name">Sanhok</span>
+          </div>
+          <div class="map-card">
+            <img src="/data/img/rondo.jpg" alt="Rondo">
+            <span class="map-name">Rondo</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlights-grid" style="margin-top: 3rem;">
+        <div class="highlight-card">
+          <div class="highlight-icon">👥</div>
+          <div class="highlight-value">32-40</div>
+          <div class="highlight-label">Competing Squads</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">🗺️</div>
+          <div class="highlight-value">4</div>
+          <div class="highlight-label">Classic Maps</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">⚔️</div>
+          <div class="highlight-value">LAN</div>
+          <div class="highlight-label">Final Experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="register">
+    <div class="container">
+      <div class="registration-tab">
+        <div class="registration-tag">Entries Started</div>
+        <h3>Registration is Open & Free</h3>
+        <p>Tap below to secure your squad's slot. Limited entries — fill the form now.</p>
+        <a href="https://forms.gle/1S6GPtYdGYCDVqbr6" class="btn btn-primary" target="_blank" rel="noopener">
+          <span>Open Registration Form</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container" style="text-align:center; padding: 3rem;">
+    <a href="/schedule#rules" class="btn btn-secondary" style="text-decoration: none;">
+      <span>View Full Tournament Rules on the Schedule page</span>
+    </a>
+  </div>
+
+  <section class="section section-dark" id="organizers" style="background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('/data/img/erangle.jpg') center/cover fixed no-repeat; border-top: 1px solid var(--accent-cyan); border-bottom: 1px solid var(--accent-purple);">
+    <div class="container">
+      <h2 class="section-title">Meet the Organizers</h2>
+      <div class="organizer-row">
+        <div class="organizer-info">
+          <h3 class="text-cyan">MAVERICKS MAMC</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+            The official gaming society of Maulana Azad Medical College. Mavericks is dedicated to fostering a competitive gaming culture among medics, hosting everything from tactical shooters to mobile battle royales.
+          </p>
+          <ul class="organizers-list">
+            <li><i class="fas fa-check-circle"></i> Professional Tournament Management</li>
+            <li><i class="fas fa-check-circle"></i> Fair Play Enforcement</li>
+            <li><i class="fas fa-check-circle"></i> Medical Gaming Community</li>
+          </ul>
+        </div>
+        <div class="organizer-logo-large">
+          <img src="/data/img/mavericksr.png" alt="Mavericks Logo">
+        </div>
+      </div>
+      
+      <div class="organizer-row">
+        <div class="organizer-logo-large">
+          <img src="/data/img/synapse_nobg.png" alt="Synapse Logo">
+        </div>
+        <div class="organizer-info">
+          <h3 class="text-purple">SYNAPSE FEST</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+            Synapse is the legendary annual festival of MAMC, a melting pot of culture, talent, and competition. It has been the premier stage for medical students across India to showcase their skills beyond the curriculum.
+          </p>
+          <ul class="organizers-list">
+            <li><i class="fas fa-check-circle" style="color: var(--accent-purple);"></i> Decades of Legacy</li>
+            <li><i class="fas fa-check-circle" style="color: var(--accent-purple);"></i> Pan-India Participation</li>
+            <li><i class="fas fa-check-circle" style="color: var(--accent-purple);"></i> Unforgettable Cultural Nights</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="sponsors" style="background: rgba(10, 10, 10, 0.5);">
+    <div class="container">
+      <h2 class="section-title">Official Sponsor</h2>
+      <div class="sponsors-grid">
+        <div class="sponsor-item">
+          <img src="/data/img/KRAFTONL.jpg" alt="KRAFTON" title="KRAFTON - Official Sponsor" loading="lazy" class="sponsor-logo-krafton">
+        </div>
+        <div class="sponsor-info" style="max-width: 820px; margin-left: 16px;">
+          <h3 class="text-cyan">KRAFTON</h3>
+          <p style="color: var(--text-secondary); margin-top: 8px;">
+            KRAFTON is the developer and publisher behind BGMI (Battlegrounds Mobile India). As a global games company, KRAFTON supports competitive scenes, fair-play initiatives, and community development — proudly sponsoring Synapse BGMI 2026.
+          </p>
+          <ul class="organizers-list" style="margin-top: 12px;">
+            <li><i class="fas fa-check-circle"></i> Official developer & publisher of BGMI</li>
+            <li><i class="fas fa-check-circle"></i> Supporting esports and community events</li>
+            <li><i class="fas fa-check-circle"></i> Committed to fair play and player safety</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="cta">
+    <div class="container text-center">
+      <h2 class="section-title">Ready to Compete?</h2>
+      <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 2rem;">
+        Join elite squads battling for glory at the Maulana Azad Medical College campus. 
+        Krafton-backed competition, professional rules, and an epic LAN final awaits!
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="https://forms.gle/1S6GPtYdGYCDVqbr6" class="btn btn-primary" target="_blank" rel="noopener">
+          <span>Register Now</span>
+        </a>
+        <a href="/schedule" class="btn btn-secondary">
+          <span>View Schedule</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
