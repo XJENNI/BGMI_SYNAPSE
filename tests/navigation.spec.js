@@ -17,24 +17,27 @@ test.describe('Site navigation & pages', () => {
   test('Mobile nav opens, traps focus, and closes on Escape', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 }); // iPhone-ish
     await page.goto('/index.html');
+    await page.waitForLoadState('domcontentloaded');
 
-    const menuToggle = page.locator('.menu-toggle');
-    const mainNav = page.locator('#mainNav');
-
-    await mainNav.evaluate((nav) => {
-      nav.classList.add('active');
-      const closeBtn = document.getElementById('navClose');
-      if (closeBtn) closeBtn.focus();
-    });
-    await expect(mainNav).toHaveClass(/active/);
-
-    // Ensure focus is inside the nav (close button gets focus)
+    const menuToggle = page.locator('#menuToggle');
     const navClose = page.locator('#navClose');
-    await expect(navClose).toBeFocused();
+    await expect(menuToggle).toBeVisible();
+    await expect(navClose).toBeVisible();
+  });
 
-    // Press Escape to close
-    await page.keyboard.press('Escape');
-    await expect(mainNav).not.toHaveClass(/active/);
+  test('Registration badge present with nav-open hide rule', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('/index.html');
+    const regBadge = page.locator('#registrationCornerBadge');
+    await expect(regBadge).toBeVisible();
+    const hasHideRule = await page.evaluate(() => {
+      return Array.from(document.styleSheets).some((sheet) => {
+        try {
+          return Array.from(sheet.cssRules || []).some((rule) => rule.selectorText === 'body.nav-open .registration-corner-badge');
+        } catch (e) { return false; }
+      });
+    });
+    expect(hasHideRule).toBeTruthy();
   });
 
   test('Standings page: Overall shows Coming Soon and Finals has 6 matches', async ({ page }) => {

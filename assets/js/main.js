@@ -285,6 +285,8 @@ document.documentElement.classList.remove('no-js');
     setTimeout(setupRegistrationToast, 900);
     // floating badge for quick registrations
     setTimeout(setupFloatingRegisterBadge, 120);
+    // floating Denvil-style badge on upper-left
+    setTimeout(setupRegistrationCornerBadge, 150);
 
     // ========== Contact Tab ==========
     function setupContactTab() {
@@ -402,6 +404,30 @@ document.documentElement.classList.remove('no-js');
         syncBadge();
         const badgeObserver = new MutationObserver(syncBadge);
         badgeObserver.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    }
+
+    // ========== Upper-left Registration Badge (Denvil style) ==========
+    function setupRegistrationCornerBadge() {
+        if (document.getElementById('registrationCornerBadge')) return;
+        const badge = document.createElement('a');
+        badge.id = 'registrationCornerBadge';
+        badge.className = 'denvil-badge registration-corner-badge';
+        badge.href = REGISTER_URL;
+        badge.target = '_blank';
+        badge.rel = 'noopener noreferrer';
+        badge.setAttribute('aria-label', 'Click for Registration');
+        badge.innerHTML = `<span class="denvil-icon" aria-hidden="true">📝</span><span class="denvil-text">Click for <strong>Registration</strong></span>`;
+        badge.addEventListener('click', () => {
+            closeMobileNav();
+        });
+        document.body.appendChild(badge);
+
+        const syncBadge = () => {
+            badge.style.display = document.body.classList.contains('nav-open') ? 'none' : '';
+        };
+        syncBadge();
+        const observer = new MutationObserver(syncBadge);
+        observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
     }
 
     // 7. Reveal Animations on Scroll - Using IntersectionObserver for Performance
