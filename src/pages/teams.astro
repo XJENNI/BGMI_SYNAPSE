@@ -11,7 +11,7 @@ import teamData from 'data/team.json';
 
       <div class="disclaimer">
         <i class="fas fa-info-circle" style="color:var(--accent-cyan); margin-right:8px;"></i>
-        <strong>Note:</strong> Team names, player names, and IDs shown on this page are fictional and provided for illustration/demo purposes only.
+        <strong>Note:</strong> Team names and player names shown are as registered by participants.
       </div>
       
       <div class="team-search-container">
@@ -35,13 +35,12 @@ import teamData from 'data/team.json';
                     <i class={`fas ${player.icon}`}></i> {player.name}
                     {player.isIGL && <span class="igl-badge">IGL</span>}
                   </span>
-                  <span class="player-id">{player.id}</span>
                 </div>
               ))}
             </div>
             <div class="team-footer">
-              <span>{team.group}</span>
-              <span>{team.college}</span>
+              <span class="team-group">{team.group}</span>
+              <span class="team-college">{team.college}</span>
             </div>
           </div>
         ))}
