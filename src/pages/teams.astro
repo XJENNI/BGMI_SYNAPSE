@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import teamData from '../data/team.json';
 ---
 
 <Layout title="Teams | MAVERICKS x SYNAPSE BGMI 2026" description="SYNAPSE MAMC BGMI 2026 - Participating Teams. Meet the squads competing for glory." activePage="teams">
@@ -21,121 +22,29 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <div class="teams-grid" id="teamsGrid">
-        <div class="team-card">
-          <div class="team-header">
-            <div class="team-logo-small">MV</div>
-            <h3 class="team-name">Team Mavericks</h3>
-          </div>
-          <div class="player-list">
-            <div class="player-row">
-              <span class="player-name"><i class="fas fa-crosshairs"></i> MAV | ZEUS <span class="igl-badge">IGL</span></span>
-              <span class="player-id">5123445678</span>
+        {teamData.map((team) => (
+          <div class="team-card">
+            <div class="team-header">
+              <div class="team-logo-small">{team.logo}</div>
+              <h3 class="team-name">{team.name}</h3>
             </div>
-            <div class="player-row">
-              <span class="player-name"><i class="fas fa-bolt"></i> MAV | FLASH</span>
-              <span class="player-id">5987654321</span>
+            <div class="player-list">
+              {team.players.map((player) => (
+                <div class="player-row">
+                  <span class="player-name">
+                    <i class={`fas ${player.icon}`}></i> {player.name}
+                    {player.isIGL && <span class="igl-badge">IGL</span>}
+                  </span>
+                  <span class="player-id">{player.id}</span>
+                </div>
+              ))}
             </div>
-            <div class="player-row">
-              <span class="player-name"><i class="fas fa-skull"></i> MAV | REAPER</span>
-              <span class="player-id">5334455667</span>
-            </div>
-            <div class="player-row">
-              <span class="player-name"><i class="fas fa-shield-alt"></i> MAV | TITAN</span>
-              <span class="player-id">5445566778</span>
-            </div>
-          </div>
-          <div class="team-footer">
-            <span>Group A</span>
-            <span>MAMC, Delhi</span>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <div class="team-header">
-            <div class="team-logo-small">SL</div>
-            <h3 class="team-name">Synapse Slayers</h3>
-          </div>
-          <div class="player-list">
-            <div class="player-row">
-              <span class="player-name"><i class="fas fa-crosshairs"></i> SL | HUNTER <span class="igl-badge">IGL</span></span>
-              <span class="player-id">5100112233</span>
-            </div>
-            <div class="player-row">
-              <span class="player-name"><i class="fas fa-bolt"></i> SL | STORM</span>
-              <span class="player-id">5100112244</span>
-            </div>
-            <div class="player-row">
-              <span class="player-name"><i class="fas fa-skull"></i> SL | PHANTOM</span>
-              <span class="player-id">5100112255</span>
-            </div>
-            <div class="player-row">
-              <span class="player-name"><i class="fas fa-shield-alt"></i> SL | BEAST</span>
-              <span class="player-id">5100112266</span>
+            <div class="team-footer">
+              <span>{team.group}</span>
+              <span>{team.college}</span>
             </div>
           </div>
-          <div class="team-footer">
-            <span>Group B</span>
-            <span>AIIMS, Delhi</span>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <div class="team-header">
-            <div class="team-logo-small">VX</div>
-            <h3 class="team-name">Vortex Elite</h3>
-          </div>
-          <div class="player-list">
-            <div class="player-row">
-              <span class="player-name"><i class="fas fa-crosshairs"></i> VX | OMEGA <span class="igl-badge">IGL</span></span>
-              <span class="player-id">5448899001</span>
-            </div>
-            <div class="player-row">
-              <span class="player-name"><i class="fas fa-bolt"></i> VX | ALPHA</span>
-              <span class="player-id">5448899002</span>
-            </div>
-            <div class="player-row">
-              <span class="player-name"><i class="fas fa-skull"></i> VX | GHOST</span>
-              <span class="player-id">5448899003</span>
-            </div>
-            <div class="player-row">
-              <span class="player-name"><i class="fas fa-shield-alt"></i> VX | TANK</span>
-              <span class="player-id">5448899004</span>
-            </div>
-          </div>
-          <div class="team-footer">
-            <span>Group C</span>
-            <span>LHMC, Delhi</span>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <div class="team-header">
-            <div class="team-logo-small">CN</div>
-            <h3 class="team-name">Cyber Ninjas</h3>
-          </div>
-          <div class="player-list">
-            <div class="player-row">
-              <span class="player-name"><i class="fas fa-crosshairs"></i> CN | SHADOW <span class="igl-badge">IGL</span></span>
-              <span class="player-id">5556667771</span>
-            </div>
-            <div class="player-row">
-              <span class="player-name"><i class="fas fa-bolt"></i> CN | KAI</span>
-              <span class="player-id">5556667772</span>
-            </div>
-            <div class="player-row">
-              <span class="player-name"><i class="fas fa-skull"></i> CN | KENJI</span>
-              <span class="player-id">5556667773</span>
-            </div>
-            <div class="player-row">
-              <span class="player-name"><i class="fas fa-shield-alt"></i> CN | AKIRA</span>
-              <span class="player-id">5556667774</span>
-            </div>
-          </div>
-          <div class="team-footer">
-            <span>Group D</span>
-            <span>VMMC, Delhi</span>
-          </div>
-        </div>
+        ))}
 
         <div class="no-results" id="noResults">
           <h3 style="color: var(--accent-red);">No teams found matching your search.</h3>
