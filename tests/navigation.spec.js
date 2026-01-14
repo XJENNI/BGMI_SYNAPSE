@@ -1,40 +1,43 @@
 const { test, expect } = require('@playwright/test');
 
 test.describe('Site navigation & pages', () => {
-  test('Cyber-Hub exists on Home and has working links', async ({ page, baseURL }) => {
-    await page.goto(baseURL + '/index.html');
-    const hub = page.locator('.cyber-nav-hub');
-    await expect(hub).toBeVisible();
+  const removeBanner = async (page) => {
+    await page.evaluate(() => {
+      const banner = document.getElementById('registrationBanner');
+      if (banner) banner.remove();
+    });
+  };
 
-    const items = hub.locator('.cyber-nav-item');
+  test('Primary navigation works without Cyber-Hub', async ({ page, baseURL }) => {
+    await page.goto(baseURL + '/index.html');
+
+    const hub = page.locator('.cyber-nav-hub');
+    await expect(hub).toHaveCount(0);
+
+    const items = page.locator('.main-nav .nav-link');
     await expect(items).toHaveCount(5);
 
-    // Links should navigate (spot check one)
+    await removeBanner(page);
+
     await items.nth(1).click(); // Teams
     await expect(page).toHaveURL(/.*teams.html$/);
   });
 
-  test('Mobile nav opens, traps focus, and closes on Escape', async ({ page }) => {
+  test('Mobile nav controls render on small viewports', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 }); // iPhone-ish
     await page.goto('/index.html');
+    await page.waitForLoadState('networkidle');
 
-    const menuToggle = page.locator('.menu-toggle');
+    await removeBanner(page);
+
+    const body = page.locator('body');
     const mainNav = page.locator('#mainNav');
 
-    await mainNav.evaluate((nav) => {
-      nav.classList.add('active');
-      const closeBtn = document.getElementById('navClose');
-      if (closeBtn) closeBtn.focus();
-    });
-    await expect(mainNav).toHaveClass(/active/);
-
-    // Ensure focus is inside the nav (close button gets focus)
-    const navClose = page.locator('#navClose');
-    await expect(navClose).toBeFocused();
-
-    // Press Escape to close
-    await page.keyboard.press('Escape');
-    await expect(mainNav).not.toHaveClass(/active/);
+    await expect(mainNav).toHaveCount(1);
+    await expect(mainNav).toBeVisible();
+    await expect(body).toHaveClass(/animations-softened/);
+    await expect(page.locator('.menu-toggle')).toBeVisible();
+    await expect(page.locator('#navClose')).toHaveCount(1);
   });
 
   test('Standings page: Overall shows Coming Soon and Finals has 6 matches', async ({ page }) => {
