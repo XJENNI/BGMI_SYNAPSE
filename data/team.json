@@ -585,5 +585,66 @@
     ],
     "group": "Group C",
     "college": "VMMC DELHI"
+  },
+  {
+    "logo": "TW",
+    "name": "Team Wreckers",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "m0iZz",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "๛MARCUS๛",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "VENOMxxWALKER",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "S卄Ｅ乙ＡＤAA",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "TWxEgoist",
+        "isIGL": false
+      }
+    ],
+    "group": "Group D",
+    "college": "GMC Jammu"
+  },
+  {
+    "logo": "PR",
+    "name": "PROTON",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "『M Y L O』",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "乂PsychoQueen",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "ObsidianX2",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "RAZZchaudhary",
+        "isIGL": false
+      }
+    ],
+    "group": "Group A",
+    "college": "NMCH Patna"
   }
 ]
