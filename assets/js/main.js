@@ -207,84 +207,11 @@ document.documentElement.classList.remove('no-js');
     };
     setActiveNavLink();
 
-    // ========== Registration Banner Insert & Controls ==========
-    function setupRegistrationBanner() {
-        const REG_KEY = 'synapse_reg_closed_v1';
-        if (typeof window === 'undefined' || !document) return;
-
-        const banner = document.getElementById('registrationBanner');
-        if (!banner) return;
-
-        // If the banner was previously closed, remove it immediately to avoid showing a non-interactive banner
-        if (localStorage.getItem(REG_KEY) === '1') {
-            banner.remove();
-            document.body.classList.remove('registration-visible');
-            document.documentElement.style.removeProperty('--reg-banner-height');
-            return;
-        }
-
-        const closeBtn = banner.querySelector('.registration-close');
-        const closeHandler = (e) => {
-            if (e && e.preventDefault) e.preventDefault();
-            banner.classList.add('closing');
-            setTimeout(() => {
-                banner.remove();
-                document.body.classList.remove('registration-visible');
-                document.documentElement.style.removeProperty('--reg-banner-height');
-            }, 220);
-            try { localStorage.setItem(REG_KEY, '1'); } catch (err) { /* ignore storage errors */ }
-        };
-
-        if (closeBtn) {
-            closeBtn.addEventListener('click', closeHandler);
-            // support pointer devices and touch for immediate response (prevent default to avoid focus delay)
-            closeBtn.addEventListener('pointerdown', (ev) => { ev.preventDefault && ev.preventDefault(); closeHandler(ev); });
-            closeBtn.addEventListener('touchstart', (ev) => { ev.preventDefault && ev.preventDefault(); closeHandler(ev); }, { passive: false });
-            // keyboard accessibility (Enter / Space)
-            closeBtn.addEventListener('keydown', (ev) => {
-                if (ev.key === 'Enter' || ev.key === ' ' || ev.key === 'Spacebar') {
-                    ev.preventDefault && ev.preventDefault();
-                    closeHandler(ev);
-                }
-            });
-            // ensure the element is treated as a button if markup changes
-            if (!closeBtn.getAttribute('type')) closeBtn.setAttribute('type', 'button');
-        }
-
-        // Push page content down while banner is visible (avoid overlap)
-        const applyBannerSpacing = () => {
-            const rect = banner.getBoundingClientRect();
-            // if banner appears near the top, apply top spacing; if it is at bottom (mobile), remove spacing
-            if (rect.top < window.innerHeight / 2) {
-                document.documentElement.style.setProperty('--reg-banner-height', `${Math.ceil(rect.height)}px`);
-                document.body.classList.add('registration-visible');
-            } else {
-                document.body.classList.remove('registration-visible');
-                document.documentElement.style.removeProperty('--reg-banner-height');
-            }
-        };
-        applyBannerSpacing();
-        // recompute on resize and when layout may change
-        window.addEventListener('resize', applyBannerSpacing);
-
-        // Observe body class changes to hide banner when nav opens
-        const obs = new MutationObserver(() => {
-            if (document.body.classList.contains('nav-open')) banner.style.display = 'none';
-            else banner.style.display = '';
-            // also re-evaluate placement
-            applyBannerSpacing();
-        });
-        obs.observe(document.body, { attributes: true, attributeFilter: ['class'] });
-    }
-
     // call it after DOM is ready
-    setTimeout(setupRegistrationBanner, 60);
     // setup contact tab
     setTimeout(setupContactTab, 60);
     // small registration toast popup (show once per user)
     setTimeout(setupRegistrationToast, 900);
-    // floating badge for quick registrations
-    setTimeout(setupFloatingRegisterBadge, 120);
 
     // ========== Contact Tab ==========
     function setupContactTab() {
@@ -378,30 +305,6 @@ document.documentElement.classList.remove('no-js');
                 hide();
             }
         });
-    }
-
-    // ========== Floating Registration Badge ==========
-    function setupFloatingRegisterBadge() {
-        if (document.getElementById('floatingRegister')) return;
-        const badge = document.createElement('a');
-        badge.id = 'floatingRegister';
-        badge.className = 'floating-register';
-        badge.href = REGISTER_URL;
-        badge.target = '_blank';
-        badge.rel = 'noopener';
-        badge.setAttribute('aria-label', 'Register for Synapse BGMI 2026');
-        badge.innerHTML = `<span class="floating-register__label">Register</span><span class="floating-register__cta">→</span>`;
-        badge.addEventListener('click', () => {
-            closeMobileNav();
-        });
-        document.body.appendChild(badge);
-
-        const syncBadge = () => {
-            badge.classList.toggle('hidden', document.body.classList.contains('nav-open'));
-        };
-        syncBadge();
-        const badgeObserver = new MutationObserver(syncBadge);
-        badgeObserver.observe(document.body, { attributes: true, attributeFilter: ['class'] });
     }
 
     // 7. Reveal Animations on Scroll - Using IntersectionObserver for Performance

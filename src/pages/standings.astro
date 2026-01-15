@@ -1,0 +1,172 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Standings | MAVERICKS x SYNAPSE BGMI 2026" description="Live leaderboard and standings for SYNAPSE MAMC BGMI 2026 tournament." activePage="standings">
+  <section class="leaderboard-section">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 25px; flex-wrap: wrap;">
+        <h1 class="page-title" style="margin:0;">Overall Standings</h1>
+        <div class="live-indicator">
+          <span class="live-dot"></span>
+          <span>Live</span>
+        </div>
+        <button id="viewToggle" class="btn-sm" style="background:transparent; border:1px solid rgba(255,255,255,0.1); color:var(--text-muted); cursor:pointer; font-size:0.65rem; padding:2px 8px; border-radius:4px; margin-left:10px;">
+          Switch View
+        </button>
+      </div>
+      
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-btn active" data-filter="all">
+          <span>Overall</span>
+        </button>
+        <button class="filter-btn" data-filter="day1">
+          <span>Day 1</span>
+        </button>
+        <button class="filter-btn" data-filter="day2">
+          <span>Day 2</span>
+        </button>
+        <button class="filter-btn" data-filter="day3">
+          <span>Day 3</span>
+        </button>
+        <button class="filter-btn" data-filter="finals">
+          <span>Finals</span>
+        </button>
+      </div>
+
+      <div id="matchFilters" style="display: none; justify-content: center; gap: 10px; margin-bottom: 2rem; flex-wrap: wrap;">
+        <button class="filter-btn btn-sm" data-match="1">M1</button>
+        <button class="filter-btn btn-sm" data-match="2">M2</button>
+        <button class="filter-btn btn-sm" data-match="3">M3</button>
+        <button class="filter-btn btn-sm" data-match="4">M4</button>
+        <button class="filter-btn btn-sm" data-match="5">M5</button>
+      </div>
+
+      <div id="overallFilters" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 2rem; flex-wrap: wrap;">
+        <button class="filter-btn btn-sm active" data-group="all">Overall</button>
+        <button class="filter-btn btn-sm" data-group="A">Group A</button>
+        <button class="filter-btn btn-sm" data-group="B">Group B</button>
+        <button class="filter-btn btn-sm" data-group="C">Group C</button>
+        <button class="filter-btn btn-sm" data-group="D">Group D</button>
+        <button class="filter-btn btn-sm" data-group="mvp">MVP</button>
+      </div>
+      
+      <div id="overallContainer" style="display:none;">
+        <div id="groupView">
+          <div class="group-grid">
+            <div class="group-block" id="groupA"></div>
+            <div class="group-block" id="groupB"></div>
+            <div class="group-block" id="groupC"></div>
+            <div class="group-block" id="groupD"></div>
+          </div>
+        </div>
+        <div id="mvpArea" class="mvp-area" style="display:none;"></div>
+      </div>
+
+      <div class="table-container">
+        <table class="leaderboard-table" id="leaderboardTable">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Team</th>
+              <th class="hide-mobile">Group</th>
+              <th class="hide-mobile">Matches</th>
+              <th class="hide-mobile">Finish Pts</th>
+              <th class="hide-mobile">Position Pts</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboardBody">
+            <tr class="coming-soon-row">
+              <td colspan="7" style="text-align:center; color: var(--text-muted); font-style: italic;">Data Coming Soon</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="last-updated" id="lastUpdated">
+        Last updated: --:--
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Standings page logic
+  const filterTabs = document.getElementById('filterTabs');
+  const matchFilters = document.getElementById('matchFilters');
+  const overallFilters = document.getElementById('overallFilters');
+
+  filterTabs?.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const btn = target.closest('.filter-btn') as HTMLElement;
+    if (!btn) return;
+    
+    const filter = btn.dataset.filter;
+    
+    // Update active state
+    filterTabs.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Show/hide match filters based on selection
+    if (filter === 'all') {
+      if (matchFilters) matchFilters.style.display = 'none';
+      if (overallFilters) overallFilters.style.display = 'flex';
+    } else if (filter === 'finals') {
+      if (matchFilters) {
+        matchFilters.style.display = 'flex';
+        // Add extra match button for finals (6 matches)
+        const existingBtns = matchFilters.querySelectorAll('.filter-btn');
+        if (existingBtns.length === 5) {
+          const m6 = document.createElement('button');
+          m6.className = 'filter-btn btn-sm';
+          m6.dataset.match = '6';
+          m6.textContent = 'M6';
+          matchFilters.appendChild(m6);
+        }
+      }
+      if (overallFilters) overallFilters.style.display = 'none';
+    } else {
+      if (matchFilters) {
+        matchFilters.style.display = 'flex';
+        // Remove M6 button for day matches
+        const m6Btn = matchFilters.querySelector('[data-match="6"]');
+        if (m6Btn) m6Btn.remove();
+      }
+      if (overallFilters) overallFilters.style.display = 'none';
+    }
+  });
+
+  // View toggle
+  const viewToggle = document.getElementById('viewToggle');
+  let isTableView = true;
+
+  viewToggle?.addEventListener('click', () => {
+    isTableView = !isTableView;
+    const tableContainer = document.querySelector('.table-container') as HTMLElement;
+    const overallContainer = document.getElementById('overallContainer');
+    
+    if (tableContainer) tableContainer.style.display = isTableView ? 'block' : 'none';
+    if (overallContainer) overallContainer.style.display = isTableView ? 'none' : 'block';
+  });
+
+  // Match filter clicks
+  matchFilters?.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const btn = target.closest('.filter-btn') as HTMLElement;
+    if (!btn) return;
+    
+    matchFilters.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+
+  // Group filter clicks
+  overallFilters?.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const btn = target.closest('.filter-btn') as HTMLElement;
+    if (!btn) return;
+    
+    overallFilters.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+</script>

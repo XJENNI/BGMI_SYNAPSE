@@ -6,9 +6,12 @@ Thumbs.db
 
 # Build artifacts
 dist/
+.astro/
 
 # Secrets
 .env
+.env.local
+.env.production
 
 # Ignore large image source folders until optimized
 assets/images/*

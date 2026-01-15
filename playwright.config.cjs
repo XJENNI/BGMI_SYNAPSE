@@ -7,7 +7,7 @@ module.exports = defineConfig({
   fullyParallel: false,
   reporter: [['list'], ['html', { open: 'never' }]],
   use: {
-    baseURL: 'http://127.0.0.1:8080',
+    baseURL: 'http://127.0.0.1:4321',
     headless: true,
     viewport: { width: 1280, height: 720 },
     actionTimeout: 5000,
@@ -17,9 +17,9 @@ module.exports = defineConfig({
     { name: 'Desktop Chromium', use: { browserName: 'chromium' } }
   ],
   webServer: {
-    command: 'npm run start',
-    url: 'http://127.0.0.1:8080',
+    command: 'npm run preview',
+    url: 'http://127.0.0.1:4321',
     reuseExistingServer: true,
-    timeout: 30000
+    timeout: 60000
   }
 });

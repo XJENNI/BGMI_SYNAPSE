@@ -9,6 +9,23 @@
 /* ========== Google Fonts (moved to HTML for non-blocking load) ========== */
 /* Font stylesheet is preloaded in the document head to avoid a render-blocking @import */
 
+/* System font fallback with font-display: swap behavior */
+@font-face {
+  font-family: 'Rajdhani';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: local('Rajdhani'), local('Arial');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: local('Inter'), local('system-ui');
+}
+
 /* ========== CSS Custom Properties ========== */
 :root {
   /* Color Palette */
@@ -147,6 +164,8 @@ a:hover {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: var(--space-md);
   margin-top: var(--space-lg);
+  content-visibility: auto;
+  contain-intrinsic-size: 0 400px;
 }
 
 .map-card {
@@ -394,38 +413,85 @@ p {
   visibility: visible;
 }
 
-.cyber-nav-hub {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: var(--space-sm);
-  max-width: 700px;
-  margin: var(--space-lg) auto 0;
-  padding: var(--space-md);
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid var(--border-subtle);
-  border-radius: 10px;
-  position: sticky;
-  top: calc(70px + env(safe-area-inset-top, 0));
-  z-index: 1200;
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
-}
-
-.cyber-nav-item {
-  text-align: center;
-  text-transform: uppercase;
+/* ========== Floating Registration Badge ========== */
+.floating-registration-badge {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.95) 0%, rgba(255, 165, 0, 0.95) 100%);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  border-radius: 50px;
+  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.6);
+  color: #000;
+  font-weight: 700;
   font-family: var(--font-heading);
-  color: var(--text-primary);
-  padding: var(--space-sm) var(--space-md);
-  border: 1px solid var(--border-subtle);
-  border-radius: 6px;
   text-decoration: none;
-  transition: all var(--transition-fast);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  animation: pulse-badge 2s ease-in-out infinite;
 }
 
-.cyber-nav-item:hover {
-  color: var(--accent-cyan);
-  border-color: var(--accent-cyan);
-  box-shadow: var(--glow-cyan);
+.floating-registration-badge:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 40px rgba(255, 215, 0, 0.6), 0 6px 20px rgba(0, 0, 0, 0.7);
+  background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
+}
+
+.floating-registration-badge .badge-icon {
+  font-size: 1.2rem;
+  animation: bounce-icon 1s ease-in-out infinite;
+}
+
+.floating-registration-badge .badge-text {
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+@keyframes pulse-badge {
+  0%, 100% {
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.6);
+  }
+  50% {
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.7), 0 4px 16px rgba(0, 0, 0, 0.6);
+  }
+}
+
+@keyframes bounce-icon {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@media (max-width: 768px) {
+  .floating-registration-badge {
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+    bottom: 80px;
+    padding: 12px 18px;
+    font-size: 0.9rem;
+  }
+  
+  .floating-registration-badge:hover {
+    transform: translateX(-50%) translateY(-4px) scale(1.05);
+  }
+  
+  .floating-registration-badge .badge-text {
+    font-size: 0.85rem;
+  }
+  
+  .floating-registration-badge .badge-icon {
+    font-size: 1rem;
+  }
 }
 
 /* Force GPU and hint will-change for heavy animated elements */
@@ -676,6 +742,7 @@ p {
   text-align: center;
   padding: calc(80px + var(--space-2xl)) var(--space-lg) var(--space-2xl);
   overflow: hidden;
+  contain: layout style paint;
 }
 
 .hero-bg {
@@ -2063,119 +2130,6 @@ body.animations-softened .brand-logo-img {
   }
   100% {
     left: 100%;
-  }
-}
-
-/* ========== Registration Banner ========== */
-.registration-banner {
-  position: fixed;
-  top: calc(env(safe-area-inset-top, 0) + 60px);
-  left: 16px;
-  right: 16px;
-  z-index: 110000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 16px;
-  background: linear-gradient(90deg, rgba(0,0,0,0.96), rgba(8,8,8,0.94));
-  border: 2px solid rgba(255,215,0,0.12);
-  box-shadow: 0 8px 36px rgba(0,240,255,0.06), 0 4px 16px rgba(0,0,0,0.6);
-  transform: skewX(-12deg);
-  transition: transform 0.18s ease, opacity 0.2s ease;
-  gap: 12px;
-  border-radius: 0;
-}
-.registration-banner .registration-link {
-  color: #ffd700;
-  font-weight: 800;
-  text-decoration: none;
-  padding: 6px 10px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transform: skewX(12deg);
-  font-family: var(--font-heading);
-}
-.registration-banner .registration-link:hover {
-  color: #000;
-  background: #ffd700;
-}
-.registration-banner .registration-close {
-  background: transparent;
-  color: var(--text-primary);
-  border: 1px solid rgba(255,255,255,0.04);
-  padding: 6px 8px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transform: skewX(12deg);
-}
-.registration-banner.closing { opacity: 0; transform: translateY(-10px) skewX(-12deg); }
-
-/* Hide banner when nav open */
-body.nav-open .registration-banner { display: none !important; }
-
-/* When banner is visible at the top, push page content down to avoid overlap */
-body.registration-visible {
-  transition: padding-top 0.18s ease;
-  padding-top: calc(var(--reg-banner-height, 64px) + 12px);
-}
-
-@media (max-width: 768px) {
-  .registration-banner {
-    left: 12px;
-    right: 12px;
-    top: auto;
-    bottom: calc(env(safe-area-inset-bottom, 0) + 80px);
-    transform: skewX(-8deg);
-    padding: 10px 12px;
-    font-size: 0.95rem;
-  }
-  .registration-banner .registration-link { font-size: 0.95rem; }
-}
-
-.floating-register {
-  position: fixed;
-  right: 18px;
-  bottom: 110px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 16px;
-  background: linear-gradient(135deg, rgba(0,240,255,0.18), rgba(188,19,254,0.18));
-  border: 1px solid rgba(0,240,255,0.4);
-  color: #fff;
-  text-transform: uppercase;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  letter-spacing: 1px;
-  border-radius: 999px;
-  z-index: 9400;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
-  transition: transform var(--transition-fast), opacity var(--transition-fast);
-}
-.floating-register:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--glow-cyan);
-}
-.floating-register.hidden {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(6px);
-}
-.floating-register__cta {
-  background: var(--accent-cyan);
-  color: #000;
-  padding: 4px 8px;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 900;
-}
-@media (max-width: 768px) {
-  .floating-register {
-    right: 12px;
-    bottom: 88px;
-    padding: 10px 14px;
-    font-size: 0.9rem;
   }
 }
 

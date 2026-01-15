@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Watch Live | MAVERICKS x SYNAPSE BGMI 2026" description="Watch SYNAPSE MAMC BGMI 2026 tournament live!" activePage="watch">
+  <section class="watch-section">
+    <div class="container">
+      <h1 class="page-title">Watch Live</h1>
+      
+      <div class="stream-status">
+        <div class="status-badge coming" id="streamStatus">
+          <span class="status-dot"></span>
+          <span>COMING SOON</span>
+        </div>
+      </div>
+      
+      <div class="video-container">
+        <div class="video-wrapper">
+          <div class="stream-coming-soon">
+            <div style="font-size: 3rem; color: var(--accent-cyan); margin-bottom: 0.6rem;">🎥</div>
+            <h3 style="color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Stream Coming Soon</h3>
+            <p style="color: var(--text-muted); max-width: 520px; margin: 0 auto;">Live stream will be available on match days. Subscribe to our YouTube channel or join our Discord for real-time updates.</p>
+            <div style="margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: center;">
+              <a href="#" class="btn btn-primary"><span>Subscribe</span></a>
+              <a href="/schedule" class="btn btn-secondary"><span>View Schedule</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center" style="margin-bottom: 3rem;">
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+          Watch all the intense BGMI action live! Our stream goes live during match days. 
+          Don't miss a single elimination or chicken dinner!
+        </p>
+      </div>
+      
+      <div class="community-section">
+        <h2 class="section-title">Join Our Community</h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 2rem;">
+          Connect with fellow gamers, get updates, and be part of the action!
+        </p>
+        
+        <div class="community-grid">
+          <a href="#" class="community-btn discord" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-discord community-icon"></i>
+            <span>Join Discord</span>
+          </a>
+          <a href="https://instagram.com/mavericks_mamc" class="community-btn instagram" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram community-icon"></i>
+            <span>Follow on Instagram</span>
+          </a>
+          <a href="#" class="community-btn youtube" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-youtube community-icon"></i>
+            <span>Subscribe on YouTube</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="section" style="margin-top: 3rem;">
+        <h2 class="section-title">Live Chat</h2>
+        <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); padding: 3rem; text-align: center; max-width: 600px; margin: 0 auto;">
+          <i class="fas fa-comments" style="font-size: 3rem; color: var(--text-muted); margin-bottom: 1rem;"></i>
+          <p style="color: var(--text-muted); margin: 0;">
+            Live chat will be available during stream. Join our Discord for 24/7 community chat!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
