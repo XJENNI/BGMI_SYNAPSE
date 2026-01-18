@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import teamData from 'data/team.json';
+---
+
+<Layout title="Teams | MAVERICKS x SYNAPSE BGMI 2026" description="SYNAPSE MAMC BGMI 2026 - Participating Teams. Meet the squads competing for glory." activePage="teams">
+  <section class="section" style="padding-top: 150px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9));">
+    <div class="container">
+      <h1 class="section-title" style="margin-bottom: 20px;">Competing Teams</h1>
+      <p style="text-align: center; color: var(--text-secondary); max-width: 700px; margin: 0 auto 2rem;">Meet the elite squads from colleges across the nation battling for the ultimate title at Synapse 2026.</p>
+
+      <div class="disclaimer">
+        <i class="fas fa-info-circle" style="color:var(--accent-cyan); margin-right:8px;"></i>
+        <strong>Note:</strong> Team names and player names shown are as registered by participants.
+      </div>
+      
+      <div class="team-search-container">
+        <div class="search-wrapper">
+          <input type="text" id="teamSearch" class="team-search-input" placeholder="Search by Team Name or Player...">
+          <i class="fas fa-search search-icon"></i>
+        </div>
+      </div>
+
+      <div class="teams-grid" id="teamsGrid">
+        {teamData.map((team) => (
+          <div class="team-card">
+            <div class="team-header">
+              <div class="team-logo-small">{team.logo}</div>
+              <h3 class="team-name">{team.name}</h3>
+            </div>
+            <div class="player-list">
+              {team.players.map((player) => (
+                <div class="player-row">
+                  <span class="player-name">
+                    <i class={`fas ${player.icon}`}></i> {player.name}
+                    {player.isIGL && <span class="igl-badge">IGL</span>}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <div class="team-footer">
+              <span class="team-group">{team.group}</span>
+              <span class="team-college">{team.college}</span>
+            </div>
+          </div>
+        ))}
+
+        <div class="no-results" id="noResults">
+          <h3 style="color: var(--accent-red);">No teams found matching your search.</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const searchInput = document.getElementById('teamSearch') as HTMLInputElement;
+  const teamCards = document.querySelectorAll('.team-card');
+  const noResults = document.getElementById('noResults');
+
+  searchInput?.addEventListener('input', (e) => {
+    const target = e.target as HTMLInputElement;
+    const searchTerm = target.value.toLowerCase();
+    let hasResults = false;
+
+    teamCards.forEach(card => {
+      const teamName = card.querySelector('.team-name')?.textContent?.toLowerCase() || '';
+      const players = card.querySelector('.player-list')?.textContent?.toLowerCase() || '';
+      
+      if (teamName.includes(searchTerm) || players.includes(searchTerm)) {
+        (card as HTMLElement).style.display = 'flex';
+        hasResults = true;
+      } else {
+        (card as HTMLElement).style.display = 'none';
+      }
+    });
+
+    if (noResults) {
+      noResults.style.display = hasResults ? 'none' : 'block';
+    }
+  });
+</script>
