@@ -1,33 +1,5 @@
 [
   {
-    "logo": "TK",
-    "name": "TEAM KRYO",
-    "players": [
-      {
-        "icon": "fa-crosshairs",
-        "name": "GODSxGhost",
-        "isIGL": true
-      },
-      {
-        "icon": "fa-bolt",
-        "name": "BĒKĒSINGH",
-        "isIGL": false
-      },
-      {
-        "icon": "fa-skull",
-        "name": "RUSSIANonly",
-        "isIGL": false
-      },
-      {
-        "icon": "fa-shield-alt",
-        "name": "『ĂʟPʜA』",
-        "isIGL": false
-      }
-    ],
-    "group": "Group C",
-    "college": "Indian Institute of information technology, Bhagalpur"
-  },
-  {
     "logo": "8K",
     "name": "8kkabaap",
     "players": [
@@ -468,6 +440,34 @@
     ],
     "group": "Group B",
     "college": "IIIT BHAGALPUR"
+  },
+  {
+    "logo": "TK",
+    "name": "TEAM KRYO",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "GODSxGhost",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "BĒKĒSINGH",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "RUSSIANonly",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "『ĂʟPʜA』",
+        "isIGL": false
+      }
+    ],
+    "group": "Group C",
+    "college": "Indian Institute of information technology, Bhagalpur"
   },
   {
     "logo": "PG",
