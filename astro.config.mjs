@@ -8,6 +8,8 @@ export default defineConfig({
   outDir: './dist',
   // Set the site URL for production
   site: 'https://xjenni.github.io/BGMI_SYNAPSE',
+  // Set the base path for GitHub Pages deployment
+  base: '/BGMI_SYNAPSE',
   // Configure the dev server
   server: {
     port: 4321,
