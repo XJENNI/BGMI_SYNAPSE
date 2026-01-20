@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="SYNAPSE MAMC 2026 - All Gaming Events. Free Fire, BGMI TDM, Stumble Guys, Clash Royale tournaments with exciting prizes.">
+    <meta name="keywords" content="BGMI, Free Fire, Stumble Guys, Clash Royale, esports, tournaments, Synapse, MAMC, gaming events">
+    <title>Events | MAVERICKS x SYNAPSE 2026</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="data/img/mamclogo_nobg.png">
+    
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+
+    <!-- Font Awesome Icons -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='all'" media="print">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    
+    <!-- Stylesheets -->
+    <!-- Critical CSS -->
+    <style>
+        :root{--bg-primary:#000;--bg-secondary:#0f0f1a;--accent-cyan:#00f0ff;--text-primary:#fff;--text-secondary:#b0b0b0;--font-heading:'Rajdhani',sans-serif;--font-body:'Inter',sans-serif}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{font-size:16px}body{font-family:var(--font-body);background-color:var(--bg-primary);color:var(--text-primary);line-height:1.6;overflow-x:hidden;min-height:100vh}.preloader{position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg-primary);display:flex;align-items:center;justify-content:center;z-index:99999}.site-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(15,15,26,.95)}
+    </style>
+    <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
+    </noscript>
+    
+    <style>
+        .events-section {
+            padding: 120px 20px 60px;
+            min-height: 100vh;
+        }
+        
+        .page-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .page-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 60px;
+            font-size: 1.1rem;
+        }
+        
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .event-card {
+            background: linear-gradient(135deg, rgba(15, 15, 26, 0.95), rgba(10, 10, 18, 0.95));
+            border: 2px solid rgba(0, 240, 255, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(188, 19, 254, 0.1));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 10px 40px rgba(0, 240, 255, 0.3);
+        }
+        
+        .event-card:hover::before {
+            opacity: 1;
+        }
+        
+        .event-poster {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .event-content {
+            padding: 25px;
+        }
+        
+        .event-title {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+        }
+        
+        .event-mode {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .event-details {
+            margin-bottom: 20px;
+        }
+        
+        .event-detail-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+        
+        .event-detail-item i {
+            color: var(--accent-cyan);
+            margin-right: 10px;
+            margin-top: 3px;
+            font-size: 1rem;
+        }
+        
+        .event-prize {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .event-prize h4 {
+            color: var(--accent-gold);
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        
+        .prize-item {
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+        
+        .event-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .btn-register {
+            flex: 1;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, var(--accent-cyan), rgba(0, 240, 255, 0.7));
+            color: var(--bg-primary);
+            text-decoration: none;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: 700;
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-register:hover {
+            background: var(--accent-cyan);
+            box-shadow: 0 5px 20px rgba(0, 240, 255, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .event-contacts {
+            background: rgba(0, 240, 255, 0.05);
+            border-radius: 6px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .event-contacts h5 {
+            color: var(--accent-cyan);
+            margin-bottom: 8px;
+            font-family: var(--font-heading);
+        }
+        
+        .contact-item {
+            color: var(--text-secondary);
+            margin-bottom: 3px;
+        }
+        
+        @media (max-width: 768px) {
+            .events-section {
+                padding: 100px 15px 40px;
+            }
+            
+            .events-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .event-poster {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">MAVERICKS x SYNAPSE</div>
+            <div class="preloader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header" id="header">
+        <div class="header-inner">
+            <div class="brand-logos">
+                <picture>
+                    <source srcset="data/img/mamclogo_nobg.webp" type="image/webp">
+                    <img src="data/img/mamclogo_nobg.png" alt="MAMC Logo" class="brand-logo-img mamc" width="37" height="40" loading="eager" decoding="async">
+                </picture>
+                <picture>
+                    <source srcset="data/img/mavericksr.webp" type="image/webp">
+                    <img src="data/img/mavericksr.png" alt="Mavericks Logo" class="brand-logo-img mavericks" width="20" height="20" loading="eager" decoding="async">
+                </picture>
+            </div>
+            
+            <a href="index.html" class="site-logo">
+                <span class="highlight">SYNAPSE</span> 2026
+            </a>
+            
+            <nav class="main-nav" id="mainNav" role="navigation" aria-label="Primary Site Navigation" aria-hidden="true">
+                <button type="button" class="nav-close" id="navClose" aria-label="Close menu" aria-controls="mainNav">×</button>
+                <ul class="nav-list" role="menu">
+                    <li role="none"><a role="menuitem" href="index.html" class="nav-link">Home</a></li>
+                    <li role="none"><a role="menuitem" href="teams.html" class="nav-link">Teams</a></li>
+                    <li role="none"><a role="menuitem" href="standings.html" class="nav-link">Standings</a></li>
+                    <li role="none"><a role="menuitem" href="schedule.html" class="nav-link">Schedule</a></li>
+                    <li role="none"><a role="menuitem" href="events.html" class="nav-link active">Events</a></li>
+                    <li role="none"><a role="menuitem" href="watch.html" class="nav-link">Watch</a></li>
+                </ul>
+                <div class="nav-sponsor-mobile">
+                    <a href="https://www.krafton.com" target="_blank" rel="noopener" aria-label="Krafton" class="nav-krafton-link">
+                        <picture>
+                            <source srcset="data/img/KRAFTONL.webp" type="image/webp">
+                            <img src="data/img/KRAFTONL.jpg" alt="KRAFTON" width="140" height="48" loading="lazy" decoding="async">
+                        </picture>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="header-extra" style="display: flex; align-items: center; gap: var(--space-md);">
+                <picture>
+                    <source srcset="data/img/synapse_nobg.webp" type="image/webp">
+                    <img src="data/img/synapse_nobg.png" alt="Synapse Logo" class="brand-logo-img synapse" style="height: 48px;" width="60" height="35" loading="eager" decoding="async">
+                </picture>
+                <button type="button" class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Nav Overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Events Section -->
+    <section class="events-section">
+        <div class="container">
+            <h1 class="page-title">Synapse 2026 Events</h1>
+            <p class="page-subtitle">Compete in multiple gaming tournaments and win exciting prizes!</p>
+            
+            <div class="events-grid">
+                <!-- BGMI TDM Event -->
+                <div class="event-card">
+                    <img src="Events/Bgmi_tdm.JPG" alt="BGMI TDM Tournament Poster" class="event-poster">
+                    <div class="event-content">
+                        <h3 class="event-title">🏆 BGMI TDM Tournament</h3>
+                        <p class="event-mode">Official Esports Event of MAMC</p>
+                        
+                        <div class="event-details">
+                            <div class="event-detail-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span><strong>Dates:</strong> Feb 3 – Feb 6, 2026</span>
+                            </div>
+                            <div class="event-detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Time:</strong> 6:00 PM – 11:00 PM</span>
+                            </div>
+                            <div class="event-detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Mode:</strong> Online</span>
+                            </div>
+                            <div class="event-detail-item">
+                                <i class="fas fa-ticket-alt"></i>
+                                <span><strong>Entry Fee:</strong> ₹200</span>
+                            </div>
+                            <div class="event-detail-item">
+                                <i class="fas fa-users"></i>
+                                <span><strong>Eligibility:</strong> College Students Only (ID Required)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="event-prize">
+                            <h4>🏅 Prize Pool</h4>
+                            <div class="prize-item">🥇 Winner: ₹1200</div>
+                            <div class="prize-item">🥈 Runner-up: ₹800</div>
+                        </div>
+                        
+                        <div class="event-actions">
+                            <a href="https://forms.gle/EDuMCcfTN8EVfijaA" target="_blank" rel="noopener noreferrer" class="btn-register">Register Now</a>
+                        </div>
+                        
+                        <div class="event-contacts">
+                            <h5>📞 Contact</h5>
+                            <div class="contact-item">Sahil Kumar: 8699545286</div>
+                            <div class="contact-item">Piyush Mehta: 83969 36153</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Free Fire Event -->
+                <div class="event-card">
+                    <img src="Events/Free_Fire.JPG" alt="Free Fire Tournament Poster" class="event-poster">
+                    <div class="event-content">
+                        <h3 class="event-title">🔥 Free Fire Tournament</h3>
+                        <p class="event-mode">Clash Squad Mode</p>
+                        
+                        <div class="event-details">
+                            <div class="event-detail-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span><strong>Dates:</strong> Feb 8 – 10, 2026</span>
+                            </div>
+                            <div class="event-detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Time:</strong> 8:00 PM onwards</span>
+                            </div>
+                            <div class="event-detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Mode:</strong> Online</span>
+                            </div>
+                            <div class="event-detail-item">
+                                <i class="fas fa-ticket-alt"></i>
+                                <span><strong>Entry Fee:</strong> ₹100/Team</span>
+                            </div>
+                            <div class="event-detail-item">
+                                <i class="fas fa-users"></i>
+                                <span><strong>Squad:</strong> 4 Players (Intercollege teams allowed)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="event-prize">
+                            <h4>🏅 Prize Pool</h4>
+                            <div class="prize-item">🥇 Winner: ₹1500</div>
+                        </div>
+                        
+                        <div class="event-actions">
+                            <a href="https://forms.gle/GnNRfSwVtXpL87pF9" target="_blank" rel="noopener noreferrer" class="btn-register">Register Now</a>
+                        </div>
+                        
+                        <div class="event-contacts">
+                            <h5>📞 Contact</h5>
+                            <div class="contact-item">Aditya Yadav: 7427054509</div>
+                            <div class="contact-item">Raghav Gupta: 8504045986</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clash Royale Event -->
+                <div class="event-card">
+                    <img src="Events/Clash_royale.JPG" alt="Clash Royale Tournament Poster" class="event-poster">
+                    <div class="event-content">
+                        <h3 class="event-title">⚔️ Clash Royale Tournament</h3>
+                        <p class="event-mode">Intercollege Championship</p>
+                        
+                        <div class="event-details">
+                            <div class="event-detail-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span><strong>Dates:</strong> Feb 8 – 9, 2026</span>
+                            </div>
+                            <div class="event-detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Time:</strong> 7:30 PM onwards</span>
+                            </div>
+                            <div class="event-detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Mode:</strong> Online</span>
+                            </div>
+                            <div class="event-detail-item">
+                                <i class="fas fa-ticket-alt"></i>
+                                <span><strong>Entry Fee:</strong> ₹50</span>
+                            </div>
+                            <div class="event-detail-item">
+                                <i class="fas fa-trophy"></i>
+                                <span><strong>Format:</strong> Single Elimination (Best of 3)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="event-prize">
+                            <h4>🏅 Prize Pool: ₹2000</h4>
+                            <div class="prize-item">🥇 1st Prize: ₹1500</div>
+                            <div class="prize-item">🥈 2nd Prize: ₹500</div>
+                        </div>
+                        
+                        <div class="event-actions">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScNrxwaUidv36CfDs2t1oer-appHxw_nB6hYmbavnu4TRVxQw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn-register">Register Now</a>
+                        </div>
+                        
+                        <div class="event-contacts">
+                            <h5>📞 Contact</h5>
+                            <div class="contact-item">Harsh Prajapati: 9354274406</div>
+                            <div class="contact-item">Parth Pandey: 9311308080</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stumble Guys Event -->
+                <div class="event-card">
+                    <img src="Events/Stumble_guys.JPG" alt="Stumble Guys Tournament Poster" class="event-poster">
+                    <div class="event-content">
+                        <h3 class="event-title">🎮 Stumble Guys Tournament</h3>
+                        <p class="event-mode">Stumble Your Way to Glory!</p>
+                        
+                        <div class="event-details">
+                            <div class="event-detail-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span><strong>Date:</strong> Feb 11, 2026</span>
+                            </div>
+                            <div class="event-detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Time:</strong> 9:00 PM</span>
+                            </div>
+                            <div class="event-detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Mode:</strong> Online - Play from home</span>
+                            </div>
+                            <div class="event-detail-item">
+                                <i class="fas fa-ticket-alt"></i>
+                                <span><strong>Entry Fee:</strong> ₹50 only</span>
+                            </div>
+                        </div>
+                        
+                        <div class="event-prize">
+                            <h4>🏅 Prize Pool</h4>
+                            <div class="prize-item">🥇 1st Prize: ₹1000</div>
+                            <div class="prize-item">🥈 2nd Prize: ₹500</div>
+                        </div>
+                        
+                        <div class="event-actions">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc0aSYqazOQFkxZfNzzK4-XVOdiILAwCjDQtK-1TTaYyve8aA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="btn-register">Register Now</a>
+                        </div>
+                        
+                        <div class="event-contacts">
+                            <h5>📞 Contact</h5>
+                            <div class="contact-item">Sanyam Jain: 9817298150</div>
+                            <div class="contact-item">Sunny: 9996630595</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (if exists in other pages, add it here) -->
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>
