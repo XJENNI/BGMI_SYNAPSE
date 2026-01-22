@@ -448,7 +448,7 @@
       {
         "icon": "fa-crosshairs",
         "name": "GODSxGhost",
-        "isIGL": true
+        "isIGL": false
       },
       {
         "icon": "fa-bolt",
@@ -456,18 +456,18 @@
         "isIGL": false
       },
       {
-        "icon": "fa-skull",
-        "name": "RUSSIANonly",
-        "isIGL": false
+        "icon": "fa-crosshairs",
+        "name": "KRYO『CHAOS』",
+        "isIGL": true
       },
       {
         "icon": "fa-shield-alt",
-        "name": "『ĂʟPʜA』",
+        "name": "KRYO『ALPHA』",
         "isIGL": false
       }
     ],
     "group": "Group C",
-    "college": "Indian Institute of information technology, Bhagalpur"
+    "college": "MAMC"
   },
   {
     "logo": "PG",
@@ -872,5 +872,132 @@
     ],
     "group": "Group D",
     "college": "Himsr"
+  },
+  {
+    "logo": "DO",
+    "name": "Decans of Vmmc",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "WiLDxxROCKY",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "亗įRITESHį亗",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "DrGrIMReapER",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "'''switch",
+        "isIGL": false
+      }
+    ],
+    "group": "Group A",
+    "college": "Vardhman Mahavir Medical College"
+  },
+  {
+    "logo": "WE",
+    "name": "W2R Esports",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "W2RxKyansh",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "W2RxKrrish",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "W2RxGXX",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "W2RxALECTOO",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "LefiToxPlayz",
+        "isIGL": false
+      }
+    ],
+    "group": "Group B",
+    "college": "Maharaja Agrasen Institute of Management Studies"
+  },
+  {
+    "logo": "WE",
+    "name": "WAB esports",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "AGxChico",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "TTsCŁUTCHGOĐ",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "SYNZxPixel05",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "ＶＡＴＩＣＩＤ",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "IGN乛HUNTER",
+        "isIGL": false
+      }
+    ],
+    "group": "Group C",
+    "college": "Maharaja Surajmal Institute of technology"
+  },
+  {
+    "logo": "TA",
+    "name": "TEAM ALBINO",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "Stixjadoo007",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "ＢＲＳｔａｒ",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "LuckyakaSAT",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "Kaushal00017",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "U8d94f1128162",
+        "isIGL": false
+      }
+    ],
+    "group": "Group D",
+    "college": "MAMC"
   }
 ]
