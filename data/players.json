@@ -1,10 +1,611 @@
 [
-  { "playerId": "p1", "playerName": "Raze", "team": "Team Soul", "kills": 28, "mvpScore": 86 },
-  { "playerId": "p2", "playerName": "Shadow", "team": "GodLike Esports", "kills": 26, "mvpScore": 82 },
-  { "playerId": "p3", "playerName": "Blitz", "team": "Team XSpark", "kills": 24, "mvpScore": 76 },
-  { "playerId": "p4", "playerName": "Kite", "team": "Orangutan Gaming", "kills": 22, "mvpScore": 74 },
-  { "playerId": "p5", "playerName": "Nova", "team": "Team Insane", "kills": 21, "mvpScore": 70 },
-  { "playerId": "p6", "playerName": "Viper", "team": "Blind Esports", "kills": 18, "mvpScore": 66 },
-  { "playerId": "p7", "playerName": "Ghost", "team": "Skylightz Gaming", "kills": 17, "mvpScore": 64 },
-  { "playerId": "p8", "playerName": "Spectre", "team": "Team Mayhem", "kills": 16, "mvpScore": 62 }
+    {
+        "player_id": "KK1",
+        "player_name": "Marrowpaglu55",
+        "team_id": "TEAM_001",
+        "team_name": "8kkabaap",
+        "kills": 0
+    },
+    {
+        "player_id": "KK2",
+        "player_name": "Dark008knight",
+        "team_id": "TEAM_001",
+        "team_name": "8kkabaap",
+        "kills": 0
+    },
+    {
+        "player_id": "KK3",
+        "player_name": "FriENdly BoT",
+        "team_id": "TEAM_001",
+        "team_name": "8kkabaap",
+        "kills": 0
+    },
+    {
+        "player_id": "KK4",
+        "player_name": "tyaMeen ]] 43",
+        "team_id": "TEAM_001",
+        "team_name": "8kkabaap",
+        "kills": 0
+    },
+    {
+        "player_id": "TE1",
+        "player_name": "TGMxicyy",
+        "team_id": "TEAM_002",
+        "team_name": "Team Trigonometry",
+        "kills": 0
+    },
+    {
+        "player_id": "TE2",
+        "player_name": "TGMxTONTO",
+        "team_id": "TEAM_002",
+        "team_name": "Team Trigonometry",
+        "kills": 0
+    },
+    {
+        "player_id": "TE3",
+        "player_name": "JamRePlayz",
+        "team_id": "TEAM_002",
+        "team_name": "Team Trigonometry",
+        "kills": 0
+    },
+    {
+        "player_id": "TE4",
+        "player_name": "TGMxNoVa",
+        "team_id": "TEAM_002",
+        "team_name": "Team Trigonometry",
+        "kills": 0
+    },
+    {
+        "player_id": "TE5",
+        "player_name": "\u4e48VOR\u0361\u035cTEX",
+        "team_id": "TEAM_002",
+        "team_name": "Team Trigonometry",
+        "kills": 0
+    },
+    {
+        "player_id": "GO1",
+        "player_name": "4GWSxKuNaL",
+        "team_id": "TEAM_003",
+        "team_name": "4 gods with steth",
+        "kills": 0
+    },
+    {
+        "player_id": "GO2",
+        "player_name": "4GWSxNvn",
+        "team_id": "TEAM_003",
+        "team_name": "4 gods with steth",
+        "kills": 0
+    },
+    {
+        "player_id": "GO3",
+        "player_name": "STARLORD",
+        "team_id": "TEAM_003",
+        "team_name": "4 gods with steth",
+        "kills": 0
+    },
+    {
+        "player_id": "GO4",
+        "player_name": "4GWSxVicky",
+        "team_id": "TEAM_003",
+        "team_name": "4 gods with steth",
+        "kills": 0
+    },
+    {
+        "player_id": "TA1",
+        "player_name": "TBxDhrUv",
+        "team_id": "TEAM_004",
+        "team_name": "TABHAI ESPORTS",
+        "kills": 0
+    },
+    {
+        "player_id": "TA2",
+        "player_name": "TBxLeO",
+        "team_id": "TEAM_004",
+        "team_name": "TABHAI ESPORTS",
+        "kills": 0
+    },
+    {
+        "player_id": "TA3",
+        "player_name": "TBxJxSHUA07",
+        "team_id": "TEAM_004",
+        "team_name": "TABHAI ESPORTS",
+        "kills": 0
+    },
+    {
+        "player_id": "TA4",
+        "player_name": "TBxDaNGeR",
+        "team_id": "TEAM_004",
+        "team_name": "TABHAI ESPORTS",
+        "kills": 0
+    },
+    {
+        "player_id": "DA1",
+        "player_name": "\u012b\u300eMONARCH\u300f",
+        "team_id": "TEAM_005",
+        "team_name": "Dark Heaven",
+        "kills": 0
+    },
+    {
+        "player_id": "DA2",
+        "player_name": "GH\u00c0AT\u00c0K",
+        "team_id": "TEAM_005",
+        "team_name": "Dark Heaven",
+        "kills": 0
+    },
+    {
+        "player_id": "DA3",
+        "player_name": "\u012b\u014dAMAN\u014d\u012b",
+        "team_id": "TEAM_005",
+        "team_name": "Dark Heaven",
+        "kills": 0
+    },
+    {
+        "player_id": "DA4",
+        "player_name": "\u012b\u300eREAPER\u300f",
+        "team_id": "TEAM_005",
+        "team_name": "Dark Heaven",
+        "kills": 0
+    },
+    {
+        "player_id": "DA5",
+        "player_name": "GOKU\u7384AKKI\u4e48",
+        "team_id": "TEAM_005",
+        "team_name": "Dark Heaven",
+        "kills": 0
+    },
+    {
+        "player_id": "NO1",
+        "player_name": "NAxAsur",
+        "team_id": "TEAM_006",
+        "team_name": "NO AIM",
+        "kills": 0
+    },
+    {
+        "player_id": "NO2",
+        "player_name": "NAxVenom",
+        "team_id": "TEAM_006",
+        "team_name": "NO AIM",
+        "kills": 0
+    },
+    {
+        "player_id": "NO3",
+        "player_name": "NAxLexin",
+        "team_id": "TEAM_006",
+        "team_name": "NO AIM",
+        "kills": 0
+    },
+    {
+        "player_id": "NO4",
+        "player_name": "NAxLoneWolf",
+        "team_id": "TEAM_006",
+        "team_name": "NO AIM",
+        "kills": 0
+    },
+    {
+        "player_id": "TE1",
+        "player_name": "DADDYXYUVI",
+        "team_id": "TEAM_007",
+        "team_name": "Team gmc kota",
+        "kills": 0
+    },
+    {
+        "player_id": "TE2",
+        "player_name": "ZoroNubb",
+        "team_id": "TEAM_007",
+        "team_name": "Team gmc kota",
+        "kills": 0
+    },
+    {
+        "player_id": "TE3",
+        "player_name": "4AMxNoCebo",
+        "team_id": "TEAM_007",
+        "team_name": "Team gmc kota",
+        "kills": 0
+    },
+    {
+        "player_id": "TE4",
+        "player_name": "TUNTUN MOSI",
+        "team_id": "TEAM_007",
+        "team_name": "Team gmc kota",
+        "kills": 0
+    },
+    {
+        "player_id": "TE5",
+        "player_name": "4AMxinhee6",
+        "team_id": "TEAM_007",
+        "team_name": "Team gmc kota",
+        "kills": 0
+    },
+    {
+        "player_id": "TE1",
+        "player_name": "\u4e97 AJAY \u4e97",
+        "team_id": "TEAM_008",
+        "team_name": "TEAM GOAT",
+        "kills": 0
+    },
+    {
+        "player_id": "TE2",
+        "player_name": "\u4e97 DRDOOM \u4e97",
+        "team_id": "TEAM_008",
+        "team_name": "TEAM GOAT",
+        "kills": 0
+    },
+    {
+        "player_id": "TE3",
+        "player_name": "\u4e97\u0113ANSARI\u0113\u4e97",
+        "team_id": "TEAM_008",
+        "team_name": "TEAM GOAT",
+        "kills": 0
+    },
+    {
+        "player_id": "TE4",
+        "player_name": "XQU\u00c0D=MOHIT",
+        "team_id": "TEAM_008",
+        "team_name": "TEAM GOAT",
+        "kills": 0
+    },
+    {
+        "player_id": "TE5",
+        "player_name": "Shikari - Billa",
+        "team_id": "TEAM_008",
+        "team_name": "TEAM GOAT",
+        "kills": 0
+    },
+    {
+        "player_id": "TE1",
+        "player_name": "HexMaster9",
+        "team_id": "TEAM_009",
+        "team_name": "Team MARAUDERS",
+        "kills": 0
+    },
+    {
+        "player_id": "TE2",
+        "player_name": "DRAYUIKON",
+        "team_id": "TEAM_009",
+        "team_name": "Team MARAUDERS",
+        "kills": 0
+    },
+    {
+        "player_id": "TE3",
+        "player_name": "vinodrajbhar11",
+        "team_id": "TEAM_009",
+        "team_name": "Team MARAUDERS",
+        "kills": 0
+    },
+    {
+        "player_id": "TE4",
+        "player_name": "Sandeep047933",
+        "team_id": "TEAM_009",
+        "team_name": "Team MARAUDERS",
+        "kills": 0
+    },
+    {
+        "player_id": "TE5",
+        "player_name": "IT'SMEVRO",
+        "team_id": "TEAM_009",
+        "team_name": "Team MARAUDERS",
+        "kills": 0
+    },
+    {
+        "player_id": "TE1",
+        "player_name": "TZxspidy",
+        "team_id": "TEAM_010",
+        "team_name": "TEAM ZEN",
+        "kills": 0
+    },
+    {
+        "player_id": "TE2",
+        "player_name": "TZxJin",
+        "team_id": "TEAM_010",
+        "team_name": "TEAM ZEN",
+        "kills": 0
+    },
+    {
+        "player_id": "TE3",
+        "player_name": "TZxI\u012bC\u012bY",
+        "team_id": "TEAM_010",
+        "team_name": "TEAM ZEN",
+        "kills": 0
+    },
+    {
+        "player_id": "TE4",
+        "player_name": "TZxS4N",
+        "team_id": "TEAM_010",
+        "team_name": "TEAM ZEN",
+        "kills": 0
+    },
+    {
+        "player_id": "TE5",
+        "player_name": "M\u00ea\u00f4wM\u00eb\u00f6w",
+        "team_id": "TEAM_010",
+        "team_name": "TEAM ZEN",
+        "kills": 0
+    },
+    {
+        "player_id": "NP1",
+        "player_name": "npc\u300c\uff24\uff2f\uff38\u300d",
+        "team_id": "TEAM_011",
+        "team_name": "\u4e48\u066d\u3007\u0262\u30fbNPCs\u30fb\u0e5b",
+        "kills": 0
+    },
+    {
+        "player_id": "NP2",
+        "player_name": "\u6208TERROR\u5f61BOB",
+        "team_id": "TEAM_011",
+        "team_name": "\u4e48\u066d\u3007\u0262\u30fbNPCs\u30fb\u0e5b",
+        "kills": 0
+    },
+    {
+        "player_id": "NP3",
+        "player_name": "4YxHARISH",
+        "team_id": "TEAM_011",
+        "team_name": "\u4e48\u066d\u3007\u0262\u30fbNPCs\u30fb\u0e5b",
+        "kills": 0
+    },
+    {
+        "player_id": "NP4",
+        "player_name": "GHATAK\u4e97JIGS",
+        "team_id": "TEAM_011",
+        "team_name": "\u4e48\u066d\u3007\u0262\u30fbNPCs\u30fb\u0e5b",
+        "kills": 0
+    },
+    {
+        "player_id": "NP5",
+        "player_name": "akaromanreigns",
+        "team_id": "TEAM_011",
+        "team_name": "\u4e48\u066d\u3007\u0262\u30fbNPCs\u30fb\u0e5b",
+        "kills": 0
+    },
+    {
+        "player_id": "SU1",
+        "player_name": "NotxAman",
+        "team_id": "TEAM_012",
+        "team_name": "Suicide Squad",
+        "kills": 0
+    },
+    {
+        "player_id": "SU2",
+        "player_name": "[ITS] EXOTIC",
+        "team_id": "TEAM_012",
+        "team_name": "Suicide Squad",
+        "kills": 0
+    },
+    {
+        "player_id": "SU3",
+        "player_name": "DARTH'''VADER",
+        "team_id": "TEAM_012",
+        "team_name": "Suicide Squad",
+        "kills": 0
+    },
+    {
+        "player_id": "SU4",
+        "player_name": "LZxxPULAKop",
+        "team_id": "TEAM_012",
+        "team_name": "Suicide Squad",
+        "kills": 0
+    },
+    {
+        "player_id": "SU5",
+        "player_name": "Pepsu Stark",
+        "team_id": "TEAM_012",
+        "team_name": "Suicide Squad",
+        "kills": 0
+    },
+    {
+        "player_id": "NO1",
+        "player_name": "JyotishmoyNar",
+        "team_id": "TEAM_013",
+        "team_name": "NOOBS",
+        "kills": 0
+    },
+    {
+        "player_id": "NO2",
+        "player_name": "\u624btmkoc\u624b",
+        "team_id": "TEAM_013",
+        "team_name": "NOOBS",
+        "kills": 0
+    },
+    {
+        "player_id": "NO3",
+        "player_name": "Devils\u4e5bEmpero",
+        "team_id": "TEAM_013",
+        "team_name": "NOOBS",
+        "kills": 0
+    },
+    {
+        "player_id": "NO4",
+        "player_name": "abHishekSingha",
+        "team_id": "TEAM_013",
+        "team_name": "NOOBS",
+        "kills": 0
+    },
+    {
+        "player_id": "NO5",
+        "player_name": "\u06ddSHREYA\u06ddS",
+        "team_id": "TEAM_013",
+        "team_name": "NOOBS",
+        "kills": 0
+    },
+    {
+        "player_id": "TE1",
+        "player_name": "Shubh05gamer",
+        "team_id": "TEAM_014",
+        "team_name": "Team Revengers",
+        "kills": 0
+    },
+    {
+        "player_id": "TE2",
+        "player_name": "Parvesh\u00a345",
+        "team_id": "TEAM_014",
+        "team_name": "Team Revengers",
+        "kills": 0
+    },
+    {
+        "player_id": "TE3",
+        "player_name": "Up32RANGER",
+        "team_id": "TEAM_014",
+        "team_name": "Team Revengers",
+        "kills": 0
+    },
+    {
+        "player_id": "TE4",
+        "player_name": "\uff2e\uff25\uff2d\uff25\uff53\uff29\uff33",
+        "team_id": "TEAM_014",
+        "team_name": "Team Revengers",
+        "kills": 0
+    },
+    {
+        "player_id": "TE5",
+        "player_name": "Jollyvr7",
+        "team_id": "TEAM_014",
+        "team_name": "Team Revengers",
+        "kills": 0
+    },
+    {
+        "player_id": "TE1",
+        "player_name": "GODSxGhost",
+        "team_id": "TEAM_015",
+        "team_name": "TEAM KRYO",
+        "kills": 0
+    },
+    {
+        "player_id": "TE2",
+        "player_name": "B\u0112K\u0112SINGH",
+        "team_id": "TEAM_015",
+        "team_name": "TEAM KRYO",
+        "kills": 0
+    },
+    {
+        "player_id": "TE3",
+        "player_name": "RUSSIANonly",
+        "team_id": "TEAM_015",
+        "team_name": "TEAM KRYO",
+        "kills": 0
+    },
+    {
+        "player_id": "TE4",
+        "player_name": "\u300e\u0102\u029fP\u029cA\u300f",
+        "team_id": "TEAM_015",
+        "team_name": "TEAM KRYO",
+        "kills": 0
+    },
+    {
+        "player_id": "PI1",
+        "player_name": "\u301cMAFIA\u066d",
+        "team_id": "TEAM_016",
+        "team_name": "Pistol gang",
+        "kills": 0
+    },
+    {
+        "player_id": "PI2",
+        "player_name": "CreXw\u016bBLURRY",
+        "team_id": "TEAM_016",
+        "team_name": "Pistol gang",
+        "kills": 0
+    },
+    {
+        "player_id": "PI3",
+        "player_name": "\u0110\u0110\u0141Y\u4e48WOLFE",
+        "team_id": "TEAM_016",
+        "team_name": "Pistol gang",
+        "kills": 0
+    },
+    {
+        "player_id": "PI4",
+        "player_name": "FICTION003",
+        "team_id": "TEAM_016",
+        "team_name": "Pistol gang",
+        "kills": 0
+    },
+    {
+        "player_id": "OM1",
+        "player_name": "OSxBeast",
+        "team_id": "TEAM_017",
+        "team_name": "Omega Slayers",
+        "kills": 0
+    },
+    {
+        "player_id": "OM2",
+        "player_name": "W\u00d8Cx\u00d1EMES\u00eeS",
+        "team_id": "TEAM_017",
+        "team_name": "Omega Slayers",
+        "kills": 0
+    },
+    {
+        "player_id": "OM3",
+        "player_name": "\u300c\u016bYADAV\u014d\u300d",
+        "team_id": "TEAM_017",
+        "team_name": "Omega Slayers",
+        "kills": 0
+    },
+    {
+        "player_id": "OM4",
+        "player_name": "\u0e56\u06e3Unkn\u00d8wn",
+        "team_id": "TEAM_017",
+        "team_name": "Omega Slayers",
+        "kills": 0
+    },
+    {
+        "player_id": "LE1",
+        "player_name": "LSxGBplayzYT",
+        "team_id": "TEAM_018",
+        "team_name": "League of Shadows",
+        "kills": 0
+    },
+    {
+        "player_id": "LE2",
+        "player_name": "TheUglyFatGuy",
+        "team_id": "TEAM_018",
+        "team_name": "League of Shadows",
+        "kills": 0
+    },
+    {
+        "player_id": "LE3",
+        "player_name": "FLx\u30fbELNoiX",
+        "team_id": "TEAM_018",
+        "team_name": "League of Shadows",
+        "kills": 0
+    },
+    {
+        "player_id": "LE4",
+        "player_name": "OGxKRISH",
+        "team_id": "TEAM_018",
+        "team_name": "League of Shadows",
+        "kills": 0
+    },
+    {
+        "player_id": "LE5",
+        "player_name": "WARRIOR\u5f61UJJU",
+        "team_id": "TEAM_018",
+        "team_name": "League of Shadows",
+        "kills": 0
+    },
+    {
+        "player_id": "BL1",
+        "player_name": "DETAINED",
+        "team_id": "TEAM_019",
+        "team_name": "Blunder",
+        "kills": 0
+    },
+    {
+        "player_id": "BL2",
+        "player_name": "Ethan hunt",
+        "team_id": "TEAM_019",
+        "team_name": "Blunder",
+        "kills": 0
+    },
+    {
+        "player_id": "BL3",
+        "player_name": "YOUWILLDIE",
+        "team_id": "TEAM_019",
+        "team_name": "Blunder",
+        "kills": 0
+    },
+    {
+        "player_id": "BL4",
+        "player_name": "TUNTUN PAPA",
+        "team_id": "TEAM_019",
+        "team_name": "Blunder",
+        "kills": 0
+    }
 ]
