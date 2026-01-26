@@ -1128,5 +1128,73 @@
         ],
         "group": "Group C",
         "college": "ABVIMS"
+    },
+    {
+        "team_id": "TEAM_036",
+        "logo": "TC",
+        "name": "Team Cadaver",
+        "players": [
+            {
+                "icon": "fa-crosshairs",
+                "name": "Shivam op",
+                "isIGL": true
+            },
+            {
+                "icon": "fa-bolt",
+                "name": "4MF OXIDE",
+                "isIGL": false
+            },
+            {
+                "icon": "fa-skull",
+                "name": "LZMxHappy",
+                "isIGL": false
+            },
+            {
+                "icon": "fa-shield-alt",
+                "name": "Shubham",
+                "isIGL": false
+            },
+            {
+                "icon": "fa-user",
+                "name": "Rav3n",
+                "isIGL": false
+            }
+        ],
+        "group": "Group D",
+        "college": "University College of medical sciences"
+    },
+    {
+        "team_id": "TEAM_037",
+        "logo": "UP",
+        "name": "UC Phantom Force",
+        "players": [
+            {
+                "icon": "fa-crosshairs",
+                "name": "SiLenTkiLLeR18",
+                "isIGL": true
+            },
+            {
+                "icon": "fa-bolt",
+                "name": "LUCIFER\u30c4FLASH",
+                "isIGL": false
+            },
+            {
+                "icon": "fa-skull",
+                "name": "SzukaWitBzukaa",
+                "isIGL": false
+            },
+            {
+                "icon": "fa-shield-alt",
+                "name": "UCkaJUICY",
+                "isIGL": false
+            },
+            {
+                "icon": "fa-user",
+                "name": "SaubhagyaVars",
+                "isIGL": false
+            }
+        ],
+        "group": "Group A",
+        "college": "University College Of Medical Sciences"
     }
 ]
