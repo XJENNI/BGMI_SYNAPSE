@@ -1196,5 +1196,102 @@
         ],
         "group": "Group A",
         "college": "University College Of Medical Sciences"
+    },
+    {
+        "team_id": "TEAM_038",
+        "logo": "EL",
+        "name": "ElemenT",
+        "players": [
+            {
+                "icon": "fa-crosshairs",
+                "name": "ETxROBIN",
+                "isIGL": true
+            },
+            {
+                "icon": "fa-bolt",
+                "name": "ETxKRYPTON",
+                "isIGL": false
+            },
+            {
+                "icon": "fa-skull",
+                "name": "SACxRevaa7",
+                "isIGL": false
+            },
+            {
+                "icon": "fa-shield-alt",
+                "name": "ooPHROLOVAoo",
+                "isIGL": false
+            },
+            {
+                "icon": "fa-user",
+                "name": "ETxRISHIII",
+                "isIGL": false
+            }
+        ],
+        "group": "Group B",
+        "college": "PIET"
+    },
+    {
+        "team_id": "TEAM_039",
+        "logo": "CO",
+        "name": "Crypt of Liberkuhn",
+        "players": [
+            {
+                "icon": "fa-crosshairs",
+                "name": "BESALTY",
+                "isIGL": true
+            },
+            {
+                "icon": "fa-bolt",
+                "name": "RAVYNN",
+                "isIGL": false
+            },
+            {
+                "icon": "fa-skull",
+                "name": "DrShaRk",
+                "isIGL": false
+            },
+            {
+                "icon": "fa-shield-alt",
+                "name": "BoboChodu",
+                "isIGL": false
+            },
+            {
+                "icon": "fa-user",
+                "name": "DAAL\u30fbMAKHNI",
+                "isIGL": false
+            }
+        ],
+        "group": "Group C",
+        "college": "NDMC Medical College"
+    },
+    {
+        "team_id": "TEAM_040",
+        "logo": "AC",
+        "name": "ANSA CERVICALIS",
+        "players": [
+            {
+                "icon": "fa-crosshairs",
+                "name": "\u4e97B\u00c8\u00c6sT\u4e97",
+                "isIGL": true
+            },
+            {
+                "icon": "fa-bolt",
+                "name": "BLACK\u012bDARGON",
+                "isIGL": false
+            },
+            {
+                "icon": "fa-skull",
+                "name": "billu\u016bbakchod",
+                "isIGL": false
+            },
+            {
+                "icon": "fa-shield-alt",
+                "name": "AMCzZGILL",
+                "isIGL": false
+            }
+        ],
+        "group": "Group D",
+        "college": "UCMS"
     }
 ]
