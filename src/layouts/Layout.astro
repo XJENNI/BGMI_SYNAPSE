@@ -71,15 +71,17 @@ const { title, description = "SYNAPSE MAMC BGMI 2026 - Official BGMI Esports Tou
     </div>
   </header>
 
-  <!-- Registration Popup Notification -->
-  <div class="registration-popup" id="registrationPopup">
-    <div class="popup-content">
-      <button type="button" class="popup-close" id="popupClose" aria-label="Close notification">×</button>
-      <div class="popup-icon">⚠️</div>
-      <h3 class="popup-title">Registrations are closing soon</h3>
-      <p class="popup-message">Only few slots available</p>
+  <!-- Registration Popup Notification - Only on Home Page -->
+  {activePage === "home" && (
+    <div class="registration-popup" id="registrationPopup">
+      <div class="popup-content">
+        <button type="button" class="popup-close" id="popupClose" aria-label="Close notification">×</button>
+        <div class="popup-icon">⚠️</div>
+        <h3 class="popup-title">Registrations are closing soon</h3>
+        <p class="popup-message">Only few slots available</p>
+      </div>
     </div>
-  </div>
+  )}
 
   <slot />
 

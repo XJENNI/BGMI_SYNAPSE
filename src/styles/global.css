@@ -1989,10 +1989,10 @@ p { margin-bottom: var(--space-md); }
   background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
   border: 2px solid var(--accent-cyan);
   border-radius: 12px;
-  padding: 1.5rem 2rem;
+  padding: 0.75rem 1rem;
   box-shadow: 0 8px 32px rgba(0, 240, 255, 0.3), 0 0 60px rgba(0, 240, 255, 0.15);
-  min-width: 320px;
-  max-width: 500px;
+  min-width: 160px;
+  max-width: 250px;
   position: relative;
   transform: skewX(-2deg);
   animation: popup-glow 2s ease-in-out infinite;
@@ -2004,15 +2004,15 @@ p { margin-bottom: var(--space-md); }
 
 .popup-close {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 4px;
+  right: 4px;
   background: transparent;
   border: none;
   color: var(--text-secondary);
-  font-size: 1.5rem;
+  font-size: 0.75rem;
   cursor: pointer;
-  width: 32px;
-  height: 32px;
+  width: 16px;
+  height: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2029,27 +2029,27 @@ p { margin-bottom: var(--space-md); }
 }
 
 .popup-icon {
-  font-size: 2rem;
+  font-size: 1rem;
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   animation: pulse-icon 1.5s ease-in-out infinite;
 }
 
 .popup-title {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 0.625rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--accent-cyan);
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
 }
 
 .popup-message {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 0.5rem;
   color: var(--text-secondary);
   text-align: center;
   margin: 0;
@@ -2087,7 +2087,7 @@ p { margin-bottom: var(--space-md); }
   }
 
   .popup-content {
-    padding: 1.25rem 1.5rem;
+    padding: 0.625rem 0.75rem;
     min-width: auto;
     transform: skewX(-1deg);
   }
@@ -2097,15 +2097,15 @@ p { margin-bottom: var(--space-md); }
   }
 
   .popup-title {
-    font-size: 1.1rem;
+    font-size: 0.55rem;
   }
 
   .popup-message {
-    font-size: 0.9rem;
+    font-size: 0.45rem;
   }
 
   .popup-icon {
-    font-size: 1.75rem;
+    font-size: 0.875rem;
   }
 }
 
