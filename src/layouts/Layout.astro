@@ -71,9 +71,17 @@ const { title, description = "SYNAPSE MAMC BGMI 2026 - Official BGMI Esports Tou
     </div>
   </header>
 
-  
-
-  
+  <!-- Registration Popup Notification - Only on Home Page -->
+  {activePage === "home" && (
+    <div class="registration-popup" id="registrationPopup">
+      <div class="popup-content">
+        <button type="button" class="popup-close" id="popupClose" aria-label="Close notification">×</button>
+        <div class="popup-icon">⚠️</div>
+        <h3 class="popup-title">Registrations are closing soon</h3>
+        <p class="popup-message">Only few slots available</p>
+      </div>
+    </div>
+  )}
 
   <slot />
 
@@ -236,6 +244,25 @@ const { title, description = "SYNAPSE MAMC BGMI 2026 - Official BGMI Esports Tou
       if (contactTab?.classList.contains('open') && !contactTab.contains(e.target as Node)) {
         contactTab.classList.remove('open');
       }
+    });
+
+    // Registration Popup
+    const registrationPopup = document.getElementById('registrationPopup');
+    const popupClose = document.getElementById('popupClose');
+
+    // Show popup after a brief delay
+    setTimeout(() => {
+      registrationPopup?.classList.add('show');
+    }, 500);
+
+    // Auto-dismiss after 8 seconds
+    setTimeout(() => {
+      registrationPopup?.classList.remove('show');
+    }, 8500);
+
+    // Manual close
+    popupClose?.addEventListener('click', () => {
+      registrationPopup?.classList.remove('show');
     });
   </script>
 </body>

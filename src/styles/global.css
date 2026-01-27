@@ -1967,6 +1967,148 @@ p { margin-bottom: var(--space-md); }
   }
 }
 
+/* ========== Registration Popup Notification ========== */
+.registration-popup {
+  position: fixed;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-120%);
+  z-index: 9999;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  pointer-events: none;
+}
+
+.registration-popup.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.popup-content {
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
+  border: 2px solid var(--accent-cyan);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 8px 32px rgba(0, 240, 255, 0.3), 0 0 60px rgba(0, 240, 255, 0.15);
+  min-width: 160px;
+  max-width: 250px;
+  position: relative;
+  transform: skewX(-2deg);
+  animation: popup-glow 2s ease-in-out infinite;
+}
+
+.popup-content > * {
+  transform: skewX(2deg);
+}
+
+.popup-close {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  border-radius: 50%;
+  line-height: 1;
+  font-family: Arial, sans-serif;
+}
+
+.popup-close:hover {
+  background: var(--accent-red);
+  color: var(--text-primary);
+  transform: rotate(90deg);
+}
+
+.popup-icon {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 0.25rem;
+  animation: pulse-icon 1.5s ease-in-out infinite;
+}
+
+.popup-title {
+  font-family: var(--font-heading);
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-cyan);
+  text-align: center;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+.popup-message {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin: 0;
+}
+
+@keyframes popup-glow {
+  0%, 100% {
+    box-shadow: 0 8px 32px rgba(0, 240, 255, 0.3), 0 0 60px rgba(0, 240, 255, 0.15);
+  }
+  50% {
+    box-shadow: 0 8px 32px rgba(0, 240, 255, 0.5), 0 0 80px rgba(0, 240, 255, 0.25);
+  }
+}
+
+@keyframes pulse-icon {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .registration-popup {
+    top: 90px;
+    left: 10px;
+    right: 10px;
+    transform: translateX(0) translateY(-120%);
+  }
+
+  .registration-popup.show {
+    transform: translateX(0) translateY(0);
+  }
+
+  .popup-content {
+    padding: 0.625rem 0.75rem;
+    min-width: auto;
+    transform: skewX(-1deg);
+  }
+
+  .popup-content > * {
+    transform: skewX(1deg);
+  }
+
+  .popup-title {
+    font-size: 0.55rem;
+  }
+
+  .popup-message {
+    font-size: 0.45rem;
+  }
+
+  .popup-icon {
+    font-size: 0.875rem;
+  }
+}
+
 /* ========== Print ========== */
 @media print {
   .site-header, .site-footer, .menu-toggle, .btn, .filter-tabs, .contact-tab, .denvil-badge {
