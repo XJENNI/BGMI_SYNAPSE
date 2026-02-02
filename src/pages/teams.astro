@@ -13,7 +13,7 @@ import teamData from 'data/team.json';
         <i class="fas fa-info-circle" style="color:var(--accent-cyan); margin-right:8px;"></i>
         <strong>Note:</strong> Team names and player names shown are as registered by participants.
       </div>
-      
+
       <div class="team-search-container">
         <div class="search-wrapper">
           <input type="text" id="teamSearch" class="team-search-input" placeholder="Search by Team Name or Player...">
@@ -66,7 +66,7 @@ import teamData from 'data/team.json';
     teamCards.forEach(card => {
       const teamName = card.querySelector('.team-name')?.textContent?.toLowerCase() || '';
       const players = card.querySelector('.player-list')?.textContent?.toLowerCase() || '';
-      
+
       if (teamName.includes(searchTerm) || players.includes(searchTerm)) {
         (card as HTMLElement).style.display = 'flex';
         hasResults = true;
@@ -80,38 +80,40 @@ import teamData from 'data/team.json';
     }
   });
 
-  // Golden Halo Effect for Leading Team
+  // Golden Halo Effect for Leading Team (FIXED)
   async function applyLeadingTeamEffect() {
     try {
       // Fetch standings data
       const response = await fetch('/data/standings.json');
       if (!response.ok) return;
-      
+
       const standings = await response.json();
       if (!standings || standings.length === 0) return;
-      
-      // Sort by totalScore to find the leading team
-      const sortedTeams = [...standings].sort((a: any, b: any) => b.totalScore - a.totalScore);
+
+      // Sort by total_pts to find the leading team (FIXED: uses stats.overall.total_pts)
+      const sortedTeams = [...standings].sort((a: any, b: any) => 
+        b.stats.overall.total_pts - a.stats.overall.total_pts
+      );
       const leadingTeam = sortedTeams[0];
-      
+
       if (!leadingTeam) return;
-      
-      // Normalize team name for better matching
+
+      // Normalize team name for better matching (FIXED: uses team_name)
       const normalizeTeamName = (name: string) => name.toLowerCase().trim().replace(/\s+/g, ' ');
-      const normalizedLeadingTeamName = normalizeTeamName(leadingTeam.teamName);
-      
+      const normalizedLeadingTeamName = normalizeTeamName(leadingTeam.team_name);
+
       // Find the team card that matches the leading team name
       teamCards.forEach(card => {
         const teamNameElement = card.querySelector('.team-name');
         if (!teamNameElement) return;
-        
+
         const teamName = normalizeTeamName(teamNameElement.textContent || '');
-        
+
         // Check if this card matches the leading team (exact match)
         if (teamName === normalizedLeadingTeamName) {
           // Apply golden halo effect
           card.classList.add('leading-team');
-          
+
           // Add leading badge if not already present
           if (!card.querySelector('.leading-team-badge')) {
             const badge = document.createElement('div');
