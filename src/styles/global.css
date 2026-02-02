@@ -23,7 +23,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
 
-      <!-- Leading Team Banner with Moving Radiations & Updated Ember Particles -->
+      <!-- Leading Team Banner - Simple Ember Effect -->
       <div id="leadingTeamBannerContainer"></div>
 
       <!-- Filter Tabs -->
@@ -262,7 +262,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* ============================================
-     LEADING TEAM BANNER WITH UPDATED EMBER PARTICLES
+     SIMPLIFIED BANNER: GLOWING BOX + EMBER PARTICLES + HALO TEXT
      ============================================ */
 
   #leadingTeamBannerContainer {
@@ -271,6 +271,7 @@ import Layout from '../layouts/Layout.astro';
     max-width: 500px;
   }
 
+  /* GLOWING BOX WITH FIRE PULSE */
   .leading-team-banner {
     background: rgba(20, 10, 5, 0.85);
     border: 2px solid #ff4500;
@@ -278,7 +279,7 @@ import Layout from '../layouts/Layout.astro';
     padding: 1.125rem 1.5rem;
     text-align: center;
     position: relative;
-    overflow: hidden; /* Changed to hidden for ember particles */
+    overflow: hidden;
     box-shadow: 
       0 0 30px rgba(255, 69, 0, 0.6),
       0 0 60px rgba(255, 140, 0, 0.4),
@@ -287,34 +288,7 @@ import Layout from '../layouts/Layout.astro';
     z-index: 2;
   }
 
-  /* RADIATION WAVE 1 - Moving outward */
-  .leading-team-banner::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    transform: translate(-50%, -50%);
-    background: 
-      repeating-conic-gradient(
-        from 0deg at 50% 50%,
-        rgba(255, 140, 0, 0) 0deg,
-        rgba(255, 140, 0, 0.5) 2deg,
-        rgba(255, 200, 0, 0.6) 3deg,
-        rgba(255, 140, 0, 0.5) 4deg,
-        rgba(255, 140, 0, 0) 6deg,
-        rgba(255, 140, 0, 0) 15deg
-      );
-    animation: radiation-expand 3s ease-out infinite, sunray-rotate-fast 15s linear infinite;
-    z-index: -2;
-    pointer-events: none;
-    border-radius: 50%;
-    filter: blur(3px);
-    opacity: 0;
-  }
-
-  /* UPDATED EMBER PARTICLES LAYER */
+  /* EMBER PARTICLES LAYER ONLY */
   .leading-team-banner::after {
     content: '';
     position: absolute;
@@ -347,61 +321,7 @@ import Layout from '../layouts/Layout.astro';
     pointer-events: none;
   }
 
-  /* RADIATION WAVE 2 */
-  .leading-team-banner-wrapper::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    transform: translate(-50%, -50%);
-    background: 
-      repeating-conic-gradient(
-        from 0deg at 50% 50%,
-        rgba(255, 69, 0, 0) 0deg,
-        rgba(255, 69, 0, 0.4) 3deg,
-        rgba(255, 140, 0, 0.5) 5deg,
-        rgba(255, 69, 0, 0.4) 7deg,
-        rgba(255, 69, 0, 0) 10deg,
-        rgba(255, 69, 0, 0) 20deg
-      );
-    animation: radiation-expand 3s ease-out 1.5s infinite, sunray-rotate-slow 20s linear infinite reverse;
-    z-index: -3;
-    pointer-events: none;
-    border-radius: 50%;
-    filter: blur(4px);
-    opacity: 0;
-  }
-
-  /* RADIATION WAVE 3 */
-  .leading-team-banner-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    transform: translate(-50%, -50%);
-    background: 
-      repeating-conic-gradient(
-        from 45deg at 50% 50%,
-        rgba(255, 100, 0, 0) 0deg,
-        rgba(255, 100, 0, 0.35) 2.5deg,
-        rgba(255, 160, 0, 0.45) 4deg,
-        rgba(255, 100, 0, 0.35) 5.5deg,
-        rgba(255, 100, 0, 0) 8deg,
-        rgba(255, 100, 0, 0) 18deg
-      );
-    animation: radiation-expand 3s ease-out 0.75s infinite, sunray-rotate-medium 17s linear infinite;
-    z-index: -2;
-    pointer-events: none;
-    border-radius: 50%;
-    filter: blur(3.5px);
-    opacity: 0;
-  }
-
-  /* HIGH VISIBILITY TEXT */
+  /* HALO TEXT */
   .leading-team-banner h2 {
     font-family: var(--font-heading);
     font-size: 1.5rem;
@@ -411,51 +331,45 @@ import Layout from '../layouts/Layout.astro';
     letter-spacing: 2px;
     margin: 0;
     position: relative;
-    z-index: 2; /* Changed from 10 to 2 to stay above ember particles (z-index: 1) */
+    z-index: 2;
     padding: 0.5rem 1rem;
 
+    /* Halo effect with golden glow */
     text-shadow: 
+      /* Black outline for contrast */
       2px 2px 0 #000, 
       -1px -1px 0 #000, 
       1px -1px 0 #000, 
       -1px 1px 0 #000, 
       1px 1px 0 #000,
-      0 0 5px rgba(0,0,0,1),
-      0 0 10px rgba(255, 215, 0, 0.8),
-      0 0 20px rgba(255, 140, 0, 0.6);
+      /* Golden halo rings */
+      0 0 10px rgba(255, 215, 0, 0.9),
+      0 0 20px rgba(255, 140, 0, 0.7),
+      0 0 30px rgba(255, 100, 0, 0.5),
+      0 0 40px rgba(255, 140, 0, 0.4);
 
-    animation: text-pulse-visibility 2s ease-in-out infinite;
-  }
-
-  .leading-team-banner-wrapper {
-    position: relative;
+    animation: text-halo-pulse 2s ease-in-out infinite;
   }
 
   /* KEYFRAME ANIMATIONS */
 
-  @keyframes radiation-expand {
-    0% { width: 100%; height: 100%; opacity: 0; filter: blur(3px); }
-    10% { opacity: 0.7; }
-    50% { width: 200%; height: 200%; opacity: 0.5; filter: blur(5px); }
-    100% { width: 250%; height: 250%; opacity: 0; filter: blur(8px); }
+  /* Fire pulse for glowing box */
+  @keyframes fire-pulse {
+    0%, 100% {
+      box-shadow: 
+        0 0 30px rgba(255, 69, 0, 0.6),
+        0 0 60px rgba(255, 140, 0, 0.4),
+        inset 0 0 30px rgba(255, 69, 0, 0.2);
+    }
+    50% {
+      box-shadow: 
+        0 0 45px rgba(255, 69, 0, 0.8),
+        0 0 90px rgba(255, 140, 0, 0.6),
+        inset 0 0 45px rgba(255, 69, 0, 0.3);
+    }
   }
 
-  @keyframes sunray-rotate-fast {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
-  }
-
-  @keyframes sunray-rotate-medium {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
-  }
-
-  @keyframes sunray-rotate-slow {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
-  }
-
-  /* UPDATED EMBER FLOAT ANIMATION (from demo) */
+  /* Ember float animation */
   @keyframes ember-float {
     0% {
       transform: translateY(0) translateX(0);
@@ -479,27 +393,23 @@ import Layout from '../layouts/Layout.astro';
     }
   }
 
-  @keyframes text-pulse-visibility {
+  /* Text halo pulse */
+  @keyframes text-halo-pulse {
     0%, 100% {
-      transform: scale(1);
       text-shadow: 
         2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000,
-        0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 140, 0, 0.6);
+        0 0 10px rgba(255, 215, 0, 0.9),
+        0 0 20px rgba(255, 140, 0, 0.7),
+        0 0 30px rgba(255, 100, 0, 0.5),
+        0 0 40px rgba(255, 140, 0, 0.4);
     }
     50% {
-      transform: scale(1.02);
       text-shadow: 
         2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000,
-        0 0 15px rgba(255, 215, 0, 1), 0 0 30px rgba(255, 140, 0, 0.8);
-    }
-  }
-
-  @keyframes fire-pulse {
-    0%, 100% {
-      box-shadow: 0 0 30px rgba(255, 69, 0, 0.6), 0 0 60px rgba(255, 140, 0, 0.4), inset 0 0 30px rgba(255, 69, 0, 0.2);
-    }
-    50% {
-      box-shadow: 0 0 45px rgba(255, 69, 0, 0.8), 0 0 90px rgba(255, 140, 0, 0.6), inset 0 0 45px rgba(255, 69, 0, 0.3);
+        0 0 15px rgba(255, 215, 0, 1),
+        0 0 30px rgba(255, 140, 0, 0.9),
+        0 0 45px rgba(255, 100, 0, 0.7),
+        0 0 60px rgba(255, 140, 0, 0.6);
     }
   }
 
@@ -595,8 +505,7 @@ import Layout from '../layouts/Layout.astro';
       return teamScore > maxScore ? team : max;
     }, standingsData[0]);
 
-    container.className = 'leading-team-banner-wrapper';
-
+    // No wrapper class needed anymore - simple banner
     const banner = document.createElement('div');
     banner.className = 'leading-team-banner';
     banner.innerHTML = '<h2>' + escapeHtml(leader.team_name) + ' is Leading 🔥</h2>';
@@ -604,7 +513,7 @@ import Layout from '../layouts/Layout.astro';
     container.innerHTML = '';
     container.appendChild(banner);
 
-    console.log('🔥 Leading banner with updated ember particles created');
+    console.log('🔥 Simple banner: Glowing box + Ember particles + Halo text');
   }
 
   function escapeHtml(text) {
