@@ -1,199 +1,638 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
 
-<script is:inline>
-  // ========================================
-  // CANVAS FIRE PARTICLE SYSTEM - COMPLETE VERSION
-  // ========================================
+<Layout title="Standings | MAVERICKS x SYNAPSE BGMI 2026" description="Live leaderboard and standings for SYNAPSE MAMC BGMI 2026 tournament." activePage="standings">
+  <section class="leaderboard-section">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 25px; flex-wrap: wrap;">
+        <h1 class="page-title" style="margin:0;">Overall Standings</h1>
+        <div class="live-indicator">
+          <span class="live-dot"></span>
+          <span>Live</span>
+        </div>
+      </div>
 
-  class FireParticle {
-    constructor(x, y, canvas) {
-      this.x = x;
-      this.y = y;
-      this.canvas = canvas;
-      this.size = Math.random() * 8 + 2;
-      this.speedY = Math.random() * 3 + 1;
-      this.speedX = (Math.random() - 0.5) * 2;
-      this.life = 1;
-      this.decay = Math.random() * 0.015 + 0.005;
-      this.color = this.getFireColor();
+      <!-- Leading Team Banner with DOOM Fire -->
+      <div id="leadingTeamBannerContainer"></div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-btn active" data-filter="overall"><span>Overall</span></button>
+        <button class="filter-btn" data-filter="day1"><span>Day 1</span></button>
+        <button class="filter-btn" data-filter="day2"><span>Day 2</span></button>
+        <button class="filter-btn" data-filter="day3"><span>Day 3</span></button>
+        <button class="filter-btn" data-filter="finals"><span>Finals</span></button>
+      </div>
+
+      <!-- View Toggle for Overall -->
+      <div id="overallViewToggle" style="display: none; text-align: center; margin-bottom: 1rem;">
+        <button class="view-toggle-btn active" data-view="combined">Combined</button>
+        <button class="view-toggle-btn" data-view="grouped">By Group</button>
+      </div>
+
+      <!-- Content Container (includes selectors) -->
+      <div id="standingsContent"></div>
+
+      <!-- Legend -->
+      <div style="margin-top: 2rem; padding: 1rem; background: rgba(255,255,255,0.02); border-radius: 8px; font-size: 0.85rem; color: var(--text-muted);">
+        <strong style="color: var(--text-primary);">Legend:</strong> 
+        🏆 = Chicken Dinners (WWCD) | 
+        Place Pts = Position Points | 
+        Kill Pts = Elimination Points
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style is:global>
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 2rem;
+  }
+
+  .leaderboard-table {
+    min-width: 700px;
+  }
+
+  .group-header {
+    background: linear-gradient(90deg, rgba(0, 174, 239, 0.2), transparent);
+    border-left: 4px solid var(--accent-cyan);
+    padding: 1rem;
+    margin: 2rem 0 1rem 0;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+  }
+
+  .match-header {
+    background: linear-gradient(90deg, rgba(255, 140, 0, 0.2), transparent);
+    border-left: 4px solid var(--accent-orange);
+    padding: 0.75rem 1rem;
+    margin: 1.5rem 0 0.75rem 0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-orange);
+  }
+
+  .view-toggle-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-muted);
+    padding: 0.5rem 1.5rem;
+    margin: 0 0.25rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+
+  .view-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .view-toggle-btn.active {
+    background: var(--accent-orange);
+    border-color: var(--accent-orange);
+    color: white;
+  }
+
+
+  .selector-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .selector-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-muted);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+  }
+
+  .selector-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .selector-btn.active {
+    background: var(--accent-orange);
+    border-color: var(--accent-orange);
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.5);
+  }
+
+  @media (max-width: 768px) {
+    .selector-buttons {
+      gap: 0.4rem;
     }
 
-    getFireColor() {
-      const colors = [
-        { r: 255, g: 69, b: 0, a: 1 },
-        { r: 255, g: 140, b: 0, a: 1 },
-        { r: 255, g: 200, b: 0, a: 1 },
-        { r: 255, g: 255, b: 0, a: 0.8 },
-      ];
-      return colors[Math.floor(Math.random() * colors.length)];
-    }
-
-    update() {
-      this.y -= this.speedY;
-      this.x += this.speedX;
-      this.life -= this.decay;
-      this.size *= 0.98;
-    }
-
-    draw(ctx) {
-      if (this.life <= 0) return;
-
-      const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size);
-      gradient.addColorStop(0, `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.life * this.color.a})`);
-      gradient.addColorStop(0.5, `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.life * 0.5})`);
-      gradient.addColorStop(1, `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, 0)`);
-
-      ctx.fillStyle = gradient;
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fill();
-    }
-
-    isAlive() {
-      return this.life > 0;
+    .selector-btn {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.85rem;
     }
   }
 
-  class FireEffect {
+
+  .leading-team-banner {
+    background: linear-gradient(180deg, rgba(20, 0, 0, 0.95) 0%, rgba(40, 10, 0, 0.9) 100%);
+    border: 2px solid var(--accent-orange);
+    border-radius: 12px;
+    padding: 1.125rem 1.5rem;
+    margin: 1.5rem auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+      0 0 30px rgba(255, 69, 0, 0.8),
+      0 0 60px rgba(255, 140, 0, 0.6),
+      inset 0 0 45px rgba(255, 69, 0, 0.2);
+    animation: banner-pulse 3s ease-in-out infinite;
+    max-width: 450px;
+  }
+
+  .leading-team-banner h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(90deg, #ff8c00, #ffd700, #ff8c00);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 3s ease infinite;
+    position: relative;
+    z-index: 2;
+  }
+
+  @keyframes banner-pulse {
+    0%, 100% {
+      box-shadow: 0 0 30px rgba(255, 69, 0, 0.8), 0 0 60px rgba(255, 140, 0, 0.6), inset 0 0 45px rgba(255, 69, 0, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 37.5px rgba(255, 69, 0, 1), 0 0 75px rgba(255, 140, 0, 0.8), inset 0 0 52.5px rgba(255, 69, 0, 0.3);
+    }
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+  }
+
+  .leaderboard-table tbody tr.rank-1 {
+    background: linear-gradient(90deg, rgba(255, 215, 0, 0.1), rgba(255, 140, 0, 0.05));
+    border-left: 3px solid var(--accent-orange);
+  }
+
+  .leaderboard-table tbody tr.rank-1 td:first-child {
+    color: var(--accent-orange);
+    font-weight: 700;
+  }
+
+  .leaderboard-table tbody tr.rank-2 {
+    background: rgba(192, 192, 192, 0.05);
+  }
+
+  .leaderboard-table tbody tr.rank-3 {
+    background: rgba(205, 127, 50, 0.05);
+  }
+
+  .wwcd-winner {
+    background: rgba(255, 215, 0, 0.15) !important;
+    border-left: 3px solid gold !important;
+  }
+
+  @media (max-width: 768px) {
+    .leading-team-banner {
+      padding: 0.9rem 1.125rem;
+      margin: 1rem auto;
+      max-width: 90%;
+    }
+
+    .leading-team-banner h2 {
+      font-size: 1.125rem;
+    }
+
+    .leaderboard-table {
+      font-size: 0.85rem;
+    }
+
+    .leaderboard-table th,
+    .leaderboard-table td {
+      padding: 0.5rem 0.4rem;
+    }
+
+    .group-header, .match-header {
+      font-size: 0.9rem;
+      padding: 0.6rem 0.8rem;
+    }
+  }
+</style>
+
+<script is:inline>
+  // ========================================
+  // DOOM PSX FIRE EFFECT - Adjustable Speed & Density
+  // ========================================
+  class DoomFire {
     constructor(element) {
       this.element = element;
       this.canvas = document.createElement('canvas');
       this.ctx = this.canvas.getContext('2d');
-      this.particles = [];
-      this.animationId = null;
+      this.fireWidth = 60;
+      this.fireHeight = 30;
+      this.firePixels = [];
+
+      // ⚙️ ADJUSTABLE PARAMETERS
+      this.fireSpeed = 1;           // Slower movement
+      this.fireDensity = 0.35;      // Less dense
+      this.maxDecay = 2;            // Normal fade
+      this.frameSkip = 1;           // Skip frames
+      this.frameCount = 0;
+
+      this.palette = [
+        { r: 7, g: 7, b: 7 }, { r: 31, g: 7, b: 7 }, { r: 47, g: 15, b: 7 },
+        { r: 71, g: 15, b: 7 }, { r: 87, g: 23, b: 7 }, { r: 103, g: 31, b: 7 },
+        { r: 119, g: 31, b: 7 }, { r: 143, g: 39, b: 7 }, { r: 159, g: 47, b: 7 },
+        { r: 175, g: 63, b: 7 }, { r: 191, g: 71, b: 7 }, { r: 199, g: 71, b: 7 },
+        { r: 223, g: 79, b: 7 }, { r: 223, g: 87, b: 7 }, { r: 223, g: 87, b: 7 },
+        { r: 215, g: 95, b: 7 }, { r: 215, g: 95, b: 7 }, { r: 215, g: 103, b: 15 },
+        { r: 207, g: 111, b: 15 }, { r: 207, g: 119, b: 15 }, { r: 207, g: 127, b: 15 },
+        { r: 207, g: 135, b: 23 }, { r: 199, g: 135, b: 23 }, { r: 199, g: 143, b: 23 },
+        { r: 199, g: 151, b: 31 }, { r: 191, g: 159, b: 31 }, { r: 191, g: 159, b: 31 },
+        { r: 191, g: 167, b: 39 }, { r: 191, g: 167, b: 39 }, { r: 191, g: 175, b: 47 },
+        { r: 183, g: 175, b: 47 }, { r: 183, g: 183, b: 47 }, { r: 183, g: 183, b: 55 },
+        { r: 207, g: 207, b: 111 }, { r: 223, g: 223, b: 159 }, { r: 239, g: 239, b: 199 },
+        { r: 255, g: 255, b: 255 }
+      ];
       this.setupCanvas();
+      this.initFire();
       this.animate();
-      console.log('🔥 Fire effect initialized');
     }
 
     setupCanvas() {
       this.canvas.style.position = 'absolute';
-      this.canvas.style.top = '0';
       this.canvas.style.left = '0';
+      this.canvas.style.bottom = '0';
       this.canvas.style.width = '100%';
-      this.canvas.style.height = '100%';
+      this.canvas.style.height = '30%';
       this.canvas.style.pointerEvents = 'none';
       this.canvas.style.zIndex = '1';
-
-      const rect = this.element.getBoundingClientRect();
-      this.canvas.width = rect.width;
-      this.canvas.height = rect.height;
-
+      this.canvas.style.imageRendering = 'pixelated';
+      this.canvas.width = this.fireWidth;
+      this.canvas.height = this.fireHeight;
       this.element.style.position = 'relative';
       this.element.appendChild(this.canvas);
-
-      window.addEventListener('resize', () => this.handleResize());
     }
 
-    handleResize() {
-      const rect = this.element.getBoundingClientRect();
-      this.canvas.width = rect.width;
-      this.canvas.height = rect.height;
-    }
-
-    createParticles() {
-      const width = this.canvas.width;
-      const height = this.canvas.height;
-
-      // Create 3-5 particles per frame for more intense effect
-      for (let i = 0; i < 4; i++) {
-        const x = Math.random() * width;
-        const y = height - 5;
-        this.particles.push(new FireParticle(x, y, this.canvas));
+    initFire() {
+      const pixelCount = this.fireWidth * this.fireHeight;
+      for (let i = 0; i < pixelCount; i++) this.firePixels[i] = 0;
+      for (let i = 0; i < this.fireWidth; i++) {
+        if (Math.random() < this.fireDensity) {
+          this.firePixels[(this.fireHeight - 1) * this.fireWidth + i] = 36;
+        }
       }
+    }
+
+    spreadFire(from) {
+      const rand = Math.round(Math.random() * (this.fireSpeed + 1)) & 3;
+      const to = from - this.fireWidth - rand + 1;
+      const decay = (rand & 1) * this.maxDecay;
+      if (to >= 0 && to < this.firePixels.length) {
+        this.firePixels[to] = Math.max(0, this.firePixels[from] - decay);
+      }
+    }
+
+    updateFireSource() {
+      for (let i = 0; i < this.fireWidth; i++) {
+        const idx = (this.fireHeight - 1) * this.fireWidth + i;
+        if (Math.random() < this.fireDensity) {
+          this.firePixels[idx] = 36;
+        } else {
+          this.firePixels[idx] = Math.max(0, this.firePixels[idx] - 1);
+        }
+      }
+    }
+
+    doFire() {
+      for (let x = 0; x < this.fireWidth; x++) {
+        for (let y = 1; y < this.fireHeight; y++) {
+          this.spreadFire(y * this.fireWidth + x);
+        }
+      }
+      this.updateFireSource();
+    }
+
+    drawFire() {
+      const imageData = this.ctx.createImageData(this.fireWidth, this.fireHeight);
+      for (let i = 0; i < this.firePixels.length; i++) {
+        const color = this.palette[this.firePixels[i]];
+        const pixelIndex = i * 4;
+        imageData.data[pixelIndex] = color.r;
+        imageData.data[pixelIndex + 1] = color.g;
+        imageData.data[pixelIndex + 2] = color.b;
+        imageData.data[pixelIndex + 3] = 255;
+      }
+      this.ctx.putImageData(imageData, 0, 0);
     }
 
     animate() {
-      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
-      this.createParticles();
-
-      this.particles = this.particles.filter(particle => {
-        particle.update();
-        particle.draw(this.ctx);
-        return particle.isAlive();
-      });
-
-      this.animationId = requestAnimationFrame(() => this.animate());
-    }
-
-    destroy() {
-      if (this.animationId) {
-        cancelAnimationFrame(this.animationId);
+      this.frameCount++;
+      if (this.frameCount % (this.frameSkip + 1) === 0) {
+        this.doFire();
+        this.drawFire();
       }
+      requestAnimationFrame(() => this.animate());
     }
   }
 
   // ========================================
-  // BANNER CREATION WITH FIRE EFFECT
+  // DATA MANAGEMENT WITH SELECTORS
   // ========================================
+  let standingsData = [];
+  let currentFilter = 'overall';
+  let currentView = 'combined';
+  let currentGroup = null;  // For group selection
+  let currentMatch = null;  // For match selection
+  let doomFireInstance = null;
 
-  let fireEffectInstance = null;
+  async function loadStandings() {
+    try {
+      const timestamp = new Date().getTime();
+      const response = await fetch('/data/standings.json?t=' + timestamp);
 
-  function createLeadingTeamBanner() {
-    console.log('🚀 Creating leading team banner with fire effect...');
+      if (!response.ok) throw new Error('Failed to fetch');
+      standingsData = await response.json();
+      console.log('✅ Loaded', standingsData.length, 'teams from standings.json');
 
+      createLeadingBanner();
+      renderContent('overall');
+      setupFilters();
+      setupViewToggle();
+    } catch (error) {
+      console.error('❌ Error:', error);
+      document.getElementById('standingsContent').innerHTML = 
+        '<div style="text-align:center; padding: 2rem; color: var(--accent-red);">Failed to load standings</div>';
+    }
+  }
+
+  function createLeadingBanner() {
     const container = document.getElementById('leadingTeamBannerContainer');
-    if (!container) {
-      console.error('❌ Container not found');
+    if (!container || standingsData.length === 0) return;
+
+    const leader = standingsData.reduce((max, team) => {
+      const maxScore = max.stats?.overall?.total_pts || 0;
+      const teamScore = team.stats?.overall?.total_pts || 0;
+      return teamScore > maxScore ? team : max;
+    }, standingsData[0]);
+
+    const banner = document.createElement('div');
+    banner.className = 'leading-team-banner';
+    banner.id = 'doomBanner';
+    banner.innerHTML = '<h2>' + leader.team_name + ' is Leading 🔥</h2>';
+
+    container.innerHTML = '';
+    container.appendChild(banner);
+
+    setTimeout(() => {
+      if (!banner.dataset.fireInitialized) {
+        doomFireInstance = new DoomFire(banner);
+        banner.dataset.fireInitialized = 'true';
+        console.log('🔥 DOOM fire initialized (slower & less dense)');
+      }
+    }, 200);
+  }
+
+  function renderContent(filter) {
+    currentFilter = filter;
+    const content = document.getElementById('standingsContent');
+    const viewToggle = document.getElementById('overallViewToggle');
+
+    if (filter === 'overall') {
+      viewToggle.style.display = 'block';
+      if (currentView === 'grouped') {
+        renderGroupSelector();
+      } else {
+        renderOverallCombined();
+      }
+    } else {
+      viewToggle.style.display = 'none';
+      renderMatchSelector(filter);
+    }
+  }
+
+  // ========================================
+  // GROUP SELECTOR (For "By Group" view)
+  // ========================================
+  function renderGroupSelector() {
+    const groups = {};
+    standingsData.forEach(team => {
+      if (!groups[team.group]) groups[team.group] = [];
+      groups[team.group].push(team);
+    });
+
+    const groupNames = Object.keys(groups).sort();
+
+    // Set default group if not selected
+    if (!currentGroup || !groupNames.includes(currentGroup)) {
+      currentGroup = groupNames[0];
+    }
+
+    // Create group selector buttons
+    let html = '<div style="text-align: center; margin-bottom: 1.5rem;">';
+    html += '<div class="selector-buttons">';
+    groupNames.forEach(groupName => {
+      const activeClass = groupName === currentGroup ? 'active' : '';
+      html += '<button class="selector-btn ' + activeClass + '" onclick="selectGroup(\'' + groupName + '\')">';
+      html += groupName + '</button>';
+    });
+    html += '</div></div>';
+
+    // Render selected group data
+    const groupTeams = groups[currentGroup].sort((a, b) => 
+      (b.stats.overall.total_pts || 0) - (a.stats.overall.total_pts || 0)
+    );
+
+    html += '<div class="group-header">' + currentGroup + '</div>';
+    html += '<div class="table-container"><table class="leaderboard-table"><thead><tr>';
+    html += '<th>Rank</th><th>Team</th><th>Matches</th>';
+    html += '<th>Place Pts</th><th>Kill Pts</th><th>Total</th><th>🏆</th></tr></thead><tbody>';
+
+    groupTeams.forEach((team, index) => {
+      const rank = index + 1;
+      const stats = team.stats.overall;
+      const rankClass = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
+      const wwcd = stats.wwcd_count > 0 ? '🏆'.repeat(stats.wwcd_count) : '-';
+
+      html += '<tr class="' + rankClass + '"><td><strong>' + rank + '</strong></td>';
+      html += '<td><div style="display:flex;align-items:center;gap:8px;">';
+      html += '<span class="team-logo-mini">' + team.team_logo + '</span>';
+      html += '<span>' + team.team_name + '</span></div></td>';
+      html += '<td>' + (stats.matches_played || 0) + '</td>';
+      html += '<td>' + (stats.finish_pts || stats.pos_pts || 0) + '</td>';
+      html += '<td>' + ((stats.total_pts || 0) - (stats.finish_pts || stats.pos_pts || 0)) + '</td>';
+      html += '<td><strong>' + (stats.total_pts || 0) + '</strong></td>';
+      html += '<td>' + wwcd + '</td></tr>';
+    });
+
+    html += '</tbody></table></div>';
+    document.getElementById('standingsContent').innerHTML = html;
+  }
+
+  window.selectGroup = function(groupName) {
+    currentGroup = groupName;
+    renderGroupSelector();
+  };
+
+  // ========================================
+  // MATCH SELECTOR (For Day views)
+  // ========================================
+  function renderMatchSelector(day) {
+    const matchKeys = day === 'finals' ? ['M1', 'M2', 'M3', 'M4', 'M5', 'M6'] : ['M1', 'M2', 'M3', 'M4'];
+
+    // Set default match if not selected
+    if (!currentMatch || !matchKeys.includes(currentMatch)) {
+      currentMatch = matchKeys[0];
+    }
+
+    // Create match selector buttons
+    let html = '<div style="text-align: center; margin-bottom: 1.5rem;">';
+    html += '<div class="selector-buttons">';
+    matchKeys.forEach(matchKey => {
+      const activeClass = matchKey === currentMatch ? 'active' : '';
+      const matchNumber = matchKey.substring(1);
+      html += '<button class="selector-btn ' + activeClass + '" onclick="selectMatch(\'' + matchKey + '\')">';
+      html += 'Match ' + matchNumber + '</button>';
+    });
+    html += '</div></div>';
+
+    // Render selected match data
+    const matchNumber = currentMatch.substring(1);
+    const teamsWithData = standingsData.map(team => {
+      const matchData = team.stats[day]?.[currentMatch];
+      return {
+        ...team,
+        matchStats: matchData || { place_pts: 0, kill_pts: 0, total: 0, wwcd: false }
+      };
+    }).filter(team => team.matchStats.total > 0 || team.matchStats.place_pts > 0 || team.matchStats.kill_pts > 0);
+
+    if (teamsWithData.length === 0) {
+      html += '<div class="match-header">Match ' + matchNumber + ' - No data yet</div>';
+      html += '<div style="text-align:center; padding: 2rem; color: var(--text-muted);">Match data not available</div>';
+      document.getElementById('standingsContent').innerHTML = html;
       return;
     }
 
-    fetch('/data/standings.json')
-      .then(r => r.json())
-      .then(data => {
-        const leadingTeam = data.reduce((max, team) => {
-          const maxScore = max.stats?.overall?.total_pts || 0;
-          const teamScore = team.stats?.overall?.total_pts || 0;
-          return teamScore > maxScore ? team : max;
-        }, data[0]);
+    teamsWithData.sort((a, b) => b.matchStats.total - a.matchStats.total);
 
-        if (!leadingTeam) return;
+    html += '<div class="match-header">Match ' + matchNumber + '</div>';
+    html += '<div class="table-container"><table class="leaderboard-table"><thead><tr>';
+    html += '<th>Rank</th><th>Team</th><th>Group</th>';
+    html += '<th>Place Pts</th><th>Kill Pts</th><th>Total</th><th>🏆</th></tr></thead><tbody>';
 
-        // Create banner
-        const banner = document.createElement('div');
-        banner.className = 'leading-team-banner';
-        banner.id = 'leadingBanner';
+    teamsWithData.forEach((team, index) => {
+      const rank = index + 1;
+      const stats = team.matchStats;
+      const rankClass = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
+      const wwcdClass = stats.wwcd ? 'wwcd-winner' : '';
+      const wwcd = stats.wwcd ? '🏆' : '-';
 
-        const heading = document.createElement('h2');
-        heading.className = 'leading-team-text';
-        heading.textContent = leadingTeam.team_name + ' is Leading 🔥';
+      html += '<tr class="' + rankClass + ' ' + wwcdClass + '">';
+      html += '<td><strong>' + rank + '</strong></td>';
+      html += '<td><div style="display:flex;align-items:center;gap:8px;">';
+      html += '<span class="team-logo-mini">' + team.team_logo + '</span>';
+      html += '<span>' + team.team_name + '</span></div></td>';
+      html += '<td>' + team.group + '</td>';
+      html += '<td>' + (stats.place_pts || 0) + '</td>';
+      html += '<td>' + (stats.kill_pts || 0) + '</td>';
+      html += '<td><strong>' + (stats.total || 0) + '</strong></td>';
+      html += '<td>' + wwcd + '</td></tr>';
+    });
 
-        banner.appendChild(heading);
-        container.innerHTML = '';
-        container.appendChild(banner);
+    html += '</tbody></table></div>';
+    document.getElementById('standingsContent').innerHTML = html;
+  }
 
-        console.log('✅ Banner created:', leadingTeam.team_name);
+  window.selectMatch = function(matchKey) {
+    currentMatch = matchKey;
+    renderMatchSelector(currentFilter);
+  };
 
-        // Initialize fire effect after a short delay to ensure DOM is ready
-        setTimeout(() => {
-          const bannerElement = document.getElementById('leadingBanner');
-          if (bannerElement && !bannerElement.dataset.fireInitialized) {
-            try {
-              fireEffectInstance = new FireEffect(bannerElement);
-              bannerElement.dataset.fireInitialized = 'true';
-              console.log('✅ Fire effect started successfully');
-            } catch (err) {
-              console.error('❌ Fire effect failed:', err);
-            }
-          }
-        }, 200);
-      })
-      .catch(err => {
-        console.error('❌ Failed to load standings:', err);
+  function renderOverallCombined() {
+    const teams = [...standingsData].sort((a, b) => 
+      (b.stats.overall.total_pts || 0) - (a.stats.overall.total_pts || 0)
+    );
+
+    let html = '<div class="table-container"><table class="leaderboard-table"><thead><tr>';
+    html += '<th>Rank</th><th>Team</th><th>Group</th><th>Matches</th>';
+    html += '<th>Place Pts</th><th>Kill Pts</th><th>Total</th><th>🏆</th></tr></thead><tbody>';
+
+    teams.forEach((team, index) => {
+      const rank = index + 1;
+      const stats = team.stats.overall;
+      const rankClass = rank <= 3 ? 'rank-' + rank : '';
+      const wwcd = stats.wwcd_count > 0 ? '🏆'.repeat(stats.wwcd_count) : '-';
+
+      html += '<tr class="' + rankClass + '"><td><strong>' + rank + '</strong></td>';
+      html += '<td><div style="display:flex;align-items:center;gap:8px;">';
+      html += '<span class="team-logo-mini">' + team.team_logo + '</span>';
+      html += '<span>' + team.team_name + '</span></div></td>';
+      html += '<td>' + team.group + '</td>';
+      html += '<td>' + (stats.matches_played || 0) + '</td>';
+      html += '<td>' + (stats.finish_pts || stats.pos_pts || 0) + '</td>';
+      html += '<td>' + ((stats.total_pts || 0) - (stats.finish_pts || stats.pos_pts || 0)) + '</td>';
+      html += '<td><strong>' + (stats.total_pts || 0) + '</strong></td>';
+      html += '<td>' + wwcd + '</td></tr>';
+    });
+
+    html += '</tbody></table></div>';
+    document.getElementById('standingsContent').innerHTML = html;
+  }
+
+  function setupFilters() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentMatch = null; // Reset match selection when changing filter
+        renderContent(btn.dataset.filter);
       });
+    });
   }
 
-  // Initialize when page loads
+  function setupViewToggle() {
+    const viewBtns = document.querySelectorAll('.view-toggle-btn');
+    viewBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        viewBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentView = btn.dataset.view;
+        currentGroup = null; // Reset group selection when changing view
+        if (currentFilter === 'overall') {
+          renderContent('overall');
+        }
+      });
+    });
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', createLeadingTeamBanner);
+    document.addEventListener('DOMContentLoaded', loadStandings);
   } else {
-    createLeadingTeamBanner();
+    loadStandings();
   }
-
-  // Cleanup on page unload
-  window.addEventListener('beforeunload', () => {
-    if (fireEffectInstance) {
-      fireEffectInstance.destroy();
-    }
-  });
 </script>
