@@ -31,7 +31,7 @@ import Layout from '../layouts/Layout.astro';
         <button class="view-toggle-btn" data-view="grouped">By Group</button>
       </div>
 
-      <!-- Content Container -->
+      <!-- Content Container (includes selectors) -->
       <div id="standingsContent"></div>
 
       <!-- Legend -->
@@ -101,6 +101,52 @@ import Layout from '../layouts/Layout.astro';
     border-color: var(--accent-orange);
     color: white;
   }
+
+
+  .selector-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .selector-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-muted);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+  }
+
+  .selector-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .selector-btn.active {
+    background: var(--accent-orange);
+    border-color: var(--accent-orange);
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.5);
+  }
+
+  @media (max-width: 768px) {
+    .selector-buttons {
+      gap: 0.4rem;
+    }
+
+    .selector-btn {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.85rem;
+    }
+  }
+
 
   .leading-team-banner {
     background: linear-gradient(180deg, rgba(20, 0, 0, 0.95) 0%, rgba(40, 10, 0, 0.9) 100%);
@@ -199,7 +245,7 @@ import Layout from '../layouts/Layout.astro';
 
 <script is:inline>
   // ========================================
-  // DOOM PSX FIRE EFFECT - Bottom 30% Only
+  // DOOM PSX FIRE EFFECT - Adjustable Speed & Density
   // ========================================
   class DoomFire {
     constructor(element) {
@@ -209,6 +255,14 @@ import Layout from '../layouts/Layout.astro';
       this.fireWidth = 60;
       this.fireHeight = 30;
       this.firePixels = [];
+
+      // ⚙️ ADJUSTABLE PARAMETERS
+      this.fireSpeed = 1;           // Slower movement
+      this.fireDensity = 0.35;      // Less dense
+      this.maxDecay = 2;            // Normal fade
+      this.frameSkip = 1;           // Skip frames
+      this.frameCount = 0;
+
       this.palette = [
         { r: 7, g: 7, b: 7 }, { r: 31, g: 7, b: 7 }, { r: 47, g: 15, b: 7 },
         { r: 71, g: 15, b: 7 }, { r: 87, g: 23, b: 7 }, { r: 103, g: 31, b: 7 },
@@ -248,16 +302,29 @@ import Layout from '../layouts/Layout.astro';
       const pixelCount = this.fireWidth * this.fireHeight;
       for (let i = 0; i < pixelCount; i++) this.firePixels[i] = 0;
       for (let i = 0; i < this.fireWidth; i++) {
-        this.firePixels[(this.fireHeight - 1) * this.fireWidth + i] = 36;
+        if (Math.random() < this.fireDensity) {
+          this.firePixels[(this.fireHeight - 1) * this.fireWidth + i] = 36;
+        }
       }
     }
 
     spreadFire(from) {
-      const rand = Math.round(Math.random() * 3.0) & 3;
+      const rand = Math.round(Math.random() * (this.fireSpeed + 1)) & 3;
       const to = from - this.fireWidth - rand + 1;
-      const decay = rand & 1;
+      const decay = (rand & 1) * this.maxDecay;
       if (to >= 0 && to < this.firePixels.length) {
         this.firePixels[to] = Math.max(0, this.firePixels[from] - decay);
+      }
+    }
+
+    updateFireSource() {
+      for (let i = 0; i < this.fireWidth; i++) {
+        const idx = (this.fireHeight - 1) * this.fireWidth + i;
+        if (Math.random() < this.fireDensity) {
+          this.firePixels[idx] = 36;
+        } else {
+          this.firePixels[idx] = Math.max(0, this.firePixels[idx] - 1);
+        }
       }
     }
 
@@ -267,6 +334,7 @@ import Layout from '../layouts/Layout.astro';
           this.spreadFire(y * this.fireWidth + x);
         }
       }
+      this.updateFireSource();
     }
 
     drawFire() {
@@ -283,23 +351,27 @@ import Layout from '../layouts/Layout.astro';
     }
 
     animate() {
-      this.doFire();
-      this.drawFire();
+      this.frameCount++;
+      if (this.frameCount % (this.frameSkip + 1) === 0) {
+        this.doFire();
+        this.drawFire();
+      }
       requestAnimationFrame(() => this.animate());
     }
   }
 
   // ========================================
-  // DATA MANAGEMENT (NO AUTO-REFRESH)
+  // DATA MANAGEMENT WITH SELECTORS
   // ========================================
   let standingsData = [];
   let currentFilter = 'overall';
   let currentView = 'combined';
+  let currentGroup = null;  // For group selection
+  let currentMatch = null;  // For match selection
   let doomFireInstance = null;
 
   async function loadStandings() {
     try {
-      // Add timestamp to prevent browser caching (fresh data on each page load)
       const timestamp = new Date().getTime();
       const response = await fetch('/data/standings.json?t=' + timestamp);
 
@@ -340,7 +412,7 @@ import Layout from '../layouts/Layout.astro';
       if (!banner.dataset.fireInitialized) {
         doomFireInstance = new DoomFire(banner);
         banner.dataset.fireInitialized = 'true';
-        console.log('🔥 DOOM fire initialized (bottom 30%)');
+        console.log('🔥 DOOM fire initialized (slower & less dense)');
       }
     }, 200);
   }
@@ -353,15 +425,152 @@ import Layout from '../layouts/Layout.astro';
     if (filter === 'overall') {
       viewToggle.style.display = 'block';
       if (currentView === 'grouped') {
-        renderOverallByGroups();
+        renderGroupSelector();
       } else {
         renderOverallCombined();
       }
     } else {
       viewToggle.style.display = 'none';
-      renderDayMatches(filter);
+      renderMatchSelector(filter);
     }
   }
+
+  // ========================================
+  // GROUP SELECTOR (For "By Group" view)
+  // ========================================
+  function renderGroupSelector() {
+    const groups = {};
+    standingsData.forEach(team => {
+      if (!groups[team.group]) groups[team.group] = [];
+      groups[team.group].push(team);
+    });
+
+    const groupNames = Object.keys(groups).sort();
+
+    // Set default group if not selected
+    if (!currentGroup || !groupNames.includes(currentGroup)) {
+      currentGroup = groupNames[0];
+    }
+
+    // Create group selector buttons
+    let html = '<div style="text-align: center; margin-bottom: 1.5rem;">';
+    html += '<div class="selector-buttons">';
+    groupNames.forEach(groupName => {
+      const activeClass = groupName === currentGroup ? 'active' : '';
+      html += '<button class="selector-btn ' + activeClass + '" onclick="selectGroup(\'' + groupName + '\')">';
+      html += groupName + '</button>';
+    });
+    html += '</div></div>';
+
+    // Render selected group data
+    const groupTeams = groups[currentGroup].sort((a, b) => 
+      (b.stats.overall.total_pts || 0) - (a.stats.overall.total_pts || 0)
+    );
+
+    html += '<div class="group-header">' + currentGroup + '</div>';
+    html += '<div class="table-container"><table class="leaderboard-table"><thead><tr>';
+    html += '<th>Rank</th><th>Team</th><th>Matches</th>';
+    html += '<th>Place Pts</th><th>Kill Pts</th><th>Total</th><th>🏆</th></tr></thead><tbody>';
+
+    groupTeams.forEach((team, index) => {
+      const rank = index + 1;
+      const stats = team.stats.overall;
+      const rankClass = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
+      const wwcd = stats.wwcd_count > 0 ? '🏆'.repeat(stats.wwcd_count) : '-';
+
+      html += '<tr class="' + rankClass + '"><td><strong>' + rank + '</strong></td>';
+      html += '<td><div style="display:flex;align-items:center;gap:8px;">';
+      html += '<span class="team-logo-mini">' + team.team_logo + '</span>';
+      html += '<span>' + team.team_name + '</span></div></td>';
+      html += '<td>' + (stats.matches_played || 0) + '</td>';
+      html += '<td>' + (stats.finish_pts || stats.pos_pts || 0) + '</td>';
+      html += '<td>' + ((stats.total_pts || 0) - (stats.finish_pts || stats.pos_pts || 0)) + '</td>';
+      html += '<td><strong>' + (stats.total_pts || 0) + '</strong></td>';
+      html += '<td>' + wwcd + '</td></tr>';
+    });
+
+    html += '</tbody></table></div>';
+    document.getElementById('standingsContent').innerHTML = html;
+  }
+
+  window.selectGroup = function(groupName) {
+    currentGroup = groupName;
+    renderGroupSelector();
+  };
+
+  // ========================================
+  // MATCH SELECTOR (For Day views)
+  // ========================================
+  function renderMatchSelector(day) {
+    const matchKeys = day === 'finals' ? ['M1', 'M2', 'M3', 'M4', 'M5', 'M6'] : ['M1', 'M2', 'M3', 'M4'];
+
+    // Set default match if not selected
+    if (!currentMatch || !matchKeys.includes(currentMatch)) {
+      currentMatch = matchKeys[0];
+    }
+
+    // Create match selector buttons
+    let html = '<div style="text-align: center; margin-bottom: 1.5rem;">';
+    html += '<div class="selector-buttons">';
+    matchKeys.forEach(matchKey => {
+      const activeClass = matchKey === currentMatch ? 'active' : '';
+      const matchNumber = matchKey.substring(1);
+      html += '<button class="selector-btn ' + activeClass + '" onclick="selectMatch(\'' + matchKey + '\')">';
+      html += 'Match ' + matchNumber + '</button>';
+    });
+    html += '</div></div>';
+
+    // Render selected match data
+    const matchNumber = currentMatch.substring(1);
+    const teamsWithData = standingsData.map(team => {
+      const matchData = team.stats[day]?.[currentMatch];
+      return {
+        ...team,
+        matchStats: matchData || { place_pts: 0, kill_pts: 0, total: 0, wwcd: false }
+      };
+    }).filter(team => team.matchStats.total > 0 || team.matchStats.place_pts > 0 || team.matchStats.kill_pts > 0);
+
+    if (teamsWithData.length === 0) {
+      html += '<div class="match-header">Match ' + matchNumber + ' - No data yet</div>';
+      html += '<div style="text-align:center; padding: 2rem; color: var(--text-muted);">Match data not available</div>';
+      document.getElementById('standingsContent').innerHTML = html;
+      return;
+    }
+
+    teamsWithData.sort((a, b) => b.matchStats.total - a.matchStats.total);
+
+    html += '<div class="match-header">Match ' + matchNumber + '</div>';
+    html += '<div class="table-container"><table class="leaderboard-table"><thead><tr>';
+    html += '<th>Rank</th><th>Team</th><th>Group</th>';
+    html += '<th>Place Pts</th><th>Kill Pts</th><th>Total</th><th>🏆</th></tr></thead><tbody>';
+
+    teamsWithData.forEach((team, index) => {
+      const rank = index + 1;
+      const stats = team.matchStats;
+      const rankClass = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
+      const wwcdClass = stats.wwcd ? 'wwcd-winner' : '';
+      const wwcd = stats.wwcd ? '🏆' : '-';
+
+      html += '<tr class="' + rankClass + ' ' + wwcdClass + '">';
+      html += '<td><strong>' + rank + '</strong></td>';
+      html += '<td><div style="display:flex;align-items:center;gap:8px;">';
+      html += '<span class="team-logo-mini">' + team.team_logo + '</span>';
+      html += '<span>' + team.team_name + '</span></div></td>';
+      html += '<td>' + team.group + '</td>';
+      html += '<td>' + (stats.place_pts || 0) + '</td>';
+      html += '<td>' + (stats.kill_pts || 0) + '</td>';
+      html += '<td><strong>' + (stats.total || 0) + '</strong></td>';
+      html += '<td>' + wwcd + '</td></tr>';
+    });
+
+    html += '</tbody></table></div>';
+    document.getElementById('standingsContent').innerHTML = html;
+  }
+
+  window.selectMatch = function(matchKey) {
+    currentMatch = matchKey;
+    renderMatchSelector(currentFilter);
+  };
 
   function renderOverallCombined() {
     const teams = [...standingsData].sort((a, b) => 
@@ -394,104 +603,13 @@ import Layout from '../layouts/Layout.astro';
     document.getElementById('standingsContent').innerHTML = html;
   }
 
-  function renderOverallByGroups() {
-    const groups = {};
-    standingsData.forEach(team => {
-      if (!groups[team.group]) groups[team.group] = [];
-      groups[team.group].push(team);
-    });
-
-    let html = '';
-    Object.keys(groups).sort().forEach(groupName => {
-      const groupTeams = groups[groupName].sort((a, b) => 
-        (b.stats.overall.total_pts || 0) - (a.stats.overall.total_pts || 0)
-      );
-
-      html += '<div class="group-header">' + groupName + '</div>';
-      html += '<div class="table-container"><table class="leaderboard-table"><thead><tr>';
-      html += '<th>Rank</th><th>Team</th><th>Matches</th>';
-      html += '<th>Place Pts</th><th>Kill Pts</th><th>Total</th><th>🏆</th></tr></thead><tbody>';
-
-      groupTeams.forEach((team, index) => {
-        const rank = index + 1;
-        const stats = team.stats.overall;
-        const rankClass = rank === 1 ? 'rank-1' : '';
-        const wwcd = stats.wwcd_count > 0 ? '🏆'.repeat(stats.wwcd_count) : '-';
-
-        html += '<tr class="' + rankClass + '"><td><strong>' + rank + '</strong></td>';
-        html += '<td><div style="display:flex;align-items:center;gap:8px;">';
-        html += '<span class="team-logo-mini">' + team.team_logo + '</span>';
-        html += '<span>' + team.team_name + '</span></div></td>';
-        html += '<td>' + (stats.matches_played || 0) + '</td>';
-        html += '<td>' + (stats.finish_pts || stats.pos_pts || 0) + '</td>';
-        html += '<td>' + ((stats.total_pts || 0) - (stats.finish_pts || stats.pos_pts || 0)) + '</td>';
-        html += '<td><strong>' + (stats.total_pts || 0) + '</strong></td>';
-        html += '<td>' + wwcd + '</td></tr>';
-      });
-
-      html += '</tbody></table></div>';
-    });
-
-    document.getElementById('standingsContent').innerHTML = html;
-  }
-
-  function renderDayMatches(day) {
-    const matchKeys = day === 'finals' ? ['M1', 'M2', 'M3', 'M4', 'M5', 'M6'] : ['M1', 'M2', 'M3', 'M4'];
-    let html = '';
-
-    matchKeys.forEach(matchKey => {
-      const matchNumber = matchKey.substring(1);
-      const teamsWithData = standingsData.map(team => {
-        const matchData = team.stats[day]?.[matchKey];
-        return {
-          ...team,
-          matchStats: matchData || { place_pts: 0, kill_pts: 0, total: 0, wwcd: false }
-        };
-      }).filter(team => team.matchStats.total > 0 || team.matchStats.place_pts > 0 || team.matchStats.kill_pts > 0);
-
-      if (teamsWithData.length === 0) {
-        html += '<div class="match-header">Match ' + matchNumber + ' - No data yet</div>';
-        return;
-      }
-
-      teamsWithData.sort((a, b) => b.matchStats.total - a.matchStats.total);
-
-      html += '<div class="match-header">Match ' + matchNumber + '</div>';
-      html += '<div class="table-container"><table class="leaderboard-table"><thead><tr>';
-      html += '<th>Rank</th><th>Team</th><th>Group</th>';
-      html += '<th>Place Pts</th><th>Kill Pts</th><th>Total</th><th>🏆</th></tr></thead><tbody>';
-
-      teamsWithData.forEach((team, index) => {
-        const rank = index + 1;
-        const stats = team.matchStats;
-        const rankClass = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
-        const wwcdClass = stats.wwcd ? 'wwcd-winner' : '';
-        const wwcd = stats.wwcd ? '🏆' : '-';
-
-        html += '<tr class="' + rankClass + ' ' + wwcdClass + '">';
-        html += '<td><strong>' + rank + '</strong></td>';
-        html += '<td><div style="display:flex;align-items:center;gap:8px;">';
-        html += '<span class="team-logo-mini">' + team.team_logo + '</span>';
-        html += '<span>' + team.team_name + '</span></div></td>';
-        html += '<td>' + team.group + '</td>';
-        html += '<td>' + (stats.place_pts || 0) + '</td>';
-        html += '<td>' + (stats.kill_pts || 0) + '</td>';
-        html += '<td><strong>' + (stats.total || 0) + '</strong></td>';
-        html += '<td>' + wwcd + '</td></tr>';
-      });
-
-      html += '</tbody></table></div>';
-    });
-
-    document.getElementById('standingsContent').innerHTML = html;
-  }
-
   function setupFilters() {
     const filterBtns = document.querySelectorAll('.filter-btn');
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
+        currentMatch = null; // Reset match selection when changing filter
         renderContent(btn.dataset.filter);
       });
     });
@@ -504,6 +622,7 @@ import Layout from '../layouts/Layout.astro';
         viewBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         currentView = btn.dataset.view;
+        currentGroup = null; // Reset group selection when changing view
         if (currentFilter === 'overall') {
           renderContent('overall');
         }
@@ -511,7 +630,6 @@ import Layout from '../layouts/Layout.astro';
     });
   }
 
-  // Initialize on page load
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', loadStandings);
   } else {
