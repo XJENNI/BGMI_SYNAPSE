@@ -799,17 +799,17 @@
         "stats": {
             "overall": {
                 "matches_played": 0,
-                "finish_pts": 0,
+                "finish_pts": 11,
                 "pos_pts": 0,
-                "total_pts": 0,
+                "total_pts": 11,
                 "wwcd_count": 0,
-                "rank": 0
+                "rank": 1
             },
             "day1": {
                 "M1": {
                     "place_pts": 0,
-                    "kill_pts": 0,
-                    "total": 0,
+                    "kill_pts": 11,
+                    "total": 11,
                     "wwcd": false
                 },
                 "M2": {
@@ -1331,7 +1331,7 @@
                 "pos_pts": 0,
                 "total_pts": 10,
                 "wwcd_count": 0,
-                "rank": 1
+                "rank": 2
             },
             "day1": {
                 "M1": {
