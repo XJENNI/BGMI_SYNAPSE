@@ -13,7 +13,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
 
-      <!-- Leading Team Banner with Sunray Aura -->
+      <!-- Leading Team Banner with Dynamic Sunrays & Halo -->
       <div id="leadingTeamBannerContainer"></div>
 
       <!-- Filter Tabs -->
@@ -147,7 +147,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* ============================================
-     SUNRAY AURA + EMBER PARTICLES FOR BANNER
+     DYNAMIC SUNRAYS + TEXT HALO EFFECT
      ============================================ */
 
   /* Banner wrapper for sunray overflow */
@@ -164,7 +164,7 @@ import Layout from '../layouts/Layout.astro';
     padding: 1.125rem 1.5rem;
     text-align: center;
     position: relative;
-    overflow: visible; /* Changed from hidden to allow sunrays outside */
+    overflow: visible;
     box-shadow: 
       0 0 30px rgba(255, 69, 0, 0.6),
       0 0 60px rgba(255, 140, 0, 0.4),
@@ -173,33 +173,61 @@ import Layout from '../layouts/Layout.astro';
     z-index: 2;
   }
 
-  /* SUNRAY AURA - Radiating lines extending outside the box */
+  /* DYNAMIC SUNRAY LAYER 1 - Fast rotation with flicker */
   .leading-team-banner::before {
     content: '';
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 150%;
-    height: 150%;
+    width: 170%;
+    height: 170%;
     transform: translate(-50%, -50%);
     background: 
       repeating-conic-gradient(
         from 0deg at 50% 50%,
         rgba(255, 140, 0, 0) 0deg,
-        rgba(255, 140, 0, 0.3) 2deg,
-        rgba(255, 200, 0, 0.4) 3deg,
-        rgba(255, 140, 0, 0.3) 4deg,
+        rgba(255, 140, 0, 0.4) 2deg,
+        rgba(255, 200, 0, 0.5) 3deg,
+        rgba(255, 140, 0, 0.4) 4deg,
         rgba(255, 140, 0, 0) 6deg,
         rgba(255, 140, 0, 0) 15deg
       );
-    animation: sunray-rotate 20s linear infinite;
+    animation: sunray-rotate-fast 15s linear infinite, sunray-flicker 3s ease-in-out infinite;
     z-index: -2;
     pointer-events: none;
     border-radius: 50%;
-    filter: blur(2px);
+    filter: blur(3px);
+    opacity: 0.8;
   }
 
-  /* EMBER PARTICLES - Behind text but above background */
+  /* DYNAMIC SUNRAY LAYER 2 - Slow counter-rotation */
+  .leading-team-banner-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    transform: translate(-50%, -50%);
+    background: 
+      repeating-conic-gradient(
+        from 0deg at 50% 50%,
+        rgba(255, 69, 0, 0) 0deg,
+        rgba(255, 69, 0, 0.3) 3deg,
+        rgba(255, 140, 0, 0.4) 5deg,
+        rgba(255, 69, 0, 0.3) 7deg,
+        rgba(255, 69, 0, 0) 10deg,
+        rgba(255, 69, 0, 0) 20deg
+      );
+    animation: sunray-rotate-slow 25s linear infinite reverse, sunray-pulse 4s ease-in-out infinite;
+    z-index: -3;
+    pointer-events: none;
+    border-radius: 50%;
+    filter: blur(4px);
+    opacity: 0.6;
+  }
+
+  /* EMBER PARTICLES - Behind text */
   .leading-team-banner::after {
     content: '';
     position: absolute;
@@ -221,39 +249,54 @@ import Layout from '../layouts/Layout.astro';
     background-size: 100% 100%;
     animation: ember-float 8s ease-in-out infinite;
     z-index: 0;
-    opacity: 0.6;
+    opacity: 0.5;
     border-radius: inherit;
   }
 
-  /* TEXT - High visibility with background and strong shadows */
+  /* TEXT WITH HALO EFFECT */
   .leading-team-banner h2 {
     font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 700;
-    color: #ffffff; /* Changed to white for better visibility */
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 0;
     position: relative;
-    z-index: 10; /* High z-index to stay above all effects */
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(40, 20, 0, 0.7)); /* Dark background behind text */
+    z-index: 10;
     padding: 0.5rem 1rem;
-    border-radius: 8px;
+    animation: text-glow-pulse 2s ease-in-out infinite;
+
+    /* HALO EFFECT - Multiple glowing rings */
     text-shadow: 
-      0 0 20px rgba(255, 140, 0, 1),
-      0 0 40px rgba(255, 69, 0, 0.9),
-      0 2px 8px rgba(0, 0, 0, 0.9),
-      2px 2px 4px rgba(0, 0, 0, 1); /* Strong black shadow for contrast */
-    animation: fire-text-flicker 2s ease-in-out infinite;
-    box-shadow: 
-      0 0 20px rgba(255, 140, 0, 0.5),
-      inset 0 0 20px rgba(255, 69, 0, 0.2);
+      /* Inner bright glow */
+      0 0 10px rgba(255, 255, 255, 1),
+      0 0 20px rgba(255, 200, 0, 1),
+      /* Halo rings */
+      0 0 30px rgba(255, 140, 0, 0.9),
+      0 0 40px rgba(255, 100, 0, 0.8),
+      0 0 50px rgba(255, 69, 0, 0.7),
+      0 0 60px rgba(255, 140, 0, 0.6),
+      0 0 80px rgba(255, 140, 0, 0.5),
+      /* Strong contrast shadow */
+      2px 2px 8px rgba(0, 0, 0, 0.9);
+
+    /* Outer halo using filter */
+    filter: 
+      drop-shadow(0 0 15px rgba(255, 140, 0, 0.9))
+      drop-shadow(0 0 25px rgba(255, 140, 0, 0.7))
+      drop-shadow(0 0 35px rgba(255, 69, 0, 0.6));
+  }
+
+  /* Add wrapper class dynamically via JS */
+  .leading-team-banner-wrapper {
+    position: relative;
   }
 
   /* KEYFRAMES */
 
-  /* Sunray rotation animation */
-  @keyframes sunray-rotate {
+  /* Fast sunray rotation with flicker */
+  @keyframes sunray-rotate-fast {
     from {
       transform: translate(-50%, -50%) rotate(0deg);
     }
@@ -262,27 +305,101 @@ import Layout from '../layouts/Layout.astro';
     }
   }
 
+  /* Slow sunray rotation (counter-clockwise) */
+  @keyframes sunray-rotate-slow {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  /* Sunray flicker for dynamic effect */
+  @keyframes sunray-flicker {
+    0%, 100% {
+      opacity: 0.8;
+      filter: blur(3px);
+    }
+    20% {
+      opacity: 0.6;
+      filter: blur(4px);
+    }
+    40% {
+      opacity: 0.9;
+      filter: blur(2px);
+    }
+    60% {
+      opacity: 0.7;
+      filter: blur(3px);
+    }
+    80% {
+      opacity: 0.85;
+      filter: blur(2.5px);
+    }
+  }
+
+  /* Sunray pulse for intensity variation */
+  @keyframes sunray-pulse {
+    0%, 100% {
+      opacity: 0.6;
+      width: 200%;
+      height: 200%;
+    }
+    50% {
+      opacity: 0.8;
+      width: 210%;
+      height: 210%;
+    }
+  }
+
+  /* Text halo pulse animation */
+  @keyframes text-glow-pulse {
+    0%, 100% {
+      text-shadow: 
+        0 0 10px rgba(255, 255, 255, 1),
+        0 0 20px rgba(255, 200, 0, 1),
+        0 0 30px rgba(255, 140, 0, 0.9),
+        0 0 40px rgba(255, 100, 0, 0.8),
+        0 0 50px rgba(255, 69, 0, 0.7),
+        0 0 60px rgba(255, 140, 0, 0.6),
+        0 0 80px rgba(255, 140, 0, 0.5),
+        2px 2px 8px rgba(0, 0, 0, 0.9);
+    }
+    50% {
+      text-shadow: 
+        0 0 15px rgba(255, 255, 255, 1),
+        0 0 30px rgba(255, 200, 0, 1),
+        0 0 45px rgba(255, 140, 0, 1),
+        0 0 60px rgba(255, 100, 0, 0.9),
+        0 0 75px rgba(255, 69, 0, 0.8),
+        0 0 90px rgba(255, 140, 0, 0.7),
+        0 0 120px rgba(255, 140, 0, 0.6),
+        2px 2px 8px rgba(0, 0, 0, 0.9);
+    }
+  }
+
   /* Ember floating animation */
   @keyframes ember-float {
     0% {
       transform: translateY(0) translateX(0);
-      opacity: 0.6;
+      opacity: 0.5;
     }
     25% {
       transform: translateY(-8px) translateX(3px);
-      opacity: 0.8;
+      opacity: 0.7;
     }
     50% {
       transform: translateY(-15px) translateX(-2px);
-      opacity: 0.7;
+      opacity: 0.6;
     }
     75% {
       transform: translateY(-25px) translateX(4px);
-      opacity: 0.5;
+      opacity: 0.4;
     }
     100% {
       transform: translateY(-35px) translateX(0);
-      opacity: 0.3;
+      opacity: 0.2;
     }
   }
 
@@ -299,42 +416,6 @@ import Layout from '../layouts/Layout.astro';
         0 0 45px rgba(255, 69, 0, 0.8),
         0 0 90px rgba(255, 140, 0, 0.6),
         inset 0 0 45px rgba(255, 69, 0, 0.3);
-    }
-  }
-
-  /* Text flicker animation */
-  @keyframes fire-text-flicker {
-    0%, 100% {
-      text-shadow: 
-        0 0 20px rgba(255, 140, 0, 1),
-        0 0 40px rgba(255, 69, 0, 0.9),
-        0 2px 8px rgba(0, 0, 0, 0.9),
-        2px 2px 4px rgba(0, 0, 0, 1);
-      opacity: 1;
-    }
-    25% {
-      text-shadow: 
-        0 0 25px rgba(255, 140, 0, 1),
-        0 0 50px rgba(255, 69, 0, 1),
-        0 2px 8px rgba(0, 0, 0, 0.9),
-        2px 2px 4px rgba(0, 0, 0, 1);
-      opacity: 0.95;
-    }
-    50% {
-      text-shadow: 
-        0 0 30px rgba(255, 140, 0, 1),
-        0 0 60px rgba(255, 69, 0, 1),
-        0 2px 8px rgba(0, 0, 0, 0.9),
-        2px 2px 4px rgba(0, 0, 0, 1);
-      opacity: 1;
-    }
-    75% {
-      text-shadow: 
-        0 0 22px rgba(255, 140, 0, 1),
-        0 0 45px rgba(255, 69, 0, 0.95),
-        0 2px 8px rgba(0, 0, 0, 0.9),
-        2px 2px 4px rgba(0, 0, 0, 1);
-      opacity: 0.98;
     }
   }
 
@@ -378,8 +459,13 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .leading-team-banner::before {
-      width: 130%;
-      height: 130%;
+      width: 140%;
+      height: 140%;
+    }
+
+    .leading-team-banner-wrapper::before {
+      width: 160%;
+      height: 160%;
     }
 
     .leaderboard-table {
@@ -438,6 +524,9 @@ import Layout from '../layouts/Layout.astro';
       return teamScore > maxScore ? team : max;
     }, standingsData[0]);
 
+    // Add wrapper class to container for second sunray layer
+    container.className = 'leading-team-banner-wrapper';
+
     const banner = document.createElement('div');
     banner.className = 'leading-team-banner';
     banner.innerHTML = '<h2>' + escapeHtml(leader.team_name) + ' is Leading 🔥</h2>';
@@ -445,7 +534,7 @@ import Layout from '../layouts/Layout.astro';
     container.innerHTML = '';
     container.appendChild(banner);
 
-    console.log('☀️ Leading banner with sunray aura created');
+    console.log('✨ Leading banner with dynamic sunrays & text halo created');
   }
 
   function escapeHtml(text) {
