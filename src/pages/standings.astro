@@ -322,18 +322,21 @@ import Layout from '../layouts/Layout.astro';
 
       if (!leadingTeam) return;
 
-      // Create and insert banner (FIXED: uses team_name)
-      const banner = document.createElement('div');
-      banner.className = 'leading-team-banner';
-      banner.innerHTML = `
-        <h2 class="leading-team-text">${"$"}{escapeHtml(leadingTeam.team_name)} is Leading 🔥</h2>
-      `;
+      // Create and insert banner
+const banner = document.createElement('div');
+banner.className = 'leading-team-banner';
 
-      container.innerHTML = '';
-      container.appendChild(banner);
+const heading = document.createElement('h2');
+heading.className = 'leading-team-text';
+heading.textContent = `${leadingTeam.team_name} is Leading 🔥`; // Using textContent is safer
 
-      // Initialize fire effect after banner is in DOM
-      setTimeout(initFireEffect, 100);
+banner.appendChild(heading);
+container.innerHTML = '';
+container.appendChild(banner);
+
+// Initialize fire effect after banner is in DOM
+setTimeout(initFireEffect, 100);
+
     } catch (error) {
       console.log('Could not render leading team banner:', error);
     }
