@@ -116,12 +116,35 @@ import teamData from 'data/team.json';
 
           // Add leading badge if not already present
           if (!card.querySelector('.leading-team-badge')) {
-            const badge = document.createElement('div');
-            badge.className = 'leading-team-badge';
-            badge.innerHTML = '👑 LEADING';
-            (card as HTMLElement).style.position = 'relative';
-            card.appendChild(badge);
-          }
+  const badge = document.createElement('div');
+  badge.className = 'leading-team-badge';
+  badge.innerHTML = '👑 LEADING';
+  
+  // Force visibility with inline styles
+  badge.style.position = 'absolute';
+  badge.style.top = '-8px';
+  badge.style.right = '-8px';
+  badge.style.background = 'linear-gradient(135deg, #ff4500, #ff8c00)';
+  badge.style.color = 'white';
+  badge.style.padding = '6px 14px';
+  badge.style.borderRadius = '20px';
+  badge.style.fontSize = '0.75rem';
+  badge.style.fontWeight = '700';
+  badge.style.textTransform = 'uppercase';
+  badge.style.letterSpacing = '1px';
+  badge.style.zIndex = '1000';
+  badge.style.boxShadow = '0 0 20px rgba(255,69,0,0.8), 0 2px 8px rgba(0,0,0,0.5)';
+  badge.style.border = '2px solid rgba(255,215,0,0.5)';
+  badge.style.display = 'block';
+  badge.style.whiteSpace = 'nowrap';
+  
+  // Ensure parent card has proper positioning
+  card.style.position = 'relative';
+  card.style.overflow = 'visible';
+  
+  card.appendChild(badge);
+}
+
         }
       });
     } catch (error) {
