@@ -387,6 +387,214 @@ p { margin-bottom: var(--space-md); }
   display: none;
 }
 
+
+/* ============================================
+   🏆 LEADERBOARD ANIMATIONS & STYLES 🏆
+   (Moved here to ensure animations work globally)
+   ============================================ */
+
+/* 1. CONTAINER & BANNER */
+#leadingTeamBannerContainer {
+  position: relative;
+  margin: 3rem auto;
+  max-width: 500px;
+}
+
+.leading-team-banner {
+  background: rgba(20, 10, 5, 0.85); /* Solid dark background */
+  border: 2px solid #ff4500;
+  border-radius: 12px;
+  padding: 1.125rem 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: visible;
+  box-shadow: 
+    0 0 30px rgba(255, 69, 0, 0.6),
+    0 0 60px rgba(255, 140, 0, 0.4),
+    inset 0 0 30px rgba(255, 69, 0, 0.2);
+  animation: fire-pulse 2s ease-in-out infinite;
+  z-index: 2;
+}
+
+/* 2. RADIATION WAVES (AURA) */
+/* Wave 1 - Fast */
+.leading-team-banner::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: 
+    repeating-conic-gradient(
+      from 0deg at 50% 50%,
+      rgba(255, 140, 0, 0) 0deg,
+      rgba(255, 140, 0, 0.5) 2deg,
+      rgba(255, 200, 0, 0.6) 3deg,
+      rgba(255, 140, 0, 0.5) 4deg,
+      rgba(255, 140, 0, 0) 6deg,
+      rgba(255, 140, 0, 0) 15deg
+    );
+  animation: radiation-expand 3s ease-out infinite, sunray-rotate-fast 15s linear infinite;
+  z-index: -2;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(3px);
+  opacity: 0;
+}
+
+/* Wave 2 - Slow Reverse */
+.leading-team-banner-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: 
+    repeating-conic-gradient(
+      from 0deg at 50% 50%,
+      rgba(255, 69, 0, 0) 0deg,
+      rgba(255, 69, 0, 0.4) 3deg,
+      rgba(255, 140, 0, 0.5) 5deg,
+      rgba(255, 69, 0, 0.4) 7deg,
+      rgba(255, 69, 0, 0) 10deg,
+      rgba(255, 69, 0, 0) 20deg
+    );
+  animation: radiation-expand 3s ease-out 1.5s infinite, sunray-rotate-slow 20s linear infinite reverse;
+  z-index: -3;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(4px);
+  opacity: 0;
+}
+
+/* Wave 3 - Medium */
+.leading-team-banner-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: 
+    repeating-conic-gradient(
+      from 45deg at 50% 50%,
+      rgba(255, 100, 0, 0) 0deg,
+      rgba(255, 100, 0, 0.35) 2.5deg,
+      rgba(255, 160, 0, 0.45) 4deg,
+      rgba(255, 100, 0, 0.35) 5.5deg,
+      rgba(255, 100, 0, 0) 8deg,
+      rgba(255, 100, 0, 0) 18deg
+    );
+  animation: radiation-expand 3s ease-out 0.75s infinite, sunray-rotate-medium 17s linear infinite;
+  z-index: -2;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(3.5px);
+  opacity: 0;
+}
+
+/* 3. EMBER PARTICLES */
+.leading-team-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 15% 85%, rgba(255, 140, 0, 0.3) 0%, transparent 3%),
+    radial-gradient(circle at 45% 70%, rgba(255, 100, 0, 0.25) 0%, transparent 2%),
+    radial-gradient(circle at 75% 90%, rgba(255, 200, 0, 0.2) 0%, transparent 2.5%),
+    radial-gradient(circle at 25% 60%, rgba(255, 69, 0, 0.4) 0%, transparent 2%),
+    radial-gradient(circle at 85% 75%, rgba(255, 140, 0, 0.3) 0%, transparent 3%),
+    radial-gradient(circle at 10% 75%, rgba(255, 160, 0, 0.2) 0%, transparent 2%);
+  background-size: 100% 100%;
+  animation: ember-float 8s ease-in-out infinite;
+  z-index: 0;
+  opacity: 0.4;
+  border-radius: inherit;
+}
+
+/* 4. HIGH VISIBILITY TEXT */
+.leading-team-banner h2 {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  position: relative;
+  z-index: 10;
+  padding: 0.5rem 1rem;
+
+  text-shadow: 
+    2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000,
+    0 0 5px rgba(0,0,0,1),
+    0 0 10px rgba(255, 215, 0, 0.8),
+    0 0 20px rgba(255, 140, 0, 0.6);
+
+  animation: text-pulse-visibility 2s ease-in-out infinite;
+}
+
+/* 5. KEYFRAME DEFINITIONS */
+@keyframes radiation-expand {
+  0% { width: 100%; height: 100%; opacity: 0; filter: blur(3px); }
+  10% { opacity: 0.7; }
+  50% { width: 200%; height: 200%; opacity: 0.5; filter: blur(5px); }
+  100% { width: 250%; height: 250%; opacity: 0; filter: blur(8px); }
+}
+
+@keyframes sunray-rotate-fast {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes sunray-rotate-medium {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes sunray-rotate-slow {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes text-pulse-visibility {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 
+      2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000,
+      0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 140, 0, 0.6);
+  }
+  50% {
+    transform: scale(1.02);
+    text-shadow: 
+      2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000,
+      0 0 15px rgba(255, 215, 0, 1), 0 0 30px rgba(255, 140, 0, 0.8);
+  }
+}
+
+@keyframes ember-float {
+  0% { transform: translateY(0) translateX(0); opacity: 0.4; }
+  50% { transform: translateY(-15px) translateX(-2px); opacity: 0.5; }
+  100% { transform: translateY(-35px) translateX(0); opacity: 0.1; }
+}
+
+@keyframes fire-pulse {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(255, 69, 0, 0.6), 0 0 60px rgba(255, 140, 0, 0.4), inset 0 0 30px rgba(255, 69, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(255, 69, 0, 0.8), 0 0 90px rgba(255, 140, 0, 0.6), inset 0 0 45px rgba(255, 69, 0, 0.3);
+  }
+}
+
 /* ========== Cyber Nav Hub ========== */
 .cyber-nav-hub {
   display: grid;
