@@ -25,31 +25,14 @@ import Layout from '../layouts/Layout.astro';
         <button class="filter-btn" data-filter="finals"><span>Finals</span></button>
       </div>
 
-      <!-- Standings Table - Scrollable on mobile -->
-      <div class="table-container" style="overflow-x: auto;">
-        <table class="leaderboard-table" id="leaderboardTable">
-          <thead>
-            <tr>
-              <th>Rank</th>
-              <th>Team</th>
-              <th>Group</th>
-              <th>Matches</th>
-              <th>Place Pts</th>
-              <th>Kill Pts</th>
-              <th>Total</th>
-              <th>🏆</th>
-            </tr>
-          </thead>
-          <tbody id="leaderboardBody">
-            <tr>
-              <td colspan="8" style="text-align:center; padding: 2rem; color: var(--text-muted);">
-                <i class="fas fa-spinner fa-spin" style="font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
-                <div>Loading standings...</div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- View Toggle for Overall -->
+      <div id="overallViewToggle" style="display: none; text-align: center; margin-bottom: 1rem;">
+        <button class="view-toggle-btn active" data-view="combined">Combined</button>
+        <button class="view-toggle-btn" data-view="grouped">By Group</button>
       </div>
+
+      <!-- Content Container -->
+      <div id="standingsContent"></div>
 
       <!-- Legend -->
       <div style="margin-top: 2rem; padding: 1rem; background: rgba(255,255,255,0.02); border-radius: 8px; font-size: 0.85rem; color: var(--text-muted);">
@@ -63,19 +46,62 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style is:global>
-  /* Table container - allow horizontal scroll on all devices */
   .table-container {
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    margin-bottom: 2rem;
   }
 
-  /* Ensure table doesn't shrink */
   .leaderboard-table {
-    min-width: 700px; /* Minimum width to show all columns properly */
+    min-width: 700px;
   }
 
-  /* Reduced Banner Size - 25% Smaller */
+  .group-header {
+    background: linear-gradient(90deg, rgba(0, 174, 239, 0.2), transparent);
+    border-left: 4px solid var(--accent-cyan);
+    padding: 1rem;
+    margin: 2rem 0 1rem 0;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+  }
+
+  .match-header {
+    background: linear-gradient(90deg, rgba(255, 140, 0, 0.2), transparent);
+    border-left: 4px solid var(--accent-orange);
+    padding: 0.75rem 1rem;
+    margin: 1.5rem 0 0.75rem 0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-orange);
+  }
+
+  .view-toggle-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-muted);
+    padding: 0.5rem 1.5rem;
+    margin: 0 0.25rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+
+  .view-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .view-toggle-btn.active {
+    background: var(--accent-orange);
+    border-color: var(--accent-orange);
+    color: white;
+  }
+
   .leading-team-banner {
     background: linear-gradient(180deg, rgba(20, 0, 0, 0.95) 0%, rgba(40, 10, 0, 0.9) 100%);
     border: 2px solid var(--accent-orange);
@@ -84,7 +110,7 @@ import Layout from '../layouts/Layout.astro';
     margin: 1.5rem auto;
     text-align: center;
     position: relative;
-    overflow: visible;
+    overflow: hidden;  /* Changed from visible to hidden to contain fire */
     box-shadow: 
       0 0 30px rgba(255, 69, 0, 0.8),
       0 0 60px rgba(255, 140, 0, 0.6),
@@ -121,7 +147,6 @@ import Layout from '../layouts/Layout.astro';
     50% { background-position: 100% center; }
   }
 
-  /* Highlight first place */
   .leaderboard-table tbody tr.rank-1 {
     background: linear-gradient(90deg, rgba(255, 215, 0, 0.1), rgba(255, 140, 0, 0.05));
     border-left: 3px solid var(--accent-orange);
@@ -132,7 +157,6 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 700;
   }
 
-  /* Top 3 styling */
   .leaderboard-table tbody tr.rank-2 {
     background: rgba(192, 192, 192, 0.05);
   }
@@ -141,7 +165,11 @@ import Layout from '../layouts/Layout.astro';
     background: rgba(205, 127, 50, 0.05);
   }
 
-  /* Mobile optimization */
+  .wwcd-winner {
+    background: rgba(255, 215, 0, 0.15) !important;
+    border-left: 3px solid gold !important;
+  }
+
   @media (max-width: 768px) {
     .leading-team-banner {
       padding: 0.9rem 1.125rem;
@@ -153,7 +181,6 @@ import Layout from '../layouts/Layout.astro';
       font-size: 1.125rem;
     }
 
-    /* Reduce font size slightly on mobile for better fit */
     .leaderboard-table {
       font-size: 0.85rem;
     }
@@ -162,12 +189,18 @@ import Layout from '../layouts/Layout.astro';
     .leaderboard-table td {
       padding: 0.5rem 0.4rem;
     }
+
+    .group-header, .match-header {
+      font-size: 0.9rem;
+      padding: 0.6rem 0.8rem;
+    }
   }
 </style>
 
 <script is:inline>
+
   // ========================================
-  // DOOM PSX FIRE EFFECT
+  // DOOM PSX FIRE EFFECT - Bottom 30% Only
   // ========================================
   class DoomFire {
     constructor(element) {
@@ -198,11 +231,26 @@ import Layout from '../layouts/Layout.astro';
     }
 
     setupCanvas() {
-      this.canvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;image-rendering:pixelated;';
+      const rect = this.element.getBoundingClientRect();
+
+      // Position canvas at BOTTOM of banner, only 30% height
+      this.canvas.style.position = 'absolute';
+      this.canvas.style.left = '0';
+      this.canvas.style.bottom = '0';  // Anchor to bottom
+      this.canvas.style.width = '100%';
+      this.canvas.style.height = '30%';  // Only 30% of banner height
+      this.canvas.style.pointerEvents = 'none';
+      this.canvas.style.zIndex = '1';
+      this.canvas.style.imageRendering = 'pixelated';
+
+      // Canvas resolution
       this.canvas.width = this.fireWidth;
       this.canvas.height = this.fireHeight;
+
       this.element.style.position = 'relative';
       this.element.appendChild(this.canvas);
+
+      console.log('🔥 Fire canvas: bottom 30% of banner');
     }
 
     initFire() {
@@ -250,27 +298,30 @@ import Layout from '../layouts/Layout.astro';
     }
   }
 
+
   // ========================================
-  // DATA MANAGEMENT & TABLE RENDERING
+  // DATA MANAGEMENT
   // ========================================
   let standingsData = [];
   let currentFilter = 'overall';
+  let currentView = 'combined';
   let doomFireInstance = null;
 
   async function loadStandings() {
     try {
       const response = await fetch('/data/standings.json');
-      if (!response.ok) throw new Error('Failed to fetch standings');
+      if (!response.ok) throw new Error('Failed to fetch');
       standingsData = await response.json();
-      console.log('✅ Loaded', standingsData.length, 'teams from standings.json');
+      console.log('✅ Loaded', standingsData.length, 'teams');
 
       createLeadingBanner();
-      renderTable('overall');
+      renderContent('overall');
       setupFilters();
+      setupViewToggle();
     } catch (error) {
-      console.error('❌ Error loading standings:', error);
-      document.getElementById('leaderboardBody').innerHTML = 
-        '<tr><td colspan="8" style="text-align:center; padding: 2rem; color: var(--accent-red);">Failed to load standings. Please refresh.</td></tr>';
+      console.error('❌ Error:', error);
+      document.getElementById('standingsContent').innerHTML = 
+        '<div style="text-align:center; padding: 2rem; color: var(--accent-red);">Failed to load standings</div>';
     }
   }
 
@@ -278,14 +329,11 @@ import Layout from '../layouts/Layout.astro';
     const container = document.getElementById('leadingTeamBannerContainer');
     if (!container || standingsData.length === 0) return;
 
-    // Find leader based on overall total_pts from JSON
     const leader = standingsData.reduce((max, team) => {
       const maxScore = max.stats?.overall?.total_pts || 0;
       const teamScore = team.stats?.overall?.total_pts || 0;
       return teamScore > maxScore ? team : max;
     }, standingsData[0]);
-
-    console.log('🏆 Leader:', leader.team_name, 'with', leader.stats.overall.total_pts, 'points');
 
     const banner = document.createElement('div');
     banner.className = 'leading-team-banner';
@@ -299,99 +347,158 @@ import Layout from '../layouts/Layout.astro';
       if (!banner.dataset.fireInitialized) {
         doomFireInstance = new DoomFire(banner);
         banner.dataset.fireInitialized = 'true';
-        console.log('🔥 DOOM fire initialized');
+        console.log('🔥 DOOM fire initialized (bottom 30%)');
       }
     }, 200);
   }
 
-  function calculateDayStats(team, day) {
-    const dayData = team.stats[day];
-    if (!dayData) return { place_pts: 0, kill_pts: 0, total: 0, wwcd: 0, matches: 0 };
+  function renderContent(filter) {
+    currentFilter = filter;
+    const content = document.getElementById('standingsContent');
+    const viewToggle = document.getElementById('overallViewToggle');
 
-    let place_pts = 0, kill_pts = 0, total = 0, wwcd = 0, matches = 0;
-
-    Object.keys(dayData).forEach(matchKey => {
-      const match = dayData[matchKey];
-      if (match && typeof match === 'object') {
-        const matchPlacePts = match.place_pts || 0;
-        const matchKillPts = match.kill_pts || 0;
-
-        place_pts += matchPlacePts;
-        kill_pts += matchKillPts;
-        total += match.total || (matchPlacePts + matchKillPts);
-
-        if (match.wwcd) wwcd++;
-        if (matchPlacePts > 0 || matchKillPts > 0) matches++;
+    if (filter === 'overall') {
+      viewToggle.style.display = 'block';
+      if (currentView === 'grouped') {
+        renderOverallByGroups();
+      } else {
+        renderOverallCombined();
       }
-    });
-
-    return { place_pts, kill_pts, total, wwcd, matches };
+    } else {
+      viewToggle.style.display = 'none';
+      renderDayMatches(filter);
+    }
   }
 
-  function renderTable(filter) {
-    currentFilter = filter;
-    const tbody = document.getElementById('leaderboardBody');
+  function renderOverallCombined() {
+    const teams = [...standingsData].sort((a, b) => 
+      (b.stats.overall.total_pts || 0) - (a.stats.overall.total_pts || 0)
+    );
 
-    if (standingsData.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="8" style="text-align:center; padding: 2rem;">No data available</td></tr>';
-      return;
-    }
+    let html = '<div class="table-container"><table class="leaderboard-table"><thead><tr>';
+    html += '<th>Rank</th><th>Team</th><th>Group</th><th>Matches</th>';
+    html += '<th>Place Pts</th><th>Kill Pts</th><th>Total</th><th>🏆</th></tr></thead><tbody>';
 
-    // Calculate stats based on filter - ALL FROM JSON
-    const teamsWithStats = standingsData.map(team => {
-      let stats;
+    teams.forEach((team, index) => {
+      const rank = index + 1;
+      const stats = team.stats.overall;
+      const rankClass = rank <= 3 ? `rank-${rank}` : '';
+      const wwcd = stats.wwcd_count > 0 ? '🏆'.repeat(stats.wwcd_count) : '-';
 
-      if (filter === 'overall') {
-        // Use overall stats directly from JSON
-        const overall = team.stats.overall;
-        stats = {
-          place_pts: overall.finish_pts || overall.pos_pts || 0,
-          kill_pts: overall.pos_pts || 0,
-          total: overall.total_pts || 0,
-          wwcd: overall.wwcd_count || 0,
-          matches: overall.matches_played || 0
+      html += `<tr class="${rankClass}">
+        <td><strong>${rank}</strong></td>
+        <td><div style="display:flex;align-items:center;gap:8px;">
+          <span class="team-logo-mini">${team.team_logo}</span>
+          <span>${team.team_name}</span>
+        </div></td>
+        <td>${team.group}</td>
+        <td>${stats.matches_played || 0}</td>
+        <td>${stats.finish_pts || stats.pos_pts || 0}</td>
+        <td>${(stats.total_pts || 0) - (stats.finish_pts || stats.pos_pts || 0)}</td>
+        <td><strong>${stats.total_pts || 0}</strong></td>
+        <td>${wwcd}</td>
+      </tr>`;
+    });
+
+    html += '</tbody></table></div>';
+    document.getElementById('standingsContent').innerHTML = html;
+  }
+
+  function renderOverallByGroups() {
+    const groups = {};
+    standingsData.forEach(team => {
+      if (!groups[team.group]) groups[team.group] = [];
+      groups[team.group].push(team);
+    });
+
+    let html = '';
+    Object.keys(groups).sort().forEach(groupName => {
+      const groupTeams = groups[groupName].sort((a, b) => 
+        (b.stats.overall.total_pts || 0) - (a.stats.overall.total_pts || 0)
+      );
+
+      html += `<div class="group-header">${groupName}</div>`;
+      html += '<div class="table-container"><table class="leaderboard-table"><thead><tr>';
+      html += '<th>Rank</th><th>Team</th><th>Matches</th>';
+      html += '<th>Place Pts</th><th>Kill Pts</th><th>Total</th><th>🏆</th></tr></thead><tbody>';
+
+      groupTeams.forEach((team, index) => {
+        const rank = index + 1;
+        const stats = team.stats.overall;
+        const rankClass = rank === 1 ? 'rank-1' : '';
+        const wwcd = stats.wwcd_count > 0 ? '🏆'.repeat(stats.wwcd_count) : '-';
+
+        html += `<tr class="${rankClass}">
+          <td><strong>${rank}</strong></td>
+          <td><div style="display:flex;align-items:center;gap:8px;">
+            <span class="team-logo-mini">${team.team_logo}</span>
+            <span>${team.team_name}</span>
+          </div></td>
+          <td>${stats.matches_played || 0}</td>
+          <td>${stats.finish_pts || stats.pos_pts || 0}</td>
+          <td>${(stats.total_pts || 0) - (stats.finish_pts || stats.pos_pts || 0)}</td>
+          <td><strong>${stats.total_pts || 0}</strong></td>
+          <td>${wwcd}</td>
+        </tr>`;
+      });
+
+      html += '</tbody></table></div>';
+    });
+
+    document.getElementById('standingsContent').innerHTML = html;
+  }
+
+  function renderDayMatches(day) {
+    const matchKeys = day === 'finals' ? ['M1', 'M2', 'M3', 'M4', 'M5', 'M6'] : ['M1', 'M2', 'M3', 'M4'];
+    let html = '';
+
+    matchKeys.forEach(matchKey => {
+      const matchNumber = matchKey.substring(1);
+      const teamsWithData = standingsData.map(team => {
+        const matchData = team.stats[day]?.[matchKey];
+        return {
+          ...team,
+          matchStats: matchData || { place_pts: 0, kill_pts: 0, total: 0, wwcd: false }
         };
-      } else {
-        // Calculate from day/finals data in JSON
-        stats = calculateDayStats(team, filter);
+      }).filter(team => team.matchStats.total > 0 || team.matchStats.place_pts > 0 || team.matchStats.kill_pts > 0);
+
+      if (teamsWithData.length === 0) {
+        html += `<div class="match-header">Match ${matchNumber} - No data yet</div>`;
+        return;
       }
 
-      return { ...team, displayStats: stats };
-    });
+      teamsWithData.sort((a, b) => b.matchStats.total - a.matchStats.total);
 
-    // Sort by total points descending
-    teamsWithStats.sort((a, b) => b.displayStats.total - a.displayStats.total);
+      html += `<div class="match-header">Match ${matchNumber}</div>`;
+      html += '<div class="table-container"><table class="leaderboard-table"><thead><tr>';
+      html += '<th>Rank</th><th>Team</th><th>Group</th>';
+      html += '<th>Place Pts</th><th>Kill Pts</th><th>Total</th><th>🏆</th></tr></thead><tbody>';
 
-    // Render rows - ALL DATA FROM JSON
-    let html = '';
-    teamsWithStats.forEach((team, index) => {
-      const rank = index + 1;
-      const stats = team.displayStats;
-      const rankClass = rank <= 3 ? `rank-${rank}` : '';
+      teamsWithData.forEach((team, index) => {
+        const rank = index + 1;
+        const stats = team.matchStats;
+        const rankClass = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
+        const wwcdClass = stats.wwcd ? 'wwcd-winner' : '';
+        const wwcd = stats.wwcd ? '🏆' : '-';
 
-      const wwcdDisplay = stats.wwcd > 0 ? '🏆'.repeat(stats.wwcd) : '-';
-
-      html += `
-        <tr class="${rankClass}">
+        html += `<tr class="${rankClass} ${wwcdClass}">
           <td><strong>${rank}</strong></td>
-          <td>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span class="team-logo-mini">${team.team_logo}</span>
-              <span class="team-name-text">${team.team_name}</span>
-            </div>
-          </td>
+          <td><div style="display:flex;align-items:center;gap:8px;">
+            <span class="team-logo-mini">${team.team_logo}</span>
+            <span>${team.team_name}</span>
+          </div></td>
           <td>${team.group}</td>
-          <td>${stats.matches}</td>
-          <td>${stats.place_pts}</td>
-          <td>${stats.kill_pts}</td>
-          <td><strong>${stats.total}</strong></td>
-          <td>${wwcdDisplay}</td>
-        </tr>
-      `;
+          <td>${stats.place_pts || 0}</td>
+          <td>${stats.kill_pts || 0}</td>
+          <td><strong>${stats.total || 0}</strong></td>
+          <td>${wwcd}</td>
+        </tr>`;
+      });
+
+      html += '</tbody></table></div>';
     });
 
-    tbody.innerHTML = html;
-    console.log('✅ Table rendered:', filter, '-', teamsWithStats.length, 'teams');
+    document.getElementById('standingsContent').innerHTML = html;
   }
 
   function setupFilters() {
@@ -400,13 +507,25 @@ import Layout from '../layouts/Layout.astro';
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        renderTable(filter);
+        renderContent(btn.dataset.filter);
       });
     });
   }
 
-  // Initialize
+  function setupViewToggle() {
+    const viewBtns = document.querySelectorAll('.view-toggle-btn');
+    viewBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        viewBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentView = btn.dataset.view;
+        if (currentFilter === 'overall') {
+          renderContent('overall');
+        }
+      });
+    });
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', loadStandings);
   } else {
