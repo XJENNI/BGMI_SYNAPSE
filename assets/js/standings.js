@@ -126,6 +126,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // Sort by rank
             allTeams.sort((a, b) => a.rank - b.rank);
 
+            // Render leading team banner
+            renderLeadingTeamBanner();
+
             // Render according to filter state
             handleRendering();
             updateTimestamp();
@@ -133,6 +136,40 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (error) {
             console.error('Error fetching standings:', error);
             showError();
+        }
+    }
+
+    // ========== Render Leading Team Banner ==========
+    function renderLeadingTeamBanner() {
+        // Remove any existing banner
+        const existingBanner = document.querySelector('.leading-team-banner');
+        if (existingBanner) {
+            existingBanner.remove();
+        }
+
+        // Only show banner if we have teams and are in live mode
+        if (!allTeams || allTeams.length === 0 || !isLiveMode) {
+            return;
+        }
+
+        // Find the team with highest total score
+        const leadingTeam = allTeams.reduce((max, team) => 
+            team.totalScore > max.totalScore ? team : max
+        , allTeams[0]);
+
+        if (!leadingTeam) return;
+
+        // Create banner
+        const banner = document.createElement('div');
+        banner.className = 'leading-team-banner';
+        banner.innerHTML = `
+            <h2 class="leading-team-text">${escapeHtml(leadingTeam.teamName)} is Leading 🔥</h2>
+        `;
+
+        // Insert banner before filter tabs
+        const filterTabs = document.getElementById('filterTabs');
+        if (filterTabs && filterTabs.parentNode) {
+            filterTabs.parentNode.insertBefore(banner, filterTabs);
         }
     }
 
