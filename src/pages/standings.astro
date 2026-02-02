@@ -1,403 +1,199 @@
----
-import Layout from '../layouts/Layout.astro';
----
 
-<Layout title="Standings | MAVERICKS x SYNAPSE BGMI 2026" description="Live leaderboard and standings for SYNAPSE MAMC BGMI 2026 tournament." activePage="standings">
-  <section class="leaderboard-section">
-    <div class="container">
-      <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 25px; flex-wrap: wrap;">
-        <h1 class="page-title" style="margin:0;">Overall Standings</h1>
-        <div class="live-indicator">
-          <span class="live-dot"></span>
-          <span>Live</span>
-        </div>
-      </div>
+<script is:inline>
+  // ========================================
+  // CANVAS FIRE PARTICLE SYSTEM - COMPLETE VERSION
+  // ========================================
 
-      <!-- Leading Team Banner (will be populated by JavaScript) -->
-      <div id="leadingTeamBannerContainer"></div>
-
-      <div class="filter-tabs" id="filterTabs">
-        <button class="filter-btn active" data-filter="all">
-          <span>Overall</span>
-        </button>
-        <button class="filter-btn" data-filter="day1">
-          <span>Day 1</span>
-        </button>
-        <button class="filter-btn" data-filter="day2">
-          <span>Day 2</span>
-        </button>
-        <button class="filter-btn" data-filter="day3">
-          <span>Day 3</span>
-        </button>
-        <button class="filter-btn" data-filter="finals">
-          <span>Finals</span>
-        </button>
-      </div>
-
-      <div id="matchFilters" style="display: none; justify-content: center; gap: 10px; margin-bottom: 2rem; flex-wrap: wrap;">
-        <button class="filter-btn btn-sm" data-match="1">M1</button>
-        <button class="filter-btn btn-sm" data-match="2">M2</button>
-        <button class="filter-btn btn-sm" data-match="3">M3</button>
-        <button class="filter-btn btn-sm" data-match="4">M4</button>
-        <button class="filter-btn btn-sm" data-match="5">M5</button>
-      </div>
-
-      <div id="overallFilters" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 2rem; flex-wrap: wrap;">
-        <button class="filter-btn btn-sm active" data-group="all">Overall</button>
-        <button class="filter-btn btn-sm" data-group="A">Group A</button>
-        <button class="filter-btn btn-sm" data-group="B">Group B</button>
-        <button class="filter-btn btn-sm" data-group="C">Group C</button>
-        <button class="filter-btn btn-sm" data-group="D">Group D</button>
-        <button class="filter-btn btn-sm" data-group="mvp">MVP</button>
-      </div>
-
-      <div id="overallContainer" style="display:none;">
-        <div id="groupView">
-          <div class="group-grid">
-            <div class="group-block" id="groupA"></div>
-            <div class="group-block" id="groupB"></div>
-            <div class="group-block" id="groupC"></div>
-            <div class="group-block" id="groupD"></div>
-          </div>
-        </div>
-        <div id="mvpArea" class="mvp-area" style="display:none;"></div>
-      </div>
-
-      <div class="table-container">
-        <table class="leaderboard-table" id="leaderboardTable">
-          <thead>
-            <tr>
-              <th>Rank</th>
-              <th>Team</th>
-              <th class="hide-mobile">Group</th>
-              <th class="hide-mobile">Matches</th>
-              <th class="hide-mobile">Finish Pts</th>
-              <th class="hide-mobile">Position Pts</th>
-              <th>Total</th>
-            </tr>
-          </thead>
-          <tbody id="leaderboardBody">
-            <tr class="coming-soon-row">
-              <td colspan="7" style="text-align:center; color: var(--text-muted); font-style: italic;">Data Coming Soon</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="last-updated" id="lastUpdated">
-        Last updated: --:--
-      </div>
-    </div>
-  </section>
-</Layout>
-
-<style>
-  /* ============================================
-     EMBER EFFECT FOR LEADING TEAM BANNER
-     (EXTRA COMPACT - 60% TOTAL REDUCTION)
-     ============================================ */
-
-  /* Leading team banner - 60% smaller than original */
-  .leading-team-banner {
-    background: linear-gradient(135deg, rgba(255, 69, 0, 0.15) 0%, rgba(139, 0, 0, 0.1) 100%);
-    border: 1.5px solid #ff4500; /* Reduced from 2px */
-    border-radius: 6px; /* Reduced from 8px */
-    padding: 0.75rem 1rem; /* Reduced from 1rem 1.3rem */
-    margin-bottom: 1.1rem; /* Reduced from 1.5rem */
-    text-align: center;
-    box-shadow: 
-      0 0 15px rgba(255, 69, 0, 0.4), /* Further reduced glow */
-      0 0 30px rgba(255, 140, 0, 0.25),
-      inset 0 0 15px rgba(255, 69, 0, 0.12);
-    animation: fire-pulse 2s ease-in-out infinite;
-    position: relative;
-    overflow: hidden;
-  }
-
-  /* EMBER EFFECT - Floating ember particles (extra small) */
-  .leading-team-banner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-      radial-gradient(circle at 15% 85%, rgba(255, 140, 0, 0.4) 0%, transparent 2%), /* Further reduced */
-      radial-gradient(circle at 45% 70%, rgba(255, 100, 0, 0.3) 0%, transparent 1.2%),
-      radial-gradient(circle at 75% 90%, rgba(255, 200, 0, 0.25) 0%, transparent 1.5%),
-      radial-gradient(circle at 25% 60%, rgba(255, 69, 0, 0.5) 0%, transparent 1.2%),
-      radial-gradient(circle at 85% 75%, rgba(255, 140, 0, 0.3) 0%, transparent 2%),
-      radial-gradient(circle at 55% 95%, rgba(255, 150, 0, 0.4) 0%, transparent 1.2%),
-      radial-gradient(circle at 35% 80%, rgba(255, 100, 0, 0.25) 0%, transparent 1.5%),
-      radial-gradient(circle at 65% 65%, rgba(255, 180, 0, 0.3) 0%, transparent 1.2%),
-      radial-gradient(circle at 90% 85%, rgba(255, 120, 0, 0.4) 0%, transparent 2%),
-      radial-gradient(circle at 10% 75%, rgba(255, 160, 0, 0.25) 0%, transparent 1.2%);
-    background-size: 100% 100%;
-    animation: ember-float 8s ease-in-out infinite;
-    z-index: 0;
-    opacity: 0.6; /* Reduced from 0.7 */
-  }
-
-  /* Animated border with fire colors (extra thin) */
-  .leading-team-banner::after {
-    content: '';
-    position: absolute;
-    top: -1.5px; /* Reduced from -2px */
-    left: -1.5px;
-    right: -1.5px;
-    bottom: -1.5px;
-    background: linear-gradient(
-      45deg,
-      #ff4500 0%,
-      #ff8c00 25%,
-      #ffd700 50%,
-      #ff8c00 75%,
-      #ff4500 100%
-    );
-    background-size: 300% 300%;
-    animation: fire-border-flow 4s linear infinite;
-    z-index: -1;
-    border-radius: inherit;
-    opacity: 0.6; /* Reduced from 0.7 */
-  }
-
-  .leading-team-text {
-    font-family: var(--font-heading);
-    font-size: 0.975rem; /* Reduced from 1.3rem (25% further reduction) */
-    font-weight: 700;
-    color: #ff4500;
-    text-transform: uppercase;
-    letter-spacing: 0.975px; /* Reduced from 1.3px */
-    text-shadow: 
-      0 0 6px rgba(255, 140, 0, 0.85), /* Further reduced glow */
-      0 0 12px rgba(255, 69, 0, 0.6),
-      0 0 18px rgba(255, 200, 0, 0.4),
-      0 2px 3px rgba(0, 0, 0, 0.35);
-    animation: fire-text-flicker 2s ease-in-out infinite;
-    margin: 0;
-    position: relative;
-    z-index: 1;
-  }
-
-  /* KEYFRAMES */
-
-  /* Ember floating animation - reduced movement */
-  @keyframes ember-float {
-    0% {
-      transform: translateY(0) translateX(0);
-      opacity: 0.6;
+  class FireParticle {
+    constructor(x, y, canvas) {
+      this.x = x;
+      this.y = y;
+      this.canvas = canvas;
+      this.size = Math.random() * 8 + 2;
+      this.speedY = Math.random() * 3 + 1;
+      this.speedX = (Math.random() - 0.5) * 2;
+      this.life = 1;
+      this.decay = Math.random() * 0.015 + 0.005;
+      this.color = this.getFireColor();
     }
-    25% {
-      transform: translateY(-4px) translateX(1.5px); /* Further reduced */
-      opacity: 0.8;
+
+    getFireColor() {
+      const colors = [
+        { r: 255, g: 69, b: 0, a: 1 },
+        { r: 255, g: 140, b: 0, a: 1 },
+        { r: 255, g: 200, b: 0, a: 1 },
+        { r: 255, g: 255, b: 0, a: 0.8 },
+      ];
+      return colors[Math.floor(Math.random() * colors.length)];
     }
-    50% {
-      transform: translateY(-8px) translateX(-1px);
-      opacity: 0.7;
+
+    update() {
+      this.y -= this.speedY;
+      this.x += this.speedX;
+      this.life -= this.decay;
+      this.size *= 0.98;
     }
-    75% {
-      transform: translateY(-12px) translateX(2px);
-      opacity: 0.5;
+
+    draw(ctx) {
+      if (this.life <= 0) return;
+
+      const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size);
+      gradient.addColorStop(0, `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.life * this.color.a})`);
+      gradient.addColorStop(0.5, `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.life * 0.5})`);
+      gradient.addColorStop(1, `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, 0)`);
+
+      ctx.fillStyle = gradient;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
     }
-    100% {
-      transform: translateY(-17px) translateX(0); /* Reduced from -23px */
-      opacity: 0.3;
+
+    isAlive() {
+      return this.life > 0;
     }
   }
 
-  /* Fire pulse animation (further reduced intensity) */
-  @keyframes fire-pulse {
-    0%, 100% {
-      box-shadow: 
-        0 0 15px rgba(255, 69, 0, 0.4),
-        0 0 30px rgba(255, 140, 0, 0.25),
-        inset 0 0 15px rgba(255, 69, 0, 0.12);
+  class FireEffect {
+    constructor(element) {
+      this.element = element;
+      this.canvas = document.createElement('canvas');
+      this.ctx = this.canvas.getContext('2d');
+      this.particles = [];
+      this.animationId = null;
+      this.setupCanvas();
+      this.animate();
+      console.log('🔥 Fire effect initialized');
     }
-    50% {
-      box-shadow: 
-        0 0 22px rgba(255, 69, 0, 0.6),
-        0 0 42px rgba(255, 140, 0, 0.4),
-        inset 0 0 22px rgba(255, 69, 0, 0.2);
-    }
-  }
 
-  /* Border flow animation */
-  @keyframes fire-border-flow {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
+    setupCanvas() {
+      this.canvas.style.position = 'absolute';
+      this.canvas.style.top = '0';
+      this.canvas.style.left = '0';
+      this.canvas.style.width = '100%';
+      this.canvas.style.height = '100%';
+      this.canvas.style.pointerEvents = 'none';
+      this.canvas.style.zIndex = '1';
 
-  /* Text flicker animation (further reduced intensity) */
-  @keyframes fire-text-flicker {
-    0%, 100% {
-      text-shadow: 
-        0 0 6px rgba(255, 140, 0, 0.85),
-        0 0 12px rgba(255, 69, 0, 0.6),
-        0 0 18px rgba(255, 200, 0, 0.4),
-        0 2px 3px rgba(0, 0, 0, 0.35);
-      opacity: 1;
-    }
-    25% {
-      text-shadow: 
-        0 0 8px rgba(255, 140, 0, 0.9),
-        0 0 14px rgba(255, 69, 0, 0.7),
-        0 0 22px rgba(255, 200, 0, 0.5),
-        0 2px 3px rgba(0, 0, 0, 0.35);
-      opacity: 0.95;
-    }
-    50% {
-      text-shadow: 
-        0 0 10px rgba(255, 140, 0, 0.95),
-        0 0 18px rgba(255, 69, 0, 0.8),
-        0 0 28px rgba(255, 200, 0, 0.6),
-        0 2px 3px rgba(0, 0, 0, 0.35);
-      opacity: 1;
-    }
-    75% {
-      text-shadow: 
-        0 0 7px rgba(255, 140, 0, 0.9),
-        0 0 13px rgba(255, 69, 0, 0.65),
-        0 0 20px rgba(255, 200, 0, 0.45),
-        0 2px 3px rgba(0, 0, 0, 0.35);
-      opacity: 0.98;
-    }
-  }
+      const rect = this.element.getBoundingClientRect();
+      this.canvas.width = rect.width;
+      this.canvas.height = rect.height;
 
-  /* Mobile responsive adjustments */
-  @media (max-width: 768px) {
-    .leading-team-text {
-      font-size: 0.64rem; /* Reduced from 0.85rem */
-      letter-spacing: 0.6px;
+      this.element.style.position = 'relative';
+      this.element.appendChild(this.canvas);
+
+      window.addEventListener('resize', () => this.handleResize());
     }
-    .leading-team-banner {
-      padding: 0.49rem 0.75rem; /* Reduced from 0.65rem 1rem */
+
+    handleResize() {
+      const rect = this.element.getBoundingClientRect();
+      this.canvas.width = rect.width;
+      this.canvas.height = rect.height;
     }
-  }
-</style>
 
-<script>
-  // Standings page logic
-  const filterTabs = document.getElementById('filterTabs');
-  const matchFilters = document.getElementById('matchFilters');
-  const overallFilters = document.getElementById('overallFilters');
+    createParticles() {
+      const width = this.canvas.width;
+      const height = this.canvas.height;
 
-  filterTabs?.addEventListener('click', (e) => {
-    const target = e.target as HTMLElement;
-    const btn = target.closest('.filter-btn') as HTMLElement;
-    if (!btn) return;
-
-    const filter = btn.dataset.filter;
-
-    // Update active state
-    filterTabs.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    // Show/hide match filters based on selection
-    if (filter === 'all') {
-      if (matchFilters) matchFilters.style.display = 'none';
-      if (overallFilters) overallFilters.style.display = 'flex';
-    } else if (filter === 'finals') {
-      if (matchFilters) {
-        matchFilters.style.display = 'flex';
-        // Add extra match button for finals (6 matches)
-        const existingBtns = matchFilters.querySelectorAll('.filter-btn');
-        if (existingBtns.length === 5) {
-          const m6 = document.createElement('button');
-          m6.className = 'filter-btn btn-sm';
-          m6.dataset.match = '6';
-          m6.textContent = 'M6';
-          matchFilters.appendChild(m6);
-        }
+      // Create 3-5 particles per frame for more intense effect
+      for (let i = 0; i < 4; i++) {
+        const x = Math.random() * width;
+        const y = height - 5;
+        this.particles.push(new FireParticle(x, y, this.canvas));
       }
-      if (overallFilters) overallFilters.style.display = 'none';
-    } else {
-      if (matchFilters) {
-        matchFilters.style.display = 'flex';
-        // Remove M6 button for day matches
-        const m6Btn = matchFilters.querySelector('[data-match="6"]');
-        if (m6Btn) m6Btn.remove();
-      }
-      if (overallFilters) overallFilters.style.display = 'none';
     }
-  });
 
-  // Match filter clicks
-  matchFilters?.addEventListener('click', (e) => {
-    const target = e.target as HTMLElement;
-    const btn = target.closest('.filter-btn') as HTMLElement;
-    if (!btn) return;
+    animate() {
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-    matchFilters.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-  });
+      this.createParticles();
 
-  // Group filter clicks
-  overallFilters?.addEventListener('click', (e) => {
-    const target = e.target as HTMLElement;
-    const btn = target.closest('.filter-btn') as HTMLElement;
-    if (!btn) return;
+      this.particles = this.particles.filter(particle => {
+        particle.update();
+        particle.draw(this.ctx);
+        return particle.isAlive();
+      });
 
-    overallFilters.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-  });
+      this.animationId = requestAnimationFrame(() => this.animate());
+    }
 
-  // Render Leading Team Banner
-  async function renderLeadingTeamBanner() {
+    destroy() {
+      if (this.animationId) {
+        cancelAnimationFrame(this.animationId);
+      }
+    }
+  }
+
+  // ========================================
+  // BANNER CREATION WITH FIRE EFFECT
+  // ========================================
+
+  let fireEffectInstance = null;
+
+  function createLeadingTeamBanner() {
+    console.log('🚀 Creating leading team banner with fire effect...');
+
     const container = document.getElementById('leadingTeamBannerContainer');
-    if (!container) return;
-
-    try {
-      const response = await fetch('/data/standings.json');
-      if (!response.ok) return;
-
-      const standings = await response.json();
-      if (!standings || standings.length === 0) return;
-
-      // 🎲 RANDOM TEAM SELECTION (For Testing - Remove when tournament starts)
-      const randomIndex = Math.floor(Math.random() * standings.length);
-      const leadingTeam = standings[randomIndex];
-
-      // For production, use this instead:
-      // const leadingTeam = standings.reduce((max: any, team: any) => 
-      //   team.totalScore > max.totalScore ? team : max
-      // , standings[0]);
-
-      if (!leadingTeam) return;
-
-      // Handle different property names
-      const teamNameText = leadingTeam.teamName || leadingTeam.teamname || leadingTeam.name || "Unknown Team";
-
-      // Create and insert banner with ember effect
-      const banner = document.createElement('div');
-      banner.className = 'leading-team-banner';
-      banner.innerHTML = '<h2 class="leading-team-text">' + escapeHtml(teamNameText) + ' is Leading 🔥</h2>';
-
-      container.innerHTML = '';
-      container.appendChild(banner);
-    } catch (error) {
-      console.log('Could not render leading team banner:', error);
+    if (!container) {
+      console.error('❌ Container not found');
+      return;
     }
+
+    fetch('/data/standings.json')
+      .then(r => r.json())
+      .then(data => {
+        const leadingTeam = data.reduce((max, team) => {
+          const maxScore = max.stats?.overall?.total_pts || 0;
+          const teamScore = team.stats?.overall?.total_pts || 0;
+          return teamScore > maxScore ? team : max;
+        }, data[0]);
+
+        if (!leadingTeam) return;
+
+        // Create banner
+        const banner = document.createElement('div');
+        banner.className = 'leading-team-banner';
+        banner.id = 'leadingBanner';
+
+        const heading = document.createElement('h2');
+        heading.className = 'leading-team-text';
+        heading.textContent = leadingTeam.team_name + ' is Leading 🔥';
+
+        banner.appendChild(heading);
+        container.innerHTML = '';
+        container.appendChild(banner);
+
+        console.log('✅ Banner created:', leadingTeam.team_name);
+
+        // Initialize fire effect after a short delay to ensure DOM is ready
+        setTimeout(() => {
+          const bannerElement = document.getElementById('leadingBanner');
+          if (bannerElement && !bannerElement.dataset.fireInitialized) {
+            try {
+              fireEffectInstance = new FireEffect(bannerElement);
+              bannerElement.dataset.fireInitialized = 'true';
+              console.log('✅ Fire effect started successfully');
+            } catch (err) {
+              console.error('❌ Fire effect failed:', err);
+            }
+          }
+        }, 200);
+      })
+      .catch(err => {
+        console.error('❌ Failed to load standings:', err);
+      });
   }
 
-  // Helper function to escape HTML
-  function escapeHtml(text: string): string {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
-  }
-
-  // Load leading team banner on page load
+  // Initialize when page loads
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', renderLeadingTeamBanner);
+    document.addEventListener('DOMContentLoaded', createLeadingTeamBanner);
   } else {
-    renderLeadingTeamBanner();
+    createLeadingTeamBanner();
   }
+
+  // Cleanup on page unload
+  window.addEventListener('beforeunload', () => {
+    if (fireEffectInstance) {
+      fireEffectInstance.destroy();
+    }
+  });
 </script>
