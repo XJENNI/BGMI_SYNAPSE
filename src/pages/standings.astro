@@ -186,8 +186,8 @@ import Layout from '../layouts/Layout.astro';
       if (!standings || standings.length === 0) return;
       
       // Find the team with highest total score
-      const leadingTeam = standings.reduce((max: any, team: any) => 
-        team.totalScore > max.totalScore ? team : max
+      const leadingTeam = standings.reduce((max, team) => 
+      team.stats.overall.total_pts > max.stats.overall.total_pts ? team : max
       , standings[0]);
       
       if (!leadingTeam) return;
