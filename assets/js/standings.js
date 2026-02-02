@@ -11,6 +11,21 @@ document.addEventListener('DOMContentLoaded', function() {
         animationDelay: 50 // ms between row animations
     };
 
+    // ========== CSS Injection for Animations ==========
+    const style = document.createElement('style');
+    style.textContent = `
+        .fade-row {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .fade-row.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    `;
+    document.head.appendChild(style);
+
     // Helper: fetch with timeout using AbortController
     async function fetchWithTimeout(resource, timeout = 5000) {
         const controller = new AbortController();
@@ -54,12 +69,13 @@ document.addEventListener('DOMContentLoaded', function() {
         setupFilterListeners();
         startAutoRefresh();
         startGlobalCountdown();
-        
+
         if (viewToggle) {
             viewToggle.addEventListener('click', () => {
                 isLiveMode = !isLiveMode;
                 document.body.classList.toggle('live-mode-active', isLiveMode);
                 handleRendering();
+                renderLeadingTeamBanner(); // Re-render banner on toggle
             });
         }
     }
@@ -67,24 +83,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========== Global Countdown Timer ==========
     function startGlobalCountdown() {
         if (countdownInterval) clearInterval(countdownInterval);
-        
+
         const targetDate = new Date("February 6, 2026 12:00:00").getTime();
-        
+
         countdownInterval = setInterval(() => {
             const now = new Date().getTime();
             const distance = targetDate - now;
-            
+
             if (distance < 0) {
                 clearInterval(countdownInterval);
                 updateAllCountdowns("LIVESTREAM STARTING");
                 return;
             }
-            
+
             const d = Math.floor(distance / (1000 * 60 * 60 * 24));
             const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const s = Math.floor((distance % (1000 * 60)) / 1000);
-            
+
             const timerStr = `${d}d ${h}h ${m}m ${s}s`;
             updateAllCountdowns(timerStr);
         }, 1000);
@@ -123,8 +139,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 allPlayers = [];
             }
 
-            // Sort by rank
+            // Sort by rank - ensuring we access the correct nested property if sorting logic relies on it
+            // Assuming rank is a direct property, but if it needs calculation:
+            // allTeams.sort((a, b) => (b.stats?.overall?.total_pts || 0) - (a.stats?.overall?.total_pts || 0));
+            // But preserving original 'rank' property assumption:
             allTeams.sort((a, b) => a.rank - b.rank);
+
+            // Render leading team banner
+            renderLeadingTeamBanner();
 
             // Render according to filter state
             handleRendering();
@@ -133,6 +155,54 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (error) {
             console.error('Error fetching standings:', error);
             showError();
+        }
+    }
+
+    // ========== OPTIMIZED Render Leading Team Banner ==========
+    function renderLeadingTeamBanner() {
+        // Remove any existing banner
+        const existingBanner = document.querySelector('.leading-team-banner');
+        if (existingBanner) {
+            existingBanner.remove();
+        }
+
+        // Only show banner if we have teams and are in live mode
+        if (!allTeams || allTeams.length === 0 || !isLiveMode) {
+            return;
+        }
+
+        // Optimized & Corrected for nested JSON structure (stats.overall.total_pts)
+        let leadingTeam = allTeams[0];
+        // Safely access nested score, defaulting to 0
+        let maxScore = (leadingTeam.stats && leadingTeam.stats.overall && leadingTeam.stats.overall.total_pts) || 0;
+
+        for (let i = 1; i < allTeams.length; i++) {
+            const team = allTeams[i];
+            const score = (team.stats && team.stats.overall && team.stats.overall.total_pts) || 0;
+
+            if (score > maxScore) {
+                maxScore = score;
+                leadingTeam = team;
+            }
+        }
+
+        if (!leadingTeam) return;
+
+        // Create banner
+        const banner = document.createElement('div');
+        banner.className = 'leading-team-banner';
+        // Use team_name or teamName depending on JSON. Your JSON has 'team_name'.
+        // Original script used 'teamName'. I will try both to be safe.
+        const nameToDisplay = leadingTeam.team_name || leadingTeam.teamName || 'Unknown Team';
+
+        banner.innerHTML = `
+            <h2 class="leading-team-text">${escapeHtml(nameToDisplay)} is Leading 🔥</h2>
+        `;
+
+        // Insert banner before filter tabs
+        const filterTabs = document.getElementById('filterTabs');
+        if (filterTabs && filterTabs.parentNode) {
+            filterTabs.parentNode.insertBefore(banner, filterTabs);
         }
     }
 
@@ -147,10 +217,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========== Render Leaderboard ==========
     function renderLeaderboard(teams) {
         if (!leaderboardBody) return;
-        
+
         // Reset content
         leaderboardBody.innerHTML = '';
-        
+
         if (teams.length === 0) {
             leaderboardBody.innerHTML = `
                 <tr>
@@ -173,13 +243,13 @@ document.addEventListener('DOMContentLoaded', function() {
         leaderboardBody.appendChild(fragment);
 
         // Animate rows
-        animateRows();
+        requestAnimationFrame(() => animateRows());
     }
 
     // ========== Create Team Row ==========
     function createTeamRow(team, index) {
         const row = document.createElement('tr');
-        
+
         // Add special classes for top ranks
         if (team.rank === 1) {
             row.classList.add('rank-1');
@@ -189,19 +259,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add animation class
         row.classList.add('fade-row');
-        row.style.animationDelay = `${index * CONFIG.animationDelay}ms`;
+        row.style.transitionDelay = `${index * 50}ms`;
 
-        // If not in live mode, mask team names as Coming Soon
-        const displayName = isLiveMode ? escapeHtml(team.teamName) : 'Coming Soon';
+        // Field mapping checks for JSON compatibility
+        const tName = team.team_name || team.teamName;
+        const displayName = isLiveMode ? escapeHtml(tName) : 'Coming Soon';
+
+        // Stats extraction
+        const matches = (team.stats && team.stats.overall && team.stats.overall.matches_played) || team.matchesPlayed || 0;
+        const kills = (team.stats && team.stats.overall && team.stats.overall.kill_pts) || team.killPoints || team.kills || 0;
+        const place = (team.stats && team.stats.overall && team.stats.overall.pos_pts) || team.placementPoints || 0;
+        const total = (team.stats && team.stats.overall && team.stats.overall.total_pts) || team.totalScore || 0;
 
         row.innerHTML = `
-            <td class="rank-cell">#${team.rank}</td>
+            <td class="rank-cell">#${team.rank || index + 1}</td>
             <td class="team-name">${displayName}</td>
             <td class="hide-mobile"><span class="group-badge">${team.group}</span></td>
-            <td class="hide-mobile">${team.matchesPlayed}</td>
-            <td class="hide-mobile">${team.killPoints || team.kills || 0}</td>
-            <td class="hide-mobile">${team.placementPoints || 0}</td>
-            <td class="total-score">${team.totalScore}</td>
+            <td class="hide-mobile">${matches}</td>
+            <td class="hide-mobile">${kills}</td>
+            <td class="hide-mobile">${place}</td>
+            <td class="total-score">${total}</td>
         `;
 
         return row;
@@ -211,11 +288,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function animateRows() {
         if (!leaderboardBody) return;
         const rows = leaderboardBody.querySelectorAll('.fade-row');
-        
-        rows.forEach((row, index) => {
-            setTimeout(() => {
-                row.classList.add('visible');
-            }, index * CONFIG.animationDelay);
+        void leaderboardBody.offsetWidth; // Force reflow
+
+        rows.forEach(row => {
+            row.classList.add('visible');
         });
     }
 
@@ -284,27 +360,35 @@ document.addEventListener('DOMContentLoaded', function() {
         if (currentFilter === 'all') {
             if (overallContainer) overallContainer.style.display = 'block';
             document.querySelector('.table-container').style.display = 'none';
-            
+
             // Sub-view elements
             const groupView = document.getElementById('groupView');
             if (groupView) groupView.style.display = 'none';
             if (mvpArea) mvpArea.style.display = 'none';
-            
-            const groups = ['A','B','C','D'];
-            groups.forEach(g => {
-                const block = document.getElementById('group' + g);
-                if (block) block.style.display = 'none';
-            });
+
+            const uniqueGroups = [...new Set(allTeams.map(t => t.group))].sort();
+            const groupsToRender = uniqueGroups.length > 0 ? uniqueGroups : ['A','B','C','D','E'];
+
+            // Hide all potential group blocks first
+            document.querySelectorAll('[id^="group"]').forEach(el => el.style.display = 'none');
 
             if (currentGroup === 'mvp') {
                 if (mvpArea) mvpArea.style.display = 'block';
                 renderMVP();
             } else if (currentGroup === 'all') {
                 if (groupView) groupView.style.display = 'block';
-                groups.forEach(g => {
-                    const block = document.getElementById('group' + g);
-                    if (block) block.style.display = 'block';
-                    if (isLiveMode) renderSpecificGroup(g); else renderSpecificGroupComingSoon(g);
+                groupsToRender.forEach(g => {
+                    let block = document.getElementById('group' + g);
+                    if (!block && groupView) {
+                        block = document.createElement('div');
+                        block.id = 'group' + g;
+                        block.className = 'group-block';
+                        groupView.appendChild(block);
+                    }
+                    if (block) {
+                        block.style.display = 'block';
+                        if (isLiveMode) renderSpecificGroup(g); else renderSpecificGroupComingSoon(g);
+                    }
                 });
             } else {
                 // Specific Group
@@ -357,31 +441,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // ========== Overall View (Groups + MVP) ==========
-    function renderOverallView() {
-        // Now handled by renderSpecificGroup in a loop
-        ['A','B','C','D'].forEach(g => renderSpecificGroup(g));
-    }
-
     function renderSpecificGroup(g) {
         const container = document.getElementById('group' + g);
         if (!container) return;
-        const teams = allTeams.filter(t => t.group === g).sort((a,b) => a.rank - b.rank);
+
+        // Sorting logic fix for group display as well
+        const teams = allTeams.filter(t => t.group === g).sort((a,b) => {
+             const scoreA = (a.stats && a.stats.overall && a.stats.overall.total_pts) || a.totalScore || 0;
+             const scoreB = (b.stats && b.stats.overall && b.stats.overall.total_pts) || b.totalScore || 0;
+             return scoreB - scoreA; // Descending
+        });
+
         let html = `<h3>Group ${g}</h3>`;
         html += `<table class="leaderboard-table small" aria-label="Group ${g} standings"><thead><tr><th>Rank</th><th>Team</th><th class="hide-mobile">Finish</th><th class="hide-mobile">Pos</th><th>Total</th></tr></thead><tbody>`;
         if (teams.length === 0) {
             html += `<tr><td colspan="5" style="text-align:center; padding:1.5rem; color:var(--text-muted); font-size:0.8rem;">No data for Group ${g}</td></tr>`;
         } else {
-            teams.forEach(team => {
-                html += `<tr><td>#${team.rank}</td><td class="team-name">${escapeHtml(team.teamName)}</td><td class="hide-mobile">${team.killPoints || team.kills || 0}</td><td class="hide-mobile">${team.placementPoints || 0}</td><td class="total-score">${team.totalScore}</td></tr>`;
+            teams.forEach((team, idx) => {
+                const tName = team.team_name || team.teamName;
+                const kills = (team.stats && team.stats.overall && team.stats.overall.kill_pts) || team.killPoints || 0;
+                const pos = (team.stats && team.stats.overall && team.stats.overall.pos_pts) || team.placementPoints || 0;
+                const total = (team.stats && team.stats.overall && team.stats.overall.total_pts) || team.totalScore || 0;
+
+                html += `<tr><td>#${idx + 1}</td><td class="team-name">${escapeHtml(tName)}</td><td class="hide-mobile">${kills}</td><td class="hide-mobile">${pos}</td><td class="total-score">${total}</td></tr>`;
             });
         }
         html += '</tbody></table>';
         container.innerHTML = html;
-    }
-
-    function renderGroupsComingSoon() {
-        ['A','B','C','D'].forEach(g => renderSpecificGroupComingSoon(g));
     }
 
     function renderSpecificGroupComingSoon(g) {
@@ -452,12 +538,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // ========== Filter Teams (Keep but currently only used for 'all') ==========
-    function filterTeams(filter) {
-        if (filter === 'all') return allTeams;
-        return allTeams.filter(team => team.group === filter);
-    }
-
     // ========== Update Page Title ==========
     function updatePageTitle() {
         const pageTitle = document.querySelector('.page-title');
@@ -496,7 +576,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (refreshTimer) {
             clearInterval(refreshTimer);
         }
-        
+
         refreshTimer = setInterval(() => {
             fetchStandings();
         }, CONFIG.refreshInterval);
@@ -517,24 +597,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ========== Escape HTML ==========
     function escapeHtml(text) {
+        if (text === undefined || text === null) return '';
         const div = document.createElement('div');
         div.textContent = text;
         return div.innerHTML;
     }
 });
-
-// ========== Add CSS for row animations ==========
-const style = document.createElement('style');
-style.textContent = `
-    .fade-row {
-        opacity: 0;
-        transform: translateX(-20px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-    
-    .fade-row.visible {
-        opacity: 1;
-        transform: translateX(0);
-    }
-`;
-document.head.appendChild(style);

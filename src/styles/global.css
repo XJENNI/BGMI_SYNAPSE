@@ -387,6 +387,214 @@ p { margin-bottom: var(--space-md); }
   display: none;
 }
 
+
+/* ============================================
+   🏆 LEADERBOARD ANIMATIONS & STYLES 🏆
+   (Moved here to ensure animations work globally)
+   ============================================ */
+
+/* 1. CONTAINER & BANNER */
+#leadingTeamBannerContainer {
+  position: relative;
+  margin: 3rem auto;
+  max-width: 500px;
+}
+
+.leading-team-banner {
+  background: rgba(20, 10, 5, 0.85); /* Solid dark background */
+  border: 2px solid #ff4500;
+  border-radius: 12px;
+  padding: 1.125rem 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: visible;
+  box-shadow: 
+    0 0 30px rgba(255, 69, 0, 0.6),
+    0 0 60px rgba(255, 140, 0, 0.4),
+    inset 0 0 30px rgba(255, 69, 0, 0.2);
+  animation: fire-pulse 2s ease-in-out infinite;
+  z-index: 2;
+}
+
+/* 2. RADIATION WAVES (AURA) */
+/* Wave 1 - Fast */
+.leading-team-banner::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: 
+    repeating-conic-gradient(
+      from 0deg at 50% 50%,
+      rgba(255, 140, 0, 0) 0deg,
+      rgba(255, 140, 0, 0.5) 2deg,
+      rgba(255, 200, 0, 0.6) 3deg,
+      rgba(255, 140, 0, 0.5) 4deg,
+      rgba(255, 140, 0, 0) 6deg,
+      rgba(255, 140, 0, 0) 15deg
+    );
+  animation: radiation-expand 3s ease-out infinite, sunray-rotate-fast 15s linear infinite;
+  z-index: -2;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(3px);
+  opacity: 0;
+}
+
+/* Wave 2 - Slow Reverse */
+.leading-team-banner-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: 
+    repeating-conic-gradient(
+      from 0deg at 50% 50%,
+      rgba(255, 69, 0, 0) 0deg,
+      rgba(255, 69, 0, 0.4) 3deg,
+      rgba(255, 140, 0, 0.5) 5deg,
+      rgba(255, 69, 0, 0.4) 7deg,
+      rgba(255, 69, 0, 0) 10deg,
+      rgba(255, 69, 0, 0) 20deg
+    );
+  animation: radiation-expand 3s ease-out 1.5s infinite, sunray-rotate-slow 20s linear infinite reverse;
+  z-index: -3;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(4px);
+  opacity: 0;
+}
+
+/* Wave 3 - Medium */
+.leading-team-banner-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: 
+    repeating-conic-gradient(
+      from 45deg at 50% 50%,
+      rgba(255, 100, 0, 0) 0deg,
+      rgba(255, 100, 0, 0.35) 2.5deg,
+      rgba(255, 160, 0, 0.45) 4deg,
+      rgba(255, 100, 0, 0.35) 5.5deg,
+      rgba(255, 100, 0, 0) 8deg,
+      rgba(255, 100, 0, 0) 18deg
+    );
+  animation: radiation-expand 3s ease-out 0.75s infinite, sunray-rotate-medium 17s linear infinite;
+  z-index: -2;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(3.5px);
+  opacity: 0;
+}
+
+/* 3. EMBER PARTICLES */
+.leading-team-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 15% 85%, rgba(255, 140, 0, 0.3) 0%, transparent 3%),
+    radial-gradient(circle at 45% 70%, rgba(255, 100, 0, 0.25) 0%, transparent 2%),
+    radial-gradient(circle at 75% 90%, rgba(255, 200, 0, 0.2) 0%, transparent 2.5%),
+    radial-gradient(circle at 25% 60%, rgba(255, 69, 0, 0.4) 0%, transparent 2%),
+    radial-gradient(circle at 85% 75%, rgba(255, 140, 0, 0.3) 0%, transparent 3%),
+    radial-gradient(circle at 10% 75%, rgba(255, 160, 0, 0.2) 0%, transparent 2%);
+  background-size: 100% 100%;
+  animation: ember-float 8s ease-in-out infinite;
+  z-index: 0;
+  opacity: 0.4;
+  border-radius: inherit;
+}
+
+/* 4. HIGH VISIBILITY TEXT */
+.leading-team-banner h2 {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  position: relative;
+  z-index: 10;
+  padding: 0.5rem 1rem;
+
+  text-shadow: 
+    2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000,
+    0 0 5px rgba(0,0,0,1),
+    0 0 10px rgba(255, 215, 0, 0.8),
+    0 0 20px rgba(255, 140, 0, 0.6);
+
+  animation: text-pulse-visibility 2s ease-in-out infinite;
+}
+
+/* 5. KEYFRAME DEFINITIONS */
+@keyframes radiation-expand {
+  0% { width: 100%; height: 100%; opacity: 0; filter: blur(3px); }
+  10% { opacity: 0.7; }
+  50% { width: 200%; height: 200%; opacity: 0.5; filter: blur(5px); }
+  100% { width: 250%; height: 250%; opacity: 0; filter: blur(8px); }
+}
+
+@keyframes sunray-rotate-fast {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes sunray-rotate-medium {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes sunray-rotate-slow {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes text-pulse-visibility {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 
+      2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000,
+      0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 140, 0, 0.6);
+  }
+  50% {
+    transform: scale(1.02);
+    text-shadow: 
+      2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000,
+      0 0 15px rgba(255, 215, 0, 1), 0 0 30px rgba(255, 140, 0, 0.8);
+  }
+}
+
+@keyframes ember-float {
+  0% { transform: translateY(0) translateX(0); opacity: 0.4; }
+  50% { transform: translateY(-15px) translateX(-2px); opacity: 0.5; }
+  100% { transform: translateY(-35px) translateX(0); opacity: 0.1; }
+}
+
+@keyframes fire-pulse {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(255, 69, 0, 0.6), 0 0 60px rgba(255, 140, 0, 0.4), inset 0 0 30px rgba(255, 69, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(255, 69, 0, 0.8), 0 0 90px rgba(255, 140, 0, 0.6), inset 0 0 45px rgba(255, 69, 0, 0.3);
+  }
+}
+
 /* ========== Cyber Nav Hub ========== */
 .cyber-nav-hub {
   display: grid;
@@ -1970,9 +2178,9 @@ p { margin-bottom: var(--space-md); }
 /* ========== Registration Popup Notification ========== */
 .registration-popup {
   position: fixed;
-  top: 120px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%) translateY(-120%);
+  transform: translate(-50%, calc(-50% - 150%));
   z-index: 9999;
   opacity: 0;
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -1980,7 +2188,7 @@ p { margin-bottom: var(--space-md); }
 }
 
 .registration-popup.show {
-  transform: translateX(-50%) translateY(0);
+  transform: translate(-50%, -50%);
   opacity: 1;
   pointer-events: all;
 }
@@ -1989,10 +2197,10 @@ p { margin-bottom: var(--space-md); }
   background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
   border: 2px solid var(--accent-cyan);
   border-radius: 12px;
-  padding: 0.75rem 1rem;
+  padding: 1.728rem 2.16rem;
   box-shadow: 0 8px 32px rgba(0, 240, 255, 0.3), 0 0 60px rgba(0, 240, 255, 0.15);
-  min-width: 160px;
-  max-width: 250px;
+  min-width: 346px;
+  max-width: 547px;
   position: relative;
   transform: skewX(-2deg);
   animation: popup-glow 2s ease-in-out infinite;
@@ -2029,30 +2237,32 @@ p { margin-bottom: var(--space-md); }
 }
 
 .popup-icon {
-  font-size: 1rem;
+  font-size: 2.16rem;
   text-align: center;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.72rem;
   animation: pulse-icon 1.5s ease-in-out infinite;
 }
 
 .popup-title {
   font-family: var(--font-heading);
-  font-size: 0.625rem;
+  font-size: 1.296rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--accent-cyan);
   text-align: center;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.72rem;
   text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+  line-height: 1.3;
 }
 
 .popup-message {
   font-family: var(--font-body);
-  font-size: 0.5rem;
+  font-size: 1.08rem;
   color: var(--text-secondary);
   text-align: center;
   margin: 0;
+  font-weight: 600;
 }
 
 @keyframes popup-glow {
@@ -2076,19 +2286,19 @@ p { margin-bottom: var(--space-md); }
 /* Mobile responsive */
 @media (max-width: 768px) {
   .registration-popup {
-    top: 90px;
-    left: 10px;
-    right: 10px;
-    transform: translateX(0) translateY(-120%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 150%));
   }
 
   .registration-popup.show {
-    transform: translateX(0) translateY(0);
+    transform: translate(-50%, -50%);
   }
 
   .popup-content {
-    padding: 0.625rem 0.75rem;
-    min-width: auto;
+    padding: 1.44rem 1.728rem;
+    min-width: 317px;
+    max-width: 490px;
     transform: skewX(-1deg);
   }
 
@@ -2118,4 +2328,319 @@ p { margin-bottom: var(--space-md); }
   .hero { min-height: auto; padding: 2rem; }
   .hero-bg { display: none; }
   .hero-title { color: black; text-shadow: none; }
+}
+
+/* ========== Golden Halo Effect for Leading Team ========== */
+.leading-team-badge {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background: linear-gradient(135deg, #ff4500, #ff8c00);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 20px rgba(255, 69, 0, 0.8), 0 0 40px rgba(255, 140, 0, 0.6);
+  animation: badge-pulse 2s ease-in-out infinite;
+  z-index: 10;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.team-card.leading-team {
+  position: relative;
+  border: 3px solid #ff4500;
+  box-shadow: 
+    0 0 30px rgba(255, 69, 0, 0.7),
+    0 0 60px rgba(255, 140, 0, 0.5),
+    0 0 90px rgba(255, 200, 0, 0.3),
+    inset 0 0 30px rgba(255, 69, 0, 0.15);
+  animation: fire-pulse 2s ease-in-out infinite;
+  background: linear-gradient(135deg, rgba(255, 69, 0, 0.08) 0%, rgba(15, 15, 15, 0.95) 100%);
+}
+
+.team-card.leading-team::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(45deg, 
+    #ff4500, 
+    #ff8c00, 
+    #ffd700, 
+    #ff8c00, 
+    #ff4500);
+  background-size: 300% 300%;
+  animation: fire-border-flow 4s linear infinite;
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0.9;
+}
+
+.team-card.leading-team::after {
+  content: '🔥';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  animation: fire-flicker 1.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px rgba(255, 140, 0, 1)) drop-shadow(0 0 25px rgba(255, 69, 0, 0.8));
+}
+
+.team-card.leading-team .player-name {
+  color: #ff6347;
+  font-weight: 600;
+  text-shadow: 
+    0 0 10px rgba(255, 140, 0, 0.9),
+    0 0 20px rgba(255, 69, 0, 0.7),
+    0 0 30px rgba(255, 200, 0, 0.5);
+  animation: fire-text-flicker 2s ease-in-out infinite;
+}
+
+.team-card.leading-team .team-name {
+  color: #ff4500;
+  text-shadow: 
+    0 0 10px rgba(255, 140, 0, 1),
+    0 0 20px rgba(255, 69, 0, 0.8);
+}
+
+/* ========================================
+   ENHANCED FIRE EFFECTS - Leading Team Banner (20% SMALLER + MORE SPACING)
+   ======================================== */
+
+.leading-team-banner {
+  background: linear-gradient(180deg, rgba(20, 0, 0, 0.95) 0%, rgba(40, 10, 0, 0.9) 100%);
+  border: 3px solid #ff4500;
+  border-radius: 16px;
+  padding: 2rem 2.4rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 0 40px rgba(255, 69, 0, 0.8),
+    0 0 80px rgba(255, 140, 0, 0.6),
+    0 0 120px rgba(255, 69, 0, 0.4),
+    inset 0 -50px 80px rgba(255, 69, 0, 0.2);
+  animation: intense-fire-pulse 1.5s ease-in-out infinite;
+}
+
+/* Animated fire border */
+.leading-team-banner::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background: linear-gradient(45deg, 
+    #ff0000, #ff4500, #ff8c00, #ffd700, 
+    #ff8c00, #ff4500, #ff0000);
+  background-size: 400% 400%;
+  border-radius: inherit;
+  z-index: -1;
+  animation: fire-border-rotate 3s linear infinite;
+  filter: blur(8px);
+}
+
+/* Fire particle container */
+.leading-team-banner::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 10% 100%, rgba(255, 69, 0, 0.6) 0%, transparent 25%),
+    radial-gradient(circle at 30% 100%, rgba(255, 140, 0, 0.5) 0%, transparent 20%),
+    radial-gradient(circle at 50% 100%, rgba(255, 200, 0, 0.4) 0%, transparent 30%),
+    radial-gradient(circle at 70% 100%, rgba(255, 140, 0, 0.5) 0%, transparent 20%),
+    radial-gradient(circle at 90% 100%, rgba(255, 69, 0, 0.6) 0%, transparent 25%);
+  animation: fire-rise 2s ease-in-out infinite;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.leading-team-text {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 900;
+  background: linear-gradient(180deg, #ffd700 0%, #ff8c00 50%, #ff4500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  letter-spacing: 2.4px;
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  filter: drop-shadow(0 0 20px rgba(255, 140, 0, 1))
+          drop-shadow(0 0 40px rgba(255, 69, 0, 0.8))
+          drop-shadow(0 2px 4px rgba(0, 0, 0, 0.9));
+  animation: intense-text-glow 1.2s ease-in-out infinite;
+}
+
+/* Leading team badge on teams page */
+.leading-team-badge {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background: linear-gradient(135deg, #ff4500, #ff8c00);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 20px rgba(255, 69, 0, 0.8), 0 0 40px rgba(255, 140, 0, 0.6);
+  animation: badge-pulse 2s ease-in-out infinite;
+  z-index: 10;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.team-card.leading-team {
+  border: 2px solid #ffd700;
+  box-shadow: 
+    0 0 20px rgba(255, 215, 0, 0.6),
+    0 0 40px rgba(255, 140, 0, 0.4),
+    inset 0 0 20px rgba(255, 215, 0, 0.1);
+  animation: golden-glow-pulse 2s ease-in-out infinite;
+}
+
+/* Enhanced animations */
+@keyframes intense-fire-pulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 40px rgba(255, 69, 0, 0.8),
+      0 0 80px rgba(255, 140, 0, 0.6),
+      0 0 120px rgba(255, 69, 0, 0.4),
+      inset 0 -50px 80px rgba(255, 69, 0, 0.2);
+    transform: scale(1);
+  }
+  25% {
+    box-shadow: 
+      0 0 50px rgba(255, 140, 0, 1),
+      0 0 100px rgba(255, 69, 0, 0.8),
+      0 0 150px rgba(255, 140, 0, 0.6),
+      inset 0 -60px 100px rgba(255, 140, 0, 0.3);
+    transform: scale(1.01);
+  }
+  50% {
+    box-shadow: 
+      0 0 60px rgba(255, 200, 0, 1),
+      0 0 120px rgba(255, 140, 0, 0.9),
+      0 0 180px rgba(255, 69, 0, 0.7),
+      inset 0 -70px 120px rgba(255, 200, 0, 0.4);
+    transform: scale(1.02);
+  }
+  75% {
+    box-shadow: 
+      0 0 50px rgba(255, 140, 0, 1),
+      0 0 100px rgba(255, 69, 0, 0.8),
+      0 0 150px rgba(255, 140, 0, 0.6),
+      inset 0 -60px 100px rgba(255, 140, 0, 0.3);
+    transform: scale(1.01);
+  }
+}
+
+@keyframes fire-border-rotate {
+  0% {
+    background-position: 0% 50%;
+    filter: blur(8px) brightness(1);
+  }
+  25% {
+    filter: blur(10px) brightness(1.2);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: blur(12px) brightness(1.4);
+  }
+  75% {
+    filter: blur(10px) brightness(1.2);
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: blur(8px) brightness(1);
+  }
+}
+
+@keyframes fire-rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.9;
+  }
+  33% {
+    transform: translateY(-10px) scale(1.05);
+    opacity: 1;
+  }
+  66% {
+    transform: translateY(-20px) scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-30px) scale(1.15);
+    opacity: 0.6;
+  }
+}
+
+@keyframes intense-text-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 20px rgba(255, 140, 0, 1))
+            drop-shadow(0 0 40px rgba(255, 69, 0, 0.8))
+            drop-shadow(0 2px 4px rgba(0, 0, 0, 0.9));
+  }
+  33% {
+    filter: drop-shadow(0 0 30px rgba(255, 200, 0, 1))
+            drop-shadow(0 0 60px rgba(255, 140, 0, 1))
+            drop-shadow(0 2px 6px rgba(0, 0, 0, 0.9));
+  }
+  66% {
+    filter: drop-shadow(0 0 25px rgba(255, 140, 0, 1))
+            drop-shadow(0 0 50px rgba(255, 69, 0, 0.9))
+            drop-shadow(0 2px 4px rgba(0, 0, 0, 0.9));
+  }
+}
+
+@keyframes badge-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.8), 0 0 40px rgba(255, 140, 0, 0.6);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 140, 0, 1), 0 0 60px rgba(255, 69, 0, 0.8);
+  }
+}
+
+@keyframes golden-glow-pulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 20px rgba(255, 215, 0, 0.6),
+      0 0 40px rgba(255, 140, 0, 0.4),
+      inset 0 0 20px rgba(255, 215, 0, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 30px rgba(255, 215, 0, 0.8),
+      0 0 60px rgba(255, 140, 0, 0.6),
+      inset 0 0 30px rgba(255, 215, 0, 0.2);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .leading-team-text {
+    font-size: 1.44rem;
+  }
+
+  .leading-team-banner {
+    padding: 1.2rem 1.6rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
 }

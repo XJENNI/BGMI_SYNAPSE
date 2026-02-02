@@ -1,1476 +1,1767 @@
 [
-    {
-        "logo": "CA",
-        "name": "CAPA",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "Neochleo",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "Flawless7134",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "GamingNation18",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "Galactus",
-                "isIGL": false
-            }
-        ],
-        "college": "AIIMS NEW Delhi",
-        "team_id": "TEAM_001",
-        "group": "Group A"
-    },
-    {
-        "logo": "TK",
-        "name": "TEAM KRYO",
-        "players": [
-            {
-                "icon": "fa-skull",
-                "name": "KRYO\u300eCHAOS\u300f",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "KRYO\u300eALPHA\u300f",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "KRYO\u300eHAVOC\u300f",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-crosshairs",
-                "name": "KRYO\u300eGHOST\u300f",
-                "isIGL": false
-            }
-        ],
-        "college": "MAMC",
-        "team_id": "TEAM_002",
-        "group": "Group B"
-    },
-    {
-        "logo": "BL",
-        "name": "Blunder",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "DETAINED",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "Ethan hunt",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "YOUWILLDIE",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "TUNTUN PAPA",
-                "isIGL": false
-            }
-        ],
-        "college": "VMMC DELHI",
-        "team_id": "TEAM_003",
-        "group": "Group C"
-    },
-    {
-        "logo": "DH",
-        "name": "Dark Heaven",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "\u012b\u300eMONARCH\u300f",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "GH\u00c0AT\u00c0K",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "\u012b\u014dAMAN\u014d\u012b",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "\u012b\u300eREAPER\u300f",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "GOKU\u7384AKKI\u4e48",
-                "isIGL": false
-            }
-        ],
-        "college": "UCMS",
-        "team_id": "TEAM_004",
-        "group": "Group D"
-    },
-    {
-        "logo": "PG",
-        "name": "Pistol gang",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "\u301cMAFIA\u066d",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "CreXw\u016bBLURRY",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "\u0110\u0110\u0141Y\u4e48WOLFE",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "FICTION003",
-                "isIGL": false
-            }
-        ],
-        "college": "Abvims and rml hospital",
-        "team_id": "TEAM_005",
-        "group": "Group A"
-    },
-    {
-        "logo": "TM",
-        "name": "Team MARAUDERS",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "HexMaster9",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "DRAYUIKON",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "vinodrajbhar11",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "Sandeep047933",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "IT'SMEVRO",
-                "isIGL": false
-            }
-        ],
-        "college": "AIIMS Gorakhpur",
-        "team_id": "TEAM_006",
-        "group": "Group B"
-    },
-    {
-        "logo": "8K",
-        "name": "8kkabaap",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "Marrowpaglu55",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "Dark008knight",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "FriENdly BoT",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "tyaMeen ]] 43",
-                "isIGL": false
-            }
-        ],
-        "college": "Maulana Azad Medical College",
-        "team_id": "TEAM_007",
-        "group": "Group C"
-    },
-    {
-        "logo": "TT",
-        "name": "Team Trigonometry",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "TGMxicyy",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "TGMxTONTO",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "JamRePlayz",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "TGMxNoVa",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "\u4e48VOR\u0361\u035cTEX",
-                "isIGL": false
-            }
-        ],
-        "college": "Gajra raja medical College",
-        "team_id": "TEAM_008",
-        "group": "Group D"
-    },
-    {
-        "logo": "4G",
-        "name": "4 gods with steth",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "4GWSxKuNaL",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "4GWSxNvn",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "STARLORD",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "4GWSxVicky",
-                "isIGL": false
-            }
-        ],
-        "college": "RNT MEDICAL COLLEGE UDAIPUR",
-        "team_id": "TEAM_009",
-        "group": "Group A"
-    },
-    {
-        "logo": "TE",
-        "name": "TABHAI ESPORTS",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "TBxDhrUv",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "TBxLeO",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "TBxJxSHUA07",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "TBxDaNGeR",
-                "isIGL": false
-            }
-        ],
-        "college": "Akhilesh Das Gupta Institute Of Professional Studies",
-        "team_id": "TEAM_010",
-        "group": "Group B"
-    },
-    {
-        "logo": "NA",
-        "name": "NO AIM",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "NAxAsur",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "NAxVenom",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "NAxLexin",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "NAxLoneWolf",
-                "isIGL": false
-            }
-        ],
-        "college": "Suresh Gyan Vihar University",
-        "team_id": "TEAM_011",
-        "group": "Group C"
-    },
-    {
-        "logo": "TG",
-        "name": "Team gmc kota",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "DADDYXYUVI",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "ZoroNubb",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "4AMxNoCebo",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "TUNTUN MOSI",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "4AMxinhee6",
-                "isIGL": false
-            }
-        ],
-        "college": "Gmc kota",
-        "team_id": "TEAM_012",
-        "group": "Group D"
-    },
-    {
-        "logo": "TG",
-        "name": "TEAM GOAT",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "\u4e97 AJAY \u4e97",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "\u4e97 DRDOOM \u4e97",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "\u4e97\u0113ANSARI\u0113\u4e97",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "XQU\u00c0D=MOHIT",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "Shikari - Billa",
-                "isIGL": false
-            }
-        ],
-        "college": "GMC KOTA",
-        "team_id": "TEAM_013",
-        "group": "Group A"
-    },
-    {
-        "logo": "TZ",
-        "name": "TEAM ZEN",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "TZxspidy",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "TZxJin",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "TZxI\u012bC\u012bY",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "TZxS4N",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "M\u00ea\u00f4wM\u00eb\u00f6w",
-                "isIGL": false
-            }
-        ],
-        "college": "ITS MOHAN NAGAR GHAZIABAD",
-        "team_id": "TEAM_014",
-        "group": "Group B"
-    },
-    {
-        "logo": "\u4e48\u066d",
-        "name": "\u4e48\u066d\u3007\u0262\u30fbNPCs\u30fb\u0e5b",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "npc\u300c\uff24\uff2f\uff38\u300d",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "\u6208TERROR\u5f61BOB",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "4YxHARISH",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "GHATAK\u4e97JIGS",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "akaromanreigns",
-                "isIGL": false
-            }
-        ],
-        "college": "GMC KOTA, Rajasthan",
-        "team_id": "TEAM_015",
-        "group": "Group C"
-    },
-    {
-        "logo": "SS",
-        "name": "Suicide Squad",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "NotxAman",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "[ITS] EXOTIC",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "DARTH'''VADER",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "LZxxPULAKop",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "Pepsu Stark",
-                "isIGL": false
-            }
-        ],
-        "college": "MAMC",
-        "team_id": "TEAM_016",
-        "group": "Group D"
-    },
-    {
-        "logo": "NO",
-        "name": "NOOBS",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "JyotishmoyNar",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "\u624btmkoc\u624b",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "Devils\u4e5bEmpero",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "abHishekSingha",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "\u06ddSHREYA\u06ddS",
-                "isIGL": false
-            }
-        ],
-        "college": "IIIT Bhagalpur",
-        "team_id": "TEAM_017",
-        "group": "Group A"
-    },
-    {
-        "logo": "TR",
-        "name": "Team Revengers",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "Shubh05gamer",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "Parvesh\u00a345",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "Up32RANGER",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "\uff2e\uff25\uff2d\uff25\uff53\uff29\uff33",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "Jollyvr7",
-                "isIGL": false
-            }
-        ],
-        "college": "IIIT BHAGALPUR",
-        "team_id": "TEAM_018",
-        "group": "Group B"
-    },
-    {
-        "logo": "OS",
-        "name": "Omega Slayers",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "OSxBeast",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "W\u00d8Cx\u00d1EMES\u00eeS",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "\u300c\u016bYADAV\u014d\u300d",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "\u0e56\u06e3Unkn\u00d8wn",
-                "isIGL": false
-            }
-        ],
-        "college": "IIIT BHAGALPUR",
-        "team_id": "TEAM_019",
-        "group": "Group C"
-    },
-    {
-        "logo": "LO",
-        "name": "League of Shadows",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "LSxGBplayzYT",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "TheUglyFatGuy",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "FLx\u30fbELNoiX",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "OGxKRISH",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "WARRIOR\u5f61UJJU",
-                "isIGL": false
-            }
-        ],
-        "college": "IIIT Bhagalpur",
-        "team_id": "TEAM_020",
-        "group": "Group D"
-    },
-    {
-        "logo": "TW",
-        "name": "Team Wreckers",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "m0iZz",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "\u0e5bMARCUS\u0e5b",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "VENOMxxWALKER",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "S\u5344\uff25\u4e59\uff21\uff24AA",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "TWxEgoist",
-                "isIGL": false
-            }
-        ],
-        "college": "GMC Jammu",
-        "team_id": "TEAM_021",
-        "group": "Group A"
-    },
-    {
-        "logo": "PR",
-        "name": "PROTON",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "\u300eM Y L O\u300f",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "\u4e42PsychoQueen",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "ObsidianX2",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "RAZZchaudhary",
-                "isIGL": false
-            }
-        ],
-        "college": "NMCH Patna",
-        "team_id": "TEAM_022",
-        "group": "Group B"
-    },
-    {
-        "logo": "4D",
-        "name": "4D",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "EL MAGO",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "4TRWJODDD",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "RYHAN",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "MoODOffhaiMera",
-                "isIGL": false
-            }
-        ],
-        "college": "GMC Jammu",
-        "team_id": "TEAM_023",
-        "group": "Group C"
-    },
-    {
-        "logo": "AR",
-        "name": "AAMIR RAZA",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "DocARC",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "DocPeace44",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "GojoOGsatoru",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "DocZee34",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "Elcolocoboogey",
-                "isIGL": false
-            }
-        ],
-        "college": "GMC SRINAGAR",
-        "team_id": "TEAM_024",
-        "group": "Group D"
-    },
-    {
-        "logo": "AU",
-        "name": "AUTACOIDS",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "HRHxVaibhav",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "HRHxRitesh",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "RDXbasanti",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "ZORO",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "Skylights",
-                "isIGL": false
-            }
-        ],
-        "college": "NDMC medical College",
-        "team_id": "TEAM_025",
-        "group": "Group A"
-    },
-    {
-        "logo": "TA",
-        "name": "Team Alpha",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "VExWizzGOD",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "AxPyschoo18",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "CEunike",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "RVxPRINCE",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "NESTxZARK30111",
-                "isIGL": false
-            }
-        ],
-        "college": "Shyam Lal college evening",
-        "team_id": "TEAM_026",
-        "group": "Group B"
-    },
-    {
-        "logo": "PR",
-        "name": "Predators",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "JAYANT\u00d7\u00d71911",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "A4xDeAthG\u00f8d",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "TITAN265",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "GLDxShubzz",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "KTxdevil",
-                "isIGL": false
-            }
-        ],
-        "college": "MAMC",
-        "team_id": "TEAM_027",
-        "group": "Group C"
-    },
-    {
-        "logo": "CR",
-        "name": "Crusaderz",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "DrRetarD",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "BLTxJOD",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "NIGG\u00e01234",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "CODE RED GOD",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "Inosuke0409",
-                "isIGL": false
-            }
-        ],
-        "college": "Maulana Azad medical College",
-        "team_id": "TEAM_028",
-        "group": "Group D"
-    },
-    {
-        "logo": "DK",
-        "name": "Delhi ke dakait",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "XFTxBaqar",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "PiedPiper123",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "fizalbhai68",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "\u4e5bcLoWn",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "HYDRAMIYABHAI",
-                "isIGL": false
-            }
-        ],
-        "college": "Himsr",
-        "team_id": "TEAM_029",
-        "group": "Group A"
-    },
-    {
-        "logo": "DO",
-        "name": "Decans of Vmmc",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "WiLDxxROCKY",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "\u4e97\u012fRITESH\u012f\u4e97",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "DrGrIMReapER",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "'''switch",
-                "isIGL": false
-            }
-        ],
-        "college": "Vardhman Mahavir Medical College",
-        "team_id": "TEAM_030",
-        "group": "Group B"
-    },
-    {
-        "logo": "WE",
-        "name": "W2R Esports",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "W2RxKyansh",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "W2RxKrrish",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "W2RxGXX",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "W2RxALECTOO",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "LefiToxPlayz",
-                "isIGL": false
-            }
-        ],
-        "college": "Maharaja Agrasen Institute of Management Studies",
-        "team_id": "TEAM_031",
-        "group": "Group C"
-    },
-    {
-        "logo": "TA",
-        "name": "TEAM ALBINO",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "Stixjadoo007",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "\uff22\uff32\uff33\uff54\uff41\uff52",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "LuckyakaSAT",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "Kaushal00017",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "U8d94f1128162",
-                "isIGL": false
-            }
-        ],
-        "college": "MAMC",
-        "team_id": "TEAM_032",
-        "group": "Group D"
-    },
-    {
-        "logo": "TI",
-        "name": "Team Invincibles",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "INVIxGanjaOp",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "INVIxARYAMAN",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "TBxDhruv",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "OPxASHU",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "INVIxBOT",
-                "isIGL": false
-            }
-        ],
-        "college": "ADGIPS",
-        "team_id": "TEAM_033",
-        "group": "Group A"
-    },
-    {
-        "logo": "T(",
-        "name": "TFL (team flawless)",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "TFL\u00d7wolf",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "DR\u00d7jatin",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "TFL\u00d7legendop",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "TFL\u00d7hrsh",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "Abhishek",
-                "isIGL": false
-            }
-        ],
-        "college": "ABVIMS",
-        "team_id": "TEAM_034",
-        "group": "Group B"
-    },
-    {
-        "logo": "TC",
-        "name": "Team Cadaver",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "Shivam op",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "4MF OXIDE",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "LZMxHappy",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "Shubham",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "Rav3n",
-                "isIGL": false
-            }
-        ],
-        "college": "University College of medical sciences",
-        "team_id": "TEAM_035",
-        "group": "Group C"
-    },
-    {
-        "logo": "UP",
-        "name": "UC Phantom Force",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "SiLenTkiLLeR18",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "LUCIFER\u30c4FLASH",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "SzukaWitBzukaa",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "UCkaJUICY",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "SaubhagyaVars",
-                "isIGL": false
-            }
-        ],
-        "college": "University College Of Medical Sciences",
-        "team_id": "TEAM_036",
-        "group": "Group D"
-    },
-    {
-        "logo": "EL",
-        "name": "ElemenT",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "ETxROBIN",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "ETxKRYPTON",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "SACxRevaa7",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "ooPHROLOVAoo",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "ETxRISHIII",
-                "isIGL": false
-            }
-        ],
-        "college": "PIET",
-        "team_id": "TEAM_037",
-        "group": "Group A"
-    },
-    {
-        "logo": "CO",
-        "name": "Crypt of Liberkuhn",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "BESALTY",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "RAVYNN",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "DrShaRk",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "BoboChodu",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "DAAL\u30fbMAKHNI",
-                "isIGL": false
-            }
-        ],
-        "college": "NDMC Medical College",
-        "team_id": "TEAM_038",
-        "group": "Group B"
-    },
-    {
-        "logo": "AC",
-        "name": "ANSA CERVICALIS",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "\u4e97B\u00c8\u00c6sT\u4e97",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "BLACK\u012bDARGON",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "billu\u016bbakchod",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "AMCzZGILL",
-                "isIGL": false
-            }
-        ],
-        "college": "UCMS",
-        "team_id": "TEAM_039",
-        "group": "Group C"
-    },
-    {
-        "logo": "VE",
-        "name": "Vortex esports",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "AGxChico",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "\u30de\u012bA\u012bM\u012bA\u016bN",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "TTsC\u0141UTCHGO\u0110",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "LUTERA\u30c3THANOS",
-                "isIGL": false
-            }
-        ],
-        "college": "Maharaja Surajmal Institute",
-        "team_id": "TEAM_040",
-        "group": "Group D"
-    },
-    {
-        "logo": "DD",
-        "name": "Dangerous dragons",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "Pexx7777",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "Ujjwal1779",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "ShivanshSi36!",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "PuranchandTri",
-                "isIGL": false
-            }
-        ],
-        "college": "Maulana azad medical college",
-        "team_id": "TEAM_041",
-        "group": "Group A"
-    },
-    {
-        "logo": "TA",
-        "name": "TEAM ANGEL",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "KRYO\u300eDON\u300f",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "ZAFSTAR",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "Attiquetopper",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "Dipeshpaul",
-                "isIGL": false
-            }
-        ],
-        "college": "MAMC",
-        "team_id": "TEAM_042",
-        "group": "Group B"
-    },
-    {
-        "logo": "ME",
-        "name": "Medbugs",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "ABxABRARx720",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "SuvoThebatman",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "PeterParkerOP",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "Mr\u4e48NIKUNJ",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "IQOORNTXLOKESH",
-                "isIGL": false
-            }
-        ],
-        "college": "Government medical College, kota, rajasthan",
-        "team_id": "TEAM_043",
-        "group": "Group C"
-    },
-    {
-        "logo": "R4",
-        "name": "Reigning 4",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "R4xkira",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "R4xwhiteniqqa",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "R4xPapitaShake",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "R4xsunnyizded",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-user",
-                "name": "PyroPaimon",
-                "isIGL": false
-            }
-        ],
-        "college": "Maulana Azad Medical College",
-        "team_id": "TEAM_044",
-        "group": "Group D"
-    },
-    {
-        "logo": "T5",
-        "name": "Team 507",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "Achiyaaa\u5f61ji",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "ES\u5f61COFFIN",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "Chandra613",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "\u0143eoRon",
-                "isIGL": false
-            }
-        ],
-        "college": "Maulana Azad medical College",
-        "team_id": "TEAM_045",
-        "group": "Group A"
-    },
-    {
-        "logo": "AE",
-        "name": "AGNI ESPORTS",
-        "players": [
-            {
-                "icon": "fa-crosshairs",
-                "name": "LBOggy",
-                "isIGL": true
-            },
-            {
-                "icon": "fa-bolt",
-                "name": "AGNIxMIGHTY",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-skull",
-                "name": "MMxVAMPIRE",
-                "isIGL": false
-            },
-            {
-                "icon": "fa-shield-alt",
-                "name": "AGNIxHAVOK",
-                "isIGL": false
-            }
-        ],
-        "college": "Jeevan jyoti institute of nursing and paramedical science",
-        "team_id": "TEAM_046",
-        "group": "Group B"
-    }
+  {
+    "logo": "CA",
+    "name": "CAPA",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "Neochleo",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "Flawless7134",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "GamingNation18",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "Galactus",
+        "isIGL": false
+      }
+    ],
+    "college": "AIIMS NEW Delhi",
+    "group": "Group A",
+    "team_id": "TEAM_001"
+  },
+  {
+    "logo": "TK",
+    "name": "TEAM KRYO",
+    "players": [
+      {
+        "icon": "fa-skull",
+        "name": "KRYO\u300eCHAOS\u300f",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "KRYO\u300eALPHA\u300f",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "KRYO\u300eHAVOC\u300f",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-crosshairs",
+        "name": "KRYO\u300eGHOST\u300f",
+        "isIGL": false
+      }
+    ],
+    "college": "MAMC",
+    "group": "Group B",
+    "team_id": "TEAM_002"
+  },
+  {
+    "logo": "BL",
+    "name": "Blunder",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "DETAINED",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "Ethan hunt",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "YOUWILLDIE",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "TUNTUN PAPA",
+        "isIGL": false
+      }
+    ],
+    "college": "VMMC DELHI",
+    "group": "Group C",
+    "team_id": "TEAM_003"
+  },
+  {
+    "logo": "DH",
+    "name": "Dark Heaven",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "\u012b\u300eMONARCH\u300f",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "GH\u00c0AT\u00c0K",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "\u012b\u014dAMAN\u014d\u012b",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "\u012b\u300eREAPER\u300f",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "GOKU\u7384AKKI\u4e48",
+        "isIGL": false
+      }
+    ],
+    "college": "UCMS",
+    "group": "Group D",
+    "team_id": "TEAM_004"
+  },
+  {
+    "logo": "PG",
+    "name": "Pistol gang",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "\u301cMAFIA\u066d",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "CreXw\u016bBLURRY",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "\u0110\u0110\u0141Y\u4e48WOLFE",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "FICTION003",
+        "isIGL": false
+      }
+    ],
+    "college": "Abvims and rml hospital",
+    "group": "Group E",
+    "team_id": "TEAM_005"
+  },
+  {
+    "logo": "TM",
+    "name": "Team MARAUDERS",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "HexMaster9",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "DRAYUIKON",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "vinodrajbhar11",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "Sandeep047933",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "IT'SMEVRO",
+        "isIGL": false
+      }
+    ],
+    "college": "AIIMS Gorakhpur",
+    "group": "Group A",
+    "team_id": "TEAM_006"
+  },
+  {
+    "logo": "PE",
+    "name": "Paradox Entity",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "Your\u0e5b\u0110\u4e47ATH",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "PixeL\u00d7TracKeR",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "Susy\u79c1Baka",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "KiraIsAlive",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "Your\u0e5bF\u4e47AR",
+        "isIGL": false
+      }
+    ],
+    "college": "Aiims Jodhpur",
+    "group": "Group B",
+    "team_id": "TEAM_007"
+  },
+  {
+    "logo": "8K",
+    "name": "8kkabaap",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "Marrowpaglu55",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "Dark008knight",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "FriENdly BoT",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "tyaMeen ]] 43",
+        "isIGL": false
+      }
+    ],
+    "college": "Maulana Azad Medical College",
+    "group": "Group C",
+    "team_id": "TEAM_008"
+  },
+  {
+    "logo": "TT",
+    "name": "Team Trigonometry",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "TGMxicyy",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "TGMxTONTO",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "JamRePlayz",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "TGMxNoVa",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "\u4e48VOR\u0361\u035cTEX",
+        "isIGL": false
+      }
+    ],
+    "college": "Gajra raja medical College",
+    "group": "Group D",
+    "team_id": "TEAM_009"
+  },
+  {
+    "logo": "4G",
+    "name": "4 gods with steth",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "4GWSxKuNaL",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "4GWSxNvn",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "STARLORD",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "4GWSxVicky",
+        "isIGL": false
+      }
+    ],
+    "college": "RNT MEDICAL COLLEGE UDAIPUR",
+    "group": "Group E",
+    "team_id": "TEAM_010"
+  },
+  {
+    "logo": "TE",
+    "name": "TABHAI ESPORTS",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "TBxDhrUv",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "TBxLeO",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "TBxJxSHUA07",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "TBxDaNGeR",
+        "isIGL": false
+      }
+    ],
+    "college": "Akhilesh Das Gupta Institute Of Professional Studies",
+    "group": "Group A",
+    "team_id": "TEAM_011"
+  },
+  {
+    "logo": "NA",
+    "name": "NO AIM",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "NAxAsur",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "NAxVenom",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "NAxLexin",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "NAxLoneWolf",
+        "isIGL": false
+      }
+    ],
+    "college": "Suresh Gyan Vihar University",
+    "group": "Group B",
+    "team_id": "TEAM_012"
+  },
+  {
+    "logo": "TG",
+    "name": "Team gmc kota",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "DADDYXYUVI",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "ZoroNubb",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "4AMxNoCebo",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "TUNTUN MOSI",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "4AMxinhee6",
+        "isIGL": false
+      }
+    ],
+    "college": "Gmc kota",
+    "group": "Group C",
+    "team_id": "TEAM_013"
+  },
+  {
+    "logo": "TG",
+    "name": "TEAM GOAT",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "\u4e97 AJAY \u4e97",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "\u4e97 DRDOOM \u4e97",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "\u4e97\u0113ANSARI\u0113\u4e97",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "XQU\u00c0D=MOHIT",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "Shikari - Billa",
+        "isIGL": false
+      }
+    ],
+    "college": "GMC KOTA",
+    "group": "Group D",
+    "team_id": "TEAM_014"
+  },
+  {
+    "logo": "TZ",
+    "name": "TEAM ZEN",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "TZxspidy",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "TZxJin",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "TZxI\u012bC\u012bY",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "TZxS4N",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "M\u00ea\u00f4wM\u00eb\u00f6w",
+        "isIGL": false
+      }
+    ],
+    "college": "ITS MOHAN NAGAR GHAZIABAD",
+    "group": "Group E",
+    "team_id": "TEAM_015"
+  },
+  {
+    "logo": "\u4e48\u066d",
+    "name": "\u4e48\u066d\u3007\u0262\u30fbNPCs\u30fb\u0e5b",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "npc\u300c\uff24\uff2f\uff38\u300d",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "\u6208TERROR\u5f61BOB",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "4YxHARISH",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "GHATAK\u4e97JIGS",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "akaromanreigns",
+        "isIGL": false
+      }
+    ],
+    "college": "GMC KOTA, Rajasthan",
+    "group": "Group A",
+    "team_id": "TEAM_016"
+  },
+  {
+    "logo": "SS",
+    "name": "Suicide Squad",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "NotxAman",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "[ITS] EXOTIC",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "DARTH'''VADER",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "LZxxPULAKop",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "Pepsu Stark",
+        "isIGL": false
+      }
+    ],
+    "college": "MAMC",
+    "group": "Group B",
+    "team_id": "TEAM_017"
+  },
+  {
+    "logo": "NO",
+    "name": "NOOBS",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "JyotishmoyNar",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "\u624btmkoc\u624b",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "Devils\u4e5bEmpero",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "abHishekSingha",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "\u06ddSHREYA\u06ddS",
+        "isIGL": false
+      }
+    ],
+    "college": "IIIT Bhagalpur",
+    "group": "Group C",
+    "team_id": "TEAM_018"
+  },
+  {
+    "logo": "TR",
+    "name": "Team Revengers",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "Shubh05gamer",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "Parvesh\u00a345",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "Up32RANGER",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "\uff2e\uff25\uff2d\uff25\uff53\uff29\uff33",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "Jollyvr7",
+        "isIGL": false
+      }
+    ],
+    "college": "IIIT BHAGALPUR",
+    "group": "Group D",
+    "team_id": "TEAM_019"
+  },
+  {
+    "logo": "OS",
+    "name": "Omega Slayers",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "OSxBeast",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "W\u00d8Cx\u00d1EMES\u00eeS",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "\u300c\u016bYADAV\u014d\u300d",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "\u0e56\u06e3Unkn\u00d8wn",
+        "isIGL": false
+      }
+    ],
+    "college": "IIIT BHAGALPUR",
+    "group": "Group E",
+    "team_id": "TEAM_020"
+  },
+  {
+    "logo": "LO",
+    "name": "League of Shadows",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "LSxGBplayzYT",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "TheUglyFatGuy",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "FLx\u30fbELNoiX",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "OGxKRISH",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "WARRIOR\u5f61UJJU",
+        "isIGL": false
+      }
+    ],
+    "college": "IIIT Bhagalpur",
+    "group": "Group A",
+    "team_id": "TEAM_021"
+  },
+  {
+    "logo": "TW",
+    "name": "Team Wreckers",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "m0iZz",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "\u0e5bMARCUS\u0e5b",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "VENOMxxWALKER",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "S\u5344\uff25\u4e59\uff21\uff24AA",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "TWxEgoist",
+        "isIGL": false
+      }
+    ],
+    "college": "GMC Jammu",
+    "group": "Group B",
+    "team_id": "TEAM_022"
+  },
+  {
+    "logo": "PR",
+    "name": "PROTON",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "\u300eM Y L O\u300f",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "\u4e42PsychoQueen",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "ObsidianX2",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "RAZZchaudhary",
+        "isIGL": false
+      }
+    ],
+    "college": "NMCH Patna",
+    "group": "Group C",
+    "team_id": "TEAM_023"
+  },
+  {
+    "logo": "4D",
+    "name": "4D",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "EL MAGO",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "4TRWJODDD",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "RYHAN",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "MoODOffhaiMera",
+        "isIGL": false
+      }
+    ],
+    "college": "GMC Jammu",
+    "group": "Group D",
+    "team_id": "TEAM_024"
+  },
+  {
+    "logo": "AR",
+    "name": "AAMIR RAZA",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "DocARC",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "DocPeace44",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "GojoOGsatoru",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "DocZee34",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "Elcolocoboogey",
+        "isIGL": false
+      }
+    ],
+    "college": "GMC SRINAGAR",
+    "group": "Group E",
+    "team_id": "TEAM_025"
+  },
+  {
+    "logo": "AU",
+    "name": "AUTACOIDS",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "HRHxVaibhav",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "HRHxRitesh",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "RDXbasanti",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "ZORO",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "Skylights",
+        "isIGL": false
+      }
+    ],
+    "college": "NDMC medical College",
+    "group": "Group A",
+    "team_id": "TEAM_026"
+  },
+  {
+    "logo": "TA",
+    "name": "Team Alpha",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "VExWizzGOD",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "AxPyschoo18",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "CEunike",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "RVxPRINCE",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "NESTxZARK30111",
+        "isIGL": false
+      }
+    ],
+    "college": "Shyam Lal college evening",
+    "group": "Group B",
+    "team_id": "TEAM_027"
+  },
+  {
+    "logo": "PR",
+    "name": "Predators",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "JAYANT\u00d7\u00d71911",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "A4xDeAthG\u00f8d",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "TITAN265",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "GLDxShubzz",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "KTxdevil",
+        "isIGL": false
+      }
+    ],
+    "college": "MAMC",
+    "group": "Group C",
+    "team_id": "TEAM_028"
+  },
+  {
+    "logo": "CR",
+    "name": "Crusaderz",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "DrRetarD",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "BLTxJOD",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "NIGG\u00e01234",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "CODE RED GOD",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "Inosuke0409",
+        "isIGL": false
+      }
+    ],
+    "college": "Maulana Azad medical College",
+    "group": "Group D",
+    "team_id": "TEAM_029"
+  },
+  {
+    "logo": "DK",
+    "name": "Delhi ke dakait",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "XFTxBaqar",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "PiedPiper123",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "fizalbhai68",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "\u4e5bcLoWn",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "HYDRAMIYABHAI",
+        "isIGL": false
+      }
+    ],
+    "college": "Himsr",
+    "group": "Group E",
+    "team_id": "TEAM_030"
+  },
+  {
+    "logo": "DO",
+    "name": "Decans of Vmmc",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "WiLDxxROCKY",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "\u4e97\u012fRITESH\u012f\u4e97",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "DrGrIMReapER",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "'''switch",
+        "isIGL": false
+      }
+    ],
+    "college": "Vardhman Mahavir Medical College",
+    "group": "Group A",
+    "team_id": "TEAM_031"
+  },
+  {
+    "logo": "WE",
+    "name": "W2R Esports",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "W2RxKyansh",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "W2RxKrrish",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "W2RxGXX",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "W2RxALECTOO",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "LefiToxPlayz",
+        "isIGL": false
+      }
+    ],
+    "college": "Maharaja Agrasen Institute of Management Studies",
+    "group": "Group B",
+    "team_id": "TEAM_032"
+  },
+  {
+    "logo": "TA",
+    "name": "TEAM ALBINO",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "Stixjadoo007",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "\uff22\uff32\uff33\uff54\uff41\uff52",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "LuckyakaSAT",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "Kaushal00017",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "U8d94f1128162",
+        "isIGL": false
+      }
+    ],
+    "college": "MAMC",
+    "group": "Group C",
+    "team_id": "TEAM_033"
+  },
+  {
+    "logo": "TI",
+    "name": "Team Invincibles",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "INVIxGanjaOp",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "INVIxARYAMAN",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "TBxDhruv",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "OPxASHU",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "INVIxBOT",
+        "isIGL": false
+      }
+    ],
+    "college": "ADGIPS",
+    "group": "Group D",
+    "team_id": "TEAM_034"
+  },
+  {
+    "logo": "T(",
+    "name": "TFL (team flawless)",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "TFL\u00d7wolf",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "DR\u00d7jatin",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "TFL\u00d7legendop",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "TFL\u00d7hrsh",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "Abhishek",
+        "isIGL": false
+      }
+    ],
+    "college": "ABVIMS",
+    "group": "Group E",
+    "team_id": "TEAM_035"
+  },
+  {
+    "logo": "TC",
+    "name": "Team Cadaver",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "Shivam op",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "4MF OXIDE",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "LZMxHappy",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "Shubham",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "Rav3n",
+        "isIGL": false
+      }
+    ],
+    "college": "University College of medical sciences",
+    "group": "Group A",
+    "team_id": "TEAM_036"
+  },
+  {
+    "logo": "UP",
+    "name": "UC Phantom Force",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "SiLenTkiLLeR18",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "LUCIFER\u30c4FLASH",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "SzukaWitBzukaa",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "UCkaJUICY",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "SaubhagyaVars",
+        "isIGL": false
+      }
+    ],
+    "college": "University College Of Medical Sciences",
+    "group": "Group B",
+    "team_id": "TEAM_037"
+  },
+  {
+    "logo": "EL",
+    "name": "ElemenT",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "ETxROBIN",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "ETxKRYPTON",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "SACxRevaa7",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "ooPHROLOVAoo",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "ETxRISHIII",
+        "isIGL": false
+      }
+    ],
+    "college": "PIET",
+    "group": "Group C",
+    "team_id": "TEAM_038"
+  },
+  {
+    "logo": "CO",
+    "name": "Crypt of Liberkuhn",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "BESALTY",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "RAVYNN",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "DrShaRk",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "BoboChodu",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "DAAL\u30fbMAKHNI",
+        "isIGL": false
+      }
+    ],
+    "college": "NDMC Medical College",
+    "group": "Group D",
+    "team_id": "TEAM_039"
+  },
+  {
+    "logo": "AC",
+    "name": "ANSA CERVICALIS",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "\u4e97B\u00c8\u00c6sT\u4e97",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "BLACK\u012bDARGON",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "billu\u016bbakchod",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "AMCzZGILL",
+        "isIGL": false
+      }
+    ],
+    "college": "UCMS",
+    "group": "Group E",
+    "team_id": "TEAM_040"
+  },
+  {
+    "logo": "VE",
+    "name": "Vortex esports",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "AGxChico",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "\u30de\u012bA\u012bM\u012bA\u016bN",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "TTsC\u0141UTCHGO\u0110",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "LUTERA\u30c3THANOS",
+        "isIGL": false
+      }
+    ],
+    "college": "Maharaja Surajmal Institute",
+    "group": "Group A",
+    "team_id": "TEAM_041"
+  },
+  {
+    "logo": "DD",
+    "name": "Dangerous dragons",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "Pexx7777",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "Ujjwal1779",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "ShivanshSi36!",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "PuranchandTri",
+        "isIGL": false
+      }
+    ],
+    "college": "Maulana azad medical college",
+    "group": "Group B",
+    "team_id": "TEAM_042"
+  },
+  {
+    "logo": "TA",
+    "name": "TEAM ANGEL",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "KRYO\u300eDON\u300f",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "ZAFSTAR",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "Attiquetopper",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "Dipeshpaul",
+        "isIGL": false
+      }
+    ],
+    "college": "MAMC",
+    "group": "Group C",
+    "team_id": "TEAM_043"
+  },
+  {
+    "logo": "ME",
+    "name": "Medbugs",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "ABxABRARx720",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "SuvoThebatman",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "PeterParkerOP",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "Mr\u4e48NIKUNJ",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "IQOORNTXLOKESH",
+        "isIGL": false
+      }
+    ],
+    "college": "Government medical College, kota, rajasthan",
+    "group": "Group D",
+    "team_id": "TEAM_044"
+  },
+  {
+    "logo": "R4",
+    "name": "Reigning 4",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "R4xkira",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "R4xwhiteniqqa",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "R4xPapitaShake",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "R4xsunnyizded",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "PyroPaimon",
+        "isIGL": false
+      }
+    ],
+    "college": "Maulana Azad Medical College",
+    "group": "Group E",
+    "team_id": "TEAM_045"
+  },
+  {
+    "logo": "T5",
+    "name": "Team 507",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "Achiyaaa\u5f61ji",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "ES\u5f61COFFIN",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "Chandra613",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "\u0143eoRon",
+        "isIGL": false
+      }
+    ],
+    "college": "Maulana Azad medical College",
+    "group": "Group A",
+    "team_id": "TEAM_046"
+  },
+  {
+    "logo": "AE",
+    "name": "AGNI ESPORTS",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "LBOggy",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "AGNIxMIGHTY",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "MMxVAMPIRE",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "AGNIxHAVOK",
+        "isIGL": false
+      }
+    ],
+    "college": "Jeevan jyoti institute of nursing and paramedical science",
+    "group": "Group B",
+    "team_id": "TEAM_047"
+  },
+  {
+    "logo": "TM",
+    "name": "Team megastar",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "tangoCHARL",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "ARRE\u012b\u012bYRR",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "\u0141UFF\u01781",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "Avada1",
+        "isIGL": false
+      }
+    ],
+    "college": "Esic dental college rohini",
+    "group": "Group C",
+    "team_id": "TEAM_048"
+  },
+  {
+    "logo": "FX",
+    "name": "FORCE X",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "\u4e48SIROHI",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "SanyamJain0012",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "\u0916\u091a\u0930\u093e\u00fa",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "\u0928\u092e\u0928ji\u016b",
+        "isIGL": false
+      }
+    ],
+    "college": "Amity university Greater noida",
+    "group": "Group D",
+    "team_id": "TEAM_049"
+  },
+  {
+    "logo": "TF",
+    "name": "Team Fateh e jannat",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "\u300eD\u00cdVY\u00c5M\u300f",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "\u4e5b\u30c4Dark\u30c4\u4e5b",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "\u0604\uff2d\uff21\uff26\uff29A\u0604",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "Khelaaaaaa",
+        "isIGL": false
+      }
+    ],
+    "college": "Esic dental college",
+    "group": "Group E",
+    "team_id": "TEAM_050"
+  },
+  {
+    "logo": "TZ",
+    "name": "Team Zoldyck",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "L\u00e0ksh\u00e9Y",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "K\u00f1\u3007\u4e42\u0e5bFlash",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "DrTREHAN",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "TDT\u0470\u0e5bMEWTOW",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "vikramgautam11",
+        "isIGL": false
+      }
+    ],
+    "college": "ESIC Dental College",
+    "group": "Group A",
+    "team_id": "TEAM_051"
+  },
+  {
+    "logo": "TC",
+    "name": "TEAM CELESTIA",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "UdaYbhAi",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "Warrior\u4e08Ekam",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "GHxSTRANGE",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "BEAST\u827e\u00ccNSANE",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "R\uff91W\u4e48\u00d1\u00cdNJ\u00c5",
+        "isIGL": false
+      }
+    ],
+    "college": "MUZAFFARNAGAR MEDICAL COLLEGE",
+    "group": "Group B",
+    "team_id": "TEAM_052"
+  },
+  {
+    "logo": "TT",
+    "name": "TEAM TITAN",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "TITANXVINTAGE",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "TITANXKABIR",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "SNEHALDADDY",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "SHAWN MENDES",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "UJJWALPLAYZ",
+        "isIGL": false
+      }
+    ],
+    "college": "KD MEDICAL COLLEGE MATHURA",
+    "group": "Group C",
+    "team_id": "TEAM_053"
+  },
+  {
+    "logo": "TH",
+    "name": "Team HiMSR",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "141xMaKaRoV",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "THxKARTIK",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "S2TxMayankOG",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "ParaBotX",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "JuNi\u00d8R",
+        "isIGL": false
+      }
+    ],
+    "college": "Himsr",
+    "group": "Group D",
+    "team_id": "TEAM_054"
+  },
+  {
+    "logo": "DA",
+    "name": "Deadly Alliance",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "Deadly\u30b7Dr",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "DaRkHaWk",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "TSxRudraOP",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "968msKhairuL",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "ConStantSPIRIT",
+        "isIGL": false
+      }
+    ],
+    "college": "Noida International Institute of Medical Sciences (NIIMS) , greater Nooda",
+    "group": "Group E",
+    "team_id": "TEAM_055"
+  }
 ]

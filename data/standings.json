@@ -1,178 +1,7262 @@
 [
   {
-    "id": "team-soul",
-    "rank": 1,
-    "teamName": "Team Soul",
-    "group": "A",
-    "matchesPlayed": 6,
-    "totalKills": 42,
-    "placementPoints": 38,
-    "killPoints": 42,
-    "totalScore": 80
+    "team_id": "TEAM_001",
+    "team_name": "CAPA",
+    "team_logo": "CA",
+    "group": "Group A",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
   },
   {
-    "id": "godlike-esports",
-    "rank": 2,
-    "teamName": "GodLike Esports",
-    "group": "A",
-    "matchesPlayed": 6,
-    "totalKills": 38,
-    "placementPoints": 35,
-    "killPoints": 38,
-    "totalScore": 73
+    "team_id": "TEAM_002",
+    "team_name": "TEAM KRYO",
+    "team_logo": "TK",
+    "group": "Group B",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
   },
   {
-    "id": "team-xspark",
-    "rank": 3,
-    "teamName": "Team XSpark",
-    "group": "B",
-    "matchesPlayed": 6,
-    "totalKills": 35,
-    "placementPoints": 32,
-    "killPoints": 35,
-    "totalScore": 67
+    "team_id": "TEAM_003",
+    "team_name": "Blunder",
+    "team_logo": "BL",
+    "group": "Group C",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
   },
   {
-    "id": "orangutan-gaming",
-    "rank": 4,
-    "teamName": "Orangutan Gaming",
-    "group": "B",
-    "matchesPlayed": 6,
-    "totalKills": 33,
-    "placementPoints": 30,
-    "killPoints": 33,
-    "totalScore": 63
+    "team_id": "TEAM_004",
+    "team_name": "Dark Heaven",
+    "team_logo": "DH",
+    "group": "Group D",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
   },
   {
-    "id": "team-insane",
-    "rank": 5,
-    "teamName": "Team Insane",
-    "group": "C",
-    "matchesPlayed": 6,
-    "totalKills": 30,
-    "placementPoints": 28,
-    "killPoints": 30,
-    "totalScore": 58
+    "team_id": "TEAM_005",
+    "team_name": "Pistol gang",
+    "team_logo": "PG",
+    "group": "Group E",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
   },
   {
-    "id": "blind-esports",
-    "rank": 6,
-    "teamName": "Blind Esports",
-    "group": "C",
-    "matchesPlayed": 6,
-    "totalKills": 28,
-    "placementPoints": 27,
-    "killPoints": 28,
-    "totalScore": 55
+    "team_id": "TEAM_006",
+    "team_name": "Team MARAUDERS",
+    "team_logo": "TM",
+    "group": "Group A",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
   },
   {
-    "id": "team-mayhem",
-    "rank": 7,
-    "teamName": "Team Mayhem",
-    "group": "D",
-    "matchesPlayed": 6,
-    "totalKills": 27,
-    "placementPoints": 25,
-    "killPoints": 27,
-    "totalScore": 52
+    "team_id": "TEAM_007",
+    "team_name": "Paradox Entity",
+    "team_logo": "PE",
+    "group": "Group B",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
   },
   {
-    "id": "skylightz-gaming",
-    "rank": 8,
-    "teamName": "Skylightz Gaming",
-    "group": "D",
-    "matchesPlayed": 6,
-    "totalKills": 25,
-    "placementPoints": 24,
-    "killPoints": 25,
-    "totalScore": 49
+    "team_id": "TEAM_008",
+    "team_name": "8kkabaap",
+    "team_logo": "8K",
+    "group": "Group C",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
   },
   {
-    "id": "team-enigma",
-    "rank": 9,
-    "teamName": "Team Enigma",
-    "group": "A",
-    "matchesPlayed": 6,
-    "totalKills": 24,
-    "placementPoints": 22,
-    "killPoints": 24,
-    "totalScore": 46
+    "team_id": "TEAM_009",
+    "team_name": "Team Trigonometry",
+    "team_logo": "TT",
+    "group": "Group D",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
   },
   {
-    "id": "velocity-gaming",
-    "rank": 10,
-    "teamName": "Velocity Gaming",
-    "group": "B",
-    "matchesPlayed": 6,
-    "totalKills": 22,
-    "placementPoints": 21,
-    "killPoints": 22,
-    "totalScore": 43
+    "team_id": "TEAM_010",
+    "team_name": "4 gods with steth",
+    "team_logo": "4G",
+    "group": "Group E",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
   },
   {
-    "id": "hydra-official",
-    "rank": 11,
-    "teamName": "Hydra Official",
-    "group": "C",
-    "matchesPlayed": 6,
-    "totalKills": 21,
-    "placementPoints": 20,
-    "killPoints": 21,
-    "totalScore": 41
+    "team_id": "TEAM_011",
+    "team_name": "TABHAI ESPORTS",
+    "team_logo": "TE",
+    "group": "Group A",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
   },
   {
-    "id": "team-tamilas",
-    "rank": 12,
-    "teamName": "Team TamilAS",
-    "group": "D",
-    "matchesPlayed": 6,
-    "totalKills": 20,
-    "placementPoints": 18,
-    "killPoints": 20,
-    "totalScore": 38
+    "team_id": "TEAM_012",
+    "team_name": "NO AIM",
+    "team_logo": "NA",
+    "group": "Group B",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
   },
   {
-    "id": "team-ind",
-    "rank": 13,
-    "teamName": "Team IND",
-    "group": "A",
-    "matchesPlayed": 6,
-    "totalKills": 18,
-    "placementPoints": 17,
-    "killPoints": 18,
-    "totalScore": 35
+    "team_id": "TEAM_013",
+    "team_name": "Team gmc kota",
+    "team_logo": "TG",
+    "group": "Group C",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
   },
   {
-    "id": "global-esports",
-    "rank": 14,
-    "teamName": "Global Esports",
-    "group": "B",
-    "matchesPlayed": 6,
-    "totalKills": 17,
-    "placementPoints": 15,
-    "killPoints": 17,
-    "totalScore": 32
+    "team_id": "TEAM_014",
+    "team_name": "TEAM GOAT",
+    "team_logo": "TG",
+    "group": "Group D",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
   },
   {
-    "id": "revenant-esports",
-    "rank": 15,
-    "teamName": "Revenant Esports",
-    "group": "C",
-    "matchesPlayed": 6,
-    "totalKills": 15,
-    "placementPoints": 14,
-    "killPoints": 15,
-    "totalScore": 29
+    "team_id": "TEAM_015",
+    "team_name": "TEAM ZEN",
+    "team_logo": "TZ",
+    "group": "Group E",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
   },
   {
-    "id": "team-forever",
-    "rank": 16,
-    "teamName": "Team Forever",
-    "group": "D",
-    "matchesPlayed": 6,
-    "totalKills": 14,
-    "placementPoints": 12,
-    "killPoints": 14,
-    "totalScore": 26
+    "team_id": "TEAM_016",
+    "team_name": "\u4e48\u066d\u3007\u0262\u30fbNPCs\u30fb\u0e5b",
+    "team_logo": "\u4e48\u066d",
+    "group": "Group A",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_017",
+    "team_name": "Suicide Squad",
+    "team_logo": "SS",
+    "group": "Group B",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_018",
+    "team_name": "NOOBS",
+    "team_logo": "NO",
+    "group": "Group C",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_019",
+    "team_name": "Team Revengers",
+    "team_logo": "TR",
+    "group": "Group D",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_020",
+    "team_name": "Omega Slayers",
+    "team_logo": "OS",
+    "group": "Group E",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_021",
+    "team_name": "League of Shadows",
+    "team_logo": "LO",
+    "group": "Group A",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_022",
+    "team_name": "Team Wreckers",
+    "team_logo": "TW",
+    "group": "Group B",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_023",
+    "team_name": "PROTON",
+    "team_logo": "PR",
+    "group": "Group C",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_024",
+    "team_name": "4D",
+    "team_logo": "4D",
+    "group": "Group D",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_025",
+    "team_name": "AAMIR RAZA",
+    "team_logo": "AR",
+    "group": "Group E",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_026",
+    "team_name": "AUTACOIDS",
+    "team_logo": "AU",
+    "group": "Group A",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_027",
+    "team_name": "Team Alpha",
+    "team_logo": "TA",
+    "group": "Group B",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_028",
+    "team_name": "Predators",
+    "team_logo": "PR",
+    "group": "Group C",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_029",
+    "team_name": "Crusaderz",
+    "team_logo": "CR",
+    "group": "Group D",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_030",
+    "team_name": "Delhi ke dakait",
+    "team_logo": "DK",
+    "group": "Group E",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_031",
+    "team_name": "Decans of Vmmc",
+    "team_logo": "DO",
+    "group": "Group A",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_032",
+    "team_name": "W2R Esports",
+    "team_logo": "WE",
+    "group": "Group B",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_033",
+    "team_name": "TEAM ALBINO",
+    "team_logo": "TA",
+    "group": "Group C",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_034",
+    "team_name": "Team Invincibles",
+    "team_logo": "TI",
+    "group": "Group D",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_035",
+    "team_name": "TFL (team flawless)",
+    "team_logo": "T(",
+    "group": "Group E",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_036",
+    "team_name": "Team Cadaver",
+    "team_logo": "TC",
+    "group": "Group A",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_037",
+    "team_name": "UC Phantom Force",
+    "team_logo": "UP",
+    "group": "Group B",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_038",
+    "team_name": "ElemenT",
+    "team_logo": "EL",
+    "group": "Group C",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_039",
+    "team_name": "Crypt of Liberkuhn",
+    "team_logo": "CO",
+    "group": "Group D",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_040",
+    "team_name": "ANSA CERVICALIS",
+    "team_logo": "AC",
+    "group": "Group E",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_041",
+    "team_name": "Vortex esports",
+    "team_logo": "VE",
+    "group": "Group A",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_042",
+    "team_name": "Dangerous dragons",
+    "team_logo": "DD",
+    "group": "Group B",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_043",
+    "team_name": "TEAM ANGEL",
+    "team_logo": "TA",
+    "group": "Group C",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_044",
+    "team_name": "Medbugs",
+    "team_logo": "ME",
+    "group": "Group D",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_045",
+    "team_name": "Reigning 4",
+    "team_logo": "R4",
+    "group": "Group E",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_046",
+    "team_name": "Team 507",
+    "team_logo": "T5",
+    "group": "Group A",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_047",
+    "team_name": "AGNI ESPORTS",
+    "team_logo": "AE",
+    "group": "Group B",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_048",
+    "team_name": "Team megastar",
+    "team_logo": "TM",
+    "group": "Group C",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_049",
+    "team_name": "FORCE X",
+    "team_logo": "FX",
+    "group": "Group D",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_050",
+    "team_name": "Team Fateh e jannat",
+    "team_logo": "TF",
+    "group": "Group E",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_051",
+    "team_name": "Team Zoldyck",
+    "team_logo": "TZ",
+    "group": "Group A",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_052",
+    "team_name": "TEAM CELESTIA",
+    "team_logo": "TC",
+    "group": "Group B",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_053",
+    "team_name": "TEAM TITAN",
+    "team_logo": "TT",
+    "group": "Group C",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_054",
+    "team_name": "Team HiMSR",
+    "team_logo": "TH",
+    "group": "Group D",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
+  },
+  {
+    "team_id": "TEAM_055",
+    "team_name": "Deadly Alliance",
+    "team_logo": "DA",
+    "group": "Group E",
+    "stats": {
+      "overall": {
+        "matches_played": 0,
+        "finish_pts": 0,
+        "pos_pts": 0,
+        "total_pts": 0,
+        "wwcd_count": 0,
+        "rank": 0
+      },
+      "day1": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day2": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      },
+      "finals": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
+      }
+    }
   }
 ]
