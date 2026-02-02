@@ -95,175 +95,192 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-  /* Golden & Cyan Effects for Leading Team Banner */
-  .leading-team-banner-with-effects {
-    position: relative;
-    margin-bottom: 40px;
-    padding: 50px 40px;
-    background: linear-gradient(135deg, rgba(26, 26, 46, 0.95), rgba(22, 33, 62, 0.95));
-    border: 3px solid rgba(255, 215, 0, 0.6);
-    border-radius: 16px;
+  /* ============================================
+     EMBER EFFECT FOR LEADING TEAM BANNER
+     ============================================ */
+
+  /* Leading team banner on standings page */
+  .leading-team-banner {
+    background: linear-gradient(135deg, rgba(255, 69, 0, 0.15) 0%, rgba(139, 0, 0, 0.1) 100%);
+    border: 3px solid #ff4500;
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
     text-align: center;
-    overflow: hidden;
     box-shadow: 
-      0 10px 60px rgba(255, 215, 0, 0.4),
-      0 0 100px rgba(0, 242, 254, 0.2);
-    backdrop-filter: blur(10px);
-    min-height: 200px; /* Force height so particles are visible */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .leading-team-banner-with-effects .leading-team-text {
+      0 0 30px rgba(255, 69, 0, 0.6),
+      0 0 60px rgba(255, 140, 0, 0.4),
+      inset 0 0 30px rgba(255, 69, 0, 0.2);
+    animation: fire-pulse 2s ease-in-out infinite;
     position: relative;
-    z-index: 10;
-    font-size: 2.5rem;
-    background: linear-gradient(90deg, #ffd700, #fff, #ffd700);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: text-shine 3s ease infinite;
-    margin-bottom: 10px;
-    text-shadow: 0 0 40px rgba(255, 215, 0, 0.8);
-    filter: drop-shadow(0 0 20px rgba(0, 242, 254, 0.5));
-    width: 100%; /* Ensure full width for centering */
+    overflow: hidden;
   }
 
-  @keyframes text-shine {
-    0%, 100% { background-position: 0% center; }
-    50% { background-position: 100% center; }
-  }
-
-  .effects-layer {
+  /* EMBER EFFECT - Floating ember particles */
+  .leading-team-banner::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-    overflow: hidden; /* Ensure particles don't spill out */
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 15% 85%, rgba(255, 140, 0, 0.6) 0%, transparent 3%),
+      radial-gradient(circle at 45% 70%, rgba(255, 100, 0, 0.5) 0%, transparent 2%),
+      radial-gradient(circle at 75% 90%, rgba(255, 200, 0, 0.4) 0%, transparent 2.5%),
+      radial-gradient(circle at 25% 60%, rgba(255, 69, 0, 0.7) 0%, transparent 2%),
+      radial-gradient(circle at 85% 75%, rgba(255, 140, 0, 0.5) 0%, transparent 3%),
+      radial-gradient(circle at 55% 95%, rgba(255, 150, 0, 0.6) 0%, transparent 2%),
+      radial-gradient(circle at 35% 80%, rgba(255, 100, 0, 0.4) 0%, transparent 2.5%),
+      radial-gradient(circle at 65% 65%, rgba(255, 180, 0, 0.5) 0%, transparent 2%),
+      radial-gradient(circle at 90% 85%, rgba(255, 120, 0, 0.6) 0%, transparent 3%),
+      radial-gradient(circle at 10% 75%, rgba(255, 160, 0, 0.4) 0%, transparent 2%);
+    background-size: 100% 100%;
+    animation: ember-float 8s ease-in-out infinite;
+    z-index: 0;
+    opacity: 0.8;
   }
 
-  /* PULSE RINGS */
-  .pulse-ring {
+  /* Animated border with fire colors */
+  .leading-team-banner::after {
+    content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    border: 3px solid rgba(255, 215, 0, 0.7);
-    border-radius: 50%;
-    box-shadow: 
-      0 0 20px rgba(255, 215, 0, 0.8),
-      0 0 40px rgba(0, 242, 254, 0.6),
-      inset 0 0 20px rgba(0, 242, 254, 0.4);
-    animation: pulse-expand 2.5s ease-out infinite;
-    transform: translate(-50%, -50%);
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(
+      45deg,
+      #ff4500 0%,
+      #ff8c00 25%,
+      #ffd700 50%,
+      #ff8c00 75%,
+      #ff4500 100%
+    );
+    background-size: 300% 300%;
+    animation: fire-border-flow 4s linear infinite;
+    z-index: -1;
+    border-radius: inherit;
+    opacity: 0.8;
   }
 
-  .pulse-ring:nth-child(1) { animation-delay: 0s; }
-  .pulse-ring:nth-child(2) { animation-delay: 0.8s; }
-  .pulse-ring:nth-child(3) { animation-delay: 1.6s; }
+  .leading-team-text {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ff4500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 
+      0 0 10px rgba(255, 140, 0, 1),
+      0 0 20px rgba(255, 69, 0, 0.8),
+      0 0 30px rgba(255, 200, 0, 0.6),
+      0 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fire-text-flicker 2s ease-in-out infinite;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+  }
 
-  @keyframes pulse-expand {
+  /* KEYFRAMES */
+
+  /* Ember floating animation - moves embers upward and side-to-side */
+  @keyframes ember-float {
     0% {
-      width: 30px;
-      height: 30px;
+      transform: translateY(0) translateX(0);
+      opacity: 0.8;
+    }
+    25% {
+      transform: translateY(-8px) translateX(3px);
       opacity: 1;
-      transform: translate(-50%, -50%); /* Keeps it centered */
-      border-color: rgba(255, 215, 0, 0.9);
     }
     50% {
-      border-color: rgba(0, 242, 254, 0.7);
+      transform: translateY(-15px) translateX(-2px);
+      opacity: 0.9;
+    }
+    75% {
+      transform: translateY(-25px) translateX(4px);
+      opacity: 0.7;
     }
     100% {
-      width: 500px;
-      height: 500px;
-      opacity: 0;
-      transform: translate(-50%, -50%); /* Keeps it centered */
-      border-color: rgba(255, 215, 0, 0.3);
+      transform: translateY(-35px) translateX(0);
+      opacity: 0.5;
     }
   }
 
-  /* PARTICLES CANVAS */
-  .particles-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-  }
-
-  /* CYBER BEAMS */
-  .cyber-beams-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-  }
-
-  .cyber-beam {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 600px;
-    height: 4px;
-    background: linear-gradient(
-      90deg, 
-      transparent, 
-      rgba(255, 215, 0, 0.9) 30%,
-      rgba(255, 215, 0, 1) 50%,
-      rgba(255, 215, 0, 0.9) 70%,
-      transparent
-    );
-    box-shadow: 
-      0 0 20px rgba(255, 215, 0, 0.9),
-      0 0 40px rgba(0, 242, 254, 0.7),
-      0 0 60px rgba(0, 242, 254, 0.4);
-    transform-origin: 0% 50%;
-    animation: cyber-rotate 6s linear infinite;
-    filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.8));
-  }
-
-  .cyber-beam:nth-child(2) { animation-delay: -1.5s; }
-  .cyber-beam:nth-child(3) { animation-delay: -3s; }
-  .cyber-beam:nth-child(4) { animation-delay: -4.5s; }
-
-  @keyframes cyber-rotate {
-    from {
-      transform: rotate(0deg);
-      opacity: 0.5;
+  /* Fire pulse animation */
+  @keyframes fire-pulse {
+    0%, 100% {
+      box-shadow: 
+        0 0 30px rgba(255, 69, 0, 0.6),
+        0 0 60px rgba(255, 140, 0, 0.4),
+        inset 0 0 30px rgba(255, 69, 0, 0.2);
     }
     50% {
-      opacity: 1;
-    }
-    to {
-      transform: rotate(360deg);
-      opacity: 0.5;
+      box-shadow: 
+        0 0 40px rgba(255, 69, 0, 0.8),
+        0 0 80px rgba(255, 140, 0, 0.6),
+        inset 0 0 40px rgba(255, 69, 0, 0.3);
     }
   }
 
+  /* Border flow animation */
+  @keyframes fire-border-flow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Text flicker animation */
+  @keyframes fire-text-flicker {
+    0%, 100% {
+      text-shadow: 
+        0 0 10px rgba(255, 140, 0, 1),
+        0 0 20px rgba(255, 69, 0, 0.8),
+        0 0 30px rgba(255, 200, 0, 0.6),
+        0 2px 4px rgba(0, 0, 0, 0.5);
+      opacity: 1;
+    }
+    25% {
+      text-shadow: 
+        0 0 15px rgba(255, 140, 0, 1),
+        0 0 25px rgba(255, 69, 0, 0.9),
+        0 0 40px rgba(255, 200, 0, 0.7),
+        0 2px 4px rgba(0, 0, 0, 0.5);
+      opacity: 0.95;
+    }
+    50% {
+      text-shadow: 
+        0 0 20px rgba(255, 140, 0, 1),
+        0 0 30px rgba(255, 69, 0, 1),
+        0 0 50px rgba(255, 200, 0, 0.8),
+        0 2px 4px rgba(0, 0, 0, 0.5);
+      opacity: 1;
+    }
+    75% {
+      text-shadow: 
+        0 0 12px rgba(255, 140, 0, 1),
+        0 0 22px rgba(255, 69, 0, 0.85),
+        0 0 35px rgba(255, 200, 0, 0.65),
+        0 2px 4px rgba(0, 0, 0, 0.5);
+      opacity: 0.98;
+    }
+  }
+
+  /* Mobile responsive adjustments */
   @media (max-width: 768px) {
-    .leading-team-banner-with-effects .leading-team-text { 
-      font-size: 1.5rem; /* Smaller font for mobile */
-      margin-bottom: 5px;
+    .leading-team-text {
+      font-size: 1.3rem;
+      letter-spacing: 1px;
     }
-    .leading-team-banner-with-effects { 
-      padding: 30px 15px; 
-      min-height: 150px;
-    }
-    /* Hide some effects on mobile to reduce clutter if needed */
-    .cyber-beam {
-      width: 300px; /* Shorter beams on mobile */
-    }
-    /* Fix registration button overlap */
-    .floating-registration-badge {
-       top: 100px !important; /* Move down to avoid header overlap */
+    .leading-team-banner {
+      padding: 1rem 1.5rem;
     }
   }
 </style>
@@ -347,109 +364,7 @@ import Layout from '../layouts/Layout.astro';
     btn.classList.add('active');
   });
 
-  // Particles Animation System
-  let canvas: HTMLCanvasElement | null = null;
-  let ctx: CanvasRenderingContext2D | null = null;
-  let particles: any[] = [];
-  let animationFrame: number | null = null;
-  const particleCount = 50;
-  const particleSpeed = 0.6;
-
-  function initParticleCanvas(canvasElement: HTMLCanvasElement) {
-    canvas = canvasElement;
-    ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    resizeCanvas();
-    animateParticles();
-  }
-
-  function resizeCanvas() {
-    if (!canvas) return;
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-    initParticles();
-  }
-
-  function initParticles() {
-    if (!canvas) return;
-    particles = [];
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * particleSpeed,
-        vy: (Math.random() - 0.5) * particleSpeed,
-        size: Math.random() * 3 + 1
-      });
-    }
-  }
-
-  function animateParticles() {
-    if (!ctx || !canvas) return;
-
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    particles.forEach((p, i) => {
-      if (!ctx || !canvas) return;
-
-      // Update position
-      p.x += p.vx;
-      p.y += p.vy;
-
-      // Bounce off edges
-      if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-      if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-
-      // Draw cyan halo
-      ctx.fillStyle = 'rgba(0, 242, 254, 0.3)';
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size * 3, 0, Math.PI * 2);
-      ctx.fill();
-
-      // Draw golden particle with cyan shadow
-      ctx.shadowColor = 'rgba(0, 242, 254, 0.8)';
-      ctx.shadowBlur = 15;
-      ctx.fillStyle = 'rgba(255, 215, 0, 0.9)';
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.shadowBlur = 0;
-
-      // Draw connections
-      particles.slice(i + 1).forEach(p2 => {
-        if (!ctx || !canvas) return;
-        const dx = p.x - p2.x;
-        const dy = p.y - p2.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < 120) {
-          const opacity = 0.4 * (1 - dist / 120);
-
-          // Cyan glow line
-          ctx.strokeStyle = `rgba(0, 242, 254, ${opacity * 0.6})`;
-          ctx.lineWidth = 2;
-          ctx.beginPath();
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.stroke();
-
-          // Golden line
-          ctx.strokeStyle = `rgba(255, 215, 0, ${opacity})`;
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.stroke();
-        }
-      });
-    });
-
-    animationFrame = requestAnimationFrame(animateParticles);
-  }
-
-  // Render Leading Team Banner with Effects
+  // Render Leading Team Banner
   async function renderLeadingTeamBanner() {
     const container = document.getElementById('leadingTeamBannerContainer');
     if (!container) return;
@@ -461,55 +376,27 @@ import Layout from '../layouts/Layout.astro';
       const standings = await response.json();
       if (!standings || standings.length === 0) return;
 
-      // 🎲 RANDOM TEAM SELECTION LOGIC (For Testing)
+      // 🎲 RANDOM TEAM SELECTION (For Testing - Remove when tournament starts)
       const randomIndex = Math.floor(Math.random() * standings.length);
       const leadingTeam = standings[randomIndex];
 
+      // For production, use this instead:
+      // const leadingTeam = standings.reduce((max: any, team: any) => 
+      //   team.totalScore > max.totalScore ? team : max
+      // , standings[0]);
+
       if (!leadingTeam) return;
 
-      // Handle casing
+      // Handle different property names
       const teamNameText = leadingTeam.teamName || leadingTeam.teamname || leadingTeam.name || "Unknown Team";
 
-      // Create banner with effects
-      // Use template literals correctly with backticks `
+      // Create and insert banner with ember effect
       const banner = document.createElement('div');
-      banner.className = 'leading-team-banner-with-effects';
-
-      banner.innerHTML = `
-        <!-- EFFECTS LAYER -->
-        <div class="effects-layer">
-          <!-- Pulse Rings -->
-          <div class="pulse-ring"></div>
-          <div class="pulse-ring"></div>
-          <div class="pulse-ring"></div>
-
-          <!-- Particles Canvas -->
-          <canvas class="particles-canvas" id="particlesCanvas"></canvas>
-
-          <!-- Cyber Beams -->
-          <div class="cyber-beams-container">
-            <div class="cyber-beam"></div>
-            <div class="cyber-beam"></div>
-            <div class="cyber-beam"></div>
-            <div class="cyber-beam"></div>
-          </div>
-        </div>
-
-        <!-- BANNER CONTENT -->
-        <h2 class="leading-team-text">` + escapeHtml(teamNameText) + ` is Leading 🔥</h2>
-      `;
+      banner.className = 'leading-team-banner';
+      banner.innerHTML = '<h2 class="leading-team-text">' + escapeHtml(teamNameText) + ' is Leading 🔥</h2>';
 
       container.innerHTML = '';
       container.appendChild(banner);
-
-      // Initialize particle canvas after banner is rendered
-      setTimeout(() => {
-        const particleCanvas = document.getElementById('particlesCanvas') as HTMLCanvasElement;
-        if (particleCanvas) {
-          initParticleCanvas(particleCanvas);
-        }
-      }, 100);
-
     } catch (error) {
       console.log('Could not render leading team banner:', error);
     }
@@ -528,9 +415,4 @@ import Layout from '../layouts/Layout.astro';
   } else {
     renderLeadingTeamBanner();
   }
-
-  // Handle window resize for canvas
-  window.addEventListener('resize', () => {
-    if (canvas) resizeCanvas();
-  });
 </script>
