@@ -110,7 +110,7 @@ import Layout from '../layouts/Layout.astro';
     margin: 1.5rem auto;
     text-align: center;
     position: relative;
-    overflow: hidden;  /* Changed from visible to hidden to contain fire */
+    overflow: hidden;
     box-shadow: 
       0 0 30px rgba(255, 69, 0, 0.8),
       0 0 60px rgba(255, 140, 0, 0.6),
@@ -198,7 +198,6 @@ import Layout from '../layouts/Layout.astro';
 </style>
 
 <script is:inline>
-
   // ========================================
   // DOOM PSX FIRE EFFECT - Bottom 30% Only
   // ========================================
@@ -231,26 +230,18 @@ import Layout from '../layouts/Layout.astro';
     }
 
     setupCanvas() {
-      const rect = this.element.getBoundingClientRect();
-
-      // Position canvas at BOTTOM of banner, only 30% height
       this.canvas.style.position = 'absolute';
       this.canvas.style.left = '0';
-      this.canvas.style.bottom = '0';  // Anchor to bottom
+      this.canvas.style.bottom = '0';
       this.canvas.style.width = '100%';
-      this.canvas.style.height = '30%';  // Only 30% of banner height
+      this.canvas.style.height = '30%';
       this.canvas.style.pointerEvents = 'none';
       this.canvas.style.zIndex = '1';
       this.canvas.style.imageRendering = 'pixelated';
-
-      // Canvas resolution
       this.canvas.width = this.fireWidth;
       this.canvas.height = this.fireHeight;
-
       this.element.style.position = 'relative';
       this.element.appendChild(this.canvas);
-
-      console.log('🔥 Fire canvas: bottom 30% of banner');
     }
 
     initFire() {
@@ -298,9 +289,8 @@ import Layout from '../layouts/Layout.astro';
     }
   }
 
-
   // ========================================
-  // DATA MANAGEMENT
+  // DATA MANAGEMENT (NO AUTO-REFRESH)
   // ========================================
   let standingsData = [];
   let currentFilter = 'overall';
@@ -309,10 +299,13 @@ import Layout from '../layouts/Layout.astro';
 
   async function loadStandings() {
     try {
-      const response = await fetch('/data/standings.json');
+      // Add timestamp to prevent browser caching (fresh data on each page load)
+      const timestamp = new Date().getTime();
+      const response = await fetch('/data/standings.json?t=' + timestamp);
+
       if (!response.ok) throw new Error('Failed to fetch');
       standingsData = await response.json();
-      console.log('✅ Loaded', standingsData.length, 'teams');
+      console.log('✅ Loaded', standingsData.length, 'teams from standings.json');
 
       createLeadingBanner();
       renderContent('overall');
@@ -382,22 +375,19 @@ import Layout from '../layouts/Layout.astro';
     teams.forEach((team, index) => {
       const rank = index + 1;
       const stats = team.stats.overall;
-      const rankClass = rank <= 3 ? `rank-${rank}` : '';
+      const rankClass = rank <= 3 ? 'rank-' + rank : '';
       const wwcd = stats.wwcd_count > 0 ? '🏆'.repeat(stats.wwcd_count) : '-';
 
-      html += `<tr class="${rankClass}">
-        <td><strong>${rank}</strong></td>
-        <td><div style="display:flex;align-items:center;gap:8px;">
-          <span class="team-logo-mini">${team.team_logo}</span>
-          <span>${team.team_name}</span>
-        </div></td>
-        <td>${team.group}</td>
-        <td>${stats.matches_played || 0}</td>
-        <td>${stats.finish_pts || stats.pos_pts || 0}</td>
-        <td>${(stats.total_pts || 0) - (stats.finish_pts || stats.pos_pts || 0)}</td>
-        <td><strong>${stats.total_pts || 0}</strong></td>
-        <td>${wwcd}</td>
-      </tr>`;
+      html += '<tr class="' + rankClass + '"><td><strong>' + rank + '</strong></td>';
+      html += '<td><div style="display:flex;align-items:center;gap:8px;">';
+      html += '<span class="team-logo-mini">' + team.team_logo + '</span>';
+      html += '<span>' + team.team_name + '</span></div></td>';
+      html += '<td>' + team.group + '</td>';
+      html += '<td>' + (stats.matches_played || 0) + '</td>';
+      html += '<td>' + (stats.finish_pts || stats.pos_pts || 0) + '</td>';
+      html += '<td>' + ((stats.total_pts || 0) - (stats.finish_pts || stats.pos_pts || 0)) + '</td>';
+      html += '<td><strong>' + (stats.total_pts || 0) + '</strong></td>';
+      html += '<td>' + wwcd + '</td></tr>';
     });
 
     html += '</tbody></table></div>';
@@ -417,7 +407,7 @@ import Layout from '../layouts/Layout.astro';
         (b.stats.overall.total_pts || 0) - (a.stats.overall.total_pts || 0)
       );
 
-      html += `<div class="group-header">${groupName}</div>`;
+      html += '<div class="group-header">' + groupName + '</div>';
       html += '<div class="table-container"><table class="leaderboard-table"><thead><tr>';
       html += '<th>Rank</th><th>Team</th><th>Matches</th>';
       html += '<th>Place Pts</th><th>Kill Pts</th><th>Total</th><th>🏆</th></tr></thead><tbody>';
@@ -428,18 +418,15 @@ import Layout from '../layouts/Layout.astro';
         const rankClass = rank === 1 ? 'rank-1' : '';
         const wwcd = stats.wwcd_count > 0 ? '🏆'.repeat(stats.wwcd_count) : '-';
 
-        html += `<tr class="${rankClass}">
-          <td><strong>${rank}</strong></td>
-          <td><div style="display:flex;align-items:center;gap:8px;">
-            <span class="team-logo-mini">${team.team_logo}</span>
-            <span>${team.team_name}</span>
-          </div></td>
-          <td>${stats.matches_played || 0}</td>
-          <td>${stats.finish_pts || stats.pos_pts || 0}</td>
-          <td>${(stats.total_pts || 0) - (stats.finish_pts || stats.pos_pts || 0)}</td>
-          <td><strong>${stats.total_pts || 0}</strong></td>
-          <td>${wwcd}</td>
-        </tr>`;
+        html += '<tr class="' + rankClass + '"><td><strong>' + rank + '</strong></td>';
+        html += '<td><div style="display:flex;align-items:center;gap:8px;">';
+        html += '<span class="team-logo-mini">' + team.team_logo + '</span>';
+        html += '<span>' + team.team_name + '</span></div></td>';
+        html += '<td>' + (stats.matches_played || 0) + '</td>';
+        html += '<td>' + (stats.finish_pts || stats.pos_pts || 0) + '</td>';
+        html += '<td>' + ((stats.total_pts || 0) - (stats.finish_pts || stats.pos_pts || 0)) + '</td>';
+        html += '<td><strong>' + (stats.total_pts || 0) + '</strong></td>';
+        html += '<td>' + wwcd + '</td></tr>';
       });
 
       html += '</tbody></table></div>';
@@ -463,13 +450,13 @@ import Layout from '../layouts/Layout.astro';
       }).filter(team => team.matchStats.total > 0 || team.matchStats.place_pts > 0 || team.matchStats.kill_pts > 0);
 
       if (teamsWithData.length === 0) {
-        html += `<div class="match-header">Match ${matchNumber} - No data yet</div>`;
+        html += '<div class="match-header">Match ' + matchNumber + ' - No data yet</div>';
         return;
       }
 
       teamsWithData.sort((a, b) => b.matchStats.total - a.matchStats.total);
 
-      html += `<div class="match-header">Match ${matchNumber}</div>`;
+      html += '<div class="match-header">Match ' + matchNumber + '</div>';
       html += '<div class="table-container"><table class="leaderboard-table"><thead><tr>';
       html += '<th>Rank</th><th>Team</th><th>Group</th>';
       html += '<th>Place Pts</th><th>Kill Pts</th><th>Total</th><th>🏆</th></tr></thead><tbody>';
@@ -481,18 +468,16 @@ import Layout from '../layouts/Layout.astro';
         const wwcdClass = stats.wwcd ? 'wwcd-winner' : '';
         const wwcd = stats.wwcd ? '🏆' : '-';
 
-        html += `<tr class="${rankClass} ${wwcdClass}">
-          <td><strong>${rank}</strong></td>
-          <td><div style="display:flex;align-items:center;gap:8px;">
-            <span class="team-logo-mini">${team.team_logo}</span>
-            <span>${team.team_name}</span>
-          </div></td>
-          <td>${team.group}</td>
-          <td>${stats.place_pts || 0}</td>
-          <td>${stats.kill_pts || 0}</td>
-          <td><strong>${stats.total || 0}</strong></td>
-          <td>${wwcd}</td>
-        </tr>`;
+        html += '<tr class="' + rankClass + ' ' + wwcdClass + '">';
+        html += '<td><strong>' + rank + '</strong></td>';
+        html += '<td><div style="display:flex;align-items:center;gap:8px;">';
+        html += '<span class="team-logo-mini">' + team.team_logo + '</span>';
+        html += '<span>' + team.team_name + '</span></div></td>';
+        html += '<td>' + team.group + '</td>';
+        html += '<td>' + (stats.place_pts || 0) + '</td>';
+        html += '<td>' + (stats.kill_pts || 0) + '</td>';
+        html += '<td><strong>' + (stats.total || 0) + '</strong></td>';
+        html += '<td>' + wwcd + '</td></tr>';
       });
 
       html += '</tbody></table></div>';
@@ -526,6 +511,7 @@ import Layout from '../layouts/Layout.astro';
     });
   }
 
+  // Initialize on page load
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', loadStandings);
   } else {
