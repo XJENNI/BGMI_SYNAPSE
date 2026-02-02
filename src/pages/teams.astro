@@ -79,4 +79,58 @@ import teamData from 'data/team.json';
       noResults.style.display = hasResults ? 'none' : 'block';
     }
   });
+
+  // Golden Halo Effect for Leading Team
+  async function applyLeadingTeamEffect() {
+    try {
+      // Fetch standings data
+      const response = await fetch('/data/standings.json');
+      if (!response.ok) return;
+      
+      const standings = await response.json();
+      if (!standings || standings.length === 0) return;
+      
+      // Sort by totalScore to find the leading team
+      const sortedTeams = [...standings].sort((a: any, b: any) => b.totalScore - a.totalScore);
+      const leadingTeam = sortedTeams[0];
+      
+      if (!leadingTeam) return;
+      
+      // Normalize team name for better matching
+      const normalizeTeamName = (name: string) => name.toLowerCase().trim().replace(/\s+/g, ' ');
+      const normalizedLeadingTeamName = normalizeTeamName(leadingTeam.teamName);
+      
+      // Find the team card that matches the leading team name
+      teamCards.forEach(card => {
+        const teamNameElement = card.querySelector('.team-name');
+        if (!teamNameElement) return;
+        
+        const teamName = normalizeTeamName(teamNameElement.textContent || '');
+        
+        // Check if this card matches the leading team (exact match)
+        if (teamName === normalizedLeadingTeamName) {
+          // Apply golden halo effect
+          card.classList.add('leading-team');
+          
+          // Add leading badge if not already present
+          if (!card.querySelector('.leading-team-badge')) {
+            const badge = document.createElement('div');
+            badge.className = 'leading-team-badge';
+            badge.innerHTML = '👑 LEADING';
+            (card as HTMLElement).style.position = 'relative';
+            card.appendChild(badge);
+          }
+        }
+      });
+    } catch (error) {
+      console.log('Could not apply leading team effect:', error);
+    }
+  }
+
+  // Apply the effect when page loads
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyLeadingTeamEffect);
+  } else {
+    applyLeadingTeamEffect();
+  }
 </script>

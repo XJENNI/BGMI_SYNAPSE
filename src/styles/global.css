@@ -1989,10 +1989,10 @@ p { margin-bottom: var(--space-md); }
   background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
   border: 2px solid var(--accent-cyan);
   border-radius: 12px;
-  padding: 1.2rem 1.5rem;
+  padding: 1.44rem 1.8rem;
   box-shadow: 0 8px 32px rgba(0, 240, 255, 0.3), 0 0 60px rgba(0, 240, 255, 0.15);
-  min-width: 240px;
-  max-width: 380px;
+  min-width: 288px;
+  max-width: 456px;
   position: relative;
   transform: skewX(-2deg);
   animation: popup-glow 2s ease-in-out infinite;
@@ -2029,28 +2029,28 @@ p { margin-bottom: var(--space-md); }
 }
 
 .popup-icon {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
   animation: pulse-icon 1.5s ease-in-out infinite;
 }
 
 .popup-title {
   font-family: var(--font-heading);
-  font-size: 0.9rem;
+  font-size: 1.08rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--accent-cyan);
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
   text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
   line-height: 1.3;
 }
 
 .popup-message {
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
   text-align: center;
   margin: 0;
@@ -2088,9 +2088,9 @@ p { margin-bottom: var(--space-md); }
   }
 
   .popup-content {
-    padding: 1rem 1.2rem;
-    min-width: 220px;
-    max-width: 340px;
+    padding: 1.2rem 1.44rem;
+    min-width: 264px;
+    max-width: 408px;
     transform: skewX(-1deg);
   }
 
