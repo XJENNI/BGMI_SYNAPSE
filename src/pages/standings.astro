@@ -13,7 +13,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
 
-      <!-- Leading Team Banner with DOOM Fire -->
+      <!-- Leading Team Banner with Ember Particles -->
       <div id="leadingTeamBannerContainer"></div>
 
       <!-- Filter Tabs -->
@@ -102,7 +102,6 @@ import Layout from '../layouts/Layout.astro';
     color: white;
   }
 
-
   .selector-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -147,10 +146,13 @@ import Layout from '../layouts/Layout.astro';
     }
   }
 
+  /* ============================================
+     EMBER PARTICLES EFFECT FOR LEADING BANNER
+     ============================================ */
 
   .leading-team-banner {
-    background: linear-gradient(180deg, rgba(20, 0, 0, 0.95) 0%, rgba(40, 10, 0, 0.9) 100%);
-    border: 2px solid var(--accent-orange);
+    background: linear-gradient(135deg, rgba(255, 69, 0, 0.15) 0%, rgba(139, 0, 0, 0.1) 100%);
+    border: 2px solid #ff4500;
     border-radius: 12px;
     padding: 1.125rem 1.5rem;
     margin: 1.5rem auto;
@@ -158,39 +160,168 @@ import Layout from '../layouts/Layout.astro';
     position: relative;
     overflow: hidden;
     box-shadow: 
-      0 0 30px rgba(255, 69, 0, 0.8),
-      0 0 60px rgba(255, 140, 0, 0.6),
-      inset 0 0 45px rgba(255, 69, 0, 0.2);
-    animation: banner-pulse 3s ease-in-out infinite;
+      0 0 30px rgba(255, 69, 0, 0.6),
+      0 0 60px rgba(255, 140, 0, 0.4),
+      inset 0 0 30px rgba(255, 69, 0, 0.2);
+    animation: fire-pulse 2s ease-in-out infinite;
     max-width: 450px;
   }
 
+  /* EMBER EFFECT - Floating ember particles */
+  .leading-team-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 15% 85%, rgba(255, 140, 0, 0.6) 0%, transparent 3%),
+      radial-gradient(circle at 45% 70%, rgba(255, 100, 0, 0.5) 0%, transparent 2%),
+      radial-gradient(circle at 75% 90%, rgba(255, 200, 0, 0.4) 0%, transparent 2.5%),
+      radial-gradient(circle at 25% 60%, rgba(255, 69, 0, 0.7) 0%, transparent 2%),
+      radial-gradient(circle at 85% 75%, rgba(255, 140, 0, 0.5) 0%, transparent 3%),
+      radial-gradient(circle at 55% 95%, rgba(255, 150, 0, 0.6) 0%, transparent 2%),
+      radial-gradient(circle at 35% 80%, rgba(255, 100, 0, 0.4) 0%, transparent 2.5%),
+      radial-gradient(circle at 65% 65%, rgba(255, 180, 0, 0.5) 0%, transparent 2%),
+      radial-gradient(circle at 90% 85%, rgba(255, 120, 0, 0.6) 0%, transparent 3%),
+      radial-gradient(circle at 10% 75%, rgba(255, 160, 0, 0.4) 0%, transparent 2%);
+    background-size: 100% 100%;
+    animation: ember-float 8s ease-in-out infinite;
+    z-index: 0;
+    opacity: 0.8;
+  }
+
+  /* Animated border with fire colors */
+  .leading-team-banner::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(
+      45deg,
+      #ff4500 0%,
+      #ff8c00 25%,
+      #ffd700 50%,
+      #ff8c00 75%,
+      #ff4500 100%
+    );
+    background-size: 300% 300%;
+    animation: fire-border-flow 4s linear infinite;
+    z-index: -1;
+    border-radius: inherit;
+    opacity: 0.8;
+  }
+
   .leading-team-banner h2 {
+    font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 700;
+    color: #ff4500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 
+      0 0 10px rgba(255, 140, 0, 1),
+      0 0 20px rgba(255, 69, 0, 0.8),
+      0 0 30px rgba(255, 200, 0, 0.6),
+      0 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fire-text-flicker 2s ease-in-out infinite;
     margin: 0;
-    background: linear-gradient(90deg, #ff8c00, #ffd700, #ff8c00);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradient-shift 3s ease infinite;
     position: relative;
-    z-index: 2;
+    z-index: 1;
   }
 
-  @keyframes banner-pulse {
-    0%, 100% {
-      box-shadow: 0 0 30px rgba(255, 69, 0, 0.8), 0 0 60px rgba(255, 140, 0, 0.6), inset 0 0 45px rgba(255, 69, 0, 0.2);
+  /* KEYFRAMES */
+
+  /* Ember floating animation - moves embers upward and side-to-side */
+  @keyframes ember-float {
+    0% {
+      transform: translateY(0) translateX(0);
+      opacity: 0.8;
+    }
+    25% {
+      transform: translateY(-8px) translateX(3px);
+      opacity: 1;
     }
     50% {
-      box-shadow: 0 0 37.5px rgba(255, 69, 0, 1), 0 0 75px rgba(255, 140, 0, 0.8), inset 0 0 52.5px rgba(255, 69, 0, 0.3);
+      transform: translateY(-15px) translateX(-2px);
+      opacity: 0.9;
+    }
+    75% {
+      transform: translateY(-25px) translateX(4px);
+      opacity: 0.7;
+    }
+    100% {
+      transform: translateY(-35px) translateX(0);
+      opacity: 0.5;
     }
   }
 
-  @keyframes gradient-shift {
-    0%, 100% { background-position: 0% center; }
-    50% { background-position: 100% center; }
+  /* Fire pulse animation */
+  @keyframes fire-pulse {
+    0%, 100% {
+      box-shadow: 
+        0 0 30px rgba(255, 69, 0, 0.6),
+        0 0 60px rgba(255, 140, 0, 0.4),
+        inset 0 0 30px rgba(255, 69, 0, 0.2);
+    }
+    50% {
+      box-shadow: 
+        0 0 40px rgba(255, 69, 0, 0.8),
+        0 0 80px rgba(255, 140, 0, 0.6),
+        inset 0 0 40px rgba(255, 69, 0, 0.3);
+    }
+  }
+
+  /* Border flow animation */
+  @keyframes fire-border-flow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Text flicker animation */
+  @keyframes fire-text-flicker {
+    0%, 100% {
+      text-shadow: 
+        0 0 10px rgba(255, 140, 0, 1),
+        0 0 20px rgba(255, 69, 0, 0.8),
+        0 0 30px rgba(255, 200, 0, 0.6),
+        0 2px 4px rgba(0, 0, 0, 0.5);
+      opacity: 1;
+    }
+    25% {
+      text-shadow: 
+        0 0 15px rgba(255, 140, 0, 1),
+        0 0 25px rgba(255, 69, 0, 0.9),
+        0 0 40px rgba(255, 200, 0, 0.7),
+        0 2px 4px rgba(0, 0, 0, 0.5);
+      opacity: 0.95;
+    }
+    50% {
+      text-shadow: 
+        0 0 20px rgba(255, 140, 0, 1),
+        0 0 30px rgba(255, 69, 0, 1),
+        0 0 50px rgba(255, 200, 0, 0.8),
+        0 2px 4px rgba(0, 0, 0, 0.5);
+      opacity: 1;
+    }
+    75% {
+      text-shadow: 
+        0 0 12px rgba(255, 140, 0, 1),
+        0 0 22px rgba(255, 69, 0, 0.85),
+        0 0 35px rgba(255, 200, 0, 0.65),
+        0 2px 4px rgba(0, 0, 0, 0.5);
+      opacity: 0.98;
+    }
   }
 
   .leaderboard-table tbody tr.rank-1 {
@@ -225,6 +356,7 @@ import Layout from '../layouts/Layout.astro';
 
     .leading-team-banner h2 {
       font-size: 1.125rem;
+      letter-spacing: 1px;
     }
 
     .leaderboard-table {
@@ -245,122 +377,6 @@ import Layout from '../layouts/Layout.astro';
 
 <script is:inline>
   // ========================================
-  // DOOM PSX FIRE EFFECT - Adjustable Speed & Density
-  // ========================================
-  class DoomFire {
-    constructor(element) {
-      this.element = element;
-      this.canvas = document.createElement('canvas');
-      this.ctx = this.canvas.getContext('2d');
-      this.fireWidth = 60;
-      this.fireHeight = 30;
-      this.firePixels = [];
-
-      // ⚙️ ADJUSTABLE PARAMETERS
-      this.fireSpeed = 1;           // Slower movement
-      this.fireDensity = 0.35;      // Less dense
-      this.maxDecay = 2;            // Normal fade
-      this.frameSkip = 1;           // Skip frames
-      this.frameCount = 0;
-
-      this.palette = [
-        { r: 7, g: 7, b: 7 }, { r: 31, g: 7, b: 7 }, { r: 47, g: 15, b: 7 },
-        { r: 71, g: 15, b: 7 }, { r: 87, g: 23, b: 7 }, { r: 103, g: 31, b: 7 },
-        { r: 119, g: 31, b: 7 }, { r: 143, g: 39, b: 7 }, { r: 159, g: 47, b: 7 },
-        { r: 175, g: 63, b: 7 }, { r: 191, g: 71, b: 7 }, { r: 199, g: 71, b: 7 },
-        { r: 223, g: 79, b: 7 }, { r: 223, g: 87, b: 7 }, { r: 223, g: 87, b: 7 },
-        { r: 215, g: 95, b: 7 }, { r: 215, g: 95, b: 7 }, { r: 215, g: 103, b: 15 },
-        { r: 207, g: 111, b: 15 }, { r: 207, g: 119, b: 15 }, { r: 207, g: 127, b: 15 },
-        { r: 207, g: 135, b: 23 }, { r: 199, g: 135, b: 23 }, { r: 199, g: 143, b: 23 },
-        { r: 199, g: 151, b: 31 }, { r: 191, g: 159, b: 31 }, { r: 191, g: 159, b: 31 },
-        { r: 191, g: 167, b: 39 }, { r: 191, g: 167, b: 39 }, { r: 191, g: 175, b: 47 },
-        { r: 183, g: 175, b: 47 }, { r: 183, g: 183, b: 47 }, { r: 183, g: 183, b: 55 },
-        { r: 207, g: 207, b: 111 }, { r: 223, g: 223, b: 159 }, { r: 239, g: 239, b: 199 },
-        { r: 255, g: 255, b: 255 }
-      ];
-      this.setupCanvas();
-      this.initFire();
-      this.animate();
-    }
-
-    setupCanvas() {
-      this.canvas.style.position = 'absolute';
-      this.canvas.style.left = '0';
-      this.canvas.style.bottom = '0';
-      this.canvas.style.width = '100%';
-      this.canvas.style.height = '30%';
-      this.canvas.style.pointerEvents = 'none';
-      this.canvas.style.zIndex = '1';
-      this.canvas.style.imageRendering = 'pixelated';
-      this.canvas.width = this.fireWidth;
-      this.canvas.height = this.fireHeight;
-      this.element.style.position = 'relative';
-      this.element.appendChild(this.canvas);
-    }
-
-    initFire() {
-      const pixelCount = this.fireWidth * this.fireHeight;
-      for (let i = 0; i < pixelCount; i++) this.firePixels[i] = 0;
-      for (let i = 0; i < this.fireWidth; i++) {
-        if (Math.random() < this.fireDensity) {
-          this.firePixels[(this.fireHeight - 1) * this.fireWidth + i] = 36;
-        }
-      }
-    }
-
-    spreadFire(from) {
-      const rand = Math.round(Math.random() * (this.fireSpeed + 1)) & 3;
-      const to = from - this.fireWidth - rand + 1;
-      const decay = (rand & 1) * this.maxDecay;
-      if (to >= 0 && to < this.firePixels.length) {
-        this.firePixels[to] = Math.max(0, this.firePixels[from] - decay);
-      }
-    }
-
-    updateFireSource() {
-      for (let i = 0; i < this.fireWidth; i++) {
-        const idx = (this.fireHeight - 1) * this.fireWidth + i;
-        if (Math.random() < this.fireDensity) {
-          this.firePixels[idx] = 36;
-        } else {
-          this.firePixels[idx] = Math.max(0, this.firePixels[idx] - 1);
-        }
-      }
-    }
-
-    doFire() {
-      for (let x = 0; x < this.fireWidth; x++) {
-        for (let y = 1; y < this.fireHeight; y++) {
-          this.spreadFire(y * this.fireWidth + x);
-        }
-      }
-      this.updateFireSource();
-    }
-
-    drawFire() {
-      const imageData = this.ctx.createImageData(this.fireWidth, this.fireHeight);
-      for (let i = 0; i < this.firePixels.length; i++) {
-        const color = this.palette[this.firePixels[i]];
-        const pixelIndex = i * 4;
-        imageData.data[pixelIndex] = color.r;
-        imageData.data[pixelIndex + 1] = color.g;
-        imageData.data[pixelIndex + 2] = color.b;
-        imageData.data[pixelIndex + 3] = 255;
-      }
-      this.ctx.putImageData(imageData, 0, 0);
-    }
-
-    animate() {
-      this.frameCount++;
-      if (this.frameCount % (this.frameSkip + 1) === 0) {
-        this.doFire();
-        this.drawFire();
-      }
-      requestAnimationFrame(() => this.animate());
-    }
-  }
-
-  // ========================================
   // DATA MANAGEMENT WITH SELECTORS
   // ========================================
   let standingsData = [];
@@ -368,7 +384,6 @@ import Layout from '../layouts/Layout.astro';
   let currentView = 'combined';
   let currentGroup = null;  // For group selection
   let currentMatch = null;  // For match selection
-  let doomFireInstance = null;
 
   async function loadStandings() {
     try {
@@ -402,19 +417,18 @@ import Layout from '../layouts/Layout.astro';
 
     const banner = document.createElement('div');
     banner.className = 'leading-team-banner';
-    banner.id = 'doomBanner';
-    banner.innerHTML = '<h2>' + leader.team_name + ' is Leading 🔥</h2>';
+    banner.innerHTML = '<h2>' + escapeHtml(leader.team_name) + ' is Leading 🔥</h2>';
 
     container.innerHTML = '';
     container.appendChild(banner);
 
-    setTimeout(() => {
-      if (!banner.dataset.fireInitialized) {
-        doomFireInstance = new DoomFire(banner);
-        banner.dataset.fireInitialized = 'true';
-        console.log('🔥 DOOM fire initialized (slower & less dense)');
-      }
-    }, 200);
+    console.log('🔥 Leading banner with ember particles created');
+  }
+
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
   }
 
   function renderContent(filter) {
