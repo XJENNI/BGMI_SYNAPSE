@@ -11,628 +11,505 @@ import Layout from '../layouts/Layout.astro';
           <span class="live-dot"></span>
           <span>Live</span>
         </div>
+        <button id="viewToggle" class="btn-sm" style="background:transparent; border:1px solid rgba(255,255,255,0.1); color:var(--text-muted); cursor:pointer; font-size:0.65rem; padding:2px 8px; border-radius:4px; margin-left:10px;">
+          Switch View
+        </button>
       </div>
 
-      <!-- Leading Team Banner with DOOM Fire -->
+      <!-- Leading Team Banner (will be populated by JavaScript) -->
       <div id="leadingTeamBannerContainer"></div>
 
-      <!-- Filter Tabs -->
       <div class="filter-tabs" id="filterTabs">
-        <button class="filter-btn active" data-filter="overall"><span>Overall</span></button>
-        <button class="filter-btn" data-filter="day1"><span>Day 1</span></button>
-        <button class="filter-btn" data-filter="day2"><span>Day 2</span></button>
-        <button class="filter-btn" data-filter="day3"><span>Day 3</span></button>
-        <button class="filter-btn" data-filter="finals"><span>Finals</span></button>
+        <button class="filter-btn active" data-filter="all">
+          <span>Overall</span>
+        </button>
+        <button class="filter-btn" data-filter="day1">
+          <span>Day 1</span>
+        </button>
+        <button class="filter-btn" data-filter="day2">
+          <span>Day 2</span>
+        </button>
+        <button class="filter-btn" data-filter="day3">
+          <span>Day 3</span>
+        </button>
+        <button class="filter-btn" data-filter="finals">
+          <span>Finals</span>
+        </button>
       </div>
 
-      <!-- View Toggle for Overall -->
-      <div id="overallViewToggle" style="display: none; text-align: center; margin-bottom: 1rem;">
-        <button class="view-toggle-btn active" data-view="combined">Combined</button>
-        <button class="view-toggle-btn" data-view="grouped">By Group</button>
+      <div id="matchFilters" style="display: none; justify-content: center; gap: 10px; margin-bottom: 2rem; flex-wrap: wrap;">
+        <button class="filter-btn btn-sm" data-match="1">M1</button>
+        <button class="filter-btn btn-sm" data-match="2">M2</button>
+        <button class="filter-btn btn-sm" data-match="3">M3</button>
+        <button class="filter-btn btn-sm" data-match="4">M4</button>
+        <button class="filter-btn btn-sm" data-match="5">M5</button>
       </div>
 
-      <!-- Content Container (includes selectors) -->
-      <div id="standingsContent"></div>
+      <div id="overallFilters" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 2rem; flex-wrap: wrap;">
+        <button class="filter-btn btn-sm active" data-group="all">Overall</button>
+        <button class="filter-btn btn-sm" data-group="A">Group A</button>
+        <button class="filter-btn btn-sm" data-group="B">Group B</button>
+        <button class="filter-btn btn-sm" data-group="C">Group C</button>
+        <button class="filter-btn btn-sm" data-group="D">Group D</button>
+        <button class="filter-btn btn-sm" data-group="mvp">MVP</button>
+      </div>
 
-      <!-- Legend -->
-      <div style="margin-top: 2rem; padding: 1rem; background: rgba(255,255,255,0.02); border-radius: 8px; font-size: 0.85rem; color: var(--text-muted);">
-        <strong style="color: var(--text-primary);">Legend:</strong> 
-        🏆 = Chicken Dinners (WWCD) | 
-        Place Pts = Position Points | 
-        Kill Pts = Elimination Points
+      <div id="overallContainer" style="display:none;">
+        <div id="groupView">
+          <div class="group-grid">
+            <div class="group-block" id="groupA"></div>
+            <div class="group-block" id="groupB"></div>
+            <div class="group-block" id="groupC"></div>
+            <div class="group-block" id="groupD"></div>
+          </div>
+        </div>
+        <div id="mvpArea" class="mvp-area" style="display:none;"></div>
+      </div>
+
+      <div class="table-container">
+        <table class="leaderboard-table" id="leaderboardTable">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Team</th>
+              <th class="hide-mobile">Group</th>
+              <th class="hide-mobile">Matches</th>
+              <th class="hide-mobile">Finish Pts</th>
+              <th class="hide-mobile">Position Pts</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboardBody">
+            <tr class="coming-soon-row">
+              <td colspan="7" style="text-align:center; color: var(--text-muted); font-style: italic;">Data Coming Soon</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="last-updated" id="lastUpdated">
+        Last updated: --:--
       </div>
     </div>
   </section>
 </Layout>
 
-<style is:global>
-  .table-container {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    margin-bottom: 2rem;
-  }
-
-  .leaderboard-table {
-    min-width: 700px;
-  }
-
-  .group-header {
-    background: linear-gradient(90deg, rgba(0, 174, 239, 0.2), transparent);
-    border-left: 4px solid var(--accent-cyan);
-    padding: 1rem;
-    margin: 2rem 0 1rem 0;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--accent-cyan);
-  }
-
-  .match-header {
-    background: linear-gradient(90deg, rgba(255, 140, 0, 0.2), transparent);
-    border-left: 4px solid var(--accent-orange);
-    padding: 0.75rem 1rem;
-    margin: 1.5rem 0 0.75rem 0;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--accent-orange);
-  }
-
-  .view-toggle-btn {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--text-muted);
-    padding: 0.5rem 1.5rem;
-    margin: 0 0.25rem;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-  }
-
-  .view-toggle-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-  }
-
-  .view-toggle-btn.active {
-    background: var(--accent-orange);
-    border-color: var(--accent-orange);
-    color: white;
-  }
-
-
-  .selector-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .selector-btn {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--text-muted);
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    font-weight: 500;
-  }
-
-  .selector-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-  }
-
-  .selector-btn.active {
-    background: var(--accent-orange);
-    border-color: var(--accent-orange);
-    color: white;
-    box-shadow: 0 0 15px rgba(255, 140, 0, 0.5);
-  }
-
-  @media (max-width: 768px) {
-    .selector-buttons {
-      gap: 0.4rem;
-    }
-
-    .selector-btn {
-      padding: 0.4rem 0.8rem;
-      font-size: 0.85rem;
-    }
-  }
-
-
-  .leading-team-banner {
-    background: linear-gradient(180deg, rgba(20, 0, 0, 0.95) 0%, rgba(40, 10, 0, 0.9) 100%);
-    border: 2px solid var(--accent-orange);
-    border-radius: 12px;
-    padding: 1.125rem 1.5rem;
-    margin: 1.5rem auto;
-    text-align: center;
+<style>
+  /* Golden & Cyan Effects for Leading Team Banner */
+  .leading-team-banner-with-effects {
     position: relative;
+    margin-bottom: 40px;
+    padding: 50px 40px;
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.95), rgba(22, 33, 62, 0.95));
+    border: 3px solid rgba(255, 215, 0, 0.6);
+    border-radius: 16px;
+    text-align: center;
     overflow: hidden;
     box-shadow: 
-      0 0 30px rgba(255, 69, 0, 0.8),
-      0 0 60px rgba(255, 140, 0, 0.6),
-      inset 0 0 45px rgba(255, 69, 0, 0.2);
-    animation: banner-pulse 3s ease-in-out infinite;
-    max-width: 450px;
+      0 10px 60px rgba(255, 215, 0, 0.4),
+      0 0 100px rgba(0, 242, 254, 0.2);
+    backdrop-filter: blur(10px);
   }
 
-  .leading-team-banner h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: 0;
-    background: linear-gradient(90deg, #ff8c00, #ffd700, #ff8c00);
+  .leading-team-banner-with-effects .leading-team-text {
+    position: relative;
+    z-index: 10;
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, #ffd700, #fff, #ffd700);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradient-shift 3s ease infinite;
-    position: relative;
-    z-index: 2;
+    animation: text-shine 3s ease infinite;
+    margin-bottom: 10px;
+    text-shadow: 0 0 40px rgba(255, 215, 0, 0.8);
+    filter: drop-shadow(0 0 20px rgba(0, 242, 254, 0.5));
   }
 
-  @keyframes banner-pulse {
-    0%, 100% {
-      box-shadow: 0 0 30px rgba(255, 69, 0, 0.8), 0 0 60px rgba(255, 140, 0, 0.6), inset 0 0 45px rgba(255, 69, 0, 0.2);
-    }
-    50% {
-      box-shadow: 0 0 37.5px rgba(255, 69, 0, 1), 0 0 75px rgba(255, 140, 0, 0.8), inset 0 0 52.5px rgba(255, 69, 0, 0.3);
-    }
-  }
-
-  @keyframes gradient-shift {
+  @keyframes text-shine {
     0%, 100% { background-position: 0% center; }
     50% { background-position: 100% center; }
   }
 
-  .leaderboard-table tbody tr.rank-1 {
-    background: linear-gradient(90deg, rgba(255, 215, 0, 0.1), rgba(255, 140, 0, 0.05));
-    border-left: 3px solid var(--accent-orange);
+  .effects-layer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
   }
 
-  .leaderboard-table tbody tr.rank-1 td:first-child {
-    color: var(--accent-orange);
-    font-weight: 700;
+  /* PULSE RINGS */
+  .pulse-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 3px solid rgba(255, 215, 0, 0.7);
+    border-radius: 50%;
+    box-shadow: 
+      0 0 20px rgba(255, 215, 0, 0.8),
+      0 0 40px rgba(0, 242, 254, 0.6),
+      inset 0 0 20px rgba(0, 242, 254, 0.4);
+    animation: pulse-expand 2.5s ease-out infinite;
   }
 
-  .leaderboard-table tbody tr.rank-2 {
-    background: rgba(192, 192, 192, 0.05);
+  .pulse-ring:nth-child(1) { animation-delay: 0s; }
+  .pulse-ring:nth-child(2) { animation-delay: 0.8s; }
+  .pulse-ring:nth-child(3) { animation-delay: 1.6s; }
+
+  @keyframes pulse-expand {
+    0% {
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+      transform: translate(-50%, -50%);
+      border-color: rgba(255, 215, 0, 0.9);
+    }
+    50% {
+      border-color: rgba(0, 242, 254, 0.7);
+    }
+    100% {
+      width: 500px;
+      height: 500px;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      border-color: rgba(255, 215, 0, 0.3);
+    }
   }
 
-  .leaderboard-table tbody tr.rank-3 {
-    background: rgba(205, 127, 50, 0.05);
+  /* PARTICLES CANVAS */
+  .particles-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
   }
 
-  .wwcd-winner {
-    background: rgba(255, 215, 0, 0.15) !important;
-    border-left: 3px solid gold !important;
+  /* CYBER BEAMS */
+  .cyber-beams-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .cyber-beam {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 4px;
+    background: linear-gradient(
+      90deg, 
+      transparent, 
+      rgba(255, 215, 0, 0.9) 30%,
+      rgba(255, 215, 0, 1) 50%,
+      rgba(255, 215, 0, 0.9) 70%,
+      transparent
+    );
+    box-shadow: 
+      0 0 20px rgba(255, 215, 0, 0.9),
+      0 0 40px rgba(0, 242, 254, 0.7),
+      0 0 60px rgba(0, 242, 254, 0.4);
+    transform-origin: 0% 50%;
+    animation: cyber-rotate 6s linear infinite;
+    filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.8));
+  }
+
+  .cyber-beam:nth-child(2) { animation-delay: -1.5s; }
+  .cyber-beam:nth-child(3) { animation-delay: -3s; }
+  .cyber-beam:nth-child(4) { animation-delay: -4.5s; }
+
+  @keyframes cyber-rotate {
+    from {
+      transform: rotate(0deg);
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+    to {
+      transform: rotate(360deg);
+      opacity: 0.5;
+    }
   }
 
   @media (max-width: 768px) {
-    .leading-team-banner {
-      padding: 0.9rem 1.125rem;
-      margin: 1rem auto;
-      max-width: 90%;
+    .leading-team-banner-with-effects .leading-team-text { 
+      font-size: 1.8rem; 
     }
-
-    .leading-team-banner h2 {
-      font-size: 1.125rem;
-    }
-
-    .leaderboard-table {
-      font-size: 0.85rem;
-    }
-
-    .leaderboard-table th,
-    .leaderboard-table td {
-      padding: 0.5rem 0.4rem;
-    }
-
-    .group-header, .match-header {
-      font-size: 0.9rem;
-      padding: 0.6rem 0.8rem;
+    .leading-team-banner-with-effects { 
+      padding: 35px 25px; 
     }
   }
 </style>
 
-<script is:inline>
-  // ========================================
-  // DOOM PSX FIRE EFFECT - Adjustable Speed & Density
-  // ========================================
-  class DoomFire {
-    constructor(element) {
-      this.element = element;
-      this.canvas = document.createElement('canvas');
-      this.ctx = this.canvas.getContext('2d');
-      this.fireWidth = 60;
-      this.fireHeight = 30;
-      this.firePixels = [];
+<script>
+  // Standings page logic
+  const filterTabs = document.getElementById('filterTabs');
+  const matchFilters = document.getElementById('matchFilters');
+  const overallFilters = document.getElementById('overallFilters');
 
-      // ⚙️ ADJUSTABLE PARAMETERS
-      this.fireSpeed = 0.1;           // Slower movement
-      this.fireDensity = 0.05;      // Less dense
-      this.maxDecay = 1;            // Normal fade
-      this.frameSkip = 1;           // Skip frames
-      this.frameCount = 0;
+  filterTabs?.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const btn = target.closest('.filter-btn') as HTMLElement;
+    if (!btn) return;
 
-      this.palette = [
-        { r: 7, g: 7, b: 7 }, { r: 31, g: 7, b: 7 }, { r: 47, g: 15, b: 7 },
-        { r: 71, g: 15, b: 7 }, { r: 87, g: 23, b: 7 }, { r: 103, g: 31, b: 7 },
-        { r: 119, g: 31, b: 7 }, { r: 143, g: 39, b: 7 }, { r: 159, g: 47, b: 7 },
-        { r: 175, g: 63, b: 7 }, { r: 191, g: 71, b: 7 }, { r: 199, g: 71, b: 7 },
-        { r: 223, g: 79, b: 7 }, { r: 223, g: 87, b: 7 }, { r: 223, g: 87, b: 7 },
-        { r: 215, g: 95, b: 7 }, { r: 215, g: 95, b: 7 }, { r: 215, g: 103, b: 15 },
-        { r: 207, g: 111, b: 15 }, { r: 207, g: 119, b: 15 }, { r: 207, g: 127, b: 15 },
-        { r: 207, g: 135, b: 23 }, { r: 199, g: 135, b: 23 }, { r: 199, g: 143, b: 23 },
-        { r: 199, g: 151, b: 31 }, { r: 191, g: 159, b: 31 }, { r: 191, g: 159, b: 31 },
-        { r: 191, g: 167, b: 39 }, { r: 191, g: 167, b: 39 }, { r: 191, g: 175, b: 47 },
-        { r: 183, g: 175, b: 47 }, { r: 183, g: 183, b: 47 }, { r: 183, g: 183, b: 55 },
-        { r: 207, g: 207, b: 111 }, { r: 223, g: 223, b: 159 }, { r: 239, g: 239, b: 199 },
-        { r: 255, g: 255, b: 255 }
-      ];
-      this.setupCanvas();
-      this.initFire();
-      this.animate();
-    }
+    const filter = btn.dataset.filter;
 
-    setupCanvas() {
-      this.canvas.style.position = 'absolute';
-      this.canvas.style.left = '0';
-      this.canvas.style.bottom = '0';
-      this.canvas.style.width = '100%';
-      this.canvas.style.height = '30%';
-      this.canvas.style.pointerEvents = 'none';
-      this.canvas.style.zIndex = '1';
-      this.canvas.style.imageRendering = 'pixelated';
-      this.canvas.width = this.fireWidth;
-      this.canvas.height = this.fireHeight;
-      this.element.style.position = 'relative';
-      this.element.appendChild(this.canvas);
-    }
+    // Update active state
+    filterTabs.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
 
-    initFire() {
-      const pixelCount = this.fireWidth * this.fireHeight;
-      for (let i = 0; i < pixelCount; i++) this.firePixels[i] = 0;
-      for (let i = 0; i < this.fireWidth; i++) {
-        if (Math.random() < this.fireDensity) {
-          this.firePixels[(this.fireHeight - 1) * this.fireWidth + i] = 36;
+    // Show/hide match filters based on selection
+    if (filter === 'all') {
+      if (matchFilters) matchFilters.style.display = 'none';
+      if (overallFilters) overallFilters.style.display = 'flex';
+    } else if (filter === 'finals') {
+      if (matchFilters) {
+        matchFilters.style.display = 'flex';
+        // Add extra match button for finals (6 matches)
+        const existingBtns = matchFilters.querySelectorAll('.filter-btn');
+        if (existingBtns.length === 5) {
+          const m6 = document.createElement('button');
+          m6.className = 'filter-btn btn-sm';
+          m6.dataset.match = '6';
+          m6.textContent = 'M6';
+          matchFilters.appendChild(m6);
         }
       }
-    }
-
-    spreadFire(from) {
-      const rand = Math.round(Math.random() * (this.fireSpeed + 1)) & 3;
-      const to = from - this.fireWidth - rand + 1;
-      const decay = (rand & 1) * this.maxDecay;
-      if (to >= 0 && to < this.firePixels.length) {
-        this.firePixels[to] = Math.max(0, this.firePixels[from] - decay);
-      }
-    }
-
-    updateFireSource() {
-      for (let i = 0; i < this.fireWidth; i++) {
-        const idx = (this.fireHeight - 1) * this.fireWidth + i;
-        if (Math.random() < this.fireDensity) {
-          this.firePixels[idx] = 36;
-        } else {
-          this.firePixels[idx] = Math.max(0, this.firePixels[idx] - 1);
-        }
-      }
-    }
-
-    doFire() {
-      for (let x = 0; x < this.fireWidth; x++) {
-        for (let y = 1; y < this.fireHeight; y++) {
-          this.spreadFire(y * this.fireWidth + x);
-        }
-      }
-      this.updateFireSource();
-    }
-
-    drawFire() {
-      const imageData = this.ctx.createImageData(this.fireWidth, this.fireHeight);
-      for (let i = 0; i < this.firePixels.length; i++) {
-        const color = this.palette[this.firePixels[i]];
-        const pixelIndex = i * 4;
-        imageData.data[pixelIndex] = color.r;
-        imageData.data[pixelIndex + 1] = color.g;
-        imageData.data[pixelIndex + 2] = color.b;
-        imageData.data[pixelIndex + 3] = 255;
-      }
-      this.ctx.putImageData(imageData, 0, 0);
-    }
-
-    animate() {
-      this.frameCount++;
-      if (this.frameCount % (this.frameSkip + 1) === 0) {
-        this.doFire();
-        this.drawFire();
-      }
-      requestAnimationFrame(() => this.animate());
-    }
-  }
-
-  // ========================================
-  // DATA MANAGEMENT WITH SELECTORS
-  // ========================================
-  let standingsData = [];
-  let currentFilter = 'overall';
-  let currentView = 'combined';
-  let currentGroup = null;  // For group selection
-  let currentMatch = null;  // For match selection
-  let doomFireInstance = null;
-
-  async function loadStandings() {
-    try {
-      const timestamp = new Date().getTime();
-      const response = await fetch('/data/standings.json?t=' + timestamp);
-
-      if (!response.ok) throw new Error('Failed to fetch');
-      standingsData = await response.json();
-      console.log('✅ Loaded', standingsData.length, 'teams from standings.json');
-
-      createLeadingBanner();
-      renderContent('overall');
-      setupFilters();
-      setupViewToggle();
-    } catch (error) {
-      console.error('❌ Error:', error);
-      document.getElementById('standingsContent').innerHTML = 
-        '<div style="text-align:center; padding: 2rem; color: var(--accent-red);">Failed to load standings</div>';
-    }
-  }
-
-  function createLeadingBanner() {
-    const container = document.getElementById('leadingTeamBannerContainer');
-    if (!container || standingsData.length === 0) return;
-
-    const leader = standingsData.reduce((max, team) => {
-      const maxScore = max.stats?.overall?.total_pts || 0;
-      const teamScore = team.stats?.overall?.total_pts || 0;
-      return teamScore > maxScore ? team : max;
-    }, standingsData[0]);
-
-    const banner = document.createElement('div');
-    banner.className = 'leading-team-banner';
-    banner.id = 'doomBanner';
-    banner.innerHTML = '<h2>' + leader.team_name + ' is Leading 🔥</h2>';
-
-    container.innerHTML = '';
-    container.appendChild(banner);
-
-    setTimeout(() => {
-      if (!banner.dataset.fireInitialized) {
-        doomFireInstance = new DoomFire(banner);
-        banner.dataset.fireInitialized = 'true';
-        console.log('🔥 DOOM fire initialized (slower & less dense)');
-      }
-    }, 200);
-  }
-
-  function renderContent(filter) {
-    currentFilter = filter;
-    const content = document.getElementById('standingsContent');
-    const viewToggle = document.getElementById('overallViewToggle');
-
-    if (filter === 'overall') {
-      viewToggle.style.display = 'block';
-      if (currentView === 'grouped') {
-        renderGroupSelector();
-      } else {
-        renderOverallCombined();
-      }
+      if (overallFilters) overallFilters.style.display = 'none';
     } else {
-      viewToggle.style.display = 'none';
-      renderMatchSelector(filter);
+      if (matchFilters) {
+        matchFilters.style.display = 'flex';
+        // Remove M6 button for day matches
+        const m6Btn = matchFilters.querySelector('[data-match="6"]');
+        if (m6Btn) m6Btn.remove();
+      }
+      if (overallFilters) overallFilters.style.display = 'none';
     }
+  });
+
+  // View toggle
+  const viewToggle = document.getElementById('viewToggle');
+  let isTableView = true;
+
+  viewToggle?.addEventListener('click', () => {
+    isTableView = !isTableView;
+    const tableContainer = document.querySelector('.table-container') as HTMLElement;
+    const overallContainer = document.getElementById('overallContainer');
+
+    if (tableContainer) tableContainer.style.display = isTableView ? 'block' : 'none';
+    if (overallContainer) overallContainer.style.display = isTableView ? 'none' : 'block';
+  });
+
+  // Match filter clicks
+  matchFilters?.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const btn = target.closest('.filter-btn') as HTMLElement;
+    if (!btn) return;
+
+    matchFilters.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+
+  // Group filter clicks
+  overallFilters?.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const btn = target.closest('.filter-btn') as HTMLElement;
+    if (!btn) return;
+
+    overallFilters.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+
+  // Particles Animation System
+  let canvas: HTMLCanvasElement | null = null;
+  let ctx: CanvasRenderingContext2D | null = null;
+  let particles: any[] = [];
+  let animationFrame: number | null = null;
+  const particleCount = 50;
+  const particleSpeed = 0.6;
+
+  function initParticleCanvas(canvasElement: HTMLCanvasElement) {
+    canvas = canvasElement;
+    ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    resizeCanvas();
+    animateParticles();
   }
 
-  // ========================================
-  // GROUP SELECTOR (For "By Group" view)
-  // ========================================
-  function renderGroupSelector() {
-    const groups = {};
-    standingsData.forEach(team => {
-      if (!groups[team.group]) groups[team.group] = [];
-      groups[team.group].push(team);
-    });
-
-    const groupNames = Object.keys(groups).sort();
-
-    // Set default group if not selected
-    if (!currentGroup || !groupNames.includes(currentGroup)) {
-      currentGroup = groupNames[0];
-    }
-
-    // Create group selector buttons
-    let html = '<div style="text-align: center; margin-bottom: 1.5rem;">';
-    html += '<div class="selector-buttons">';
-    groupNames.forEach(groupName => {
-      const activeClass = groupName === currentGroup ? 'active' : '';
-      html += '<button class="selector-btn ' + activeClass + '" onclick="selectGroup(\'' + groupName + '\')">';
-      html += groupName + '</button>';
-    });
-    html += '</div></div>';
-
-    // Render selected group data
-    const groupTeams = groups[currentGroup].sort((a, b) => 
-      (b.stats.overall.total_pts || 0) - (a.stats.overall.total_pts || 0)
-    );
-
-    html += '<div class="group-header">' + currentGroup + '</div>';
-    html += '<div class="table-container"><table class="leaderboard-table"><thead><tr>';
-    html += '<th>Rank</th><th>Team</th><th>Matches</th>';
-    html += '<th>Place Pts</th><th>Kill Pts</th><th>Total</th><th>🏆</th></tr></thead><tbody>';
-
-    groupTeams.forEach((team, index) => {
-      const rank = index + 1;
-      const stats = team.stats.overall;
-      const rankClass = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
-      const wwcd = stats.wwcd_count > 0 ? '🏆'.repeat(stats.wwcd_count) : '-';
-
-      html += '<tr class="' + rankClass + '"><td><strong>' + rank + '</strong></td>';
-      html += '<td><div style="display:flex;align-items:center;gap:8px;">';
-      html += '<span class="team-logo-mini">' + team.team_logo + '</span>';
-      html += '<span>' + team.team_name + '</span></div></td>';
-      html += '<td>' + (stats.matches_played || 0) + '</td>';
-      html += '<td>' + (stats.finish_pts || stats.pos_pts || 0) + '</td>';
-      html += '<td>' + ((stats.total_pts || 0) - (stats.finish_pts || stats.pos_pts || 0)) + '</td>';
-      html += '<td><strong>' + (stats.total_pts || 0) + '</strong></td>';
-      html += '<td>' + wwcd + '</td></tr>';
-    });
-
-    html += '</tbody></table></div>';
-    document.getElementById('standingsContent').innerHTML = html;
+  function resizeCanvas() {
+    if (!canvas) return;
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    initParticles();
   }
 
-  window.selectGroup = function(groupName) {
-    currentGroup = groupName;
-    renderGroupSelector();
-  };
-
-  // ========================================
-  // MATCH SELECTOR (For Day views)
-  // ========================================
-  function renderMatchSelector(day) {
-    const matchKeys = day === 'finals' ? ['M1', 'M2', 'M3', 'M4', 'M5', 'M6'] : ['M1', 'M2', 'M3', 'M4'];
-
-    // Set default match if not selected
-    if (!currentMatch || !matchKeys.includes(currentMatch)) {
-      currentMatch = matchKeys[0];
-    }
-
-    // Create match selector buttons
-    let html = '<div style="text-align: center; margin-bottom: 1.5rem;">';
-    html += '<div class="selector-buttons">';
-    matchKeys.forEach(matchKey => {
-      const activeClass = matchKey === currentMatch ? 'active' : '';
-      const matchNumber = matchKey.substring(1);
-      html += '<button class="selector-btn ' + activeClass + '" onclick="selectMatch(\'' + matchKey + '\')">';
-      html += 'Match ' + matchNumber + '</button>';
-    });
-    html += '</div></div>';
-
-    // Render selected match data
-    const matchNumber = currentMatch.substring(1);
-    const teamsWithData = standingsData.map(team => {
-      const matchData = team.stats[day]?.[currentMatch];
-      return {
-        ...team,
-        matchStats: matchData || { place_pts: 0, kill_pts: 0, total: 0, wwcd: false }
-      };
-    }).filter(team => team.matchStats.total > 0 || team.matchStats.place_pts > 0 || team.matchStats.kill_pts > 0);
-
-    if (teamsWithData.length === 0) {
-      html += '<div class="match-header">Match ' + matchNumber + ' - No data yet</div>';
-      html += '<div style="text-align:center; padding: 2rem; color: var(--text-muted);">Match data not available</div>';
-      document.getElementById('standingsContent').innerHTML = html;
-      return;
-    }
-
-    teamsWithData.sort((a, b) => b.matchStats.total - a.matchStats.total);
-
-    html += '<div class="match-header">Match ' + matchNumber + '</div>';
-    html += '<div class="table-container"><table class="leaderboard-table"><thead><tr>';
-    html += '<th>Rank</th><th>Team</th><th>Group</th>';
-    html += '<th>Place Pts</th><th>Kill Pts</th><th>Total</th><th>🏆</th></tr></thead><tbody>';
-
-    teamsWithData.forEach((team, index) => {
-      const rank = index + 1;
-      const stats = team.matchStats;
-      const rankClass = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
-      const wwcdClass = stats.wwcd ? 'wwcd-winner' : '';
-      const wwcd = stats.wwcd ? '🏆' : '-';
-
-      html += '<tr class="' + rankClass + ' ' + wwcdClass + '">';
-      html += '<td><strong>' + rank + '</strong></td>';
-      html += '<td><div style="display:flex;align-items:center;gap:8px;">';
-      html += '<span class="team-logo-mini">' + team.team_logo + '</span>';
-      html += '<span>' + team.team_name + '</span></div></td>';
-      html += '<td>' + team.group + '</td>';
-      html += '<td>' + (stats.place_pts || 0) + '</td>';
-      html += '<td>' + (stats.kill_pts || 0) + '</td>';
-      html += '<td><strong>' + (stats.total || 0) + '</strong></td>';
-      html += '<td>' + wwcd + '</td></tr>';
-    });
-
-    html += '</tbody></table></div>';
-    document.getElementById('standingsContent').innerHTML = html;
-  }
-
-  window.selectMatch = function(matchKey) {
-    currentMatch = matchKey;
-    renderMatchSelector(currentFilter);
-  };
-
-  function renderOverallCombined() {
-    const teams = [...standingsData].sort((a, b) => 
-      (b.stats.overall.total_pts || 0) - (a.stats.overall.total_pts || 0)
-    );
-
-    let html = '<div class="table-container"><table class="leaderboard-table"><thead><tr>';
-    html += '<th>Rank</th><th>Team</th><th>Group</th><th>Matches</th>';
-    html += '<th>Place Pts</th><th>Kill Pts</th><th>Total</th><th>🏆</th></tr></thead><tbody>';
-
-    teams.forEach((team, index) => {
-      const rank = index + 1;
-      const stats = team.stats.overall;
-      const rankClass = rank <= 3 ? 'rank-' + rank : '';
-      const wwcd = stats.wwcd_count > 0 ? '🏆'.repeat(stats.wwcd_count) : '-';
-
-      html += '<tr class="' + rankClass + '"><td><strong>' + rank + '</strong></td>';
-      html += '<td><div style="display:flex;align-items:center;gap:8px;">';
-      html += '<span class="team-logo-mini">' + team.team_logo + '</span>';
-      html += '<span>' + team.team_name + '</span></div></td>';
-      html += '<td>' + team.group + '</td>';
-      html += '<td>' + (stats.matches_played || 0) + '</td>';
-      html += '<td>' + (stats.finish_pts || stats.pos_pts || 0) + '</td>';
-      html += '<td>' + ((stats.total_pts || 0) - (stats.finish_pts || stats.pos_pts || 0)) + '</td>';
-      html += '<td><strong>' + (stats.total_pts || 0) + '</strong></td>';
-      html += '<td>' + wwcd + '</td></tr>';
-    });
-
-    html += '</tbody></table></div>';
-    document.getElementById('standingsContent').innerHTML = html;
-  }
-
-  function setupFilters() {
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentMatch = null; // Reset match selection when changing filter
-        renderContent(btn.dataset.filter);
+  function initParticles() {
+    if (!canvas) return;
+    particles = [];
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * particleSpeed,
+        vy: (Math.random() - 0.5) * particleSpeed,
+        size: Math.random() * 3 + 1
       });
-    });
+    }
   }
 
-  function setupViewToggle() {
-    const viewBtns = document.querySelectorAll('.view-toggle-btn');
-    viewBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        viewBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentView = btn.dataset.view;
-        currentGroup = null; // Reset group selection when changing view
-        if (currentFilter === 'overall') {
-          renderContent('overall');
+  function animateParticles() {
+    if (!ctx || !canvas) return;
+
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach((p, i) => {
+      if (!ctx || !canvas) return;
+
+      // Update position
+      p.x += p.vx;
+      p.y += p.vy;
+
+      // Bounce off edges
+      if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+      // Draw cyan halo
+      ctx.fillStyle = 'rgba(0, 242, 254, 0.3)';
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size * 3, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Draw golden particle with cyan shadow
+      ctx.shadowColor = 'rgba(0, 242, 254, 0.8)';
+      ctx.shadowBlur = 15;
+      ctx.fillStyle = 'rgba(255, 215, 0, 0.9)';
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.shadowBlur = 0;
+
+      // Draw connections
+      particles.slice(i + 1).forEach(p2 => {
+        if (!ctx || !canvas) return;
+        const dx = p.x - p2.x;
+        const dy = p.y - p2.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < 120) {
+          const opacity = 0.4 * (1 - dist / 120);
+
+          // Cyan glow line
+          ctx.strokeStyle = `rgba(0, 242, 254, \${opacity * 0.6})`;
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.stroke();
+
+          // Golden line
+          ctx.strokeStyle = `rgba(255, 215, 0, \${opacity})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.stroke();
         }
       });
     });
+
+    animationFrame = requestAnimationFrame(animateParticles);
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadStandings);
-  } else {
-    loadStandings();
+  // Render Leading Team Banner with Effects
+  async function renderLeadingTeamBanner() {
+    const container = document.getElementById('leadingTeamBannerContainer');
+    if (!container) return;
+
+    try {
+      const response = await fetch('/data/standings.json');
+      if (!response.ok) return;
+
+      const standings = await response.json();
+      if (!standings || standings.length === 0) return;
+
+      // Find the team with highest total score
+      const leadingTeam = standings.reduce((max: any, team: any) => 
+        team.totalScore > max.totalScore ? team : max
+      , standings[0]);
+
+      if (!leadingTeam) return;
+
+      // Create banner with effects
+      const banner = document.createElement('div');
+      banner.className = 'leading-team-banner-with-effects';
+      banner.innerHTML = `
+        <!-- EFFECTS LAYER -->
+        <div class="effects-layer">
+          <!-- Pulse Rings -->
+          <div class="pulse-ring"></div>
+          <div class="pulse-ring"></div>
+          <div class="pulse-ring"></div>
+
+          <!-- Particles Canvas -->
+          <canvas class="particles-canvas" id="particlesCanvas"></canvas>
+
+          <!-- Cyber Beams -->
+          <div class="cyber-beams-container">
+            <div class="cyber-beam"></div>
+            <div class="cyber-beam"></div>
+            <div class="cyber-beam"></div>
+            <div class="cyber-beam"></div>
+          </div>
+        </div>
+
+        <!-- BANNER CONTENT -->
+        <h2 class="leading-team-text">\${escapeHtml(leadingTeam.teamName)} is Leading 🔥</h2>
+      `;
+
+      container.innerHTML = '';
+      container.appendChild(banner);
+
+      // Initialize particle canvas after banner is rendered
+      setTimeout(() => {
+        const particleCanvas = document.getElementById('particlesCanvas') as HTMLCanvasElement;
+        if (particleCanvas) {
+          initParticleCanvas(particleCanvas);
+        }
+      }, 100);
+
+    } catch (error) {
+      console.log('Could not render leading team banner:', error);
+    }
   }
+
+  // Helper function to escape HTML
+  function escapeHtml(text: string): string {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  // Load leading team banner on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderLeadingTeamBanner);
+  } else {
+    renderLeadingTeamBanner();
+  }
+
+  // Handle window resize for canvas
+  window.addEventListener('resize', () => {
+    if (canvas) resizeCanvas();
+  });
 </script>
