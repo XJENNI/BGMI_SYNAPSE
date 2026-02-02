@@ -536,16 +536,19 @@
                 
                 if (!leadingTeam) return;
                 
+                // Normalize team name for better matching
+                const normalizeTeamName = (name) => name.toLowerCase().trim().replace(/\s+/g, ' ');
+                const normalizedLeadingTeamName = normalizeTeamName(leadingTeam.teamName);
+                
                 // Find the team card that matches the leading team name
                 teamCards.forEach(card => {
                     const teamNameElement = card.querySelector('.team-name');
                     if (!teamNameElement) return;
                     
-                    const teamName = teamNameElement.innerText.trim();
+                    const teamName = normalizeTeamName(teamNameElement.innerText);
                     
-                    // Check if this card matches the leading team
-                    if (teamName.toLowerCase().includes(leadingTeam.teamName.toLowerCase()) ||
-                        leadingTeam.teamName.toLowerCase().includes(teamName.toLowerCase())) {
+                    // Check if this card matches the leading team (exact match)
+                    if (teamName === normalizedLeadingTeamName) {
                         // Apply golden halo effect
                         card.classList.add('leading-team');
                         
