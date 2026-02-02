@@ -13,7 +13,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
 
-      <!-- Leading Team Banner with Ember Particles -->
+      <!-- Leading Team Banner with Sunray Aura -->
       <div id="leadingTeamBannerContainer"></div>
 
       <!-- Filter Tabs -->
@@ -147,28 +147,60 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* ============================================
-     EMBER PARTICLES EFFECT FOR LEADING BANNER
+     SUNRAY AURA + EMBER PARTICLES FOR BANNER
      ============================================ */
 
+  /* Banner wrapper for sunray overflow */
+  #leadingTeamBannerContainer {
+    position: relative;
+    margin: 3rem auto;
+    max-width: 500px;
+  }
+
   .leading-team-banner {
-    background: linear-gradient(135deg, rgba(255, 69, 0, 0.15) 0%, rgba(139, 0, 0, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(255, 69, 0, 0.2) 0%, rgba(139, 0, 0, 0.15) 100%);
     border: 2px solid #ff4500;
     border-radius: 12px;
     padding: 1.125rem 1.5rem;
-    margin: 1.5rem auto;
     text-align: center;
     position: relative;
-    overflow: hidden;
+    overflow: visible; /* Changed from hidden to allow sunrays outside */
     box-shadow: 
       0 0 30px rgba(255, 69, 0, 0.6),
       0 0 60px rgba(255, 140, 0, 0.4),
       inset 0 0 30px rgba(255, 69, 0, 0.2);
     animation: fire-pulse 2s ease-in-out infinite;
-    max-width: 450px;
+    z-index: 2;
   }
 
-  /* EMBER EFFECT - Floating ember particles */
+  /* SUNRAY AURA - Radiating lines extending outside the box */
   .leading-team-banner::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    transform: translate(-50%, -50%);
+    background: 
+      repeating-conic-gradient(
+        from 0deg at 50% 50%,
+        rgba(255, 140, 0, 0) 0deg,
+        rgba(255, 140, 0, 0.3) 2deg,
+        rgba(255, 200, 0, 0.4) 3deg,
+        rgba(255, 140, 0, 0.3) 4deg,
+        rgba(255, 140, 0, 0) 6deg,
+        rgba(255, 140, 0, 0) 15deg
+      );
+    animation: sunray-rotate 20s linear infinite;
+    z-index: -2;
+    pointer-events: none;
+    border-radius: 50%;
+    filter: blur(2px);
+  }
+
+  /* EMBER PARTICLES - Behind text but above background */
+  .leading-team-banner::after {
     content: '';
     position: absolute;
     top: 0;
@@ -176,86 +208,81 @@ import Layout from '../layouts/Layout.astro';
     right: 0;
     bottom: 0;
     background-image: 
-      radial-gradient(circle at 15% 85%, rgba(255, 140, 0, 0.6) 0%, transparent 3%),
-      radial-gradient(circle at 45% 70%, rgba(255, 100, 0, 0.5) 0%, transparent 2%),
-      radial-gradient(circle at 75% 90%, rgba(255, 200, 0, 0.4) 0%, transparent 2.5%),
-      radial-gradient(circle at 25% 60%, rgba(255, 69, 0, 0.7) 0%, transparent 2%),
-      radial-gradient(circle at 85% 75%, rgba(255, 140, 0, 0.5) 0%, transparent 3%),
-      radial-gradient(circle at 55% 95%, rgba(255, 150, 0, 0.6) 0%, transparent 2%),
-      radial-gradient(circle at 35% 80%, rgba(255, 100, 0, 0.4) 0%, transparent 2.5%),
-      radial-gradient(circle at 65% 65%, rgba(255, 180, 0, 0.5) 0%, transparent 2%),
-      radial-gradient(circle at 90% 85%, rgba(255, 120, 0, 0.6) 0%, transparent 3%),
-      radial-gradient(circle at 10% 75%, rgba(255, 160, 0, 0.4) 0%, transparent 2%);
+      radial-gradient(circle at 15% 85%, rgba(255, 140, 0, 0.4) 0%, transparent 3%),
+      radial-gradient(circle at 45% 70%, rgba(255, 100, 0, 0.35) 0%, transparent 2%),
+      radial-gradient(circle at 75% 90%, rgba(255, 200, 0, 0.3) 0%, transparent 2.5%),
+      radial-gradient(circle at 25% 60%, rgba(255, 69, 0, 0.5) 0%, transparent 2%),
+      radial-gradient(circle at 85% 75%, rgba(255, 140, 0, 0.4) 0%, transparent 3%),
+      radial-gradient(circle at 55% 95%, rgba(255, 150, 0, 0.45) 0%, transparent 2%),
+      radial-gradient(circle at 35% 80%, rgba(255, 100, 0, 0.3) 0%, transparent 2.5%),
+      radial-gradient(circle at 65% 65%, rgba(255, 180, 0, 0.4) 0%, transparent 2%),
+      radial-gradient(circle at 90% 85%, rgba(255, 120, 0, 0.45) 0%, transparent 3%),
+      radial-gradient(circle at 10% 75%, rgba(255, 160, 0, 0.3) 0%, transparent 2%);
     background-size: 100% 100%;
     animation: ember-float 8s ease-in-out infinite;
     z-index: 0;
-    opacity: 0.8;
-  }
-
-  /* Animated border with fire colors */
-  .leading-team-banner::after {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(
-      45deg,
-      #ff4500 0%,
-      #ff8c00 25%,
-      #ffd700 50%,
-      #ff8c00 75%,
-      #ff4500 100%
-    );
-    background-size: 300% 300%;
-    animation: fire-border-flow 4s linear infinite;
-    z-index: -1;
+    opacity: 0.6;
     border-radius: inherit;
-    opacity: 0.8;
   }
 
+  /* TEXT - High visibility with background and strong shadows */
   .leading-team-banner h2 {
     font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 700;
-    color: #ff4500;
+    color: #ffffff; /* Changed to white for better visibility */
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 
-      0 0 10px rgba(255, 140, 0, 1),
-      0 0 20px rgba(255, 69, 0, 0.8),
-      0 0 30px rgba(255, 200, 0, 0.6),
-      0 2px 4px rgba(0, 0, 0, 0.5);
-    animation: fire-text-flicker 2s ease-in-out infinite;
     margin: 0;
     position: relative;
-    z-index: 1;
+    z-index: 10; /* High z-index to stay above all effects */
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(40, 20, 0, 0.7)); /* Dark background behind text */
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-shadow: 
+      0 0 20px rgba(255, 140, 0, 1),
+      0 0 40px rgba(255, 69, 0, 0.9),
+      0 2px 8px rgba(0, 0, 0, 0.9),
+      2px 2px 4px rgba(0, 0, 0, 1); /* Strong black shadow for contrast */
+    animation: fire-text-flicker 2s ease-in-out infinite;
+    box-shadow: 
+      0 0 20px rgba(255, 140, 0, 0.5),
+      inset 0 0 20px rgba(255, 69, 0, 0.2);
   }
 
   /* KEYFRAMES */
 
-  /* Ember floating animation - moves embers upward and side-to-side */
+  /* Sunray rotation animation */
+  @keyframes sunray-rotate {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  /* Ember floating animation */
   @keyframes ember-float {
     0% {
       transform: translateY(0) translateX(0);
-      opacity: 0.8;
+      opacity: 0.6;
     }
     25% {
       transform: translateY(-8px) translateX(3px);
-      opacity: 1;
+      opacity: 0.8;
     }
     50% {
       transform: translateY(-15px) translateX(-2px);
-      opacity: 0.9;
+      opacity: 0.7;
     }
     75% {
       transform: translateY(-25px) translateX(4px);
-      opacity: 0.7;
+      opacity: 0.5;
     }
     100% {
       transform: translateY(-35px) translateX(0);
-      opacity: 0.5;
+      opacity: 0.3;
     }
   }
 
@@ -269,22 +296,9 @@ import Layout from '../layouts/Layout.astro';
     }
     50% {
       box-shadow: 
-        0 0 40px rgba(255, 69, 0, 0.8),
-        0 0 80px rgba(255, 140, 0, 0.6),
-        inset 0 0 40px rgba(255, 69, 0, 0.3);
-    }
-  }
-
-  /* Border flow animation */
-  @keyframes fire-border-flow {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
+        0 0 45px rgba(255, 69, 0, 0.8),
+        0 0 90px rgba(255, 140, 0, 0.6),
+        inset 0 0 45px rgba(255, 69, 0, 0.3);
     }
   }
 
@@ -292,34 +306,34 @@ import Layout from '../layouts/Layout.astro';
   @keyframes fire-text-flicker {
     0%, 100% {
       text-shadow: 
-        0 0 10px rgba(255, 140, 0, 1),
-        0 0 20px rgba(255, 69, 0, 0.8),
-        0 0 30px rgba(255, 200, 0, 0.6),
-        0 2px 4px rgba(0, 0, 0, 0.5);
+        0 0 20px rgba(255, 140, 0, 1),
+        0 0 40px rgba(255, 69, 0, 0.9),
+        0 2px 8px rgba(0, 0, 0, 0.9),
+        2px 2px 4px rgba(0, 0, 0, 1);
       opacity: 1;
     }
     25% {
       text-shadow: 
-        0 0 15px rgba(255, 140, 0, 1),
-        0 0 25px rgba(255, 69, 0, 0.9),
-        0 0 40px rgba(255, 200, 0, 0.7),
-        0 2px 4px rgba(0, 0, 0, 0.5);
+        0 0 25px rgba(255, 140, 0, 1),
+        0 0 50px rgba(255, 69, 0, 1),
+        0 2px 8px rgba(0, 0, 0, 0.9),
+        2px 2px 4px rgba(0, 0, 0, 1);
       opacity: 0.95;
     }
     50% {
       text-shadow: 
-        0 0 20px rgba(255, 140, 0, 1),
-        0 0 30px rgba(255, 69, 0, 1),
-        0 0 50px rgba(255, 200, 0, 0.8),
-        0 2px 4px rgba(0, 0, 0, 0.5);
+        0 0 30px rgba(255, 140, 0, 1),
+        0 0 60px rgba(255, 69, 0, 1),
+        0 2px 8px rgba(0, 0, 0, 0.9),
+        2px 2px 4px rgba(0, 0, 0, 1);
       opacity: 1;
     }
     75% {
       text-shadow: 
-        0 0 12px rgba(255, 140, 0, 1),
-        0 0 22px rgba(255, 69, 0, 0.85),
-        0 0 35px rgba(255, 200, 0, 0.65),
-        0 2px 4px rgba(0, 0, 0, 0.5);
+        0 0 22px rgba(255, 140, 0, 1),
+        0 0 45px rgba(255, 69, 0, 0.95),
+        0 2px 8px rgba(0, 0, 0, 0.9),
+        2px 2px 4px rgba(0, 0, 0, 1);
       opacity: 0.98;
     }
   }
@@ -348,15 +362,24 @@ import Layout from '../layouts/Layout.astro';
   }
 
   @media (max-width: 768px) {
+    #leadingTeamBannerContainer {
+      margin: 2rem auto;
+    }
+
     .leading-team-banner {
       padding: 0.9rem 1.125rem;
-      margin: 1rem auto;
       max-width: 90%;
     }
 
     .leading-team-banner h2 {
       font-size: 1.125rem;
       letter-spacing: 1px;
+      padding: 0.4rem 0.8rem;
+    }
+
+    .leading-team-banner::before {
+      width: 130%;
+      height: 130%;
     }
 
     .leaderboard-table {
@@ -382,8 +405,8 @@ import Layout from '../layouts/Layout.astro';
   let standingsData = [];
   let currentFilter = 'overall';
   let currentView = 'combined';
-  let currentGroup = null;  // For group selection
-  let currentMatch = null;  // For match selection
+  let currentGroup = null;
+  let currentMatch = null;
 
   async function loadStandings() {
     try {
@@ -422,7 +445,7 @@ import Layout from '../layouts/Layout.astro';
     container.innerHTML = '';
     container.appendChild(banner);
 
-    console.log('🔥 Leading banner with ember particles created');
+    console.log('☀️ Leading banner with sunray aura created');
   }
 
   function escapeHtml(text) {
@@ -449,9 +472,6 @@ import Layout from '../layouts/Layout.astro';
     }
   }
 
-  // ========================================
-  // GROUP SELECTOR (For "By Group" view)
-  // ========================================
   function renderGroupSelector() {
     const groups = {};
     standingsData.forEach(team => {
@@ -461,12 +481,10 @@ import Layout from '../layouts/Layout.astro';
 
     const groupNames = Object.keys(groups).sort();
 
-    // Set default group if not selected
     if (!currentGroup || !groupNames.includes(currentGroup)) {
       currentGroup = groupNames[0];
     }
 
-    // Create group selector buttons
     let html = '<div style="text-align: center; margin-bottom: 1.5rem;">';
     html += '<div class="selector-buttons">';
     groupNames.forEach(groupName => {
@@ -476,7 +494,6 @@ import Layout from '../layouts/Layout.astro';
     });
     html += '</div></div>';
 
-    // Render selected group data
     const groupTeams = groups[currentGroup].sort((a, b) => 
       (b.stats.overall.total_pts || 0) - (a.stats.overall.total_pts || 0)
     );
@@ -512,18 +529,13 @@ import Layout from '../layouts/Layout.astro';
     renderGroupSelector();
   };
 
-  // ========================================
-  // MATCH SELECTOR (For Day views)
-  // ========================================
   function renderMatchSelector(day) {
     const matchKeys = day === 'finals' ? ['M1', 'M2', 'M3', 'M4', 'M5', 'M6'] : ['M1', 'M2', 'M3', 'M4'];
 
-    // Set default match if not selected
     if (!currentMatch || !matchKeys.includes(currentMatch)) {
       currentMatch = matchKeys[0];
     }
 
-    // Create match selector buttons
     let html = '<div style="text-align: center; margin-bottom: 1.5rem;">';
     html += '<div class="selector-buttons">';
     matchKeys.forEach(matchKey => {
@@ -534,7 +546,6 @@ import Layout from '../layouts/Layout.astro';
     });
     html += '</div></div>';
 
-    // Render selected match data
     const matchNumber = currentMatch.substring(1);
     const teamsWithData = standingsData.map(team => {
       const matchData = team.stats[day]?.[currentMatch];
@@ -623,7 +634,7 @@ import Layout from '../layouts/Layout.astro';
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        currentMatch = null; // Reset match selection when changing filter
+        currentMatch = null;
         renderContent(btn.dataset.filter);
       });
     });
@@ -636,7 +647,7 @@ import Layout from '../layouts/Layout.astro';
         viewBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         currentView = btn.dataset.view;
-        currentGroup = null; // Reset group selection when changing view
+        currentGroup = null;
         if (currentFilter === 'overall') {
           renderContent('overall');
         }
