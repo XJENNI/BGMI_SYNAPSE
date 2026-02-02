@@ -15,10 +15,10 @@ import Layout from '../layouts/Layout.astro';
           Switch View
         </button>
       </div>
-      
+
       <!-- Leading Team Banner (will be populated by JavaScript) -->
       <div id="leadingTeamBannerContainer"></div>
-      
+
       <div class="filter-tabs" id="filterTabs">
         <button class="filter-btn active" data-filter="all">
           <span>Overall</span>
@@ -53,7 +53,7 @@ import Layout from '../layouts/Layout.astro';
         <button class="filter-btn btn-sm" data-group="D">Group D</button>
         <button class="filter-btn btn-sm" data-group="mvp">MVP</button>
       </div>
-      
+
       <div id="overallContainer" style="display:none;">
         <div id="groupView">
           <div class="group-grid">
@@ -86,7 +86,7 @@ import Layout from '../layouts/Layout.astro';
           </tbody>
         </table>
       </div>
-      
+
       <div class="last-updated" id="lastUpdated">
         Last updated: --:--
       </div>
@@ -95,7 +95,137 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script>
-  // Standings page logic
+  // ========================================
+  // CANVAS FIRE PARTICLE SYSTEM
+  // ========================================
+
+  class FireParticle {
+    constructor(x, y, canvas) {
+      this.x = x;
+      this.y = y;
+      this.canvas = canvas;
+      this.size = Math.random() * 8 + 2;
+      this.speedY = Math.random() * 3 + 1;
+      this.speedX = (Math.random() - 0.5) * 2;
+      this.life = 1;
+      this.decay = Math.random() * 0.015 + 0.005;
+      this.color = this.getFireColor();
+    }
+
+    getFireColor() {
+      const colors = [
+        { r: 255, g: 69, b: 0, a: 1 },    // Red-Orange
+        { r: 255, g: 140, b: 0, a: 1 },   // Dark Orange
+        { r: 255, g: 200, b: 0, a: 1 },   // Gold
+        { r: 255, g: 255, b: 0, a: 0.8 }, // Yellow
+      ];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    update() {
+      this.y -= this.speedY;
+      this.x += this.speedX;
+      this.life -= this.decay;
+      this.size *= 0.98;
+    }
+
+    draw(ctx) {
+      if (this.life <= 0) return;
+
+      const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size);
+      gradient.addColorStop(0, `rgba(${"$"}{this.color.r}, ${"$"}{this.color.g}, ${"$"}{this.color.b}, ${"$"}{this.life * this.color.a})`);
+      gradient.addColorStop(0.5, `rgba(${"$"}{this.color.r}, ${"$"}{this.color.g}, ${"$"}{this.color.b}, ${"$"}{this.life * 0.5})`);
+      gradient.addColorStop(1, `rgba(${"$"}{this.color.r}, ${"$"}{this.color.g}, ${"$"}{this.color.b}, 0)`);
+
+      ctx.fillStyle = gradient;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    isAlive() {
+      return this.life > 0;
+    }
+  }
+
+  class FireEffect {
+    constructor(element) {
+      this.element = element;
+      this.canvas = document.createElement('canvas');
+      this.ctx = this.canvas.getContext('2d');
+      this.particles = [];
+      this.setupCanvas();
+      this.animate();
+    }
+
+    setupCanvas() {
+      this.canvas.style.position = 'absolute';
+      this.canvas.style.top = '0';
+      this.canvas.style.left = '0';
+      this.canvas.style.width = '100%';
+      this.canvas.style.height = '100%';
+      this.canvas.style.pointerEvents = 'none';
+      this.canvas.style.zIndex = '1';
+
+      const rect = this.element.getBoundingClientRect();
+      this.canvas.width = rect.width;
+      this.canvas.height = rect.height;
+
+      this.element.style.position = 'relative';
+      this.element.appendChild(this.canvas);
+
+      // Resize handler
+      window.addEventListener('resize', () => this.handleResize());
+    }
+
+    handleResize() {
+      const rect = this.element.getBoundingClientRect();
+      this.canvas.width = rect.width;
+      this.canvas.height = rect.height;
+    }
+
+    createParticles() {
+      const width = this.canvas.width;
+      const height = this.canvas.height;
+
+      // Create particles along the bottom
+      for (let i = 0; i < 3; i++) {
+        const x = Math.random() * width;
+        const y = height - 5;
+        this.particles.push(new FireParticle(x, y, this.canvas));
+      }
+    }
+
+    animate() {
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+      // Create new particles
+      this.createParticles();
+
+      // Update and draw particles
+      this.particles = this.particles.filter(particle => {
+        particle.update();
+        particle.draw(this.ctx);
+        return particle.isAlive();
+      });
+
+      requestAnimationFrame(() => this.animate());
+    }
+  }
+
+  // Initialize fire effect when banner is created
+  function initFireEffect() {
+    const banner = document.querySelector('.leading-team-banner');
+    if (banner && !banner.dataset.fireInitialized) {
+      new FireEffect(banner);
+      banner.dataset.fireInitialized = 'true';
+    }
+  }
+
+  // ========================================
+  // STANDINGS PAGE LOGIC
+  // ========================================
+
   const filterTabs = document.getElementById('filterTabs');
   const matchFilters = document.getElementById('matchFilters');
   const overallFilters = document.getElementById('overallFilters');
@@ -104,9 +234,9 @@ import Layout from '../layouts/Layout.astro';
     const target = e.target as HTMLElement;
     const btn = target.closest('.filter-btn') as HTMLElement;
     if (!btn) return;
-    
+
     const filter = btn.dataset.filter;
-    
+
     // Update active state
     filterTabs.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
@@ -148,7 +278,7 @@ import Layout from '../layouts/Layout.astro';
     isTableView = !isTableView;
     const tableContainer = document.querySelector('.table-container') as HTMLElement;
     const overallContainer = document.getElementById('overallContainer');
-    
+
     if (tableContainer) tableContainer.style.display = isTableView ? 'block' : 'none';
     if (overallContainer) overallContainer.style.display = isTableView ? 'none' : 'block';
   });
@@ -158,7 +288,7 @@ import Layout from '../layouts/Layout.astro';
     const target = e.target as HTMLElement;
     const btn = target.closest('.filter-btn') as HTMLElement;
     if (!btn) return;
-    
+
     matchFilters.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
   });
@@ -168,12 +298,12 @@ import Layout from '../layouts/Layout.astro';
     const target = e.target as HTMLElement;
     const btn = target.closest('.filter-btn') as HTMLElement;
     if (!btn) return;
-    
+
     overallFilters.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
   });
 
-  // Render Leading Team Banner
+  // Render Leading Team Banner (FIXED)
   async function renderLeadingTeamBanner() {
     const container = document.getElementById('leadingTeamBannerContainer');
     if (!container) return;
@@ -181,26 +311,29 @@ import Layout from '../layouts/Layout.astro';
     try {
       const response = await fetch('/data/standings.json');
       if (!response.ok) return;
-      
+
       const standings = await response.json();
       if (!standings || standings.length === 0) return;
-      
-      // Find the team with highest total score
-      const leadingTeam = standings.reduce((max, team) => 
-      team.stats.overall.total_pts > max.stats.overall.total_pts ? team : max
+
+      // Find the team with highest total score (FIXED: uses stats.overall.total_pts)
+      const leadingTeam = standings.reduce((max: any, team: any) => 
+        team.stats.overall.total_pts > max.stats.overall.total_pts ? team : max
       , standings[0]);
-      
+
       if (!leadingTeam) return;
-      
-      // Create and insert banner
+
+      // Create and insert banner (FIXED: uses team_name)
       const banner = document.createElement('div');
       banner.className = 'leading-team-banner';
       banner.innerHTML = `
-        <h2 class="leading-team-text">${escapeHtml(leadingTeam.team_name)} is Leading 🔥</h2>
+        <h2 class="leading-team-text">${"$"}{escapeHtml(leadingTeam.team_name)} is Leading 🔥</h2>
       `;
-      
+
       container.innerHTML = '';
       container.appendChild(banner);
+
+      // Initialize fire effect after banner is in DOM
+      setTimeout(initFireEffect, 100);
     } catch (error) {
       console.log('Could not render leading team banner:', error);
     }
