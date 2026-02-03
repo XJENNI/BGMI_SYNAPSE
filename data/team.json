@@ -29,7 +29,7 @@
     "team_id": "TEAM_001"
   },
   {
-    "logo": "TK",
+    "logo": "T00",
     "name": "TEAM KRYO",
     "players": [
       {
@@ -54,7 +54,7 @@
       }
     ],
     "college": "Unknown",
-    "group": "Group D",
+    "group": "Group A",
     "team_id": "TEAM_002"
   },
   {
@@ -247,8 +247,8 @@
     "team_id": "TEAM_008"
   },
   {
-    "logo": "AD",
-    "name": "Adarsh kumar",
+    "logo": "4NS",
+    "name": "4 Night soldiers",
     "players": [
       {
         "icon": "fa-crosshairs",
