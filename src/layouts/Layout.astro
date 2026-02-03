@@ -78,7 +78,7 @@ const { title, description = "SYNAPSE MAMC BGMI 2026 - Official BGMI Esports Tou
         <button type="button" class="popup-close" id="popupClose" aria-label="Close notification">×</button>
         <div class="popup-icon">⚠️</div>
         <h3 class="popup-title">REGISTRATIONS ARE CLOSED!!</h3>
-        <p class="popup-message"CHECK TEAM SECTIONS !!</p>
+        <p class="popup-message">CHECK TEAM SECTIONS !!</p>
       </div>
     </div>
   )}
@@ -152,14 +152,13 @@ const { title, description = "SYNAPSE MAMC BGMI 2026 - Official BGMI Esports Tou
       </div>
     </div>
   </div>
-   <!-- Floating Registration Badge -->
-    <a href="https://forms.gle/1S6GPtYdGYCDVqbr6" 
-       target="_blank" 
-       rel="noopener noreferrer" 
+   <!-- Floating Registration Badge - Now shows Closed status -->
+    <a href="/teams" 
        class="floating-registration-badge"
-       aria-label="Click for registration">
-        <span class="badge-icon">📝</span>
-        <span class="badge-text">Click for Registration</span>
+       style="background: linear-gradient(135deg, #ff0055, #cc0044); border-color: #ff0055;"
+       aria-label="View registered teams">
+        <span class="badge-icon">🔒</span>
+        <span class="badge-text">Registrations Closed</span>
     </a>
 
     <!-- Mobile Nav Overlay -->
