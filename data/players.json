@@ -1,1406 +1,1778 @@
 [
-    {
-        "team_id": "TEAM_001",
-        "team_name": "CAPA",
-        "name": "Neochleo",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_001",
-        "team_name": "CAPA",
-        "name": "Flawless7134",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_001",
-        "team_name": "CAPA",
-        "name": "GamingNation18",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_001",
-        "team_name": "CAPA",
-        "name": "Galactus",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_002",
-        "team_name": "TEAM KRYO",
-        "name": "KRYO\u300eCHAOS\u300f",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_002",
-        "team_name": "TEAM KRYO",
-        "name": "KRYO\u300eALPHA\u300f",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_002",
-        "team_name": "TEAM KRYO",
-        "name": "KRYO\u300eHAVOC\u300f",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_002",
-        "team_name": "TEAM KRYO",
-        "name": "KRYO\u300eGHOST\u300f",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_003",
-        "team_name": "Blunder",
-        "name": "DETAINED",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_003",
-        "team_name": "Blunder",
-        "name": "Ethan hunt",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_003",
-        "team_name": "Blunder",
-        "name": "YOUWILLDIE",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_003",
-        "team_name": "Blunder",
-        "name": "TUNTUN PAPA",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_004",
-        "team_name": "Dark Heaven",
-        "name": "\u012b\u300eMONARCH\u300f",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_004",
-        "team_name": "Dark Heaven",
-        "name": "GH\u00c0AT\u00c0K",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_004",
-        "team_name": "Dark Heaven",
-        "name": "\u012b\u014dAMAN\u014d\u012b",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_004",
-        "team_name": "Dark Heaven",
-        "name": "\u012b\u300eREAPER\u300f",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_004",
-        "team_name": "Dark Heaven",
-        "name": "GOKU\u7384AKKI\u4e48",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_005",
-        "team_name": "Pistol gang",
-        "name": "\u301cMAFIA\u066d",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_005",
-        "team_name": "Pistol gang",
-        "name": "CreXw\u016bBLURRY",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_005",
-        "team_name": "Pistol gang",
-        "name": "\u0110\u0110\u0141Y\u4e48WOLFE",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_005",
-        "team_name": "Pistol gang",
-        "name": "FICTION003",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_006",
-        "team_name": "Team MARAUDERS",
-        "name": "HexMaster9",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_006",
-        "team_name": "Team MARAUDERS",
-        "name": "DRAYUIKON",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_006",
-        "team_name": "Team MARAUDERS",
-        "name": "vinodrajbhar11",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_006",
-        "team_name": "Team MARAUDERS",
-        "name": "Sandeep047933",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_006",
-        "team_name": "Team MARAUDERS",
-        "name": "IT'SMEVRO",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_007",
-        "team_name": "8kkabaap",
-        "name": "Marrowpaglu55",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_007",
-        "team_name": "8kkabaap",
-        "name": "Dark008knight",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_007",
-        "team_name": "8kkabaap",
-        "name": "FriENdly BoT",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_007",
-        "team_name": "8kkabaap",
-        "name": "tyaMeen ]] 43",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_008",
-        "team_name": "Team Trigonometry",
-        "name": "TGMxicyy",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_008",
-        "team_name": "Team Trigonometry",
-        "name": "TGMxTONTO",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_008",
-        "team_name": "Team Trigonometry",
-        "name": "JamRePlayz",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_008",
-        "team_name": "Team Trigonometry",
-        "name": "TGMxNoVa",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_008",
-        "team_name": "Team Trigonometry",
-        "name": "\u4e48VOR\u0361\u035cTEX",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_009",
-        "team_name": "4 gods with steth",
-        "name": "4GWSxKuNaL",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_009",
-        "team_name": "4 gods with steth",
-        "name": "4GWSxNvn",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_009",
-        "team_name": "4 gods with steth",
-        "name": "STARLORD",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_009",
-        "team_name": "4 gods with steth",
-        "name": "4GWSxVicky",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_010",
-        "team_name": "TABHAI ESPORTS",
-        "name": "TBxDhrUv",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_010",
-        "team_name": "TABHAI ESPORTS",
-        "name": "TBxLeO",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_010",
-        "team_name": "TABHAI ESPORTS",
-        "name": "TBxJxSHUA07",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_010",
-        "team_name": "TABHAI ESPORTS",
-        "name": "TBxDaNGeR",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_011",
-        "team_name": "NO AIM",
-        "name": "NAxAsur",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_011",
-        "team_name": "NO AIM",
-        "name": "NAxVenom",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_011",
-        "team_name": "NO AIM",
-        "name": "NAxLexin",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_011",
-        "team_name": "NO AIM",
-        "name": "NAxLoneWolf",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_012",
-        "team_name": "Team gmc kota",
-        "name": "DADDYXYUVI",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_012",
-        "team_name": "Team gmc kota",
-        "name": "ZoroNubb",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_012",
-        "team_name": "Team gmc kota",
-        "name": "4AMxNoCebo",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_012",
-        "team_name": "Team gmc kota",
-        "name": "TUNTUN MOSI",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_012",
-        "team_name": "Team gmc kota",
-        "name": "4AMxinhee6",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_013",
-        "team_name": "TEAM GOAT",
-        "name": "\u4e97 AJAY \u4e97",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_013",
-        "team_name": "TEAM GOAT",
-        "name": "\u4e97 DRDOOM \u4e97",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_013",
-        "team_name": "TEAM GOAT",
-        "name": "\u4e97\u0113ANSARI\u0113\u4e97",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_013",
-        "team_name": "TEAM GOAT",
-        "name": "XQU\u00c0D=MOHIT",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_013",
-        "team_name": "TEAM GOAT",
-        "name": "Shikari - Billa",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_014",
-        "team_name": "TEAM ZEN",
-        "name": "TZxspidy",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_014",
-        "team_name": "TEAM ZEN",
-        "name": "TZxJin",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_014",
-        "team_name": "TEAM ZEN",
-        "name": "TZxI\u012bC\u012bY",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_014",
-        "team_name": "TEAM ZEN",
-        "name": "TZxS4N",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_014",
-        "team_name": "TEAM ZEN",
-        "name": "M\u00ea\u00f4wM\u00eb\u00f6w",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_015",
-        "team_name": "\u4e48\u066d\u3007\u0262\u30fbNPCs\u30fb\u0e5b",
-        "name": "npc\u300c\uff24\uff2f\uff38\u300d",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_015",
-        "team_name": "\u4e48\u066d\u3007\u0262\u30fbNPCs\u30fb\u0e5b",
-        "name": "\u6208TERROR\u5f61BOB",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_015",
-        "team_name": "\u4e48\u066d\u3007\u0262\u30fbNPCs\u30fb\u0e5b",
-        "name": "4YxHARISH",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_015",
-        "team_name": "\u4e48\u066d\u3007\u0262\u30fbNPCs\u30fb\u0e5b",
-        "name": "GHATAK\u4e97JIGS",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_015",
-        "team_name": "\u4e48\u066d\u3007\u0262\u30fbNPCs\u30fb\u0e5b",
-        "name": "akaromanreigns",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_016",
-        "team_name": "Suicide Squad",
-        "name": "NotxAman",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_016",
-        "team_name": "Suicide Squad",
-        "name": "[ITS] EXOTIC",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_016",
-        "team_name": "Suicide Squad",
-        "name": "DARTH'''VADER",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_016",
-        "team_name": "Suicide Squad",
-        "name": "LZxxPULAKop",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_016",
-        "team_name": "Suicide Squad",
-        "name": "Pepsu Stark",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_017",
-        "team_name": "NOOBS",
-        "name": "JyotishmoyNar",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_017",
-        "team_name": "NOOBS",
-        "name": "\u624btmkoc\u624b",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_017",
-        "team_name": "NOOBS",
-        "name": "Devils\u4e5bEmpero",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_017",
-        "team_name": "NOOBS",
-        "name": "abHishekSingha",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_017",
-        "team_name": "NOOBS",
-        "name": "\u06ddSHREYA\u06ddS",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_018",
-        "team_name": "Team Revengers",
-        "name": "Shubh05gamer",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_018",
-        "team_name": "Team Revengers",
-        "name": "Parvesh\u00a345",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_018",
-        "team_name": "Team Revengers",
-        "name": "Up32RANGER",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_018",
-        "team_name": "Team Revengers",
-        "name": "\uff2e\uff25\uff2d\uff25\uff53\uff29\uff33",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_018",
-        "team_name": "Team Revengers",
-        "name": "Jollyvr7",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_019",
-        "team_name": "Omega Slayers",
-        "name": "OSxBeast",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_019",
-        "team_name": "Omega Slayers",
-        "name": "W\u00d8Cx\u00d1EMES\u00eeS",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_019",
-        "team_name": "Omega Slayers",
-        "name": "\u300c\u016bYADAV\u014d\u300d",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_019",
-        "team_name": "Omega Slayers",
-        "name": "\u0e56\u06e3Unkn\u00d8wn",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_020",
-        "team_name": "League of Shadows",
-        "name": "LSxGBplayzYT",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_020",
-        "team_name": "League of Shadows",
-        "name": "TheUglyFatGuy",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_020",
-        "team_name": "League of Shadows",
-        "name": "FLx\u30fbELNoiX",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_020",
-        "team_name": "League of Shadows",
-        "name": "OGxKRISH",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_020",
-        "team_name": "League of Shadows",
-        "name": "WARRIOR\u5f61UJJU",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_021",
-        "team_name": "Team Wreckers",
-        "name": "m0iZz",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_021",
-        "team_name": "Team Wreckers",
-        "name": "\u0e5bMARCUS\u0e5b",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_021",
-        "team_name": "Team Wreckers",
-        "name": "VENOMxxWALKER",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_021",
-        "team_name": "Team Wreckers",
-        "name": "S\u5344\uff25\u4e59\uff21\uff24AA",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_021",
-        "team_name": "Team Wreckers",
-        "name": "TWxEgoist",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_022",
-        "team_name": "PROTON",
-        "name": "\u300eM Y L O\u300f",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_022",
-        "team_name": "PROTON",
-        "name": "\u4e42PsychoQueen",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_022",
-        "team_name": "PROTON",
-        "name": "ObsidianX2",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_022",
-        "team_name": "PROTON",
-        "name": "RAZZchaudhary",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_023",
-        "team_name": "4D",
-        "name": "EL MAGO",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_023",
-        "team_name": "4D",
-        "name": "4TRWJODDD",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_023",
-        "team_name": "4D",
-        "name": "RYHAN",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_023",
-        "team_name": "4D",
-        "name": "MoODOffhaiMera",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_024",
-        "team_name": "AAMIR RAZA",
-        "name": "DocARC",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_024",
-        "team_name": "AAMIR RAZA",
-        "name": "DocPeace44",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_024",
-        "team_name": "AAMIR RAZA",
-        "name": "GojoOGsatoru",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_024",
-        "team_name": "AAMIR RAZA",
-        "name": "DocZee34",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_024",
-        "team_name": "AAMIR RAZA",
-        "name": "Elcolocoboogey",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_025",
-        "team_name": "AUTACOIDS",
-        "name": "HRHxVaibhav",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_025",
-        "team_name": "AUTACOIDS",
-        "name": "HRHxRitesh",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_025",
-        "team_name": "AUTACOIDS",
-        "name": "RDXbasanti",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_025",
-        "team_name": "AUTACOIDS",
-        "name": "ZORO",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_025",
-        "team_name": "AUTACOIDS",
-        "name": "Skylights",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_026",
-        "team_name": "Team Alpha",
-        "name": "VExWizzGOD",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_026",
-        "team_name": "Team Alpha",
-        "name": "AxPyschoo18",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_026",
-        "team_name": "Team Alpha",
-        "name": "CEunike",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_026",
-        "team_name": "Team Alpha",
-        "name": "RVxPRINCE",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_026",
-        "team_name": "Team Alpha",
-        "name": "NESTxZARK30111",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_027",
-        "team_name": "Predators",
-        "name": "JAYANT\u00d7\u00d71911",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_027",
-        "team_name": "Predators",
-        "name": "A4xDeAthG\u00f8d",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_027",
-        "team_name": "Predators",
-        "name": "TITAN265",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_027",
-        "team_name": "Predators",
-        "name": "GLDxShubzz",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_027",
-        "team_name": "Predators",
-        "name": "KTxdevil",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_028",
-        "team_name": "Crusaderz",
-        "name": "DrRetarD",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_028",
-        "team_name": "Crusaderz",
-        "name": "BLTxJOD",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_028",
-        "team_name": "Crusaderz",
-        "name": "NIGG\u00e01234",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_028",
-        "team_name": "Crusaderz",
-        "name": "CODE RED GOD",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_028",
-        "team_name": "Crusaderz",
-        "name": "Inosuke0409",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_029",
-        "team_name": "Delhi ke dakait",
-        "name": "XFTxBaqar",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_029",
-        "team_name": "Delhi ke dakait",
-        "name": "PiedPiper123",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_029",
-        "team_name": "Delhi ke dakait",
-        "name": "fizalbhai68",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_029",
-        "team_name": "Delhi ke dakait",
-        "name": "\u4e5bcLoWn",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_029",
-        "team_name": "Delhi ke dakait",
-        "name": "HYDRAMIYABHAI",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_030",
-        "team_name": "Decans of Vmmc",
-        "name": "WiLDxxROCKY",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_030",
-        "team_name": "Decans of Vmmc",
-        "name": "\u4e97\u012fRITESH\u012f\u4e97",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_030",
-        "team_name": "Decans of Vmmc",
-        "name": "DrGrIMReapER",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_030",
-        "team_name": "Decans of Vmmc",
-        "name": "'''switch",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_031",
-        "team_name": "W2R Esports",
-        "name": "W2RxKyansh",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_031",
-        "team_name": "W2R Esports",
-        "name": "W2RxKrrish",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_031",
-        "team_name": "W2R Esports",
-        "name": "W2RxGXX",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_031",
-        "team_name": "W2R Esports",
-        "name": "W2RxALECTOO",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_031",
-        "team_name": "W2R Esports",
-        "name": "LefiToxPlayz",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_032",
-        "team_name": "TEAM ALBINO",
-        "name": "Stixjadoo007",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_032",
-        "team_name": "TEAM ALBINO",
-        "name": "\uff22\uff32\uff33\uff54\uff41\uff52",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_032",
-        "team_name": "TEAM ALBINO",
-        "name": "LuckyakaSAT",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_032",
-        "team_name": "TEAM ALBINO",
-        "name": "Kaushal00017",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_032",
-        "team_name": "TEAM ALBINO",
-        "name": "U8d94f1128162",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_033",
-        "team_name": "Team Invincibles",
-        "name": "INVIxGanjaOp",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_033",
-        "team_name": "Team Invincibles",
-        "name": "INVIxARYAMAN",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_033",
-        "team_name": "Team Invincibles",
-        "name": "TBxDhruv",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_033",
-        "team_name": "Team Invincibles",
-        "name": "OPxASHU",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_033",
-        "team_name": "Team Invincibles",
-        "name": "INVIxBOT",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_034",
-        "team_name": "TFL (team flawless)",
-        "name": "TFL\u00d7wolf",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_034",
-        "team_name": "TFL (team flawless)",
-        "name": "DR\u00d7jatin",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_034",
-        "team_name": "TFL (team flawless)",
-        "name": "TFL\u00d7legendop",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_034",
-        "team_name": "TFL (team flawless)",
-        "name": "TFL\u00d7hrsh",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_034",
-        "team_name": "TFL (team flawless)",
-        "name": "Abhishek",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_035",
-        "team_name": "Team Cadaver",
-        "name": "Shivam op",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_035",
-        "team_name": "Team Cadaver",
-        "name": "4MF OXIDE",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_035",
-        "team_name": "Team Cadaver",
-        "name": "LZMxHappy",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_035",
-        "team_name": "Team Cadaver",
-        "name": "Shubham",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_035",
-        "team_name": "Team Cadaver",
-        "name": "Rav3n",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_036",
-        "team_name": "UC Phantom Force",
-        "name": "SiLenTkiLLeR18",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_036",
-        "team_name": "UC Phantom Force",
-        "name": "LUCIFER\u30c4FLASH",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_036",
-        "team_name": "UC Phantom Force",
-        "name": "SzukaWitBzukaa",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_036",
-        "team_name": "UC Phantom Force",
-        "name": "UCkaJUICY",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_036",
-        "team_name": "UC Phantom Force",
-        "name": "SaubhagyaVars",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_037",
-        "team_name": "ElemenT",
-        "name": "ETxROBIN",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_037",
-        "team_name": "ElemenT",
-        "name": "ETxKRYPTON",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_037",
-        "team_name": "ElemenT",
-        "name": "SACxRevaa7",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_037",
-        "team_name": "ElemenT",
-        "name": "ooPHROLOVAoo",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_037",
-        "team_name": "ElemenT",
-        "name": "ETxRISHIII",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_038",
-        "team_name": "Crypt of Liberkuhn",
-        "name": "BESALTY",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_038",
-        "team_name": "Crypt of Liberkuhn",
-        "name": "RAVYNN",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_038",
-        "team_name": "Crypt of Liberkuhn",
-        "name": "DrShaRk",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_038",
-        "team_name": "Crypt of Liberkuhn",
-        "name": "BoboChodu",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_038",
-        "team_name": "Crypt of Liberkuhn",
-        "name": "DAAL\u30fbMAKHNI",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_039",
-        "team_name": "ANSA CERVICALIS",
-        "name": "\u4e97B\u00c8\u00c6sT\u4e97",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_039",
-        "team_name": "ANSA CERVICALIS",
-        "name": "BLACK\u012bDARGON",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_039",
-        "team_name": "ANSA CERVICALIS",
-        "name": "billu\u016bbakchod",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_039",
-        "team_name": "ANSA CERVICALIS",
-        "name": "AMCzZGILL",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_040",
-        "team_name": "Vortex esports",
-        "name": "AGxChico",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_040",
-        "team_name": "Vortex esports",
-        "name": "\u30de\u012bA\u012bM\u012bA\u016bN",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_040",
-        "team_name": "Vortex esports",
-        "name": "TTsC\u0141UTCHGO\u0110",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_040",
-        "team_name": "Vortex esports",
-        "name": "LUTERA\u30c3THANOS",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_041",
-        "team_name": "Dangerous dragons",
-        "name": "Pexx7777",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_041",
-        "team_name": "Dangerous dragons",
-        "name": "Ujjwal1779",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_041",
-        "team_name": "Dangerous dragons",
-        "name": "ShivanshSi36!",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_041",
-        "team_name": "Dangerous dragons",
-        "name": "PuranchandTri",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_042",
-        "team_name": "TEAM ANGEL",
-        "name": "KRYO\u300eDON\u300f",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_042",
-        "team_name": "TEAM ANGEL",
-        "name": "ZAFSTAR",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_042",
-        "team_name": "TEAM ANGEL",
-        "name": "Attiquetopper",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_042",
-        "team_name": "TEAM ANGEL",
-        "name": "Dipeshpaul",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_043",
-        "team_name": "Medbugs",
-        "name": "ABxABRARx720",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_043",
-        "team_name": "Medbugs",
-        "name": "SuvoThebatman",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_043",
-        "team_name": "Medbugs",
-        "name": "PeterParkerOP",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_043",
-        "team_name": "Medbugs",
-        "name": "Mr\u4e48NIKUNJ",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_043",
-        "team_name": "Medbugs",
-        "name": "IQOORNTXLOKESH",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_044",
-        "team_name": "Reigning 4",
-        "name": "R4xkira",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_044",
-        "team_name": "Reigning 4",
-        "name": "R4xwhiteniqqa",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_044",
-        "team_name": "Reigning 4",
-        "name": "R4xPapitaShake",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_044",
-        "team_name": "Reigning 4",
-        "name": "R4xsunnyizded",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_044",
-        "team_name": "Reigning 4",
-        "name": "PyroPaimon",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_045",
-        "team_name": "Team 507",
-        "name": "Achiyaaa\u5f61ji",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_045",
-        "team_name": "Team 507",
-        "name": "ES\u5f61COFFIN",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_045",
-        "team_name": "Team 507",
-        "name": "Chandra613",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_045",
-        "team_name": "Team 507",
-        "name": "\u0143eoRon",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_046",
-        "team_name": "AGNI ESPORTS",
-        "name": "LBOggy",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_046",
-        "team_name": "AGNI ESPORTS",
-        "name": "AGNIxMIGHTY",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_046",
-        "team_name": "AGNI ESPORTS",
-        "name": "MMxVAMPIRE",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_046",
-        "team_name": "AGNI ESPORTS",
-        "name": "AGNIxHAVOK",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_047",
-        "team_name": "Team megastar",
-        "name": "tangoCHARL",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_047",
-        "team_name": "Team megastar",
-        "name": "ARRE\u012b\u012bYRR",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_047",
-        "team_name": "Team megastar",
-        "name": "\u0141UFF\u01781",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_047",
-        "team_name": "Team megastar",
-        "name": "Avada1",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_048",
-        "team_name": "FORCE X",
-        "name": "\u4e48SIROHI",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_048",
-        "team_name": "FORCE X",
-        "name": "SanyamJain0012",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_048",
-        "team_name": "FORCE X",
-        "name": "\u0916\u091a\u0930\u093e\u00fa",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_048",
-        "team_name": "FORCE X",
-        "name": "\u0928\u092e\u0928ji\u016b",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_049",
-        "team_name": "Team Fateh e jannat",
-        "name": "\u300eD\u00cdVY\u00c5M\u300f",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_049",
-        "team_name": "Team Fateh e jannat",
-        "name": "\u4e5b\u30c4Dark\u30c4\u4e5b",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_049",
-        "team_name": "Team Fateh e jannat",
-        "name": "\u0604\uff2d\uff21\uff26\uff29A\u0604",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_049",
-        "team_name": "Team Fateh e jannat",
-        "name": "Khelaaaaaa",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_050",
-        "team_name": "Team Zoldyck",
-        "name": "L\u00e0ksh\u00e9Y",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_050",
-        "team_name": "Team Zoldyck",
-        "name": "K\u00f1\u3007\u4e42\u0e5bFlash",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_050",
-        "team_name": "Team Zoldyck",
-        "name": "DrTREHAN",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_050",
-        "team_name": "Team Zoldyck",
-        "name": "TDT\u0470\u0e5bMEWTOW",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_050",
-        "team_name": "Team Zoldyck",
-        "name": "vikramgautam11",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_051",
-        "team_name": "TEAM CELESTIA",
-        "name": "UdaYbhAi",
-        "isIGL": true
-    },
-    {
-        "team_id": "TEAM_051",
-        "team_name": "TEAM CELESTIA",
-        "name": "Warrior\u4e08Ekam",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_051",
-        "team_name": "TEAM CELESTIA",
-        "name": "GHxSTRANGE",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_051",
-        "team_name": "TEAM CELESTIA",
-        "name": "BEAST\u827e\u00ccNSANE",
-        "isIGL": false
-    },
-    {
-        "team_id": "TEAM_051",
-        "team_name": "TEAM CELESTIA",
-        "name": "R\uff91W\u4e48\u00d1\u00cdNJ\u00c5",
-        "isIGL": false
-    }
+  {
+    "team_id": "TEAM_001",
+    "team_name": "CAPA",
+    "name": "Neochleo",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_001",
+    "team_name": "CAPA",
+    "name": "Flawless7134",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_001",
+    "team_name": "CAPA",
+    "name": "GamingNation18",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_001",
+    "team_name": "CAPA",
+    "name": "Galactus",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_002",
+    "team_name": "TEAM KRYO",
+    "name": "KRYO『CHAOS』",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_002",
+    "team_name": "TEAM KRYO",
+    "name": "KRYO『ALPHA』",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_002",
+    "team_name": "TEAM KRYO",
+    "name": "KRYO『HAVOC』",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_002",
+    "team_name": "TEAM KRYO",
+    "name": "KRYO『GHOST』",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_003",
+    "team_name": "Blunder",
+    "name": "DETAINED",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_003",
+    "team_name": "Blunder",
+    "name": "Ethan hunt",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_003",
+    "team_name": "Blunder",
+    "name": "YOUWILLDIE",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_003",
+    "team_name": "Blunder",
+    "name": "TUNTUN PAPA",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_004",
+    "team_name": "Dark Heaven",
+    "name": "ī『MONARCH』",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_004",
+    "team_name": "Dark Heaven",
+    "name": "GHÀATÀK",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_004",
+    "team_name": "Dark Heaven",
+    "name": "īōAMANōī",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_004",
+    "team_name": "Dark Heaven",
+    "name": "ī『REAPER』",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_004",
+    "team_name": "Dark Heaven",
+    "name": "GOKU玄AKKI么",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_005",
+    "team_name": "Pistol gang",
+    "name": "〜MAFIA٭",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_005",
+    "team_name": "Pistol gang",
+    "name": "CreXwūBLURRY",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_005",
+    "team_name": "Pistol gang",
+    "name": "ĐĐŁY么WOLFE",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_005",
+    "team_name": "Pistol gang",
+    "name": "FICTION003",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_006",
+    "team_name": "Team MARAUDERS",
+    "name": "HexMaster9",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_006",
+    "team_name": "Team MARAUDERS",
+    "name": "DRAYUIKON",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_006",
+    "team_name": "Team MARAUDERS",
+    "name": "vinodrajbhar11",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_006",
+    "team_name": "Team MARAUDERS",
+    "name": "Sandeep047933",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_006",
+    "team_name": "Team MARAUDERS",
+    "name": "IT'SMEVRO",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_007",
+    "team_name": "Paradox Entity",
+    "name": "Your๛Đ乇ATH",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_007",
+    "team_name": "Paradox Entity",
+    "name": "PixeL×TracKeR",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_007",
+    "team_name": "Paradox Entity",
+    "name": "Susy私Baka",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_007",
+    "team_name": "Paradox Entity",
+    "name": "KiraIsAlive",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_007",
+    "team_name": "Paradox Entity",
+    "name": "Your๛F乇AR",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_008",
+    "team_name": "8kkabaap",
+    "name": "Marrowpaglu55",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_008",
+    "team_name": "8kkabaap",
+    "name": "Dark008knight",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_008",
+    "team_name": "8kkabaap",
+    "name": "FriENdly BoT",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_008",
+    "team_name": "8kkabaap",
+    "name": "tyaMeen ]] 43",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_009",
+    "team_name": "Team Trigonometry",
+    "name": "TGMxicyy",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_009",
+    "team_name": "Team Trigonometry",
+    "name": "TGMxTONTO",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_009",
+    "team_name": "Team Trigonometry",
+    "name": "JamRePlayz",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_009",
+    "team_name": "Team Trigonometry",
+    "name": "TGMxNoVa",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_009",
+    "team_name": "Team Trigonometry",
+    "name": "么VOR͜͡TEX",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_010",
+    "team_name": "4 gods with steth",
+    "name": "4GWSxKuNaL",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_010",
+    "team_name": "4 gods with steth",
+    "name": "4GWSxNvn",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_010",
+    "team_name": "4 gods with steth",
+    "name": "STARLORD",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_010",
+    "team_name": "4 gods with steth",
+    "name": "4GWSxVicky",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_011",
+    "team_name": "TABHAI ESPORTS",
+    "name": "TBxDhrUv",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_011",
+    "team_name": "TABHAI ESPORTS",
+    "name": "TBxLeO",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_011",
+    "team_name": "TABHAI ESPORTS",
+    "name": "TBxJxSHUA07",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_011",
+    "team_name": "TABHAI ESPORTS",
+    "name": "TBxDaNGeR",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_012",
+    "team_name": "NO AIM",
+    "name": "NAxAsur",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_012",
+    "team_name": "NO AIM",
+    "name": "NAxVenom",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_012",
+    "team_name": "NO AIM",
+    "name": "NAxLexin",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_012",
+    "team_name": "NO AIM",
+    "name": "NAxLoneWolf",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_013",
+    "team_name": "Team gmc kota",
+    "name": "DADDYXYUVI",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_013",
+    "team_name": "Team gmc kota",
+    "name": "ZoroNubb",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_013",
+    "team_name": "Team gmc kota",
+    "name": "4AMxNoCebo",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_013",
+    "team_name": "Team gmc kota",
+    "name": "TUNTUN MOSI",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_013",
+    "team_name": "Team gmc kota",
+    "name": "4AMxinhee6",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_014",
+    "team_name": "TEAM GOAT",
+    "name": "亗 AJAY 亗",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_014",
+    "team_name": "TEAM GOAT",
+    "name": "亗 DRDOOM 亗",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_014",
+    "team_name": "TEAM GOAT",
+    "name": "亗ēANSARIē亗",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_014",
+    "team_name": "TEAM GOAT",
+    "name": "XQUÀD=MOHIT",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_014",
+    "team_name": "TEAM GOAT",
+    "name": "Shikari - Billa",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_015",
+    "team_name": "TEAM ZEN",
+    "name": "TZxspidy",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_015",
+    "team_name": "TEAM ZEN",
+    "name": "TZxJin",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_015",
+    "team_name": "TEAM ZEN",
+    "name": "TZxIīCīY",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_015",
+    "team_name": "TEAM ZEN",
+    "name": "TZxS4N",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_015",
+    "team_name": "TEAM ZEN",
+    "name": "MêôwMëöw",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_016",
+    "team_name": "么٭〇ɢ・NPCs・๛",
+    "name": "npc「ＤＯＸ」",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_016",
+    "team_name": "么٭〇ɢ・NPCs・๛",
+    "name": "戈TERROR彡BOB",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_016",
+    "team_name": "么٭〇ɢ・NPCs・๛",
+    "name": "4YxHARISH",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_016",
+    "team_name": "么٭〇ɢ・NPCs・๛",
+    "name": "GHATAK亗JIGS",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_016",
+    "team_name": "么٭〇ɢ・NPCs・๛",
+    "name": "akaromanreigns",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_017",
+    "team_name": "Suicide Squad",
+    "name": "NotxAman",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_017",
+    "team_name": "Suicide Squad",
+    "name": "[ITS] EXOTIC",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_017",
+    "team_name": "Suicide Squad",
+    "name": "DARTH'''VADER",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_017",
+    "team_name": "Suicide Squad",
+    "name": "LZxxPULAKop",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_017",
+    "team_name": "Suicide Squad",
+    "name": "Pepsu Stark",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_018",
+    "team_name": "NOOBS",
+    "name": "JyotishmoyNar",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_018",
+    "team_name": "NOOBS",
+    "name": "手tmkoc手",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_018",
+    "team_name": "NOOBS",
+    "name": "Devils乛Empero",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_018",
+    "team_name": "NOOBS",
+    "name": "abHishekSingha",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_018",
+    "team_name": "NOOBS",
+    "name": "۝SHREYA۝S",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_019",
+    "team_name": "Team Revengers",
+    "name": "Shubh05gamer",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_019",
+    "team_name": "Team Revengers",
+    "name": "Parvesh£45",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_019",
+    "team_name": "Team Revengers",
+    "name": "Up32RANGER",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_019",
+    "team_name": "Team Revengers",
+    "name": "ＮＥＭＥｓＩＳ",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_019",
+    "team_name": "Team Revengers",
+    "name": "Jollyvr7",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_020",
+    "team_name": "Omega Slayers",
+    "name": "OSxBeast",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_020",
+    "team_name": "Omega Slayers",
+    "name": "WØCxÑEMESîS",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_020",
+    "team_name": "Omega Slayers",
+    "name": "「ūYADAVō」",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_020",
+    "team_name": "Omega Slayers",
+    "name": "๖ۣUnknØwn",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_021",
+    "team_name": "League of Shadows",
+    "name": "LSxGBplayzYT",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_021",
+    "team_name": "League of Shadows",
+    "name": "TheUglyFatGuy",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_021",
+    "team_name": "League of Shadows",
+    "name": "FLx・ELNoiX",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_021",
+    "team_name": "League of Shadows",
+    "name": "OGxKRISH",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_021",
+    "team_name": "League of Shadows",
+    "name": "WARRIOR彡UJJU",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_022",
+    "team_name": "Team Wreckers",
+    "name": "m0iZz",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_022",
+    "team_name": "Team Wreckers",
+    "name": "๛MARCUS๛",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_022",
+    "team_name": "Team Wreckers",
+    "name": "VENOMxxWALKER",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_022",
+    "team_name": "Team Wreckers",
+    "name": "S卄Ｅ乙ＡＤAA",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_022",
+    "team_name": "Team Wreckers",
+    "name": "TWxEgoist",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_023",
+    "team_name": "PROTON",
+    "name": "『M Y L O』",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_023",
+    "team_name": "PROTON",
+    "name": "乂PsychoQueen",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_023",
+    "team_name": "PROTON",
+    "name": "ObsidianX2",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_023",
+    "team_name": "PROTON",
+    "name": "RAZZchaudhary",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_024",
+    "team_name": "4D",
+    "name": "EL MAGO",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_024",
+    "team_name": "4D",
+    "name": "4TRWJODDD",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_024",
+    "team_name": "4D",
+    "name": "RYHAN",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_024",
+    "team_name": "4D",
+    "name": "MoODOffhaiMera",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_025",
+    "team_name": "AAMIR RAZA",
+    "name": "DocARC",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_025",
+    "team_name": "AAMIR RAZA",
+    "name": "DocPeace44",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_025",
+    "team_name": "AAMIR RAZA",
+    "name": "GojoOGsatoru",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_025",
+    "team_name": "AAMIR RAZA",
+    "name": "DocZee34",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_025",
+    "team_name": "AAMIR RAZA",
+    "name": "Elcolocoboogey",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_026",
+    "team_name": "AUTACOIDS",
+    "name": "HRHxVaibhav",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_026",
+    "team_name": "AUTACOIDS",
+    "name": "HRHxRitesh",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_026",
+    "team_name": "AUTACOIDS",
+    "name": "RDXbasanti",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_026",
+    "team_name": "AUTACOIDS",
+    "name": "ZORO",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_026",
+    "team_name": "AUTACOIDS",
+    "name": "Skylights",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_027",
+    "team_name": "Predators",
+    "name": "JAYANT××1911",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_027",
+    "team_name": "Predators",
+    "name": "A4xDeAthGød",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_027",
+    "team_name": "Predators",
+    "name": "TITAN265",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_027",
+    "team_name": "Predators",
+    "name": "GLDxShubzz",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_027",
+    "team_name": "Predators",
+    "name": "KTxdevil",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_028",
+    "team_name": "Crusaderz",
+    "name": "DrRetarD",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_028",
+    "team_name": "Crusaderz",
+    "name": "BLTxJOD",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_028",
+    "team_name": "Crusaderz",
+    "name": "NIGGà1234",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_028",
+    "team_name": "Crusaderz",
+    "name": "CODE RED GOD",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_028",
+    "team_name": "Crusaderz",
+    "name": "Inosuke0409",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_029",
+    "team_name": "Delhi ke dakait",
+    "name": "XFTxBaqar",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_029",
+    "team_name": "Delhi ke dakait",
+    "name": "PiedPiper123",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_029",
+    "team_name": "Delhi ke dakait",
+    "name": "fizalbhai68",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_029",
+    "team_name": "Delhi ke dakait",
+    "name": "乛cLoWn",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_029",
+    "team_name": "Delhi ke dakait",
+    "name": "HYDRAMIYABHAI",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_030",
+    "team_name": "Decans of Vmmc",
+    "name": "WiLDxxROCKY",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_030",
+    "team_name": "Decans of Vmmc",
+    "name": "亗įRITESHį亗",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_030",
+    "team_name": "Decans of Vmmc",
+    "name": "DrGrIMReapER",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_030",
+    "team_name": "Decans of Vmmc",
+    "name": "'''switch",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_031",
+    "team_name": "W2R Esports",
+    "name": "W2RxKyansh",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_031",
+    "team_name": "W2R Esports",
+    "name": "W2RxKrrish",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_031",
+    "team_name": "W2R Esports",
+    "name": "W2RxGXX",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_031",
+    "team_name": "W2R Esports",
+    "name": "W2RxALECTOO",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_031",
+    "team_name": "W2R Esports",
+    "name": "LefiToxPlayz",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_032",
+    "team_name": "TEAM ALBINO",
+    "name": "Stixjadoo007",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_032",
+    "team_name": "TEAM ALBINO",
+    "name": "ＢＲＳｔａｒ",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_032",
+    "team_name": "TEAM ALBINO",
+    "name": "LuckyakaSAT",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_032",
+    "team_name": "TEAM ALBINO",
+    "name": "Kaushal00017",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_032",
+    "team_name": "TEAM ALBINO",
+    "name": "U8d94f1128162",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_033",
+    "team_name": "Team Invincibles",
+    "name": "INVIxGanjaOp",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_033",
+    "team_name": "Team Invincibles",
+    "name": "INVIxARYAMAN",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_033",
+    "team_name": "Team Invincibles",
+    "name": "TBxDhruv",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_033",
+    "team_name": "Team Invincibles",
+    "name": "OPxASHU",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_033",
+    "team_name": "Team Invincibles",
+    "name": "INVIxBOT",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_034",
+    "team_name": "TFL (team flawless)",
+    "name": "TFL×wolf",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_034",
+    "team_name": "TFL (team flawless)",
+    "name": "DR×jatin",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_034",
+    "team_name": "TFL (team flawless)",
+    "name": "TFL×legendop",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_034",
+    "team_name": "TFL (team flawless)",
+    "name": "TFL×hrsh",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_034",
+    "team_name": "TFL (team flawless)",
+    "name": "Abhishek",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_035",
+    "team_name": "Team Cadaver",
+    "name": "Shivam op",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_035",
+    "team_name": "Team Cadaver",
+    "name": "4MF OXIDE",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_035",
+    "team_name": "Team Cadaver",
+    "name": "LZMxHappy",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_035",
+    "team_name": "Team Cadaver",
+    "name": "Shubham",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_035",
+    "team_name": "Team Cadaver",
+    "name": "Rav3n",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_036",
+    "team_name": "UC Phantom Force",
+    "name": "SiLenTkiLLeR18",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_036",
+    "team_name": "UC Phantom Force",
+    "name": "LUCIFERツFLASH",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_036",
+    "team_name": "UC Phantom Force",
+    "name": "SzukaWitBzukaa",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_036",
+    "team_name": "UC Phantom Force",
+    "name": "UCkaJUICY",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_036",
+    "team_name": "UC Phantom Force",
+    "name": "SaubhagyaVars",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_037",
+    "team_name": "ElemenT",
+    "name": "ETxROBIN",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_037",
+    "team_name": "ElemenT",
+    "name": "ETxKRYPTON",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_037",
+    "team_name": "ElemenT",
+    "name": "SACxRevaa7",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_037",
+    "team_name": "ElemenT",
+    "name": "ooPHROLOVAoo",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_037",
+    "team_name": "ElemenT",
+    "name": "ETxRISHIII",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_038",
+    "team_name": "Crypt of Liberkuhn",
+    "name": "BESALTY",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_038",
+    "team_name": "Crypt of Liberkuhn",
+    "name": "RAVYNN",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_038",
+    "team_name": "Crypt of Liberkuhn",
+    "name": "DrShaRk",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_038",
+    "team_name": "Crypt of Liberkuhn",
+    "name": "BoboChodu",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_038",
+    "team_name": "Crypt of Liberkuhn",
+    "name": "DAAL・MAKHNI",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_039",
+    "team_name": "ANSA CERVICALIS",
+    "name": "亗BÈÆsT亗",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_039",
+    "team_name": "ANSA CERVICALIS",
+    "name": "BLACKīDARGON",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_039",
+    "team_name": "ANSA CERVICALIS",
+    "name": "billuūbakchod",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_039",
+    "team_name": "ANSA CERVICALIS",
+    "name": "AMCzZGILL",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_040",
+    "team_name": "Vortex esports",
+    "name": "AGxChico",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_040",
+    "team_name": "Vortex esports",
+    "name": "マīAīMīAūN",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_040",
+    "team_name": "Vortex esports",
+    "name": "TTsCŁUTCHGOĐ",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_040",
+    "team_name": "Vortex esports",
+    "name": "LUTERAッTHANOS",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_041",
+    "team_name": "Dangerous dragons",
+    "name": "Pexx7777",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_041",
+    "team_name": "Dangerous dragons",
+    "name": "Ujjwal1779",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_041",
+    "team_name": "Dangerous dragons",
+    "name": "ShivanshSi36!",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_041",
+    "team_name": "Dangerous dragons",
+    "name": "PuranchandTri",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_042",
+    "team_name": "Medbugs",
+    "name": "ABxABRARx720",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_042",
+    "team_name": "Medbugs",
+    "name": "SuvoThebatman",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_042",
+    "team_name": "Medbugs",
+    "name": "PeterParkerOP",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_042",
+    "team_name": "Medbugs",
+    "name": "Mr么NIKUNJ",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_042",
+    "team_name": "Medbugs",
+    "name": "IQOORNTXLOKESH",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_043",
+    "team_name": "Reigning 4",
+    "name": "R4xkira",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_043",
+    "team_name": "Reigning 4",
+    "name": "R4xwhiteniqqa",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_043",
+    "team_name": "Reigning 4",
+    "name": "R4xPapitaShake",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_043",
+    "team_name": "Reigning 4",
+    "name": "R4xsunnyizded",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_043",
+    "team_name": "Reigning 4",
+    "name": "PyroPaimon",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_044",
+    "team_name": "Team 507",
+    "name": "Achiyaaa彡ji",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_044",
+    "team_name": "Team 507",
+    "name": "ES彡COFFIN",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_044",
+    "team_name": "Team 507",
+    "name": "Chandra613",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_044",
+    "team_name": "Team 507",
+    "name": "ŃeoRon",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_045",
+    "team_name": "AGNI ESPORTS",
+    "name": "LBOggy",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_045",
+    "team_name": "AGNI ESPORTS",
+    "name": "AGNIxMIGHTY",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_045",
+    "team_name": "AGNI ESPORTS",
+    "name": "MMxVAMPIRE",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_045",
+    "team_name": "AGNI ESPORTS",
+    "name": "AGNIxHAVOK",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_046",
+    "team_name": "Team megastar",
+    "name": "tangoCHARL",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_046",
+    "team_name": "Team megastar",
+    "name": "ARREīīYRR",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_046",
+    "team_name": "Team megastar",
+    "name": "ŁUFFŸ1",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_046",
+    "team_name": "Team megastar",
+    "name": "Avada1",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_047",
+    "team_name": "FORCE X",
+    "name": "么SIROHI",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_047",
+    "team_name": "FORCE X",
+    "name": "SanyamJain0012",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_047",
+    "team_name": "FORCE X",
+    "name": "खचराú",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_047",
+    "team_name": "FORCE X",
+    "name": "नमनjiū",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_048",
+    "team_name": "Team Fateh e jannat",
+    "name": "『DÍVYÅM』",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_048",
+    "team_name": "Team Fateh e jannat",
+    "name": "乛ツDarkツ乛",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_048",
+    "team_name": "Team Fateh e jannat",
+    "name": "؄ＭＡＦＩA؄",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_048",
+    "team_name": "Team Fateh e jannat",
+    "name": "Khelaaaaaa",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_049",
+    "team_name": "Team Zoldyck",
+    "name": "LàkshéY",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_049",
+    "team_name": "Team Zoldyck",
+    "name": "Kñ〇乂๛Flash",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_049",
+    "team_name": "Team Zoldyck",
+    "name": "DrTREHAN",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_049",
+    "team_name": "Team Zoldyck",
+    "name": "TDTѰ๛MEWTOW",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_049",
+    "team_name": "Team Zoldyck",
+    "name": "vikramgautam11",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_050",
+    "team_name": "TEAM CELESTIA",
+    "name": "UdaYbhAi",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_050",
+    "team_name": "TEAM CELESTIA",
+    "name": "Warrior丈Ekam",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_050",
+    "team_name": "TEAM CELESTIA",
+    "name": "GHxSTRANGE",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_050",
+    "team_name": "TEAM CELESTIA",
+    "name": "BEAST艾ÌNSANE",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_050",
+    "team_name": "TEAM CELESTIA",
+    "name": "RﾑW么ÑÍNJÅ",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_051",
+    "team_name": "TEAM TITAN",
+    "name": "TITANXVINTAGE",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_051",
+    "team_name": "TEAM TITAN",
+    "name": "TITANXKABIR",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_051",
+    "team_name": "TEAM TITAN",
+    "name": "SNEHALDADDY",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_051",
+    "team_name": "TEAM TITAN",
+    "name": "SHAWN MENDES",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_051",
+    "team_name": "TEAM TITAN",
+    "name": "UJJWALPLAYZ",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_052",
+    "team_name": "Team HiMSR",
+    "name": "141xMaKaRoV",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_052",
+    "team_name": "Team HiMSR",
+    "name": "THxKARTIK",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_052",
+    "team_name": "Team HiMSR",
+    "name": "S2TxMayankOG",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_052",
+    "team_name": "Team HiMSR",
+    "name": "ParaBotX",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_052",
+    "team_name": "Team HiMSR",
+    "name": "JuNiØR",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_053",
+    "team_name": "Deadly Alliance",
+    "name": "DeadlyシDr",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_053",
+    "team_name": "Deadly Alliance",
+    "name": "DaRkHaWk",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_053",
+    "team_name": "Deadly Alliance",
+    "name": "TSxRudraOP",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_053",
+    "team_name": "Deadly Alliance",
+    "name": "968msKhairuL",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_053",
+    "team_name": "Deadly Alliance",
+    "name": "ConStantSPIRIT",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_054",
+    "team_name": "Phantom troupe",
+    "name": "Mist piyush",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_054",
+    "team_name": "Phantom troupe",
+    "name": "Ashishsaharan",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_054",
+    "team_name": "Phantom troupe",
+    "name": "StrangeX",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_054",
+    "team_name": "Phantom troupe",
+    "name": "Ilxclueless",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_055",
+    "team_name": "Gods official",
+    "name": "LETīMEōCOOK",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_055",
+    "team_name": "Gods official",
+    "name": "彡KiNG彡J",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_055",
+    "team_name": "Gods official",
+    "name": "shivaydv666",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_055",
+    "team_name": "Gods official",
+    "name": "BTDxＡｙｕｓｈ",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_055",
+    "team_name": "Gods official",
+    "name": "艾YumeKo艾",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_056",
+    "team_name": "NIIMS彡KINGS",
+    "name": "KING彡SOUL",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_056",
+    "team_name": "NIIMS彡KINGS",
+    "name": "KING彡RAPTOR",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_056",
+    "team_name": "NIIMS彡KINGS",
+    "name": "Saachinpilot",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_056",
+    "team_name": "NIIMS彡KINGS",
+    "name": "चaachi",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_056",
+    "team_name": "NIIMS彡KINGS",
+    "name": "KING彡IMMORTAL",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_057",
+    "team_name": "Team OverPowered",
+    "name": "OPxFrostGod",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_057",
+    "team_name": "Team OverPowered",
+    "name": "OPxASHUU",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_057",
+    "team_name": "Team OverPowered",
+    "name": "OPxKAMLEEESH",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_057",
+    "team_name": "Team OverPowered",
+    "name": "OPxVIPERR",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_057",
+    "team_name": "Team OverPowered",
+    "name": "OPxakshatGOAT",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_058",
+    "team_name": "Jaat warriors",
+    "name": "VENOM乡STRØKE",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_058",
+    "team_name": "Jaat warriors",
+    "name": "HRēDHRUV",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_058",
+    "team_name": "Jaat warriors",
+    "name": "HRēRITESH",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_058",
+    "team_name": "Jaat warriors",
+    "name": "NAVEEN3376",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_059",
+    "team_name": "TRX ESPORTS",
+    "name": "TRXxAURA",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_059",
+    "team_name": "TRX ESPORTS",
+    "name": "TRXxPAIN",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_059",
+    "team_name": "TRX ESPORTS",
+    "name": "TRXxXENO",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_059",
+    "team_name": "TRX ESPORTS",
+    "name": "TRXxOWNER",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_059",
+    "team_name": "TRX ESPORTS",
+    "name": "SKE×Cyrus",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_060",
+    "team_name": "Team Prince",
+    "name": "NFprincee",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_060",
+    "team_name": "Team Prince",
+    "name": "٭LiMiTLeSS٭",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_060",
+    "team_name": "Team Prince",
+    "name": "么ＡＡｖｉ",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_060",
+    "team_name": "Team Prince",
+    "name": "Īī『SCAR』",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_061",
+    "team_name": "Team ALPHAxPSYCHO",
+    "name": "VExWizzGOD",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_061",
+    "team_name": "Team ALPHAxPSYCHO",
+    "name": "AxPyschoo18",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_061",
+    "team_name": "Team ALPHAxPSYCHO",
+    "name": "TUxHALUSA",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_061",
+    "team_name": "Team ALPHAxPSYCHO",
+    "name": "VAMPxiZoOP",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_061",
+    "team_name": "Team ALPHAxPSYCHO",
+    "name": "TUxZark09",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_062",
+    "team_name": "IzraelKillerz",
+    "name": "ClUtchMAster",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_062",
+    "team_name": "IzraelKillerz",
+    "name": "KaluaBihAri",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_062",
+    "team_name": "IzraelKillerz",
+    "name": "十ＳＡＭＥＥＲ",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_062",
+    "team_name": "IzraelKillerz",
+    "name": "Chootbuster",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_062",
+    "team_name": "IzraelKillerz",
+    "name": "RandiFuckerrrr",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_063",
+    "team_name": "AIR1 ESPORTS",
+    "name": "AIR1xHAPPY",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_063",
+    "team_name": "AIR1 ESPORTS",
+    "name": "AIR1xAkshay",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_063",
+    "team_name": "AIR1 ESPORTS",
+    "name": "WTFxDavidOP",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_063",
+    "team_name": "AIR1 ESPORTS",
+    "name": "ReGreSaRisLIVE",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_063",
+    "team_name": "AIR1 ESPORTS",
+    "name": "AIR1xAyush",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_064",
+    "team_name": "Zalzala",
+    "name": "Zaìddddd",
+    "isIGL": true
+  },
+  {
+    "team_id": "TEAM_064",
+    "team_name": "Zalzala",
+    "name": "EquadorDIGNITY",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_064",
+    "team_name": "Zalzala",
+    "name": "Team4LMxASH77",
+    "isIGL": false
+  },
+  {
+    "team_id": "TEAM_064",
+    "team_name": "Zalzala",
+    "name": "Ｌｕｆｆｙīū",
+    "isIGL": false
+  }
 ]
