@@ -829,40 +829,6 @@
     "team_id": "TEAM_026"
   },
   {
-    "logo": "TA",
-    "name": "Team Alpha",
-    "players": [
-      {
-        "icon": "fa-crosshairs",
-        "name": "VExWizzGOD",
-        "isIGL": true
-      },
-      {
-        "icon": "fa-bolt",
-        "name": "AxPyschoo18",
-        "isIGL": false
-      },
-      {
-        "icon": "fa-skull",
-        "name": "CEunike",
-        "isIGL": false
-      },
-      {
-        "icon": "fa-shield-alt",
-        "name": "RVxPRINCE",
-        "isIGL": false
-      },
-      {
-        "icon": "fa-user",
-        "name": "NESTxZARK30111",
-        "isIGL": false
-      }
-    ],
-    "college": "Shyam Lal college evening",
-    "group": "Group B",
-    "team_id": "TEAM_027"
-  },
-  {
     "logo": "PR",
     "name": "Predators",
     "players": [
@@ -893,8 +859,8 @@
       }
     ],
     "college": "MAMC",
-    "group": "Group C",
-    "team_id": "TEAM_028"
+    "group": "Group B",
+    "team_id": "TEAM_027"
   },
   {
     "logo": "CR",
@@ -927,8 +893,8 @@
       }
     ],
     "college": "Maulana Azad medical College",
-    "group": "Group D",
-    "team_id": "TEAM_029"
+    "group": "Group C",
+    "team_id": "TEAM_028"
   },
   {
     "logo": "DK",
@@ -961,8 +927,8 @@
       }
     ],
     "college": "Himsr",
-    "group": "Group E",
-    "team_id": "TEAM_030"
+    "group": "Group D",
+    "team_id": "TEAM_029"
   },
   {
     "logo": "DO",
@@ -990,8 +956,8 @@
       }
     ],
     "college": "Vardhman Mahavir Medical College",
-    "group": "Group A",
-    "team_id": "TEAM_031"
+    "group": "Group E",
+    "team_id": "TEAM_030"
   },
   {
     "logo": "WE",
@@ -1024,8 +990,8 @@
       }
     ],
     "college": "Maharaja Agrasen Institute of Management Studies",
-    "group": "Group B",
-    "team_id": "TEAM_032"
+    "group": "Group A",
+    "team_id": "TEAM_031"
   },
   {
     "logo": "TA",
@@ -1058,8 +1024,8 @@
       }
     ],
     "college": "MAMC",
-    "group": "Group C",
-    "team_id": "TEAM_033"
+    "group": "Group B",
+    "team_id": "TEAM_032"
   },
   {
     "logo": "TI",
@@ -1092,8 +1058,8 @@
       }
     ],
     "college": "ADGIPS",
-    "group": "Group D",
-    "team_id": "TEAM_034"
+    "group": "Group C",
+    "team_id": "TEAM_033"
   },
   {
     "logo": "T(",
@@ -1126,8 +1092,8 @@
       }
     ],
     "college": "ABVIMS",
-    "group": "Group E",
-    "team_id": "TEAM_035"
+    "group": "Group D",
+    "team_id": "TEAM_034"
   },
   {
     "logo": "TC",
@@ -1160,8 +1126,8 @@
       }
     ],
     "college": "University College of medical sciences",
-    "group": "Group A",
-    "team_id": "TEAM_036"
+    "group": "Group E",
+    "team_id": "TEAM_035"
   },
   {
     "logo": "UP",
@@ -1194,8 +1160,8 @@
       }
     ],
     "college": "University College Of Medical Sciences",
-    "group": "Group B",
-    "team_id": "TEAM_037"
+    "group": "Group A",
+    "team_id": "TEAM_036"
   },
   {
     "logo": "EL",
@@ -1228,8 +1194,8 @@
       }
     ],
     "college": "PIET",
-    "group": "Group C",
-    "team_id": "TEAM_038"
+    "group": "Group B",
+    "team_id": "TEAM_037"
   },
   {
     "logo": "CO",
@@ -1262,8 +1228,8 @@
       }
     ],
     "college": "NDMC Medical College",
-    "group": "Group D",
-    "team_id": "TEAM_039"
+    "group": "Group C",
+    "team_id": "TEAM_038"
   },
   {
     "logo": "AC",
@@ -1291,8 +1257,8 @@
       }
     ],
     "college": "UCMS",
-    "group": "Group E",
-    "team_id": "TEAM_040"
+    "group": "Group D",
+    "team_id": "TEAM_039"
   },
   {
     "logo": "VE",
@@ -1320,8 +1286,8 @@
       }
     ],
     "college": "Maharaja Surajmal Institute",
-    "group": "Group A",
-    "team_id": "TEAM_041"
+    "group": "Group E",
+    "team_id": "TEAM_040"
   },
   {
     "logo": "DD",
@@ -1349,37 +1315,8 @@
       }
     ],
     "college": "Maulana azad medical college",
-    "group": "Group B",
-    "team_id": "TEAM_042"
-  },
-  {
-    "logo": "TA",
-    "name": "TEAM ANGEL",
-    "players": [
-      {
-        "icon": "fa-crosshairs",
-        "name": "KRYO\u300eDON\u300f",
-        "isIGL": true
-      },
-      {
-        "icon": "fa-bolt",
-        "name": "ZAFSTAR",
-        "isIGL": false
-      },
-      {
-        "icon": "fa-skull",
-        "name": "Attiquetopper",
-        "isIGL": false
-      },
-      {
-        "icon": "fa-shield-alt",
-        "name": "Dipeshpaul",
-        "isIGL": false
-      }
-    ],
-    "college": "MAMC",
-    "group": "Group C",
-    "team_id": "TEAM_043"
+    "group": "Group A",
+    "team_id": "TEAM_041"
   },
   {
     "logo": "ME",
@@ -1412,8 +1349,8 @@
       }
     ],
     "college": "Government medical College, kota, rajasthan",
-    "group": "Group D",
-    "team_id": "TEAM_044"
+    "group": "Group B",
+    "team_id": "TEAM_042"
   },
   {
     "logo": "R4",
@@ -1446,8 +1383,8 @@
       }
     ],
     "college": "Maulana Azad Medical College",
-    "group": "Group E",
-    "team_id": "TEAM_045"
+    "group": "Group C",
+    "team_id": "TEAM_043"
   },
   {
     "logo": "T5",
@@ -1475,8 +1412,8 @@
       }
     ],
     "college": "Maulana Azad medical College",
-    "group": "Group A",
-    "team_id": "TEAM_046"
+    "group": "Group D",
+    "team_id": "TEAM_044"
   },
   {
     "logo": "AE",
@@ -1504,8 +1441,8 @@
       }
     ],
     "college": "Jeevan jyoti institute of nursing and paramedical science",
-    "group": "Group B",
-    "team_id": "TEAM_047"
+    "group": "Group E",
+    "team_id": "TEAM_045"
   },
   {
     "logo": "TM",
@@ -1533,8 +1470,8 @@
       }
     ],
     "college": "Esic dental college rohini",
-    "group": "Group C",
-    "team_id": "TEAM_048"
+    "group": "Group A",
+    "team_id": "TEAM_046"
   },
   {
     "logo": "FX",
@@ -1562,8 +1499,8 @@
       }
     ],
     "college": "Amity university Greater noida",
-    "group": "Group D",
-    "team_id": "TEAM_049"
+    "group": "Group B",
+    "team_id": "TEAM_047"
   },
   {
     "logo": "TF",
@@ -1591,8 +1528,8 @@
       }
     ],
     "college": "Esic dental college",
-    "group": "Group E",
-    "team_id": "TEAM_050"
+    "group": "Group C",
+    "team_id": "TEAM_048"
   },
   {
     "logo": "TZ",
@@ -1625,8 +1562,8 @@
       }
     ],
     "college": "ESIC Dental College",
-    "group": "Group A",
-    "team_id": "TEAM_051"
+    "group": "Group D",
+    "team_id": "TEAM_049"
   },
   {
     "logo": "TC",
@@ -1659,8 +1596,8 @@
       }
     ],
     "college": "MUZAFFARNAGAR MEDICAL COLLEGE",
-    "group": "Group B",
-    "team_id": "TEAM_052"
+    "group": "Group E",
+    "team_id": "TEAM_050"
   },
   {
     "logo": "TT",
@@ -1693,8 +1630,8 @@
       }
     ],
     "college": "KD MEDICAL COLLEGE MATHURA",
-    "group": "Group C",
-    "team_id": "TEAM_053"
+    "group": "Group A",
+    "team_id": "TEAM_051"
   },
   {
     "logo": "TH",
@@ -1727,8 +1664,8 @@
       }
     ],
     "college": "Himsr",
-    "group": "Group D",
-    "team_id": "TEAM_054"
+    "group": "Group B",
+    "team_id": "TEAM_052"
   },
   {
     "logo": "DA",
@@ -1761,7 +1698,361 @@
       }
     ],
     "college": "Noida International Institute of Medical Sciences (NIIMS) , greater Nooda",
+    "group": "Group C",
+    "team_id": "TEAM_053"
+  },
+  {
+    "logo": "PT",
+    "name": "Phantom troupe",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "Mist piyush",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "Ashishsaharan",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "StrangeX",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "Ilxclueless",
+        "isIGL": false
+      }
+    ],
+    "college": "Army college of medical sciences",
+    "group": "Group D",
+    "team_id": "TEAM_054"
+  },
+  {
+    "logo": "GO",
+    "name": "Gods official",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "LET\u012bME\u014dCOOK",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "\u5f61KiNG\u5f61J",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "shivaydv666",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "BTDx\uff21\uff59\uff55\uff53\uff48",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "\u827eYumeKo\u827e",
+        "isIGL": false
+      }
+    ],
+    "college": "Amity University Greater Noida",
     "group": "Group E",
     "team_id": "TEAM_055"
+  },
+  {
+    "logo": "NI",
+    "name": "NIIMS\u5f61KINGS",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "KING\u5f61SOUL",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "KING\u5f61RAPTOR",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "Saachinpilot",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "\u091aaachi",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "KING\u5f61IMMORTAL",
+        "isIGL": false
+      }
+    ],
+    "college": "Noida international institute of medical science",
+    "group": "Group A",
+    "team_id": "TEAM_056"
+  },
+  {
+    "logo": "TO",
+    "name": "Team OverPowered",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "OPxFrostGod",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "OPxASHUU",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "OPxKAMLEEESH",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "OPxVIPERR",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "OPxakshatGOAT",
+        "isIGL": false
+      }
+    ],
+    "college": "Dr Akhilesh Das Gupta Institute Of Professional Studies",
+    "group": "Group B",
+    "team_id": "TEAM_057"
+  },
+  {
+    "logo": "JW",
+    "name": "Jaat warriors",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "VENOM\u4e61STR\u00d8KE",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "HR\u0113DHRUV",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "HR\u0113RITESH",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "NAVEEN3376",
+        "isIGL": false
+      }
+    ],
+    "college": "Mamc",
+    "group": "Group C",
+    "team_id": "TEAM_058"
+  },
+  {
+    "logo": "TE",
+    "name": "TRX ESPORTS",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "TRXxAURA",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "TRXxPAIN",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "TRXxXENO",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "TRXxOWNER",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "SKE\u00d7Cyrus",
+        "isIGL": false
+      }
+    ],
+    "college": "Maharaja Agrasen DU",
+    "group": "Group D",
+    "team_id": "TEAM_059"
+  },
+  {
+    "logo": "TP",
+    "name": "Team Prince",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "NFprincee",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "\u066dLiMiTLeSS\u066d",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "\u4e48\uff21\uff21\uff56\uff49",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "\u012a\u012b\u300eSCAR\u300f",
+        "isIGL": false
+      }
+    ],
+    "college": "Swami shraddhanand college",
+    "group": "Group E",
+    "team_id": "TEAM_060"
+  },
+  {
+    "logo": "TA",
+    "name": "Team ALPHAxPSYCHO",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "VExWizzGOD",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "AxPyschoo18",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "TUxHALUSA",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "VAMPxiZoOP",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "TUxZark09",
+        "isIGL": false
+      }
+    ],
+    "college": "shyam lal college evening",
+    "group": "Group A",
+    "team_id": "TEAM_061"
+  },
+  {
+    "logo": "IZ",
+    "name": "IzraelKillerz",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "ClUtchMAster",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "KaluaBihAri",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "\u5341\uff33\uff21\uff2d\uff25\uff25\uff32",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "Chootbuster",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "RandiFuckerrrr",
+        "isIGL": false
+      }
+    ],
+    "college": "Maulana Azad Medical College",
+    "group": "Group B",
+    "team_id": "TEAM_062"
+  },
+  {
+    "logo": "AE",
+    "name": "AIR1 ESPORTS",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "AIR1xHAPPY",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "AIR1xAkshay",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "WTFxDavidOP",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "ReGreSaRisLIVE",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-user",
+        "name": "AIR1xAyush",
+        "isIGL": false
+      }
+    ],
+    "college": "Indraprastha engeneering college",
+    "group": "Group C",
+    "team_id": "TEAM_063"
+  },
+  {
+    "logo": "ZA",
+    "name": "Zalzala",
+    "players": [
+      {
+        "icon": "fa-crosshairs",
+        "name": "Za\u00ecddddd",
+        "isIGL": true
+      },
+      {
+        "icon": "fa-bolt",
+        "name": "EquadorDIGNITY",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-skull",
+        "name": "Team4LMxASH77",
+        "isIGL": false
+      },
+      {
+        "icon": "fa-shield-alt",
+        "name": "\uff2c\uff55\uff46\uff46\uff59\u012b\u016b",
+        "isIGL": false
+      }
+    ],
+    "college": "maulana azad medical college",
+    "group": "Group D",
+    "team_id": "TEAM_064"
   }
 ]
