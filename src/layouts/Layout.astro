@@ -71,16 +71,8 @@ const { title, description = "SYNAPSE MAMC BGMI 2026 - Official BGMI Esports Tou
     </div>
   </header>
 
-  <!-- Registration Popup Notification - Only on Home Page -->
-  {activePage === "home" && (
-    <div class="registration-popup" id="registrationPopup">
-      <div class="popup-content">
-        <button type="button" class="popup-close" id="popupClose" aria-label="Close notification">×</button>
-        <div class="popup-icon">⚠️</div>
-        <h3 class="popup-title">REGISTRATIONS ARE CLOSING ON 4th of FEBRUARY !!</h3>
-        <p class="popup-message">ONLY 3 SLOTS LEFT !!</p>
-      </div>
-    </div>
+  
+
   )}
 
   <slot />
@@ -152,16 +144,7 @@ const { title, description = "SYNAPSE MAMC BGMI 2026 - Official BGMI Esports Tou
       </div>
     </div>
   </div>
-   <!-- Floating Registration Badge -->
-    <a href="https://forms.gle/1S6GPtYdGYCDVqbr6" 
-       target="_blank" 
-       rel="noopener noreferrer" 
-       class="floating-registration-badge"
-       aria-label="Click for registration">
-        <span class="badge-icon">📝</span>
-        <span class="badge-text">Click for Registration</span>
-    </a>
-
+   
     <!-- Mobile Nav Overlay -->
     <div class="nav-overlay" id="navOverlay"></div>
 
