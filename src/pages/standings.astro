@@ -6,12 +6,22 @@ import Layout from '../layouts/Layout.astro';
   <section class="leaderboard-section">
     <div class="container">
 
+      <!-- 🔴 LIVE STATUS BANNER RESTORED -->
+      <div class="live-status-banner">
+        <div class="live-status-content">
+          <span class="live-icon">🔴</span>
+          <span class="live-text">LIVE STANDINGS</span>
+          <span class="live-icon">🔴</span>
+        </div>
+      </div>
+
       <div class="page-header-box">
         <h1 class="page-title">Tournament Leaderboard</h1>
+        <!-- 🔥 LEADING TEAM BANNER CONTAINER RESTORED -->
         <div id="leadingBannerContainer"></div>
       </div>
 
-      <!-- TOP LAYER: Filter Tabs (MVP moved to last) -->
+      <!-- TOP LAYER: Filter Tabs -->
       <div class="filter-tabs" id="filterTabs">
         <button class="filter-btn active" data-filter="overall">Overall</button>
         <button class="filter-btn" data-filter="day1">Day 1</button>
@@ -21,14 +31,20 @@ import Layout from '../layouts/Layout.astro';
         <button class="filter-btn" data-filter="mvp">MVP</button>
       </div>
 
-      <!-- MID LAYER 1: Group Selector (Now shows for Day 1, 2, 3) -->
+      <!-- VIEW TOGGLE (Only for Overall) -->
+      <div id="overallViewToggle" style="text-align: center; margin-bottom: 1.5rem;">
+        <button class="view-toggle-btn active" data-view="combined" onclick="setView('combined')">Combined</button>
+        <button class="view-toggle-btn" data-view="grouped" onclick="setView('grouped')">By Group</button>
+      </div>
+
+      <!-- MID LAYER 1: Group Selector -->
       <div id="groupFilterMenu" class="mid-menu-container" style="display: none;">
         <div class="selector-label">Select Group:</div>
         <div class="button-group">
-            <button class="group-btn" onclick="selectGroup('A')">Group A</button>
-            <button class="group-btn" onclick="selectGroup('B')">Group B</button>
-            <button class="group-btn" onclick="selectGroup('C')">Group C</button>
-            <button class="group-btn" onclick="selectGroup('D')">Group D</button>
+            <button class="group-btn" data-group="A" onclick="selectGroup('A')">Group A</button>
+            <button class="group-btn" data-group="B" onclick="selectGroup('B')">Group B</button>
+            <button class="group-btn" data-group="C" onclick="selectGroup('C')">Group C</button>
+            <button class="group-btn" data-group="D" onclick="selectGroup('D')">Group D</button>
         </div>
       </div>
 
@@ -46,48 +62,58 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style is:global>
+  /* 🔴 LIVE BANNER STYLES */
+  .live-status-banner {
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.15) 0%, rgba(200, 0, 0, 0.1) 100%);
+    border: 1px solid rgba(255, 0, 0, 0.5);
+    border-radius: 6px; padding: 0.4rem 1rem; margin-bottom: 1rem; text-align: center;
+    position: relative; overflow: hidden; display: block; width: fit-content; margin-inline: auto;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2); animation: live-pulse 2s ease-in-out infinite;
+  }
+  .live-text { font-family: var(--font-heading); font-size: 0.8rem; font-weight: 800; color: #ff3333; letter-spacing: 1.5px; }
+  @keyframes live-pulse { 0%, 100% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.2); } 50% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); } }
+
+  /* 🔥 LEADING TEAM BANNER STYLES */
+  #leadingBannerContainer { position: relative; margin: 2rem auto; max-width: 500px; }
+  .leading-team-banner {
+    background: rgba(20, 10, 5, 0.85); border: 2px solid #ff4500; border-radius: 12px;
+    padding: 1.125rem; text-align: center; box-shadow: 0 0 30px rgba(255, 69, 0, 0.4);
+    animation: fire-pulse 2s ease-in-out infinite;
+  }
+  .leading-team-banner h2 { 
+    font-family: var(--font-heading); font-size: 1.4rem; color: #fff; text-transform: uppercase; margin: 0;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+  }
+  @keyframes fire-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.02); } }
+
+  /* UI COMPONENTS */
   .page-header-box { text-align: center; margin-bottom: 2rem; }
-  .selector-label { color: var(--accent-cyan); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 10px; width: 100%; text-align: center; }
-  
   .mid-menu-container { 
-    background: rgba(0,0,0,0.4); 
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 1.5rem;
-    border-radius: 12px;
-    margin-bottom: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.08);
+    padding: 1.2rem; border-radius: 12px; margin-bottom: 1.5rem;
+    display: flex; flex-direction: column; align-items: center;
   }
+  .selector-label { color: var(--accent-cyan); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 10px; }
+  .button-group { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
 
-  .button-group { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+  .view-toggle-btn { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--text-muted); padding: 0.5rem 1.5rem; border-radius: 6px; cursor: pointer; transition: 0.3s; }
+  .view-toggle-btn.active { background: var(--accent-orange); color: white; border-color: var(--accent-orange); }
 
-  .group-btn, .match-btn {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: #fff;
-    padding: 8px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s;
-  }
+  .group-btn, .match-btn { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #ccc; padding: 8px 18px; border-radius: 6px; cursor: pointer; font-weight: 600; transition: 0.3s; }
+  .group-btn.active { background: var(--accent-cyan); color: #000; border-color: var(--accent-cyan); box-shadow: 0 0 15px rgba(0, 174, 239, 0.3); }
+  .match-btn.active { background: var(--accent-orange); color: #fff; border-color: var(--accent-orange); box-shadow: 0 0 15px rgba(255, 140, 0, 0.3); }
 
-  .group-btn.active { background: var(--accent-cyan); color: #000; border-color: var(--accent-cyan); box-shadow: 0 0 15px rgba(0, 174, 239, 0.4); }
-  .match-btn.active { background: var(--accent-orange); color: #fff; border-color: var(--accent-orange); box-shadow: 0 0 15px rgba(255, 140, 0, 0.4); }
-
-  /* MVP Rank Style */
-  .rank-row-1 { background: linear-gradient(90deg, rgba(255, 215, 0, 0.1), transparent); border-left: 4px solid gold; }
   .kill-highlight { color: #ff4d4d; font-weight: 800; }
-  
-  .content-fade-in { animation: fadeIn 0.4s ease-out; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .rank-row-1 { background: linear-gradient(90deg, rgba(255, 215, 0, 0.1), transparent); border-left: 4px solid gold; }
+  .content-fade-in { animation: fadeIn 0.3s ease-out; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 </style>
 
 <script is:inline>
   let standingsData = [];
   let playersData = [];
   let currentFilter = 'overall';
+  let currentView = 'combined';
   let selectedGroup = 'A';
   let selectedMatch = 'M1';
 
@@ -99,27 +125,49 @@ import Layout from '../layouts/Layout.astro';
     ]);
     standingsData = await sRes.json();
     playersData = await pRes.json();
-    
     render('overall');
     setupTabListeners();
   }
 
+  // --- 🔥 BANNER LOGIC RESTORED ---
+  function createLeadingBanner(type) {
+    const container = document.getElementById('leadingBannerContainer');
+    container.innerHTML = '';
+    
+    if (type === 'mvp' && playersData.length > 0) {
+      const mvp = [...playersData].sort((a,b) => b.stats.total_kills - a.stats.total_kills)[0];
+      container.innerHTML = `<div class="leading-team-banner" style="border-color: #ff3333; box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);">
+        <h2>MVP: ${mvp.name} (${mvp.stats.total_kills} Kills) 🔥</h2>
+      </div>`;
+    } 
+    else if (standingsData.length > 0) {
+      const leader = [...standingsData].sort((a,b) => b.stats.overall.total_pts - a.stats.overall.total_pts)[0];
+      container.innerHTML = `<div class="leading-team-banner">
+        <h2>${leader.team_name} is Leading 🔥</h2>
+      </div>`;
+    }
+  }
+
   function render(filter) {
     currentFilter = filter;
+    const vToggle = document.getElementById('overallViewToggle');
     const gMenu = document.getElementById('groupFilterMenu');
     const mMenu = document.getElementById('matchFilterMenu');
-    const content = document.getElementById('standingsContent');
 
-    // Default: hide selectors
+    vToggle.style.display = 'none';
     gMenu.style.display = 'none';
     mMenu.style.display = 'none';
 
     if (filter === 'overall') {
-      renderOverall();
+      createLeadingBanner('team');
+      vToggle.style.display = 'block';
+      if (currentView === 'combined') renderOverallCombined();
+      else { gMenu.style.display = 'flex'; updateGroupButtons(); renderOverallGrouped(); }
     } else if (filter === 'mvp') {
+      createLeadingBanner('mvp');
       renderMVP();
     } else {
-      // Day 1, 2, 3 or Finals
+      createLeadingBanner('team');
       gMenu.style.display = 'flex';
       mMenu.style.display = 'flex';
       updateGroupButtons();
@@ -128,29 +176,32 @@ import Layout from '../layouts/Layout.astro';
     }
   }
 
-  function renderOverall() {
+  // --- RENDER TABLES ---
+  function renderOverallCombined() {
     const sorted = [...standingsData].sort((a,b) => b.stats.overall.total_pts - a.stats.overall.total_pts);
-    let html = `<h3>Overall Leaderboard</h3><div class="table-container"><table class="leaderboard-table">
-      <thead><tr><th>#</th><th>Team</th><th>Group</th><th>Matches</th><th>Finish</th><th>Place</th><th>Total</th></tr></thead><tbody>`;
-    
+    let html = `<h3>Overall Standings</h3><div class="table-container"><table class="leaderboard-table">
+      <thead><tr><th>Rank</th><th>Team</th><th>Group</th><th>Matches</th><th>Finish</th><th>Place</th><th>Total</th></tr></thead><tbody>`;
     sorted.forEach((t, i) => {
       const s = t.stats.overall;
-      html += `<tr class="${i < 3 ? 'rank-row-'+(i+1) : ''}">
-        <td>${i+1}</td>
-        <td>${t.team_name}</td>
-        <td>${t.group}</td>
-        <td>${s.matches_played}</td>
-        <td>${s.finish_pts}</td>
-        <td>${s.pos_pts}</td>
-        <td><strong>${s.total_pts}</strong></td>
-      </tr>`;
+      html += `<tr class="${i < 3 ? 'rank-row-'+(i+1) : ''}"><td>#${i+1}</td><td>${t.team_name}</td><td>${t.group}</td><td>${s.matches_played}</td><td>${s.finish_pts}</td><td>${s.pos_pts}</td><td><strong>${s.total_pts}</strong></td></tr>`;
+    });
+    html += '</tbody></table></div>';
+    document.getElementById('standingsContent').innerHTML = html;
+  }
+
+  function renderOverallGrouped() {
+    const groupTeams = standingsData.filter(t => t.group === selectedGroup).sort((a,b) => b.stats.overall.total_pts - a.stats.overall.total_pts);
+    let html = `<h3>Overall - Group ${selectedGroup}</h3><div class="table-container"><table class="leaderboard-table">
+      <thead><tr><th>Rank</th><th>Team</th><th>Matches</th><th>Finish</th><th>Place</th><th>Total</th></tr></thead><tbody>`;
+    groupTeams.forEach((t, i) => {
+      const s = t.stats.overall;
+      html += `<tr class="${i < 3 ? 'rank-row-'+(i+1) : ''}"><td>#${i+1}</td><td>${t.team_name}</td><td>${s.matches_played}</td><td>${s.finish_pts}</td><td>${s.pos_pts}</td><td><strong>${s.total_pts}</strong></td></tr>`;
     });
     html += '</tbody></table></div>';
     document.getElementById('standingsContent').innerHTML = html;
   }
 
   function renderMatchResult(day) {
-    // Filter teams by group and then get their match specific data
     const filteredTeams = standingsData.filter(t => t.group === selectedGroup);
     const sorted = filteredTeams.map(t => ({
         name: t.team_name,
@@ -160,63 +211,33 @@ import Layout from '../layouts/Layout.astro';
     let html = `<h3>Day ${day.slice(-1)} - Group ${selectedGroup} - Match ${selectedMatch.slice(-1)}</h3>`;
     html += `<div class="table-container"><table class="leaderboard-table">
       <thead><tr><th>#</th><th>Team</th><th>Finish Pts</th><th>Place Pts</th><th>Total</th><th>WWCD</th></tr></thead><tbody>`;
-    
     sorted.forEach((t, i) => {
-      html += `<tr class="${t.stats.wwcd ? 'wwcd-row' : ''}">
-        <td>${i+1}</td>
-        <td>${t.name}</td>
-        <td>${t.stats.kill_pts}</td>
-        <td>${t.stats.place_pts}</td>
-        <td><strong>${t.stats.total}</strong></td>
-        <td>${t.stats.wwcd ? '🏆' : '-'}</td>
-      </tr>`;
+      html += `<tr class="${t.stats.wwcd ? 'wwcd-row' : ''}"><td>${i+1}</td><td>${t.name}</td><td>${t.stats.kill_pts}</td><td>${t.stats.place_pts}</td><td><strong>${t.stats.total}</strong></td><td>${t.stats.wwcd ? '🏆' : '-'}</td></tr>`;
     });
     html += '</tbody></table></div>';
     document.getElementById('standingsContent').innerHTML = html;
   }
 
   function renderMVP() {
-    const sorted = [...playersData].sort((a,b) => b.stats.total_kills - a.stats.total_kills).slice(0, 20);
+    const sorted = [...playersData].sort((a,b) => b.stats.total_kills - a.stats.total_kills).slice(0, 25);
     let html = `<h3>Top Fraggers (MVP)</h3><div class="table-container"><table class="leaderboard-table">
       <thead><tr><th>Rank</th><th>Player Name</th><th>Team</th><th>Total Kills</th></tr></thead><tbody>`;
-    
     sorted.forEach((p, i) => {
-      html += `<tr class="${i === 0 ? 'rank-row-1' : ''}">
-        <td>#${i+1}</td>
-        <td><strong>${p.name}</strong></td>
-        <td>${p.team_name}</td>
-        <td class="kill-highlight">${p.stats.total_kills} Kills</td>
-      </tr>`;
+      html += `<tr class="${i === 0 ? 'rank-row-1' : ''}"><td>#${i+1}</td><td><strong>${p.name}</strong></td><td>${p.team_name}</td><td class="kill-highlight">${p.stats.total_kills} Kills</td></tr>`;
     });
     html += '</tbody></table></div>';
     document.getElementById('standingsContent').innerHTML = html;
   }
 
-  // Button Logic
-  window.selectGroup = (g) => { 
-    selectedGroup = g; 
-    render(currentFilter); 
-  };
-  
-  window.selectMatch = (m) => { 
-    selectedMatch = m; 
-    render(currentFilter); 
-  };
+  // --- ACTIONS ---
+  window.setView = (v) => { currentView = v; render('overall'); document.querySelectorAll('.view-toggle-btn').forEach(b => b.classList.toggle('active', b.dataset.view === v)); };
+  window.selectGroup = (g) => { selectedGroup = g; render(currentFilter); };
+  window.selectMatch = (m) => { selectedMatch = m; render(currentFilter); };
 
-  function updateGroupButtons() {
-    document.querySelectorAll('.group-btn').forEach(btn => {
-      btn.classList.toggle('active', btn.innerText.includes(selectedGroup));
-    });
-  }
-
-  function updateMatchButtons(day) {
+  function updateGroupButtons() { document.querySelectorAll('.group-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.group === selectedGroup)); }
+  function updateMatchButtons() {
     const list = document.getElementById('matchButtonList');
-    const matches = ['M1', 'M2', 'M3', 'M4'];
-    list.innerHTML = matches.map(m => `
-      <button class="match-btn ${m === selectedMatch ? 'active' : ''}" onclick="selectMatch('${m}')">
-        Match ${m.slice(-1)}
-      </button>
-    `).join('');
+    list.innerHTML = ['M1', 'M2', 'M3', 'M4'].map(m => `<button class="match-btn ${m === selectedMatch ? 'active' : ''}" onclick="selectMatch('${m}')">Match ${m.slice(-1)}</button>`).join('');
   }
 
   function setupTabListeners() {
@@ -224,7 +245,7 @@ import Layout from '../layouts/Layout.astro';
       btn.addEventListener('click', () => {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        render(btn.dataset.filter);
+        selectedMatch = 'M1'; render(btn.dataset.filter);
       });
     });
   }
