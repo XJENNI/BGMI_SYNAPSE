@@ -1,10 +1,5626 @@
 [
-  { "playerId": "p1", "playerName": "Raze", "team": "Team Soul", "kills": 28, "mvpScore": 86 },
-  { "playerId": "p2", "playerName": "Shadow", "team": "GodLike Esports", "kills": 26, "mvpScore": 82 },
-  { "playerId": "p3", "playerName": "Blitz", "team": "Team XSpark", "kills": 24, "mvpScore": 76 },
-  { "playerId": "p4", "playerName": "Kite", "team": "Orangutan Gaming", "kills": 22, "mvpScore": 74 },
-  { "playerId": "p5", "playerName": "Nova", "team": "Team Insane", "kills": 21, "mvpScore": 70 },
-  { "playerId": "p6", "playerName": "Viper", "team": "Blind Esports", "kills": 18, "mvpScore": 66 },
-  { "playerId": "p7", "playerName": "Ghost", "team": "Skylightz Gaming", "kills": 17, "mvpScore": 64 },
-  { "playerId": "p8", "playerName": "Spectre", "team": "Team Mayhem", "kills": 16, "mvpScore": 62 }
+  {
+    "player_id": "PLAYER_001A",
+    "name": "Neochleo",
+    "team_id": "TEAM_001",
+    "team_name": "CAPA",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_001B",
+    "name": "Flawless7134",
+    "team_id": "TEAM_001",
+    "team_name": "CAPA",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_001C",
+    "name": "GamingNation18",
+    "team_id": "TEAM_001",
+    "team_name": "CAPA",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_001D",
+    "name": "Galactus",
+    "team_id": "TEAM_001",
+    "team_name": "CAPA",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_002A",
+    "name": "KRYO『CHAOS』",
+    "team_id": "TEAM_002",
+    "team_name": "TEAM KRYO",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_002B",
+    "name": "KRYO『ALPHA』",
+    "team_id": "TEAM_002",
+    "team_name": "TEAM KRYO",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_002C",
+    "name": "KRYO『HAVOC』",
+    "team_id": "TEAM_002",
+    "team_name": "TEAM KRYO",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_002D",
+    "name": "KRYO『GHOST』",
+    "team_id": "TEAM_002",
+    "team_name": "TEAM KRYO",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_003A",
+    "name": "DETAINED",
+    "team_id": "TEAM_003",
+    "team_name": "Blunder",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_003B",
+    "name": "Ethan hunt",
+    "team_id": "TEAM_003",
+    "team_name": "Blunder",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_003C",
+    "name": "YOUWILLDIE",
+    "team_id": "TEAM_003",
+    "team_name": "Blunder",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_003D",
+    "name": "TUNTUN PAPA",
+    "team_id": "TEAM_003",
+    "team_name": "Blunder",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_004A",
+    "name": "ī『MONARCH』",
+    "team_id": "TEAM_004",
+    "team_name": "Dark Heaven",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_004B",
+    "name": "GHÀATÀK",
+    "team_id": "TEAM_004",
+    "team_name": "Dark Heaven",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_004C",
+    "name": "īōAMANōī",
+    "team_id": "TEAM_004",
+    "team_name": "Dark Heaven",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_004D",
+    "name": "ī『REAPER』",
+    "team_id": "TEAM_004",
+    "team_name": "Dark Heaven",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_004E",
+    "name": "GOKU玄AKKI么",
+    "team_id": "TEAM_004",
+    "team_name": "Dark Heaven",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_005A",
+    "name": "〜MAFIA٭",
+    "team_id": "TEAM_005",
+    "team_name": "Pistol gang",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_005B",
+    "name": "CreXwūBLURRY",
+    "team_id": "TEAM_005",
+    "team_name": "Pistol gang",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_005C",
+    "name": "ĐĐŁY么WOLFE",
+    "team_id": "TEAM_005",
+    "team_name": "Pistol gang",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_005D",
+    "name": "FICTION003",
+    "team_id": "TEAM_005",
+    "team_name": "Pistol gang",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_006A",
+    "name": "HexMaster9",
+    "team_id": "TEAM_006",
+    "team_name": "Team MARAUDERS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_006B",
+    "name": "DRAYUIKON",
+    "team_id": "TEAM_006",
+    "team_name": "Team MARAUDERS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_006C",
+    "name": "vinodrajbhar11",
+    "team_id": "TEAM_006",
+    "team_name": "Team MARAUDERS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_006D",
+    "name": "Sandeep047933",
+    "team_id": "TEAM_006",
+    "team_name": "Team MARAUDERS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_006E",
+    "name": "IT'SMEVRO",
+    "team_id": "TEAM_006",
+    "team_name": "Team MARAUDERS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_007A",
+    "name": "Your๛Đ乇ATH",
+    "team_id": "TEAM_007",
+    "team_name": "Paradox Entity",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_007B",
+    "name": "PixeL×TracKeR",
+    "team_id": "TEAM_007",
+    "team_name": "Paradox Entity",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_007C",
+    "name": "Susy私Baka",
+    "team_id": "TEAM_007",
+    "team_name": "Paradox Entity",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_007D",
+    "name": "KiraIsAlive",
+    "team_id": "TEAM_007",
+    "team_name": "Paradox Entity",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_007E",
+    "name": "Your๛F乇AR",
+    "team_id": "TEAM_007",
+    "team_name": "Paradox Entity",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_008A",
+    "name": "Marrowpaglu55",
+    "team_id": "TEAM_008",
+    "team_name": "8kkabaap",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_008B",
+    "name": "Dark008knight",
+    "team_id": "TEAM_008",
+    "team_name": "8kkabaap",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_008C",
+    "name": "FriENdly BoT",
+    "team_id": "TEAM_008",
+    "team_name": "8kkabaap",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_008D",
+    "name": "tyaMeen ]] 43",
+    "team_id": "TEAM_008",
+    "team_name": "8kkabaap",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_009A",
+    "name": "4NSxAdiiii",
+    "team_id": "TEAM_009",
+    "team_name": "4 Night soldiers",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_009B",
+    "name": "4NSxZENO",
+    "team_id": "TEAM_009",
+    "team_name": "4 Night soldiers",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_009C",
+    "name": "4NSxReonix",
+    "team_id": "TEAM_009",
+    "team_name": "4 Night soldiers",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_009D",
+    "name": "R4CxHANNAN",
+    "team_id": "TEAM_009",
+    "team_name": "4 Night soldiers",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_009E",
+    "name": "4MGLUCKY",
+    "team_id": "TEAM_009",
+    "team_name": "4 Night soldiers",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_010A",
+    "name": "4GWSxKuNaL",
+    "team_id": "TEAM_010",
+    "team_name": "4 gods with steth",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_010B",
+    "name": "4GWSxNvn",
+    "team_id": "TEAM_010",
+    "team_name": "4 gods with steth",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_010C",
+    "name": "STARLORD",
+    "team_id": "TEAM_010",
+    "team_name": "4 gods with steth",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_010D",
+    "name": "4GWSxVicky",
+    "team_id": "TEAM_010",
+    "team_name": "4 gods with steth",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_011A",
+    "name": "TBxDhrUv",
+    "team_id": "TEAM_011",
+    "team_name": "TABHAI ESPORTS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_011B",
+    "name": "TBxLeO",
+    "team_id": "TEAM_011",
+    "team_name": "TABHAI ESPORTS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_011C",
+    "name": "TBxJxSHUA07",
+    "team_id": "TEAM_011",
+    "team_name": "TABHAI ESPORTS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_011D",
+    "name": "TBxDaNGeR",
+    "team_id": "TEAM_011",
+    "team_name": "TABHAI ESPORTS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_012A",
+    "name": "NAxAsur",
+    "team_id": "TEAM_012",
+    "team_name": "NO AIM",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_012B",
+    "name": "NAxVenom",
+    "team_id": "TEAM_012",
+    "team_name": "NO AIM",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_012C",
+    "name": "NAxLexin",
+    "team_id": "TEAM_012",
+    "team_name": "NO AIM",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_012D",
+    "name": "NAxLoneWolf",
+    "team_id": "TEAM_012",
+    "team_name": "NO AIM",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_013A",
+    "name": "DADDYXYUVI",
+    "team_id": "TEAM_013",
+    "team_name": "Team gmc kota",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_013B",
+    "name": "ZoroNubb",
+    "team_id": "TEAM_013",
+    "team_name": "Team gmc kota",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_013C",
+    "name": "4AMxNoCebo",
+    "team_id": "TEAM_013",
+    "team_name": "Team gmc kota",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_013D",
+    "name": "TUNTUN MOSI",
+    "team_id": "TEAM_013",
+    "team_name": "Team gmc kota",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_013E",
+    "name": "4AMxinhee6",
+    "team_id": "TEAM_013",
+    "team_name": "Team gmc kota",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_014A",
+    "name": "亗 AJAY 亗",
+    "team_id": "TEAM_014",
+    "team_name": "TEAM GOAT",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_014B",
+    "name": "亗 DRDOOM 亗",
+    "team_id": "TEAM_014",
+    "team_name": "TEAM GOAT",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_014C",
+    "name": "亗ēANSARIē亗",
+    "team_id": "TEAM_014",
+    "team_name": "TEAM GOAT",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_014D",
+    "name": "XQUÀD=MOHIT",
+    "team_id": "TEAM_014",
+    "team_name": "TEAM GOAT",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_014E",
+    "name": "Shikari - Billa",
+    "team_id": "TEAM_014",
+    "team_name": "TEAM GOAT",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_015A",
+    "name": "TZxspidy",
+    "team_id": "TEAM_015",
+    "team_name": "TEAM ZEN",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_015B",
+    "name": "TZxJin",
+    "team_id": "TEAM_015",
+    "team_name": "TEAM ZEN",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_015C",
+    "name": "TZxIīCīY",
+    "team_id": "TEAM_015",
+    "team_name": "TEAM ZEN",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_015D",
+    "name": "TZxS4N",
+    "team_id": "TEAM_015",
+    "team_name": "TEAM ZEN",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_015E",
+    "name": "MêôwMëöw",
+    "team_id": "TEAM_015",
+    "team_name": "TEAM ZEN",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_016A",
+    "name": "npc「ＤＯＸ」",
+    "team_id": "TEAM_016",
+    "team_name": "么٭〇ɢ・NPCs・๛",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_016B",
+    "name": "戈TERROR彡BOB",
+    "team_id": "TEAM_016",
+    "team_name": "么٭〇ɢ・NPCs・๛",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_016C",
+    "name": "4YxHARISH",
+    "team_id": "TEAM_016",
+    "team_name": "么٭〇ɢ・NPCs・๛",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_016D",
+    "name": "GHATAK亗JIGS",
+    "team_id": "TEAM_016",
+    "team_name": "么٭〇ɢ・NPCs・๛",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_016E",
+    "name": "akaromanreigns",
+    "team_id": "TEAM_016",
+    "team_name": "么٭〇ɢ・NPCs・๛",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_017A",
+    "name": "NotxAman",
+    "team_id": "TEAM_017",
+    "team_name": "Suicide Squad",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_017B",
+    "name": "[ITS] EXOTIC",
+    "team_id": "TEAM_017",
+    "team_name": "Suicide Squad",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_017C",
+    "name": "DARTH'''VADER",
+    "team_id": "TEAM_017",
+    "team_name": "Suicide Squad",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_017D",
+    "name": "LZxxPULAKop",
+    "team_id": "TEAM_017",
+    "team_name": "Suicide Squad",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_017E",
+    "name": "Pepsu Stark",
+    "team_id": "TEAM_017",
+    "team_name": "Suicide Squad",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_018A",
+    "name": "INムYム٭",
+    "team_id": "TEAM_018",
+    "team_name": "Team glichX",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_018B",
+    "name": "ōōAKASHŌō",
+    "team_id": "TEAM_018",
+    "team_name": "Team glichX",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_018C",
+    "name": "會丨GLIÇHX",
+    "team_id": "TEAM_018",
+    "team_name": "Team glichX",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_018D",
+    "name": "EQXInsider",
+    "team_id": "TEAM_018",
+    "team_name": "Team glichX",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_018E",
+    "name": "XtreamHunTeR",
+    "team_id": "TEAM_018",
+    "team_name": "Team glichX",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_019A",
+    "name": "Shubh05gamer",
+    "team_id": "TEAM_019",
+    "team_name": "Team Revengers",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_019B",
+    "name": "Parvesh£45",
+    "team_id": "TEAM_019",
+    "team_name": "Team Revengers",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_019C",
+    "name": "Up32RANGER",
+    "team_id": "TEAM_019",
+    "team_name": "Team Revengers",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_019D",
+    "name": "ＮＥＭＥｓＩＳ",
+    "team_id": "TEAM_019",
+    "team_name": "Team Revengers",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_019E",
+    "name": "Jollyvr7",
+    "team_id": "TEAM_019",
+    "team_name": "Team Revengers",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_020A",
+    "name": "OSxBeast",
+    "team_id": "TEAM_020",
+    "team_name": "Omega Slayers",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_020B",
+    "name": "WØCxÑEMESîS",
+    "team_id": "TEAM_020",
+    "team_name": "Omega Slayers",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_020C",
+    "name": "「ūYADAVō」",
+    "team_id": "TEAM_020",
+    "team_name": "Omega Slayers",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_020D",
+    "name": "๖ۣUnknØwn",
+    "team_id": "TEAM_020",
+    "team_name": "Omega Slayers",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_021A",
+    "name": "LSxGBplayzYT",
+    "team_id": "TEAM_021",
+    "team_name": "League of Shadows",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_021B",
+    "name": "TheUglyFatGuy",
+    "team_id": "TEAM_021",
+    "team_name": "League of Shadows",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_021C",
+    "name": "FLx・ELNoiX",
+    "team_id": "TEAM_021",
+    "team_name": "League of Shadows",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_021D",
+    "name": "OGxKRISH",
+    "team_id": "TEAM_021",
+    "team_name": "League of Shadows",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_021E",
+    "name": "WARRIOR彡UJJU",
+    "team_id": "TEAM_021",
+    "team_name": "League of Shadows",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_022A",
+    "name": "m0iZz",
+    "team_id": "TEAM_022",
+    "team_name": "Team Wreckers",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_022B",
+    "name": "๛MARCUS๛",
+    "team_id": "TEAM_022",
+    "team_name": "Team Wreckers",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_022C",
+    "name": "VENOMxxWALKER",
+    "team_id": "TEAM_022",
+    "team_name": "Team Wreckers",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_022D",
+    "name": "S卄Ｅ乙ＡＤAA",
+    "team_id": "TEAM_022",
+    "team_name": "Team Wreckers",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_022E",
+    "name": "TWxEgoist",
+    "team_id": "TEAM_022",
+    "team_name": "Team Wreckers",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_023A",
+    "name": "『M Y L O』",
+    "team_id": "TEAM_023",
+    "team_name": "PROTON",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_023B",
+    "name": "乂PsychoQueen",
+    "team_id": "TEAM_023",
+    "team_name": "PROTON",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_023C",
+    "name": "ObsidianX2",
+    "team_id": "TEAM_023",
+    "team_name": "PROTON",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_023D",
+    "name": "RAZZchaudhary",
+    "team_id": "TEAM_023",
+    "team_name": "PROTON",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_024A",
+    "name": "EL MAGO",
+    "team_id": "TEAM_024",
+    "team_name": "4D",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_024B",
+    "name": "4TRWJODDD",
+    "team_id": "TEAM_024",
+    "team_name": "4D",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_024C",
+    "name": "RYHAN",
+    "team_id": "TEAM_024",
+    "team_name": "4D",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_024D",
+    "name": "MoODOffhaiMera",
+    "team_id": "TEAM_024",
+    "team_name": "4D",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_025A",
+    "name": "DocARC",
+    "team_id": "TEAM_025",
+    "team_name": "AAMIR RAZA",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_025B",
+    "name": "DocPeace44",
+    "team_id": "TEAM_025",
+    "team_name": "AAMIR RAZA",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_025C",
+    "name": "GojoOGsatoru",
+    "team_id": "TEAM_025",
+    "team_name": "AAMIR RAZA",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_025D",
+    "name": "DocZee34",
+    "team_id": "TEAM_025",
+    "team_name": "AAMIR RAZA",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_025E",
+    "name": "Elcolocoboogey",
+    "team_id": "TEAM_025",
+    "team_name": "AAMIR RAZA",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_026A",
+    "name": "HRHxVaibhav",
+    "team_id": "TEAM_026",
+    "team_name": "AUTACOIDS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_026B",
+    "name": "HRHxRitesh",
+    "team_id": "TEAM_026",
+    "team_name": "AUTACOIDS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_026C",
+    "name": "RDXbasanti",
+    "team_id": "TEAM_026",
+    "team_name": "AUTACOIDS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_026D",
+    "name": "ZORO",
+    "team_id": "TEAM_026",
+    "team_name": "AUTACOIDS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_026E",
+    "name": "Skylights",
+    "team_id": "TEAM_026",
+    "team_name": "AUTACOIDS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_027A",
+    "name": "JAYANT××1911",
+    "team_id": "TEAM_027",
+    "team_name": "Predators",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_027B",
+    "name": "A4xDeAthGød",
+    "team_id": "TEAM_027",
+    "team_name": "Predators",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_027C",
+    "name": "TITAN265",
+    "team_id": "TEAM_027",
+    "team_name": "Predators",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_027D",
+    "name": "GLDxShubzz",
+    "team_id": "TEAM_027",
+    "team_name": "Predators",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_027E",
+    "name": "KTxdevil",
+    "team_id": "TEAM_027",
+    "team_name": "Predators",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_028A",
+    "name": "DrRetarD",
+    "team_id": "TEAM_028",
+    "team_name": "Crusaderz",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_028B",
+    "name": "BLTxJOD",
+    "team_id": "TEAM_028",
+    "team_name": "Crusaderz",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_028C",
+    "name": "NIGGà1234",
+    "team_id": "TEAM_028",
+    "team_name": "Crusaderz",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_028D",
+    "name": "CODE RED GOD",
+    "team_id": "TEAM_028",
+    "team_name": "Crusaderz",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_028E",
+    "name": "Inosuke0409",
+    "team_id": "TEAM_028",
+    "team_name": "Crusaderz",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_029A",
+    "name": "XFTxBaqar",
+    "team_id": "TEAM_029",
+    "team_name": "Delhi ke dakait",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_029B",
+    "name": "PiedPiper123",
+    "team_id": "TEAM_029",
+    "team_name": "Delhi ke dakait",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_029C",
+    "name": "fizalbhai68",
+    "team_id": "TEAM_029",
+    "team_name": "Delhi ke dakait",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_029D",
+    "name": "乛cLoWn",
+    "team_id": "TEAM_029",
+    "team_name": "Delhi ke dakait",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_029E",
+    "name": "HYDRAMIYABHAI",
+    "team_id": "TEAM_029",
+    "team_name": "Delhi ke dakait",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_030A",
+    "name": "WiLDxxROCKY",
+    "team_id": "TEAM_030",
+    "team_name": "Decans of Vmmc",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_030B",
+    "name": "亗įRITESHį亗",
+    "team_id": "TEAM_030",
+    "team_name": "Decans of Vmmc",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_030C",
+    "name": "DrGrIMReapER",
+    "team_id": "TEAM_030",
+    "team_name": "Decans of Vmmc",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_030D",
+    "name": "'''switch",
+    "team_id": "TEAM_030",
+    "team_name": "Decans of Vmmc",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_031A",
+    "name": "W2RxKyansh",
+    "team_id": "TEAM_031",
+    "team_name": "W2R Esports",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_031B",
+    "name": "W2RxKrrish",
+    "team_id": "TEAM_031",
+    "team_name": "W2R Esports",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_031C",
+    "name": "W2RxGXX",
+    "team_id": "TEAM_031",
+    "team_name": "W2R Esports",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_031D",
+    "name": "W2RxALECTOO",
+    "team_id": "TEAM_031",
+    "team_name": "W2R Esports",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_031E",
+    "name": "LefiToxPlayz",
+    "team_id": "TEAM_031",
+    "team_name": "W2R Esports",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_032A",
+    "name": "Stixjadoo007",
+    "team_id": "TEAM_032",
+    "team_name": "TEAM ALBINO",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_032B",
+    "name": "ＢＲＳｔａｒ",
+    "team_id": "TEAM_032",
+    "team_name": "TEAM ALBINO",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_032C",
+    "name": "LuckyakaSAT",
+    "team_id": "TEAM_032",
+    "team_name": "TEAM ALBINO",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_032D",
+    "name": "Kaushal00017",
+    "team_id": "TEAM_032",
+    "team_name": "TEAM ALBINO",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_032E",
+    "name": "U8d94f1128162",
+    "team_id": "TEAM_032",
+    "team_name": "TEAM ALBINO",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_033A",
+    "name": "INVIxGanjaOp",
+    "team_id": "TEAM_033",
+    "team_name": "Team Invincibles",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_033B",
+    "name": "INVIxARYAMAN",
+    "team_id": "TEAM_033",
+    "team_name": "Team Invincibles",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_033C",
+    "name": "TBxDhruv",
+    "team_id": "TEAM_033",
+    "team_name": "Team Invincibles",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_033D",
+    "name": "OPxASHU",
+    "team_id": "TEAM_033",
+    "team_name": "Team Invincibles",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_033E",
+    "name": "INVIxBOT",
+    "team_id": "TEAM_033",
+    "team_name": "Team Invincibles",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_034A",
+    "name": "TFL×wolf",
+    "team_id": "TEAM_034",
+    "team_name": "TFL (team flawless)",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_034B",
+    "name": "DR×jatin",
+    "team_id": "TEAM_034",
+    "team_name": "TFL (team flawless)",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_034C",
+    "name": "TFL×legendop",
+    "team_id": "TEAM_034",
+    "team_name": "TFL (team flawless)",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_034D",
+    "name": "TFL×hrsh",
+    "team_id": "TEAM_034",
+    "team_name": "TFL (team flawless)",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_034E",
+    "name": "Abhishek",
+    "team_id": "TEAM_034",
+    "team_name": "TFL (team flawless)",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_035A",
+    "name": "Shivam op",
+    "team_id": "TEAM_035",
+    "team_name": "Team Cadaver",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_035B",
+    "name": "4MF OXIDE",
+    "team_id": "TEAM_035",
+    "team_name": "Team Cadaver",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_035C",
+    "name": "LZMxHappy",
+    "team_id": "TEAM_035",
+    "team_name": "Team Cadaver",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_035D",
+    "name": "Shubham",
+    "team_id": "TEAM_035",
+    "team_name": "Team Cadaver",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_035E",
+    "name": "Rav3n",
+    "team_id": "TEAM_035",
+    "team_name": "Team Cadaver",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_036A",
+    "name": "SiLenTkiLLeR18",
+    "team_id": "TEAM_036",
+    "team_name": "UC Phantom Force",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_036B",
+    "name": "LUCIFERツFLASH",
+    "team_id": "TEAM_036",
+    "team_name": "UC Phantom Force",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_036C",
+    "name": "SzukaWitBzukaa",
+    "team_id": "TEAM_036",
+    "team_name": "UC Phantom Force",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_036D",
+    "name": "UCkaJUICY",
+    "team_id": "TEAM_036",
+    "team_name": "UC Phantom Force",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_036E",
+    "name": "SaubhagyaVars",
+    "team_id": "TEAM_036",
+    "team_name": "UC Phantom Force",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_037A",
+    "name": "ETxROBIN",
+    "team_id": "TEAM_037",
+    "team_name": "ElemenT",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_037B",
+    "name": "ETxKRYPTON",
+    "team_id": "TEAM_037",
+    "team_name": "ElemenT",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_037C",
+    "name": "SACxRevaa7",
+    "team_id": "TEAM_037",
+    "team_name": "ElemenT",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_037D",
+    "name": "ooPHROLOVAoo",
+    "team_id": "TEAM_037",
+    "team_name": "ElemenT",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_037E",
+    "name": "ETxRISHIII",
+    "team_id": "TEAM_037",
+    "team_name": "ElemenT",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_038A",
+    "name": "BESALTY",
+    "team_id": "TEAM_038",
+    "team_name": "Crypt of Liberkuhn",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_038B",
+    "name": "RAVYNN",
+    "team_id": "TEAM_038",
+    "team_name": "Crypt of Liberkuhn",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_038C",
+    "name": "DrShaRk",
+    "team_id": "TEAM_038",
+    "team_name": "Crypt of Liberkuhn",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_038D",
+    "name": "BoboChodu",
+    "team_id": "TEAM_038",
+    "team_name": "Crypt of Liberkuhn",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_038E",
+    "name": "DAAL・MAKHNI",
+    "team_id": "TEAM_038",
+    "team_name": "Crypt of Liberkuhn",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_039A",
+    "name": "亗BÈÆsT亗",
+    "team_id": "TEAM_039",
+    "team_name": "ANSA CERVICALIS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_039B",
+    "name": "BLACKīDARGON",
+    "team_id": "TEAM_039",
+    "team_name": "ANSA CERVICALIS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_039C",
+    "name": "billuūbakchod",
+    "team_id": "TEAM_039",
+    "team_name": "ANSA CERVICALIS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_039D",
+    "name": "AMCzZGILL",
+    "team_id": "TEAM_039",
+    "team_name": "ANSA CERVICALIS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_040A",
+    "name": "AGxChico",
+    "team_id": "TEAM_040",
+    "team_name": "Vortex esports",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_040B",
+    "name": "マīAīMīAūN",
+    "team_id": "TEAM_040",
+    "team_name": "Vortex esports",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_040C",
+    "name": "TTsCŁUTCHGOĐ",
+    "team_id": "TEAM_040",
+    "team_name": "Vortex esports",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_040D",
+    "name": "LUTERAッTHANOS",
+    "team_id": "TEAM_040",
+    "team_name": "Vortex esports",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_041A",
+    "name": "Pexx7777",
+    "team_id": "TEAM_041",
+    "team_name": "Dangerous dragons",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_041B",
+    "name": "Ujjwal1779",
+    "team_id": "TEAM_041",
+    "team_name": "Dangerous dragons",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_041C",
+    "name": "ShivanshSi36!",
+    "team_id": "TEAM_041",
+    "team_name": "Dangerous dragons",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_041D",
+    "name": "PuranchandTri",
+    "team_id": "TEAM_041",
+    "team_name": "Dangerous dragons",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_042A",
+    "name": "ABxABRARx720",
+    "team_id": "TEAM_042",
+    "team_name": "Medbugs",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_042B",
+    "name": "SuvoThebatman",
+    "team_id": "TEAM_042",
+    "team_name": "Medbugs",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_042C",
+    "name": "PeterParkerOP",
+    "team_id": "TEAM_042",
+    "team_name": "Medbugs",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_042D",
+    "name": "Mr么NIKUNJ",
+    "team_id": "TEAM_042",
+    "team_name": "Medbugs",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_042E",
+    "name": "IQOORNTXLOKESH",
+    "team_id": "TEAM_042",
+    "team_name": "Medbugs",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_043A",
+    "name": "R4xkira",
+    "team_id": "TEAM_043",
+    "team_name": "Reigning 4",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_043B",
+    "name": "R4xwhiteniqqa",
+    "team_id": "TEAM_043",
+    "team_name": "Reigning 4",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_043C",
+    "name": "R4xPapitaShake",
+    "team_id": "TEAM_043",
+    "team_name": "Reigning 4",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_043D",
+    "name": "R4xsunnyizded",
+    "team_id": "TEAM_043",
+    "team_name": "Reigning 4",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_043E",
+    "name": "PyroPaimon",
+    "team_id": "TEAM_043",
+    "team_name": "Reigning 4",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_044A",
+    "name": "Achiyaaa彡ji",
+    "team_id": "TEAM_044",
+    "team_name": "Team 507",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_044B",
+    "name": "ES彡COFFIN",
+    "team_id": "TEAM_044",
+    "team_name": "Team 507",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_044C",
+    "name": "Chandra613",
+    "team_id": "TEAM_044",
+    "team_name": "Team 507",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_044D",
+    "name": "ŃeoRon",
+    "team_id": "TEAM_044",
+    "team_name": "Team 507",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_045A",
+    "name": "LBOggy",
+    "team_id": "TEAM_045",
+    "team_name": "AGNI ESPORTS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_045B",
+    "name": "AGNIxMIGHTY",
+    "team_id": "TEAM_045",
+    "team_name": "AGNI ESPORTS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_045C",
+    "name": "MMxVAMPIRE",
+    "team_id": "TEAM_045",
+    "team_name": "AGNI ESPORTS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_045D",
+    "name": "AGNIxHAVOK",
+    "team_id": "TEAM_045",
+    "team_name": "AGNI ESPORTS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_046A",
+    "name": "tangoCHARL",
+    "team_id": "TEAM_046",
+    "team_name": "Team megastar",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_046B",
+    "name": "ARREīīYRR",
+    "team_id": "TEAM_046",
+    "team_name": "Team megastar",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_046C",
+    "name": "ŁUFFŸ1",
+    "team_id": "TEAM_046",
+    "team_name": "Team megastar",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_046D",
+    "name": "Avada1",
+    "team_id": "TEAM_046",
+    "team_name": "Team megastar",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_047A",
+    "name": "么SIROHI",
+    "team_id": "TEAM_047",
+    "team_name": "FORCE X",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_047B",
+    "name": "SanyamJain0012",
+    "team_id": "TEAM_047",
+    "team_name": "FORCE X",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_047C",
+    "name": "खचराú",
+    "team_id": "TEAM_047",
+    "team_name": "FORCE X",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_047D",
+    "name": "नमनjiū",
+    "team_id": "TEAM_047",
+    "team_name": "FORCE X",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_048A",
+    "name": "『DÍVYÅM』",
+    "team_id": "TEAM_048",
+    "team_name": "Team Fateh e jannat",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_048B",
+    "name": "乛ツDarkツ乛",
+    "team_id": "TEAM_048",
+    "team_name": "Team Fateh e jannat",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_048C",
+    "name": "؄ＭＡＦＩA؄",
+    "team_id": "TEAM_048",
+    "team_name": "Team Fateh e jannat",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_048D",
+    "name": "Khelaaaaaa",
+    "team_id": "TEAM_048",
+    "team_name": "Team Fateh e jannat",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_049A",
+    "name": "LàkshéY",
+    "team_id": "TEAM_049",
+    "team_name": "Team Zoldyck",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_049B",
+    "name": "Kñ〇乂๛Flash",
+    "team_id": "TEAM_049",
+    "team_name": "Team Zoldyck",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_049C",
+    "name": "DrTREHAN",
+    "team_id": "TEAM_049",
+    "team_name": "Team Zoldyck",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_049D",
+    "name": "TDTѰ๛MEWTOW",
+    "team_id": "TEAM_049",
+    "team_name": "Team Zoldyck",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_049E",
+    "name": "vikramgautam11",
+    "team_id": "TEAM_049",
+    "team_name": "Team Zoldyck",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_050A",
+    "name": "UdaYbhAi",
+    "team_id": "TEAM_050",
+    "team_name": "TEAM CELESTIA",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_050B",
+    "name": "Warrior丈Ekam",
+    "team_id": "TEAM_050",
+    "team_name": "TEAM CELESTIA",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_050C",
+    "name": "GHxSTRANGE",
+    "team_id": "TEAM_050",
+    "team_name": "TEAM CELESTIA",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_050D",
+    "name": "BEAST艾ÌNSANE",
+    "team_id": "TEAM_050",
+    "team_name": "TEAM CELESTIA",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_050E",
+    "name": "RﾑW么ÑÍNJÅ",
+    "team_id": "TEAM_050",
+    "team_name": "TEAM CELESTIA",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_051A",
+    "name": "TITANXVINTAGE",
+    "team_id": "TEAM_051",
+    "team_name": "TEAM TITAN",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_051B",
+    "name": "TITANXKABIR",
+    "team_id": "TEAM_051",
+    "team_name": "TEAM TITAN",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_051C",
+    "name": "SNEHALDADDY",
+    "team_id": "TEAM_051",
+    "team_name": "TEAM TITAN",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_051D",
+    "name": "SHAWN MENDES",
+    "team_id": "TEAM_051",
+    "team_name": "TEAM TITAN",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_051E",
+    "name": "UJJWALPLAYZ",
+    "team_id": "TEAM_051",
+    "team_name": "TEAM TITAN",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_052A",
+    "name": "141xMaKaRoV",
+    "team_id": "TEAM_052",
+    "team_name": "Team HiMSR",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_052B",
+    "name": "THxKARTIK",
+    "team_id": "TEAM_052",
+    "team_name": "Team HiMSR",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_052C",
+    "name": "S2TxMayankOG",
+    "team_id": "TEAM_052",
+    "team_name": "Team HiMSR",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_052D",
+    "name": "ParaBotX",
+    "team_id": "TEAM_052",
+    "team_name": "Team HiMSR",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_052E",
+    "name": "JuNiØR",
+    "team_id": "TEAM_052",
+    "team_name": "Team HiMSR",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_053A",
+    "name": "DeadlyシDr",
+    "team_id": "TEAM_053",
+    "team_name": "Deadly Alliance",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_053B",
+    "name": "DaRkHaWk",
+    "team_id": "TEAM_053",
+    "team_name": "Deadly Alliance",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_053C",
+    "name": "TSxRudraOP",
+    "team_id": "TEAM_053",
+    "team_name": "Deadly Alliance",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_053D",
+    "name": "968msKhairuL",
+    "team_id": "TEAM_053",
+    "team_name": "Deadly Alliance",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_053E",
+    "name": "ConStantSPIRIT",
+    "team_id": "TEAM_053",
+    "team_name": "Deadly Alliance",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_054A",
+    "name": "Mist piyush",
+    "team_id": "TEAM_054",
+    "team_name": "Phantom troupe",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_054B",
+    "name": "Ashishsaharan",
+    "team_id": "TEAM_054",
+    "team_name": "Phantom troupe",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_054C",
+    "name": "StrangeX",
+    "team_id": "TEAM_054",
+    "team_name": "Phantom troupe",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_054D",
+    "name": "Ilxclueless",
+    "team_id": "TEAM_054",
+    "team_name": "Phantom troupe",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_055A",
+    "name": "LETīMEōCOOK",
+    "team_id": "TEAM_055",
+    "team_name": "Gods official",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_055B",
+    "name": "彡KiNG彡J",
+    "team_id": "TEAM_055",
+    "team_name": "Gods official",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_055C",
+    "name": "shivaydv666",
+    "team_id": "TEAM_055",
+    "team_name": "Gods official",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_055D",
+    "name": "BTDxＡｙｕｓｈ",
+    "team_id": "TEAM_055",
+    "team_name": "Gods official",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_055E",
+    "name": "艾YumeKo艾",
+    "team_id": "TEAM_055",
+    "team_name": "Gods official",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_056A",
+    "name": "KING彡SOUL",
+    "team_id": "TEAM_056",
+    "team_name": "NIIMS彡KINGS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_056B",
+    "name": "KING彡RAPTOR",
+    "team_id": "TEAM_056",
+    "team_name": "NIIMS彡KINGS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_056C",
+    "name": "Saachinpilot",
+    "team_id": "TEAM_056",
+    "team_name": "NIIMS彡KINGS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_056D",
+    "name": "चaachi",
+    "team_id": "TEAM_056",
+    "team_name": "NIIMS彡KINGS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_056E",
+    "name": "KING彡IMMORTAL",
+    "team_id": "TEAM_056",
+    "team_name": "NIIMS彡KINGS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_057A",
+    "name": "OPxFrostGod",
+    "team_id": "TEAM_057",
+    "team_name": "Team OverPowered",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_057B",
+    "name": "OPxASHUU",
+    "team_id": "TEAM_057",
+    "team_name": "Team OverPowered",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_057C",
+    "name": "OPxKAMLEEESH",
+    "team_id": "TEAM_057",
+    "team_name": "Team OverPowered",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_057D",
+    "name": "OPxVIPERR",
+    "team_id": "TEAM_057",
+    "team_name": "Team OverPowered",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_057E",
+    "name": "OPxakshatGOAT",
+    "team_id": "TEAM_057",
+    "team_name": "Team OverPowered",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_058A",
+    "name": "VENOM乡STRØKE",
+    "team_id": "TEAM_058",
+    "team_name": "Jaat warriors",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_058B",
+    "name": "HRēDHRUV",
+    "team_id": "TEAM_058",
+    "team_name": "Jaat warriors",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_058C",
+    "name": "HRēRITESH",
+    "team_id": "TEAM_058",
+    "team_name": "Jaat warriors",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_058D",
+    "name": "NAVEEN3376",
+    "team_id": "TEAM_058",
+    "team_name": "Jaat warriors",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_059A",
+    "name": "TRXxAURA",
+    "team_id": "TEAM_059",
+    "team_name": "TRX ESPORTS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_059B",
+    "name": "TRXxPAIN",
+    "team_id": "TEAM_059",
+    "team_name": "TRX ESPORTS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_059C",
+    "name": "TRXxXENO",
+    "team_id": "TEAM_059",
+    "team_name": "TRX ESPORTS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_059D",
+    "name": "TRXxOWNER",
+    "team_id": "TEAM_059",
+    "team_name": "TRX ESPORTS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_059E",
+    "name": "SKE×Cyrus",
+    "team_id": "TEAM_059",
+    "team_name": "TRX ESPORTS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_060A",
+    "name": "NFprincee",
+    "team_id": "TEAM_060",
+    "team_name": "Team Prince",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_060B",
+    "name": "٭LiMiTLeSS٭",
+    "team_id": "TEAM_060",
+    "team_name": "Team Prince",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_060C",
+    "name": "么ＡＡｖｉ",
+    "team_id": "TEAM_060",
+    "team_name": "Team Prince",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_060D",
+    "name": "Īī『SCAR』",
+    "team_id": "TEAM_060",
+    "team_name": "Team Prince",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_061A",
+    "name": "VExWizzGOD",
+    "team_id": "TEAM_061",
+    "team_name": "Team ALPHAxPSYCHO",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_061B",
+    "name": "AxPyschoo18",
+    "team_id": "TEAM_061",
+    "team_name": "Team ALPHAxPSYCHO",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_061C",
+    "name": "TUxHALUSA",
+    "team_id": "TEAM_061",
+    "team_name": "Team ALPHAxPSYCHO",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_061D",
+    "name": "VAMPxiZoOP",
+    "team_id": "TEAM_061",
+    "team_name": "Team ALPHAxPSYCHO",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_061E",
+    "name": "TUxZark09",
+    "team_id": "TEAM_061",
+    "team_name": "Team ALPHAxPSYCHO",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_062A",
+    "name": "ClUtchMAster",
+    "team_id": "TEAM_062",
+    "team_name": "IzraelKillerz",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_062B",
+    "name": "KaluaBihAri",
+    "team_id": "TEAM_062",
+    "team_name": "IzraelKillerz",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_062C",
+    "name": "十ＳＡＭＥＥＲ",
+    "team_id": "TEAM_062",
+    "team_name": "IzraelKillerz",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_062D",
+    "name": "Chootbuster",
+    "team_id": "TEAM_062",
+    "team_name": "IzraelKillerz",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_062E",
+    "name": "RandiFuckerrrr",
+    "team_id": "TEAM_062",
+    "team_name": "IzraelKillerz",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_063A",
+    "name": "AIR1xHAPPY",
+    "team_id": "TEAM_063",
+    "team_name": "AIR1 ESPORTS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_063B",
+    "name": "AIR1xAkshay",
+    "team_id": "TEAM_063",
+    "team_name": "AIR1 ESPORTS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_063C",
+    "name": "WTFxDavidOP",
+    "team_id": "TEAM_063",
+    "team_name": "AIR1 ESPORTS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_063D",
+    "name": "ReGreSaRisLIVE",
+    "team_id": "TEAM_063",
+    "team_name": "AIR1 ESPORTS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_063E",
+    "name": "AIR1xAyush",
+    "team_id": "TEAM_063",
+    "team_name": "AIR1 ESPORTS",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_064A",
+    "name": "Zaìddddd",
+    "team_id": "TEAM_064",
+    "team_name": "Zalzala",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_064B",
+    "name": "EquadorDIGNITY",
+    "team_id": "TEAM_064",
+    "team_name": "Zalzala",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_064C",
+    "name": "Team4LMxASH77",
+    "team_id": "TEAM_064",
+    "team_name": "Zalzala",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  },
+  {
+    "player_id": "PLAYER_064D",
+    "name": "Ｌｕｆｆｙīū",
+    "team_id": "TEAM_064",
+    "team_name": "Zalzala",
+    "stats": {
+      "total_kills": 0,
+      "matches": {
+        "M1": 0,
+        "M2": 0,
+        "M3": 0,
+        "M4": 0,
+        "M5": 0,
+        "M6": 0,
+        "M7": 0,
+        "M8": 0
+      }
+    }
+  }
 ]
