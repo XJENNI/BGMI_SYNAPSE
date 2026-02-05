@@ -6,7 +6,7 @@ import Layout from '../layouts/Layout.astro';
   <section class="leaderboard-section">
     <div class="container">
 
-      <!-- 🔴 LIVE STATUS BANNER RESTORED -->
+      <!-- 🔴 LIVE STATUS BANNER -->
       <div class="live-status-banner">
         <div class="live-status-content">
           <span class="live-icon">🔴</span>
@@ -17,7 +17,7 @@ import Layout from '../layouts/Layout.astro';
 
       <div class="page-header-box">
         <h1 class="page-title">Tournament Leaderboard</h1>
-        <!-- 🔥 LEADING TEAM BANNER CONTAINER RESTORED -->
+        <!-- 🔥 LEADING TEAM BANNER -->
         <div id="leadingBannerContainer"></div>
       </div>
 
@@ -62,51 +62,89 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style is:global>
-  /* 🔴 LIVE BANNER STYLES */
+  /* 📱 SCREEN FIT TABLE STYLES */
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 2rem;
+    /* Custom scrollbar for better look */
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-orange) transparent;
+  }
+
+  .leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem; /* Base font size */
+    min-width: 600px; /* Reduced min-width to help it fit sooner */
+  }
+
+  .leaderboard-table th, 
+  .leaderboard-table td {
+    padding: 12px 10px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Target specific columns for better spacing */
+  .leaderboard-table th:nth-child(2),
+  .leaderboard-table td:nth-child(2) {
+    text-align: left; /* Team names look better left-aligned */
+    padding-left: 20px;
+  }
+
+  /* Mobile Adjustments */
+  @media (max-width: 768px) {
+    .leaderboard-table {
+      font-size: 0.8rem; /* Smaller text on mobile */
+      min-width: 500px; /* Allow it to shrink more */
+    }
+    .leaderboard-table th, 
+    .leaderboard-table td {
+      padding: 8px 5px;
+    }
+    .leaderboard-table th:nth-child(2),
+    .leaderboard-table td:nth-child(2) {
+      padding-left: 10px;
+    }
+    .page-title { font-size: 1.5rem; }
+  }
+
+  /* BANNERS */
   .live-status-banner {
     background: linear-gradient(135deg, rgba(255, 0, 0, 0.15) 0%, rgba(200, 0, 0, 0.1) 100%);
-    border: 1px solid rgba(255, 0, 0, 0.5);
-    border-radius: 6px; padding: 0.4rem 1rem; margin-bottom: 1rem; text-align: center;
-    position: relative; overflow: hidden; display: block; width: fit-content; margin-inline: auto;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2); animation: live-pulse 2s ease-in-out infinite;
+    border: 1px solid rgba(255, 0, 0, 0.5); border-radius: 6px; padding: 0.4rem 1rem; margin: 0 auto 1rem; 
+    text-align: center; width: fit-content; animation: live-pulse 2s ease-in-out infinite;
   }
   .live-text { font-family: var(--font-heading); font-size: 0.8rem; font-weight: 800; color: #ff3333; letter-spacing: 1.5px; }
-  @keyframes live-pulse { 0%, 100% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.2); } 50% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); } }
-
-  /* 🔥 LEADING TEAM BANNER STYLES */
-  #leadingBannerContainer { position: relative; margin: 2rem auto; max-width: 500px; }
+  
+  #leadingBannerContainer { margin: 1.5rem auto; max-width: 500px; width: 95%; }
   .leading-team-banner {
     background: rgba(20, 10, 5, 0.85); border: 2px solid #ff4500; border-radius: 12px;
-    padding: 1.125rem; text-align: center; box-shadow: 0 0 30px rgba(255, 69, 0, 0.4);
-    animation: fire-pulse 2s ease-in-out infinite;
+    padding: 1rem; text-align: center; box-shadow: 0 0 20px rgba(255, 69, 0, 0.3);
   }
-  .leading-team-banner h2 { 
-    font-family: var(--font-heading); font-size: 1.4rem; color: #fff; text-transform: uppercase; margin: 0;
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
-  }
-  @keyframes fire-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.02); } }
+  .leading-team-banner h2 { font-family: var(--font-heading); font-size: 1.2rem; color: #fff; margin: 0; text-shadow: 0 0 10px rgba(255, 215, 0, 0.8); }
 
   /* UI COMPONENTS */
-  .page-header-box { text-align: center; margin-bottom: 2rem; }
-  .mid-menu-container { 
-    background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.08);
-    padding: 1.2rem; border-radius: 12px; margin-bottom: 1.5rem;
-    display: flex; flex-direction: column; align-items: center;
-  }
-  .selector-label { color: var(--accent-cyan); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 10px; }
-  .button-group { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+  .mid-menu-container { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.08); padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem; display: flex; flex-direction: column; align-items: center; width: 100%; }
+  .button-group { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; width: 100%; }
 
-  .view-toggle-btn { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--text-muted); padding: 0.5rem 1.5rem; border-radius: 6px; cursor: pointer; transition: 0.3s; }
+  .view-toggle-btn { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--text-muted); padding: 0.4rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
   .view-toggle-btn.active { background: var(--accent-orange); color: white; border-color: var(--accent-orange); }
 
-  .group-btn, .match-btn { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #ccc; padding: 8px 18px; border-radius: 6px; cursor: pointer; font-weight: 600; transition: 0.3s; }
-  .group-btn.active { background: var(--accent-cyan); color: #000; border-color: var(--accent-cyan); box-shadow: 0 0 15px rgba(0, 174, 239, 0.3); }
-  .match-btn.active { background: var(--accent-orange); color: #fff; border-color: var(--accent-orange); box-shadow: 0 0 15px rgba(255, 140, 0, 0.3); }
+  .group-btn, .match-btn { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #ccc; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.85rem; }
+  .group-btn.active { background: var(--accent-cyan); color: #000; border-color: var(--accent-cyan); }
+  .match-btn.active { background: var(--accent-orange); color: #fff; border-color: var(--accent-orange); }
 
+  /* ROW STYLES */
+  .wwcd-row { background: rgba(255, 215, 0, 0.08) !important; border-left: 4px solid gold !important; }
   .kill-highlight { color: #ff4d4d; font-weight: 800; }
   .rank-row-1 { background: linear-gradient(90deg, rgba(255, 215, 0, 0.1), transparent); border-left: 4px solid gold; }
-  .content-fade-in { animation: fadeIn 0.3s ease-out; }
-  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  @keyframes live-pulse { 0%, 100% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.2); } 50% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); } }
 </style>
 
 <script is:inline>
@@ -129,61 +167,63 @@ import Layout from '../layouts/Layout.astro';
     setupTabListeners();
   }
 
-  // --- 🔥 BANNER LOGIC RESTORED ---
   function createLeadingBanner(type) {
     const container = document.getElementById('leadingBannerContainer');
-    container.innerHTML = '';
-    
     if (type === 'mvp' && playersData.length > 0) {
       const mvp = [...playersData].sort((a,b) => b.stats.total_kills - a.stats.total_kills)[0];
-      container.innerHTML = `<div class="leading-team-banner" style="border-color: #ff3333; box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);">
-        <h2>MVP: ${mvp.name} (${mvp.stats.total_kills} Kills) 🔥</h2>
-      </div>`;
-    } 
-    else if (standingsData.length > 0) {
+      container.innerHTML = `<div class="leading-team-banner" style="border-color: #ff3333;"><h2 style="color: #ff3333;">MVP: ${mvp.name} (${mvp.stats.total_kills} Kills) 🔥</h2></div>`;
+    } else if (standingsData.length > 0) {
       const leader = [...standingsData].sort((a,b) => b.stats.overall.total_pts - a.stats.overall.total_pts)[0];
-      container.innerHTML = `<div class="leading-team-banner">
-        <h2>${leader.team_name} is Leading 🔥</h2>
-      </div>`;
+      container.innerHTML = `<div class="leading-team-banner"><h2>${leader.team_name} is Leading 🔥</h2></div>`;
     }
   }
 
   function render(filter) {
     currentFilter = filter;
-    const vToggle = document.getElementById('overallViewToggle');
-    const gMenu = document.getElementById('groupFilterMenu');
-    const mMenu = document.getElementById('matchFilterMenu');
-
-    vToggle.style.display = 'none';
-    gMenu.style.display = 'none';
-    mMenu.style.display = 'none';
+    const vToggle = document.getElementById('overallViewToggle'), gMenu = document.getElementById('groupFilterMenu'), mMenu = document.getElementById('matchFilterMenu');
+    vToggle.style.display = 'none'; gMenu.style.display = 'none'; mMenu.style.display = 'none';
 
     if (filter === 'overall') {
-      createLeadingBanner('team');
-      vToggle.style.display = 'block';
+      createLeadingBanner('team'); vToggle.style.display = 'block';
       if (currentView === 'combined') renderOverallCombined();
       else { gMenu.style.display = 'flex'; updateGroupButtons(); renderOverallGrouped(); }
     } else if (filter === 'mvp') {
-      createLeadingBanner('mvp');
-      renderMVP();
+      createLeadingBanner('mvp'); renderMVP();
     } else {
-      createLeadingBanner('team');
-      gMenu.style.display = 'flex';
-      mMenu.style.display = 'flex';
-      updateGroupButtons();
-      updateMatchButtons(filter);
-      renderMatchResult(filter);
+      createLeadingBanner('team'); gMenu.style.display = 'flex'; mMenu.style.display = 'flex';
+      updateGroupButtons(); updateMatchButtons(); renderMatchResult(filter);
     }
   }
 
-  // --- RENDER TABLES ---
+  function renderMatchResult(day) {
+    const inGroup = standingsData.filter(t => t.group === selectedGroup);
+    const results = inGroup.map(t => ({
+      name: t.team_name,
+      stats: t.stats[day]?.[selectedMatch] || { place_pts: 0, kill_pts: 0, total: 0, wwcd: false }
+    })).filter(t => t.stats.total > 0 || t.stats.place_pts > 0 || t.stats.kill_pts > 0);
+    results.sort((a,b) => b.stats.total - a.stats.total);
+
+    let html = `<h3>Day ${day.slice(-1)} - Group ${selectedGroup} - Match ${selectedMatch.slice(-1)} ${day === 'day3' ? '(Top 8)' : ''}</h3>`;
+    if (results.length === 0) {
+      html += `<div style="text-align:center; padding: 2rem; color: #666;">No results recorded for this match yet.</div>`;
+    } else {
+      html += `<div class="table-container"><table class="leaderboard-table">
+        <thead><tr><th>#</th><th>Team/Player</th><th>Finish</th><th>Place</th><th>Total</th><th>🏆</th></tr></thead><tbody>`;
+      results.forEach((r, i) => {
+        html += `<tr class="${r.stats.wwcd ? 'wwcd-row' : ''}"><td>${i+1}</td><td><strong>${r.name}</strong></td><td>${r.stats.kill_pts}</td><td>${r.stats.place_pts}</td><td><strong>${r.stats.total}</strong></td><td>${r.stats.wwcd ? '🏆' : '-'}</td></tr>`;
+      });
+      html += '</tbody></table></div>';
+    }
+    document.getElementById('standingsContent').innerHTML = html;
+  }
+
   function renderOverallCombined() {
     const sorted = [...standingsData].sort((a,b) => b.stats.overall.total_pts - a.stats.overall.total_pts);
     let html = `<h3>Overall Standings</h3><div class="table-container"><table class="leaderboard-table">
-      <thead><tr><th>Rank</th><th>Team</th><th>Group</th><th>Matches</th><th>Finish</th><th>Place</th><th>Total</th></tr></thead><tbody>`;
+      <thead><tr><th>#</th><th>Team</th><th>Group</th><th>Matches</th><th>Finish</th><th>Place</th><th>Total</th></tr></thead><tbody>`;
     sorted.forEach((t, i) => {
       const s = t.stats.overall;
-      html += `<tr class="${i < 3 ? 'rank-row-'+(i+1) : ''}"><td>#${i+1}</td><td>${t.team_name}</td><td>${t.group}</td><td>${s.matches_played}</td><td>${s.finish_pts}</td><td>${s.pos_pts}</td><td><strong>${s.total_pts}</strong></td></tr>`;
+      html += `<tr class="${i < 3 ? 'rank-row-'+(i+1) : ''}"><td>${i+1}</td><td><strong>${t.team_name}</strong></td><td>${t.group}</td><td>${s.matches_played}</td><td>${s.finish_pts}</td><td>${s.pos_pts}</td><td><strong>${s.total_pts}</strong></td></tr>`;
     });
     html += '</tbody></table></div>';
     document.getElementById('standingsContent').innerHTML = html;
@@ -192,27 +232,10 @@ import Layout from '../layouts/Layout.astro';
   function renderOverallGrouped() {
     const groupTeams = standingsData.filter(t => t.group === selectedGroup).sort((a,b) => b.stats.overall.total_pts - a.stats.overall.total_pts);
     let html = `<h3>Overall - Group ${selectedGroup}</h3><div class="table-container"><table class="leaderboard-table">
-      <thead><tr><th>Rank</th><th>Team</th><th>Matches</th><th>Finish</th><th>Place</th><th>Total</th></tr></thead><tbody>`;
+      <thead><tr><th>#</th><th>Team</th><th>Matches</th><th>Finish</th><th>Place</th><th>Total</th></tr></thead><tbody>`;
     groupTeams.forEach((t, i) => {
       const s = t.stats.overall;
-      html += `<tr class="${i < 3 ? 'rank-row-'+(i+1) : ''}"><td>#${i+1}</td><td>${t.team_name}</td><td>${s.matches_played}</td><td>${s.finish_pts}</td><td>${s.pos_pts}</td><td><strong>${s.total_pts}</strong></td></tr>`;
-    });
-    html += '</tbody></table></div>';
-    document.getElementById('standingsContent').innerHTML = html;
-  }
-
-  function renderMatchResult(day) {
-    const filteredTeams = standingsData.filter(t => t.group === selectedGroup);
-    const sorted = filteredTeams.map(t => ({
-        name: t.team_name,
-        stats: t.stats[day]?.[selectedMatch] || { place_pts: 0, kill_pts: 0, total: 0, wwcd: false }
-    })).sort((a,b) => b.stats.total - a.stats.total);
-
-    let html = `<h3>Day ${day.slice(-1)} - Group ${selectedGroup} - Match ${selectedMatch.slice(-1)}</h3>`;
-    html += `<div class="table-container"><table class="leaderboard-table">
-      <thead><tr><th>#</th><th>Team</th><th>Finish Pts</th><th>Place Pts</th><th>Total</th><th>WWCD</th></tr></thead><tbody>`;
-    sorted.forEach((t, i) => {
-      html += `<tr class="${t.stats.wwcd ? 'wwcd-row' : ''}"><td>${i+1}</td><td>${t.name}</td><td>${t.stats.kill_pts}</td><td>${t.stats.place_pts}</td><td><strong>${t.stats.total}</strong></td><td>${t.stats.wwcd ? '🏆' : '-'}</td></tr>`;
+      html += `<tr class="${i < 3 ? 'rank-row-'+(i+1) : ''}"><td>${i+1}</td><td><strong>${t.team_name}</strong></td><td>${s.matches_played}</td><td>${s.finish_pts}</td><td>${s.pos_pts}</td><td><strong>${s.total_pts}</strong></td></tr>`;
     });
     html += '</tbody></table></div>';
     document.getElementById('standingsContent').innerHTML = html;
@@ -223,13 +246,12 @@ import Layout from '../layouts/Layout.astro';
     let html = `<h3>Top Fraggers (MVP)</h3><div class="table-container"><table class="leaderboard-table">
       <thead><tr><th>Rank</th><th>Player Name</th><th>Team</th><th>Total Kills</th></tr></thead><tbody>`;
     sorted.forEach((p, i) => {
-      html += `<tr class="${i === 0 ? 'rank-row-1' : ''}"><td>#${i+1}</td><td><strong>${p.name}</strong></td><td>${p.team_name}</td><td class="kill-highlight">${p.stats.total_kills} Kills</td></tr>`;
+      html += `<tr class="${i === 0 ? 'rank-row-1' : ''}"><td>#${i+1}</td><td><strong>${p.name}</strong></td><td>${p.team_name}</td><td class="kill-highlight">${p.stats.total_kills}</td></tr>`;
     });
     html += '</tbody></table></div>';
     document.getElementById('standingsContent').innerHTML = html;
   }
 
-  // --- ACTIONS ---
   window.setView = (v) => { currentView = v; render('overall'); document.querySelectorAll('.view-toggle-btn').forEach(b => b.classList.toggle('active', b.dataset.view === v)); };
   window.selectGroup = (g) => { selectedGroup = g; render(currentFilter); };
   window.selectMatch = (m) => { selectedMatch = m; render(currentFilter); };
