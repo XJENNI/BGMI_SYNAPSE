@@ -34,22 +34,22 @@
     "players": [
       {
         "icon": "fa-crosshairs",
-        "name": "KRYO『CHAOS』",
+        "name": "KRYO\u300eCHAOS\u300f",
         "isIGL": true
       },
       {
         "icon": "fa-bolt",
-        "name": "KRYO『ALPHA』",
+        "name": "KRYO\u300eALPHA\u300f",
         "isIGL": false
       },
       {
         "icon": "fa-skull",
-        "name": "KRYO『HAVOC』",
+        "name": "KRYO\u300eHAVOC\u300f",
         "isIGL": false
       },
       {
         "icon": "fa-shield-alt",
-        "name": "KRYO『GHOST』",
+        "name": "KRYO\u300eGHOST\u300f",
         "isIGL": false
       }
     ],
@@ -92,27 +92,27 @@
     "players": [
       {
         "icon": "fa-crosshairs",
-        "name": "ī『MONARCH』",
+        "name": "\u012b\u300eMONARCH\u300f",
         "isIGL": true
       },
       {
         "icon": "fa-bolt",
-        "name": "GHÀATÀK",
+        "name": "GH\u00c0AT\u00c0K",
         "isIGL": false
       },
       {
         "icon": "fa-skull",
-        "name": "īōAMANōī",
+        "name": "\u012b\u014dAMAN\u014d\u012b",
         "isIGL": false
       },
       {
         "icon": "fa-shield-alt",
-        "name": "ī『REAPER』",
+        "name": "\u012b\u300eREAPER\u300f",
         "isIGL": false
       },
       {
         "icon": "fa-user",
-        "name": "GOKU玄AKKI么",
+        "name": "GOKU\u7384AKKI\u4e48",
         "isIGL": false
       }
     ],
@@ -126,17 +126,17 @@
     "players": [
       {
         "icon": "fa-crosshairs",
-        "name": "〜MAFIA٭",
+        "name": "\u301cMAFIA\u066d",
         "isIGL": true
       },
       {
         "icon": "fa-bolt",
-        "name": "CreXwūBLURRY",
+        "name": "CreXw\u016bBLURRY",
         "isIGL": false
       },
       {
         "icon": "fa-skull",
-        "name": "ĐĐŁY么WOLFE",
+        "name": "\u0110\u0110\u0141Y\u4e48WOLFE",
         "isIGL": false
       },
       {
@@ -189,17 +189,17 @@
     "players": [
       {
         "icon": "fa-crosshairs",
-        "name": "Your๛Đ乇ATH",
+        "name": "Your\u0e5b\u0110\u4e47ATH",
         "isIGL": true
       },
       {
         "icon": "fa-bolt",
-        "name": "PixeL×TracKeR",
+        "name": "PixeL\u00d7TracKeR",
         "isIGL": false
       },
       {
         "icon": "fa-skull",
-        "name": "Susy私Baka",
+        "name": "Susy\u79c1Baka",
         "isIGL": false
       },
       {
@@ -209,7 +209,7 @@
       },
       {
         "icon": "fa-user",
-        "name": "Your๛F乇AR",
+        "name": "Your\u0e5bF\u4e47AR",
         "isIGL": false
       }
     ],
@@ -407,22 +407,22 @@
     "players": [
       {
         "icon": "fa-crosshairs",
-        "name": "亗 AJAY 亗",
+        "name": "\u4e97 AJAY \u4e97",
         "isIGL": true
       },
       {
         "icon": "fa-bolt",
-        "name": "亗 DRDOOM 亗",
+        "name": "\u4e97 DRDOOM \u4e97",
         "isIGL": false
       },
       {
         "icon": "fa-skull",
-        "name": "亗ēANSARIē亗",
+        "name": "\u4e97\u0113ANSARI\u0113\u4e97",
         "isIGL": false
       },
       {
         "icon": "fa-shield-alt",
-        "name": "XQUÀD=MOHIT",
+        "name": "XQU\u00c0D=MOHIT",
         "isIGL": false
       },
       {
@@ -451,7 +451,7 @@
       },
       {
         "icon": "fa-skull",
-        "name": "TZxIīCīY",
+        "name": "TZxI\u012bC\u012bY",
         "isIGL": false
       },
       {
@@ -461,7 +461,7 @@
       },
       {
         "icon": "fa-user",
-        "name": "MêôwMëöw",
+        "name": "M\u00ea\u00f4wM\u00eb\u00f6w",
         "isIGL": false
       }
     ],
@@ -470,17 +470,17 @@
     "team_id": "TEAM_015"
   },
   {
-    "logo": "么٭",
-    "name": "么٭〇ɢ・NPCs・๛",
+    "logo": "\u4e48\u066d",
+    "name": "\u4e48\u066d\u3007\u0262\u30fbNPCs\u30fb\u0e5b",
     "players": [
       {
         "icon": "fa-crosshairs",
-        "name": "npc「ＤＯＸ」",
+        "name": "npc\u300c\uff24\uff2f\uff38\u300d",
         "isIGL": true
       },
       {
         "icon": "fa-bolt",
-        "name": "戈TERROR彡BOB",
+        "name": "\u6208TERROR\u5f61BOB",
         "isIGL": false
       },
       {
@@ -490,7 +490,7 @@
       },
       {
         "icon": "fa-shield-alt",
-        "name": "GHATAK亗JIGS",
+        "name": "GHATAK\u4e97JIGS",
         "isIGL": false
       },
       {
@@ -538,36 +538,36 @@
     "team_id": "TEAM_017"
   },
   {
-    "logo": "NO",
-    "name": "NOOBS",
+    "logo": "GX",
+    "name": "Team glichX",
     "players": [
       {
         "icon": "fa-crosshairs",
-        "name": "JyotishmoyNar",
+        "name": "IN\u30e0Y\u30e0\u066d",
         "isIGL": true
       },
       {
         "icon": "fa-bolt",
-        "name": "手tmkoc手",
+        "name": "\u014d\u014dAKASH\u014c\u014d",
         "isIGL": false
       },
       {
         "icon": "fa-skull",
-        "name": "Devils乛Empero",
+        "name": "\u6703\u4e28GLI\u00c7HX",
         "isIGL": false
       },
       {
         "icon": "fa-shield-alt",
-        "name": "abHishekSingha",
+        "name": "EQXInsider",
         "isIGL": false
       },
       {
         "icon": "fa-user",
-        "name": "۝SHREYA۝S",
+        "name": "XtreamHunTeR",
         "isIGL": false
       }
     ],
-    "college": "IIIT Bhagalpur",
+    "college": "Azim Premji University",
     "group": "Group C",
     "team_id": "TEAM_018"
   },
@@ -582,7 +582,7 @@
       },
       {
         "icon": "fa-bolt",
-        "name": "Parvesh£45",
+        "name": "Parvesh\u00a345",
         "isIGL": false
       },
       {
@@ -592,7 +592,7 @@
       },
       {
         "icon": "fa-shield-alt",
-        "name": "ＮＥＭＥｓＩＳ",
+        "name": "\uff2e\uff25\uff2d\uff25\uff53\uff29\uff33",
         "isIGL": false
       },
       {
@@ -616,17 +616,17 @@
       },
       {
         "icon": "fa-bolt",
-        "name": "WØCxÑEMESîS",
+        "name": "W\u00d8Cx\u00d1EMES\u00eeS",
         "isIGL": false
       },
       {
         "icon": "fa-skull",
-        "name": "「ūYADAVō」",
+        "name": "\u300c\u016bYADAV\u014d\u300d",
         "isIGL": false
       },
       {
         "icon": "fa-shield-alt",
-        "name": "๖ۣUnknØwn",
+        "name": "\u0e56\u06e3Unkn\u00d8wn",
         "isIGL": false
       }
     ],
@@ -650,7 +650,7 @@
       },
       {
         "icon": "fa-skull",
-        "name": "FLx・ELNoiX",
+        "name": "FLx\u30fbELNoiX",
         "isIGL": false
       },
       {
@@ -660,7 +660,7 @@
       },
       {
         "icon": "fa-user",
-        "name": "WARRIOR彡UJJU",
+        "name": "WARRIOR\u5f61UJJU",
         "isIGL": false
       }
     ],
@@ -679,7 +679,7 @@
       },
       {
         "icon": "fa-bolt",
-        "name": "๛MARCUS๛",
+        "name": "\u0e5bMARCUS\u0e5b",
         "isIGL": false
       },
       {
@@ -689,7 +689,7 @@
       },
       {
         "icon": "fa-shield-alt",
-        "name": "S卄Ｅ乙ＡＤAA",
+        "name": "S\u5344\uff25\u4e59\uff21\uff24AA",
         "isIGL": false
       },
       {
@@ -708,12 +708,12 @@
     "players": [
       {
         "icon": "fa-crosshairs",
-        "name": "『M Y L O』",
+        "name": "\u300eM Y L O\u300f",
         "isIGL": true
       },
       {
         "icon": "fa-bolt",
-        "name": "乂PsychoQueen",
+        "name": "\u4e42PsychoQueen",
         "isIGL": false
       },
       {
@@ -728,7 +728,7 @@
       }
     ],
     "college": "NMCH Patna",
-    "group": "Group A",
+    "group": "Group D",
     "team_id": "TEAM_023"
   },
   {
@@ -834,12 +834,12 @@
     "players": [
       {
         "icon": "fa-crosshairs",
-        "name": "JAYANT××1911",
+        "name": "JAYANT\u00d7\u00d71911",
         "isIGL": true
       },
       {
         "icon": "fa-bolt",
-        "name": "A4xDeAthGød",
+        "name": "A4xDeAthG\u00f8d",
         "isIGL": false
       },
       {
@@ -878,7 +878,7 @@
       },
       {
         "icon": "fa-skull",
-        "name": "NIGGà1234",
+        "name": "NIGG\u00e01234",
         "isIGL": false
       },
       {
@@ -917,7 +917,7 @@
       },
       {
         "icon": "fa-shield-alt",
-        "name": "乛cLoWn",
+        "name": "\u4e5bcLoWn",
         "isIGL": false
       },
       {
@@ -941,7 +941,7 @@
       },
       {
         "icon": "fa-bolt",
-        "name": "亗įRITESHį亗",
+        "name": "\u4e97\u012fRITESH\u012f\u4e97",
         "isIGL": false
       },
       {
@@ -1004,7 +1004,7 @@
       },
       {
         "icon": "fa-bolt",
-        "name": "ＢＲＳｔａｒ",
+        "name": "\uff22\uff32\uff33\uff54\uff41\uff52",
         "isIGL": false
       },
       {
@@ -1067,22 +1067,22 @@
     "players": [
       {
         "icon": "fa-crosshairs",
-        "name": "TFL×wolf",
+        "name": "TFL\u00d7wolf",
         "isIGL": true
       },
       {
         "icon": "fa-bolt",
-        "name": "DR×jatin",
+        "name": "DR\u00d7jatin",
         "isIGL": false
       },
       {
         "icon": "fa-skull",
-        "name": "TFL×legendop",
+        "name": "TFL\u00d7legendop",
         "isIGL": false
       },
       {
         "icon": "fa-shield-alt",
-        "name": "TFL×hrsh",
+        "name": "TFL\u00d7hrsh",
         "isIGL": false
       },
       {
@@ -1140,7 +1140,7 @@
       },
       {
         "icon": "fa-bolt",
-        "name": "LUCIFERツFLASH",
+        "name": "LUCIFER\u30c4FLASH",
         "isIGL": false
       },
       {
@@ -1223,7 +1223,7 @@
       },
       {
         "icon": "fa-user",
-        "name": "DAAL・MAKHNI",
+        "name": "DAAL\u30fbMAKHNI",
         "isIGL": false
       }
     ],
@@ -1237,17 +1237,17 @@
     "players": [
       {
         "icon": "fa-crosshairs",
-        "name": "亗BÈÆsT亗",
+        "name": "\u4e97B\u00c8\u00c6sT\u4e97",
         "isIGL": true
       },
       {
         "icon": "fa-bolt",
-        "name": "BLACKīDARGON",
+        "name": "BLACK\u012bDARGON",
         "isIGL": false
       },
       {
         "icon": "fa-skull",
-        "name": "billuūbakchod",
+        "name": "billu\u016bbakchod",
         "isIGL": false
       },
       {
@@ -1271,17 +1271,17 @@
       },
       {
         "icon": "fa-bolt",
-        "name": "マīAīMīAūN",
+        "name": "\u30de\u012bA\u012bM\u012bA\u016bN",
         "isIGL": false
       },
       {
         "icon": "fa-skull",
-        "name": "TTsCŁUTCHGOĐ",
+        "name": "TTsC\u0141UTCHGO\u0110",
         "isIGL": false
       },
       {
         "icon": "fa-shield-alt",
-        "name": "LUTERAッTHANOS",
+        "name": "LUTERA\u30c3THANOS",
         "isIGL": false
       }
     ],
@@ -1339,7 +1339,7 @@
       },
       {
         "icon": "fa-shield-alt",
-        "name": "Mr么NIKUNJ",
+        "name": "Mr\u4e48NIKUNJ",
         "isIGL": false
       },
       {
@@ -1392,12 +1392,12 @@
     "players": [
       {
         "icon": "fa-crosshairs",
-        "name": "Achiyaaa彡ji",
+        "name": "Achiyaaa\u5f61ji",
         "isIGL": true
       },
       {
         "icon": "fa-bolt",
-        "name": "ES彡COFFIN",
+        "name": "ES\u5f61COFFIN",
         "isIGL": false
       },
       {
@@ -1407,7 +1407,7 @@
       },
       {
         "icon": "fa-shield-alt",
-        "name": "ŃeoRon",
+        "name": "\u0143eoRon",
         "isIGL": false
       }
     ],
@@ -1455,12 +1455,12 @@
       },
       {
         "icon": "fa-bolt",
-        "name": "ARREīīYRR",
+        "name": "ARRE\u012b\u012bYRR",
         "isIGL": false
       },
       {
         "icon": "fa-skull",
-        "name": "ŁUFFŸ1",
+        "name": "\u0141UFF\u01781",
         "isIGL": false
       },
       {
@@ -1479,7 +1479,7 @@
     "players": [
       {
         "icon": "fa-crosshairs",
-        "name": "么SIROHI",
+        "name": "\u4e48SIROHI",
         "isIGL": true
       },
       {
@@ -1489,12 +1489,12 @@
       },
       {
         "icon": "fa-skull",
-        "name": "खचराú",
+        "name": "\u0916\u091a\u0930\u093e\u00fa",
         "isIGL": false
       },
       {
         "icon": "fa-shield-alt",
-        "name": "नमनjiū",
+        "name": "\u0928\u092e\u0928ji\u016b",
         "isIGL": false
       }
     ],
@@ -1508,17 +1508,17 @@
     "players": [
       {
         "icon": "fa-crosshairs",
-        "name": "『DÍVYÅM』",
+        "name": "\u300eD\u00cdVY\u00c5M\u300f",
         "isIGL": true
       },
       {
         "icon": "fa-bolt",
-        "name": "乛ツDarkツ乛",
+        "name": "\u4e5b\u30c4Dark\u30c4\u4e5b",
         "isIGL": false
       },
       {
         "icon": "fa-skull",
-        "name": "؄ＭＡＦＩA؄",
+        "name": "\u0604\uff2d\uff21\uff26\uff29A\u0604",
         "isIGL": false
       },
       {
@@ -1537,12 +1537,12 @@
     "players": [
       {
         "icon": "fa-crosshairs",
-        "name": "LàkshéY",
+        "name": "L\u00e0ksh\u00e9Y",
         "isIGL": true
       },
       {
         "icon": "fa-bolt",
-        "name": "Kñ〇乂๛Flash",
+        "name": "K\u00f1\u3007\u4e42\u0e5bFlash",
         "isIGL": false
       },
       {
@@ -1552,7 +1552,7 @@
       },
       {
         "icon": "fa-shield-alt",
-        "name": "TDTѰ๛MEWTOW",
+        "name": "TDT\u0470\u0e5bMEWTOW",
         "isIGL": false
       },
       {
@@ -1576,7 +1576,7 @@
       },
       {
         "icon": "fa-bolt",
-        "name": "Warrior丈Ekam",
+        "name": "Warrior\u4e08Ekam",
         "isIGL": false
       },
       {
@@ -1586,12 +1586,12 @@
       },
       {
         "icon": "fa-shield-alt",
-        "name": "BEAST艾ÌNSANE",
+        "name": "BEAST\u827e\u00ccNSANE",
         "isIGL": false
       },
       {
         "icon": "fa-user",
-        "name": "RﾑW么ÑÍNJÅ",
+        "name": "R\uff91W\u4e48\u00d1\u00cdNJ\u00c5",
         "isIGL": false
       }
     ],
@@ -1659,7 +1659,7 @@
       },
       {
         "icon": "fa-user",
-        "name": "JuNiØR",
+        "name": "JuNi\u00d8R",
         "isIGL": false
       }
     ],
@@ -1673,7 +1673,7 @@
     "players": [
       {
         "icon": "fa-crosshairs",
-        "name": "DeadlyシDr",
+        "name": "Deadly\u30b7Dr",
         "isIGL": true
       },
       {
@@ -1727,7 +1727,7 @@
       }
     ],
     "college": "Army college of medical sciences",
-    "group": "Group D",
+    "group": "Group A",
     "team_id": "TEAM_054"
   },
   {
@@ -1736,12 +1736,12 @@
     "players": [
       {
         "icon": "fa-crosshairs",
-        "name": "LETīMEōCOOK",
+        "name": "LET\u012bME\u014dCOOK",
         "isIGL": true
       },
       {
         "icon": "fa-bolt",
-        "name": "彡KiNG彡J",
+        "name": "\u5f61KiNG\u5f61J",
         "isIGL": false
       },
       {
@@ -1751,12 +1751,12 @@
       },
       {
         "icon": "fa-shield-alt",
-        "name": "BTDxＡｙｕｓｈ",
+        "name": "BTDx\uff21\uff59\uff55\uff53\uff48",
         "isIGL": false
       },
       {
         "icon": "fa-user",
-        "name": "艾YumeKo艾",
+        "name": "\u827eYumeKo\u827e",
         "isIGL": false
       }
     ],
@@ -1766,16 +1766,16 @@
   },
   {
     "logo": "NI",
-    "name": "NIIMS彡KINGS",
+    "name": "NIIMS\u5f61KINGS",
     "players": [
       {
         "icon": "fa-crosshairs",
-        "name": "KING彡SOUL",
+        "name": "KING\u5f61SOUL",
         "isIGL": true
       },
       {
         "icon": "fa-bolt",
-        "name": "KING彡RAPTOR",
+        "name": "KING\u5f61RAPTOR",
         "isIGL": false
       },
       {
@@ -1785,12 +1785,12 @@
       },
       {
         "icon": "fa-shield-alt",
-        "name": "चaachi",
+        "name": "\u091aaachi",
         "isIGL": false
       },
       {
         "icon": "fa-user",
-        "name": "KING彡IMMORTAL",
+        "name": "KING\u5f61IMMORTAL",
         "isIGL": false
       }
     ],
@@ -1838,17 +1838,17 @@
     "players": [
       {
         "icon": "fa-crosshairs",
-        "name": "VENOM乡STRØKE",
+        "name": "VENOM\u4e61STR\u00d8KE",
         "isIGL": true
       },
       {
         "icon": "fa-bolt",
-        "name": "HRēDHRUV",
+        "name": "HR\u0113DHRUV",
         "isIGL": false
       },
       {
         "icon": "fa-skull",
-        "name": "HRēRITESH",
+        "name": "HR\u0113RITESH",
         "isIGL": false
       },
       {
@@ -1887,7 +1887,7 @@
       },
       {
         "icon": "fa-user",
-        "name": "SKE×Cyrus",
+        "name": "SKE\u00d7Cyrus",
         "isIGL": false
       }
     ],
@@ -1906,17 +1906,17 @@
       },
       {
         "icon": "fa-bolt",
-        "name": "٭LiMiTLeSS٭",
+        "name": "\u066dLiMiTLeSS\u066d",
         "isIGL": false
       },
       {
         "icon": "fa-skull",
-        "name": "么ＡＡｖｉ",
+        "name": "\u4e48\uff21\uff21\uff56\uff49",
         "isIGL": false
       },
       {
         "icon": "fa-shield-alt",
-        "name": "Īī『SCAR』",
+        "name": "\u012a\u012b\u300eSCAR\u300f",
         "isIGL": false
       }
     ],
@@ -1974,7 +1974,7 @@
       },
       {
         "icon": "fa-skull",
-        "name": "十ＳＡＭＥＥＲ",
+        "name": "\u5341\uff33\uff21\uff2d\uff25\uff25\uff32",
         "isIGL": false
       },
       {
@@ -2032,7 +2032,7 @@
     "players": [
       {
         "icon": "fa-crosshairs",
-        "name": "Zaìddddd",
+        "name": "Za\u00ecddddd",
         "isIGL": true
       },
       {
@@ -2047,7 +2047,7 @@
       },
       {
         "icon": "fa-shield-alt",
-        "name": "Ｌｕｆｆｙīū",
+        "name": "\uff2c\uff55\uff46\uff46\uff59\u012b\u016b",
         "isIGL": false
       }
     ],
