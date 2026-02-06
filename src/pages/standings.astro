@@ -16,7 +16,11 @@ import Layout from '../layouts/Layout.astro';
 
       <div class="page-header-box">
         <h1 class="page-title">Tournament Leaderboard</h1>
-        <div id="leadingBannerContainer"></div>
+        <div id="leadingBannerContainer" class="leading-team-banner" style="display:none;">
+          <span class="leader-label">CURRENT LEADER</span>
+          <h2 id="leaderTeamName">LOADING...</h2>
+          <div id="leaderStats" class="leader-stats"></div>
+        </div>
       </div>
 
       <div class="filter-tabs" id="mainStageTabs">
@@ -34,408 +38,515 @@ import Layout from '../layouts/Layout.astro';
         <div class="button-group" id="layer3Buttons"></div>
       </div>
 
-      <div id="standingsContent" class="content-fade-in"></div>
+      <div class="content-grid">
+        
+        <div class="main-content-area">
+           <div id="standingsContent" class="content-fade-in"></div>
+        </div>
+
+        <div class="sidebar-area">
+          <div id="mvpCard" class="mvp-card">
+            <div class="mvp-header">
+              <span class="mvp-badge">MVP</span>
+              <h3 id="mvpTitle">MATCH MVP</h3>
+            </div>
+            <div class="mvp-image-container">
+               <div class="mvp-placeholder-img" id="mvpImage">👤</div>
+            </div>
+            <div class="mvp-info">
+              <h2 id="mvpPlayerName">TBD</h2>
+              <h4 id="mvpTeamName">WAITING FOR DATA</h4>
+            </div>
+            <div class="mvp-stats-grid">
+              <div class="stat-box">
+                <span class="stat-label">KILLS</span>
+                <span class="stat-value" id="mvpKills">-</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-label">MATCHES</span>
+                <span class="stat-value" id="mvpMatches">-</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
 
     </div>
   </section>
 </Layout>
 
 <style is:global>
-  /* 🎨 PRESERVED & UPDATED STYLES */
+  /* 🎨 GRID LAYOUT */
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  /* Desktop View: Split 70% Table / 30% MVP */
+  @media (min-width: 992px) {
+    .content-grid {
+      grid-template-columns: 3fr 1fr;
+      align-items: start;
+    }
+    .sidebar-area {
+      position: sticky;
+      top: 20px;
+    }
+  }
+
+  /* 🏆 MVP CARD STYLES */
+  .mvp-card {
+    background: linear-gradient(145deg, rgba(20,20,20,0.9), rgba(40,10,10,0.95));
+    border: 1px solid #ff4500;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(255, 69, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.6s ease;
+  }
+
+  .mvp-badge {
+    background: #ff4500;
+    color: white;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+
+  .mvp-header h3 {
+    margin: 0;
+    color: #ff8855;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .mvp-image-container {
+    margin: 1.5rem auto;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #ff4500;
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111;
+    overflow: hidden;
+  }
+
+  .mvp-placeholder-img {
+    font-size: 3rem;
+    color: #333;
+  }
+
+  .mvp-info h2 {
+    color: #fff;
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+
+  .mvp-info h4 {
+    color: #aaa;
+    margin: 0.2rem 0 1rem;
+    font-size: 0.85rem;
+    font-weight: 400;
+  }
+
+  .mvp-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    background: rgba(0,0,0,0.3);
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .stat-box { display: flex; flex-direction: column; }
+  .stat-label { font-size: 0.65rem; color: #888; text-transform: uppercase; }
+  .stat-value { font-size: 1.1rem; color: #fff; font-weight: 700; }
+
+  /* 📊 TABLE STYLES */
   .table-container {
     width: 100%;
     overflow-x: auto;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.4);
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    margin-bottom: 2rem;
-    scrollbar-width: thin;
-    scrollbar-color: var(--accent-orange) transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .leaderboard-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.95rem;
     min-width: 600px;
   }
 
   .leaderboard-table th, .leaderboard-table td {
-    padding: 12px 10px;
+    padding: 14px 12px;
     text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #eee;
+  }
+
+  .leaderboard-table th {
+    background: rgba(255, 69, 0, 0.2);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
   }
   
-  .leaderboard-table th:nth-child(2), .leaderboard-table td:nth-child(2) {
+  .leaderboard-table td:nth-child(2) { /* Team Name */
     text-align: left;
-    padding-left: 20px;
+    font-weight: 700;
+    color: #fff;
   }
 
-  /* BUTTON STYLES FOR LAYERS */
-  .mid-menu-container { 
-    background: rgba(0,0,0,0.3); 
-    border: 1px solid rgba(255,255,255,0.08); 
-    padding: 0.8rem; 
-    border-radius: 12px;
-    margin-bottom: 1rem; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    width: 100%; 
-    animation: fadeIn 0.3s ease-in-out;
-  }
-  
-  .button-group { 
-    display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; width: 100%; 
-  }
-
-  /* Generic Button Style for Layer 2 & 3 */
-  .sub-btn { 
-    background: rgba(255,255,255,0.05); 
-    border: 1px solid rgba(255,255,255,0.1); 
-    color: #ccc; 
-    padding: 6px 14px; 
-    border-radius: 6px; 
-    cursor: pointer;
-    font-weight: 600; 
-    font-size: 0.85rem; 
-    transition: all 0.2s;
-  }
-  
-  .sub-btn:hover { background: rgba(255,255,255,0.1); }
-  .sub-btn.active { 
-    background: var(--accent-orange, #ff4500); 
-    color: #fff; 
-    border-color: var(--accent-orange, #ff4500); 
-    box-shadow: 0 0 10px rgba(255, 69, 0, 0.3);
-  }
-
-  /* Layer 1 Tabs */
-  .filter-tabs { display: flex; gap: 10px; justify-content: center; margin-bottom: 1.5rem; flex-wrap: wrap; }
-  .filter-btn {
-    background: transparent; border: 1px solid rgba(255,255,255,0.2);
-    color: white; padding: 0.6rem 1.5rem; border-radius: 30px;
-    cursor: pointer; font-weight: bold; text-transform: uppercase;
-    transition: 0.3s;
-  }
-  .filter-btn.active { background: white; color: black; border-color: white; box-shadow: 0 0 15px rgba(255,255,255,0.2); }
-
-  /* BANNERS & EXTRAS */
-  .live-status-banner {
-    background: linear-gradient(135deg, rgba(255, 0, 0, 0.15) 0%, rgba(200, 0, 0, 0.1) 100%);
-    border: 1px solid rgba(255, 0, 0, 0.5); border-radius: 6px; padding: 0.4rem 1rem; margin: 0 auto 1rem; 
-    text-align: center; width: fit-content;
-    animation: live-pulse 2s ease-in-out infinite;
-  }
-  .live-text { font-family: var(--font-heading, sans-serif); font-size: 0.8rem; font-weight: 800; color: #ff3333; letter-spacing: 1.5px; }
-  
+  /* LEADING BANNER */
   .leading-team-banner {
-    background: rgba(20, 10, 5, 0.85); border: 2px solid #ff4500; border-radius: 12px;
-    padding: 1rem; text-align: center; box-shadow: 0 0 20px rgba(255, 69, 0, 0.3);
-    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, rgba(20,10,0,0.9) 0%, rgba(50,20,0,0.9) 100%);
+    border: 1px solid #ff4500;
+    border-left: 6px solid #ff4500;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    margin: 1.5rem auto;
+    max-width: 600px;
+    box-shadow: 0 4px 30px rgba(255, 69, 0, 0.2);
+    animation: fadeIn 0.5s ease;
   }
-  .leading-team-banner h2 { color: #fff; margin: 0; text-shadow: 0 0 10px rgba(255, 215, 0, 0.8); }
+  
+  .leader-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: #ff8855; display: block; margin-bottom: 0.5rem; }
+  .leading-team-banner h2 { font-size: 2rem; margin: 0; color: #fff; text-shadow: 0 0 15px rgba(255, 69, 0, 0.6); }
+  .leader-stats { margin-top: 0.5rem; font-size: 0.9rem; color: #ccc; }
+
+  /* BUTTONS */
+  .mid-menu-container { background: rgba(255,255,255,0.03); padding: 10px; border-radius: 8px; margin-bottom: 15px; display: flex; justify-content: center; }
+  .button-group { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+  .sub-btn { background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); color: #bbb; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 0.85rem; transition: all 0.2s; }
+  .sub-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
+  .sub-btn.active { background: #ff4500; color: white; border-color: #ff4500; box-shadow: 0 0 10px rgba(255,69,0,0.4); }
+  .filter-tabs { display: flex; gap: 10px; justify-content: center; margin-bottom: 2rem; flex-wrap: wrap; }
+  .filter-btn { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: white; padding: 10px 24px; border-radius: 30px; cursor: pointer; font-weight: 700; transition: 0.3s; }
+  .filter-btn.active { background: #ff4500; border-color: #ff4500; color: white; }
 
   /* UTILS */
-  .wwcd-row { background: rgba(255, 215, 0, 0.08) !important; border-left: 4px solid gold !important; }
-  .rank-row-1 { background: linear-gradient(90deg, rgba(255, 215, 0, 0.1), transparent); border-left: 4px solid gold; }
-  @keyframes live-pulse { 0%, 100% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.2); } 50% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); } }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+  .wwcd-row { background: rgba(255, 215, 0, 0.1) !important; border-left: 3px solid gold !important; }
+  .top-3-row { background: linear-gradient(90deg, rgba(255,255,255,0.05), transparent); }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .live-status-banner { background: rgba(255, 0, 0, 0.1); border: 1px solid rgba(255, 0, 0, 0.3); border-radius: 4px; padding: 4px 12px; margin: 0 auto 1.5rem; width: fit-content; }
+  .live-text { color: #ff4444; font-weight: 800; font-size: 0.75rem; letter-spacing: 1px; }
 </style>
 
 <script is:inline>
-  // STATE MANAGEMENT
   let standingsData = [];
   let playersData = [];
-  
-  // Current State
-  let state = {
-    stage: 'overall',   // 'overall', 'qual1', 'qual2', 'finals'
-    subLayer: null,     // 'combined', 'group_a'..., 'day1', 'day2'
-    matchId: 'overall'  // 'overall' (for whole day/group) or 'M1', 'M2'...
-  };
 
+  // ==============================================
+  // 🚀 INITIALIZATION
+  // ==============================================
   async function init() {
-    const t = Date.now();
     try {
+      // Fetch both Standings AND Players data
       const [sRes, pRes] = await Promise.all([
-        fetch(`/data/standings.json?v=${t}`),
-        fetch(`/data/players.json?v=${t}`)
+        fetch('/data/standings.json'),
+        fetch('/data/players.json') // Make sure this file exists!
       ]);
-      standingsData = await sRes.json();
-      playersData = await pRes.json();
+
+      if(sRes.ok) standingsData = await sRes.json();
+      if(pRes.ok) playersData = await pRes.json();
       
-      // Initial Render
+      // Default View
       setStage('overall');
     } catch (e) {
       console.error("Data Load Error:", e);
+      document.getElementById('standingsContent').innerHTML = `<p style="text-align:center;color:red;">Error loading data.</p>`;
     }
   }
 
   // ==============================================
-  // 🕹️ NAVIGATION LOGIC (The Diagram Flow)
+  // 🕹️ NAVIGATION LOGIC
   // ==============================================
 
   window.setStage = (stage) => {
-    state.stage = stage;
-    
-    // Update Main Tabs UI
+    // UI Updates
     document.querySelectorAll('#mainStageTabs .filter-btn').forEach(b => b.classList.remove('active'));
-    // Simple check to highlight clicked button based on onclick attribute or text
-    document.querySelectorAll(`#mainStageTabs .filter-btn`).forEach(btn => {
-      if(btn.innerText.toLowerCase().replace(' ','') === stage.replace('qualifier','qual')) btn.classList.add('active');
-    });
+    const clickedBtn = Array.from(document.querySelectorAll('#mainStageTabs .filter-btn')).find(b => b.getAttribute('onclick').includes(stage));
+    if(clickedBtn) clickedBtn.classList.add('active');
 
     const l2Div = document.getElementById('layer2Container');
     const l2Btns = document.getElementById('layer2Buttons');
     const l3Div = document.getElementById('layer3Container');
 
-    l2Div.style.display = 'flex';
-    l3Div.style.display = 'none'; // Reset Layer 3 on Stage Change
     l2Btns.innerHTML = '';
+    l2Div.style.display = 'flex';
+    l3Div.style.display = 'none';
 
-    // LOGIC TREE BASED ON DIAGRAM
+    // Update MVP Context Title
+    document.getElementById('mvpTitle').innerText = (stage === 'overall') ? "TOURNAMENT MVP" : "STAGE MVP";
+
     if (stage === 'overall') {
-      // OVERALL -> Combined / Groupwise
       renderButtons(l2Btns, [
-        { label: 'Combined', action: () => setSubLayer('combined') },
-        { label: 'Group A', action: () => setSubLayer('group_A') },
-        { label: 'Group B', action: () => setSubLayer('group_B') },
-        { label: 'Group C', action: () => setSubLayer('group_C') },
-        { label: 'Group D', action: () => setSubLayer('group_D') }
-      ], 'combined');
+        { label: 'Combined', fn: () => renderOverallTable('combined') },
+        { label: 'Group A', fn: () => renderOverallTable('A') },
+        { label: 'Group B', fn: () => renderOverallTable('B') },
+        { label: 'Group C', fn: () => renderOverallTable('C') },
+        { label: 'Group D', fn: () => renderOverallTable('D') }
+      ]);
     } 
     else if (stage === 'qual1') {
-      // QUALIFIER 1 -> Overall / Day 1 / Day 2
       renderButtons(l2Btns, [
-        { label: 'Overall', action: () => setSubLayer('q1_overall') },
-        { label: 'Day 1', action: () => setSubLayer('day1') },
-        { label: 'Day 2', action: () => setSubLayer('day2') }
-      ], 'q1_overall');
+        { label: 'Day 1', fn: () => setupMatchLayer('day1') },
+        { label: 'Day 2', fn: () => setupMatchLayer('day2') }
+      ]);
     }
     else if (stage === 'qual2') {
-      // QUALIFIER 2 -> Overall / Group A / Group B...
       renderButtons(l2Btns, [
-        { label: 'Overall', action: () => setSubLayer('q2_overall') },
-        { label: 'Group A', action: () => setSubLayer('q2_group_A') },
-        { label: 'Group B', action: () => setSubLayer('q2_group_B') },
-        { label: 'Group C', action: () => setSubLayer('q2_group_C') },
-        { label: 'Group D', action: () => setSubLayer('q2_group_D') }
-      ], 'q2_overall');
+        { label: 'Day 3', fn: () => setupMatchLayer('day3') }
+      ]);
     }
     else if (stage === 'finals') {
-      // FINALS -> (Directly to matches)
-      l2Div.style.display = 'none'; // Finals in diagram jumps straight to matches/overall
-      l3Div.style.display = 'flex';
-      const l3Btns = document.getElementById('layer3Buttons');
-      renderButtons(l3Btns, [
-        { label: 'Overall', action: () => renderFinals('overall') },
-        { label: 'M1', action: () => renderFinals('M1') },
-        { label: 'M2', action: () => renderFinals('M2') },
-        { label: 'M3', action: () => renderFinals('M3') },
-        { label: 'M4', action: () => renderFinals('M4') },
-        { label: 'M5', action: () => renderFinals('M5') },
-        { label: 'M6', action: () => renderFinals('M6') }
-      ], 'Overall');
+      renderButtons(l2Btns, [
+        { label: 'Finals Day 1', fn: () => setupMatchLayer('finals') }
+      ]);
     }
   };
 
-  window.setSubLayer = (subKey) => {
-    state.subLayer = subKey;
+  function setupMatchLayer(dayKey) {
     const l3Div = document.getElementById('layer3Container');
     const l3Btns = document.getElementById('layer3Buttons');
     l3Div.style.display = 'flex';
     l3Btns.innerHTML = '';
 
-    // Handle Active State for Layer 2
-    updateActiveButton('layer2Buttons', subKey);
+    const buttons = [
+      { label: 'Day Overall', fn: () => { 
+          renderDayOverall(dayKey); 
+          document.getElementById('mvpTitle').innerText = "DAY MVP"; 
+      }},
+      { label: 'Match 1', fn: () => { 
+          renderSingleMatch(dayKey, 'M1'); 
+          document.getElementById('mvpTitle').innerText = "MATCH 1 MVP"; 
+      }},
+      { label: 'Match 2', fn: () => { renderSingleMatch(dayKey, 'M2'); document.getElementById('mvpTitle').innerText = "MATCH 2 MVP"; }},
+      { label: 'Match 3', fn: () => { renderSingleMatch(dayKey, 'M3'); document.getElementById('mvpTitle').innerText = "MATCH 3 MVP"; }},
+      { label: 'Match 4', fn: () => { renderSingleMatch(dayKey, 'M4'); document.getElementById('mvpTitle').innerText = "MATCH 4 MVP"; }}
+    ];
 
-    // LOGIC TREE LAYER 3
-    if (state.stage === 'overall') {
-      l3Div.style.display = 'none'; // No 3rd layer for overall
-      renderOverallLogic(subKey);
+    renderButtons(l3Btns, buttons);
+  }
+
+  function renderButtons(container, options) {
+    container.innerHTML = options.map((opt, index) => 
+      `<button class="sub-btn ${index === 0 ? 'active' : ''}" id="btn-${index}">
+        ${opt.label}
+      </button>`
+    ).join('');
+    options.forEach((opt, index) => {
+      container.querySelector(`#btn-${index}`).addEventListener('click', function() {
+        container.querySelectorAll('.sub-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        opt.fn();
+      });
+    });
+    if(options.length > 0) options[0].fn();
+  }
+
+  // ==============================================
+  // 📊 RENDERING
+  // ==============================================
+
+  function renderOverallTable(groupFilter) {
+    let data = [...standingsData];
+    if (groupFilter !== 'combined') data = data.filter(t => t.group === groupFilter);
+    data.sort((a, b) => b.stats.overall.total_pts - a.stats.overall.total_pts);
+
+    updateLeaderBanner(data, 'overall');
+    calculateMVP(data, 'overall'); // Update MVP
+
+    const html = `
+      <div class="table-container">
+        <table class="leaderboard-table">
+          <thead><tr><th>Rank</th><th>Team</th><th>Matches</th><th>Finish Pts</th><th>Place Pts</th><th>Total Pts</th></tr></thead>
+          <tbody>
+            ${data.map((t, i) => `
+              <tr class="${i < 3 ? 'top-3-row' : ''}">
+                <td>#${i + 1}</td>
+                <td><span style="color:#ff4500; margin-right:5px;">[${t.team_logo}]</span> ${t.team_name}</td>
+                <td>${t.stats.overall.matches_played}</td>
+                <td>${t.stats.overall.finish_pts}</td>
+                <td>${t.stats.overall.pos_pts}</td>
+                <td style="font-weight:bold; color:#ff4500;">${t.stats.overall.total_pts}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>`;
+    document.getElementById('standingsContent').innerHTML = html;
+  }
+
+  function renderSingleMatch(dayKey, matchKey) {
+    const matchData = standingsData.map(t => {
+      const mStats = t.stats[dayKey]?.[matchKey] || { place_pts: 0, kill_pts: 0, total: 0, wwcd: false };
+      return { name: t.team_name, logo: t.team_logo, team_id: t.team_id, ...mStats };
+    });
+    matchData.sort((a, b) => b.total - a.total);
+
+    updateLeaderBanner(matchData, 'match');
+    calculateMVP(matchData, matchKey, dayKey); // Update MVP based on specific match
+
+    const html = `
+      <div class="table-container">
+        <table class="leaderboard-table">
+          <thead><tr><th>Rank</th><th>Team</th><th>Place Pts</th><th>Kill Pts</th><th>Total Pts</th><th>WWCD</th></tr></thead>
+          <tbody>
+            ${matchData.map((t, i) => `
+              <tr class="${t.wwcd ? 'wwcd-row' : ''}">
+                <td>${i + 1}</td>
+                <td><span style="color:#aaa;">[${t.logo}]</span> ${t.name}</td>
+                <td>${t.place_pts}</td>
+                <td>${t.kill_pts}</td>
+                <td style="font-weight:bold;">${t.total}</td>
+                <td>${t.wwcd ? '🏆' : '-'}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>`;
+    document.getElementById('standingsContent').innerHTML = html;
+  }
+
+  function renderDayOverall(dayKey) {
+    const calculatedData = standingsData.map(t => {
+      const dayObj = t.stats[dayKey] || {};
+      let dTotal = 0, dKill = 0, dPlace = 0, dWWCD = 0;
+      ['M1','M2','M3','M4'].forEach(m => {
+        if(dayObj[m]) {
+          dTotal += dayObj[m].total || 0;
+          dKill += dayObj[m].kill_pts || 0;
+          dPlace += dayObj[m].place_pts || 0;
+          if(dayObj[m].wwcd) dWWCD++;
+        }
+      });
+      return { name: t.team_name, logo: t.team_logo, team_id: t.team_id, total: dTotal, kill: dKill, place: dPlace, wwcd: dWWCD };
+    });
+    calculatedData.sort((a, b) => b.total - a.total);
+
+    updateLeaderBanner(calculatedData, 'day_sum');
+    calculateMVP(calculatedData, 'day_sum', dayKey); // Update MVP for the day
+
+    const html = `
+      <div class="table-container">
+        <table class="leaderboard-table">
+          <thead><tr><th>Rank</th><th>Team</th><th>WWCD</th><th>Place Pts</th><th>Kill Pts</th><th>Day Total</th></tr></thead>
+          <tbody>
+            ${calculatedData.map((t, i) => `
+              <tr class="${i < 3 ? 'top-3-row' : ''}">
+                <td>#${i + 1}</td>
+                <td><span style="color:#aaa;">[${t.logo}]</span> ${t.name}</td>
+                <td>${t.wwcd > 0 ? '🏆 x'+t.wwcd : '-'}</td>
+                <td>${t.place}</td>
+                <td>${t.kill}</td>
+                <td style="font-weight:bold; color:#ff4500;">${t.total}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>`;
+    document.getElementById('standingsContent').innerHTML = html;
+  }
+
+  // ==============================================
+  // 🏆 LEADING BANNER & MVP LOGIC
+  // ==============================================
+
+  function updateLeaderBanner(sortedData, context) {
+    const banner = document.getElementById('leadingBannerContainer');
+    if (!sortedData || sortedData.length === 0) { banner.style.display = 'none'; return; }
+    banner.style.display = 'block';
+
+    const leader = sortedData[0];
+    let totalPts = 0;
+    let subInfo = "";
+
+    if (context === 'overall') {
+      totalPts = leader.stats.overall.total_pts;
+      subInfo = `${leader.stats.overall.wwcd_count} WWCD | ${leader.stats.overall.finish_pts} Finishes`;
+      document.getElementById('leaderTeamName').innerText = leader.team_name;
+    } else {
+      totalPts = leader.total;
+      subInfo = `${leader.place_pts || leader.place} Place Pts | ${leader.kill_pts || leader.kill} Kill Pts`;
+      document.getElementById('leaderTeamName').innerText = leader.name;
     }
-    else if (state.stage === 'qual1') {
-      if (subKey === 'q1_overall') {
-        // Diagram: Q1 -> Overall -> Groups
-         renderButtons(l3Btns, [
-          { label: 'All Groups', action: () => renderGenericTable('q1_all') },
-          { label: 'Group A', action: () => renderGenericTable('q1_A') },
-          { label: 'Group B', action: () => renderGenericTable('q1_B') },
-          { label: 'Group C', action: () => renderGenericTable('q1_C') },
-          { label: 'Group D', action: () => renderGenericTable('q1_D') }
-        ], 'All Groups');
+    document.getElementById('leaderStats').innerHTML = `<strong>${totalPts} PTS</strong> <span style="opacity:0.6; margin:0 8px;">/</span> ${subInfo}`;
+  }
+
+  function calculateMVP(contextData, scope, dayKey) {
+    // 1. If Players JSON is empty, use Placeholder logic based on Teams
+    if(!playersData || playersData.length === 0) {
+      document.getElementById('mvpPlayerName').innerText = "No Data";
+      document.getElementById('mvpTeamName').innerText = "Player stats unavailable";
+      return;
+    }
+
+    // 2. Logic to find MVP
+    // NOTE: This assumes players.json has { team_id, name, kills: { overall, day1: { M1: 5 } } } structure
+    // If exact structure is unknown, this is a best-effort implementation
+    
+    let bestPlayer = null;
+    let maxKills = -1;
+
+    playersData.forEach(p => {
+      let k = 0;
+      if (scope === 'overall') {
+        k = p.stats?.overall?.kills || 0;
+      } 
+      else if (scope === 'day_sum') {
+        // Sum kills for specific day
+        const d = p.stats?.[dayKey] || {};
+        Object.values(d).forEach(m => k += (m.kills || 0));
+      }
+      else {
+        // Specific Match
+        k = p.stats?.[dayKey]?.[scope]?.kills || 0;
+      }
+
+      if (k > maxKills) {
+        maxKills = k;
+        bestPlayer = p;
+      }
+    });
+
+    // 3. Update DOM
+    if (bestPlayer) {
+      document.getElementById('mvpPlayerName').innerText = bestPlayer.name || "Unknown";
+      
+      // Find Team Name
+      const team = standingsData.find(t => t.team_id === bestPlayer.team_id);
+      document.getElementById('mvpTeamName').innerText = team ? team.team_name : "Free Agent";
+      
+      document.getElementById('mvpKills').innerText = maxKills;
+      document.getElementById('mvpMatches').innerText = (scope === 'overall') ? (bestPlayer.matches_played || 'All') : 1;
+      
+      // Set Image if available, else placeholder
+      const imgContainer = document.getElementById('mvpImage');
+      if(bestPlayer.image) {
+        imgContainer.innerHTML = `<img src="${bestPlayer.image}" style="width:100%; height:100%; object-fit:cover;">`;
       } else {
-        // Diagram: Q1 -> Day X -> Overall/M1..M4
-        renderMatchButtons(l3Btns, 4, (m) => renderMatchStats(subKey, m));
+        imgContainer.innerHTML = `👤`;
       }
     }
-    else if (state.stage === 'qual2') {
-       if (subKey === 'q2_overall') {
-         l3Div.style.display = 'none';
-         renderGenericTable('q2_overall');
-       } else {
-         // Diagram: Q2 -> Group X -> Overall/Matches
-         renderMatchButtons(l3Btns, 4, (m) => renderMatchStats(subKey, m));
-       }
-    }
-  };
-
-  // Helper to generate M1, M2 buttons + Overall
-  function renderMatchButtons(container, count, clickHandler) {
-    const opts = [{ label: 'Day Overall', action: () => clickHandler('overall') }];
-    for(let i=1; i<=count; i++) {
-      opts.push({ label: `Match ${i}`, action: () => clickHandler(`M${i}`) });
-    }
-    renderButtons(container, opts, 'Day Overall');
-  }
-
-  // Helper to render buttons and handle active class
-  function renderButtons(container, options, defaultActiveLabel) {
-    container.innerHTML = options.map(opt => 
-      `<button class="sub-btn" onclick="(${opt.action})()">${opt.label}</button>`
-    ).join('');
-    
-    // Auto-click first or specific default?
-    // For now, just render generic. The actions call functions that should set active state.
-    // Trigger the first one automatically?
-    options[0].action(); 
-    updateActiveButton(container.id, null, options[0].label);
-  }
-
-  function updateActiveButton(containerId, dataKey, textMatch) {
-    const btns = document.querySelectorAll(`#${containerId} .sub-btn`);
-    btns.forEach(b => {
-      b.classList.remove('active');
-      if (dataKey && b.innerText.toLowerCase().includes(dataKey.replace('group_','').toLowerCase())) b.classList.add('active');
-      if (textMatch && b.innerText === textMatch) b.classList.add('active');
-    });
-    // Add event listener to swap active class on click
-    btns.forEach(b => b.addEventListener('click', function() {
-        btns.forEach(x => x.classList.remove('active'));
-        this.classList.add('active');
-    }));
-  }
-
-  // ==============================================
-  // 📊 RENDERING FUNCTIONS
-  // ==============================================
-
-  function createLeadingBanner(text) {
-    document.getElementById('leadingBannerContainer').innerHTML = 
-      `<div class="leading-team-banner"><h2>${text}</h2></div>`;
-  }
-
-  // 1. OVERALL LOGIC
-  function renderOverallLogic(view) {
-    if (view === 'combined') {
-      createLeadingBanner("Overall Tournament Standings");
-      renderTable(standingsData, 'stats.overall'); 
-    } else {
-      const group = view.split('_')[1]; // Get 'A', 'B'...
-      createLeadingBanner(`Overall - Group ${group}`);
-      const filtered = standingsData.filter(t => t.group === group);
-      renderTable(filtered, 'stats.overall');
-    }
-  }
-
-  // 2. MATCH STATS LOGIC (For Q1 Day X, Q2 Group X)
-  function renderMatchStats(context, matchId) {
-    // context might be 'day1', 'day2', 'q2_group_A'
-    
-    // Map Context to JSON Data Key (Assuming JSON has day1/day2/day3 structure)
-    // NOTE: You might need to adjust 'dataKey' based on your actual JSON content
-    let dataKey = context; 
-    let filterGroup = null;
-
-    if (context.includes('q2_group')) {
-       // Assuming Q2 uses 'day3' data for this example, or 'qual2' if you update JSON
-       dataKey = 'day3'; 
-       filterGroup = context.split('_')[2]; // 'A'
-    }
-
-    createLeadingBanner(`${context.toUpperCase().replace('_',' ')} - ${matchId === 'overall' ? 'Standings' : matchId}`);
-
-    let data = standingsData;
-    if (filterGroup) data = data.filter(t => t.group === filterGroup);
-
-    if (matchId === 'overall') {
-      // Show total stats for that day/stage
-       // Note: This requires your JSON to have a summary object for the day, 
-       // or we calculate it. For now, falling back to main overall or generic.
-       renderTable(data, `stats.${dataKey}.overall`); // Make sure your JSON has this path!
-    } else {
-      // Specific Match Result
-      const results = data.map(t => ({
-        ...t,
-        tempStats: t.stats[dataKey]?.[matchId] || { place_pts: 0, kill_pts: 0, total: 0 }
-      })).filter(t => t.tempStats.total > 0 || t.tempStats.place_pts > 0);
-      
-      results.sort((a,b) => b.tempStats.total - a.tempStats.total);
-      
-      let html = `<div class="table-container"><table class="leaderboard-table">
-        <thead><tr><th>#</th><th>Team</th><th>Kills</th><th>Place</th><th>Total</th><th>WWCD</th></tr></thead><tbody>`;
-      
-      results.forEach((r, i) => {
-        html += `<tr class="${r.tempStats.wwcd ? 'wwcd-row' : ''}">
-          <td>${i+1}</td><td><strong>${r.team_name}</strong></td>
-          <td>${r.tempStats.kill_pts}</td><td>${r.tempStats.place_pts}</td>
-          <td><strong>${r.tempStats.total}</strong></td>
-          <td>${r.tempStats.wwcd ? '🏆' : '-'}</td>
-        </tr>`;
-      });
-      html += '</tbody></table></div>';
-      document.getElementById('standingsContent').innerHTML = html;
-    }
-  }
-
-  // 3. FINALS LOGIC
-  function renderFinals(matchId) {
-    createLeadingBanner(`Grand Finals - ${matchId}`);
-    // Assuming 'finals' key in JSON
-    if (matchId === 'overall') {
-        renderTable(standingsData, 'stats.finals.overall');
-    } else {
-        renderMatchStats('finals', matchId);
-    }
-  }
-
-  // 4. GENERIC TABLE RENDERER
-  function renderGenericTable(type) {
-    // Placeholder to handle 'q1_overall' etc if they don't map directly to JSON keys
-    createLeadingBanner(type.toUpperCase().replace('_',' '));
-    // For now, showing overall stats as fallback
-    renderTable(standingsData, 'stats.overall');
-  }
-
-  // CORE TABLE BUILDER (Reusable)
-  function renderTable(data, statPath) {
-    // Helper to access nested properties safely (e.g. 'stats.overall.total_pts')
-    const getVal = (obj, path) => path.split('.').reduce((acc, part) => acc && acc[part], obj);
-
-    // Sort data
-    const sorted = [...data].sort((a,b) => {
-      const valA = getVal(a, statPath)?.total_pts || 0;
-      const valB = getVal(b, statPath)?.total_pts || 0;
-      return valB - valA;
-    });
-
-    let html = `<div class="table-container"><table class="leaderboard-table">
-      <thead><tr><th>#</th><th>Team</th><th>Matches</th><th>Finish</th><th>Place</th><th>Total</th></tr></thead><tbody>`;
-    
-    sorted.forEach((t, i) => {
-      const s = getVal(t, statPath) || { matches_played: 0, finish_pts: 0, pos_pts: 0, total_pts: 0 };
-      html += `<tr class="${i < 3 ? 'rank-row-'+(i+1) : ''}">
-        <td>${i+1}</td>
-        <td><strong>${t.team_name}</strong></td>
-        <td>${s.matches_played}</td>
-        <td>${s.finish_pts}</td>
-        <td>${s.pos_pts}</td>
-        <td><strong>${s.total_pts}</strong></td>
-      </tr>`;
-    });
-    html += '</tbody></table></div>';
-    document.getElementById('standingsContent').innerHTML = html;
   }
 
   init();
