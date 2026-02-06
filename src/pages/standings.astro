@@ -1,135 +1,434 @@
 ---
-// Import your JSON data
-import allTeamsData from '../data/teams.json';
-
-// --- LOGIC: Filter & Sort ---
-// 1. Filter: Show teams that have played matches (Group B in your data)
-//    (If you specifically want Group A, change filter to: team.group === 'A')
-const leaderboardData = allTeamsData
-  .filter((team) => team.stats.overall.matches_played > 0)
-  .sort((a, b) => {
-    // 2. Sort: Highest Total Points first
-    if (b.stats.overall.total_pts !== a.stats.overall.total_pts) {
-      return b.stats.overall.total_pts - a.stats.overall.total_pts;
-    }
-    // 3. Tie-Breaker: Highest Kills (Finish Pts)
-    return b.stats.overall.finish_pts - a.stats.overall.finish_pts;
-  });
-
-const matches = ['M1', 'M2', 'M3', 'M4'];
+import Layout from '../layouts/Layout.astro';
 ---
 
-<div class="leaderboard-wrapper">
-  <header class="leaderboard-header">
-    <h2>🏆 Official Tournament Standings (Final)</h2>
-    <p>Matches 1-4 Combined</p>
-  </header>
+<Layout title="Standings | SYNAPSE 2026" activePage="standings">
+  <section class="leaderboard-section">
+    <div class="container">
 
-  <div class="table-container">
-    <table>
-      <thead>
-        <tr>
-          <th class="rank">Rank</th>
-          <th class="team">Official Team Name</th>
-          {matches.map((m) => <th class="match">{m} Pts</th>)}
-          <th class="total">Total Points</th>
-          <th class="kills">Total Kills</th>
-        </tr>
-      </thead>
-      <tbody>
-        {leaderboardData.map((team, index) => (
-          <tr class={`rank-${index + 1}`}>
-            <td class="rank">#{index + 1}</td>
-            <td class="team">
-              <span class="team-name">{team.team_name}</span>
-            </td>
-            {matches.map((m) => (
-              <td class="match">{team.stats.day1[m]?.total || 0}</td>
-            ))}
-            <td class="total">{team.stats.overall.total_pts}</td>
-            <td class="kills">{team.stats.overall.finish_pts}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
-</div>
+      <div class="live-status-banner">
+        <div class="live-status-content">
+          <span class="live-icon">🔴</span>
+          <span class="live-text">LIVE STANDINGS</span>
+          <span class="live-icon">🔴</span>
+        </div>
+      </div>
 
-<style>
-  /* --- DARK THEME STYLING --- */
-  .leaderboard-wrapper {
-    background-color: #0d0d0d;
-    color: #e5e5e5;
-    padding: 2rem;
-    font-family: system-ui, -apple-system, sans-serif;
-    border-radius: 12px;
+      <div class="page-header-box">
+        <h1 class="page-title">Tournament Leaderboard</h1>
+        
+        <div id="leadingBannerContainer" class="leading-team-banner" style="display:none;">
+          <span class="leader-label">CURRENT LEADER</span>
+          <h2 id="leaderTeamName">LOADING...</h2>
+          <div id="leaderStats" class="leader-stats"></div>
+        </div>
+      </div>
+
+      <div class="filter-tabs" id="mainStageTabs">
+        <button class="filter-btn active" onclick="setStage('overall')">OVERALL</button>
+        <button class="filter-btn" onclick="setStage('qual1')">QUALIFIER 1</button>
+        <button class="filter-btn" onclick="setStage('qual2')">QUALIFIER 2</button>
+        <button class="filter-btn" onclick="setStage('finals')">FINALS</button>
+      </div>
+
+      <div id="layer2Container" class="mid-menu-container" style="display: none;">
+        <div class="button-group" id="layer2Buttons"></div>
+      </div>
+
+      <div id="layer3Container" class="mid-menu-container" style="display: none;">
+        <div class="button-group" id="layer3Buttons"></div>
+      </div>
+
+      <div id="layer4Container" class="mid-menu-container" style="display: none;">
+        <div class="button-group" id="layer4Buttons"></div>
+      </div>
+
+      <div class="content-grid">
+        <div class="main-content-area">
+           <div id="standingsContent" class="content-fade-in"></div>
+        </div>
+
+        <div class="sidebar-area">
+          <div id="mvpCard" class="mvp-card">
+            <div class="mvp-header">
+              <span class="mvp-badge">MVP</span>
+              <h3 id="mvpTitle">TOURNAMENT MVP</h3>
+            </div>
+            <div class="mvp-image-container">
+               <div class="mvp-placeholder-img" id="mvpImage">👤</div>
+            </div>
+            <div class="mvp-info">
+              <h2 id="mvpPlayerName">TBD</h2>
+              <h4 id="mvpTeamName">WAITING FOR DATA</h4>
+            </div>
+            <div class="mvp-stats-grid">
+              <div class="stat-box">
+                <span class="stat-label">KILLS</span>
+                <span class="stat-value" id="mvpKills">-</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-label">MATCHES</span>
+                <span class="stat-value" id="mvpMatches">-</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<style is:global>
+  /* 🎨 PRESERVED STYLES */
+  .content-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-top: 2rem; }
+  @media (min-width: 992px) { 
+    .content-grid { grid-template-columns: 3fr 1fr; align-items: start; } 
+    .sidebar-area { position: sticky; top: 20px; }
   }
 
-  .leaderboard-header {
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid #333;
-    padding-bottom: 1rem;
-  }
+  .table-container { width: 100%; overflow-x: auto; background: rgba(0, 0, 0, 0.4); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); }
+  .leaderboard-table { width: 100%; border-collapse: collapse; min-width: 600px; }
+  .leaderboard-table th, .leaderboard-table td { padding: 14px 12px; text-align: center; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: #eee; }
+  .leaderboard-table th { background: rgba(255, 69, 0, 0.2); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+  .leaderboard-table td:nth-child(2) { text-align: left; font-weight: 700; color: #fff; }
 
-  .leaderboard-header h2 {
-    color: #ffd700;
-    margin: 0;
-    font-size: 1.8rem;
-  }
+  .mid-menu-container { background: rgba(255,255,255,0.03); padding: 10px; border-radius: 8px; margin-bottom: 10px; display: flex; justify-content: center; }
+  .button-group { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+  .sub-btn { background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); color: #bbb; padding: 6px 14px; border-radius: 4px; cursor: pointer; font-size: 0.8rem; transition: all 0.2s; }
+  .sub-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
+  .sub-btn.active { background: #ff4500; color: white; border-color: #ff4500; box-shadow: 0 0 10px rgba(255,69,0,0.4); }
 
-  .table-container {
-    overflow-x: auto;
-  }
+  .filter-tabs { display: flex; gap: 10px; justify-content: center; margin-bottom: 2rem; flex-wrap: wrap; }
+  .filter-btn { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: white; padding: 10px 24px; border-radius: 30px; cursor: pointer; font-weight: 700; transition: 0.3s; }
+  .filter-btn.active { background: #ff4500; border-color: #ff4500; color: white; }
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 600px;
-  }
+  /* MVP CARD */
+  .mvp-card { background: linear-gradient(145deg, rgba(20,20,20,0.9), rgba(40,10,10,0.95)); border: 1px solid #ff4500; border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 0 25px rgba(255, 69, 0, 0.15); animation: fadeIn 0.6s ease; }
+  .mvp-badge { background: #ff4500; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; display: inline-block; margin-bottom: 5px; }
+  .mvp-header h3 { margin: 0; color: #ff8855; font-size: 0.9rem; text-transform: uppercase; }
+  .mvp-image-container { margin: 1.5rem auto; width: 100px; height: 100px; border-radius: 50%; border: 3px solid #ff4500; background: #111; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .mvp-placeholder-img { font-size: 3rem; }
+  .mvp-info h2 { color: #fff; margin: 0; font-size: 1.2rem; font-weight: 800; }
+  .mvp-info h4 { color: #aaa; margin: 0.2rem 0 1rem; font-size: 0.8rem; }
+  .mvp-stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); }
+  .stat-box { display: flex; flex-direction: column; }
+  .stat-label { font-size: 0.6rem; color: #888; text-transform: uppercase; }
+  .stat-value { font-size: 1rem; color: #fff; font-weight: 700; }
 
-  th {
-    background: #1a1a1a;
-    padding: 1rem;
-    text-align: center;
-    font-weight: 600;
-    color: #888;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-  }
+  /* LEADER BANNER */
+  .leading-team-banner { background: linear-gradient(90deg, rgba(20,10,0,0.9) 0%, rgba(50,20,0,0.9) 100%); border: 1px solid #ff4500; border-left: 6px solid #ff4500; border-radius: 8px; padding: 1rem; text-align: center; margin: 0 auto 1.5rem; max-width: 600px; animation: fadeIn 0.5s ease; }
+  .leader-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #ff8855; display: block; margin-bottom: 0.3rem; }
+  .leading-team-banner h2 { font-size: 1.5rem; margin: 0; color: #fff; }
+  .leader-stats { margin-top: 0.3rem; font-size: 0.85rem; color: #ccc; }
 
-  th.team { text-align: left; padding-left: 1.5rem; }
-  th.total { color: #fff; }
-
-  td {
-    padding: 0.8rem 1rem;
-    text-align: center;
-    border-bottom: 1px solid #262626;
-  }
-
-  td.team {
-    text-align: left;
-    padding-left: 1.5rem;
-    font-weight: bold;
-    color: #fff;
-  }
-
-  td.total {
-    font-weight: 800;
-    color: #4ade80; /* Green */
-    font-size: 1.1rem;
-  }
-
-  td.kills {
-    color: #f87171; /* Red */
-  }
-
-  /* Rank Colors */
-  .rank-1 .rank { color: #ffd700; } /* Gold */
-  .rank-2 .rank { color: #c0c0c0; } /* Silver */
-  .rank-3 .rank { color: #cd7f32; } /* Bronze */
-  
-  /* Hover row */
-  tbody tr:hover {
-    background-color: #1a1a1a;
-  }
+  /* UTILS */
+  .wwcd-row { background: rgba(255, 215, 0, 0.1) !important; border-left: 3px solid gold !important; }
+  .top-3-row { background: linear-gradient(90deg, rgba(255,255,255,0.05), transparent); }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .live-status-banner { background: rgba(255, 0, 0, 0.1); border: 1px solid rgba(255, 0, 0, 0.3); border-radius: 4px; padding: 4px 12px; margin: 0 auto 1.5rem; width: fit-content; }
+  .live-text { color: #ff4444; font-weight: 800; font-size: 0.75rem; letter-spacing: 1px; }
 </style>
+
+<script is:inline>
+  let standingsData = [];
+  let playersData = [];
+  
+  // ==============================================
+  // 🚀 INIT
+  // ==============================================
+  async function init() {
+    try {
+      const [sRes, pRes] = await Promise.all([
+        fetch('/data/standings.json'),
+        fetch('/data/players.json')
+      ]);
+      if(sRes.ok) standingsData = await sRes.json();
+      if(pRes.ok) playersData = await pRes.json();
+      setStage('overall');
+    } catch (e) {
+      console.error(e);
+      document.getElementById('standingsContent').innerHTML = `<p style="text-align:center;color:red;">Data Load Error</p>`;
+    }
+  }
+
+  // ==============================================
+  // 🕹️ NAVIGATION LOGIC
+  // ==============================================
+
+  window.setStage = (stage) => {
+    // UI: Active Tab
+    document.querySelectorAll('#mainStageTabs .filter-btn').forEach(b => b.classList.remove('active'));
+    Array.from(document.querySelectorAll('#mainStageTabs .filter-btn'))
+      .find(b => b.getAttribute('onclick').includes(stage))?.classList.add('active');
+
+    // Reset Containers
+    const containers = ['layer2', 'layer3', 'layer4'];
+    containers.forEach(c => {
+      document.getElementById(`${c}Container`).style.display = 'none';
+      document.getElementById(`${c}Buttons`).innerHTML = '';
+    });
+
+    if (stage === 'overall') {
+      // Logic for Main Overall (No deep filtering needed)
+      document.getElementById('layer2Container').style.display = 'flex';
+      renderButtons('layer2', [
+        { label: 'Tournament Combined', fn: () => renderTable(standingsData, 'stats.overall') },
+        { label: 'Group A', fn: () => renderFilteredTable('overall', 'A') },
+        { label: 'Group B', fn: () => renderFilteredTable('overall', 'B') },
+        { label: 'Group C', fn: () => renderFilteredTable('overall', 'C') },
+        { label: 'Group D', fn: () => renderFilteredTable('overall', 'D') }
+      ]);
+    } 
+    else if (stage === 'qual1' || stage === 'qual2') {
+      // QUALIFIER LOGIC (4 LAYERS)
+      document.getElementById('layer2Container').style.display = 'flex';
+      
+      // Layer 2: Days
+      const days = [
+        { label: 'Overall (Day 1+2)', val: 'combined_days' },
+        { label: 'Day 1', val: 'day1' },
+        { label: 'Day 2', val: 'day2' }
+      ];
+      
+      renderButtons('layer2', days.map(d => ({
+        label: d.label,
+        fn: () => setupGroupLayer(stage, d.val)
+      })));
+    }
+    else if (stage === 'finals') {
+      // Finals logic (simplified for now)
+      document.getElementById('layer2Container').style.display = 'flex';
+      renderButtons('layer2', [{ label: 'Finals Day 1', fn: () => setupMatchLayer('finals', 'all', 'day1') }]); // Simplified context
+    }
+  };
+
+  // LAYER 3: Groups (A, B, C, D)
+  function setupGroupLayer(stage, dayContext) {
+    document.getElementById('layer3Container').style.display = 'flex';
+    document.getElementById('layer4Container').style.display = 'none';
+    
+    const groups = ['A', 'B', 'C', 'D'];
+    renderButtons('layer3', groups.map(g => ({
+      label: `Group ${g}`,
+      fn: () => setupMatchLayer(stage, g, dayContext)
+    })));
+  }
+
+  // LAYER 4: Matches (Overall, M1-M4)
+  function setupMatchLayer(stage, group, dayContext) {
+    document.getElementById('layer4Container').style.display = 'flex';
+    
+    const matches = [
+      { label: 'Overall (All Matches)', val: 'overall' },
+      { label: 'Match 1', val: 'M1' },
+      { label: 'Match 2', val: 'M2' },
+      { label: 'Match 3', val: 'M3' },
+      { label: 'Match 4', val: 'M4' }
+    ];
+
+    renderButtons('layer4', matches.map(m => ({
+      label: m.label,
+      fn: () => processAndRender(stage, group, dayContext, m.val)
+    })));
+  }
+
+  // Helper to render button groups
+  function renderButtons(layer, options) {
+    const container = document.getElementById(`${layer}Buttons`);
+    container.innerHTML = options.map((opt, i) => 
+      `<button class="sub-btn ${i===0?'active':''}" id="${layer}-btn-${i}">${opt.label}</button>`
+    ).join('');
+    
+    options.forEach((opt, i) => {
+      container.querySelector(`#${layer}-btn-${i}`).addEventListener('click', function() {
+        container.querySelectorAll('.sub-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        opt.fn();
+      });
+    });
+    // Auto-trigger first option to load default view
+    if(options.length) options[0].fn();
+  }
+
+  // ==============================================
+  // 🧮 PROCESSING LOGIC
+  // ==============================================
+
+  function processAndRender(stage, group, dayContext, matchContext) {
+    let data = [...standingsData];
+    
+    // 1. Filter by Group
+    if(group !== 'all') {
+      data = data.filter(t => t.group === group);
+    }
+
+    // 2. Process Data based on Day & Match
+    let processedData = data.map(team => {
+      let stats = { place: 0, kill: 0, total: 0, wwcd: 0 };
+      
+      const processDay = (dKey) => {
+        const dObj = team.stats[dKey];
+        if(!dObj) return;
+
+        if(matchContext === 'overall') {
+          // Sum M1-M4
+          ['M1','M2','M3','M4'].forEach(m => {
+            if(dObj[m]) {
+              stats.place += dObj[m].place_pts || 0;
+              stats.kill += dObj[m].kill_pts || 0;
+              stats.total += dObj[m].total || 0;
+              if(dObj[m].wwcd) stats.wwcd++;
+            }
+          });
+        } else {
+          // Specific Match
+          if(dObj[matchContext]) {
+            stats.place += dObj[matchContext].place_pts || 0;
+            stats.kill += dObj[matchContext].kill_pts || 0;
+            stats.total += dObj[matchContext].total || 0;
+            if(dObj[matchContext].wwcd) stats.wwcd++;
+          }
+        }
+      };
+
+      if (dayContext === 'combined_days') {
+        processDay('day1');
+        processDay('day2');
+      } else {
+        processDay(dayContext);
+      }
+
+      return { ...team, processedStats: stats };
+    });
+
+    // 3. Filter out teams with 0 points if match specific (optional, cleaner UI)
+    // processedData = processedData.filter(t => t.processedStats.total > 0);
+
+    // 4. Sort
+    processedData.sort((a,b) => b.processedStats.total - a.processedStats.total);
+
+    // 5. Update UI
+    updateLeaderBanner(processedData);
+    calculateMVP(processedData, dayContext, matchContext); // Mock MVP for filtered view
+    renderProcessedTable(processedData, matchContext === 'overall');
+  }
+
+  // ==============================================
+  // 📊 RENDER TABLES
+  // ==============================================
+
+  function renderProcessedTable(data, isOverallMode) {
+    const html = `
+      <div class="table-container">
+        <table class="leaderboard-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Team</th>
+              ${isOverallMode ? '<th>WWCD</th>' : ''}
+              <th>Place Pts</th>
+              <th>Kill Pts</th>
+              <th>Total Pts</th>
+              ${!isOverallMode ? '<th>WWCD</th>' : ''}
+            </tr>
+          </thead>
+          <tbody>
+            ${data.map((t, i) => `
+              <tr class="${t.processedStats.wwcd > 0 && !isOverallMode ? 'wwcd-row' : (i<3 && isOverallMode ? 'top-3-row' : '')}">
+                <td>${i+1}</td>
+                <td><span style="color:#aaa;">[${t.team_logo}]</span> ${t.team_name}</td>
+                ${isOverallMode ? `<td>${t.processedStats.wwcd > 0 ? '🏆 x'+t.processedStats.wwcd : '-'}</td>` : ''}
+                <td>${t.processedStats.place}</td>
+                <td>${t.processedStats.kill}</td>
+                <td style="font-weight:bold; color:#ff4500;">${t.processedStats.total}</td>
+                ${!isOverallMode ? `<td>${t.processedStats.wwcd ? '🏆' : '-'}</td>` : ''}
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>`;
+    document.getElementById('standingsContent').innerHTML = html;
+  }
+
+  // Fallback for Main Overall View
+  function renderFilteredTable(key, group) {
+    let data = standingsData.filter(t => t.group === group);
+    data.sort((a,b) => b.stats.overall.total_pts - a.stats.overall.total_pts);
+    renderTable(data, 'stats.overall');
+  }
+  
+  function renderTable(data, statPath) {
+     // Re-using simplified logic for main overall
+     const get = (o,p) => p.split('.').reduce((a,v)=>a&&a[v],o);
+     updateLeaderBanner(data, true);
+     
+     const html = `<div class="table-container"><table class="leaderboard-table">
+      <thead><tr><th>#</th><th>Team</th><th>Matches</th><th>Finish</th><th>Pos</th><th>Total</th></tr></thead>
+      <tbody>${data.map((t,i) => {
+        const s = get(t, statPath);
+        return `<tr class="${i<3?'top-3-row':''}"><td>${i+1}</td><td>[${t.team_logo}] ${t.team_name}</td>
+        <td>${s.matches_played}</td><td>${s.finish_pts}</td><td>${s.pos_pts}</td><td style="font-weight:bold;color:#ff4500">${s.total_pts}</td></tr>`;
+      }).join('')}</tbody></table></div>`;
+      document.getElementById('standingsContent').innerHTML = html;
+  }
+
+  // ==============================================
+  // 🏆 BANNERS & MVP
+  // ==============================================
+  function updateLeaderBanner(data, isMainOverall=false) {
+    const banner = document.getElementById('leadingBannerContainer');
+    if(!data.length) { banner.style.display='none'; return; }
+    banner.style.display = 'block';
+    const l = data[0];
+    const pts = isMainOverall ? l.stats.overall.total_pts : l.processedStats.total;
+    const kills = isMainOverall ? l.stats.overall.finish_pts : l.processedStats.kill;
+    
+    document.getElementById('leaderTeamName').innerText = l.team_name;
+    document.getElementById('leaderStats').innerHTML = `<strong>${pts} PTS</strong> <span style="opacity:0.5">/</span> ${kills} Kills`;
+  }
+
+  function calculateMVP(data, dayCtx, matchCtx) {
+     if(!playersData.length) return;
+     // Finding MVP based on the filtered teams in the current view
+     // This logic attempts to sum kills for the players of the visible teams
+     // Note: This is an estimation if player JSON doesn't exactly match team view context
+     
+     let bestP = null;
+     let maxK = -1;
+     
+     const visibleTeamIds = data.map(d => d.team_id);
+     
+     playersData.forEach(p => {
+       if(!visibleTeamIds.includes(p.team_id)) return;
+       
+       let k = 0;
+       // Logic to match the view context
+       const sumDay = (dKey) => {
+         if(matchCtx === 'overall') {
+           Object.values(p.stats?.[dKey]||{}).forEach(m => k += (m.kills||0));
+         } else {
+           k += (p.stats?.[dKey]?.[matchCtx]?.kills || 0);
+         }
+       };
+
+       if(dayCtx === 'combined_days') { sumDay('day1'); sumDay('day2'); }
+       else { sumDay(dayCtx); }
+
+       if(k > maxK) { maxK = k; bestP = p; }
+     });
+
+     if(bestP) {
+       document.getElementById('mvpPlayerName').innerText = bestP.name;
+       const t = data.find(x => x.team_id === bestP.team_id);
+       document.getElementById('mvpTeamName').innerText = t ? t.team_name : "Team " + bestP.team_id;
+       document.getElementById('mvpKills').innerText = maxK;
+       document.getElementById('mvpMatches').innerText = matchCtx === 'overall' ? '-' : '1';
+       document.getElementById('mvpTitle').innerText = matchCtx === 'overall' ? "STAGE MVP" : "MATCH MVP";
+       // Image
+       document.getElementById('mvpImage').innerHTML = bestP.image ? `<img src="${bestP.image}" style="width:100%;height:100%;object-fit:cover">` : `👤`;
+     }
+  }
+
+  init();
+</script>
