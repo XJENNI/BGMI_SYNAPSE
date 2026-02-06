@@ -1,4 +1,4 @@
----
+
 // Import the JSON data
 import allTeamsData from '../data/teams.json';
 
