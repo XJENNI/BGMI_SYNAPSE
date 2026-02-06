@@ -587,39 +587,35 @@
     "team_id": "TEAM_018"
   },
   {
-    "logo": "TR",
-    "name": "Team Revengers",
+    "logo": "TC",
+    "name": "Team SLAT",
     "players": [
       {
         "icon": "fa-crosshairs",
-        "name": "Shubh05gamer",
+        "name": "TCAxVENKY",
         "isIGL": true
       },
       {
         "icon": "fa-bolt",
-        "name": "Parvesh£45",
+        "name": "TCAxDADDY",
         "isIGL": false
       },
       {
         "icon": "fa-skull",
-        "name": "Up32RANGER",
+        "name": "TCAxAURA",
         "isIGL": false
       },
       {
         "icon": "fa-shield-alt",
-        "name": "ＮＥＭＥｓＩＳ",
-        "isIGL": false
-      },
-      {
-        "icon": "fa-user",
-        "name": "Jollyvr7",
+        "name": "DREAMS乄乛",
         "isIGL": false
       }
     ],
-    "college": "IIIT BHAGALPUR",
+    "college": "Sri venkateshwar College DU",
     "group": "Group D",
     "team_id": "TEAM_019"
   },
+  
   {
     "logo": "OS",
     "name": "Omega Slayers",
