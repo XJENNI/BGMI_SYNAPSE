@@ -24,10 +24,10 @@
     "team_id": "TEAM_001",
     "team_name": "CAPA",
     "stats": {
-      "total_kills": 0,
+      "total_kills": 2,
       "matches": {
         "M1": 0,
-        "M2": 0,
+        "M2": 2,
         "M3": 0,
         "M4": 0,
         "M5": 0,
@@ -423,10 +423,10 @@
     "team_id": "TEAM_006",
     "team_name": "Team MARAUDERS",
     "stats": {
-      "total_kills": 0,
+      "total_kills": 1,
       "matches": {
         "M1": 0,
-        "M2": 0,
+        "M2": 1,
         "M3": 0,
         "M4": 0,
         "M5": 0,
@@ -594,9 +594,9 @@
     "team_id": "TEAM_008",
     "team_name": "8kkabaap",
     "stats": {
-      "total_kills": 0,
+      "total_kills": 2,
       "matches": {
-        "M1": 0,
+        "M1": 2,
         "M2": 0,
         "M3": 0,
         "M4": 0,
@@ -613,9 +613,9 @@
     "team_id": "TEAM_008",
     "team_name": "8kkabaap",
     "stats": {
-      "total_kills": 0,
+      "total_kills": 1,
       "matches": {
-        "M1": 0,
+        "M1": 1,
         "M2": 0,
         "M3": 0,
         "M4": 0,
@@ -2095,9 +2095,9 @@
     "team_id": "TEAM_025",
     "team_name": "AAMIR RAZA",
     "stats": {
-      "total_kills": 0,
+      "total_kills": 2,
       "matches": {
-        "M1": 0,
+        "M1": 2,
         "M2": 0,
         "M3": 0,
         "M4": 0,
@@ -2133,9 +2133,9 @@
     "team_id": "TEAM_025",
     "team_name": "AAMIR RAZA",
     "stats": {
-      "total_kills": 0,
+      "total_kills": 2,
       "matches": {
-        "M1": 0,
+        "M1": 2,
         "M2": 0,
         "M3": 0,
         "M4": 0,
@@ -2190,10 +2190,10 @@
     "team_id": "TEAM_026",
     "team_name": "AUTACOIDS",
     "stats": {
-      "total_kills": 0,
+      "total_kills": 1,
       "matches": {
         "M1": 0,
-        "M2": 0,
+        "M2": 1,
         "M3": 0,
         "M4": 0,
         "M5": 0,
@@ -2494,10 +2494,10 @@
     "team_id": "TEAM_029",
     "team_name": "Delhi ke dakait",
     "stats": {
-      "total_kills": 0,
+      "total_kills": 2,
       "matches": {
-        "M1": 0,
-        "M2": 0,
+        "M1": 1,
+        "M2": 1,
         "M3": 0,
         "M4": 0,
         "M5": 0,
@@ -3311,10 +3311,10 @@
     "team_id": "TEAM_038",
     "team_name": "Crypt of Liberkuhn",
     "stats": {
-      "total_kills": 0,
+      "total_kills": 1,
       "matches": {
         "M1": 0,
-        "M2": 0,
+        "M2": 1,
         "M3": 0,
         "M4": 0,
         "M5": 0,
@@ -3330,10 +3330,10 @@
     "team_id": "TEAM_038",
     "team_name": "Crypt of Liberkuhn",
     "stats": {
-      "total_kills": 0,
+      "total_kills": 3,
       "matches": {
         "M1": 0,
-        "M2": 0,
+        "M2": 3,
         "M3": 0,
         "M4": 0,
         "M5": 0,
@@ -3710,9 +3710,9 @@
     "team_id": "TEAM_043",
     "team_name": "Reigning 4",
     "stats": {
-      "total_kills": 0,
+      "total_kills": 1,
       "matches": {
-        "M1": 0,
+        "M1": 1,
         "M2": 0,
         "M3": 0,
         "M4": 0,
@@ -3748,9 +3748,9 @@
     "team_id": "TEAM_043",
     "team_name": "Reigning 4",
     "stats": {
-      "total_kills": 0,
+      "total_kills": 6,
       "matches": {
-        "M1": 0,
+        "M1": 6,
         "M2": 0,
         "M3": 0,
         "M4": 0,
@@ -3767,9 +3767,9 @@
     "team_id": "TEAM_043",
     "team_name": "Reigning 4",
     "stats": {
-      "total_kills": 0,
+      "total_kills": 3,
       "matches": {
-        "M1": 0,
+        "M1": 3,
         "M2": 0,
         "M3": 0,
         "M4": 0,
@@ -3805,10 +3805,10 @@
     "team_id": "TEAM_044",
     "team_name": "Team 507",
     "stats": {
-      "total_kills": 0,
+      "total_kills": 7,
       "matches": {
-        "M1": 0,
-        "M2": 0,
+        "M1": 5,
+        "M2": 2,
         "M3": 0,
         "M4": 0,
         "M5": 0,
@@ -3824,9 +3824,9 @@
     "team_id": "TEAM_044",
     "team_name": "Team 507",
     "stats": {
-      "total_kills": 0,
+      "total_kills": 4,
       "matches": {
-        "M1": 0,
+        "M1": 4,
         "M2": 0,
         "M3": 0,
         "M4": 0,
@@ -3843,9 +3843,9 @@
     "team_id": "TEAM_044",
     "team_name": "Team 507",
     "stats": {
-      "total_kills": 0,
+      "total_kills": 3,
       "matches": {
-        "M1": 0,
+        "M1": 3,
         "M2": 0,
         "M3": 0,
         "M4": 0,
@@ -4717,10 +4717,10 @@
     "team_id": "TEAM_054",
     "team_name": "Phantom troupe",
     "stats": {
-      "total_kills": 0,
+      "total_kills": 5,
       "matches": {
-        "M1": 0,
-        "M2": 0,
+        "M1": 2,
+        "M2": 3,
         "M3": 0,
         "M4": 0,
         "M5": 0,
@@ -4926,10 +4926,10 @@
     "team_id": "TEAM_057",
     "team_name": "Team OverPowered",
     "stats": {
-      "total_kills": 0,
+      "total_kills": 7,
       "matches": {
-        "M1": 0,
-        "M2": 0,
+        "M1": 5,
+        "M2": 2,
         "M3": 0,
         "M4": 0,
         "M5": 0,
@@ -4945,10 +4945,10 @@
     "team_id": "TEAM_057",
     "team_name": "Team OverPowered",
     "stats": {
-      "total_kills": 0,
+      "total_kills": 9,
       "matches": {
-        "M1": 0,
-        "M2": 0,
+        "M1": 1,
+        "M2": 8,
         "M3": 0,
         "M4": 0,
         "M5": 0,
@@ -4983,10 +4983,10 @@
     "team_id": "TEAM_057",
     "team_name": "Team OverPowered",
     "stats": {
-      "total_kills": 0,
+      "total_kills": 9,
       "matches": {
-        "M1": 0,
-        "M2": 0,
+        "M1": 2,
+        "M2": 7,
         "M3": 0,
         "M4": 0,
         "M5": 0,
@@ -5002,9 +5002,9 @@
     "team_id": "TEAM_057",
     "team_name": "Team OverPowered",
     "stats": {
-      "total_kills": 0,
+      "total_kills": 6,
       "matches": {
-        "M1": 0,
+        "M1": 6,
         "M2": 0,
         "M3": 0,
         "M4": 0,
@@ -5382,10 +5382,10 @@
     "team_id": "TEAM_062",
     "team_name": "IzraelKillerz",
     "stats": {
-      "total_kills": 0,
+      "total_kills": 5,
       "matches": {
-        "M1": 0,
-        "M2": 0,
+        "M1": 1,
+        "M2": 4,
         "M3": 0,
         "M4": 0,
         "M5": 0,
@@ -5420,10 +5420,10 @@
     "team_id": "TEAM_062",
     "team_name": "IzraelKillerz",
     "stats": {
-      "total_kills": 0,
+      "total_kills": 2,
       "matches": {
         "M1": 0,
-        "M2": 0,
+        "M2": 2,
         "M3": 0,
         "M4": 0,
         "M5": 0,
