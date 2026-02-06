@@ -5,8 +5,8 @@
     "team_logo": "CA",
     "group": "A",
     "stats": {
-      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
-      "day1": { "M1": { "total": 0 }, "M2": { "total": 0 }, "M3": { "total": 0 }, "M4": { "total": 0 } },
+      "overall": { "matches_played": 4, "finish_pts": 7, "pos_pts": 3, "total_pts": 10, "wwcd_count": 0 },
+      "day1": { "M1": { "total": 0 }, "M2": { "total": 3 }, "M3": { "total": 7 }, "M4": { "total": 0 } },
       "day2": {}, "day3": {}, "finals": {}
     }
   },
@@ -32,8 +32,8 @@
     "team_logo": "BL",
     "group": "A",
     "stats": {
-      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
-      "day1": { "M1": { "total": 0 }, "M2": { "total": 0 }, "M3": { "total": 0 }, "M4": { "total": 0 } },
+      "overall": { "matches_played": 4, "finish_pts": 8, "pos_pts": 5, "total_pts": 13, "wwcd_count": 0 },
+      "day1": { "M1": { "total": 0 }, "M2": { "total": 0 }, "M3": { "total": 8 }, "M4": { "total": 5 } },
       "day2": {}, "day3": {}, "finals": {}
     }
   },
@@ -75,8 +75,8 @@
     "team_logo": "TM",
     "group": "A",
     "stats": {
-      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
-      "day1": { "M1": { "total": 0 }, "M2": { "total": 0 }, "M3": { "total": 0 }, "M4": { "total": 0 } },
+      "overall": { "matches_played": 4, "finish_pts": 2, "pos_pts": 2, "total_pts": 4, "wwcd_count": 0 },
+      "day1": { "M1": { "total": 0 }, "M2": { "total": 1 }, "M3": { "total": 1 }, "M4": { "total": 2 } },
       "day2": {}, "day3": {}, "finals": {}
     }
   },
@@ -102,8 +102,8 @@
     "team_logo": "8K",
     "group": "A",
     "stats": {
-      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
-      "day1": { "M1": { "total": 0 }, "M2": { "total": 0 }, "M3": { "total": 0 }, "M4": { "total": 0 } },
+      "overall": { "matches_played": 4, "finish_pts": 16, "pos_pts": 10, "total_pts": 26, "wwcd_count": 0 },
+      "day1": { "M1": { "total": 5 }, "M2": { "total": 3 }, "M3": { "total": 1 }, "M4": { "total": 17 } },
       "day2": {}, "day3": {}, "finals": {}
     }
   },
@@ -369,8 +369,8 @@
     "team_logo": "AR",
     "group": "A",
     "stats": {
-      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
-      "day1": { "M1": { "total": 0 }, "M2": { "total": 0 }, "M3": { "total": 0 }, "M4": { "total": 0 } },
+      "overall": { "matches_played": 4, "finish_pts": 23, "pos_pts": 5, "total_pts": 28, "wwcd_count": 0 },
+      "day1": { "M1": { "total": 4 }, "M2": { "total": 1 }, "M3": { "total": 19 }, "M4": { "total": 4 } },
       "day2": {}, "day3": {}, "finals": {}
     }
   },
@@ -380,8 +380,8 @@
     "team_logo": "AU",
     "group": "A",
     "stats": {
-      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
-      "day1": { "M1": { "total": 0 }, "M2": { "total": 0 }, "M3": { "total": 0 }, "M4": { "total": 0 } },
+      "overall": { "matches_played": 4, "finish_pts": 16, "pos_pts": 21, "total_pts": 37, "wwcd_count": 0 },
+      "day1": { "M1": { "total": 9 }, "M2": { "total": 11 }, "M3": { "total": 10 }, "M4": { "total": 7 } },
       "day2": {}, "day3": {}, "finals": {}
     }
   },
@@ -423,8 +423,8 @@
     "team_logo": "DK",
     "group": "A",
     "stats": {
-      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
-      "day1": { "M1": { "total": 0 }, "M2": { "total": 0 }, "M3": { "total": 0 }, "M4": { "total": 0 } },
+      "overall": { "matches_played": 4, "finish_pts": 12, "pos_pts": 10, "total_pts": 22, "wwcd_count": 0 },
+      "day1": { "M1": { "total": 1 }, "M2": { "total": 4 }, "M3": { "total": 1 }, "M4": { "total": 16 } },
       "day2": {}, "day3": {}, "finals": {}
     }
   },
@@ -461,8 +461,8 @@
     "team_logo": "TA",
     "group": "A",
     "stats": {
-      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
-      "day1": { "M1": { "total": 0 }, "M2": { "total": 0 }, "M3": { "total": 0 }, "M4": { "total": 0 } },
+      "overall": { "matches_played": 4, "finish_pts": 1, "pos_pts": 4, "total_pts": 5, "wwcd_count": 0 },
+      "day1": { "M1": { "total": 4 }, "M2": { "total": 0 }, "M3": { "total": 1 }, "M4": { "total": 0 } },
       "day2": {}, "day3": {}, "finals": {}
     }
   },
@@ -552,8 +552,8 @@
     "team_logo": "CO",
     "group": "A",
     "stats": {
-      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
-      "day1": { "M1": { "total": 0 }, "M2": { "total": 0 }, "M3": { "total": 0 }, "M4": { "total": 0 } },
+      "overall": { "matches_played": 4, "finish_pts": 21, "pos_pts": 0, "total_pts": 21, "wwcd_count": 0 },
+      "day1": { "M1": { "total": 0 }, "M2": { "total": 4 }, "M3": { "total": 9 }, "M4": { "total": 8 } },
       "day2": {}, "day3": {}, "finals": {}
     }
   },
@@ -563,8 +563,8 @@
     "team_logo": "AC",
     "group": "A",
     "stats": {
-      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
-      "day1": { "M1": { "total": 0 }, "M2": { "total": 0 }, "M3": { "total": 0 }, "M4": { "total": 0 } },
+      "overall": { "matches_played": 4, "finish_pts": 4, "pos_pts": 2, "total_pts": 6, "wwcd_count": 0 },
+      "day1": { "M1": { "total": 3 }, "M2": { "total": 0 }, "M3": { "total": 3 }, "M4": { "total": 0 } },
       "day2": {}, "day3": {}, "finals": {}
     }
   },
@@ -590,8 +590,8 @@
     "team_logo": "DD",
     "group": "A",
     "stats": {
-      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
-      "day1": { "M1": { "total": 0 }, "M2": { "total": 0 }, "M3": { "total": 0 }, "M4": { "total": 0 } },
+      "overall": { "matches_played": 4, "finish_pts": 7, "pos_pts": 5, "total_pts": 12, "wwcd_count": 0 },
+      "day1": { "M1": { "total": 0 }, "M2": { "total": 5 }, "M3": { "total": 5 }, "M4": { "total": 2 } },
       "day2": {}, "day3": {}, "finals": {}
     }
   },
@@ -617,8 +617,8 @@
     "team_logo": "R4",
     "group": "A",
     "stats": {
-      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
-      "day1": { "M1": { "total": 0 }, "M2": { "total": 0 }, "M3": { "total": 0 }, "M4": { "total": 0 } },
+      "overall": { "matches_played": 4, "finish_pts": 22, "pos_pts": 19, "total_pts": 41, "wwcd_count": 0 },
+      "day1": { "M1": { "total": 24 }, "M2": { "total": 5 }, "M3": { "total": 2 }, "M4": { "total": 10 } },
       "day2": {}, "day3": {}, "finals": {}
     }
   },
@@ -628,8 +628,8 @@
     "team_logo": "T5",
     "group": "A",
     "stats": {
-      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
-      "day1": { "M1": { "total": 0 }, "M2": { "total": 0 }, "M3": { "total": 0 }, "M4": { "total": 0 } },
+      "overall": { "matches_played": 4, "finish_pts": 24, "pos_pts": 5, "total_pts": 29, "wwcd_count": 0 },
+      "day1": { "M1": { "total": 17 }, "M2": { "total": 2 }, "M3": { "total": 7 }, "M4": { "total": 3 } },
       "day2": {}, "day3": {}, "finals": {}
     }
   },
@@ -783,8 +783,8 @@
     "team_logo": "PT",
     "group": "A",
     "stats": {
-      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
-      "day1": { "M1": { "total": 0 }, "M2": { "total": 0 }, "M3": { "total": 0 }, "M4": { "total": 0 } },
+      "overall": { "matches_played": 4, "finish_pts": 12, "pos_pts": 4, "total_pts": 16, "wwcd_count": 0 },
+      "day1": { "M1": { "total": 4 }, "M2": { "total": 10 }, "M3": { "total": 1 }, "M4": { "total": 1 } },
       "day2": {}, "day3": {}, "finals": {}
     }
   },
@@ -826,8 +826,8 @@
     "team_logo": "TO",
     "group": "A",
     "stats": {
-      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
-      "day1": { "M1": { "total": 0 }, "M2": { "total": 0 }, "M3": { "total": 0 }, "M4": { "total": 0 } },
+      "overall": { "matches_played": 4, "finish_pts": 73, "pos_pts": 23, "total_pts": 96, "wwcd_count": 0 },
+      "day1": { "M1": { "total": 17 }, "M2": { "total": 31 }, "M3": { "total": 42 }, "M4": { "total": 6 } },
       "day2": {}, "day3": {}, "finals": {}
     }
   },
@@ -901,8 +901,8 @@
     "team_logo": "IZ",
     "group": "A",
     "stats": {
-      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
-      "day1": { "M1": { "total": 0 }, "M2": { "total": 0 }, "M3": { "total": 0 }, "M4": { "total": 0 } },
+      "overall": { "matches_played": 4, "finish_pts": 17, "pos_pts": 6, "total_pts": 23, "wwcd_count": 0 },
+      "day1": { "M1": { "total": 1 }, "M2": { "total": 6 }, "M3": { "total": 5 }, "M4": { "total": 11 } },
       "day2": {}, "day3": {}, "finals": {}
     }
   },
