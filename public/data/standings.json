@@ -5,25 +5,14 @@
     "team_logo": "CA",
     "group": "A",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -34,25 +23,14 @@
     "team_logo": "TK",
     "group": "D",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -63,25 +41,14 @@
     "team_logo": "BL",
     "group": "A",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -92,25 +59,14 @@
     "team_logo": "DH",
     "group": "C",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -134,12 +90,7 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 15, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 29, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -150,25 +101,14 @@
     "team_logo": "TM",
     "group": "A",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -192,12 +132,7 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 1, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 1, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -208,25 +143,14 @@
     "team_logo": "8K",
     "group": "A",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -250,12 +174,7 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 14, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -266,25 +185,14 @@
     "team_logo": "4G",
     "group": "C",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -308,12 +216,7 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 12, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 15, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -337,12 +240,7 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 4, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 20, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -353,25 +251,14 @@
     "team_logo": "TG",
     "group": "C",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -382,25 +269,14 @@
     "team_logo": "TG",
     "group": "D",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -411,25 +287,14 @@
     "team_logo": "TZ",
     "group": "D",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -440,25 +305,14 @@
     "team_logo": "么٭",
     "group": "D",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -482,12 +336,7 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 1, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -498,25 +347,14 @@
     "team_logo": "GX",
     "group": "C",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -527,25 +365,14 @@
     "team_logo": "TR",
     "group": "D",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -569,12 +396,7 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 7, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 1, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -585,25 +407,14 @@
     "team_logo": "LO",
     "group": "C",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -627,12 +438,7 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 5, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 5, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -643,25 +449,14 @@
     "team_logo": "PR",
     "group": "D",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -672,25 +467,14 @@
     "team_logo": "4D",
     "group": "C",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -701,25 +485,14 @@
     "team_logo": "AR",
     "group": "A",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -730,25 +503,14 @@
     "team_logo": "AU",
     "group": "A",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -759,25 +521,14 @@
     "team_logo": "PR",
     "group": "C",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -801,12 +552,7 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 7, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 2, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -817,25 +563,14 @@
     "team_logo": "DK",
     "group": "A",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -846,25 +581,14 @@
     "team_logo": "DO",
     "group": "D",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -875,25 +599,14 @@
     "team_logo": "WE",
     "group": "B",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -904,25 +617,14 @@
     "team_logo": "TA",
     "group": "A",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -933,25 +635,14 @@
     "team_logo": "TI",
     "group": "C",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -975,12 +666,7 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 1, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 10, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -991,25 +677,14 @@
     "team_logo": "TC",
     "group": "C",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1020,25 +695,14 @@
     "team_logo": "UP",
     "group": "C",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1049,25 +713,14 @@
     "team_logo": "EL",
     "group": "D",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1078,25 +731,14 @@
     "team_logo": "CO",
     "group": "A",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1107,25 +749,14 @@
     "team_logo": "AC",
     "group": "A",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1149,12 +780,7 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 1, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 3, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1165,25 +791,14 @@
     "team_logo": "DD",
     "group": "A",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1207,12 +822,7 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 4, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1223,25 +833,14 @@
     "team_logo": "R4",
     "group": "A",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1252,25 +851,14 @@
     "team_logo": "T5",
     "group": "A",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1294,12 +882,7 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 3, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 5, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1310,25 +893,14 @@
     "team_logo": "TM",
     "group": "C",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1339,25 +911,14 @@
     "team_logo": "FX",
     "group": "D",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1368,25 +929,14 @@
     "team_logo": "TF",
     "group": "D",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1397,25 +947,14 @@
     "team_logo": "TZ",
     "group": "C",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1426,25 +965,14 @@
     "team_logo": "TC",
     "group": "D",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1455,25 +983,14 @@
     "team_logo": "TT",
     "group": "C",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1484,25 +1001,14 @@
     "team_logo": "TH",
     "group": "D",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1513,25 +1019,14 @@
     "team_logo": "DA",
     "group": "C",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1542,25 +1037,14 @@
     "team_logo": "PT",
     "group": "A",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1584,12 +1068,7 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 18, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 6, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1600,25 +1079,14 @@
     "team_logo": "NI",
     "group": "D",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1629,25 +1097,14 @@
     "team_logo": "TO",
     "group": "A",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1671,12 +1128,7 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 7, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1687,25 +1139,14 @@
     "team_logo": "TE",
     "group": "C",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1716,25 +1157,14 @@
     "team_logo": "TP",
     "group": "C",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1745,25 +1175,14 @@
     "team_logo": "TA",
     "group": "D",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1774,25 +1193,14 @@
     "team_logo": "IZ",
     "group": "A",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1803,25 +1211,14 @@
     "team_logo": "AE",
     "group": "D",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
@@ -1832,25 +1229,14 @@
     "team_logo": "ZA",
     "group": "D",
     "stats": {
-      "overall": {
-        "matches_played": 0,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
-        "wwcd_count": 0
-      },
+      "overall": { "matches_played": 0, "finish_pts": 0, "pos_pts": 0, "total_pts": 0, "wwcd_count": 0 },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       },
-      "day2": {
-        "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M2": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
-        "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
-      },
+      "day2": { "M1": {}, "M2": {}, "M3": {}, "M4": {} },
       "day3": {},
       "finals": {}
     }
