@@ -6,7 +6,7 @@
     "group": "A",
     "stats": {
       "overall": {
-        "matches_played": 2,
+        "matches_played": 4,
         "finish_pts": 2,
         "pos_pts": 1,
         "total_pts": 3,
@@ -144,10 +144,10 @@
     "group": "A",
     "stats": {
       "overall": {
-        "matches_played": 2,
-        "finish_pts": 0,
-        "pos_pts": 0,
-        "total_pts": 0,
+        "matches_played": 4,
+        "finish_pts": 4,
+        "pos_pts": 1,
+        "total_pts": 5,
         "wwcd_count": 0
       },
       "day1": {
@@ -170,9 +170,9 @@
           "wwcd": false
         },
         "M4": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 1,
+          "kill_pts": 4,
+          "total": 5,
           "wwcd": false
         }
       },
@@ -351,10 +351,10 @@
     "group": "A",
     "stats": {
       "overall": {
-        "matches_played": 2,
+        "matches_played": 4,
         "finish_pts": 1,
-        "pos_pts": 1,
-        "total_pts": 2,
+        "pos_pts": 4,
+        "total_pts": 5,
         "wwcd_count": 0
       },
       "day1": {
@@ -371,15 +371,15 @@
           "wwcd": false
         },
         "M3": {
-          "place_pts": 0,
+          "place_pts": 1,
           "kill_pts": 0,
-          "total": 0,
+          "total": 1,
           "wwcd": false
         },
         "M4": {
-          "place_pts": 0,
+          "place_pts": 2,
           "kill_pts": 0,
-          "total": 0,
+          "total": 2,
           "wwcd": false
         }
       },
@@ -489,10 +489,10 @@
     "group": "A",
     "stats": {
       "overall": {
-        "matches_played": 2,
-        "finish_pts": 4,
-        "pos_pts": 4,
-        "total_pts": 8,
+        "matches_played": 4,
+        "finish_pts": 16,
+        "pos_pts": 11,
+        "total_pts": 27,
         "wwcd_count": 0
       },
       "day1": {
@@ -509,15 +509,15 @@
           "wwcd": false
         },
         "M3": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 1,
+          "kill_pts": 1,
+          "total": 2,
           "wwcd": false
         },
         "M4": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 6,
+          "kill_pts": 11,
+          "total": 17,
           "wwcd": false
         }
       },
@@ -1662,10 +1662,10 @@
     "group": "A",
     "stats": {
       "overall": {
-        "matches_played": 2,
-        "finish_pts": 5,
+        "matches_played": 4,
+        "finish_pts": 9,
         "pos_pts": 0,
-        "total_pts": 5,
+        "total_pts": 9,
         "wwcd_count": 0
       },
       "day1": {
@@ -1689,8 +1689,8 @@
         },
         "M4": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 4,
+          "total": 4,
           "wwcd": false
         }
       },
@@ -1731,10 +1731,10 @@
     "group": "A",
     "stats": {
       "overall": {
-        "matches_played": 2,
-        "finish_pts": 8,
-        "pos_pts": 12,
-        "total_pts": 20,
+        "matches_played": 4,
+        "finish_pts": 16,
+        "pos_pts": 19,
+        "total_pts": 35,
         "wwcd_count": 0
       },
       "day1": {
@@ -1751,15 +1751,15 @@
           "wwcd": false
         },
         "M3": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 4,
+          "kill_pts": 4,
+          "total": 8,
           "wwcd": false
         },
         "M4": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 3,
+          "kill_pts": 4,
+          "total": 7,
           "wwcd": false
         }
       },
@@ -1938,11 +1938,11 @@
     "group": "A",
     "stats": {
       "overall": {
-        "matches_played": 2,
-        "finish_pts": 5,
-        "pos_pts": 1,
-        "total_pts": 6,
-        "wwcd_count": 0
+        "matches_played": 4,
+        "finish_pts": 11,
+        "pos_pts": 11,
+        "total_pts": 22,
+        "wwcd_count": 1
       },
       "day1": {
         "M1": {
@@ -1964,10 +1964,10 @@
           "wwcd": false
         },
         "M4": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
-          "wwcd": false
+          "place_pts": 10,
+          "kill_pts": 6,
+          "total": 16,
+          "wwcd": true
         }
       },
       "day2": {
@@ -2145,10 +2145,10 @@
     "group": "A",
     "stats": {
       "overall": {
-        "matches_played": 2,
-        "finish_pts": 0,
-        "pos_pts": 4,
-        "total_pts": 4,
+        "matches_played": 4,
+        "finish_pts": 2,
+        "pos_pts": 6,
+        "total_pts": 8,
         "wwcd_count": 0
       },
       "day1": {
@@ -2165,9 +2165,9 @@
           "wwcd": false
         },
         "M3": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 2,
+          "kill_pts": 2,
+          "total": 4,
           "wwcd": false
         },
         "M4": {
@@ -2559,10 +2559,10 @@
     "group": "A",
     "stats": {
       "overall": {
-        "matches_played": 2,
-        "finish_pts": 4,
+        "matches_played": 4,
+        "finish_pts": 12,
         "pos_pts": 0,
-        "total_pts": 4,
+        "total_pts": 12,
         "wwcd_count": 0
       },
       "day1": {
@@ -2586,8 +2586,8 @@
         },
         "M4": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 8,
+          "total": 8,
           "wwcd": false
         }
       },
@@ -2628,10 +2628,10 @@
     "group": "A",
     "stats": {
       "overall": {
-        "matches_played": 2,
+        "matches_played": 4,
         "finish_pts": 1,
-        "pos_pts": 2,
-        "total_pts": 3,
+        "pos_pts": 3,
+        "total_pts": 4,
         "wwcd_count": 0
       },
       "day1": {
@@ -2654,9 +2654,9 @@
           "wwcd": false
         },
         "M4": {
-          "place_pts": 0,
+          "place_pts": 1,
           "kill_pts": 0,
-          "total": 0,
+          "total": 1,
           "wwcd": false
         }
       },
@@ -2766,10 +2766,10 @@
     "group": "A",
     "stats": {
       "overall": {
-        "matches_played": 2,
-        "finish_pts": 3,
+        "matches_played": 4,
+        "finish_pts": 5,
         "pos_pts": 2,
-        "total_pts": 5,
+        "total_pts": 7,
         "wwcd_count": 0
       },
       "day1": {
@@ -2793,8 +2793,8 @@
         },
         "M4": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 2,
+          "total": 2,
           "wwcd": false
         }
       },
@@ -2904,10 +2904,10 @@
     "group": "A",
     "stats": {
       "overall": {
-        "matches_played": 2,
-        "finish_pts": 14,
-        "pos_pts": 15,
-        "total_pts": 29,
+        "matches_played": 4,
+        "finish_pts": 24,
+        "pos_pts": 24,
+        "total_pts": 48,
         "wwcd_count": 1
       },
       "day1": {
@@ -2924,15 +2924,15 @@
           "wwcd": false
         },
         "M3": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 5,
+          "kill_pts": 4,
+          "total": 9,
           "wwcd": false
         },
         "M4": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 4,
+          "kill_pts": 6,
+          "total": 10,
           "wwcd": false
         }
       },
@@ -2973,11 +2973,11 @@
     "group": "A",
     "stats": {
       "overall": {
-        "matches_played": 2,
-        "finish_pts": 14,
-        "pos_pts": 5,
-        "total_pts": 19,
-        "wwcd_count": 0
+        "matches_played": 4,
+        "finish_pts": 28,
+        "pos_pts": 15,
+        "total_pts": 43,
+        "wwcd_count": 1
       },
       "day1": {
         "M1": {
@@ -2993,15 +2993,15 @@
           "wwcd": false
         },
         "M3": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
-          "wwcd": false
+          "place_pts": 10,
+          "kill_pts": 11,
+          "total": 21,
+          "wwcd": true
         },
         "M4": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 3,
+          "total": 3,
           "wwcd": false
         }
       },
@@ -3663,10 +3663,10 @@
     "group": "A",
     "stats": {
       "overall": {
-        "matches_played": 2,
-        "finish_pts": 10,
-        "pos_pts": 4,
-        "total_pts": 14,
+        "matches_played": 4,
+        "finish_pts": 13,
+        "pos_pts": 7,
+        "total_pts": 20,
         "wwcd_count": 0
       },
       "day1": {
@@ -3683,15 +3683,15 @@
           "wwcd": false
         },
         "M3": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 3,
+          "kill_pts": 2,
+          "total": 5,
           "wwcd": false
         },
         "M4": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 1,
+          "total": 1,
           "wwcd": false
         }
       },
@@ -3870,10 +3870,10 @@
     "group": "A",
     "stats": {
       "overall": {
-        "matches_played": 2,
-        "finish_pts": 35,
-        "pos_pts": 13,
-        "total_pts": 48,
+        "matches_played": 4,
+        "finish_pts": 51,
+        "pos_pts": 19,
+        "total_pts": 70,
         "wwcd_count": 1
       },
       "day1": {
@@ -3890,15 +3890,15 @@
           "wwcd": true
         },
         "M3": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 6,
+          "kill_pts": 10,
+          "total": 16,
           "wwcd": false
         },
         "M4": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 6,
+          "total": 6,
           "wwcd": false
         }
       },
@@ -4215,10 +4215,10 @@
     "group": "A",
     "stats": {
       "overall": {
-        "matches_played": 2,
-        "finish_pts": 7,
-        "pos_pts": 0,
-        "total_pts": 7,
+        "matches_played": 4,
+        "finish_pts": 14,
+        "pos_pts": 5,
+        "total_pts": 19,
         "wwcd_count": 0
       },
       "day1": {
@@ -4236,14 +4236,14 @@
         },
         "M3": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 1,
+          "total": 1,
           "wwcd": false
         },
         "M4": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 5,
+          "kill_pts": 6,
+          "total": 11,
           "wwcd": false
         }
       },
