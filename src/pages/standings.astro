@@ -104,7 +104,7 @@ import Layout from '../layouts/Layout.astro';
   .filter-btn.active { background: #ff4500; border-color: #ff4500; color: white; }
 
   /* MVP CARD */
-  .mvp-card { background: linear-gradient(145deg, rgba(20,20,20,0.9), rgba(40,10,10,0.95)); border: 1px solid #ff4500; border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 0 25px rgba(255, 69, 0, 0.15); animation: fadeIn 0.6s ease; }
+  .mvp-card { background: linear-gradient(145deg, rgba(20,20,20,0.9), rgba(40,10,10,0.95)); border: 1px solid #ff4500; border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 0 25px rgba(255,69,0,0.2); }
   .mvp-badge { background: #ff4500; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; display: inline-block; margin-bottom: 5px; }
   .mvp-header h3 { margin: 0; color: #ff8855; font-size: 0.9rem; text-transform: uppercase; }
   .mvp-image-container { margin: 1.5rem auto; width: 100px; height: 100px; border-radius: 50%; border: 3px solid #ff4500; background: #111; display: flex; align-items: center; justify-content: center; overflow: hidden; }
@@ -117,7 +117,7 @@ import Layout from '../layouts/Layout.astro';
   .stat-value { font-size: 1rem; color: #fff; font-weight: 700; }
 
   /* LEADER BANNER */
-  .leading-team-banner { background: linear-gradient(90deg, rgba(20,10,0,0.9) 0%, rgba(50,20,0,0.9) 100%); border: 1px solid #ff4500; border-left: 6px solid #ff4500; border-radius: 8px; padding: 1rem; text-align: center; margin: 0 auto 1.5rem; max-width: 600px; animation: fadeIn 0.5s ease; }
+  .leading-team-banner { background: linear-gradient(90deg, rgba(20,10,0,0.9) 0%, rgba(50,20,0,0.9) 100%); border: 1px solid #ff4500; border-left: 6px solid #ff4500; border-radius: 8px; padding: 1rem; margin-bottom: 2rem; }
   .leader-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #ff8855; display: block; margin-bottom: 0.3rem; }
   .leading-team-banner h2 { font-size: 1.5rem; margin: 0; color: #fff; }
   .leader-stats { margin-top: 0.3rem; font-size: 0.85rem; color: #ccc; }
@@ -170,7 +170,7 @@ import Layout from '../layouts/Layout.astro';
     });
 
     if (stage === 'overall') {
-      // Logic for Main Overall (No deep filtering needed)
+      // Logic for Main Overall
       document.getElementById('layer2Container').style.display = 'flex';
       renderButtons('layer2', [
         { label: 'Tournament Combined', fn: () => renderTable(standingsData, 'stats.overall') },
@@ -181,10 +181,9 @@ import Layout from '../layouts/Layout.astro';
       ]);
     } 
     else if (stage === 'qual1' || stage === 'qual2') {
-      // QUALIFIER LOGIC (4 LAYERS)
+      // QUALIFIER LOGIC
       document.getElementById('layer2Container').style.display = 'flex';
       
-      // Layer 2: Days
       const days = [
         { label: 'Overall (Day 1+2)', val: 'combined_days' },
         { label: 'Day 1', val: 'day1' },
@@ -197,13 +196,12 @@ import Layout from '../layouts/Layout.astro';
       })));
     }
     else if (stage === 'finals') {
-      // Finals logic (simplified for now)
       document.getElementById('layer2Container').style.display = 'flex';
-      renderButtons('layer2', [{ label: 'Finals Day 1', fn: () => setupMatchLayer('finals', 'all', 'day1') }]); // Simplified context
+      renderButtons('layer2', [{ label: 'Finals Day 1', fn: () => setupMatchLayer('finals', 'all', 'day1') }]);
     }
   };
 
-  // LAYER 3: Groups (A, B, C, D)
+  // LAYER 3: Groups
   function setupGroupLayer(stage, dayContext) {
     document.getElementById('layer3Container').style.display = 'flex';
     document.getElementById('layer4Container').style.display = 'none';
@@ -215,7 +213,7 @@ import Layout from '../layouts/Layout.astro';
     })));
   }
 
-  // LAYER 4: Matches (Overall, M1-M4)
+  // LAYER 4: Matches
   function setupMatchLayer(stage, group, dayContext) {
     document.getElementById('layer4Container').style.display = 'flex';
     
@@ -233,7 +231,6 @@ import Layout from '../layouts/Layout.astro';
     })));
   }
 
-  // Helper to render button groups
   function renderButtons(layer, options) {
     const container = document.getElementById(`${layer}Buttons`);
     container.innerHTML = options.map((opt, i) => 
@@ -247,7 +244,6 @@ import Layout from '../layouts/Layout.astro';
         opt.fn();
       });
     });
-    // Auto-trigger first option to load default view
     if(options.length) options[0].fn();
   }
 
@@ -258,12 +254,10 @@ import Layout from '../layouts/Layout.astro';
   function processAndRender(stage, group, dayContext, matchContext) {
     let data = [...standingsData];
     
-    // 1. Filter by Group
     if(group !== 'all') {
       data = data.filter(t => t.group === group);
     }
 
-    // 2. Process Data based on Day & Match
     let processedData = data.map(team => {
       let stats = { place: 0, kill: 0, total: 0, wwcd: 0 };
       
@@ -272,7 +266,6 @@ import Layout from '../layouts/Layout.astro';
         if(!dObj) return;
 
         if(matchContext === 'overall') {
-          // Sum M1-M4
           ['M1','M2','M3','M4'].forEach(m => {
             if(dObj[m]) {
               stats.place += dObj[m].place_pts || 0;
@@ -282,7 +275,6 @@ import Layout from '../layouts/Layout.astro';
             }
           });
         } else {
-          // Specific Match
           if(dObj[matchContext]) {
             stats.place += dObj[matchContext].place_pts || 0;
             stats.kill += dObj[matchContext].kill_pts || 0;
@@ -302,15 +294,11 @@ import Layout from '../layouts/Layout.astro';
       return { ...team, processedStats: stats };
     });
 
-    // 3. Filter out teams with 0 points if match specific (optional, cleaner UI)
-    // processedData = processedData.filter(t => t.processedStats.total > 0);
-
-    // 4. Sort
+    // Sort by total points
     processedData.sort((a,b) => b.processedStats.total - a.processedStats.total);
 
-    // 5. Update UI
     updateLeaderBanner(processedData);
-    calculateMVP(processedData, dayContext, matchContext); // Mock MVP for filtered view
+    calculateMVP(processedData, dayContext, matchContext);
     renderProcessedTable(processedData, matchContext === 'overall');
   }
 
@@ -351,21 +339,26 @@ import Layout from '../layouts/Layout.astro';
     document.getElementById('standingsContent').innerHTML = html;
   }
 
-  // Fallback for Main Overall View
   function renderFilteredTable(key, group) {
     let data = standingsData.filter(t => t.group === group);
-    data.sort((a,b) => b.stats.overall.total_pts - a.stats.overall.total_pts);
     renderTable(data, 'stats.overall');
   }
   
   function renderTable(data, statPath) {
-     // Re-using simplified logic for main overall
      const get = (o,p) => p.split('.').reduce((a,v)=>a&&a[v],o);
-     updateLeaderBanner(data, true);
+     
+     // Clone and sort data by total_pts descending for overall views
+     const sortedData = [...data].sort((a, b) => {
+       const sA = get(a, statPath);
+       const sB = get(b, statPath);
+       return (sB.total_pts || 0) - (sA.total_pts || 0);
+     });
+
+     updateLeaderBanner(sortedData, true);
      
      const html = `<div class="table-container"><table class="leaderboard-table">
       <thead><tr><th>#</th><th>Team</th><th>Matches</th><th>Finish</th><th>Pos</th><th>Total</th></tr></thead>
-      <tbody>${data.map((t,i) => {
+      <tbody>${sortedData.map((t,i) => {
         const s = get(t, statPath);
         return `<tr class="${i<3?'top-3-row':''}"><td>${i+1}</td><td>[${t.team_logo}] ${t.team_name}</td>
         <td>${s.matches_played}</td><td>${s.finish_pts}</td><td>${s.pos_pts}</td><td style="font-weight:bold;color:#ff4500">${s.total_pts}</td></tr>`;
@@ -390,20 +383,15 @@ import Layout from '../layouts/Layout.astro';
 
   function calculateMVP(data, dayCtx, matchCtx) {
      if(!playersData.length) return;
-     // Finding MVP based on the filtered teams in the current view
-     // This logic attempts to sum kills for the players of the visible teams
-     // Note: This is an estimation if player JSON doesn't exactly match team view context
      
      let bestP = null;
      let maxK = -1;
-     
      const visibleTeamIds = data.map(d => d.team_id);
      
      playersData.forEach(p => {
        if(!visibleTeamIds.includes(p.team_id)) return;
        
        let k = 0;
-       // Logic to match the view context
        const sumDay = (dKey) => {
          if(matchCtx === 'overall') {
            Object.values(p.stats?.[dKey]||{}).forEach(m => k += (m.kills||0));
@@ -425,7 +413,6 @@ import Layout from '../layouts/Layout.astro';
        document.getElementById('mvpKills').innerText = maxK;
        document.getElementById('mvpMatches').innerText = matchCtx === 'overall' ? '-' : '1';
        document.getElementById('mvpTitle').innerText = matchCtx === 'overall' ? "STAGE MVP" : "MATCH MVP";
-       // Image
        document.getElementById('mvpImage').innerHTML = bestP.image ? `<img src="${bestP.image}" style="width:100%;height:100%;object-fit:cover">` : `👤`;
      }
   }
