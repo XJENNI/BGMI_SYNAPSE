@@ -1055,15 +1055,15 @@
     "stats": {
       "overall": {
         "matches_played": 4,
-        "finish_pts": 18,
+        "finish_pts": 20,
         "pos_pts": 7,
-        "total_pts": 25,
+        "total_pts": 27,
         "wwcd_count": 0
       },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 5, "wwcd": false },
         "M2": { "place_pts": 0, "kill_pts": 0, "total": 5, "wwcd": false },
-        "M3": { "place_pts": 0, "kill_pts": 4, "total": 4, "wwcd": false },
+        "M3": { "place_pts": 0, "kill_pts": 6, "total": 6, "wwcd": false },
         "M4": { "place_pts": 5, "kill_pts": 6, "total": 11, "wwcd": false }
       }
     },
