@@ -17,7 +17,8 @@
         "M3": { "total": 7 },
         "M4": { "total": 0 }
       }
-    }
+    },
+    "team_logo": "CA"
   },
   {
     "team_id": "TEAM_002",
@@ -37,7 +38,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 3, "kill_pts": 1, "total": 4, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "KR"
   },
   {
     "team_id": "TEAM_003",
@@ -57,7 +59,8 @@
         "M3": { "total": 8 },
         "M4": { "total": 5 }
       }
-    }
+    },
+    "team_logo": "BL"
   },
   {
     "team_id": "TEAM_004",
@@ -68,7 +71,8 @@
         "matches_played": 4,
         "finish_pts": 17,
         "pos_pts": 7,
-        "total_pts": 24, "wwcd_count": 0
+        "total_pts": 24,
+        "wwcd_count": 0
       },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 6, "wwcd": false },
@@ -76,7 +80,8 @@
         "M3": { "place_pts": 4, "kill_pts": 12, "total": 16, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "DH"
   },
   {
     "team_id": "TEAM_005",
@@ -96,7 +101,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 15, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 29, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "PG"
   },
   {
     "team_id": "TEAM_006",
@@ -116,7 +122,8 @@
         "M3": { "total": 1 },
         "M4": { "total": 2 }
       }
-    }
+    },
+    "team_logo": "MA"
   },
   {
     "team_id": "TEAM_007",
@@ -136,7 +143,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 1, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 1, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "PE"
   },
   {
     "team_id": "TEAM_008",
@@ -156,7 +164,8 @@
         "M3": { "total": 1 },
         "M4": { "total": 17 }
       }
-    }
+    },
+    "team_logo": "8K"
   },
   {
     "team_id": "TEAM_009",
@@ -166,7 +175,9 @@
       "overall": {
         "matches_played": 4,
         "finish_pts": 19,
-        "pos_pts": 5, "total_pts": 24, "wwcd_count": 0
+        "pos_pts": 5,
+        "total_pts": 24,
+        "wwcd_count": 0
       },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 4, "wwcd": false },
@@ -174,7 +185,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 14, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "4N"
   },
   {
     "team_id": "TEAM_010",
@@ -194,7 +206,8 @@
         "M3": { "place_pts": 5, "kill_pts": 17, "total": 22, "wwcd": false },
         "M4": { "place_pts": 1, "kill_pts": 5, "total": 6, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "4G"
   },
   {
     "team_id": "TEAM_011",
@@ -205,7 +218,8 @@
         "matches_played": 4,
         "finish_pts": 32,
         "pos_pts": 14,
-        "total_pts": 46, "wwcd_count": 0
+        "total_pts": 46,
+        "wwcd_count": 0
       },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
@@ -213,7 +227,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 12, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 15, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "TE"
   },
   {
     "team_id": "TEAM_012",
@@ -233,7 +248,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 4, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 20, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "NA"
   },
   {
     "team_id": "TEAM_013",
@@ -253,7 +269,8 @@
         "M3": { "place_pts": 1, "kill_pts": 3, "total": 4, "wwcd": false },
         "M4": { "place_pts": 2, "kill_pts": 4, "total": 6, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "TG"
   },
   {
     "team_id": "TEAM_014",
@@ -273,7 +290,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 2, "total": 2, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "GO"
   },
   {
     "team_id": "TEAM_015",
@@ -284,7 +302,8 @@
         "matches_played": 2,
         "finish_pts": 6,
         "pos_pts": 0,
-        "total_pts": 6, "wwcd_count": 0
+        "total_pts": 6,
+        "wwcd_count": 0
       },
       "day1": {
         "M1": { "place_pts": 0, "kill_pts": 4, "total": 4, "wwcd": false },
@@ -292,7 +311,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "ZE"
   },
   {
     "team_id": "TEAM_016",
@@ -312,7 +332,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 4, "kill_pts": 4, "total": 8, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "ON"
   },
   {
     "team_id": "TEAM_017",
@@ -332,7 +353,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 1, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "SS"
   },
   {
     "team_id": "TEAM_018",
@@ -352,7 +374,8 @@
         "M3": { "place_pts": 0, "kill_pts": 3, "total": 3, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "GL"
   },
   {
     "team_id": "TEAM_019",
@@ -372,7 +395,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 6, "kill_pts": 2, "total": 8, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "TC"
   },
   {
     "team_id": "TEAM_020",
@@ -392,7 +416,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 7, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 1, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "OS"
   },
   {
     "team_id": "TEAM_021",
@@ -412,7 +437,8 @@
         "M3": { "place_pts": 0, "kill_pts": 1, "total": 1, "wwcd": false },
         "M4": { "place_pts": 4, "kill_pts": 5, "total": 9, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "LO"
   },
   {
     "team_id": "TEAM_022",
@@ -432,7 +458,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 5, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 5, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "WR"
   },
   {
     "team_id": "TEAM_023",
@@ -452,7 +479,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 1, "kill_pts": 2, "total": 3, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "PR"
   },
   {
     "team_id": "TEAM_024",
@@ -472,7 +500,8 @@
         "M3": { "place_pts": 0, "kill_pts": 4, "total": 4, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "4D"
   },
   {
     "team_id": "TEAM_025",
@@ -492,7 +521,8 @@
         "M3": { "total": 19 },
         "M4": { "total": 4 }
       }
-    }
+    },
+    "team_logo": "AR"
   },
   {
     "team_id": "TEAM_026",
@@ -512,7 +542,8 @@
         "M3": { "total": 10 },
         "M4": { "total": 7 }
       }
-    }
+    },
+    "team_logo": "AU"
   },
   {
     "team_id": "TEAM_027",
@@ -532,7 +563,8 @@
         "M3": { "place_pts": 0, "kill_pts": 4, "total": 4, "wwcd": false },
         "M4": { "place_pts": 3, "kill_pts": 2, "total": 5, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "PR"
   },
   {
     "team_id": "TEAM_028",
@@ -552,7 +584,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 7, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 2, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "CR"
   },
   {
     "team_id": "TEAM_029",
@@ -572,7 +605,8 @@
         "M3": { "total": 1 },
         "M4": { "total": 16 }
       }
-    }
+    },
+    "team_logo": "DK"
   },
   {
     "team_id": "TEAM_030",
@@ -592,7 +626,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 10, "kill_pts": 11, "total": 21, "wwcd": true }
       }
-    }
+    },
+    "team_logo": "DO"
   },
   {
     "team_id": "TEAM_031",
@@ -612,7 +647,8 @@
         "M3": { "total": 0 },
         "M4": { "total": 0 }
       }
-    }
+    },
+    "team_logo": "WE"
   },
   {
     "team_id": "TEAM_032",
@@ -632,7 +668,8 @@
         "M3": { "total": 1 },
         "M4": { "total": 0 }
       }
-    }
+    },
+    "team_logo": "AL"
   },
   {
     "team_id": "TEAM_033",
@@ -652,7 +689,8 @@
         "M3": { "place_pts": 0, "kill_pts": 5, "total": 5, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 1, "total": 1, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "IN"
   },
   {
     "team_id": "TEAM_034",
@@ -672,7 +710,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 1, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 10, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "T("
   },
   {
     "team_id": "TEAM_035",
@@ -682,8 +721,7 @@
       "overall": {
         "matches_played": 4,
         "finish_pts": 44,
-        "pos_pts": 25,
-        "total_pts": 69,
+        "pos_pts": 25, "total_pts": 69,
         "wwcd_count": 0
       },
       "day1": {
@@ -692,7 +730,8 @@
         "M3": { "place_pts": 10, "kill_pts": 19, "total": 29, "wwcd": false },
         "M4": { "place_pts": 10, "kill_pts": 19, "total": 29, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "CA"
   },
   {
     "team_id": "TEAM_036",
@@ -712,7 +751,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 2, "total": 2, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "UP"
   },
   {
     "team_id": "TEAM_037",
@@ -732,7 +772,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 1, "total": 1, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "EL"
   },
   {
     "team_id": "TEAM_038",
@@ -752,7 +793,8 @@
         "M3": { "total": 9 },
         "M4": { "total": 8 }
       }
-    }
+    },
+    "team_logo": "CO"
   },
   {
     "team_id": "TEAM_039",
@@ -772,7 +814,8 @@
         "M3": { "total": 3 },
         "M4": { "total": 0 }
       }
-    }
+    },
+    "team_logo": "AC"
   },
   {
     "team_id": "TEAM_040",
@@ -792,7 +835,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 1, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 3, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "VE"
   },
   {
     "team_id": "TEAM_041",
@@ -812,7 +856,8 @@
         "M3": { "total": 5 },
         "M4": { "total": 2 }
       }
-    }
+    },
+    "team_logo": "DD"
   },
   {
     "team_id": "TEAM_042",
@@ -832,7 +877,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 4, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "ME"
   },
   {
     "team_id": "TEAM_043",
@@ -852,7 +898,8 @@
         "M3": { "total": 2 },
         "M4": { "total": 10 }
       }
-    }
+    },
+    "team_logo": "R4"
   },
   {
     "team_id": "TEAM_044",
@@ -872,7 +919,8 @@
         "M3": { "total": 7 },
         "M4": { "total": 3 }
       }
-    }
+    },
+    "team_logo": "50"
   },
   {
     "team_id": "TEAM_045",
@@ -892,7 +940,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 3, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 5, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "AE"
   },
   {
     "team_id": "TEAM_046",
@@ -912,7 +961,8 @@
         "M3": { "place_pts": 3, "kill_pts": 5, "total": 8, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "ME"
   },
   {
     "team_id": "TEAM_047",
@@ -932,7 +982,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 1, "total": 1, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "FX"
   },
   {
     "team_id": "TEAM_048",
@@ -952,7 +1003,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 5, "total": 5, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "FE"
   },
   {
     "team_id": "TEAM_049",
@@ -972,7 +1024,8 @@
         "M3": { "place_pts": 0, "kill_pts": 3, "total": 3, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "ZO"
   },
   {
     "team_id": "TEAM_050",
@@ -992,7 +1045,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 2, "total": 2, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "CE"
   },
   {
     "team_id": "TEAM_051",
@@ -1012,7 +1066,8 @@
         "M3": { "place_pts": 0, "kill_pts": 4, "total": 4, "wwcd": false },
         "M4": { "place_pts": 5, "kill_pts": 6, "total": 11, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "TI"
   },
   {
     "team_id": "TEAM_052",
@@ -1032,7 +1087,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 5, "kill_pts": 2, "total": 7, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "HI"
   },
   {
     "team_id": "TEAM_053",
@@ -1052,7 +1108,8 @@
         "M3": { "place_pts": 6, "kill_pts": 9, "total": 15, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 2, "total": 2, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "DA"
   },
   {
     "team_id": "TEAM_054",
@@ -1072,7 +1129,8 @@
         "M3": { "total": 1 },
         "M4": { "total": 1 }
       }
-    }
+    },
+    "team_logo": "PT"
   },
   {
     "team_id": "TEAM_055",
@@ -1092,7 +1150,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 18, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 6, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "GO"
   },
   {
     "team_id": "TEAM_056",
@@ -1112,7 +1171,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "NK"
   },
   {
     "team_id": "TEAM_057",
@@ -1123,7 +1183,8 @@
         "matches_played": 4,
         "finish_pts": 73,
         "pos_pts": 23,
-        "total_pts": 96, "wwcd_count": 0
+        "total_pts": 96,
+        "wwcd_count": 0
       },
       "day1": {
         "M1": { "total": 17 },
@@ -1131,7 +1192,8 @@
         "M3": { "total": 42 },
         "M4": { "total": 6 }
       }
-    }
+    },
+    "team_logo": "OV"
   },
   {
     "team_id": "TEAM_058",
@@ -1151,7 +1213,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 7, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "JW"
   },
   {
     "team_id": "TEAM_059",
@@ -1171,7 +1234,8 @@
         "M3": { "place_pts": 2, "kill_pts": 12, "total": 14, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 4, "total": 4, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "TE"
   },
   {
     "team_id": "TEAM_060",
@@ -1191,7 +1255,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 6, "kill_pts": 10, "total": 16, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "PR"
   },
   {
     "team_id": "TEAM_061",
@@ -1211,7 +1276,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "AL"
   },
   {
     "team_id": "TEAM_062",
@@ -1231,7 +1297,8 @@
         "M3": { "total": 5 },
         "M4": { "total": 11 }
       }
-    }
+    },
+    "team_logo": "IZ"
   },
   {
     "team_id": "TEAM_063",
@@ -1251,7 +1318,8 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 1, "kill_pts": 2, "total": 3, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "AE"
   },
   {
     "team_id": "TEAM_064",
@@ -1271,6 +1339,7 @@
         "M3": { "place_pts": 0, "kill_pts": 0, "total": 0, "wwcd": false },
         "M4": { "place_pts": 2, "kill_pts": 9, "total": 11, "wwcd": false }
       }
-    }
+    },
+    "team_logo": "ZA"
   }
 ]
