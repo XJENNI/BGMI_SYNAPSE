@@ -271,6 +271,7 @@ import Layout from '../layouts/Layout.astro';
 
     let processedData = data.map(team => {
       let stats = { place: 0, kill: 0, total: 0, wwcd: 0 };
+      let recentMatchPosition = 99; // Default high value (worse position)
       
       const processDay = (dKey) => {
         const dObj = team.stats[dKey];
@@ -285,31 +286,87 @@ import Layout from '../layouts/Layout.astro';
                 if(dObj[m].wwcd) stats.wwcd++;
              }
           });
+          // Get most recent match position (M4 > M3 > M2 > M1)
+          const matches = ['M4', 'M3', 'M2', 'M1'];
+          for(let m of matches) {
+            if(dObj[m] && dObj[m].place_pts !== undefined) {
+              recentMatchPosition = convertPlacePointsToPosition(dObj[m].place_pts);
+              break;
+            }
+          }
         } else {
           if(dObj[matchContext]) {
             stats.place += dObj[matchContext].place_pts || 0;
             stats.kill += dObj[matchContext].kill_pts || 0;
             stats.total += dObj[matchContext].total || 0;
             if(dObj[matchContext].wwcd) stats.wwcd++;
+            recentMatchPosition = convertPlacePointsToPosition(dObj[matchContext].place_pts || 0);
           }
         }
       };
 
       if (dayContext === 'combined_days') {
-        processDay('day1');
+        // Process day2 first to get most recent match
         processDay('day2');
+        // Then add day1 stats
+        const tempStats = { place: 0, kill: 0, total: 0, wwcd: 0 };
+        const tempProcess = (dKey) => {
+          const dObj = team.stats[dKey];
+          if(!dObj) return;
+          if(matchContext === 'overall') {
+            Object.keys(dObj).forEach(m => {
+               if(m.startsWith('M') && dObj[m]) {
+                  tempStats.place += dObj[m].place_pts || 0;
+                  tempStats.kill += dObj[m].kill_pts || 0;
+                  tempStats.total += dObj[m].total || 0;
+                  if(dObj[m].wwcd) tempStats.wwcd++;
+               }
+            });
+          }
+        };
+        tempProcess('day1');
+        stats.place += tempStats.place;
+        stats.kill += tempStats.kill;
+        stats.total += tempStats.total;
+        stats.wwcd += tempStats.wwcd;
       } else {
         processDay(dayContext);
       }
 
-      return { ...team, processedStats: stats };
+      return { ...team, processedStats: stats, recentMatchPosition };
     });
 
-    processedData.sort((a,b) => b.processedStats.total - a.processedStats.total);
+    // 🎯 TIE-BREAKER SORT
+    processedData.sort((a, b) => {
+      // 1. Total points (descending)
+      if (b.processedStats.total !== a.processedStats.total) {
+        return b.processedStats.total - a.processedStats.total;
+      }
+      // 2. More chicken dinners (descending)
+      if (b.processedStats.wwcd !== a.processedStats.wwcd) {
+        return b.processedStats.wwcd - a.processedStats.wwcd;
+      }
+      // 3. More position points (descending)
+      if (b.processedStats.place !== a.processedStats.place) {
+        return b.processedStats.place - a.processedStats.place;
+      }
+      // 4. More kill points (descending)
+      if (b.processedStats.kill !== a.processedStats.kill) {
+        return b.processedStats.kill - a.processedStats.kill;
+      }
+      // 5. Higher position in most recent match (ascending - lower is better)
+      return a.recentMatchPosition - b.recentMatchPosition;
+    });
 
     updateLeaderBanner(processedData);
     calculateMVP(processedData, dayContext, matchContext);
     renderProcessedTable(processedData, matchContext === 'overall');
+  }
+
+  // Helper: Convert place_pts to position (inverse of BGMI point system)
+  function convertPlacePointsToPosition(placePts) {
+    const pointsMap = {10:1, 6:2, 5:3, 4:4, 3:5, 2:6, 1:7, 0:8};
+    return pointsMap[placePts] || 99;
   }
 
   // ==============================================
@@ -354,19 +411,50 @@ import Layout from '../layouts/Layout.astro';
     renderTable(data, 'stats.overall', dayKeys);
   }
   
-  // 🚨 PARAMETERIZED RENDER TABLE - Accepts day keys to display correct columns
   function renderTable(data, statPath, dayKeys = ['day1', 'day2']) {
      const get = (o,p) => p.split('.').reduce((a,v)=>a&&a[v],o);
      
+     // 🎯 TIE-BREAKER SORT for Overall View
      const sortedData = [...data].sort((a, b) => {
        const sA = get(a, statPath);
        const sB = get(b, statPath);
-       return (sB.total_pts || 0) - (sA.total_pts || 0);
+       
+       // 1. Total points (descending)
+       if ((sB.total_pts || 0) !== (sA.total_pts || 0)) {
+         return (sB.total_pts || 0) - (sA.total_pts || 0);
+       }
+       // 2. More chicken dinners (descending)
+       if ((sB.wwcd_count || 0) !== (sA.wwcd_count || 0)) {
+         return (sB.wwcd_count || 0) - (sA.wwcd_count || 0);
+       }
+       // 3. More position points (descending)
+       if ((sB.pos_pts || 0) !== (sA.pos_pts || 0)) {
+         return (sB.pos_pts || 0) - (sA.pos_pts || 0);
+       }
+       // 4. More kill points (descending)
+       if ((sB.finish_pts || 0) !== (sA.finish_pts || 0)) {
+         return (sB.finish_pts || 0) - (sA.finish_pts || 0);
+       }
+       // 5. Higher position in most recent match
+       const getRecentPosition = (team) => {
+         // Check day2 first (most recent), then day1
+         const days = ['day2', 'day1'];
+         const matches = ['M4', 'M3', 'M2', 'M1'];
+         for(let day of days) {
+           for(let match of matches) {
+             const matchData = team.stats?.[day]?.[match];
+             if(matchData && matchData.place_pts !== undefined) {
+               return convertPlacePointsToPosition(matchData.place_pts);
+             }
+           }
+         }
+         return 99; // Default worst position
+       };
+       return getRecentPosition(a) - getRecentPosition(b);
      });
 
      updateLeaderBanner(sortedData, true);
      
-     // Generate dynamic day columns based on dayKeys parameter
      const dayHeaders = dayKeys.map(dk => {
        const label = dk === 'day1' ? 'Day 1' : 
                      dk === 'day2' ? 'Day 2' : 
@@ -380,7 +468,6 @@ import Layout from '../layouts/Layout.astro';
       <tbody>${sortedData.map((t,i) => {
         const s = get(t, statPath);
         
-        // Calculate totals for each day dynamically
         const dayCells = dayKeys.map(dk => {
           const dayTotal = Object.values(t.stats[dk] || {}).reduce((acc, m) => acc + (m.total || 0), 0);
           return `<td>${dayTotal}</td>`;
