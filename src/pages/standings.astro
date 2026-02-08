@@ -1,3 +1,135 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Standings | SYNAPSE 2026" activePage="standings">
+  <section class="leaderboard-section">
+    <div class="container">
+
+      <div class="live-status-banner">
+        <div class="live-status-content">
+          <span class="live-icon">🔴</span>
+          <span class="live-text">LIVE STANDINGS</span>
+          <span class="live-icon">🔴</span>
+        </div>
+      </div>
+
+      <div class="page-header-box">
+        <h1 class="page-title">Tournament Leaderboard</h1>
+        
+        <div id="leadingBannerContainer" class="leading-team-banner" style="display:none;">
+          <span class="leader-label">CURRENT LEADER</span>
+          <h2 id="leaderTeamName">LOADING...</h2>
+          <div id="leaderStats" class="leader-stats"></div>
+        </div>
+      </div>
+
+      <div class="filter-tabs" id="mainStageTabs">
+        <button class="filter-btn active" onclick="setStage('overall')">OVERALL</button>
+        <button class="filter-btn" onclick="setStage('qual1')">QUALIFIER 1</button>
+        <button class="filter-btn" onclick="setStage('qual2')">QUALIFIER 2</button>
+        <button class="filter-btn" onclick="setStage('finals')">FINALS</button>
+      </div>
+
+      <div id="layer2Container" class="mid-menu-container" style="display: none;">
+        <div class="button-group" id="layer2Buttons"></div>
+      </div>
+
+      <div id="layer3Container" class="mid-menu-container" style="display: none;">
+        <div class="button-group" id="layer3Buttons"></div>
+      </div>
+
+      <div id="layer4Container" class="mid-menu-container" style="display: none;">
+        <div class="button-group" id="layer4Buttons"></div>
+      </div>
+
+      <div class="content-grid">
+        <div class="main-content-area">
+           <div id="standingsContent" class="content-fade-in"></div>
+        </div>
+
+        <div class="sidebar-area">
+          <div id="mvpCard" class="mvp-card">
+            <div class="mvp-header">
+              <span class="mvp-badge">MVP</span>
+              <h3 id="mvpTitle">TOURNAMENT MVP</h3>
+            </div>
+            <div class="mvp-image-container">
+               <div class="mvp-placeholder-img" id="mvpImage">👤</div>
+            </div>
+            <div class="mvp-info">
+              <h2 id="mvpPlayerName">TBD</h2>
+              <h4 id="mvpTeamName">WAITING FOR DATA</h4>
+            </div>
+            <div class="mvp-stats-grid">
+              <div class="stat-box">
+                <span class="stat-label">KILLS</span>
+                <span class="stat-value" id="mvpKills">-</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-label">MATCHES</span>
+                <span class="stat-value" id="mvpMatches">-</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<style is:global>
+  /* 🎨 PRESERVED STYLES */
+  .content-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-top: 2rem; }
+  @media (min-width: 992px) { 
+    .content-grid { grid-template-columns: 3fr 1fr; align-items: start; } 
+    .sidebar-area { position: sticky; top: 20px; }
+  }
+
+  .table-container { width: 100%; overflow-x: auto; background: rgba(0, 0, 0, 0.4); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); }
+  .leaderboard-table { width: 100%; border-collapse: collapse; min-width: 600px; }
+  .leaderboard-table th, .leaderboard-table td { padding: 14px 12px; text-align: center; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: #eee; }
+  .leaderboard-table th { background: rgba(255, 69, 0, 0.2); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+  .leaderboard-table td:nth-child(2) { text-align: left; font-weight: 700; color: #fff; }
+
+  .mid-menu-container { background: rgba(255,255,255,0.03); padding: 10px; border-radius: 8px; margin-bottom: 10px; display: flex; justify-content: center; }
+  .button-group { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+  .sub-btn { background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); color: #bbb; padding: 6px 14px; border-radius: 4px; cursor: pointer; font-size: 0.8rem; transition: all 0.2s; }
+  .sub-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
+  .sub-btn.active { background: #ff4500; color: white; border-color: #ff4500; box-shadow: 0 0 10px rgba(255,69,0,0.4); }
+
+  .filter-tabs { display: flex; gap: 10px; justify-content: center; margin-bottom: 2rem; flex-wrap: wrap; }
+  .filter-btn { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: white; padding: 10px 24px; border-radius: 30px; cursor: pointer; font-weight: 700; transition: 0.3s; }
+  .filter-btn.active { background: #ff4500; border-color: #ff4500; color: white; }
+
+  /* MVP CARD */
+  .mvp-card { background: linear-gradient(145deg, rgba(20,20,20,0.9), rgba(40,10,10,0.95)); border: 1px solid #ff4500; border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 0 25px rgba(255,69,0,0.2); }
+  .mvp-badge { background: #ff4500; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; display: inline-block; margin-bottom: 5px; }
+  .mvp-header h3 { margin: 0; color: #ff8855; font-size: 0.9rem; text-transform: uppercase; }
+  .mvp-image-container { margin: 1.5rem auto; width: 100px; height: 100px; border-radius: 50%; border: 3px solid #ff4500; background: #111; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .mvp-placeholder-img { font-size: 3rem; }
+  .mvp-info h2 { color: #fff; margin: 0; font-size: 1.2rem; font-weight: 800; }
+  .mvp-info h4 { color: #aaa; margin: 0.2rem 0 1rem; font-size: 0.8rem; }
+  .mvp-stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); }
+  .stat-box { display: flex; flex-direction: column; }
+  .stat-label { font-size: 0.6rem; color: #888; text-transform: uppercase; }
+  .stat-value { font-size: 1rem; color: #fff; font-weight: 700; }
+
+  /* LEADER BANNER */
+  .leading-team-banner { background: linear-gradient(90deg, rgba(20,10,0,0.9) 0%, rgba(50,20,0,0.9) 100%); border: 1px solid #ff4500; border-left: 6px solid #ff4500; border-radius: 8px; padding: 1rem; margin-bottom: 2rem; }
+  .leader-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #ff8855; display: block; margin-bottom: 0.3rem; }
+  .leading-team-banner h2 { font-size: 1.5rem; margin: 0; color: #fff; }
+  .leader-stats { margin-top: 0.3rem; font-size: 0.85rem; color: #ccc; }
+
+  /* UTILS */
+  .wwcd-row { background: rgba(255, 215, 0, 0.1) !important; border-left: 3px solid gold !important; }
+  .top-3-row { background: linear-gradient(90deg, rgba(255,255,255,0.05), transparent); }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .live-status-banner { background: rgba(255, 0, 0, 0.1); border: 1px solid rgba(255, 0, 0, 0.3); border-radius: 4px; padding: 4px 12px; margin: 0 auto 1.5rem; width: fit-content; }
+  .live-text { color: #ff4444; font-weight: 800; font-size: 0.75rem; letter-spacing: 1px; }
+</style>
+
 <script is:inline>
   let standingsData = [];
   let playersData = [];
@@ -38,14 +170,14 @@
     });
 
     if (stage === 'overall') {
-      // 1. OVERALL TAB
+      // 1. OVERALL TAB - Shows Day 1 & Day 2
       document.getElementById('layer2Container').style.display = 'flex';
       renderButtons('layer2', [
-        { label: 'Tournament Combined', fn: () => renderTable(standingsData, 'stats.overall') },
-        { label: 'Group A', fn: () => renderFilteredTable('overall', 'A') },
-        { label: 'Group B', fn: () => renderFilteredTable('overall', 'B') },
-        { label: 'Group C', fn: () => renderFilteredTable('overall', 'C') },
-        { label: 'Group D', fn: () => renderFilteredTable('overall', 'D') }
+        { label: 'Tournament Combined', fn: () => renderTable(standingsData, 'stats.overall', ['day1', 'day2']) },
+        { label: 'Group A', fn: () => renderFilteredTable('overall', 'A', ['day1', 'day2']) },
+        { label: 'Group B', fn: () => renderFilteredTable('overall', 'B', ['day1', 'day2']) },
+        { label: 'Group C', fn: () => renderFilteredTable('overall', 'C', ['day1', 'day2']) },
+        { label: 'Group D', fn: () => renderFilteredTable('overall', 'D', ['day1', 'day2']) }
       ]);
     } 
     else if (stage === 'qual1') {
@@ -74,7 +206,6 @@
     else if (stage === 'finals') {
       // 4. FINALS (Strictly Final Day Data)
       document.getElementById('layer2Container').style.display = 'flex';
-      // Finals usually involves all qualified teams, so we skip Group selection and go straight to All Teams
       renderButtons('layer2', [
         { label: 'Final Day', fn: () => setupMatchLayer(stage, 'all', 'finals') }
       ]);
@@ -146,7 +277,6 @@
         if(!dObj) return;
 
         if(matchContext === 'overall') {
-          // Sum all matches (M1, M2, M3, M4, etc.) in that day
           Object.keys(dObj).forEach(m => {
              if(m.startsWith('M') && dObj[m]) {
                 stats.place += dObj[m].place_pts || 0;
@@ -156,7 +286,6 @@
              }
           });
         } else {
-          // Specific Match
           if(dObj[matchContext]) {
             stats.place += dObj[matchContext].place_pts || 0;
             stats.kill += dObj[matchContext].kill_pts || 0;
@@ -170,13 +299,12 @@
         processDay('day1');
         processDay('day2');
       } else {
-        processDay(dayContext); // Handles 'day3' or 'finals' keys dynamically
+        processDay(dayContext);
       }
 
       return { ...team, processedStats: stats };
     });
 
-    // Sort by total points
     processedData.sort((a,b) => b.processedStats.total - a.processedStats.total);
 
     updateLeaderBanner(processedData);
@@ -221,12 +349,13 @@
     document.getElementById('standingsContent').innerHTML = html;
   }
 
-  function renderFilteredTable(key, group) {
+  function renderFilteredTable(key, group, dayKeys) {
     let data = standingsData.filter(t => t.group === group);
-    renderTable(data, 'stats.overall');
+    renderTable(data, 'stats.overall', dayKeys);
   }
   
-  function renderTable(data, statPath) {
+  // 🚨 PARAMETERIZED RENDER TABLE - Accepts day keys to display correct columns
+  function renderTable(data, statPath, dayKeys = ['day1', 'day2']) {
      const get = (o,p) => p.split('.').reduce((a,v)=>a&&a[v],o);
      
      const sortedData = [...data].sort((a, b) => {
@@ -237,18 +366,31 @@
 
      updateLeaderBanner(sortedData, true);
      
+     // Generate dynamic day columns based on dayKeys parameter
+     const dayHeaders = dayKeys.map(dk => {
+       const label = dk === 'day1' ? 'Day 1' : 
+                     dk === 'day2' ? 'Day 2' : 
+                     dk === 'day3' ? 'Day 3' : 
+                     dk === 'finals' ? 'Finals' : dk.toUpperCase();
+       return `<th>${label}</th>`;
+     }).join('');
+     
      const html = `<div class="table-container"><table class="leaderboard-table">
-      <thead><tr><th>#</th><th>Team</th><th>Matches</th><th>Day 1</th><th>Day 2</th><th>TOTAL</th></tr></thead>
+      <thead><tr><th>#</th><th>Team</th><th>Matches</th>${dayHeaders}<th>TOTAL</th></tr></thead>
       <tbody>${sortedData.map((t,i) => {
         const s = get(t, statPath);
-        const d1 = Object.values(t.stats.day1 || {}).reduce((acc, m) => acc + (m.total || 0), 0);
-        const d2 = Object.values(t.stats.day2 || {}).reduce((acc, m) => acc + (m.total || 0), 0);
+        
+        // Calculate totals for each day dynamically
+        const dayCells = dayKeys.map(dk => {
+          const dayTotal = Object.values(t.stats[dk] || {}).reduce((acc, m) => acc + (m.total || 0), 0);
+          return `<td>${dayTotal}</td>`;
+        }).join('');
+        
         return `<tr class="${i<3?'top-3-row':''}">
           <td>${i+1}</td>
           <td>[${t.team_logo}] ${t.team_name}</td>
           <td>${s.matches_played}</td>
-          <td>${d1}</td>
-          <td>${d2}</td>
+          ${dayCells}
           <td style="font-weight:bold;color:#ff4500">${s.total_pts}</td>
         </tr>`;
       }).join('')}</tbody></table></div>`;
