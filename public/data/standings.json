@@ -887,8 +887,8 @@
         },
         "M4": {
           "place_pts": 4,
-          "kill_pts": 4,
-          "total": 8,
+          "kill_pts": 6,
+          "total": 10,
           "wwcd": false
         }
       },
@@ -913,8 +913,8 @@
         },
         "M4": {
           "place_pts": 2,
-          "kill_pts": 0,
-          "total": 2,
+          "kill_pts": 1,
+          "total": 3,
           "wwcd": false
         }
       },
