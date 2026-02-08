@@ -170,18 +170,18 @@ import Layout from '../layouts/Layout.astro';
     });
 
     if (stage === 'overall') {
-      // Logic for Main Overall
+      // 1. OVERALL TAB - Shows Day 1 & Day 2
       document.getElementById('layer2Container').style.display = 'flex';
       renderButtons('layer2', [
-        { label: 'Tournament Combined', fn: () => renderTable(standingsData, 'stats.overall') },
-        { label: 'Group A', fn: () => renderFilteredTable('overall', 'A') },
-        { label: 'Group B', fn: () => renderFilteredTable('overall', 'B') },
-        { label: 'Group C', fn: () => renderFilteredTable('overall', 'C') },
-        { label: 'Group D', fn: () => renderFilteredTable('overall', 'D') }
+        { label: 'Tournament Combined', fn: () => renderTable(standingsData, 'stats.overall', ['day1', 'day2']) },
+        { label: 'Group A', fn: () => renderFilteredTable('overall', 'A', ['day1', 'day2']) },
+        { label: 'Group B', fn: () => renderFilteredTable('overall', 'B', ['day1', 'day2']) },
+        { label: 'Group C', fn: () => renderFilteredTable('overall', 'C', ['day1', 'day2']) },
+        { label: 'Group D', fn: () => renderFilteredTable('overall', 'D', ['day1', 'day2']) }
       ]);
     } 
-    else if (stage === 'qual1' || stage === 'qual2') {
-      // QUALIFIER LOGIC
+    else if (stage === 'qual1') {
+      // 2. QUALIFIER 1 (Day 1 & 2)
       document.getElementById('layer2Container').style.display = 'flex';
       
       const days = [
@@ -195,9 +195,20 @@ import Layout from '../layouts/Layout.astro';
         fn: () => setupGroupLayer(stage, d.val)
       })));
     }
-    else if (stage === 'finals') {
+    else if (stage === 'qual2') {
+      // 3. QUALIFIER 2 (Strictly Day 3 -> Groups -> Matches)
       document.getElementById('layer2Container').style.display = 'flex';
-      renderButtons('layer2', [{ label: 'Finals Day 1', fn: () => setupMatchLayer('finals', 'all', 'day1') }]);
+      
+      renderButtons('layer2', [
+        { label: 'Day 3', fn: () => setupGroupLayer(stage, 'day3') }
+      ]);
+    }
+    else if (stage === 'finals') {
+      // 4. FINALS (Strictly Final Day Data)
+      document.getElementById('layer2Container').style.display = 'flex';
+      renderButtons('layer2', [
+        { label: 'Final Day', fn: () => setupMatchLayer(stage, 'all', 'finals') }
+      ]);
     }
   };
 
@@ -266,13 +277,13 @@ import Layout from '../layouts/Layout.astro';
         if(!dObj) return;
 
         if(matchContext === 'overall') {
-          ['M1','M2','M3','M4'].forEach(m => {
-            if(dObj[m]) {
-              stats.place += dObj[m].place_pts || 0;
-              stats.kill += dObj[m].kill_pts || 0;
-              stats.total += dObj[m].total || 0;
-              if(dObj[m].wwcd) stats.wwcd++;
-            }
+          Object.keys(dObj).forEach(m => {
+             if(m.startsWith('M') && dObj[m]) {
+                stats.place += dObj[m].place_pts || 0;
+                stats.kill += dObj[m].kill_pts || 0;
+                stats.total += dObj[m].total || 0;
+                if(dObj[m].wwcd) stats.wwcd++;
+             }
           });
         } else {
           if(dObj[matchContext]) {
@@ -294,7 +305,6 @@ import Layout from '../layouts/Layout.astro';
       return { ...team, processedStats: stats };
     });
 
-    // Sort by total points
     processedData.sort((a,b) => b.processedStats.total - a.processedStats.total);
 
     updateLeaderBanner(processedData);
@@ -339,15 +349,15 @@ import Layout from '../layouts/Layout.astro';
     document.getElementById('standingsContent').innerHTML = html;
   }
 
-  function renderFilteredTable(key, group) {
+  function renderFilteredTable(key, group, dayKeys) {
     let data = standingsData.filter(t => t.group === group);
-    renderTable(data, 'stats.overall');
+    renderTable(data, 'stats.overall', dayKeys);
   }
   
-  function renderTable(data, statPath) {
+  // 🚨 PARAMETERIZED RENDER TABLE - Accepts day keys to display correct columns
+  function renderTable(data, statPath, dayKeys = ['day1', 'day2']) {
      const get = (o,p) => p.split('.').reduce((a,v)=>a&&a[v],o);
      
-     // Clone and sort data by total_pts descending for overall views
      const sortedData = [...data].sort((a, b) => {
        const sA = get(a, statPath);
        const sB = get(b, statPath);
@@ -356,12 +366,33 @@ import Layout from '../layouts/Layout.astro';
 
      updateLeaderBanner(sortedData, true);
      
+     // Generate dynamic day columns based on dayKeys parameter
+     const dayHeaders = dayKeys.map(dk => {
+       const label = dk === 'day1' ? 'Day 1' : 
+                     dk === 'day2' ? 'Day 2' : 
+                     dk === 'day3' ? 'Day 3' : 
+                     dk === 'finals' ? 'Finals' : dk.toUpperCase();
+       return `<th>${label}</th>`;
+     }).join('');
+     
      const html = `<div class="table-container"><table class="leaderboard-table">
-      <thead><tr><th>#</th><th>Team</th><th>Matches</th><th>Finish</th><th>Pos</th><th>Total</th></tr></thead>
+      <thead><tr><th>#</th><th>Team</th><th>Matches</th>${dayHeaders}<th>TOTAL</th></tr></thead>
       <tbody>${sortedData.map((t,i) => {
         const s = get(t, statPath);
-        return `<tr class="${i<3?'top-3-row':''}"><td>${i+1}</td><td>[${t.team_logo}] ${t.team_name}</td>
-        <td>${s.matches_played}</td><td>${s.finish_pts}</td><td>${s.pos_pts}</td><td style="font-weight:bold;color:#ff4500">${s.total_pts}</td></tr>`;
+        
+        // Calculate totals for each day dynamically
+        const dayCells = dayKeys.map(dk => {
+          const dayTotal = Object.values(t.stats[dk] || {}).reduce((acc, m) => acc + (m.total || 0), 0);
+          return `<td>${dayTotal}</td>`;
+        }).join('');
+        
+        return `<tr class="${i<3?'top-3-row':''}">
+          <td>${i+1}</td>
+          <td>[${t.team_logo}] ${t.team_name}</td>
+          <td>${s.matches_played}</td>
+          ${dayCells}
+          <td style="font-weight:bold;color:#ff4500">${s.total_pts}</td>
+        </tr>`;
       }).join('')}</tbody></table></div>`;
       document.getElementById('standingsContent').innerHTML = html;
   }
