@@ -869,7 +869,7 @@
       "day1": {
         "M1": {
           "place_pts": 0,
-          "kill_pts": 0,`
+          "kill_pts": 0,
           "total": 0,
           "wwcd": false
         },
@@ -886,9 +886,9 @@
           "wwcd": false
         },
         "M4": {
-          "place_pts": 2,
+          "place_pts": 4,
           "kill_pts": 4,
-          "total": 10,
+          "total": 8,
           "wwcd": false
         }
       },
@@ -913,16 +913,16 @@
         },
         "M4": {
           "place_pts": 2,
-          "kill_pts": 1,  
-          "total": 3,
+          "kill_pts": 0,
+          "total": 2,
           "wwcd": false
         }
       },
       "overall": {
         "matches_played": 8,
-        "finish_pts": 26,
+        "finish_pts": 23,
         "pos_pts": 13,
-        "total_pts": 39,
+        "total_pts": 36,
         "wwcd_count": 0
       }
     }
