@@ -2895,7 +2895,7 @@
           "total": 5
         },
         "M3": {
-          "total": 4
+          "total": 6
         },
         "M4": {
           "total": 11
@@ -2929,9 +2929,9 @@
       },
       "overall": {
         "matches_played": 8,
-        "finish_pts": 41,
+        "finish_pts": 43,
         "pos_pts": 16,
-        "total_pts": 57,
+        "total_pts": 59,
         "wwcd_count": 0
       }
     }
@@ -3353,10 +3353,10 @@
     "stats": {
       "day1": {
         "M1": {
-          "total": 3
+          "total": 5
         },
         "M2": {
-          "total": 6
+          "total": 14
         },
         "M3": {
           "total": 14
@@ -3393,9 +3393,9 @@
       },
       "overall": {
         "matches_played": 8,
-        "finish_pts": 32,
+        "finish_pts": 42,
         "pos_pts": 17,
-        "total_pts": 49,
+        "total_pts": 59,
         "wwcd_count": 1
       }
     }
