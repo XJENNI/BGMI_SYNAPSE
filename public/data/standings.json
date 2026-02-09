@@ -51,6 +51,44 @@
         "pos_pts": 0,
         "total_pts": 16,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -140,8 +178,8 @@
         },
         "M4": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 1,
+          "total": 1,
           "wwcd": false
         },
         "M5": {
@@ -211,6 +249,44 @@
         "pos_pts": 20,
         "total_pts": 46,
         "wwcd_count": 2
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 1,
+          "kill_pts": 2,
+          "total": 3,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 3,
+          "kill_pts": 8,
+          "total": 11,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 3,
+          "total": 3,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 1,
+          "kill_pts": 5,
+          "total": 6,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 3,
+          "kill_pts": 2,
+          "total": 5,
+          "wwcd": false
+        }
       }
     }
   },
@@ -266,6 +342,44 @@
         "pos_pts": 7,
         "total_pts": 35,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -343,8 +457,8 @@
         },
         "M4": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 2,
+          "total": 2,
           "wwcd": false
         },
         "M5": {
@@ -414,6 +528,44 @@
         "pos_pts": 2,
         "total_pts": 7,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -469,6 +621,44 @@
         "pos_pts": 12,
         "total_pts": 30,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -558,8 +748,8 @@
         },
         "M6": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 3,
+          "total": 3,
           "wwcd": false
         }
       }
@@ -617,6 +807,44 @@
         "pos_pts": 13,
         "total_pts": 41,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -694,20 +922,20 @@
         },
         "M4": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 2,
+          "total": 2,
           "wwcd": false
         },
         "M5": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 6,
+          "kill_pts": 1,
+          "total": 7,
           "wwcd": false
         },
         "M6": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 6,
+          "total": 6,
           "wwcd": false
         }
       }
@@ -786,21 +1014,21 @@
           "wwcd": false
         },
         "M4": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 3,
+          "kill_pts": 6,
+          "total": 9,
           "wwcd": false
         },
         "M5": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 2,
+          "total": 2,
           "wwcd": false
         },
         "M6": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 1,
+          "total": 1,
           "wwcd": false
         }
       }
@@ -879,21 +1107,21 @@
           "wwcd": true
         },
         "M4": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 6,
+          "kill_pts": 15,
+          "total": 21,
           "wwcd": false
         },
         "M5": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 1,
+          "kill_pts": 6,
+          "total": 7,
           "wwcd": false
         },
         "M6": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 10,
+          "total": 10,
           "wwcd": false
         }
       }
@@ -972,9 +1200,9 @@
           "wwcd": false
         },
         "M4": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 3,
+          "kill_pts": 1,
+          "total": 4,
           "wwcd": false
         },
         "M5": {
@@ -984,10 +1212,10 @@
           "wwcd": false
         },
         "M6": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
-          "wwcd": false
+          "place_pts": 10,
+          "kill_pts": 13,
+          "total": 23,
+          "wwcd": true
         }
       }
     }
@@ -1056,6 +1284,44 @@
         "pos_pts": 3,
         "total_pts": 27,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -1145,8 +1411,8 @@
         },
         "M4": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 1,
+          "total": 1,
           "wwcd": false
         },
         "M5": {
@@ -1250,20 +1516,20 @@
         },
         "M4": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 1,
+          "total": 1,
           "wwcd": false
         },
         "M5": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
-          "wwcd": false
+          "place_pts": 10,
+          "kill_pts": 4,
+          "total": 14,
+          "wwcd": true
         },
         "M6": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 1,
+          "kill_pts": 8,
+          "total": 9,
           "wwcd": false
         }
       }
@@ -1342,9 +1608,9 @@
           "wwcd": false
         },
         "M4": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 2,
+          "kill_pts": 5,
+          "total": 7,
           "wwcd": false
         },
         "M5": {
@@ -1354,9 +1620,9 @@
           "wwcd": false
         },
         "M6": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 1,
+          "kill_pts": 4,
+          "total": 5,
           "wwcd": false
         }
       }
@@ -1414,6 +1680,44 @@
         "pos_pts": 7,
         "total_pts": 21,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -1481,6 +1785,44 @@
         "pos_pts": 36,
         "total_pts": 96,
         "wwcd_count": 2
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 6,
+          "kill_pts": 6,
+          "total": 12,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 1,
+          "total": 1,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 10,
+          "kill_pts": 13,
+          "total": 23,
+          "wwcd": true
+        },
+        "M4": {
+          "place_pts": 10,
+          "kill_pts": 11,
+          "total": 21,
+          "wwcd": true
+        },
+        "M5": {
+          "place_pts": 5,
+          "kill_pts": 11,
+          "total": 16,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 2,
+          "kill_pts": 13,
+          "total": 15,
+          "wwcd": false
+        }
       }
     }
   },
@@ -1536,6 +1878,44 @@
         "pos_pts": 23,
         "total_pts": 43,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -1613,20 +1993,20 @@
         },
         "M4": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 4,
+          "total": 4,
           "wwcd": false
         },
         "M5": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 2,
+          "kill_pts": 5,
+          "total": 7,
           "wwcd": false
         },
         "M6": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 3,
+          "kill_pts": 2,
+          "total": 5,
           "wwcd": false
         }
       }
@@ -1684,6 +2064,44 @@
         "pos_pts": 8,
         "total_pts": 21,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -1751,6 +2169,44 @@
         "pos_pts": 1,
         "total_pts": 6,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -1806,6 +2262,44 @@
         "pos_pts": 16,
         "total_pts": 43,
         "wwcd_count": 1
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -1861,6 +2355,44 @@
         "pos_pts": 6,
         "total_pts": 49,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 1,
+          "total": 1,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 5,
+          "total": 5,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 1,
+          "kill_pts": 3,
+          "total": 4,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 4,
+          "kill_pts": 2,
+          "total": 6,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 4,
+          "kill_pts": 3,
+          "total": 7,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -1916,6 +2448,44 @@
         "pos_pts": 20,
         "total_pts": 86,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 4,
+          "total": 4,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 1,
+          "kill_pts": 3,
+          "total": 4,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 1,
+          "total": 1,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 4,
+          "total": 4,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -1971,6 +2541,44 @@
         "pos_pts": 10,
         "total_pts": 35,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -2026,6 +2634,44 @@
         "pos_pts": 11,
         "total_pts": 29,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -2081,6 +2727,44 @@
         "pos_pts": 15,
         "total_pts": 56,
         "wwcd_count": 1
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 1,
+          "kill_pts": 2,
+          "total": 3,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 4,
+          "total": 4,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 3,
+          "total": 3,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 4,
+          "total": 4,
+          "wwcd": false
+        }
       }
     }
   },
@@ -2181,9 +2865,9 @@
           "wwcd": false
         },
         "M6": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 6,
+          "kill_pts": 6,
+          "total": 12,
           "wwcd": false
         }
       }
@@ -2262,21 +2946,21 @@
           "wwcd": false
         },
         "M4": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 5,
+          "kill_pts": 3,
+          "total": 8,
           "wwcd": false
         },
         "M5": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 6,
+          "kill_pts": 5,
+          "total": 11,
           "wwcd": false
         },
         "M6": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 7,
+          "total": 7,
           "wwcd": false
         }
       }
@@ -2334,6 +3018,44 @@
         "pos_pts": 8,
         "total_pts": 16,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -2410,9 +3132,9 @@
           "wwcd": false
         },
         "M4": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 6,
+          "kill_pts": 14,
+          "total": 20,
           "wwcd": false
         },
         "M5": {
@@ -2423,8 +3145,8 @@
         },
         "M6": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 2,
+          "total": 2,
           "wwcd": false
         }
       }
@@ -2482,6 +3204,44 @@
         "pos_pts": 15,
         "total_pts": 48,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 2,
+          "total": 2,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 1,
+          "total": 1,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 6,
+          "kill_pts": 11,
+          "total": 17,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 1,
+          "kill_pts": 0,
+          "total": 1,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 2,
+          "kill_pts": 5,
+          "total": 7,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 2,
+          "total": 2,
+          "wwcd": false
+        }
       }
     }
   },
@@ -2558,21 +3318,21 @@
           "wwcd": false
         },
         "M4": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 2,
+          "kill_pts": 5,
+          "total": 7,
           "wwcd": false
         },
         "M5": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 5,
+          "kill_pts": 4,
+          "total": 9,
           "wwcd": false
         },
         "M6": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 5,
+          "kill_pts": 11,
+          "total": 16,
           "wwcd": false
         }
       }
@@ -2630,6 +3390,44 @@
         "pos_pts": 2,
         "total_pts": 16,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -2724,16 +3522,16 @@
           "wwcd": false
         },
         "M5": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 4,
+          "kill_pts": 9,
+          "total": 13,
           "wwcd": false
         },
         "M6": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
-          "wwcd": false
+          "place_pts": 10,
+          "kill_pts": 13,
+          "total": 23,
+          "wwcd": true
         }
       }
     }
@@ -2790,6 +3588,44 @@
         "pos_pts": 19,
         "total_pts": 76,
         "wwcd_count": 1
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 4,
+          "kill_pts": 1,
+          "total": 5,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 1,
+          "total": 1,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 2,
+          "total": 2,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -2845,6 +3681,44 @@
         "pos_pts": 0,
         "total_pts": 6,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -2900,6 +3774,44 @@
         "pos_pts": 4,
         "total_pts": 13,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -2955,6 +3867,44 @@
         "pos_pts": 3,
         "total_pts": 19,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -3010,6 +3960,44 @@
         "pos_pts": 2,
         "total_pts": 6,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -3065,6 +4053,44 @@
         "pos_pts": 4,
         "total_pts": 53,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -3120,6 +4146,44 @@
         "pos_pts": 0,
         "total_pts": 33,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -3197,20 +4261,20 @@
         },
         "M4": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 3,
+          "total": 3,
           "wwcd": false
         },
         "M5": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 4,
+          "total": 4,
           "wwcd": false
         },
         "M6": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 4,
+          "kill_pts": 11,
+          "total": 15,
           "wwcd": false
         }
       }
@@ -3268,6 +4332,44 @@
         "pos_pts": 4,
         "total_pts": 22,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -3335,6 +4437,44 @@
         "pos_pts": 6,
         "total_pts": 11,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -3402,6 +4542,44 @@
         "pos_pts": 1,
         "total_pts": 12,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -3457,6 +4635,44 @@
         "pos_pts": 10,
         "total_pts": 21,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -3524,6 +4740,44 @@
         "pos_pts": 12,
         "total_pts": 36,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -3601,20 +4855,20 @@
         },
         "M4": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 2,
+          "total": 2,
           "wwcd": false
         },
         "M5": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 4,
+          "total": 4,
           "wwcd": false
         },
         "M6": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 2,
+          "total": 2,
           "wwcd": false
         }
       }
@@ -3706,14 +4960,14 @@
         },
         "M4": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 1,
+          "total": 1,
           "wwcd": false
         },
         "M5": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 3,
+          "kill_pts": 3,
+          "total": 6,
           "wwcd": false
         },
         "M6": {
@@ -3799,14 +5053,14 @@
         },
         "M4": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 3,
+          "total": 3,
           "wwcd": false
         },
         "M5": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 3,
+          "total": 3,
           "wwcd": false
         },
         "M6": {
@@ -3870,6 +5124,44 @@
         "pos_pts": 5,
         "total_pts": 42,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 2,
+          "total": 2,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 2,
+          "total": 2,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -3947,20 +5239,20 @@
         },
         "M4": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 2,
+          "total": 2,
           "wwcd": false
         },
         "M5": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 1,
+          "total": 1,
           "wwcd": false
         },
         "M6": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 6,
+          "kill_pts": 9,
+          "total": 15,
           "wwcd": false
         }
       }
@@ -4030,6 +5322,44 @@
         "pos_pts": 10,
         "total_pts": 22,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -4106,21 +5436,21 @@
           "wwcd": false
         },
         "M4": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
-          "wwcd": false
+          "place_pts": 10,
+          "kill_pts": 12,
+          "total": 22,
+          "wwcd": true
         },
         "M5": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 3,
+          "kill_pts": 3,
+          "total": 6,
           "wwcd": false
         },
         "M6": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 4,
+          "kill_pts": 13,
+          "total": 17,
           "wwcd": false
         }
       }
@@ -4178,6 +5508,44 @@
         "pos_pts": 5,
         "total_pts": 15,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -4254,21 +5622,21 @@
           "wwcd": false
         },
         "M4": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 5,
+          "kill_pts": 6,
+          "total": 11,
           "wwcd": false
         },
         "M5": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
-          "wwcd": false
+          "place_pts": 10,
+          "kill_pts": 11,
+          "total": 21,
+          "wwcd": true
         },
         "M6": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 2,
+          "kill_pts": 10,
+          "total": 12,
           "wwcd": false
         }
       }
@@ -4326,6 +5694,44 @@
         "pos_pts": 19,
         "total_pts": 55,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -4400,6 +5806,44 @@
         "pos_pts": 4,
         "total_pts": 15,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -4455,6 +5899,44 @@
         "pos_pts": 0,
         "total_pts": 29,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -4522,6 +6004,44 @@
         "pos_pts": 10,
         "total_pts": 37,
         "wwcd_count": 0
+      },
+      "day3": {
+        "M1": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M2": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M3": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M4": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M5": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        },
+        "M6": {
+          "place_pts": 0,
+          "kill_pts": 0,
+          "total": 0,
+          "wwcd": false
+        }
       }
     }
   },
@@ -4610,21 +6130,21 @@
           "wwcd": false
         },
         "M4": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 1,
+          "kill_pts": 7,
+          "total": 8,
           "wwcd": false
         },
         "M5": {
           "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "kill_pts": 8,
+          "total": 8,
           "wwcd": false
         },
         "M6": {
-          "place_pts": 0,
-          "kill_pts": 0,
-          "total": 0,
+          "place_pts": 5,
+          "kill_pts": 10,
+          "total": 15,
           "wwcd": false
         }
       }
