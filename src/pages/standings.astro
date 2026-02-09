@@ -236,6 +236,13 @@ import Layout from '../layouts/Layout.astro';
       { label: 'Match 4', val: 'M4' }
     ];
 
+    if (dayContext === 'day3') {
+      matches.push(
+        { label: 'Match 5', val: 'M5' },
+        { label: 'Match 6', val: 'M6' }
+      );
+    }
+
     renderButtons('layer4', matches.map(m => ({
       label: m.label,
       fn: () => processAndRender(stage, group, dayContext, m.val)
@@ -287,7 +294,7 @@ import Layout from '../layouts/Layout.astro';
              }
           });
           // Get most recent match position (M4 > M3 > M2 > M1)
-          const matches = ['M4', 'M3', 'M2', 'M1'];
+          const matches = ['M6', 'M5', 'M4', 'M3', 'M2', 'M1'];
           for(let m of matches) {
             if(dObj[m] && dObj[m].place_pts !== undefined) {
               recentMatchPosition = convertPlacePointsToPosition(dObj[m].place_pts);
@@ -439,7 +446,7 @@ import Layout from '../layouts/Layout.astro';
        const getRecentPosition = (team) => {
          // Check day2 first (most recent), then day1
          const days = ['day2', 'day1'];
-         const matches = ['M4', 'M3', 'M2', 'M1'];
+         const matches = ['M6', 'M5', 'M4', 'M3', 'M2', 'M1'];
          for(let day of days) {
            for(let match of matches) {
              const matchData = team.stats?.[day]?.[match];
