@@ -134,6 +134,14 @@ import Layout from '../layouts/Layout.astro';
   let standingsData = [];
   let playersData = [];
   
+  // 🏆 QUALIFIER 2 TEAMS (Top 8 from each group)
+  const QUAL2_TEAMS = [
+    'TEAM_057', 'TEAM_026', 'TEAM_038', 'TEAM_029', 'TEAM_008', 'TEAM_025', 'TEAM_003', 'TEAM_054', // Group A
+    'TEAM_005', 'TEAM_012', 'TEAM_017', 'TEAM_045', 'TEAM_011', 'TEAM_031', 'TEAM_055', 'TEAM_034', // Group B
+    'TEAM_013', 'TEAM_035', 'TEAM_033', 'TEAM_021', 'TEAM_010', 'TEAM_059', 'TEAM_051', 'TEAM_053', // Group C
+    'TEAM_037', 'TEAM_019', 'TEAM_064', 'TEAM_030', 'TEAM_015', 'TEAM_052', 'TEAM_002', 'TEAM_016'  // Group D
+  ];
+
   // ==============================================
   // 🚀 INIT
   // ==============================================
@@ -272,6 +280,11 @@ import Layout from '../layouts/Layout.astro';
   function processAndRender(stage, group, dayContext, matchContext) {
     let data = [...standingsData];
     
+    // [UPDATED] Filter for Qualifier 2 (Only top 32 teams)
+    if (stage === 'qual2') {
+      data = data.filter(t => QUAL2_TEAMS.includes(t.team_id));
+    }
+
     if(group !== 'all') {
       data = data.filter(t => t.group === group);
     }
@@ -352,7 +365,6 @@ import Layout from '../layouts/Layout.astro';
     });
 
     updateLeaderBanner(data);
-    // Note: MVP calc ignored for brevity in this specific update flow, usually included
     
     const html = `
       <div class="table-container">
@@ -504,9 +516,40 @@ import Layout from '../layouts/Layout.astro';
     document.getElementById('leaderStats').innerHTML = `<strong>${pts} PTS</strong> <span style="opacity:0.5">/</span> ${kills} Kills`;
   }
 
-  // Note: calculateMVP() kept minimal for brevity, ensure full logic is present in prod
   function calculateMVP(data, dayCtx, matchCtx) {
-     // ... (Previous MVP Logic) ...
+     if(!playersData.length) return;
+     
+     let bestP = null;
+     let maxK = -1;
+     const visibleTeamIds = data.map(d => d.team_id);
+     
+     playersData.forEach(p => {
+       if(!visibleTeamIds.includes(p.team_id)) return;
+       
+       let k = 0;
+       const sumDay = (dKey) => {
+         if(matchCtx === 'overall') {
+           Object.values(p.stats?.[dKey]||{}).forEach(m => k += (m.kills||0));
+         } else {
+           k += (p.stats?.[dKey]?.[matchCtx]?.kills || 0);
+         }
+       };
+
+       if(dayCtx === 'combined_days') { sumDay('day1'); sumDay('day2'); }
+       else { sumDay(dayCtx); }
+
+       if(k > maxK) { maxK = k; bestP = p; }
+     });
+
+     if(bestP) {
+       document.getElementById('mvpPlayerName').innerText = bestP.name;
+       const t = data.find(x => x.team_id === bestP.team_id);
+       document.getElementById('mvpTeamName').innerText = t ? t.team_name : "Team " + bestP.team_id;
+       document.getElementById('mvpKills').innerText = maxK;
+       document.getElementById('mvpMatches').innerText = matchCtx === 'overall' ? '-' : '1';
+       document.getElementById('mvpTitle').innerText = matchCtx === 'overall' ? "STAGE MVP" : "MATCH MVP";
+       document.getElementById('mvpImage').innerHTML = bestP.image ? `<img src="${bestP.image}" style="width:100%;height:100%;object-fit:cover">` : `👤`;
+     }
   }
 
   init();
