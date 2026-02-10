@@ -2730,15 +2730,15 @@
       },
       "day3": {
         "M1": {
-          "place_pts": 1,
-          "kill_pts": 2,
-          "total": 3,
+          "place_pts": 0,
+          "kill_pts": 1,
+          "total": 1,
           "wwcd": false
         },
         "M2": {
           "place_pts": 0,
-          "kill_pts": 4,
-          "total": 4,
+          "kill_pts": 0,
+          "total": 0,
           "wwcd": false
         },
         "M3": {
