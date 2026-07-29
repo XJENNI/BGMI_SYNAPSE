@@ -7,6 +7,40 @@ import Layout from '../layouts/Layout.astro';
     <div class="container">
       <h1 class="page-title">Synapse 2026 Events</h1>
       <p class="page-subtitle">Compete in multiple gaming tournaments and win exciting prizes!</p>
+      <section class="admin-panel" aria-labelledby="adminPanelHeading">
+        <div class="admin-panel-header">
+          <h2 id="adminPanelHeading">Admin Event Management</h2>
+          <a href="/admin/login" class="btn-register admin-link">Admin Login</a>
+        </div>
+        <p id="adminStatusMessage" class="admin-status-message" role="status" aria-live="polite">
+          Admin login required to add new events.
+        </p>
+
+        <form id="adminEventForm" class="admin-event-form" novalidate hidden>
+          <div class="admin-grid">
+            <label for="eventTitle">Event Title</label>
+            <input id="eventTitle" name="title" type="text" required maxlength="120" />
+
+            <label for="eventDateTime">Date & Time</label>
+            <input id="eventDateTime" name="dateTime" type="datetime-local" required />
+
+            <label for="eventLocation">Location</label>
+            <input id="eventLocation" name="location" type="text" required maxlength="120" />
+
+            <label for="eventImageUrl">Image URL (Optional)</label>
+            <input id="eventImageUrl" name="imageUrl" type="url" placeholder="https://example.com/banner.jpg" />
+          </div>
+
+          <label for="eventDescription">Description</label>
+          <textarea id="eventDescription" name="description" rows="4" required maxlength="600"></textarea>
+
+          <div class="admin-actions">
+            <button type="submit" class="btn-register">Create Event</button>
+            <button type="button" id="adminLogoutButton" class="btn-register admin-logout">Logout</button>
+          </div>
+          <p id="adminFormMessage" class="admin-status-message" role="alert" aria-live="assertive"></p>
+        </form>
+      </section>
       
       <div class="events-grid">
         <!-- FIFA Tournament Event -->
@@ -197,9 +231,166 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
       </div>
+
+      <section class="custom-events-section" aria-labelledby="customEventsHeading">
+        <h2 id="customEventsHeading" class="custom-events-title">Newly Added Events</h2>
+        <div id="customEventsEmptyState" class="custom-events-empty">
+          No additional events added yet.
+        </div>
+        <div id="customEventsGrid" class="events-grid custom-events-grid"></div>
+      </section>
     </div>
   </section>
 </Layout>
+
+<script>
+  const ADMIN_SESSION_KEY = 'bgmi_admin_session';
+  const CUSTOM_EVENTS_KEY = 'bgmi_custom_events';
+
+  const adminForm = document.getElementById('adminEventForm');
+  const adminStatusMessage = document.getElementById('adminStatusMessage');
+  const adminFormMessage = document.getElementById('adminFormMessage');
+  const adminLogoutButton = document.getElementById('adminLogoutButton');
+  const customEventsGrid = document.getElementById('customEventsGrid');
+  const customEventsEmptyState = document.getElementById('customEventsEmptyState');
+
+  function escapeHtml(value) {
+    return value
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#39;');
+  }
+
+  function formatEventDate(dateValue) {
+    const parsed = new Date(dateValue);
+    if (Number.isNaN(parsed.getTime())) return 'Date TBD';
+    return new Intl.DateTimeFormat('en-IN', {
+      dateStyle: 'medium',
+      timeStyle: 'short'
+    }).format(parsed);
+  }
+
+  function getSavedEvents() {
+    try {
+      const saved = localStorage.getItem(CUSTOM_EVENTS_KEY);
+      if (!saved) return [];
+      const parsed = JSON.parse(saved);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch {
+      return [];
+    }
+  }
+
+  function saveEvents(events) {
+    localStorage.setItem(CUSTOM_EVENTS_KEY, JSON.stringify(events));
+  }
+
+  function renderEvents() {
+    if (!customEventsGrid || !customEventsEmptyState) return;
+
+    const events = getSavedEvents();
+    if (!events.length) {
+      customEventsGrid.innerHTML = '';
+      customEventsEmptyState.style.display = 'block';
+      return;
+    }
+
+    customEventsEmptyState.style.display = 'none';
+    customEventsGrid.innerHTML = events
+      .map((event) => {
+        const imageMarkup = event.imageUrl
+          ? `<img src="${escapeHtml(event.imageUrl)}" alt="${escapeHtml(event.title)} banner" class="event-poster">`
+          : '';
+
+        return `
+          <article class="event-card">
+            ${imageMarkup}
+            <div class="event-content">
+              <h3 class="event-title">${escapeHtml(event.title)}</h3>
+              <p class="event-mode">Added by Admin</p>
+              <div class="event-details">
+                <div class="event-detail-item">
+                  <i class="fas fa-calendar-alt"></i>
+                  <span><strong>Date:</strong> ${escapeHtml(formatEventDate(event.dateTime))}</span>
+                </div>
+                <div class="event-detail-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span><strong>Location:</strong> ${escapeHtml(event.location)}</span>
+                </div>
+              </div>
+              <p>${escapeHtml(event.description)}</p>
+            </div>
+          </article>
+        `;
+      })
+      .join('');
+  }
+
+  function updateAdminState() {
+    const isAdmin = sessionStorage.getItem(ADMIN_SESSION_KEY) === 'active';
+    if (!adminForm || !adminStatusMessage) return;
+
+    adminForm.hidden = !isAdmin;
+    adminStatusMessage.textContent = isAdmin
+      ? 'You are logged in as admin. Create events below.'
+      : 'Admin login required to add new events.';
+  }
+
+  adminForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!adminFormMessage) return;
+
+    const formData = new FormData(adminForm);
+    const title = String(formData.get('title') ?? '').trim();
+    const dateTime = String(formData.get('dateTime') ?? '').trim();
+    const location = String(formData.get('location') ?? '').trim();
+    const description = String(formData.get('description') ?? '').trim();
+    const imageUrl = String(formData.get('imageUrl') ?? '').trim();
+
+    if (!title || !dateTime || !location || !description) {
+      adminFormMessage.textContent = 'Please fill all required fields.';
+      adminFormMessage.classList.add('error');
+      adminFormMessage.classList.remove('success');
+      return;
+    }
+
+    if (imageUrl) {
+      try {
+        new URL(imageUrl);
+      } catch {
+        adminFormMessage.textContent = 'Please enter a valid image URL.';
+        adminFormMessage.classList.add('error');
+        adminFormMessage.classList.remove('success');
+        return;
+      }
+    }
+
+    const savedEvents = getSavedEvents();
+    savedEvents.unshift({ title, dateTime, location, description, imageUrl });
+    saveEvents(savedEvents);
+    renderEvents();
+
+    adminForm.reset();
+    adminFormMessage.textContent = 'Event created successfully.';
+    adminFormMessage.classList.add('success');
+    adminFormMessage.classList.remove('error');
+  });
+
+  adminLogoutButton?.addEventListener('click', () => {
+    sessionStorage.removeItem(ADMIN_SESSION_KEY);
+    updateAdminState();
+    if (adminFormMessage) {
+      adminFormMessage.textContent = 'Logged out successfully.';
+      adminFormMessage.classList.remove('error');
+      adminFormMessage.classList.add('success');
+    }
+  });
+
+  renderEvents();
+  updateAdminState();
+</script>
 
 <style>
   .events-section {
@@ -225,6 +416,112 @@ import Layout from '../layouts/Layout.astro';
     color: var(--text-secondary);
     margin-bottom: 60px;
     font-size: 1.1rem;
+  }
+
+  .admin-panel {
+    border: 1px solid rgba(0, 240, 255, 0.35);
+    background: rgba(0, 240, 255, 0.05);
+    border-radius: 12px;
+    padding: 22px;
+    max-width: 960px;
+    margin: 0 auto 40px;
+  }
+
+  .admin-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .admin-panel-header h2 {
+    margin: 0;
+    color: var(--accent-cyan);
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+  }
+
+  .admin-link {
+    min-width: 160px;
+    text-decoration: none;
+  }
+
+  .admin-status-message {
+    color: var(--text-secondary);
+    margin: 12px 0 0;
+    min-height: 24px;
+  }
+
+  .admin-status-message.error {
+    color: #ff6b6b;
+  }
+
+  .admin-status-message.success {
+    color: #72f2b0;
+  }
+
+  .admin-event-form {
+    margin-top: 14px;
+  }
+
+  .admin-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 16px;
+    margin-bottom: 12px;
+  }
+
+  .admin-event-form label {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    align-self: end;
+  }
+
+  .admin-event-form input,
+  .admin-event-form textarea {
+    width: 100%;
+    background: rgba(10, 10, 18, 0.95);
+    color: var(--text-primary);
+    border: 1px solid rgba(0, 240, 255, 0.35);
+    border-radius: 6px;
+    padding: 10px 12px;
+    font: inherit;
+  }
+
+  .admin-event-form input:focus,
+  .admin-event-form textarea:focus {
+    outline: 2px solid rgba(0, 240, 255, 0.6);
+    outline-offset: 2px;
+  }
+
+  .admin-actions {
+    margin-top: 12px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .admin-logout {
+    background: linear-gradient(135deg, rgba(188, 19, 254, 0.85), rgba(188, 19, 254, 0.65));
+    color: #fff;
+  }
+
+  .custom-events-section {
+    margin-top: 45px;
+  }
+
+  .custom-events-title {
+    color: var(--accent-cyan);
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .custom-events-empty {
+    color: var(--text-secondary);
+    margin-bottom: 18px;
   }
   
   .events-grid {
@@ -382,6 +679,10 @@ import Layout from '../layouts/Layout.astro';
   @media (max-width: 768px) {
     .events-section {
       padding: 100px 15px 40px;
+    }
+
+    .admin-grid {
+      grid-template-columns: 1fr;
     }
     
     .events-grid {
