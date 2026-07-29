@@ -23,10 +23,30 @@ Getting Started
    git clone https://github.com/XJENNI/BGMI_SYNAPSE.git
    cd BGMI_SYNAPSE
    ```
-2. Serve locally (any static server):
+2. Install dependencies:
    ```bash
-   npx http-server . -p 8080
+   npm install
    ```
+3. Start the Astro dev server:
+   ```bash
+   npm run dev
+   ```
+
+## Admin login & event management
+
+1. Copy `.env.example` to `.env` and update admin credentials:
+   ```bash
+   cp .env.example .env
+   ```
+   Set:
+   - `PUBLIC_ADMIN_USERNAME`
+   - `PUBLIC_ADMIN_PASSWORD`
+2. Open `/admin/login` and sign in with your admin credentials.
+3. After login, go to `/events` to access the **Admin Event Management** form.
+4. Admin-added events are saved in browser `localStorage` and shown in the **Newly Added Events** section.
+
+### Important limitation
+- This project is configured as a static Astro site, so admin auth and event persistence are client-side only (sessionStorage/localStorage per browser), not server-side secure storage.
 
 Deployment Checklist
 - [ ] Replace external hero/sponsor images with optimized local files in `assets/images/`

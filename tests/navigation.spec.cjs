@@ -63,4 +63,20 @@ test.describe('Site navigation & pages', () => {
     // backgroundImage should not include url(
     expect(bgImage.includes('url(')).toBeFalsy();
   });
+
+  test('Events page hides admin creation controls for non-admin users', async ({ page }) => {
+    await page.goto('/events');
+    await expect(page.locator('#adminEventForm')).toBeHidden();
+    await expect(page.locator('#adminStatusMessage')).toContainText('Admin login required');
+  });
+
+  test('Admin login allows event creation controls on Events page', async ({ page }) => {
+    await page.goto('/admin/login');
+    await page.fill('#adminUsername', 'admin');
+    await page.fill('#adminPassword', 'synapse2026');
+    await page.click('button[type="submit"]');
+    await expect(page).toHaveURL(/.*\/events/);
+    await expect(page.locator('#adminEventForm')).toBeVisible();
+    await expect(page.locator('#adminStatusMessage')).toContainText('logged in as admin');
+  });
 });

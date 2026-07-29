@@ -1,0 +1,154 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const adminUsername = import.meta.env.PUBLIC_ADMIN_USERNAME ?? 'admin';
+const adminPassword = import.meta.env.PUBLIC_ADMIN_PASSWORD ?? 'synapse2026';
+---
+
+<Layout title="Admin Login | MAVERICKS x SYNAPSE 2026" description="Admin login for managing Synapse events." activePage="admin">
+  <section class="admin-login-page">
+    <div class="admin-login-card">
+      <h1>Admin Login</h1>
+      <p>Sign in to access event creation controls.</p>
+
+      <form id="adminLoginForm" novalidate>
+        <label for="adminUsername">Username</label>
+        <input id="adminUsername" name="username" type="text" autocomplete="username" required />
+
+        <label for="adminPassword">Password</label>
+        <input id="adminPassword" name="password" type="password" autocomplete="current-password" required />
+
+        <button type="submit" class="btn-login">Login</button>
+        <p id="loginMessage" class="login-message" role="alert" aria-live="assertive"></p>
+      </form>
+    </div>
+  </section>
+</Layout>
+
+<script define:vars={{ adminUsername, adminPassword }}>
+  const ADMIN_SESSION_KEY = 'bgmi_admin_session';
+  const loginForm = document.getElementById('adminLoginForm');
+  const loginMessage = document.getElementById('loginMessage');
+
+  if (sessionStorage.getItem(ADMIN_SESSION_KEY) === 'active') {
+    window.location.replace('/events');
+  }
+
+  loginForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!loginMessage) return;
+
+    const formData = new FormData(loginForm);
+    const username = String(formData.get('username') ?? '').trim();
+    const password = String(formData.get('password') ?? '').trim();
+
+    if (!username || !password) {
+      loginMessage.textContent = 'Please enter both username and password.';
+      loginMessage.classList.add('error');
+      loginMessage.classList.remove('success');
+      return;
+    }
+
+    if (username !== adminUsername || password !== adminPassword) {
+      loginMessage.textContent = 'Invalid admin credentials.';
+      loginMessage.classList.add('error');
+      loginMessage.classList.remove('success');
+      return;
+    }
+
+    sessionStorage.setItem(ADMIN_SESSION_KEY, 'active');
+    loginMessage.textContent = 'Login successful. Redirecting to Events page...';
+    loginMessage.classList.add('success');
+    loginMessage.classList.remove('error');
+
+    window.setTimeout(() => {
+      window.location.assign('/events');
+    }, 400);
+  });
+</script>
+
+<style>
+  .admin-login-page {
+    min-height: calc(100vh - 180px);
+    padding: 130px 20px 60px;
+    display: grid;
+    place-items: center;
+  }
+
+  .admin-login-card {
+    width: min(520px, 100%);
+    background: linear-gradient(135deg, rgba(15, 15, 26, 0.95), rgba(10, 10, 18, 0.95));
+    border: 2px solid rgba(0, 240, 255, 0.25);
+    border-radius: 14px;
+    padding: 26px;
+    box-shadow: 0 0 35px rgba(0, 240, 255, 0.18);
+  }
+
+  .admin-login-card h1 {
+    margin: 0 0 6px;
+    color: var(--accent-cyan);
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+  }
+
+  .admin-login-card p {
+    margin: 0 0 18px;
+    color: var(--text-secondary);
+  }
+
+  #adminLoginForm {
+    display: grid;
+    gap: 8px;
+  }
+
+  #adminLoginForm label {
+    font-weight: 600;
+  }
+
+  #adminLoginForm input {
+    width: 100%;
+    background: rgba(10, 10, 18, 0.95);
+    color: var(--text-primary);
+    border: 1px solid rgba(0, 240, 255, 0.35);
+    border-radius: 6px;
+    padding: 10px 12px;
+    font: inherit;
+    margin-bottom: 6px;
+  }
+
+  #adminLoginForm input:focus {
+    outline: 2px solid rgba(0, 240, 255, 0.6);
+    outline-offset: 2px;
+  }
+
+  .btn-login {
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--bg-primary);
+    background: linear-gradient(135deg, var(--accent-cyan), rgba(0, 240, 255, 0.75));
+  }
+
+  .btn-login:hover {
+    box-shadow: 0 4px 20px rgba(0, 240, 255, 0.35);
+  }
+
+  .login-message {
+    min-height: 24px;
+    margin: 4px 0 0;
+    font-size: 0.95rem;
+  }
+
+  .login-message.error {
+    color: #ff6b6b;
+  }
+
+  .login-message.success {
+    color: #72f2b0;
+  }
+</style>
