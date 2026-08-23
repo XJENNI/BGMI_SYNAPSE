@@ -1,0 +1,190 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { mavericksPageData } from '../data/mavericks';
+---
+
+<Layout
+  title="Mavericks — Gaming Society of Maulana Azad Medical College"
+  description="Official Mavericks page with verified information and core images."
+  activePage="mavericks"
+>
+  <section class="mavericks-hero section">
+    <div class="container">
+      <div class="hero-card">
+        <img src="/data/img/mavericksr.png" alt="Mavericks logo" class="hero-logo" width="180" height="180" />
+        <h1 class="section-title hero-title">{mavericksPageData.hero.title}</h1>
+        <p class="hero-subtitle">{mavericksPageData.hero.subtitle}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <h2 class="section-title">About Mavericks</h2>
+      <div class="about-panel">
+        {mavericksPageData.about.lines.map((line) => (
+          <p>{line}</p>
+        ))}
+        <p>{mavericksPageData.relationship.synapse}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Meet the Mavericks</h2>
+      <p class="section-note">Images below are the full set provided in <code>/public/data/img/core</code>.</p>
+      <div class="core-grid">
+        {mavericksPageData.coreImages.map((image) => (
+          <figure class="core-card">
+            <img src={image.src} alt={`Mavericks core image: ${image.label}`} loading="lazy" />
+            <figcaption>{image.label}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <h2 class="section-title">Verified Activities</h2>
+      <div class="activity-grid">
+        {mavericksPageData.activities.map((event) => (
+          <article class="activity-card">
+            <h3>{event.name}</h3>
+            {event.date && <p><strong>Date:</strong> {event.date}</p>}
+            {event.venueOrMode && <p><strong>Venue/Mode:</strong> {event.venueOrMode}</p>}
+            {event.entryFee && <p><strong>Entry Fee:</strong> {event.entryFee}</p>}
+            {event.prize && <p><strong>Prize:</strong> {event.prize}</p>}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Social</h2>
+      <div class="social-wrap">
+        {mavericksPageData.social.map((item) => (
+          <a href={item.url} class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <span>{item.platform}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .mavericks-hero {
+    padding-top: 150px;
+    background: radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.18), transparent 55%);
+  }
+
+  .hero-card {
+    border: 1px solid var(--border-subtle);
+    background: linear-gradient(145deg, rgba(8, 8, 18, 0.9), rgba(12, 12, 24, 0.95));
+    border-radius: 14px;
+    text-align: center;
+    padding: 2.5rem 1.25rem;
+  }
+
+  .hero-logo {
+    margin: 0 auto 1.5rem;
+    filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.35));
+  }
+
+  .hero-title {
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-subtitle {
+    margin: 0;
+    color: var(--text-secondary);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-family: var(--font-heading);
+  }
+
+  .about-panel {
+    max-width: 880px;
+    margin: 0 auto;
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 1.25rem;
+    background: rgba(8, 8, 16, 0.65);
+  }
+
+  .section-note {
+    text-align: center;
+    color: var(--text-secondary);
+  }
+
+  .core-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .core-card {
+    margin: 0;
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(8, 8, 16, 0.8);
+  }
+
+  .core-card img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+  }
+
+  .core-card figcaption {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    word-break: break-word;
+  }
+
+  .activity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+
+  .activity-card {
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 1rem;
+    background: rgba(8, 8, 16, 0.8);
+  }
+
+  .activity-card h3 {
+    color: var(--accent-cyan);
+    margin-bottom: 0.75rem;
+  }
+
+  .activity-card p {
+    margin-bottom: 0.45rem;
+    color: var(--text-secondary);
+  }
+
+  .social-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .mavericks-hero {
+      padding-top: 120px;
+    }
+
+    .hero-card {
+      padding: 2rem 1rem;
+    }
+  }
+</style>
